@@ -27,15 +27,55 @@
     <a href="/" class="nav-logo">
       <img src="{{ '/assets/images/tedx-breckenridge-logo-black.png' | relative_url }}" alt="TEDxBreckenridge">
     </a>
-    <ul class="nav-links">
-      <li><a href="/#salon">Salon</a></li>
-      <li><a href="/#main-event">2026 Event</a></li>
-      <li><a href="/talks">Watch</a></li>
-      <li><a href="/#support">Get Involved</a></li>
-      <li><a href="/about">About</a></li>
-    </ul>
-    <a href="https://tedxbreckenridge.ticketsauce.com/e/tedx-salon-january-event" class="nav-cta">Get Tickets</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="/#salon">Salon</a></li>
+        <li><a href="/#main-event">2026 Event</a></li>
+        <li><a href="/talks">Watch</a></li>
+        <li><a href="/#support">Get Involved</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <a href="https://tedxbreckenridge.ticketsauce.com/e/tedx-salon-january-event" class="nav-cta">Get Tickets</a>
+    </div>
   </nav>
+
+  <script>
+    // Mobile navigation toggle
+    const navHamburger = document.getElementById('navHamburger');
+    const navMenu = document.getElementById('navMenu');
+    const body = document.body;
+
+    navHamburger.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      navHamburger.classList.toggle('active');
+      body.classList.toggle('nav-open');
+    });
+
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-links a, .nav-cta');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        navHamburger.classList.remove('active');
+        body.classList.remove('nav-open');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = navMenu.contains(event.target) || navHamburger.contains(event.target);
+      if (!isClickInsideNav && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        navHamburger.classList.remove('active');
+        body.classList.remove('nav-open');
+      }
+    });
+  </script>
 
   <main>
     {{ content }}

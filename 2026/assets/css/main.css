@@ -109,6 +109,114 @@ body {
     background: #C70022;
 }
 
+/* Hamburger Menu */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+}
+
+.nav-hamburger span {
+    width: 30px;
+    height: 3px;
+    background: var(--charcoal);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.nav-hamburger.active span:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+
+.nav-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-hamburger.active span:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 900px) {
+    .nav {
+        padding: 20px 24px;
+    }
+
+    .nav-hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+        padding: 100px 32px 32px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        transition: right 0.3s ease;
+        z-index: 100;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 32px;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid var(--sand);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 16px 0;
+        font-size: 16px;
+    }
+
+    .nav-cta {
+        text-align: center;
+        display: block;
+    }
+
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    body.nav-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 99;
+    }
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -969,10 +1077,6 @@ body {
 @media (max-width: 1024px) {
     .nav {
         padding: 16px 24px;
-    }
-
-    .nav-links {
-        display: none;
     }
 
     .hero {
