@@ -1443,6 +1443,78 @@ body {
     color: var(--stone);
 }
 
+/* Blog Posts */
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.blog-post {
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--sand);
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.blog-post-meta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--stone);
+}
+
+.blog-post-date {
+    font-weight: 500;
+}
+
+.blog-post-author {
+    font-style: italic;
+}
+
+.blog-post-title {
+    font-size: clamp(24px, 4vw, 28px);
+    margin: 0 0 16px 0;
+}
+
+.blog-post-title a {
+    color: var(--ted-black);
+    text-decoration: none;
+    border-bottom: none;
+    transition: color 0.2s ease;
+}
+
+.blog-post-title a:hover {
+    color: var(--teal);
+}
+
+.blog-post-excerpt {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--stone);
+    margin: 0 0 16px 0;
+}
+
+.blog-post-link {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 1px solid var(--teal-light);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.blog-post-link:hover {
+    color: var(--terracotta);
+    border-bottom-color: var(--terracotta);
+}
+
 /* Team Sections */
 .team-section {
     margin-top: 48px;
