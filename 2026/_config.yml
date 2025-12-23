@@ -3,9 +3,8 @@
 title: TEDxBreckenridge 2026
 email: info@tedxbreckenridge.com
 description: >-
-  TEDxBreckenridge 2026 - Inversion. What happens when we flip our assumptions?
-  Join us for an evening of ideas that challenge perspective, reverse conventional
-  thinking, and reveal what lies on the other side.
+  TEDxBreckenridge 2026 - Ideas worth spreading in the heart of the Rockies.
+  Join us for an evening of inspiring talks, local voices, and meaningful connections.
 
 baseurl: "" # subpath of your site, e.g. /2026
 url: "https://tedxbreckenridge.com" # base hostname & protocol
@@ -14,13 +13,23 @@ url: "https://tedxbreckenridge.com" # base hostname & protocol
 event:
   year: 2026
   date: "October 3, 2026"
-  date_short: "October 3"
-  time: "5:00 PM"
+  date_short: "October 3, 2026"
+  time: "TBA"
   venue: "Riverwalk Center, Breckenridge, Colorado"
   venue_short: "Riverwalk Center"
   format: "In-person"
-  theme: "Inversion"
-  theme_description: "What happens when we flip our assumptions? Join us for an evening of ideas that challenge perspective, reverse conventional thinking, and reveal what lies on the other side."
+  theme: "TBA"
+  theme_description: "Save the date for our 2026 main event. Theme and details coming soon."
+
+# Salon Event
+salon:
+  date: "January 15, 2026"
+  time: "6:00 PM"
+  title: "Elevated Cuisine: The Science and Art of Cooking at Altitude"
+  venue: "Colorado Mountain College Culinary Program"
+  location: "Breckenridge, Colorado"
+  price: "$10 suggested donation"
+  description: "Join the culinary team from Colorado Mountain College as they explore how altitude changes the rules of cooking and baking—and what it takes to master flavor, texture, and technique in the High Rockies."
 
 # Build settings
 markdown: kramdown

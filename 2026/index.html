@@ -6,34 +6,33 @@ title: Home
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content">
-        <div class="hero-eyebrow">TEDxBreckenridge 2026</div>
-        <div class="hero-date">{{ site.event.date_short }}</div>
-        <h1 class="hero-title">{{ site.event.theme }}</h1>
-        <p class="hero-description">{{ site.event.theme_description }}</p>
+        <div class="hero-eyebrow">TEDxBreckenridge Salon • {{ site.salon.date }}</div>
+        <h1 class="hero-title" style="font-size: 2.5rem; line-height: 1.2;">{{ site.salon.title }}</h1>
+        <p class="hero-description">{{ site.salon.description }}</p>
         <div class="hero-meta">
             <div class="hero-meta-item">
                 <span class="hero-meta-label">Location</span>
-                <span class="hero-meta-value">{{ site.event.venue_short }}</span>
+                <span class="hero-meta-value">{{ site.salon.venue }}</span>
             </div>
             <div class="hero-meta-item">
                 <span class="hero-meta-label">Time</span>
-                <span class="hero-meta-value">{{ site.event.time }}</span>
+                <span class="hero-meta-value">{{ site.salon.time }}</span>
             </div>
             <div class="hero-meta-item">
-                <span class="hero-meta-label">Format</span>
-                <span class="hero-meta-value">{{ site.event.format }}</span>
+                <span class="hero-meta-label">Price</span>
+                <span class="hero-meta-value">{{ site.salon.price }}</span>
             </div>
         </div>
         <div class="hero-actions">
-            <a href="#tickets" class="btn btn-primary">Get Tickets</a>
-            <a href="#theme" class="btn btn-secondary">Explore the Theme</a>
+            <a href="#salon" class="btn btn-primary">Learn More</a>
+            <a href="#newsletter" class="btn btn-secondary">Get Notified</a>
         </div>
     </div>
     <div class="hero-visual" style="background: linear-gradient(135deg, #4E4484 0%, #2A4B5B 100%);">
         <div class="hero-visual-overlay">
             <div class="hero-visual-content">
-                <div class="hero-visual-year">Year {{ site.event.year }}</div>
-                <div class="hero-visual-theme">{{ site.event.theme }}</div>
+                <div class="hero-visual-year">Salon Series</div>
+                <div class="hero-visual-theme">Jan 15</div>
             </div>
         </div>
     </div>
@@ -58,62 +57,66 @@ title: Home
     </div>
 </div>
 
-<!-- Theme Section -->
-<section class="section section-full theme-section" id="theme">
+<!-- Salon Section -->
+<section class="section section-full theme-section" id="salon">
     <div class="section-inner">
         <div class="theme-content">
             <div class="theme-text">
                 <div class="section-header">
-                    <div class="section-eyebrow">This year's theme</div>
-                    <h2 class="section-title">Turn it upside down.<br>See what falls out.</h2>
+                    <div class="section-eyebrow">Next Event</div>
+                    <h2 class="section-title">Elevated Cuisine:<br>The Science and Art of Cooking at Altitude</h2>
                 </div>
-                <p>Inversion is a way of thinking. Instead of asking "How do I succeed?", ask "How would I guarantee failure?" Instead of following the path forward, trace it backward. The answers often surprise us.</p>
-                <p>This year's speakers will explore inversions across science, art, community, and identity. They'll share moments when flipping the question revealed something essential — and invite you to do the same.</p>
-                <p>Sometimes the clearest view comes from standing on your head.</p>
+                <p>Why does water boil at a lower temperature in the mountains? Why do cakes rise too fast—or not at all? And how do professional chefs adapt their techniques when cooking at 9,000 feet?</p>
+                <p>In this TEDxBreckenridge Salon, the culinary team from Colorado Mountain College explores how altitude changes the rules of cooking and baking—and what it takes to master flavor, texture, and technique in the High Rockies. Through a short talk, practical insights, and guided discussion, we'll dive into the science behind high-elevation kitchens and the creative adaptations that make great food possible up here.</p>
+                <p>Salon events are intentionally small and conversational, designed to spark curiosity, encourage discussion, and build connections among people who love learning. Come ready to think, ask questions, and leave with ideas you'll actually use in your own kitchen.</p>
+                <div style="margin-top: 24px;">
+                    <p><strong>January 15, 2026 • 6:00 PM</strong><br>
+                    Colorado Mountain College Culinary Program<br>
+                    Breckenridge, Colorado</p>
+                    <p style="margin-top: 16px;"><strong>Suggested donation:</strong> $10<br>
+                    <em>Ideas should be accessible to everyone. If cost is a barrier, join us anyway — your curiosity matters most.</em></p>
+                </div>
             </div>
             <div class="theme-visual">
-                <img src="{{ '/assets/images/53230983645_7a48ea5b0a_k.jpg' | relative_url }}" alt="TEDxBreckenridge speaker presenting">
-                <div class="theme-visual-overlay">
-                    <div class="theme-word"><span>I</span>nversion</div>
-                </div>
+                <img src="{{ '/assets/images/53230983645_7a48ea5b0a_k.jpg' | relative_url }}" alt="TEDxBreckenridge Salon gathering">
             </div>
         </div>
     </div>
 </section>
 
-<!-- Speakers Section -->
-<section class="section speakers-section" id="speakers">
+<!-- Save the Date Section -->
+<section class="section speakers-section" id="main-event">
     <div class="section-header">
-        <div class="section-eyebrow">Speakers</div>
-        <h2 class="section-title">Voices of Inversion</h2>
+        <div class="section-eyebrow">Save the Date</div>
+        <h2 class="section-title">TEDxBreckenridge 2026 Main Event</h2>
     </div>
-    <div class="speakers-intro">
-        <p>Our speakers are thinkers who've found clarity through reversal — scientists, artists, entrepreneurs, and community builders who've discovered that the best insights often come from flipping the script.</p>
+    <div class="speakers-intro" style="max-width: 700px; margin: 0 auto 48px; text-align: center;">
+        <p style="font-size: 24px; margin-bottom: 24px;"><strong>October 3, 2026</strong></p>
+        <p style="font-size: 18px; margin-bottom: 8px;">Riverwalk Center, Breckenridge, Colorado</p>
+        <p>Mark your calendar for an inspiring evening of ideas worth spreading. This year's theme, speaker lineup, and ticket information will be announced in the coming months.</p>
+        <p style="margin-top: 24px;">Want to speak at TEDxBreckenridge 2026? Applications are now open.</p>
     </div>
-    <div class="speakers-grid">
-        {% for i in (1..8) %}
-        <div class="speaker-card speaker-card-placeholder">
-            <div class="speaker-coming-soon">
-                <span class="number">{{ i | prepend: '0' | slice: -2, 2 }}</span>
-                <span>Coming soon</span>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    <div class="speakers-footer">
-        <p>Speaker announcements begin Spring 2026</p>
-        <a href="/contact" class="btn btn-secondary">Apply to Speak</a>
+    <div class="speakers-footer" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#newsletter" class="btn btn-primary">Join Our Newsletter</a>
+        <a href="https://tedxbreckenridge.com/speak" target="_blank" class="btn btn-secondary">Apply to Speak</a>
     </div>
 </section>
 
-<!-- Past Events Gallery -->
-<section class="section section-full gallery-section" id="gallery">
+<!-- Past Talks Section -->
+<section class="section section-full gallery-section" id="past-talks">
     <div class="section-inner">
-        <div class="section-eyebrow">Past Events</div>
-        <h2 class="section-title">Ideas in Action</h2>
+        <div class="section-eyebrow">Watch</div>
+        <h2 class="section-title">Past TEDxBreckenridge Talks</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 48px; font-size: 18px;">Explore ideas from our past events. Each talk shares unique perspectives from local voices, innovators, and community leaders.</p>
+
         <div class="gallery-grid">
-            <div class="gallery-item large">
-                <img src="{{ '/assets/images/53231001790_ba50b441c1_k.jpg' | relative_url }}" alt="TEDxBreckenridge main stage">
+            <!-- Video placeholders - replace with actual video embeds or links -->
+            <div class="gallery-item large" style="background: #f5f5f5; display: flex; align-items: center; justify-content: center; min-height: 300px; border-radius: 8px;">
+                <div style="text-align: center; padding: 40px;">
+                    <p style="font-size: 18px; margin-bottom: 16px;"><strong>Featured Talks</strong></p>
+                    <p>Video embeds coming soon</p>
+                    <a href="https://www.youtube.com/@tedxbreckenridge" target="_blank" style="display: inline-block; margin-top: 16px; color: #e62b1e;">Visit our YouTube channel →</a>
+                </div>
             </div>
             <div class="gallery-item">
                 <img src="{{ '/assets/images/53226450137_77812a2405_c.jpg' | relative_url }}" alt="TEDxBreckenridge speaker">
@@ -128,40 +131,12 @@ title: Home
                 <img src="{{ '/assets/images/53230483616_472841fbed_c.jpg' | relative_url }}" alt="TEDxBreckenridge networking">
             </div>
         </div>
-        <div class="gallery-cta">
-            <a href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank" rel="noopener">View all photos from past events</a>
-        </div>
-    </div>
-</section>
 
-<!-- Salon Section -->
-<section class="section section-full salon-section" id="salon">
-    <div class="section-inner">
-        <div class="salon-content">
-            <div class="salon-image">
-                <img src="{{ '/assets/images/53226450037_d47d66d6a5_k.jpg' | relative_url }}" alt="TEDxBreckenridge Salon gathering">
-                <div class="salon-image-overlay"></div>
-            </div>
-            <div class="salon-text">
-                <h3>Upcoming Salon</h3>
-                <h2>Intimate evenings of ideas and conversation</h2>
-                <p>TEDxBreckenridge Salons are smaller gatherings designed to spark discussion around a single idea. Join us for an evening of thoughtful exchange with your neighbors.</p>
-                <div class="salon-details">
-                    <div class="salon-detail">
-                        <span class="salon-detail-label">Date</span>
-                        <span class="salon-detail-value">To be announced</span>
-                    </div>
-                    <div class="salon-detail">
-                        <span class="salon-detail-label">Location</span>
-                        <span class="salon-detail-value">Summit County</span>
-                    </div>
-                    <div class="salon-detail">
-                        <span class="salon-detail-label">Tickets</span>
-                        <span class="salon-detail-value">$10 suggested donation</span>
-                    </div>
-                </div>
-                <p>Ideas should be accessible to everyone. If cost is a barrier, join us anyway — your curiosity matters most.</p>
-                <a href="/salons" class="btn btn-primary" style="margin-top: 12px;">Learn More</a>
+        <div class="gallery-cta" style="margin-top: 48px; text-align: center;">
+            <p style="margin-bottom: 16px; font-size: 18px;">Explore past themes and speakers</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="/talks" class="btn btn-primary">Watch All Talks</a>
+                <a href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank" rel="noopener" class="btn btn-secondary">View Event Photos</a>
             </div>
         </div>
     </div>
@@ -171,26 +146,32 @@ title: Home
 <section class="section support-section" id="support">
     <div class="section-header">
         <div class="section-eyebrow">Get Involved</div>
-        <h2 class="section-title">Support TEDxBreckenridge</h2>
+        <h2 class="section-title">Help Make TEDxBreckenridge 2026 Happen</h2>
     </div>
     <div class="support-grid">
         <div class="support-card">
             <div class="support-icon">◇</div>
-            <h3>Donate</h3>
-            <p>TEDxBreckenridge is a 501(c)(3) nonprofit run entirely by local volunteers. Your contribution helps us bring ideas worth spreading to Summit County.</p>
-            <a href="/donate" class="support-link">Make a gift</a>
+            <h3>Join Our Newsletter</h3>
+            <p>Stay connected and be the first to know about upcoming events, speaker announcements, and community gatherings.</p>
+            <a href="#newsletter" class="support-link">Subscribe now</a>
         </div>
         <div class="support-card">
             <div class="support-icon">○</div>
-            <h3>Volunteer</h3>
-            <p>Join our team of dedicated community members who make TEDxBreckenridge possible. We welcome all skills and backgrounds.</p>
-            <a href="/volunteer" class="support-link">Get involved</a>
+            <h3>Apply to Speak</h3>
+            <p>Have an idea worth spreading? We're looking for speakers who can share compelling stories and insights with our community.</p>
+            <a href="https://tedxbreckenridge.com/speak" target="_blank" class="support-link">Submit your application</a>
         </div>
         <div class="support-card">
             <div class="support-icon">□</div>
-            <h3>Sponsor</h3>
-            <p>Partner with us to support ideas worth spreading. Sponsorship opportunities are available at multiple levels.</p>
-            <a href="/sponsor" class="support-link">Become a sponsor</a>
+            <h3>Volunteer</h3>
+            <p>Join our planning team! We're just getting started and welcome community members with all skills and backgrounds.</p>
+            <a href="https://www.tedxbreckenridge.com/volunteer" target="_blank" class="support-link">Get involved</a>
+        </div>
+        <div class="support-card">
+            <div class="support-icon">◆</div>
+            <h3>Donate</h3>
+            <p>TEDxBreckenridge is a 501(c)(3) nonprofit run entirely by volunteers. Your contribution directly supports bringing ideas worth spreading to Summit County.</p>
+            <a href="https://givebutter.com/tedxbreckenridge" target="_blank" class="support-link">Make a gift</a>
         </div>
     </div>
 </section>
@@ -235,10 +216,10 @@ title: Home
 </section>
 
 <!-- Newsletter Section -->
-<section class="newsletter-section">
+<section class="newsletter-section" id="newsletter">
     <div class="newsletter-content">
         <h2>Stay in the know</h2>
-        <p>Subscribe for updates on speakers, ticket releases, and community events.</p>
+        <p>Subscribe for updates on upcoming events, speaker announcements, and Salon gatherings.</p>
         <form class="newsletter-form">
             <input type="email" class="newsletter-input" placeholder="Your email address" required>
             <button type="submit" class="btn btn-primary">Subscribe</button>
