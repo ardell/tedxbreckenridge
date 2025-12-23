@@ -1,26 +1,28 @@
-/* TEDxBreckenridge 2026 - Inversion Theme */
+/* TEDxBreckenridge 2026 - Evergreen Theme */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
 :root {
     /* Core TED Brand */
-    --ted-red: #EB0028;
+    --ted-red: #e62b1e;
     --ted-black: #000000;
     --white: #FFFFFF;
 
-    /* 2026 Inversion - Northern Lights Inspired Palette */
-    --violet: #E6DFE3;
-    --lilac: #9657A3;
-    --twilight: #4E4484;
-    --aqua: #67A1D0;
-    --mint: #AED2C0;
-    --eclipse: #2A4B5B;
+    /* 2026 Evergreen - Mountain Inspired Palette */
+    --terracotta: #C75B4D;
+    --rust: #B8503F;
+    --teal: #5B8E8E;
+    --forest: #4A7470;
+    --charcoal: #2A2A2A;
+    --stone: #6B6B6B;
+    --cream: #F5F3F0;
+    --sand: #E8E6E3;
 
     /* Tints */
-    --violet-80: #EBE5E8;
-    --mint-40: #D7E9E0;
-    --aqua-20: #E1EEF6;
-    --twilight-80: #625799;
+    --terracotta-light: #E6A199;
+    --teal-light: #A3C4C4;
+    --cream-dark: #EAE7E3;
+    --sand-light: #F2F0ED;
 
     /* Typography */
     --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -88,7 +90,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--twilight);
+    color: var(--teal);
 }
 
 .nav-cta {
@@ -127,7 +129,7 @@ body {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.12em;
-    color: var(--eclipse);
+    color: var(--stone);
     margin-bottom: 24px;
     text-transform: uppercase;
 }
@@ -160,7 +162,7 @@ body {
     font-size: 17px;
     font-weight: 300;
     line-height: 1.75;
-    color: var(--eclipse);
+    color: var(--charcoal);
     margin-bottom: 40px;
     max-width: 480px;
     opacity: 0;
@@ -184,7 +186,7 @@ body {
 .hero-meta-label {
     font-size: 11px;
     font-weight: 400;
-    color: var(--aqua);
+    color: var(--teal);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
@@ -218,7 +220,7 @@ body {
 .hero-visual-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(78,68,132,0.85) 0%, rgba(42,75,91,0.9) 100%);
+    background: linear-gradient(135deg, rgba(199,91,77,0.85) 0%, rgba(91,142,142,0.9) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,7 +238,7 @@ body {
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 0.2em;
-    color: var(--mint);
+    color: var(--teal-light);
     margin-bottom: 16px;
     text-transform: uppercase;
 }
@@ -271,13 +273,13 @@ body {
 .btn-secondary {
     background: transparent;
     color: var(--ted-black);
-    border: 1px solid var(--eclipse);
+    border: 1px solid var(--charcoal);
 }
 
 .btn-secondary:hover {
-    background: var(--eclipse);
+    background: var(--charcoal);
     color: var(--white);
-    border-color: var(--eclipse);
+    border-color: var(--charcoal);
 }
 
 @keyframes fadeIn {
@@ -316,7 +318,7 @@ body {
     font-family: var(--font-primary);
     font-size: 11px;
     font-weight: 500;
-    color: var(--lilac);
+    color: var(--terracotta);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-bottom: 12px;
@@ -359,7 +361,7 @@ body {
 
 /* Theme Section */
 .theme-section {
-    background: var(--violet);
+    background: var(--cream);
     padding: 100px 0;
 }
 
@@ -374,7 +376,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     line-height: 1.85;
-    color: var(--eclipse);
+    color: var(--charcoal);
     margin-bottom: 20px;
 }
 
@@ -428,7 +430,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     line-height: 1.8;
-    color: var(--eclipse);
+    color: var(--charcoal);
 }
 
 .speakers-grid {
@@ -477,7 +479,7 @@ body {
 }
 
 .speaker-card-placeholder {
-    background: linear-gradient(145deg, var(--violet) 0%, var(--mint-40) 100%);
+    background: linear-gradient(145deg, var(--sand) 0%, var(--teal-light) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -492,7 +494,7 @@ body {
     font-family: var(--font-primary);
     font-size: 40px;
     font-weight: 400;
-    color: var(--twilight);
+    color: var(--teal);
     opacity: 0.4;
     margin-bottom: 8px;
 }
@@ -500,7 +502,7 @@ body {
 .speaker-coming-soon span {
     font-size: 11px;
     font-weight: 400;
-    color: var(--eclipse);
+    color: var(--charcoal);
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -511,13 +513,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 32px;
-    border-top: 1px solid var(--violet);
+    border-top: 1px solid var(--sand);
 }
 
 .speakers-footer p {
     font-size: 14px;
     font-weight: 300;
-    color: var(--eclipse);
+    color: var(--charcoal);
 }
 
 /* Past Events Gallery */
@@ -531,7 +533,7 @@ body {
 }
 
 .gallery-section .section-eyebrow {
-    color: var(--mint);
+    color: var(--teal-light);
 }
 
 .gallery-section .section-title {
@@ -574,7 +576,7 @@ body {
 }
 
 .gallery-cta a {
-    color: var(--mint);
+    color: var(--teal-light);
     font-size: 14px;
     text-decoration: none;
     display: inline-flex;
@@ -593,7 +595,7 @@ body {
 
 /* Salon Section */
 .salon-section {
-    background: var(--mint-40);
+    background: var(--teal-light);
 }
 
 .salon-content {
@@ -617,14 +619,14 @@ body {
 .salon-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(42,75,91,0.3) 0%, rgba(78,68,132,0.3) 100%);
+    background: linear-gradient(135deg, rgba(91,142,142,0.3) 0%, rgba(199,91,77,0.3) 100%);
 }
 
 .salon-text h3 {
     font-family: var(--font-primary);
     font-size: 11px;
     font-weight: 500;
-    color: var(--lilac);
+    color: var(--terracotta);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-bottom: 16px;
@@ -643,7 +645,7 @@ body {
     font-size: 15px;
     font-weight: 300;
     line-height: 1.8;
-    color: var(--eclipse);
+    color: var(--charcoal);
     margin-bottom: 20px;
 }
 
@@ -654,7 +656,7 @@ body {
     margin: 28px 0;
     padding: 20px 24px;
     background: var(--white);
-    border-left: 3px solid var(--lilac);
+    border-left: 3px solid var(--terracotta);
 }
 
 .salon-detail {
@@ -665,7 +667,7 @@ body {
 
 .salon-detail-label {
     font-weight: 300;
-    color: var(--aqua);
+    color: var(--teal);
     min-width: 64px;
 }
 
@@ -686,7 +688,7 @@ body {
 }
 
 .support-card {
-    background: var(--violet);
+    background: var(--cream);
     padding: 36px;
     display: flex;
     flex-direction: column;
@@ -695,7 +697,7 @@ body {
 }
 
 .support-card:hover {
-    background: var(--violet-80);
+    background: var(--cream-dark);
 }
 
 .support-icon {
@@ -707,7 +709,7 @@ body {
     justify-content: center;
     margin-bottom: 24px;
     font-size: 18px;
-    color: var(--lilac);
+    color: var(--terracotta);
 }
 
 .support-card h3 {
@@ -722,7 +724,7 @@ body {
     font-size: 14px;
     font-weight: 300;
     line-height: 1.7;
-    color: var(--eclipse);
+    color: var(--charcoal);
     flex-grow: 1;
 }
 
@@ -730,7 +732,7 @@ body {
     font-family: var(--font-primary);
     font-size: 13px;
     font-weight: 400;
-    color: var(--twilight);
+    color: var(--teal);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -750,7 +752,7 @@ body {
 
 /* Sponsors Section */
 .sponsors-section {
-    background: var(--violet);
+    background: var(--cream);
 }
 
 .sponsors-tier {
@@ -765,7 +767,7 @@ body {
     font-family: var(--font-primary);
     font-size: 11px;
     font-weight: 400;
-    color: var(--eclipse);
+    color: var(--charcoal);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -787,12 +789,12 @@ body {
     justify-content: center;
     font-size: 11px;
     font-weight: 300;
-    color: var(--eclipse);
+    color: var(--charcoal);
     transition: background 0.2s ease;
 }
 
 .sponsor-logo-placeholder:hover {
-    background: var(--mint-40);
+    background: var(--teal-light);
 }
 
 .sponsors-platinum .sponsor-logo-placeholder {
@@ -812,12 +814,12 @@ body {
 .sponsors-cta p {
     font-size: 14px;
     font-weight: 300;
-    color: var(--eclipse);
+    color: var(--charcoal);
 }
 
 /* Newsletter Section */
 .newsletter-section {
-    background: var(--eclipse);
+    background: var(--charcoal);
     padding: 72px 48px;
     color: var(--white);
 }
@@ -838,7 +840,7 @@ body {
 .newsletter-content p {
     font-size: 14px;
     font-weight: 300;
-    color: var(--mint);
+    color: var(--teal-light);
     margin-bottom: 28px;
 }
 
@@ -860,12 +862,12 @@ body {
 }
 
 .newsletter-input::placeholder {
-    color: var(--mint);
+    color: var(--teal-light);
 }
 
 .newsletter-input:focus {
     outline: none;
-    border-color: var(--aqua);
+    border-color: var(--teal);
     background: rgba(255,255,255,0.15);
 }
 
@@ -892,7 +894,7 @@ body {
     font-size: 13px;
     font-weight: 300;
     line-height: 1.7;
-    color: var(--aqua);
+    color: var(--teal-light);
     margin-top: 20px;
     max-width: 280px;
 }
@@ -908,7 +910,7 @@ body {
     font-weight: 400;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--mint);
+    color: var(--terracotta-light);
     margin-bottom: 18px;
 }
 
@@ -923,7 +925,7 @@ body {
 .footer-column a {
     font-size: 13px;
     font-weight: 300;
-    color: var(--aqua);
+    color: var(--teal-light);
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -943,7 +945,7 @@ body {
 .footer-legal {
     font-size: 11px;
     font-weight: 300;
-    color: var(--aqua);
+    color: var(--teal-light);
 }
 
 .footer-social {
@@ -954,7 +956,7 @@ body {
 .footer-social a {
     font-size: 12px;
     font-weight: 300;
-    color: var(--mint);
+    color: var(--terracotta-light);
     text-decoration: none;
     transition: color 0.2s ease;
 }
