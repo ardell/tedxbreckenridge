@@ -85,20 +85,94 @@ title: Home
 </section>
 
 <!-- Save the Date Section -->
-<section class="section speakers-section" id="main-event">
-    <div class="section-header">
-        <div class="section-eyebrow">Save the Date</div>
-        <h2 class="section-title">TEDxBreckenridge 2026 Main Event</h2>
-    </div>
-    <div class="speakers-intro" style="max-width: 700px; margin: 0 auto 48px; text-align: center;">
-        <p style="font-size: 24px; margin-bottom: 24px;"><strong>October 3, 2026</strong></p>
-        <p style="font-size: 18px; margin-bottom: 8px;">Riverwalk Center, Breckenridge, Colorado</p>
-        <p>Mark your calendar for an inspiring evening of ideas worth spreading. This year's theme, speaker lineup, and ticket information will be announced in the coming months.</p>
-        <p style="margin-top: 24px;">Want to speak at TEDxBreckenridge 2026? Applications are now open.</p>
-    </div>
-    <div class="speakers-footer" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="#newsletter" class="btn btn-primary">Join Our Newsletter</a>
-        <a href="https://tedxbreckenridge.com/speak" target="_blank" class="btn btn-secondary">Apply to Speak</a>
+<section class="section section-full" id="main-event" style="background: #fafafa; overflow: hidden; min-height: 700px;">
+    <style>
+        .save-date-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 700px;
+        }
+        .save-date-content {
+            padding: 80px 80px 80px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .save-date-image {
+            position: relative;
+            margin-right: -100px;
+        }
+        .save-date-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        @media (max-width: 900px) {
+            .save-date-container {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .save-date-content {
+                padding: 60px 24px;
+                order: 1;
+            }
+            .save-date-image {
+                margin-right: 0;
+                height: 400px;
+                order: 2;
+            }
+            .save-date-image img {
+                position: relative;
+            }
+        }
+        @media (max-width: 600px) {
+            .save-date-content {
+                padding: 40px 24px;
+            }
+            .save-date-content h2 {
+                font-size: 2rem !important;
+            }
+            .save-date-content .date-large {
+                font-size: 1.5rem !important;
+            }
+            .save-date-image {
+                height: 300px;
+            }
+        }
+    </style>
+    <div class="save-date-container">
+        <div class="save-date-content">
+            <div class="section-eyebrow">Save the Date</div>
+            <h2 style="font-size: 3rem; line-height: 1.1; margin: 16px 0 32px;">TEDxBreckenridge 2026 Main Event</h2>
+
+            <div style="margin-bottom: 32px;">
+                <p class="date-large" style="font-size: 2rem; font-weight: 700; margin-bottom: 8px; color: #e62b1e;">October 3, 2026</p>
+                <p style="font-size: 1.25rem; color: #666; margin-bottom: 24px;">Riverwalk Center<br>Breckenridge, Colorado</p>
+            </div>
+
+            <p style="font-size: 1.125rem; line-height: 1.6; margin-bottom: 24px; color: #333;">
+                Mark your calendar for an inspiring evening of ideas worth spreading. This year's theme, speaker lineup, and ticket information will be announced in the coming months.
+            </p>
+
+            <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 32px; color: #666;">
+                Want to speak at TEDxBreckenridge 2026? Applications are now open.
+            </p>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a href="#newsletter" class="btn btn-primary">Join Our Newsletter</a>
+                <a href="https://tedxbreckenridge.com/speak" target="_blank" class="btn btn-secondary">Apply to Speak</a>
+            </div>
+        </div>
+
+        <div class="save-date-image">
+            <img src="{{ '/assets/images/54345834371_10a846b336_k.jpg' | relative_url }}" alt="TEDxBreckenridge event">
+        </div>
     </div>
 </section>
 
