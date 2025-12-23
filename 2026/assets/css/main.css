@@ -1443,6 +1443,202 @@ body {
     color: var(--stone);
 }
 
+/* Contact Options */
+.contact-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-bottom: 100px;
+}
+
+.contact-option {
+    padding: 40px 32px;
+    background: var(--white);
+    border: 2px solid var(--sand);
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contact-option:hover {
+    border-color: var(--teal);
+    box-shadow: 0 8px 24px rgba(91, 142, 142, 0.12);
+    transform: translateY(-4px);
+}
+
+.contact-option-icon {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+.contact-option h3 {
+    font-size: 22px;
+    color: var(--ted-black);
+    margin: 0 0 16px 0;
+    font-weight: 500;
+}
+
+.contact-option p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--stone);
+    margin: 0 0 24px 0;
+}
+
+.contact-option-link {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 2px solid var(--teal-light);
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+}
+
+.contact-option-link:hover {
+    color: var(--terracotta);
+    border-bottom-color: var(--terracotta);
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    max-width: 700px;
+    margin: 0 auto 100px;
+    padding: 60px;
+    background: var(--cream);
+    border-radius: 8px;
+}
+
+.contact-form-intro {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.contact-form-intro h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    margin: 0 0 16px 0;
+    color: var(--ted-black);
+}
+
+.contact-form-intro p {
+    font-size: 17px;
+    color: var(--stone);
+    margin: 0;
+}
+
+.contact-form {
+    max-width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ted-black);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    color: var(--ted-black);
+    background: var(--white);
+    border: 2px solid var(--sand);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 4px rgba(91, 142, 142, 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Contact Social */
+.contact-social {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 0 0;
+    border-top: 2px solid var(--sand);
+}
+
+.contact-social h3 {
+    font-size: 24px;
+    color: var(--ted-black);
+    margin: 0 0 12px 0;
+}
+
+.contact-social p {
+    font-size: 16px;
+    color: var(--stone);
+    margin: 0 0 32px 0;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--white);
+    border: 2px solid var(--sand);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--ted-black);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    border-color: var(--teal);
+    background: var(--cream);
+    transform: translateY(-2px);
+}
+
+.social-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.social-label {
+    font-size: 15px;
+}
+
 /* Blog Posts */
 .blog-posts {
     display: flex;
@@ -1598,5 +1794,27 @@ body {
 
     .team-member img {
         height: 320px;
+    }
+
+    .contact-options {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-section {
+        padding: 40px 24px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-link {
+        justify-content: center;
     }
 }
