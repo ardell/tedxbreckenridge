@@ -13,12 +13,17 @@ bundle install
 
 ### Local Development
 
+**Important:** Use `mise exec` to ensure you're using the correct Ruby version (3.4.8):
+
 ```bash
 # Start the development server
-bundle exec jekyll serve
+mise exec -- bundle exec jekyll serve
 
 # With live reload
-bundle exec jekyll serve --livereload
+mise exec -- bundle exec jekyll serve --livereload
+
+# Or use the helper script
+../scripts/serve.sh
 ```
 
 Visit http://localhost:4000 to preview the site.
@@ -27,7 +32,10 @@ Visit http://localhost:4000 to preview the site.
 
 ```bash
 # Build the site
-JEKYLL_ENV=production bundle exec jekyll build
+mise exec -- bundle exec jekyll build
+
+# Or with environment variable
+JEKYLL_ENV=production mise exec -- bundle exec jekyll build
 ```
 
 The built site will be in the `_site/` directory.

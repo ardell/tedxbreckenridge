@@ -1,0 +1,6 @@
+[tools]
+ruby = "3.4.8"
+
+[env]
+# Bundler will install gems in vendor/bundle within each year directory
+# This provides gem isolation similar to RVM gemsets

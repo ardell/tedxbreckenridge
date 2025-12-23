@@ -3,8 +3,9 @@
 title: TEDxBreckenridge 2026
 email: info@tedxbreckenridge.com
 description: >-
-  TEDxBreckenridge 2026 - Ideas Worth Spreading.
-  Join us for an inspiring day of talks and performances in Breckenridge, Colorado.
+  TEDxBreckenridge 2026 - Inversion. What happens when we flip our assumptions?
+  Join us for an evening of ideas that challenge perspective, reverse conventional
+  thinking, and reveal what lies on the other side.
 
 baseurl: "" # subpath of your site, e.g. /2026
 url: "https://tedxbreckenridge.com" # base hostname & protocol
@@ -12,13 +13,17 @@ url: "https://tedxbreckenridge.com" # base hostname & protocol
 # Event Details
 event:
   year: 2026
-  date: "TBA"
-  venue: "Breckenridge, Colorado"
-  theme: "TBA" # Update with year's theme
+  date: "October 3, 2026"
+  date_short: "October 3"
+  time: "5:00 PM"
+  venue: "Riverwalk Center, Breckenridge, Colorado"
+  venue_short: "Riverwalk Center"
+  format: "In-person"
+  theme: "Inversion"
+  theme_description: "What happens when we flip our assumptions? Join us for an evening of ideas that challenge perspective, reverse conventional thinking, and reveal what lies on the other side."
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -50,6 +55,7 @@ social:
   facebook: tedxbreckenridge
   instagram: tedxbreckenridge
   youtube: tedxbreckenridge
+  linkedin: tedxbreckenridge
 
 # Analytics (add your tracking IDs)
 google_analytics: ""

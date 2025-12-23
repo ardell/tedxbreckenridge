@@ -1,114 +1,178 @@
 # TEDxBreckenridge 2026 Style Guide
 
-This directory contains the design system and style guide for the 2026 event.
+## Theme: Inversion
 
-## Theme
+**"What happens when we flip our assumptions?"**
 
-**To be determined** - Update this section with the 2026 event theme once finalized.
+Inversion is a way of thinking that challenges conventional wisdom. By turning perspectives upside down, we discover insights hidden in plain sight. The 2026 visual identity reflects this concept through inverted perspectives, Northern Lights-inspired colors, and dynamic contrasts.
 
 ## Brand Colors
 
-### Primary Colors
-- **TED Red**: `#e62b1e` - Official TED brand color (required by license)
-- **Primary**: `#e62b1e` - Main accent color
-- **Secondary**: `#000000` - Black for text and structural elements
-- **Accent**: `#ffffff` - White for backgrounds and contrast
+### Core TED Brand
+- **TED Red**: `#EB0028` - Official TED brand color (required by license)
+- **TED Black**: `#000000` - Primary text and structural elements
+- **White**: `#FFFFFF` - Backgrounds and contrast
 
-### Extended Palette
-Add year-specific colors here based on the theme:
-- Theme Color 1: `#______`
-- Theme Color 2: `#______`
-- Theme Color 3: `#______`
+### 2026 Inversion Palette - Northern Lights Inspired
+
+Our color palette draws inspiration from the Northern Lights (aurora borealis), reflecting the theme of inversion - the moment when day turns to night and nature reveals hidden wonders.
+
+#### Primary Colors
+- **Violet**: `#E6DFE3` - Soft twilight base
+- **Lilac**: `#9657A3` - Purple aurora glow
+- **Twilight**: `#4E4484` - Deep evening purple
+- **Aqua**: `#67A1D0` - Cool northern blue
+- **Mint**: `#AED2C0` - Fresh arctic green
+- **Eclipse**: `#2A4B5B` - Deep night shadow
+
+#### Tints & Variations
+- **Violet 80%**: `#EBE5E8` - Lighter backgrounds
+- **Mint 40%**: `#D7E9E0` - Subtle accents
+- **Aqua 20%**: `#E1EEF6` - Very light highlights
+- **Twilight 80%**: `#625799` - Mid-tone purple
+
+### Color Usage Guidelines
+
+1. **Hero Sections**: Use gradient overlays (Twilight → Eclipse) over imagery
+2. **Backgrounds**: Alternate between Violet and Mint-40 for section variety
+3. **Text**: Eclipse for body text, TED Black for headings
+4. **Accents**: Lilac for eyebrows/labels, Aqua for meta information
+5. **CTAs**: TED Red for primary actions, Eclipse for secondary
 
 ## Typography
 
 ### Fonts
-- **Primary Font**: Helvetica Neue, Helvetica, Arial, sans-serif
-- **Heading Font**: Helvetica Neue, Helvetica, Arial, sans-serif
-
-Consider using custom fonts that align with the 2026 theme.
+- **Primary Font**: Helvetica Neue, Helvetica, Arial, sans-serif (headings, labels)
+- **Alternative Font**: Inter (body text, UI elements)
 
 ### Type Scale
-- **H1**: 2.5rem (40px)
-- **H2**: 2rem (32px)
-- **H3**: 1.5rem (24px)
-- **Body**: 1rem (16px)
-- **Small**: 0.875rem (14px)
+- **Hero Title**: clamp(56px, 8vw, 88px) - Large, dramatic
+- **Hero Date**: clamp(36px, 5vw, 56px) - Emphasis on event
+- **Section Title**: clamp(28px, 4vw, 40px) - Section headers
+- **Body Text**: 16-17px - Comfortable reading
+- **Small Text**: 11-14px - Labels and meta
+
+### Font Weights
+- **Light (300)**: Body text, descriptions
+- **Regular (400)**: Headings, navigation
+- **Medium (500)**: Buttons, eyebrows
+
+### Letter Spacing
+- **Headings**: -0.02em to -0.03em (tight)
+- **Labels/Eyebrows**: 0.1em to 0.12em (wide, uppercase)
+- **Body**: Normal
 
 ## Logo Guidelines
 
-### TEDx Logo Requirements
-- Must use official TEDx logo provided by TED
-- Maintain minimum clear space around logo
-- Do not modify colors or proportions
-- Use on contrasting backgrounds for legibility
+### TEDxBreckenridge Logo
 
-### Event Logo
-Place the event-specific logo files in the `logos/` directory:
-- `tedxbreckenridge-2026-primary.svg`
-- `tedxbreckenridge-2026-white.svg`
-- `tedxbreckenridge-2026-black.svg`
+Two versions available:
+- `tedx-breckenridge-logo-black.png` - Use on light backgrounds
+- `tedx-breckenridge-logo-white.png` - Use on dark backgrounds
+
+### Logo Usage
+- Height: 60px in navigation, 40px in footer
+- Maintain clear space around logo
+- Do not modify colors or proportions
+- Must use official TEDx logo as provided by TED
 
 ## Photography Style
 
-Guidelines for event photography:
-- High-quality, professional images
-- Natural lighting when possible
-- Mountain/Breckenridge setting when relevant
-- Diverse representation of speakers and attendees
+### Image Treatment
+- **Filters**: Slight grayscale (20%) on hover transitions to full color
+- **Overlays**: Dark gradients (black 70-80% opacity) on imagery
+- **Style**: Professional event photography from past TEDx events
+- **Source**: Flickr photo collection from previous years
+
+### Photo Banner
+- Grid of 5 square photos (1:1 aspect ratio)
+- 4px gap between images
+- Hover effect: Scale 1.05x transform
+
+## Layout & Spacing
+
+### Grid System
+- **Container**: Max-width 1400px
+- **Section Padding**: 100px vertical, 48px horizontal
+- **Inner Spacing**: 80px gaps between major elements
+- **Card Gaps**: 20-24px
+
+### Responsive Breakpoints
+- **Desktop**: > 1024px
+- **Tablet**: 768px - 1024px
+- **Mobile**: < 768px
+
+## Design Elements
+
+### Sections
+- **Hero**: Split 50/50 grid (content | visual)
+- **Photo Banner**: 5-column grid with hover effects
+- **Theme**: 50/50 grid with image overlay
+- **Speakers**: 4-column grid (2 on tablet, 1 on mobile)
+- **Gallery**: 4-column masonry (large item spans 2x2)
+- **Salon**: Asymmetric 1.1:1 grid
+- **Support**: 3-column cards
+- **Sponsors**: Tiered horizontal layout
+
+### Cards & Components
+- **Speaker Cards**: 3:4 aspect ratio, gradient placeholder
+- **Support Cards**: Min-height 280px, violet background
+- **Buttons**: 14px padding vertical, 28px horizontal
+
+### Hover States
+- **Links**: Color shift to Twilight or TED Red
+- **Images**: Scale transform or filter change
+- **Cards**: Slight translateY(-4px) lift
+
+### Animations
+- **Fade In**: 0.6s ease with staggered delays
+- **Transform**: translateY(16px) → 0
+- **Timing**: 0.2-0.4s for interactions
 
 ## Iconography
 
-- Clean, modern icons
-- Consistent stroke weight
-- Use solid fills for primary actions
-- Outlined for secondary elements
+Simple geometric shapes for support cards:
+- ◇ (diamond) - Donate
+- ○ (circle) - Volunteer
+- □ (square) - Sponsor
 
-## Spacing System
+## Key Design Principles
 
-Based on 1rem (16px) base unit:
-- **XS**: 0.25rem (4px)
-- **S**: 0.5rem (8px)
-- **M**: 1rem (16px)
-- **L**: 1.5rem (24px)
-- **XL**: 2rem (32px)
-- **XXL**: 3rem (48px)
+1. **Contrast**: Bold juxtaposition of light and dark
+2. **Movement**: Animations suggest flipping/inverting
+3. **Atmosphere**: Northern Lights color palette creates wonder
+4. **Clarity**: Clean typography and generous white space
+5. **Depth**: Layered overlays and gradients
 
-## Grid System
+## CSS Variables
 
-- Container max-width: 1200px
-- Responsive breakpoints:
-  - Mobile: < 768px
-  - Tablet: 768px - 1024px
-  - Desktop: > 1024px
+All colors and fonts are defined as CSS custom properties in `assets/css/main.css`:
 
-## Asset Organization
+```css
+:root {
+    --ted-red: #EB0028;
+    --violet: #E6DFE3;
+    --lilac: #9657A3;
+    --twilight: #4E4484;
+    --aqua: #67A1D0;
+    --mint: #AED2C0;
+    --eclipse: #2A4B5B;
 
-```
-style-guide/
-├── README.md (this file)
-├── colors.md
-├── typography.md
-├── logos/
-│   ├── tedxbreckenridge-2026-primary.svg
-│   └── ...
-├── images/
-│   ├── hero-background.jpg
-│   └── ...
-└── mockups/
-    ├── homepage.png
-    └── ...
+    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-alt: 'Inter', Arial, sans-serif;
+}
 ```
 
-## Design Principles
+## Implementation Notes
 
-1. **Clarity**: Information should be easy to find and understand
-2. **Accessibility**: Design for all users, following WCAG 2.1 AA standards
-3. **Consistency**: Maintain visual harmony across all pages
-4. **Boldness**: Reflect the TED spirit of bold ideas
-5. **Local Character**: Incorporate Breckenridge's mountain identity
+- Use `relative_url` filter for all asset paths in Jekyll
+- Maintain semantic HTML structure
+- Ensure WCAG 2.1 AA accessibility standards
+- Test across browsers and devices
+- Optimize images for web (JPEGs for photos)
 
 ## References
 
 - [TED Brand Guidelines](https://www.ted.com/about/our-organization/our-policies-terms/ted-brand-guidelines)
 - [TEDx Logo Templates](https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide/branding-promotion/logo)
+- [Past Event Photos](https://www.flickr.com/photos/tedxbreckenridge/)

@@ -23,10 +23,26 @@ Each year directory contains:
 
 ## Prerequisites
 
-- Ruby (2.7+)
-- Bundler: `gem install bundler`
-- Jekyll: `gem install jekyll`
-- AWS CLI configured with appropriate credentials
+- **Ruby 3.4.8** (managed via mise)
+- **mise**: [Install mise](https://mise.jdx.dev/getting-started.html)
+- AWS CLI configured with appropriate credentials (for deployment)
+
+### Ruby Version Management
+
+This project uses [mise](https://mise.jdx.dev/) for Ruby version management:
+
+```bash
+# Install mise (if not already installed)
+curl https://mise.run | sh
+
+# Install Ruby 3.4.8
+mise install
+
+# Verify
+ruby -v  # Should show ruby 3.4.8
+```
+
+**Note on Gemsets:** mise doesn't use gemsets like RVM. Instead, each year directory (2026, 2027, etc.) has gems installed locally in `vendor/bundle`, providing better isolation. See [MISE_SETUP.md](MISE_SETUP.md) for details.
 
 ## Local Development
 

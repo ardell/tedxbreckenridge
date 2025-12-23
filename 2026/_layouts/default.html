@@ -22,64 +22,77 @@
   {% endif %}
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <nav class="site-nav">
-        <a href="/" class="site-logo">{{ site.title }}</a>
-        <ul class="nav-menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/speakers/">Speakers</a></li>
-          <li><a href="/schedule/">Schedule</a></li>
-          <li><a href="/tickets/">Tickets</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="/" class="nav-logo">
+      <img src="{{ '/assets/images/tedx-breckenridge-logo-black.png' | relative_url }}" alt="TEDxBreckenridge">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#theme">Theme</a></li>
+      <li><a href="/#speakers">Speakers</a></li>
+      <li><a href="/#gallery">Gallery</a></li>
+      <li><a href="/talks">Watch</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <a href="/#tickets" class="nav-cta">Get Tickets</a>
+  </nav>
 
-  <main class="page-content">
-    <div class="container">
-      {{ content }}
-    </div>
+  <main>
+    {{ content }}
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>{{ site.title }}</h3>
-          <p>{{ site.description }}</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="{{ '/assets/images/tedx-breckenridge-logo-white.png' | relative_url }}" alt="TEDxBreckenridge" class="footer-logo">
+          <p>A 501(c)(3) nonprofit bringing ideas worth spreading to Summit County, Colorado. Run entirely by local volunteers.</p>
         </div>
-
-        <div class="footer-section">
-          <h3>Connect</h3>
-          <ul class="social-links">
-            {% if site.social.twitter %}
-            <li><a href="https://twitter.com/{{ site.social.twitter }}">Twitter</a></li>
-            {% endif %}
-            {% if site.social.facebook %}
-            <li><a href="https://facebook.com/{{ site.social.facebook }}">Facebook</a></li>
-            {% endif %}
-            {% if site.social.instagram %}
-            <li><a href="https://instagram.com/{{ site.social.instagram }}">Instagram</a></li>
-            {% endif %}
-            {% if site.social.youtube %}
-            <li><a href="https://youtube.com/{{ site.social.youtube }}">YouTube</a></li>
-            {% endif %}
+        <div class="footer-column">
+          <h4>Attend</h4>
+          <ul>
+            <li><a href="/tickets">Get Tickets</a></li>
+            <li><a href="/speakers">2026 Speakers</a></li>
+            <li><a href="/salons">Salon Series</a></li>
+            <li><a href="/faq">FAQ</a></li>
           </ul>
         </div>
-
-        <div class="footer-section">
-          <h3>Legal</h3>
-          <p class="license-info">
-            This independent TEDx event is operated under license from TED.
-          </p>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="/donate">Donate</a></li>
+            <li><a href="/volunteer">Volunteer</a></li>
+            <li><a href="/sponsor">Sponsor</a></li>
+            <li><a href="/shop">Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Discover</h4>
+          <ul>
+            <li><a href="/talks">Watch Talks</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/team">Team</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+        <div class="footer-legal">
+          <p>This independent TEDx event is operated under license from TED.</p>
+        </div>
+        <div class="footer-social">
+          {% if site.social.instagram %}
+          <a href="https://instagram.com/{{ site.social.instagram }}">Instagram</a>
+          {% endif %}
+          {% if site.social.youtube %}
+          <a href="https://youtube.com/{{ site.social.youtube }}">YouTube</a>
+          {% endif %}
+          <a href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank">Flickr</a>
+          {% if site.social.linkedin %}
+          <a href="https://linkedin.com/company/{{ site.social.linkedin }}">LinkedIn</a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </footer>
