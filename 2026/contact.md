@@ -1,31 +1,18 @@
 ---
-layout: page
-title: Contact Us
+layout: default
+title: Contact
 permalink: /contact/
 ---
 
-## Get in Touch
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-content">
+      <h1>Contact Us</h1>
+      <p>Get in touch with the TEDxBreckenridge team</p>
+    </div>
+  </div>
 
-Have questions about TEDxBreckenridge? We'd love to hear from you.
-
-### Email
-
-[{{ site.email }}](mailto:{{ site.email }})
-
-### Social Media
-
-Connect with us on social media for the latest updates:
-
-- [Twitter](https://twitter.com/{{ site.social.twitter }})
-- [Facebook](https://facebook.com/{{ site.social.facebook }})
-- [Instagram](https://instagram.com/{{ site.social.instagram }})
-
-## Sponsorship Opportunities
-
-Interested in partnering with TEDxBreckenridge? We offer various sponsorship opportunities to help bring ideas worth spreading to our community.
-
-Please reach out to discuss how we can work together.
-
-## Press Inquiries
-
-For media and press inquiries, please contact us at [{{ site.email }}](mailto:{{ site.email }}).
+  <div class="page-content">
+    <p><em>Contact content will be added here from the main site.</em></p>
+  </div>
+</div>
