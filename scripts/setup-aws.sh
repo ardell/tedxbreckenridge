@@ -1,22 +1,28 @@
 #!/bin/bash
 
 # TEDxBreckenridge AWS Infrastructure Setup
-# Creates S3 bucket and CloudFront distribution for a specific year
+# Creates S3 bucket for static website hosting
+#
+# NOTE: This script is now simplified. For full-featured setup with SSO validation,
+# versioning, and proper tagging, use: ./scripts/aws/setup-bucket.sh
 
 set -e
 
 YEAR=$1
 AWS_PROFILE=${AWS_PROFILE:-default}
-AWS_REGION=${AWS_REGION:-us-east-1}
+AWS_REGION=${AWS_REGION:-us-west-1}
 S3_BUCKET="tedxbreckenridge-${YEAR}"
 
 if [ -z "$YEAR" ]; then
   echo "Usage: ./scripts/setup-aws.sh <year>"
   echo "Example: ./scripts/setup-aws.sh 2026"
   echo ""
+  echo "For full-featured setup with SSO, use:"
+  echo "  ./scripts/aws/setup-bucket.sh <year>"
+  echo ""
   echo "Environment Variables:"
   echo "  AWS_PROFILE: AWS CLI profile to use (default: default)"
-  echo "  AWS_REGION: AWS region (default: us-east-1)"
+  echo "  AWS_REGION: AWS region (default: us-west-1)"
   exit 1
 fi
 
@@ -38,13 +44,20 @@ fi
 
 # Create S3 bucket
 echo "Step 1: Creating S3 bucket..."
-if aws s3 ls "s3://${S3_BUCKET}" --profile "$AWS_PROFILE" &> /dev/null; then
+if aws s3 ls "s3://${S3_BUCKET}" --profile "$AWS_PROFILE" --region "$AWS_REGION" &> /dev/null; then
   echo "✓ Bucket already exists: s3://${S3_BUCKET}"
 else
+  # For us-east-1, don't specify LocationConstraint; for other regions, specify it
   if [ "$AWS_REGION" = "us-east-1" ]; then
-    aws s3 mb "s3://${S3_BUCKET}" --profile "$AWS_PROFILE"
+    aws s3api create-bucket \
+      --bucket "$S3_BUCKET" \
+      --profile "$AWS_PROFILE"
   else
-    aws s3 mb "s3://${S3_BUCKET}" --region "$AWS_REGION" --profile "$AWS_PROFILE"
+    aws s3api create-bucket \
+      --bucket "$S3_BUCKET" \
+      --region "$AWS_REGION" \
+      --create-bucket-configuration LocationConstraint="$AWS_REGION" \
+      --profile "$AWS_PROFILE"
   fi
   echo "✓ Bucket created: s3://${S3_BUCKET}"
 fi
@@ -85,41 +98,19 @@ aws s3api put-bucket-policy \
 rm /tmp/bucket-policy.json
 echo "✓ Bucket policy applied"
 
-# Get website endpoint
-WEBSITE_ENDPOINT=$(aws s3api get-bucket-website \
-  --bucket "$S3_BUCKET" \
-  --profile "$AWS_PROFILE" \
-  --query '[WebsiteConfiguration.IndexDocument.Suffix]' \
-  --output text 2>/dev/null || echo "index.html")
-
-echo ""
-echo "========================================"
-echo "CloudFront Distribution Setup"
-echo "========================================"
-echo ""
-echo "To create a CloudFront distribution:"
-echo ""
-echo "1. Go to AWS CloudFront Console"
-echo "2. Create a new distribution with these settings:"
-echo "   - Origin Domain: ${S3_BUCKET}.s3-website-${AWS_REGION}.amazonaws.com"
-echo "   - Origin Protocol: HTTP only"
-echo "   - Viewer Protocol: Redirect HTTP to HTTPS"
-echo "   - Compress Objects: Yes"
-echo "   - Price Class: Use All Edge Locations (or your preference)"
-echo "   - Alternate Domain Names (CNAMEs): your-domain.com"
-echo "   - SSL Certificate: Request or import certificate"
-echo ""
-echo "3. After creation, note the Distribution ID and add it to your deploy script:"
-echo "   export CLOUDFRONT_DISTRIBUTION_ID=<your-distribution-id>"
 echo ""
 echo "========================================"
 echo "✓ S3 Setup Complete!"
 echo "========================================"
 echo ""
+echo "Bucket: s3://${S3_BUCKET}"
+echo "Region: ${AWS_REGION}"
 echo "Website URL: http://${S3_BUCKET}.s3-website-${AWS_REGION}.amazonaws.com"
 echo ""
 echo "Next steps:"
 echo "1. Deploy your site: ./scripts/deploy.sh $YEAR"
-echo "2. Set up CloudFront distribution (see instructions above)"
-echo "3. Configure custom domain in Route 53 (optional)"
+echo "2. Access your site at the URL above"
+echo ""
+echo "Note: For production setup with versioning, SSO, and proper tagging,"
+echo "      use: ./scripts/aws/setup-bucket.sh $YEAR"
 echo ""

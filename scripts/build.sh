@@ -34,11 +34,11 @@ fi
 
 # Install dependencies
 echo "Installing dependencies..."
-bundle install
+mise exec -- bundle install
 
 # Build the site
 echo "Building Jekyll site..."
-JEKYLL_ENV=production bundle exec jekyll build
+JEKYLL_ENV=production mise exec -- bundle exec jekyll build
 
 echo ""
 echo "✓ Build complete!"
