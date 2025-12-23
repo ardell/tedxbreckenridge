@@ -1,0 +1,29 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Dependencies
+**/node_modules/
+**/vendor/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+*.gem
+*.rbc
+
+# Environment files
+.env
+.env.local
+
+# Deployment
+deploy.log

@@ -1,0 +1,55 @@
+# TEDxBreckenridge 2026 Site Configuration
+
+title: TEDxBreckenridge 2026
+email: info@tedxbreckenridge.com
+description: >-
+  TEDxBreckenridge 2026 - Ideas Worth Spreading.
+  Join us for an inspiring day of talks and performances in Breckenridge, Colorado.
+
+baseurl: "" # subpath of your site, e.g. /2026
+url: "https://tedxbreckenridge.com" # base hostname & protocol
+
+# Event Details
+event:
+  year: 2026
+  date: "TBA"
+  venue: "Breckenridge, Colorado"
+  theme: "TBA" # Update with year's theme
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  speakers:
+    output: true
+    permalink: /speakers/:name/
+  team:
+    output: true
+    permalink: /team/:name/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - README.md
+  - style-guide/
+
+# Social Media
+social:
+  twitter: tedxbreckenridge
+  facebook: tedxbreckenridge
+  instagram: tedxbreckenridge
+  youtube: tedxbreckenridge
+
+# Analytics (add your tracking IDs)
+google_analytics: ""

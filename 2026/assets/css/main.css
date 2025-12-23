@@ -1,0 +1,254 @@
+/* TEDxBreckenridge 2026 Styles */
+
+:root {
+  /* Brand Colors - Update these based on year's theme */
+  --ted-red: #e62b1e;
+  --primary-color: #e62b1e;
+  --secondary-color: #000000;
+  --accent-color: #ffffff;
+
+  /* Typography */
+  --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Spacing */
+  --spacing-unit: 1rem;
+  --container-max-width: 1200px;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--secondary-color);
+  background-color: var(--accent-color);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+  margin-bottom: var(--spacing-unit);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+.site-header {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  padding: calc(var(--spacing-unit) * 1.5) 0;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: calc(var(--spacing-unit) * 1.5);
+}
+
+.nav-menu a {
+  color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: calc(var(--spacing-unit) * 4) 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--accent-color);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.event-details {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Sections */
+section {
+  padding: calc(var(--spacing-unit) * 3) 0;
+}
+
+.about {
+  background-color: #f8f8f8;
+}
+
+/* Call to Action */
+.call-to-action {
+  text-align: center;
+  background-color: var(--accent-color);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-unit);
+  justify-content: center;
+  margin-top: calc(var(--spacing-unit) * 2);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: #d02419;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+}
+
+.btn-secondary:hover {
+  background-color: #333;
+  text-decoration: none;
+}
+
+/* Page Content */
+.page-content {
+  min-height: 60vh;
+  padding: calc(var(--spacing-unit) * 3) 0;
+}
+
+.page-header {
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+/* Speakers Grid */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: calc(var(--spacing-unit) * 2);
+  margin-top: calc(var(--spacing-unit) * 2);
+}
+
+.speaker-card {
+  text-align: center;
+  padding: var(--spacing-unit);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.speaker-card img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: var(--spacing-unit);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  padding: calc(var(--spacing-unit) * 3) 0 var(--spacing-unit);
+  margin-top: calc(var(--spacing-unit) * 4);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.footer-section h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-unit);
+}
+
+.social-links {
+  list-style: none;
+}
+
+.social-links a {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--spacing-unit);
+  border-top: 1px solid #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 0.5);
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+}

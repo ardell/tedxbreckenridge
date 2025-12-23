@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+  {% seo %}
+  {% feed_meta %}
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  {% if site.google_analytics %}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav">
+        <a href="/" class="site-logo">{{ site.title }}</a>
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/speakers/">Speakers</a></li>
+          <li><a href="/schedule/">Schedule</a></li>
+          <li><a href="/tickets/">Tickets</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>{{ site.title }}</h3>
+          <p>{{ site.description }}</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <ul class="social-links">
+            {% if site.social.twitter %}
+            <li><a href="https://twitter.com/{{ site.social.twitter }}">Twitter</a></li>
+            {% endif %}
+            {% if site.social.facebook %}
+            <li><a href="https://facebook.com/{{ site.social.facebook }}">Facebook</a></li>
+            {% endif %}
+            {% if site.social.instagram %}
+            <li><a href="https://instagram.com/{{ site.social.instagram }}">Instagram</a></li>
+            {% endif %}
+            {% if site.social.youtube %}
+            <li><a href="https://youtube.com/{{ site.social.youtube }}">YouTube</a></li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <p class="license-info">
+            This independent TEDx event is operated under license from TED.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

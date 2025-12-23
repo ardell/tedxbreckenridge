@@ -1,0 +1,35 @@
+---
+layout: home
+title: Home
+---
+
+<section class="hero">
+  <h1>TEDxBreckenridge 2026</h1>
+  <p class="tagline">Ideas Worth Spreading</p>
+  <p class="event-details">
+    <strong>Date:</strong> {{ site.event.date }}<br>
+    <strong>Location:</strong> {{ site.event.venue }}
+  </p>
+  {% if site.event.theme != "TBA" %}
+  <p class="theme">
+    <strong>Theme:</strong> {{ site.event.theme }}
+  </p>
+  {% endif %}
+</section>
+
+<section class="about">
+  <h2>About TEDxBreckenridge</h2>
+  <p>
+    TEDxBreckenridge is an independently organized TED event bringing together
+    thought leaders, innovators, and community members to share ideas worth spreading
+    in the beautiful mountain town of Breckenridge, Colorado.
+  </p>
+</section>
+
+<section class="call-to-action">
+  <h2>Get Involved</h2>
+  <div class="cta-buttons">
+    <a href="/speakers/" class="btn btn-primary">Meet Our Speakers</a>
+    <a href="/tickets/" class="btn btn-secondary">Get Tickets</a>
+  </div>
+</section>
