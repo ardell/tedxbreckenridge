@@ -49,31 +49,9 @@ description: Get in touch with TEDxBreckenridge. Apply to speak, volunteer, spon
         <p>Drop us a line and we'll get back to you soon. Real humans read every message.</p>
       </div>
 
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="jane@example.com" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="subject">What's on your mind?</label>
-          <input type="text" id="subject" name="subject" placeholder="General question, media inquiry, partnership..." required>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us more..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-      </form>
+      <div style="max-width: 100%; overflow: hidden;">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScE1tHIgUEu6e3iP6WW79sxPT-5MsqIeHoecOX7xIO20A5s4Q/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0" style="border: none;">Loading…</iframe>
+      </div>
     </div>
 
     <div class="contact-social">
