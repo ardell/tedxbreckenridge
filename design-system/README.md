@@ -39,7 +39,7 @@ For detailed guidelines, see the following documents in this directory:
 - [Logo Usage](logos.md)
 - [Typography](typography.md)
 - [Color Palette](colors.md)
-- [2025 Theme: Metamorphosis](theme-2025.md)
+- [Current Theme](theme-current.md)
 
 For comprehensive TEDx branding rules, refer to:
 **ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide/branding-promotions/logo-and-design**

@@ -161,10 +161,33 @@ This ensures relative paths work correctly.
 
 ## Troubleshooting
 
+### Ruby version errors
+```bash
+cd website
+rm -rf vendor/bundle Gemfile.lock
+mise exec -- bundle install
+```
+
 ### Jekyll build fails
 - Check Ruby version: `mise current ruby`
-- Install gems: `cd website && bundle install`
+- Install gems: `cd website && mise exec -- bundle install`
 - Clear cache: `rm -rf website/.jekyll-cache`
+
+### Port already in use
+```bash
+# Kill existing Jekyll server
+pkill -f jekyll
+
+# Or use a different port
+cd website
+mise exec -- bundle exec jekyll serve --port 4001
+```
+
+### Gems not found
+```bash
+cd website
+mise exec -- bundle install
+```
 
 ### Deployment fails
 - Verify AWS SSO: `./build/aws/validate-sso.sh`

@@ -101,13 +101,13 @@ See [build/README.md](build/README.md) for detailed build documentation.
 
 ## Design System
 
-The design system provides brand guidelines for all TEDxBreckenridge materials:
+The design system provides brand guidelines for all TEDxBreckenridge materials. See the [design-system/](design-system/) directory for:
 
-- **[Brand Overview](design-system/README.md)** - Mission, values, voice & tone
-- **[Logo Usage](design-system/logos.md)** - Logo configurations, clearspace, dos & don'ts
-- **[Typography](design-system/typography.md)** - Typeface specifications and usage
-- **[Colors](design-system/colors.md)** - Brand colors and theme palettes
-- **[Current Theme](design-system/theme-2025.md)** - 2025 Metamorphosis theme details
+- Brand overview (mission, values, voice)
+- Logo usage guidelines
+- Typography specifications
+- Color palette
+- Current theme and event details
 
 All materials (website, fliers, emails, etc.) should reference these guidelines to maintain brand consistency.
 
@@ -196,12 +196,12 @@ See [docs/AWS_SETUP.md](docs/AWS_SETUP.md) for infrastructure setup details.
 
 ## Additional Documentation
 
-- [Build System](build/README.md) - Detailed build script documentation
+- [Build System](build/README.md) - Build scripts and deployment
 - [Materials](materials/README.md) - Creating and managing branded materials
 - [Design System](design-system/README.md) - Brand guidelines overview
 - [Configuration](config/README.md) - Configuration philosophy
-- [Quick Start Guide](QUICK_START.md) - Detailed setup and usage
 - [Mise Setup](MISE_SETUP.md) - Ruby version management details
+- [AWS Setup](docs/AWS_SETUP.md) - AWS infrastructure details
 
 ## Repository Evolution
 
