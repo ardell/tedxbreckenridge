@@ -67,9 +67,19 @@ body {
     box-shadow: 0 1px 0 rgba(0,0,0,0.08);
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
 .nav-logo img {
     height: 40px;
     width: auto;
+    display: block;
+    vertical-align: middle;
+    position: relative;
+    top: 2px;
 }
 
 .nav-links {
@@ -166,7 +176,8 @@ body {
 .nav-hamburger {
     display: none;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 5px;
     width: 30px;
     height: 24px;
     background: transparent;
@@ -174,6 +185,7 @@ body {
     cursor: pointer;
     padding: 0;
     z-index: 101;
+    align-self: center;
 }
 
 .nav-hamburger span {
