@@ -2,6 +2,7 @@
 layout: default
 title: FAQ
 permalink: /faq/
+description: Frequently asked questions about attending TEDxBreckenridge. Find answers about tickets, venue, volunteering, dress code, and more.
 ---
 
 <div class="page">

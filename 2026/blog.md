@@ -2,6 +2,7 @@
 layout: default
 title: Blog
 permalink: /blog/
+description: Stories, updates, and insights from TEDxBreckenridge. Read about our events, speakers, community impact, and ideas worth spreading in Summit County.
 ---
 
 <div class="page">

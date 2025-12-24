@@ -2,6 +2,7 @@
 layout: page
 title: About TEDxBreckenridge
 permalink: /about/
+description: Learn about TEDxBreckenridge, a local TEDx event in Breckenridge, Colorado. Discover our mission to share innovative ideas and build meaningful connections.
 ---
 
 ## What is TEDx?

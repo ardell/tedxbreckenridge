@@ -60,10 +60,38 @@ exclude:
 
 # Social Media
 social:
-  twitter: tedxbreckenridge
-  facebook: tedxbreckenridge
-  instagram: tedxbreckenridge
-  youtube: tedxbreckenridge
+  name: TEDxBreckenridge
+  links:
+    - https://twitter.com/tedxbreckenridge
+    - https://facebook.com/tedxbreckenridge
+    - https://instagram.com/tedxbreckenridge
+    - https://youtube.com/tedxbreckenridge
+    - https://www.flickr.com/photos/tedxbreckenridge
+
+# Twitter Card Settings
+twitter:
+  username: tedxbreckenridge
+  card: summary_large_image
+
+# Facebook/Open Graph Settings
+facebook:
+  app_id: ""
+  publisher: https://facebook.com/tedxbreckenridge
+
+# Logo for Schema.org markup
+logo: /assets/images/tedx-breckenridge-logo-black.png
+
+# Default image for social sharing
+image: /assets/images/tedx-salon-cutting-board-hero.jpg
+
+# Author defaults
+author:
+  name: TEDxBreckenridge
+  email: info@tedxbreckenridge.com
+
+# SEO tag defaults
+tagline: Ideas worth spreading in the heart of the Rockies
+locale: en_US
 
 # Analytics (add your tracking IDs)
 google_analytics: ""

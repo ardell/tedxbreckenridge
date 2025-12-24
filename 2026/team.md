@@ -2,6 +2,7 @@
 layout: default
 title: Team
 permalink: /team/
+description: Meet the local volunteers who organize TEDxBreckenridge. Our passionate team curates speakers, plans events, and builds community in Summit County.
 ---
 
 <div class="page">

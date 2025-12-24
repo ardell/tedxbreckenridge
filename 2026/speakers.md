@@ -2,6 +2,7 @@
 layout: page
 title: Speakers
 permalink: /speakers/
+description: Meet the speakers at TEDxBreckenridge 2026. Discover thinkers, doers, and innovators sharing ideas worth spreading in Breckenridge, Colorado.
 ---
 
 ## 2026 Speakers

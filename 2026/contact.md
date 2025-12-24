@@ -2,6 +2,7 @@
 layout: default
 title: Contact
 permalink: /contact/
+description: Get in touch with TEDxBreckenridge. Apply to speak, volunteer, sponsor, or reach out with questions. Connect with our community of local volunteers.
 ---
 
 <div class="page">

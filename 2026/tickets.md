@@ -2,6 +2,7 @@
 layout: page
 title: Tickets
 permalink: /tickets/
+description: Get tickets for TEDxBreckenridge 2026 on October 3, 2026 at the Riverwalk Center in Breckenridge, Colorado. Join us for ideas worth spreading.
 ---
 
 ## Get Your Tickets
