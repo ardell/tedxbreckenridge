@@ -1,20 +1,16 @@
 #!/bin/bash
 
 # TEDxBreckenridge Jekyll Development Server
-# Starts the Jekyll server for a specific year
+# Starts the Jekyll server for local development
 
 set -e
 
-YEAR=${1:-2026}
-SITE_DIR="${YEAR}"
-
-if [ ! -d "$SITE_DIR" ]; then
-  echo "Error: Directory $SITE_DIR does not exist"
-  exit 1
-fi
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+SITE_DIR="$REPO_ROOT/website"
 
 echo "========================================"
-echo "Starting Jekyll server for $YEAR"
+echo "Starting Jekyll server"
 echo "========================================"
 echo ""
 

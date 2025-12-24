@@ -1,0 +1,40 @@
+# TEDxBreckenridge Organization Information
+# Single source of truth for organizational details
+
+organization:
+  name: "TEDxBreckenridge"
+  legal_name: "TEDxBreckenridge"
+  type: "501(c)(3) non-profit"
+  tagline: "Ideas Worth Spreading in the High Rockies"
+
+contact:
+  email: "ideas@tedxbreckenridge.com"
+  phone: "970.409.6177"
+  website: "https://tedxbreckenridge.com"
+
+address:
+  city: "Breckenridge"
+  state: "Colorado"
+  state_abbr: "CO"
+  zip: "80424"
+
+social_media:
+  facebook: "https://facebook.com/tedxbreckenridge"
+  instagram: "https://instagram.com/tedxbreckenridge"
+  twitter: "https://twitter.com/tedxbreckenridge"
+  linkedin: "https://linkedin.com/company/tedxbreckenridge"
+  youtube: "https://youtube.com/@tedxbreckenridge"
+
+team_contacts:
+  - name: "Leah Rybak"
+    phone: "970.333.4237"
+  - name: "Kiarra Grant"
+    phone: "816.807.1515"
+  - name: "Jill Marek"
+    phone: "970.409.6177"
+
+venue:
+  name: "Riverwalk Center"
+  address: "150 W Adams Ave, Breckenridge, CO 80424"
+  city: "Breckenridge"
+  state: "Colorado"

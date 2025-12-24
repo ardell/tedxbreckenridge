@@ -1,23 +1,31 @@
-# TEDxBreckenridge 2026 - Quick Start Guide
+# TEDxBreckenridge - Quick Start Guide
 
-## ✅ Fixed: Ruby Version Mismatch
+## Prerequisites
 
-The error you encountered was due to gems being compiled with Ruby 3.4.7 but running with Ruby 3.4.8. This has been resolved by:
+- **Ruby 3.4.8** (managed via mise)
+- **mise**: [Install mise](https://mise.jdx.dev/getting-started.html)
 
-1. Cleaning the `vendor/bundle` directory
-2. Reinstalling gems with Ruby 3.4.8 using `mise exec`
-3. Adding the `logger` gem for Ruby 3.4+ compatibility
+```bash
+# Install mise (if not already installed)
+curl https://mise.run | sh
+
+# Install Ruby 3.4.8
+mise install
+
+# Verify
+ruby -v  # Should show ruby 3.4.8
+```
 
 ## 🚀 Running the Site (3 Options)
 
 ### Option 1: Helper Script (Easiest)
 ```bash
-./scripts/serve.sh 2026
+./build/website/serve.sh
 ```
 
 ### Option 2: Manual with mise exec
 ```bash
-cd 2026
+cd website
 mise exec -- bundle exec jekyll serve --livereload
 ```
 
@@ -28,7 +36,7 @@ eval "$(mise activate zsh)"
 source ~/.zshrc
 
 # Then you can use directly
-cd 2026
+cd website
 bundle exec jekyll serve --livereload
 ```
 

@@ -1,8 +1,8 @@
 # Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+website/_site/
+website/.sass-cache/
+website/.jekyll-cache/
+website/.jekyll-metadata
 
 # Dependencies
 **/node_modules/
@@ -28,3 +28,7 @@ _site/
 
 # Deployment
 deploy.log
+
+# Generated outputs (stored in Google Drive, not repo)
+materials/**/*.pdf
+*.pdf
