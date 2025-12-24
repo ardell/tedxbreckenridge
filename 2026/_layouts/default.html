@@ -89,52 +89,55 @@
   {% endif %}
 </head>
 <body>
+  <!-- Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="nav" id="nav">
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <a href="/" class="nav-logo">
       <img src="{{ '/assets/images/tedx-breckenridge-logo-black.png' | relative_url }}" alt="TEDxBreckenridge">
     </a>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
     <div class="nav-menu" id="navMenu">
       <ul class="nav-links">
         <li class="nav-dropdown">
-          <a href="#" class="nav-dropdown-toggle">Attend</a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="/#salon">January Salon Event</a></li>
-            <li><a href="/#main-event">October 2026 Main Event</a></li>
-            <li><a href="/faq">FAQ</a></li>
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Attend</button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li role="menuitem"><a href="/#salon">January Salon Event</a></li>
+            <li role="menuitem"><a href="/#main-event">October 2026 Main Event</a></li>
+            <li role="menuitem"><a href="/faq">FAQ</a></li>
           </ul>
         </li>
         <li class="nav-dropdown">
-          <a href="#" class="nav-dropdown-toggle">Watch</a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="/talks">All Talks</a></li>
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Watch</button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li role="menuitem"><a href="/talks">All Talks</a></li>
           </ul>
         </li>
         <li class="nav-dropdown">
-          <a href="#" class="nav-dropdown-toggle">Support</a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="https://tedxbreckenridge.com/speak" target="_blank">Apply to Speak</a></li>
-            <li><a href="https://tedxbreckenridge.com/volunteer" target="_blank">Volunteer</a></li>
-            <li><a href="https://tedxbreckenridge.com/sponsor" target="_blank">Sponsor</a></li>
-            <li><a href="https://tedxbreckenridge.com/donate" target="_blank">Donate</a></li>
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Support</button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li role="menuitem"><a href="https://tedxbreckenridge.com/speak" target="_blank" rel="noopener noreferrer" aria-label="Apply to Speak (opens in new window)">Apply to Speak</a></li>
+            <li role="menuitem"><a href="https://tedxbreckenridge.com/volunteer" target="_blank" rel="noopener noreferrer" aria-label="Volunteer (opens in new window)">Volunteer</a></li>
+            <li role="menuitem"><a href="https://tedxbreckenridge.com/sponsor" target="_blank" rel="noopener noreferrer" aria-label="Sponsor (opens in new window)">Sponsor</a></li>
+            <li role="menuitem"><a href="https://tedxbreckenridge.com/donate" target="_blank" rel="noopener noreferrer" aria-label="Donate (opens in new window)">Donate</a></li>
           </ul>
         </li>
         <li class="nav-dropdown">
-          <a href="#" class="nav-dropdown-toggle">Discover</a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="/about">About</a></li>
-            <li><a href="/team">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contact">Contact</a></li>
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Discover</button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li role="menuitem"><a href="/about">About</a></li>
+            <li role="menuitem"><a href="/team">Team</a></li>
+            <li role="menuitem"><a href="/blog">Blog</a></li>
+            <li role="menuitem"><a href="/contact">Contact</a></li>
           </ul>
         </li>
       </ul>
-      <a href="https://tedxbreckenridge.ticketsauce.com/e/cooking-at-altitude" class="nav-cta">Get Tickets</a>
+      <a href="https://tedxbreckenridge.ticketsauce.com/e/cooking-at-altitude" class="nav-cta" target="_blank" rel="noopener noreferrer" aria-label="Get Tickets (opens in new window)">Get Tickets</a>
     </div>
   </nav>
 
@@ -145,9 +148,11 @@
     const body = document.body;
 
     navHamburger.addEventListener('click', function() {
+      const isExpanded = navHamburger.getAttribute('aria-expanded') === 'true';
       navMenu.classList.toggle('active');
       navHamburger.classList.toggle('active');
       body.classList.toggle('nav-open');
+      navHamburger.setAttribute('aria-expanded', !isExpanded);
     });
 
     // Dropdown functionality for mobile
@@ -159,16 +164,28 @@
           e.preventDefault();
           const parent = this.parentElement;
           const wasActive = parent.classList.contains('active');
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
           // Close all dropdowns
           document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
             dropdown.classList.remove('active');
+            const btn = dropdown.querySelector('.nav-dropdown-toggle');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
           });
 
           // Open this one if it wasn't active
           if (!wasActive) {
             parent.classList.add('active');
+            this.setAttribute('aria-expanded', 'true');
           }
+        }
+      });
+
+      // Keyboard accessibility
+      toggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
         }
       });
     });
@@ -207,12 +224,12 @@
     });
   </script>
 
-  <main>
+  <main id="main-content" role="main">
     {{ content }}
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-content">
       <div class="footer-top">
         <div class="footer-brand">
@@ -253,12 +270,12 @@
         </div>
         <div class="footer-social">
           {% if site.social.instagram %}
-          <a href="https://instagram.com/{{ site.social.instagram }}">Instagram</a>
+          <a href="https://instagram.com/{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram (opens in new window)">Instagram</a>
           {% endif %}
           {% if site.social.youtube %}
-          <a href="https://youtube.com/{{ site.social.youtube }}">YouTube</a>
+          <a href="https://youtube.com/{{ site.social.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="Watch us on YouTube (opens in new window)">YouTube</a>
           {% endif %}
-          <a href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank">Flickr</a>
+          <a href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank" rel="noopener noreferrer" aria-label="View our photos on Flickr (opens in new window)">Flickr</a>
         </div>
       </div>
     </div>
