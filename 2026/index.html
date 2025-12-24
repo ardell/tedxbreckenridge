@@ -28,13 +28,8 @@ title: Home
             <a href="#salon" class="btn btn-secondary">Learn More</a>
         </div>
     </div>
-    <div class="hero-visual" style="background: linear-gradient(135deg, #C75B4D 0%, #5B8E8E 100%);">
-        <div class="hero-visual-overlay">
-            <div class="hero-visual-content">
-                <div class="hero-visual-year">Salon Series</div>
-                <div class="hero-visual-theme">Jan 15</div>
-            </div>
-        </div>
+    <div class="hero-visual">
+        <img src="{{ '/assets/images/salon-elevated-cuisine.jpg' | relative_url }}" alt="Elevated Cuisine: The Science and Art of Cooking at Altitude - TEDxBreckenridge Salon January 15, 2026" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
     </div>
 </section>
 
@@ -60,7 +55,10 @@ title: Home
 <!-- Salon Section -->
 <section class="section section-full theme-section" id="salon">
     <div class="section-inner">
-        <div class="theme-content">
+        <div class="theme-content theme-content-reverse">
+            <div class="theme-visual">
+                <img src="{{ '/assets/images/salon-cutting-board.jpg' | relative_url }}" alt="Cooking ingredients on cutting board">
+            </div>
             <div class="theme-text">
                 <div class="section-header">
                     <div class="section-eyebrow">Next Event</div>
@@ -76,9 +74,6 @@ title: Home
                     <p style="margin-top: 16px;"><strong>Suggested donation:</strong> $10<br>
                     <em>Ideas should be accessible to everyone. If cost is a barrier, join us anyway — your curiosity matters most.</em></p>
                 </div>
-            </div>
-            <div class="theme-visual">
-                <img src="{{ '/assets/images/53230983645_7a48ea5b0a_k.jpg' | relative_url }}" alt="TEDxBreckenridge Salon gathering">
             </div>
         </div>
     </div>
