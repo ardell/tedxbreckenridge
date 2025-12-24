@@ -643,7 +643,7 @@ select:focus-visible {
 .section-inner {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0;
 }
 
 .section-header {
@@ -1354,7 +1354,7 @@ select:focus-visible {
     }
 
     .section-inner {
-        padding: 0 16px;
+        padding: 0;
     }
 
     .theme-section .section-inner {
@@ -1442,7 +1442,7 @@ select:focus-visible {
     }
 
     .section-inner {
-        padding: 0 12px;
+        padding: 0;
     }
 
     .theme-section .section-inner {
