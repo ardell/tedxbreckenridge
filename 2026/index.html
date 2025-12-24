@@ -80,7 +80,7 @@ title: Home
 </section>
 
 <!-- Save the Date Section -->
-<section class="section section-full" id="main-event" style="background: #fafafa; overflow: hidden; min-height: 700px;">
+<section class="section section-full" id="main-event" style="background: #fafafa; overflow: hidden; padding: 0;">
     <style>
         .save-date-container {
             display: grid;
@@ -98,6 +98,7 @@ title: Home
         .save-date-image {
             position: relative;
             margin-right: -100px;
+            align-self: stretch;
         }
         .save-date-image img {
             position: absolute;
@@ -108,27 +109,38 @@ title: Home
             object-fit: cover;
             object-position: center;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
+            #main-event {
+                padding: 0 !important;
+            }
             .save-date-container {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
                 min-height: auto;
+                max-width: 100%;
             }
             .save-date-content {
-                padding: 60px 24px;
+                padding: 48px 16px;
                 order: 1;
             }
             .save-date-image {
                 margin-right: 0;
+                margin-left: 0;
                 height: 400px;
                 order: 2;
+                width: 100%;
             }
             .save-date-image img {
-                position: relative;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
             }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
             .save-date-content {
-                padding: 40px 24px;
+                padding: 40px 12px;
             }
             .save-date-content h2 {
                 font-size: 2rem !important;
