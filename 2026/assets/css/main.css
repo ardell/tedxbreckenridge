@@ -68,9 +68,8 @@ body {
 }
 
 .nav-logo img {
-    height: 60px;
+    height: 40px;
     width: auto;
-    margin-left: -17px;
 }
 
 .nav-links {
@@ -1129,8 +1128,7 @@ body {
 }
 
 .footer-logo {
-    height: 40px;
-    margin-left: -10px;
+    height: 28px;
 }
 
 .footer-column h4 {
