@@ -1,6 +1,7 @@
 /* TEDxBreckenridge 2026 - Evergreen Theme */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+/* Inter: Open-source Helvetica alternative (TED brand-approved) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
 
 :root {
     /* Core TED Brand */
@@ -24,9 +25,12 @@
     --cream-dark: #EAE7E3;
     --sand-light: #F2F0ED;
 
-    /* Typography */
-    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-alt: 'Inter', Arial, sans-serif;
+    /* Typography - TED Brand Standard with fallbacks
+     * Helvetica Neue/Helvetica: Pre-installed on macOS (authentic TED look)
+     * Inter: Open-source alternative for Windows/Linux (brand-approved)
+     * Arial: System fallback
+     */
+    --font-primary: 'Helvetica Neue', Helvetica, Inter, Arial, sans-serif;
 }
 
 * {
@@ -40,8 +44,8 @@ html {
 }
 
 body {
-    font-family: var(--font-alt);
-    font-weight: 300;
+    font-family: var(--font-primary);
+    font-weight: 400;
     background: var(--white);
     color: var(--ted-black);
     line-height: 1.6;
@@ -1208,7 +1212,7 @@ select:focus-visible {
 .newsletter-input {
     flex: 1;
     padding: 14px 18px;
-    font-family: var(--font-alt);
+    font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 300;
     background: rgba(255,255,255,0.1);
