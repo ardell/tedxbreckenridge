@@ -61,12 +61,10 @@ exclude:
 # Social Media
 social:
   name: TEDxBreckenridge
-  links:
-    - https://twitter.com/tedxbreckenridge
-    - https://facebook.com/tedxbreckenridge
-    - https://instagram.com/tedxbreckenridge
-    - https://youtube.com/tedxbreckenridge
-    - https://www.flickr.com/photos/tedxbreckenridge
+  twitter: tedxbreckenridge
+  facebook: tedxbreckenridge
+  instagram: tedxbreckenridge
+  youtube: tedxbreckenridge
 
 # Twitter Card Settings
 twitter:

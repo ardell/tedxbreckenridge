@@ -25,10 +25,10 @@
           "height": 60
         },
         "sameAs": [
-          "https://twitter.com/tedxbreckenridge",
-          "https://facebook.com/tedxbreckenridge",
-          "https://instagram.com/tedxbreckenridge",
-          "https://youtube.com/tedxbreckenridge",
+          {% if site.social.twitter %}"https://twitter.com/{{ site.social.twitter }}",{% endif %}
+          {% if site.social.facebook %}"https://facebook.com/{{ site.social.facebook }}",{% endif %}
+          {% if site.social.instagram %}"https://instagram.com/{{ site.social.instagram }}",{% endif %}
+          {% if site.social.youtube %}"https://youtube.com/{{ site.social.youtube }}",{% endif %}
           "https://www.flickr.com/photos/tedxbreckenridge"
         ],
         "contactPoint": {
@@ -300,6 +300,12 @@
           {% endif %}
           {% if site.social.youtube %}
           <a href="https://youtube.com/{{ site.social.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="Watch us on YouTube (opens in new window)">YouTube</a>
+          {% endif %}
+          {% if site.social.twitter %}
+          <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter (opens in new window)">Twitter</a>
+          {% endif %}
+          {% if site.social.facebook %}
+          <a href="https://facebook.com/{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook (opens in new window)">Facebook</a>
           {% endif %}
           <a href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank" rel="noopener noreferrer" aria-label="View our photos on Flickr (opens in new window)">Flickr</a>
         </div>
