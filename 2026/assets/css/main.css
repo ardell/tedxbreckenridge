@@ -461,15 +461,18 @@ body {
     text-decoration: none;
     transition: all 0.2s ease;
     display: inline-block;
+    border: none;
 }
 
 .btn-primary {
-    background: var(--ted-red);
-    color: var(--white);
+    background: var(--terracotta);
+    color: var(--white) !important;
+    border-bottom: none !important;
 }
 
 .btn-primary:hover {
-    background: #C70022;
+    background: var(--rust);
+    color: var(--white) !important;
 }
 
 .btn-secondary {
