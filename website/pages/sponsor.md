@@ -249,7 +249,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
         <a href="tel:9704096177" style="color: var(--terracotta); font-size: 1.125rem; font-weight: 500; text-decoration: none;">970.409.6177</a>
       </div>
 
-      <a href="/contact" class="btn btn-primary" style="font-size: 1.125rem; padding: 16px 32px;">Contact Sponsorship Team</a>
+      <a href="/contact/" class="btn btn-primary" style="font-size: 1.125rem; padding: 16px 32px;">Contact Sponsorship Team</a>
     </div>
 
     <div style="margin-top: 60px; padding: 32px; background: var(--cream); border-radius: 8px;">

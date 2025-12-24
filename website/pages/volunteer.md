@@ -93,7 +93,7 @@ description: Join the TEDxBreckenridge volunteer team in Summit County. Help bri
     <div style="margin-top: 60px; padding: 40px; background: var(--cream); border-radius: 8px;">
       <h3 style="margin-bottom: 16px; color: var(--charcoal);">Questions About Volunteering?</h3>
       <p style="margin-bottom: 16px; line-height: 1.7; color: var(--stone);">We'd love to hear from you. Reach out to learn more about volunteer opportunities, time commitments, or how you can best contribute your unique skills.</p>
-      <a href="/contact" class="btn btn-secondary">Contact Us</a>
+      <a href="/contact/" class="btn btn-secondary">Contact Us</a>
     </div>
   </div>
 </div>

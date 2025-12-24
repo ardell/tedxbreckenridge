@@ -16,7 +16,7 @@ description: Frequently asked questions about attending TEDxBreckenridge. Find a
   <div class="page-content">
     <div class="faq-section">
       <h3>Can I volunteer for the event?</h3>
-      <p>Yes! We would love to have you. Please <a href="/contact">fill out the contact form</a> to apply!</p>
+      <p>Yes! We would love to have you. Please <a href="/contact/">fill out the contact form</a> to apply!</p>
     </div>
 
     <div class="faq-section">
@@ -26,7 +26,7 @@ description: Frequently asked questions about attending TEDxBreckenridge. Find a
 
     <div class="faq-section">
       <h3>I have more questions about TEDxBreckenridge. How can I contact you?</h3>
-      <p><a href="/contact">Fill out the form here</a> and we will try to get back to you as soon as possible.</p>
+      <p><a href="/contact/">Fill out the form here</a> and we will try to get back to you as soon as possible.</p>
     </div>
 
     <div class="faq-section">
@@ -47,7 +47,7 @@ description: Frequently asked questions about attending TEDxBreckenridge. Find a
     <div style="margin-top: 60px; padding: 48px; background: var(--cream); border-radius: 8px; text-align: center;">
       <h3 style="margin-bottom: 16px;">Still have questions?</h3>
       <p style="margin-bottom: 24px;">We're here to help. Reach out and someone from our team will get back to you.</p>
-      <a href="/contact" class="btn btn-primary">Contact Us</a>
+      <a href="/contact/" class="btn btn-primary">Contact Us</a>
     </div>
   </div>
 </div>
