@@ -65,8 +65,8 @@ permalink: /blog/
 
     <div style="margin-top: 80px; padding: 48px; background: var(--cream); border-radius: 8px; text-align: center;">
       <h3 style="margin-bottom: 16px;">Stay Updated</h3>
-      <p style="margin-bottom: 24px;">Subscribe to our newsletter for event announcements, speaker reveals, and community stories.</p>
-      <a href="/#newsletter" class="btn btn-primary">Subscribe to Newsletter</a>
+      <p style="margin-bottom: 24px;">Join our mailing list for event announcements, speaker reveals, and community stories.</p>
+      <a href="/#newsletter" class="btn btn-primary">Join Our Mailing List</a>
     </div>
   </div>
 </div>
