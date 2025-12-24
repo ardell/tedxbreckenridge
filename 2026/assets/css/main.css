@@ -206,11 +206,26 @@ body {
 /* Mobile Navigation Styles */
 @media (max-width: 900px) {
     .nav {
-        padding: 20px 24px;
+        padding: 16px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .nav-logo {
+        flex: 0 1 auto;
+        min-width: 0;
+    }
+
+    .nav-logo img {
+        height: 32px;
+        width: auto;
     }
 
     .nav-hamburger {
         display: flex;
+        flex-shrink: 0;
     }
 
     .nav-menu {
@@ -1203,7 +1218,7 @@ body {
     }
 
     .hero-content {
-        padding: 120px 24px 48px;
+        padding: 100px 16px 40px;
         order: 2;
     }
 
@@ -1218,26 +1233,36 @@ body {
     }
 
     .section {
-        padding: 72px 24px;
+        padding: 48px 16px;
     }
 
     .section-inner {
-        padding: 0 24px;
+        padding: 0 16px;
+    }
+
+    .theme-section .section-inner {
+        padding: 0;
     }
 
     .theme-content,
     .salon-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 0;
+    }
+
+    .theme-section {
+        padding: 0;
     }
 
     .theme-content-reverse .theme-visual {
         margin-left: 0;
+        margin-right: 0;
         min-height: 400px;
+        width: 100%;
     }
 
     .theme-content-reverse .theme-text {
-        padding-left: 0;
+        padding: 48px 16px;
     }
 
     .speakers-grid {
@@ -1266,6 +1291,10 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .footer {
+        padding: 56px 16px 36px;
+    }
+
     .footer-top {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
@@ -1280,6 +1309,34 @@ body {
 }
 
 @media (max-width: 640px) {
+    .nav {
+        padding: 12px 12px;
+    }
+
+    .nav-logo img {
+        height: 28px;
+    }
+
+    .section {
+        padding: 40px 12px;
+    }
+
+    .section-inner {
+        padding: 0 12px;
+    }
+
+    .theme-section .section-inner {
+        padding: 0;
+    }
+
+    .hero-content {
+        padding: 90px 12px 32px;
+    }
+
+    .theme-content-reverse .theme-text {
+        padding: 40px 12px;
+    }
+
     .hero-actions {
         flex-direction: column;
     }
@@ -1310,6 +1367,14 @@ body {
 
     .newsletter-form {
         flex-direction: column;
+    }
+
+    .newsletter-section {
+        padding: 56px 12px;
+    }
+
+    .footer {
+        padding: 48px 12px 32px;
     }
 
     .footer-top {
@@ -1802,19 +1867,19 @@ body {
 
 @media (max-width: 768px) {
     .page {
-        padding-top: 100px;
+        padding-top: 80px;
     }
 
     .page-header {
-        padding: 60px 24px;
+        padding: 40px 16px;
     }
 
     .page-content {
-        padding: 60px 24px;
+        padding: 40px 16px;
     }
 
     .page-content li {
-        padding-left: 24px;
+        padding-left: 20px;
     }
 
     .team-grid {
@@ -1823,7 +1888,7 @@ body {
     }
 
     .team-section {
-        margin-top: 40px;
+        margin-top: 32px;
     }
 
     .team-member img {
@@ -1835,7 +1900,7 @@ body {
     }
 
     .contact-form-section {
-        padding: 40px 24px;
+        padding: 32px 16px;
     }
 
     .form-row {
@@ -1850,5 +1915,23 @@ body {
 
     .social-link {
         justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .page {
+        padding-top: 70px;
+    }
+
+    .page-header {
+        padding: 32px 12px;
+    }
+
+    .page-content {
+        padding: 32px 12px;
+    }
+
+    .contact-form-section {
+        padding: 24px 12px;
     }
 }
