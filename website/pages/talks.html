@@ -27,6 +27,7 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
     background: rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     z-index: 1;
+    transition: opacity 0.3s ease;
 }
 
 .video-wrapper::after {
@@ -41,6 +42,17 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
     border-width: 10px 0 10px 16px;
     border-color: transparent transparent transparent rgba(0, 0, 0, 0.15);
     z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper.loaded {
+    animation: none;
+    background: #000;
+}
+
+.video-wrapper.loaded::before,
+.video-wrapper.loaded::after {
+    opacity: 0;
 }
 
 .video-wrapper iframe {
@@ -86,16 +98,16 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/iIWd6FbQqtM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/FnEokTC_ndY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/cWqgfqj0rNM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/qY_lofD4my0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/CObMOUK2BQQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/ye8UCjqb_qk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/rAE9PDAvv8Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/UHasiKs1H64" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/SopmK4qNrSI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/Z2hWJzp4oqA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="iIWd6FbQqtM"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="FnEokTC_ndY"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="cWqgfqj0rNM"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="qY_lofD4my0"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="CObMOUK2BQQ"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="ye8UCjqb_qk"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="rAE9PDAvv8Y"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="UHasiKs1H64"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="SopmK4qNrSI"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="Z2hWJzp4oqA"></div>
         </div>
     </div>
 </section>
@@ -113,17 +125,17 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/t-J0-Ymvr0o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/GK8eqwWqw-k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/MVwrEd1jSWU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/gX3MTAoknp8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/IKTOsb1Zdrc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/VfbMljfqdlo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/iOrHBCVPjZU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/OIz8wL9nVxw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/UPj15u33EFY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/052sVElF30c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/z651z4pfMZs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="t-J0-Ymvr0o"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="GK8eqwWqw-k"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="MVwrEd1jSWU"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="gX3MTAoknp8"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="IKTOsb1Zdrc"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="VfbMljfqdlo"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="iOrHBCVPjZU"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="OIz8wL9nVxw"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="UPj15u33EFY"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="052sVElF30c"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="z651z4pfMZs"></div>
         </div>
     </div>
 </section>
@@ -141,17 +153,17 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/b64-KsZR6Gs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/Yr8w4886Wts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/mgo-fGlBINI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/F8IANzlgwY8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/9ujW_0o8YsQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/WyMy7vLf-ak" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/36wO-hpcsJo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/EXa5Mm4x7Ew" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/3koZI-KXJbs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/-MHgp_I7OyM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/J6VZednBLlY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="b64-KsZR6Gs"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="Yr8w4886Wts"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="mgo-fGlBINI"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="F8IANzlgwY8"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="9ujW_0o8YsQ"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="WyMy7vLf-ak"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="36wO-hpcsJo"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="EXa5Mm4x7Ew"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="3koZI-KXJbs"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="-MHgp_I7OyM"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="J6VZednBLlY"></div>
         </div>
     </div>
 </section>
@@ -169,16 +181,16 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/PctYfeyWhc4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/pPRgPf2GNL0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/avFQbkLmcQQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/D42Ko_r4iF4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/RDVS2yAwwmE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbu0oTNPgH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/X2DBoEuIufQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/4p5DdidEozg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/vKKeAah3NJg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/UM1niopWenA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="PctYfeyWhc4"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="pPRgPf2GNL0"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="avFQbkLmcQQ"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="D42Ko_r4iF4"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="RDVS2yAwwmE"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="xbu0oTNPgH0"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="X2DBoEuIufQ"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="4p5DdidEozg"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="vKKeAah3NJg"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="UM1niopWenA"></div>
         </div>
     </div>
 </section>
@@ -196,16 +208,16 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/r2PRMGwnuLQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/YBqWL4C1XAo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/qx73lE0a8GI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/abzqjuhlfP4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/LjSombWneQE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/ttlQAmnq99c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/1j2sVT9Tcgc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/Yy7e_5Nf6kY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/mVZTDHhj4gI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
-            <div class="video-wrapper" style="aspect-ratio: 16/9;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/g_k5LG6Duyc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="r2PRMGwnuLQ"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="YBqWL4C1XAo"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="qx73lE0a8GI"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="abzqjuhlfP4"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="LjSombWneQE"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="ttlQAmnq99c"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="1j2sVT9Tcgc"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="Yy7e_5Nf6kY"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="mVZTDHhj4gI"></div>
+            <div class="video-wrapper" style="aspect-ratio: 16/9;" data-video-id="g_k5LG6Duyc"></div>
         </div>
     </div>
 </section>
@@ -223,3 +235,73 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
     </div>
 </section>
 </div>
+
+<script>
+// Lazy load and unload YouTube videos to reduce memory usage on mobile
+(function() {
+    'use strict';
+
+    // Create an intersection observer to detect when videos come into view
+    const observerOptions = {
+        // Start loading when video is 200px away from viewport
+        // Unload when video is 400px away from viewport
+        rootMargin: '400px',
+        threshold: 0.01
+    };
+
+    function loadVideo(wrapper) {
+        const videoId = wrapper.getAttribute('data-video-id');
+
+        // Skip if already loaded or no video ID
+        if (!videoId || wrapper.querySelector('iframe')) {
+            return;
+        }
+
+        // Create iframe
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('width', '100%');
+        iframe.setAttribute('height', '100%');
+        iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}`);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('loading', 'lazy');
+        iframe.style.borderRadius = '8px';
+
+        // Add iframe to wrapper
+        wrapper.appendChild(iframe);
+        wrapper.classList.add('loaded');
+    }
+
+    function unloadVideo(wrapper) {
+        const iframe = wrapper.querySelector('iframe');
+
+        // Remove iframe if it exists
+        if (iframe) {
+            iframe.remove();
+            wrapper.classList.remove('loaded');
+        }
+    }
+
+    // Create observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Load video when it enters viewport (or is close)
+                loadVideo(entry.target);
+            } else {
+                // Unload video when it's far from viewport
+                unloadVideo(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all video wrappers
+    document.addEventListener('DOMContentLoaded', () => {
+        const videoWrappers = document.querySelectorAll('.video-wrapper[data-video-id]');
+        videoWrappers.forEach(wrapper => {
+            observer.observe(wrapper);
+        });
+    });
+})();
+</script>
