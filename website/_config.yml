@@ -37,6 +37,9 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# Permalink structure for blog posts
+permalink: /blog/:title/
+
 # Collections
 collections:
   speakers:

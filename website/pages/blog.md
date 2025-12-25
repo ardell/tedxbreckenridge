@@ -166,73 +166,26 @@ description: Stories, updates, and insights from TEDxBreckenridge. Read about ou
     </style>
 
     <div class="blog-posts">
+      {% for post in site.posts %}
       <article class="blog-post">
-        <a href="https://www.tedxbreckenridge.com/blog/why-attend-tedxbreckenridge-instinct" target="_blank" class="blog-post-image">
-          <img src="{{ '/assets/images/blog-instinct.jpg' | relative_url }}" alt="TEDxBreckenridge INSTINCT event">
+        <a href="{{ post.url | relative_url }}" class="blog-post-image">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
         </a>
         <div class="blog-post-content">
           <div class="blog-post-meta">
-            <span class="blog-post-date">September 22, 2023</span>
-            <span class="blog-post-author">by Leah Rybak</span>
+            <span class="blog-post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+            {% if post.author %}
+            <span class="blog-post-author">by {{ post.author }}</span>
+            {% endif %}
           </div>
           <h2 class="blog-post-title">
-            <a href="https://www.tedxbreckenridge.com/blog/why-attend-tedxbreckenridge-instinct" target="_blank">Why Attend TEDxBreckenridge INSTINCT</a>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           </h2>
-          <p class="blog-post-excerpt">Discover why our INSTINCT event was an unforgettable experience bringing together ideas worth spreading in the heart of the Rockies.</p>
-          <a href="https://www.tedxbreckenridge.com/blog/why-attend-tedxbreckenridge-instinct" target="_blank" class="blog-post-link">Read more →</a>
+          <p class="blog-post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          <a href="{{ post.url | relative_url }}" class="blog-post-link">Read more →</a>
         </div>
       </article>
-
-      <article class="blog-post">
-        <a href="https://www.tedxbreckenridge.com/blog/haqrw9f3agcrqdvjkgyja65o7ol8th" target="_blank" class="blog-post-image">
-          <img src="{{ '/assets/images/blog-adventure-fest.jpg' | relative_url }}" alt="Adventure Fest event">
-        </a>
-        <div class="blog-post-content">
-          <div class="blog-post-meta">
-            <span class="blog-post-date">August 18, 2023</span>
-            <span class="blog-post-author">by Leah Rybak</span>
-          </div>
-          <h2 class="blog-post-title">
-            <a href="https://www.tedxbreckenridge.com/blog/haqrw9f3agcrqdvjkgyja65o7ol8th" target="_blank">Adventure Fest: Connection, Exploration, and Inspiration</a>
-          </h2>
-          <p class="blog-post-excerpt">Read about our most recent TEDxBreckenridge event!</p>
-          <a href="https://www.tedxbreckenridge.com/blog/haqrw9f3agcrqdvjkgyja65o7ol8th" target="_blank" class="blog-post-link">Read more →</a>
-        </div>
-      </article>
-
-      <article class="blog-post">
-        <a href="https://www.tedxbreckenridge.com/blog/support-tedxbreckenridge" target="_blank" class="blog-post-image">
-          <img src="{{ '/assets/images/blog-support-nonprofits.png' | relative_url }}" alt="Support TEDxBreckenridge">
-        </a>
-        <div class="blog-post-content">
-          <div class="blog-post-meta">
-            <span class="blog-post-date">July 20, 2023</span>
-            <span class="blog-post-author">by Leah Rybak</span>
-          </div>
-          <h2 class="blog-post-title">
-            <a href="https://www.tedxbreckenridge.com/blog/support-tedxbreckenridge" target="_blank">5 Reasons to Support Local Nonprofits</a>
-          </h2>
-          <p class="blog-post-excerpt">Click to learn more about why you should support local nonprofits!</p>
-          <a href="https://www.tedxbreckenridge.com/blog/support-tedxbreckenridge" target="_blank" class="blog-post-link">Read more →</a>
-        </div>
-      </article>
-
-      <article class="blog-post">
-        <a href="https://www.tedxbreckenridge.com/blog/tedx-club-b-like-breckenridge-rtzh6" target="_blank" class="blog-post-image">
-          <img src="{{ '/assets/images/blog-club-series.jpg' | relative_url }}" alt="TEDxBreckenridge Club Series">
-        </a>
-        <div class="blog-post-content">
-          <div class="blog-post-meta">
-            <span class="blog-post-date">July 5, 2023</span>
-            <span class="blog-post-author">by Leah Rybak</span>
-          </div>
-          <h2 class="blog-post-title">
-            <a href="https://www.tedxbreckenridge.com/blog/tedx-club-b-like-breckenridge-rtzh6" target="_blank">The TEDxBreckenridge Club Series</a>
-          </h2>
-          <p class="blog-post-excerpt">Check out the recap from the last TEDxBreckenridge Club event!</p>
-          <a href="https://www.tedxbreckenridge.com/blog/tedx-club-b-like-breckenridge-rtzh6" target="_blank" class="blog-post-link">Read more →</a>
-        </div>
-      </article>
+      {% endfor %}
     </div>
 
     <div style="margin-top: 80px; padding: 48px; background: var(--cream); border-radius: 8px; text-align: center;">
