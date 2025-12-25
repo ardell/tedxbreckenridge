@@ -36,6 +36,9 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-minifier
 
 # Permalink structure for blog posts
 permalink: /blog/:title/
