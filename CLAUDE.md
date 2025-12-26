@@ -2,6 +2,8 @@
 
 This document provides technical guidelines and best practices for AI-assisted development on the TEDxBreckenridge project. For project structure and philosophy, see [README.md](README.md). For brand guidelines, see [design-system/](design-system/).
 
+**Note**: If a local configuration file exists at `~/.claude-local.md`, follow those user-specific preferences in addition to the guidelines below.
+
 ---
 
 ## Development Principles
