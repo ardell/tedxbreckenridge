@@ -1510,7 +1510,7 @@ select:focus-visible {
 
 /* Page Layout Styles */
 .page {
-    padding-top: 120px;
+    padding-top: 80px;
     min-height: 100vh;
 }
 
@@ -1985,11 +1985,13 @@ select:focus-visible {
     margin: 0 20px 20px 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .page {
-        padding-top: 80px;
+        padding-top: 64px;
     }
+}
 
+@media (max-width: 768px) {
     .page-header {
         padding: 40px 16px;
     }
@@ -2040,7 +2042,7 @@ select:focus-visible {
 
 @media (max-width: 640px) {
     .page {
-        padding-top: 70px;
+        padding-top: 52px;
     }
 
     .page-header {
@@ -2066,7 +2068,7 @@ body.layout-post {
 
 .post {
     max-width: 800px;
-    margin: 48px 24px;
+    margin: 120px 24px 48px 24px;
     padding: 0;
     background: #fff;
     border-radius: 16px;
@@ -2076,7 +2078,7 @@ body.layout-post {
 
 @media (min-width: 824px) {
     .post {
-        margin: 48px auto;
+        margin: 120px auto 48px auto;
     }
 }
 
@@ -2171,7 +2173,7 @@ body.layout-post {
 
 @media (max-width: 768px) {
     .post {
-        margin: 24px 16px;
+        margin: 100px 16px 24px 16px;
     }
 
     .post-header-image {
