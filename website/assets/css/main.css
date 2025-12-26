@@ -2373,6 +2373,19 @@ body.layout-post {
    Video Player (Talks Page)
    ========================================================================== */
 
+/* Year section responsive layout */
+@media (max-width: 768px) {
+    .talks-year-section .section-header {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    .talks-year-section .section-header img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
+
 /* Video skeleton loading */
 .video-wrapper {
     position: relative;
