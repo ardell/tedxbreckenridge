@@ -5,99 +5,6 @@ permalink: /talks/
 description: Watch inspiring TEDx talks from Breckenridge speakers. Explore ideas from past TEDxBreckenridge events including innovation, community, and mountain culture.
 ---
 
-<style>
-/* Video skeleton loading */
-.video-wrapper {
-    position: relative;
-    background: linear-gradient(90deg, #e8e6e3 25%, #f5f3f0 50%, #e8e6e3 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.video-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 68px;
-    height: 48px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    z-index: 1;
-    transition: opacity 0.3s ease;
-}
-
-.video-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-35%, -50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 0 10px 16px;
-    border-color: transparent transparent transparent rgba(0, 0, 0, 0.15);
-    z-index: 2;
-    transition: opacity 0.3s ease;
-}
-
-.video-wrapper.loaded {
-    animation: none;
-    background: #000;
-}
-
-.video-wrapper.loaded::before,
-.video-wrapper.loaded::after {
-    opacity: 0;
-}
-
-.video-wrapper iframe {
-    position: relative;
-    z-index: 3;
-}
-
-@keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-
-.video-info {
-    padding: 16px 0;
-}
-
-.video-title {
-    font-family: var(--font-primary);
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.4;
-    color: var(--ted-black);
-    margin-bottom: 6px;
-}
-
-.video-speaker {
-    font-family: var(--font-primary);
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--stone);
-    line-height: 1.3;
-}
-
-@media (max-width: 768px) {
-    .section-header {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-    }
-    .section-header img {
-        max-width: 250px;
-        margin: 0 auto;
-    }
-}
-</style>
-
 <div class="page">
   <div class="page-header">
     <div class="page-header-content">
@@ -110,7 +17,7 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
 <section class="section talks-year-section" id="metamorphosis" style="background: #fff; padding: 120px 24px;">
     <div class="section-inner" style="max-width: 1200px; margin: 0 auto;">
         <div class="section-header" style="display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center; margin-bottom: 64px;">
-            <img src="{{ '/assets/images/2025_metamorphosis.webp' | relative_url }}" alt="TEDxBreckenridge 2025 Metamorphosis event logo - transformation and evolution theme" style="width: 100%; height: auto;">
+            <img src="{{ '/assets/images/heroes/2025_metamorphosis.webp' | relative_url }}" alt="TEDxBreckenridge 2025 Metamorphosis event logo - transformation and evolution theme" style="width: 100%; height: auto;">
             <div>
                 <div class="section-eyebrow" style="font-size: 1rem; font-weight: 600; color: var(--terracotta);">2025</div>
                 <h2 class="section-title" style="font-size: 2.5rem; margin: 16px 0 24px;">METAMORPHOSIS</h2>
@@ -197,7 +104,7 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
 <section class="section talks-year-section" id="instinct" style="background: var(--sand); padding: 120px 24px;">
     <div class="section-inner" style="max-width: 1200px; margin: 0 auto;">
         <div class="section-header" style="display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center; margin-bottom: 64px;">
-            <img src="{{ '/assets/images/2023_instinct.webp' | relative_url }}" alt="TEDxBreckenridge 2023 Instinct event logo - intuition and inner wisdom theme" style="width: 100%; height: auto;">
+            <img src="{{ '/assets/images/heroes/2023_instinct.webp' | relative_url }}" alt="TEDxBreckenridge 2023 Instinct event logo - intuition and inner wisdom theme" style="width: 100%; height: auto;">
             <div>
                 <div class="section-eyebrow" style="font-size: 1rem; font-weight: 600; color: var(--teal);">2023</div>
                 <h2 class="section-title" style="font-size: 2.5rem; margin: 16px 0 24px;">INSTINCT</h2>
@@ -291,7 +198,7 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
 <section class="section talks-year-section" id="integrate" style="background: #fff; padding: 120px 24px;">
     <div class="section-inner" style="max-width: 1200px; margin: 0 auto;">
         <div class="section-header" style="display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center; margin-bottom: 64px;">
-            <img src="{{ '/assets/images/2022_integrate.webp' | relative_url }}" alt="TEDxBreckenridge 2022 Integrate event logo - connection and unity theme" style="width: 100%; height: auto;">
+            <img src="{{ '/assets/images/heroes/2022_integrate.webp' | relative_url }}" alt="TEDxBreckenridge 2022 Integrate event logo - connection and unity theme" style="width: 100%; height: auto;">
             <div>
                 <div class="section-eyebrow" style="font-size: 1rem; font-weight: 600; color: var(--terracotta);">2022</div>
                 <h2 class="section-title" style="font-size: 2.5rem; margin: 16px 0 24px;">INTEGRATE</h2>
@@ -385,7 +292,7 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
 <section class="section talks-year-section" id="expand" style="background: var(--sand); padding: 120px 24px;">
     <div class="section-inner" style="max-width: 1200px; margin: 0 auto;">
         <div class="section-header" style="display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center; margin-bottom: 64px;">
-            <img src="{{ '/assets/images/2021_expand.webp' | relative_url }}" alt="TEDxBreckenridge 2021 Expand event logo - growth and possibilities theme" style="width: 100%; height: auto;">
+            <img src="{{ '/assets/images/heroes/2021_expand.webp' | relative_url }}" alt="TEDxBreckenridge 2021 Expand event logo - growth and possibilities theme" style="width: 100%; height: auto;">
             <div>
                 <div class="section-eyebrow" style="font-size: 1rem; font-weight: 600; color: var(--teal);">2021</div>
                 <h2 class="section-title" style="font-size: 2.5rem; margin: 16px 0 24px;">EXPAND</h2>
@@ -472,7 +379,7 @@ description: Watch inspiring TEDx talks from Breckenridge speakers. Explore idea
 <section class="section talks-year-section" id="connection" style="background: #fff; padding: 120px 24px;">
     <div class="section-inner" style="max-width: 1200px; margin: 0 auto;">
         <div class="section-header" style="display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center; margin-bottom: 64px;">
-            <img src="{{ '/assets/images/2020_connection.webp' | relative_url }}" alt="TEDxBreckenridge 2020 Connection event logo - community and relationships theme" style="width: 100%; height: auto;">
+            <img src="{{ '/assets/images/heroes/2020_connection.webp' | relative_url }}" alt="TEDxBreckenridge 2020 Connection event logo - community and relationships theme" style="width: 100%; height: auto;">
             <div>
                 <div class="section-eyebrow" style="font-size: 1rem; font-weight: 600; color: var(--terracotta);">2020 • First Event</div>
                 <h2 class="section-title" style="font-size: 2.5rem; margin: 16px 0 24px;">CONNECTION</h2>

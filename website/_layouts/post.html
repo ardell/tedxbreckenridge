@@ -2,6 +2,36 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title }}",
+  "author": {
+    "@type": "Person",
+    "name": "{% if page.author %}{{ page.author }}{% else %}{{ site.author.name }}{% endif %}"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{% if page.last_modified_at %}{{ page.last_modified_at | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{% endif %}",
+  "description": "{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ page.description }}{% endif %}",
+  {% if page.image %}
+  "image": "{{ page.image | absolute_url }}",
+  {% endif %}
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.logo | absolute_url }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  }
+}
+</script>
+
 <article class="post">
   <header class="post-header">
     {% if page.image %}
@@ -28,145 +58,3 @@ layout: default
     <a href="/blog/" class="btn btn-secondary">← Back to Blog</a>
   </footer>
 </article>
-
-<style>
-  body {
-    background: var(--sand-light);
-  }
-
-  .post {
-    max-width: 800px;
-    margin: 48px 24px;
-    padding: 0;
-    background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  }
-
-  @media (min-width: 824px) {
-    .post {
-      margin: 48px auto;
-    }
-  }
-
-  .post-header-image {
-    width: 100%;
-    height: 400px;
-    margin: 0;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--sand) 0%, var(--cream) 100%);
-  }
-
-  .post-header-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .post-header-content {
-    padding: 40px 32px 0 32px;
-  }
-
-  .post-meta {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 16px;
-    font-size: 13px;
-    color: var(--stone);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .post-date {
-    font-weight: 600;
-  }
-
-  .post-author {
-    opacity: 0.8;
-  }
-
-  .post-title {
-    font-size: clamp(32px, 5vw, 48px);
-    line-height: 1.2;
-    margin: 0 0 40px 0;
-    color: var(--ted-black);
-  }
-
-  .post-content {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #4a4a4a;
-    padding: 0 32px 40px 32px;
-  }
-
-  .post-content h2 {
-    font-size: 28px;
-    margin: 48px 0 24px 0;
-    color: #2a2a2a;
-  }
-
-  .post-content h3 {
-    font-size: 22px;
-    margin: 36px 0 16px 0;
-    color: #2a2a2a;
-  }
-
-  .post-content p {
-    margin-bottom: 24px;
-  }
-
-  .post-content strong {
-    color: #2a2a2a;
-    font-weight: 600;
-  }
-
-  .post-content blockquote {
-    margin: 32px 0;
-    padding: 24px 32px;
-    background: var(--cream);
-    border-left: 4px solid var(--teal);
-    border-radius: 4px;
-    font-style: italic;
-    color: var(--stone);
-  }
-
-  .post-footer {
-    padding: 0 32px 40px 32px;
-    border-top: 1px solid var(--sand);
-    padding-top: 32px;
-    margin-top: 32px;
-  }
-
-  @media (max-width: 768px) {
-    .post {
-      margin: 24px 16px;
-    }
-
-    .post-header-image {
-      height: 280px;
-    }
-
-    .post-header-content {
-      padding: 32px 24px 0 24px;
-    }
-
-    .post-title {
-      margin-bottom: 32px;
-    }
-
-    .post-content {
-      font-size: 16px;
-      padding: 0 24px 32px 24px;
-    }
-
-    .post-content h2 {
-      font-size: 24px;
-    }
-
-    .post-footer {
-      padding: 0 24px 32px 24px;
-    }
-  }
-</style>

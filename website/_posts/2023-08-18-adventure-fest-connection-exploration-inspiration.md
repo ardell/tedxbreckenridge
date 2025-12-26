@@ -3,7 +3,7 @@ layout: post
 title: "Adventure Fest: Connection, Exploration, and Inspiration"
 date: 2023-08-18
 author: Charlotte Callahan
-image: /assets/images/blog-adventure-fest.jpg
+image: /assets/images/blog/blog-adventure-fest.jpg
 excerpt: "While people come to Breckenridge from many different cultures, countries, and backgrounds, a shared love of adventure often connects them."
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "The TEDxBreckenridge Club Series"
 date: 2023-07-05
 author: Charlotte Callahan
-image: /assets/images/blog-club-series.jpg
+image: /assets/images/blog/blog-club-series.jpg
 excerpt: "Participants at the TEDxBreckenridge Club Series discussed questions and more on a Tuesday evening in late June. The event is described as a 'book club without the book.'"
 ---
 

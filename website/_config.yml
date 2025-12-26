@@ -83,10 +83,10 @@ facebook:
   publisher: https://facebook.com/tedxbreckenridge
 
 # Logo for Schema.org markup
-logo: /assets/images/tedx-breckenridge-logo-black.png
+logo: /assets/images/logos/tedx-breckenridge-logo-black.png
 
 # Default image for social sharing
-image: /assets/images/tedx-salon-cutting-board-hero.jpg
+image: /assets/images/heroes/salon-cutting-board.jpg
 
 # Author defaults
 author:

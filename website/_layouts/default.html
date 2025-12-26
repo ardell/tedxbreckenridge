@@ -96,14 +96,14 @@
   </script>
   {% endif %}
 </head>
-<body>
+<body{% if page.layout == 'post' %} class="layout-post"{% endif %}>
   <!-- Skip Navigation Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Navigation -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <a href="/" class="nav-logo">
-      <img src="{{ '/assets/images/tedx-breckenridge-logo-black.png' | relative_url }}" alt="TEDxBreckenridge">
+      <img src="{{ '/assets/images/logos/tedx-breckenridge-logo-black.png' | relative_url }}" alt="TEDxBreckenridge">
     </a>
     <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
       <span aria-hidden="true"></span>
@@ -267,7 +267,7 @@
     <div class="footer-content">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="{{ '/assets/images/tedx-breckenridge-logo-white.png' | relative_url }}" alt="TEDxBreckenridge" class="footer-logo">
+          <img src="{{ '/assets/images/logos/tedx-breckenridge-logo-white.png' | relative_url }}" alt="TEDxBreckenridge" class="footer-logo">
           <p>A 501(c)(3) nonprofit bringing ideas worth spreading to Summit County, Colorado. Run entirely by local volunteers.</p>
         </div>
         <div class="footer-column">

@@ -3,7 +3,7 @@ layout: post
 title: "Why Attend TEDxBreckenridge INSTINCT"
 date: 2023-09-22
 author: Charlotte Callahan
-image: /assets/images/blog-instinct.jpg
+image: /assets/images/blog/blog-instinct.jpg
 excerpt: "On Saturday, Sept. 30, TEDxBreckenridge will host its 4th annual TEDx event, INSTINCT. The event begins at 1 p.m. at the Riverwalk Center."
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "5 Reasons to Support Local Nonprofits"
 date: 2023-07-20
 author: Charlotte Callahan
-image: /assets/images/blog-support-nonprofits.png
+image: /assets/images/blog/blog-support-nonprofits.png
 excerpt: "Why donate to a local nonprofit? There are a couple reasons. Anytime you donate to a local nonprofit, you are helping make the community stronger."
 ---
 
