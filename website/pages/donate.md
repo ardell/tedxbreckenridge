@@ -45,8 +45,10 @@ description: Support TEDxBreckenridge, a 100% volunteer-led nonprofit bringing i
     <div style="margin-bottom: 60px;">
       <h2 style="text-align: center; margin-bottom: 40px;">Make Your Donation</h2>
 
-      <div style="background: var(--cream); padding: 40px; border-radius: 8px;">
-        <iframe src="https://givebutter.com/embed/tedxbreckenridge" width="100%" height="900px" style="max-width: 100%; border: none; border-radius: 4px;" frameborder="0" scrolling="yes" seamless="seamless" title="Donate to TEDxBreckenridge via GiveButter"></iframe>
+      <div style="background: var(--cream); padding: 60px 40px; border-radius: 8px; text-align: center;">
+        <a class="button button-primary" href="https://givebutter.com/tedxbreckenridge" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 24px 48px; font-size: 1.5rem; font-weight: 700; text-decoration: none; background: var(--terracotta); color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s; border-radius: 8px;">Donate Now</a>
+        <p style="margin-top: 24px; color: var(--charcoal); font-size: 1.1rem; font-weight: 500;">Support ideas worth spreading in our mountain community</p>
+        <p style="margin-top: 12px; color: var(--stone); font-size: 0.95rem;">Secure donation processing via Givebutter</p>
       </div>
 
       <p style="text-align: center; margin-top: 24px; color: var(--stone); font-size: 0.95rem;">TEDxBreckenridge is a 501(c)(3) nonprofit organization. Your donation is tax-deductible to the extent allowed by law.</p>
