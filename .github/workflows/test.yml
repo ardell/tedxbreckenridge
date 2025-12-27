@@ -80,12 +80,3 @@ jobs:
           sleep 5
           yarn test:a11y
           kill $SERVER_PID
-
-      - name: Check external links (non-blocking)
-        working-directory: website
-        continue-on-error: true
-        run: |
-          bundle exec htmlproofer ./_site \
-            --external-only \
-            --ignore-status-codes "0,403,999" \
-            --swap-urls "^http\://tedxbreckenridge-website.s3-website-us-west-1.amazonaws.com:https\://tedxbreckenridge.com"
