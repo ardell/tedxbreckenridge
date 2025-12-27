@@ -78,9 +78,10 @@ jobs:
       - name: Test accessibility with pa11y-ci
         run: |
           yarn serve &
+          SERVER_PID=$!
           sleep 5
           yarn test:a11y
-          kill %1
+          kill $SERVER_PID
 
       - name: Check external links (non-blocking)
         working-directory: website
