@@ -79,9 +79,7 @@ TRUST_POLICY=$(cat <<EOF
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
         "StringEquals": {
-          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
-        },
-        "StringLike": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
           "token.actions.githubusercontent.com:sub": "repo:${GITHUB_REPO_FULL}:ref:refs/heads/main"
         }
       }
@@ -129,8 +127,7 @@ PERMISSIONS_POLICY=$(cat <<EOF
       "Effect": "Allow",
       "Action": [
         "s3:ListBucket",
-        "s3:GetBucketLocation",
-        "s3:GetBucketWebsite"
+        "s3:GetBucketLocation"
       ],
       "Resource": "arn:aws:s3:::${S3_BUCKET}"
     },
