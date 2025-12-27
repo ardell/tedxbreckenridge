@@ -1,0 +1,73 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # Allow manual triggering
+
+concurrency:
+  group: production-deployment
+  cancel-in-progress: false
+
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read   # Required to checkout code
+
+jobs:
+  deploy:
+    name: Build and Deploy to S3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up mise
+        uses: jdx/mise-action@v2
+        with:
+          experimental: true
+
+      - name: Verify Ruby version
+        run: ruby --version
+
+      - name: Cache gems
+        uses: actions/cache@v4
+        with:
+          path: website/vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('website/Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-gems-
+
+      - name: Install dependencies
+        working-directory: website
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Build Jekyll site
+        working-directory: website
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-west-1
+
+      - name: Deploy to S3
+        run: |
+          aws s3 sync website/_site/ s3://tedxbreckenridge-website \
+            --delete \
+            --cache-control "public, max-age=3600" \
+            --exclude "*.DS_Store"
+
+      - name: Deployment summary
+        run: |
+          echo "## Deployment Complete! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**S3 Bucket**: tedxbreckenridge-website" >> $GITHUB_STEP_SUMMARY
+          echo "**Region**: us-west-1" >> $GITHUB_STEP_SUMMARY
+          echo "**Website URL**: http://tedxbreckenridge-website.s3-website-us-west-1.amazonaws.com" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Changes may take a few moments to be visible." >> $GITHUB_STEP_SUMMARY
