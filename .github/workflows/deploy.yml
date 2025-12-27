@@ -45,11 +45,9 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
 
-      - name: Build Jekyll site
+      - name: Build Jekyll site for testing
         working-directory: website
-        env:
-          JEKYLL_ENV: production
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --config _config.yml,_config.dev.yml
 
       - name: Validate image sizes
         run: ./build/website/validate-images.sh
@@ -79,10 +77,10 @@ jobs:
 
       - name: Test accessibility with pa11y-ci
         run: |
-          cd website/_site
           yarn serve &
           sleep 5
           yarn test:a11y
+          kill %1
 
       - name: Check external links (non-blocking)
         working-directory: website

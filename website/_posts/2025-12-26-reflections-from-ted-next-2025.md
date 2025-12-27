@@ -25,7 +25,7 @@ TED has a gift for introducing you to ideas you didn't know you needed. Some tal
 
 <div style="max-width: 854px; margin: 2rem auto;">
   <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe src="https://embed.ted.com/talks/priya_lakhani_this_is_how_kids_should_be_learning_with_ai" width="854" height="480" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" scrolling="no" allowfullscreen loading="lazy"></iframe>
+    <iframe src="https://embed.ted.com/talks/priya_lakhani_this_is_how_kids_should_be_learning_with_ai" width="854" height="480" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" scrolling="no" allowfullscreen loading="lazy" title="TED Talk: Priya Lakhani - This is how kids should be learning with AI"></iframe>
   </div>
 </div>
 
@@ -35,7 +35,7 @@ TED has a gift for introducing you to ideas you didn't know you needed. Some tal
 
 <div style="max-width: 854px; margin: 2rem auto;">
   <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe src="https://embed.ted.com/talks/misty_copeland_how_i_found_resilience_through_artistry" width="854" height="480" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" scrolling="no" allowfullscreen loading="lazy"></iframe>
+    <iframe src="https://embed.ted.com/talks/misty_copeland_how_i_found_resilience_through_artistry" width="854" height="480" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" scrolling="no" allowfullscreen loading="lazy" title="TED Talk: Misty Copeland - How I found resilience through artistry"></iframe>
   </div>
 </div>
 
@@ -49,7 +49,7 @@ TED has a gift for introducing you to ideas you didn't know you needed. Some tal
 
 <div style="max-width: 854px; margin: 2rem auto;">
   <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe src="https://embed.ted.com/talks/paul_tazewell_wicked_s_costume_designer_on_how_to_tell_stories_with_clothes" width="854" height="480" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" scrolling="no" allowfullscreen loading="lazy"></iframe>
+    <iframe src="https://embed.ted.com/talks/paul_tazewell_wicked_s_costume_designer_on_how_to_tell_stories_with_clothes" width="854" height="480" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" scrolling="no" allowfullscreen loading="lazy" title="TED Talk: Paul Tazewell - Wicked's costume designer on how to tell stories with clothes"></iframe>
   </div>
 </div>
 

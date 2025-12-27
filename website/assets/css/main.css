@@ -5,18 +5,18 @@
 
 :root {
     /* Core TED Brand */
-    --ted-red: #e62b1e;
+    --ted-red: #e4291c;
     --ted-black: #000;
     --white: #FFF;
 
     /* 2026 Evergreen - Mountain Inspired Palette */
-    --terracotta: #C75B4D;
+    --terracotta: #B8433C;
     --rust: #B8503F;
-    --teal: #5B8E8E;
+    --teal: #3F6F6F;
     --forest: #4A7470;
     --charcoal: #2A2A2A;
-    --stone: #6B6B6B;
-    --cream: #F5F3F0;
+    --stone: #676767;
+    --cream: #F9F7F4;
     --sand: #E8E6E3;
 
     /* Tints */

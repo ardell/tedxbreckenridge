@@ -27,5 +27,5 @@ echo "Starting server at http://localhost:4000"
 echo "Press Ctrl+C to stop"
 echo ""
 
-# Start Jekyll with live reload
-mise exec -- bundle exec jekyll serve --livereload
+# Start Jekyll with live reload using dev config for localhost URLs
+mise exec -- bundle exec jekyll serve --livereload --config _config.yml,_config.dev.yml

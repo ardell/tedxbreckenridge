@@ -121,7 +121,7 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       <h2 style="margin-bottom: 24px; color: var(--charcoal); text-align: center;">Ready to Share Your Idea?</h2>
       <p style="max-width: 700px; margin: 0 auto 40px; font-size: 1.125rem; line-height: 1.7; color: var(--stone); text-align: center;">Complete our speaker application form. We're looking for ideas that inspire, challenge, and elevate our community.</p>
       <div style="max-width: 100%; overflow: hidden; background: white; border-radius: 8px; padding: 20px;">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSem_T8nXFvswGze5wL7kSFg7IizEyU9yrIh56qjmh2nGq8JqA/viewform?embedded=true" width="100%" height="2200" frameborder="0" marginheight="0" marginwidth="0" style="border: none;">Loading…</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSem_T8nXFvswGze5wL7kSFg7IizEyU9yrIh56qjmh2nGq8JqA/viewform?embedded=true" width="100%" height="2200" frameborder="0" marginheight="0" marginwidth="0" style="border: none;" title="Speaker Application Form">Loading…</iframe>
       </div>
     </div>
 

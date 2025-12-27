@@ -14,7 +14,7 @@ Ticket information for TEDxBreckenridge 2026 will be available soon.
 Want to be the first to know when tickets go on sale? Join our mailing list:
 
 <form class="signup-form" action="#" method="post">
-  <input type="email" placeholder="Your email address" required>
+  <input type="email" placeholder="Your email address" aria-label="Email address" required>
   <button type="submit" class="btn btn-primary">Notify Me</button>
 </form>
 
