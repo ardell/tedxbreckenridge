@@ -281,6 +281,165 @@ Refer to [design-system/README.md](design-system/README.md) for complete brand v
 
 ---
 
+## Testing & Quality Assurance
+
+**IMPORTANT**: All code changes must pass automated tests before being merged. Run tests locally before pushing to ensure CI passes.
+
+### Running Tests Locally
+
+Before pushing code or creating a pull request, run these tests:
+
+#### 1. Build the Site
+```bash
+cd website
+bundle install
+JEKYLL_ENV=production bundle exec jekyll build
+```
+
+#### 2. Validate Image Sizes
+```bash
+./build/website/validate-images.sh
+```
+
+Ensures images meet size requirements:
+- Hero images: <500KB
+- Thumbnails: <100KB
+- General images: <500KB
+
+#### 3. Test HTML (Internal Links)
+```bash
+cd website
+bundle exec htmlproofer ./_site \
+  --disable-external \
+  --allow-hash-href \
+  --ignore-status-codes "0,999"
+```
+
+Checks:
+- Valid HTML5 markup
+- No broken internal links
+- All images have alt text
+- No missing image files
+
+#### 4. Lint CSS
+```bash
+yarn test:css
+```
+
+Validates:
+- CSS syntax correctness
+- Consistent formatting
+- No duplicate properties
+- Proper selector naming
+
+#### 5. Test Accessibility
+```bash
+# Start a local server in one terminal
+cd website
+bundle exec jekyll serve
+
+# In another terminal
+yarn test:a11y
+```
+
+Checks:
+- Color contrast ratios
+- Proper heading hierarchy
+- ARIA labels
+- Keyboard navigation
+- Screen reader compatibility
+
+#### 6. Check External Links (Optional)
+```bash
+cd website
+bundle exec htmlproofer ./_site \
+  --external-only \
+  --ignore-status-codes "0,403,999"
+```
+
+Note: This can be slow and may have false positives. Run periodically, not on every change.
+
+### Automated Testing in CI/CD
+
+GitHub Actions automatically runs all tests on:
+- **Pull Requests**: Tests must pass before merging
+- **Push to main**: Tests run before deployment
+
+View test results: [Actions tab](https://github.com/ardell/tedxbreckenridge/actions)
+
+### Test Failures
+
+If tests fail:
+
+1. **Review the error message** - GitHub Actions provides detailed logs
+2. **Fix the issue locally** - Run the failing test locally to debug
+3. **Common issues**:
+   - Missing alt text on images → Add descriptive alt attributes
+   - Broken internal links → Fix the link or remove it
+   - CSS syntax errors → Check for typos in CSS
+   - Accessibility issues → Fix color contrast, heading hierarchy, etc.
+   - Oversized images → Optimize images before committing
+4. **Push the fix** - Tests will re-run automatically
+
+### What Gets Tested
+
+Our test suite covers:
+
+- ✅ **HTML Validation**: Valid HTML5, semantic structure
+- ✅ **Link Checking**: No broken internal/external links
+- ✅ **Image Validation**: All images optimized and have alt text
+- ✅ **CSS Linting**: Consistent, valid CSS
+- ✅ **Accessibility**: WCAG compliance, keyboard navigation
+- ✅ **Performance**: Image size limits enforced
+
+### Best Practices
+
+- **Test before committing**: Run tests locally to catch issues early
+- **Fix failing tests immediately**: Don't let tests stay broken
+- **Don't skip tests**: They prevent bugs from reaching production
+- **Add tests for new features**: Update tests when adding new pages/images
+- **Monitor external links**: Check periodically for link rot
+
+### Tools Used
+
+- **html-proofer** (Ruby gem): HTML validation and link checking
+- **stylelint** (yarn): CSS linting
+- **pa11y-ci** (yarn): Accessibility testing
+- **serve** (yarn): Local web server for testing
+- **Custom script**: Image size validation
+
+### JavaScript Dependencies
+
+JavaScript dependencies are managed with **Yarn** (not npm).
+
+**Install dependencies**:
+```bash
+yarn install
+```
+
+**Run scripts**:
+```bash
+yarn test:css    # Lint CSS
+yarn test:a11y   # Test accessibility
+yarn serve       # Start local server for testing
+```
+
+**Add new dependencies**:
+```bash
+yarn add --dev <package-name>
+```
+
+**Update dependencies**:
+```bash
+yarn upgrade-interactive
+```
+
+**Files**:
+- `package.json` - Dependency definitions and scripts
+- `yarn.lock` - Locked versions (commit this file!)
+
+---
+
 ## Git Workflow
 
 ### Commit Messages
