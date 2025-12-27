@@ -14,22 +14,10 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
   </div>
 
   <div class="page-content" style="max-width: 900px;">
-
-    <div style="padding: 24px 32px; background: var(--cream); border-left: 4px solid var(--ted-red); border-radius: 4px; margin-bottom: 60px;">
-      <p style="margin: 0; font-weight: 500; color: var(--charcoal);"><strong>NOTE:</strong> All applications received will be considered for our 2026 event, TBD.</p>
-    </div>
-
     <div style="margin-bottom: 60px;">
       <blockquote style="margin: 0; padding: 32px 40px; background: var(--cream); border-left: 4px solid var(--terracotta); font-size: 1.25rem; line-height: 1.6; font-style: italic; color: var(--charcoal);">
         "There is no greater agony than bearing an untold story inside you."
         <footer style="margin-top: 16px; font-size: 1rem; font-style: normal; font-weight: 500; color: var(--stone);">— Maya Angelou</footer>
-      </blockquote>
-    </div>
-
-    <div style="margin-bottom: 60px;">
-      <blockquote style="margin: 0; padding: 32px 40px; background: var(--cream); border-left: 4px solid var(--teal); font-size: 1.25rem; line-height: 1.6; font-style: italic; color: var(--charcoal);">
-        "The mind, once stretched by a new idea, never returns to its original dimensions."
-        <footer style="margin-top: 16px; font-size: 1rem; font-style: normal; font-weight: 500; color: var(--stone);">— Ralph Waldo Emerson</footer>
       </blockquote>
     </div>
 
@@ -137,10 +125,16 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       </div>
     </div>
 
+    <div style="margin-top: 60px;">
+      <blockquote style="margin: 0; padding: 32px 40px; background: var(--cream); border-left: 4px solid var(--teal); font-size: 1.25rem; line-height: 1.6; font-style: italic; color: var(--charcoal);">
+        "The mind, once stretched by a new idea, never returns to its original dimensions."
+        <footer style="margin-top: 16px; font-size: 1rem; font-style: normal; font-weight: 500; color: var(--stone);">— Ralph Waldo Emerson</footer>
+      </blockquote>
+    </div>
+
     <div style="margin-top: 60px; padding: 32px; background: var(--cream); border-radius: 8px;">
       <h3 style="margin-bottom: 16px; color: var(--charcoal); font-size: 1.125rem;">Non-Discrimination Statement</h3>
       <p style="margin: 0; line-height: 1.7; color: var(--stone); font-size: 0.95rem;">TEDxBreckenridge does not discriminate based on race, color, religion, gender, age, national origin, disability, marital status, sexual orientation, or military status.</p>
     </div>
-
   </div>
 </div>
