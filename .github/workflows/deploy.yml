@@ -1,14 +1,15 @@
-name: Test and Deploy
+name: Deploy
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  workflow_dispatch:  # Allow manual triggering
+  workflow_run:
+    workflows: ["Test"]
+    types:
+      - completed
+    branches: [main]  # Triggers after Test succeeds on main (via PR merge)
+  workflow_dispatch:  # Allow manual triggering for emergency deployments
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: deploy-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -16,87 +17,11 @@ permissions:
   contents: read   # Required to checkout code
 
 jobs:
-  test:
-    name: Test Site Quality
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up mise
-        uses: jdx/mise-action@v2
-        with:
-          experimental: true
-
-      - name: Verify Ruby version
-        run: ruby --version
-
-      - name: Cache gems
-        uses: actions/cache@v4
-        with:
-          path: website/vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('website/Gemfile.lock') }}
-          restore-keys: ${{ runner.os }}-gems-
-
-      - name: Install dependencies
-        working-directory: website
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
-
-      - name: Build Jekyll site for testing
-        working-directory: website
-        run: bundle exec jekyll build --config _config.yml,_config.dev.yml
-
-      - name: Validate image sizes
-        run: ./build/website/validate-images.sh
-
-      - name: Test HTML with HTMLProofer (internal links)
-        working-directory: website
-        run: |
-          bundle exec htmlproofer ./_site \
-            --disable-external \
-            --allow-hash-href \
-            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/" \
-            --ignore-status-codes "0,999"
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Enable Corepack for Yarn
-        run: corepack enable
-
-      - name: Install JavaScript dependencies
-        run: yarn install --immutable
-
-      - name: Lint CSS with Stylelint
-        run: yarn test:css
-
-      - name: Test accessibility with pa11y-ci
-        run: |
-          yarn serve &
-          SERVER_PID=$!
-          sleep 5
-          yarn test:a11y
-          kill $SERVER_PID
-
-      - name: Check external links (non-blocking)
-        working-directory: website
-        continue-on-error: true
-        run: |
-          bundle exec htmlproofer ./_site \
-            --external-only \
-            --ignore-status-codes "0,403,999" \
-            --swap-urls "^http\://tedxbreckenridge-website.s3-website-us-west-1.amazonaws.com:https\://tedxbreckenridge.com"
-
   deploy:
-    name: Build and Deploy to S3
+    name: Deploy to S3
     runs-on: ubuntu-latest
-    needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # Only run if the Test workflow succeeded and this is a push to main (not a PR)
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' }}
 
     steps:
       - name: Checkout code
@@ -123,7 +48,7 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
 
-      - name: Build Jekyll site
+      - name: Build Jekyll site for production
         working-directory: website
         env:
           JEKYLL_ENV: production

@@ -6,25 +6,53 @@ TEDxBreckenridge uses GitHub Actions for automated deployment to AWS S3.
 
 ## Automated Deployment
 
+### Two-Stage Process
+
+The deployment process uses two separate GitHub Actions workflows:
+
+1. **Test Workflow** (`.github/workflows/test.yml`)
+   - Runs on every push to `main` and on all pull requests
+   - Validates code quality (Jekyll build, image sizes, HTML, CSS, accessibility)
+   - Must pass before PRs can be merged
+
+2. **Deploy Workflow** (`.github/workflows/deploy.yml`)
+   - Runs automatically after Test workflow succeeds on `main` branch
+   - Only deploys if all tests pass
+   - Can also be manually triggered
+
 ### Trigger
 Deployments run automatically when:
-- Code is pushed to `main` branch
-- Pull request is merged to `main`
-- Manually triggered via GitHub Actions UI
+- Pull request is merged to `main` (Test runs → Deploy runs)
+  - Note: With branch protection enabled, ALL changes to main happen via PR merges
+- Manually triggered via GitHub Actions UI (Deploy only, for emergency fixes)
 
 ### Process
-1. GitHub Actions checks out code
-2. Sets up Ruby environment via mise (version 3.4.8)
-3. Installs Jekyll dependencies
-4. Builds static site (`JEKYLL_ENV=production`)
-5. Authenticates to AWS via OIDC (no stored credentials)
-6. Syncs files to S3 bucket
-7. Reports deployment status
+**Test Stage:**
+1. Checkout code
+2. Set up Ruby environment via mise (version 3.4.8)
+3. Install Jekyll dependencies
+4. Build site with dev config (for localhost URLs in sitemap)
+5. Validate image sizes
+6. Run HTMLProofer (internal links)
+7. Run Stylelint (CSS linting)
+8. Run pa11y-ci (accessibility testing)
+
+**Deploy Stage:**
+1. Checkout code
+2. Set up Ruby environment
+3. Install Jekyll dependencies
+4. Build static site (`JEKYLL_ENV=production`)
+5. Authenticate to AWS via OIDC (no stored credentials)
+6. Sync files to S3 bucket
+7. Report deployment status
 
 ### Monitoring
-- **View deployments**: [Actions tab](https://github.com/ardell/tedxbreckenridge/actions)
-- **Workflow file**: `.github/workflows/deploy.yml`
-- **Deployment time**: ~2-3 minutes
+- **View workflows**: [Actions tab](https://github.com/ardell/tedxbreckenridge/actions)
+- **Test workflow**: `.github/workflows/test.yml`
+- **Deploy workflow**: `.github/workflows/deploy.yml`
+- **Test time**: ~3-4 minutes
+- **Deploy time**: ~2 minutes
+- **Total time**: ~5-6 minutes from merge to live
 
 ## Manual Deployment
 

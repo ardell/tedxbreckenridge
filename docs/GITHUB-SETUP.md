@@ -25,13 +25,17 @@ To ensure code quality and prevent broken code from reaching production, set up 
    - ✅ **Require status checks to pass before merging**
      - ✅ Require branches to be up to date before merging
      - **Required status checks** (search and add these):
-       - `test` (this is the test job from `.github/workflows/deploy.yml`)
+       - `Test` (this is the workflow from `.github/workflows/test.yml`)
+         - Note: This check includes all quality tests: Jekyll build, image validation, HTMLProofer, Stylelint, and pa11y-ci
+         - If any individual test fails, the entire check fails and PRs cannot be merged
 
    - ✅ **Require conversation resolution before merging**
      - Ensures all PR comments are addressed
 
    - ✅ **Do not allow bypassing the above settings**
-     - Even admins must follow these rules
+     - **IMPORTANT**: This prevents ALL direct pushes to main, even from admins
+     - All changes must go through pull requests
+     - This is the recommended configuration for production safety
 
 4. Click **"Create"** to save the rule
 
@@ -42,32 +46,35 @@ With branch protection enabled:
 1. **Direct pushes to `main` are blocked**
    - All changes must go through pull requests
 
-2. **Tests must pass**
-   - HTML validation
-   - Link checking
-   - Image size validation
-   - CSS linting
-   - Accessibility testing
+2. **Tests must pass** (all of these run in the "Test" workflow)
+   - Jekyll site builds successfully
+   - Image size validation (heroes <500KB, all images <500KB)
+   - HTMLProofer (internal link checking)
+   - Stylelint (CSS linting)
+   - pa11y-ci (accessibility testing on all pages)
+   - External links checked (non-blocking, won't prevent merges)
 
 3. **Pull requests show test status**
+   - You'll see "Test" workflow running
    - Green checkmark = tests passed, safe to merge
    - Red X = tests failed, must fix before merging
 
 4. **Automatic deployment**
-   - Once PR is merged, tests run again
-   - If tests pass, site deploys automatically
+   - Once PR is merged to main, "Test" workflow runs again
+   - If tests pass, "Deploy" workflow triggers automatically
+   - Site is deployed to S3
 
 ### Workflow
 
-**Before branch protection:**
+**With branch protection enabled (recommended):**
 ```
-Push to main → Tests run → Deploy (even if tests fail)
+Create PR → "Test" runs → ❌ Tests fail → Fix issues → ✅ Tests pass → Merge PR → "Test" runs → "Deploy" runs
 ```
 
-**After branch protection:**
-```
-Create PR → Tests run → ❌ Tests fail → Fix issues → ✅ Tests pass → Merge PR → Deploy
-```
+**What you'll see in GitHub:**
+- On PRs: "Test" workflow appears (must pass to merge)
+- After merge: Both "Test" and "Deploy" workflows run on main branch
+- Direct pushes to main: Blocked (all changes require PRs)
 
 ### Testing the Setup
 
@@ -92,12 +99,13 @@ Create PR → Tests run → ❌ Tests fail → Fix issues → ✅ Tests pass →
 
 4. **Watch the tests run**:
    - PR page will show "Checks" section
-   - Should see "test" check running
+   - Should see "Test" workflow running
+   - Click "Details" to expand and see individual steps: Build Jekyll site, Validate images, HTMLProofer, Stylelint, pa11y-ci
    - Wait for green checkmark
 
 5. **Try to merge before tests complete**:
    - Merge button should be disabled
-   - Message: "Merging is blocked - Required status check has not succeeded"
+   - Message: "Merging is blocked - Required status check 'Test' has not succeeded"
 
 6. **After tests pass**:
    - Merge button becomes enabled
@@ -106,8 +114,9 @@ Create PR → Tests run → ❌ Tests fail → Fix issues → ✅ Tests pass →
 
 7. **Verify deployment**:
    - Go to Actions tab
-   - See deploy job running
-   - Check website after deployment completes
+   - See "Test" workflow complete successfully
+   - See "Deploy" workflow start automatically
+   - Check website after "Deploy" completes
 
 ## GitHub Secrets
 
@@ -193,7 +202,7 @@ These are minimal permissions following the principle of least privilege.
    - Solution: Update your branch: `git pull origin main`
 
 2. Required status check name doesn't match
-   - Solution: Verify status check is named exactly `test`
+   - Solution: Verify status check is named exactly `Test` (the workflow name)
    - Check: https://github.com/ardell/tedxbreckenridge/settings/branches
 
 3. Conversations not resolved
@@ -213,21 +222,23 @@ These are minimal permissions following the principle of least privilege.
    - External link check is non-blocking (`continue-on-error: true`)
    - Should not prevent merging
 
-### Branch protection accidentally locked yourself out
+### Emergency Deployments
 
-**If you can't push to main and need to bypass**:
+**If you need to deploy an urgent fix**:
 
-1. Temporarily disable branch protection:
-   - Go to: https://github.com/ardell/tedxbreckenridge/settings/branches
-   - Click "Edit" on the main branch rule
-   - Uncheck "Do not allow bypassing"
-   - Save changes
+With strict branch protection enabled (recommended), you have two options:
 
-2. Make your urgent fix and push to main
+1. **Fast-track a PR** (recommended):
+   - Create a PR for your fix
+   - Tests run in ~4 minutes
+   - Merge immediately after tests pass
+   - Deploy runs automatically
 
-3. Re-enable strict branch protection immediately after
-
-**Better approach**: Create a PR even for urgent fixes. Tests run faster than you think (~5 minutes).
+2. **Manual trigger** (for true emergencies):
+   - Make your fix locally
+   - Deploy manually: `./build/website/deploy.sh`
+   - Then create a PR to sync the fix to GitHub
+   - This bypasses CI but requires AWS credentials
 
 ## Summary
 
