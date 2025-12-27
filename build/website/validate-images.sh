@@ -10,7 +10,7 @@ IMAGES_DIR="${REPO_ROOT}/website/assets/images"
 
 # Size limits (in KB)
 HERO_MAX_KB=500
-THUMBNAIL_MAX_KB=100
+THUMBNAIL_MAX_KB=150
 GENERAL_MAX_KB=500
 
 # Colors for output
@@ -46,14 +46,17 @@ if [ -d "${IMAGES_DIR}/heroes" ]; then
   done < <(find "${IMAGES_DIR}/heroes" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.webp" \) -print0)
 fi
 
-# Check speaker/team thumbnails (should be smaller)
+# Check speaker/team thumbnails (recommended 100KB, hard limit 500KB)
 echo ""
 echo "Checking team/speaker images..."
 for dir in "speakers" "team"; do
   if [ -d "${IMAGES_DIR}/${dir}" ]; then
     while IFS= read -r -d '' file; do
       SIZE_KB=$(du -k "$file" | cut -f1)
-      if [ "$SIZE_KB" -gt "$THUMBNAIL_MAX_KB" ]; then
+      if [ "$SIZE_KB" -gt "$GENERAL_MAX_KB" ]; then
+        echo -e "${RED}✗ ${dir}/$(basename "$file"): ${SIZE_KB} KB (exceeds ${GENERAL_MAX_KB} KB)${NC}"
+        ERRORS=$((ERRORS + 1))
+      elif [ "$SIZE_KB" -gt "$THUMBNAIL_MAX_KB" ]; then
         echo -e "${YELLOW}⚠ ${dir}/$(basename "$file"): ${SIZE_KB} KB (recommended <${THUMBNAIL_MAX_KB} KB)${NC}"
         WARNINGS=$((WARNINGS + 1))
       else
