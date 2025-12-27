@@ -16,8 +16,8 @@ fi
 
 # Set defaults (can be overridden by config files or environment variables)
 AWS_REGION=${AWS_REGION:-us-west-1}
-AWS_PROFILE=${AWS_PROFILE:-${AWS_SSO_PROFILE:-tedxbreckenridge}}
-S3_BUCKET=${S3_BUCKET:-"tedxbreckenridge-2026"}
+AWS_PROFILE=${AWS_PROFILE:-${AWS_SSO_PROFILE:-tedxbreckenridge-production}}
+S3_BUCKET=${S3_BUCKET:-"tedxbreckenridge-website"}
 
 SITE_DIR="$REPO_ROOT/website"
 BUILD_DIR="${SITE_DIR}/_site"
@@ -36,7 +36,7 @@ echo "AWS Profile: $AWS_PROFILE"
 echo ""
 
 # Validate AWS SSO session if using SSO profile
-if [ "$AWS_PROFILE" = "tedxbreckenridge" ] || [ "$AWS_PROFILE" = "$AWS_SSO_PROFILE" ]; then
+if [ "$AWS_PROFILE" = "tedxbreckenridge-production" ] || [ "$AWS_PROFILE" = "$AWS_SSO_PROFILE" ]; then
   if [ -f "${SCRIPT_DIR}/../aws/validate-sso.sh" ]; then
     "${SCRIPT_DIR}/../aws/validate-sso.sh" || exit 1
   fi
