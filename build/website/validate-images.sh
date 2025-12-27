@@ -39,7 +39,7 @@ if [ -d "${IMAGES_DIR}/heroes" ]; then
     SIZE_KB=$(du -k "$file" | cut -f1)
     if [ "$SIZE_KB" -gt "$HERO_MAX_KB" ]; then
       echo -e "${RED}✗ $(basename "$file"): ${SIZE_KB} KB (exceeds ${HERO_MAX_KB} KB)${NC}"
-      ((ERRORS++))
+      ERRORS=$((ERRORS + 1))
     else
       echo -e "${GREEN}✓ $(basename "$file"): ${SIZE_KB} KB${NC}"
     fi
@@ -55,7 +55,7 @@ for dir in "speakers" "team"; do
       SIZE_KB=$(du -k "$file" | cut -f1)
       if [ "$SIZE_KB" -gt "$THUMBNAIL_MAX_KB" ]; then
         echo -e "${YELLOW}⚠ ${dir}/$(basename "$file"): ${SIZE_KB} KB (recommended <${THUMBNAIL_MAX_KB} KB)${NC}"
-        ((WARNINGS++))
+        WARNINGS=$((WARNINGS + 1))
       else
         echo -e "${GREEN}✓ ${dir}/$(basename "$file"): ${SIZE_KB} KB${NC}"
       fi
@@ -71,7 +71,7 @@ if [ -d "${IMAGES_DIR}/blog" ]; then
     SIZE_KB=$(du -k "$file" | cut -f1)
     if [ "$SIZE_KB" -gt "$GENERAL_MAX_KB" ]; then
       echo -e "${RED}✗ blog/$(basename "$file"): ${SIZE_KB} KB (exceeds ${GENERAL_MAX_KB} KB)${NC}"
-      ((ERRORS++))
+      ERRORS=$((ERRORS + 1))
     else
       echo -e "${GREEN}✓ blog/$(basename "$file"): ${SIZE_KB} KB${NC}"
     fi
@@ -86,7 +86,7 @@ if [ -d "${IMAGES_DIR}/events" ]; then
     SIZE_KB=$(du -k "$file" | cut -f1)
     if [ "$SIZE_KB" -gt "$GENERAL_MAX_KB" ]; then
       echo -e "${RED}✗ events/$(basename "$file"): ${SIZE_KB} KB (exceeds ${GENERAL_MAX_KB} KB)${NC}"
-      ((ERRORS++))
+      ERRORS=$((ERRORS + 1))
     else
       echo -e "${GREEN}✓ events/$(basename "$file"): ${SIZE_KB} KB${NC}"
     fi
