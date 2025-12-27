@@ -6,8 +6,8 @@
 :root {
     /* Core TED Brand */
     --ted-red: #e62b1e;
-    --ted-black: #000000;
-    --white: #FFFFFF;
+    --ted-black: #000;
+    --white: #FFF;
 
     /* 2026 Evergreen - Mountain Inspired Palette */
     --terracotta: #C75B4D;
@@ -30,7 +30,7 @@
      * Inter: Open-source alternative for Windows/Linux (brand-approved)
      * Arial: System fallback
      */
-    --font-primary: 'Helvetica Neue', Helvetica, Inter, Arial, sans-serif;
+    --font-primary: 'Helvetica Neue', helvetica, inter, arial, sans-serif;
 }
 
 * {
@@ -76,7 +76,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     z-index: 10000;
-    border-radius: 0 0 4px 0;
+    border-radius: 0 0 4px;
     transition: top 0.2s ease;
 }
 
@@ -120,7 +120,7 @@ select:focus-visible {
 }
 
 .nav.scrolled {
-    box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    box-shadow: 0 1px 0 rgb(0 0 0 / 8%);
 }
 
 .nav-logo {
@@ -186,7 +186,7 @@ select:focus-visible {
     top: 100%;
     left: 0;
     background: var(--white);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
     border-radius: 4px;
     padding: 8px 0;
     min-width: 200px;
@@ -286,9 +286,9 @@ select:focus-visible {
 }
 
 /* Mobile Navigation Styles */
-@media (max-width: 900px) {
+@media (width <= 900px) {
     .nav {
-        padding: 16px 16px;
+        padding: 16px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -317,7 +317,7 @@ select:focus-visible {
         width: 280px;
         height: 100vh;
         background: var(--white);
-        box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+        box-shadow: -2px 0 8px rgb(0 0 0 / 10%);
         padding: 100px 32px 32px;
         flex-direction: column;
         align-items: stretch;
@@ -433,11 +433,8 @@ select:focus-visible {
     body.nav-open::before {
         content: '';
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.5);
+        inset: 0;
+        background: rgb(0 0 0 / 50%);
         z-index: 99;
     }
 }
@@ -476,7 +473,7 @@ select:focus-visible {
     letter-spacing: -0.02em;
     margin-bottom: 8px;
     opacity: 0;
-    animation: fadeIn 0.6s ease forwards;
+    animation: fade-in 0.6s ease forwards;
 }
 
 .hero-title {
@@ -488,7 +485,7 @@ select:focus-visible {
     margin-bottom: 32px;
     color: var(--ted-black);
     opacity: 0;
-    animation: fadeIn 0.6s ease 0.1s forwards;
+    animation: fade-in 0.6s ease 0.1s forwards;
 }
 
 .hero-description {
@@ -499,7 +496,7 @@ select:focus-visible {
     margin-bottom: 40px;
     max-width: 480px;
     opacity: 0;
-    animation: fadeIn 0.6s ease 0.2s forwards;
+    animation: fade-in 0.6s ease 0.2s forwards;
 }
 
 .hero-meta {
@@ -507,7 +504,7 @@ select:focus-visible {
     gap: 40px;
     margin-bottom: 40px;
     opacity: 0;
-    animation: fadeIn 0.6s ease 0.3s forwards;
+    animation: fade-in 0.6s ease 0.3s forwards;
 }
 
 .hero-meta-item {
@@ -535,7 +532,7 @@ select:focus-visible {
     display: flex;
     gap: 16px;
     opacity: 0;
-    animation: fadeIn 0.6s ease 0.4s forwards;
+    animation: fade-in 0.6s ease 0.4s forwards;
 }
 
 .hero-visual {
@@ -553,7 +550,7 @@ select:focus-visible {
 .hero-visual-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(199,91,77,0.85) 0%, rgba(91,142,142,0.9) 100%);
+    background: linear-gradient(135deg, rgb(199 91 77 / 85%) 0%, rgb(91 142 142 / 90%) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -618,11 +615,12 @@ select:focus-visible {
     border-color: var(--charcoal);
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
     from {
         opacity: 0;
         transform: translateY(16px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -729,7 +727,7 @@ select:focus-visible {
 }
 
 .theme-content-reverse .theme-text {
-    padding: 100px 20px 100px 20px;
+    padding: 100px 20px;
 }
 
 .theme-text p {
@@ -761,7 +759,7 @@ select:focus-visible {
     left: 0;
     right: 0;
     padding: 48px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    background: linear-gradient(to top, rgb(0 0 0 / 80%) 0%, transparent 100%);
 }
 
 .theme-word {
@@ -825,7 +823,7 @@ select:focus-visible {
 .speaker-card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+    background: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, transparent 50%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -979,7 +977,7 @@ select:focus-visible {
 .salon-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(91,142,142,0.3) 0%, rgba(199,91,77,0.3) 100%);
+    background: linear-gradient(135deg, rgb(91 142 142 / 30%) 0%, rgb(199 91 77 / 30%) 100%);
 }
 
 .salon-text h3 {
@@ -1165,7 +1163,7 @@ select:focus-visible {
 .sponsors-cta {
     margin-top: 56px;
     padding-top: 32px;
-    border-top: 1px solid rgba(0,0,0,0.08);
+    border-top: 1px solid rgb(0 0 0 / 8%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1215,8 +1213,8 @@ select:focus-visible {
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 300;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid rgb(255 255 255 / 20%);
     color: var(--white);
     transition: border-color 0.2s ease, background 0.2s ease;
 }
@@ -1228,7 +1226,7 @@ select:focus-visible {
 .newsletter-input:focus {
     outline: none;
     border-color: var(--teal);
-    background: rgba(255,255,255,0.15);
+    background: rgb(255 255 255 / 15%);
 }
 
 /* Footer */
@@ -1298,7 +1296,7 @@ select:focus-visible {
     justify-content: space-between;
     align-items: center;
     padding-top: 28px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgb(255 255 255 / 10%);
 }
 
 .footer-legal {
@@ -1325,7 +1323,7 @@ select:focus-visible {
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .nav {
         padding: 16px 24px;
     }
@@ -1428,9 +1426,9 @@ select:focus-visible {
     }
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
     .nav {
-        padding: 12px 12px;
+        padding: 12px;
     }
 
     .nav-logo img {
@@ -1545,7 +1543,7 @@ select:focus-visible {
     line-height: 1.3;
     letter-spacing: -0.02em;
     color: var(--ted-black);
-    margin: 48px 0 24px 0;
+    margin: 48px 0 24px;
 }
 
 .page-content h2:first-child {
@@ -1558,7 +1556,7 @@ select:focus-visible {
     font-weight: 500;
     line-height: 1.4;
     color: var(--terracotta);
-    margin: 36px 0 16px 0;
+    margin: 36px 0 16px;
     letter-spacing: -0.01em;
 }
 
@@ -1653,7 +1651,7 @@ select:focus-visible {
 
 .faq-section h3 {
     color: var(--ted-black);
-    margin: 0 0 16px 0;
+    margin: 0 0 16px;
     font-size: clamp(18px, 3vw, 20px);
 }
 
@@ -1681,7 +1679,7 @@ select:focus-visible {
 
 .contact-option:hover {
     border-color: var(--teal);
-    box-shadow: 0 8px 24px rgba(91, 142, 142, 0.12);
+    box-shadow: 0 8px 24px rgb(91 142 142 / 12%);
     transform: translateY(-4px);
 }
 
@@ -1694,7 +1692,7 @@ select:focus-visible {
 .contact-option h3 {
     font-size: 22px;
     color: var(--ted-black);
-    margin: 0 0 16px 0;
+    margin: 0 0 16px;
     font-weight: 500;
 }
 
@@ -1702,7 +1700,7 @@ select:focus-visible {
     font-size: 15px;
     line-height: 1.6;
     color: var(--stone);
-    margin: 0 0 24px 0;
+    margin: 0 0 24px;
 }
 
 .contact-option-link {
@@ -1737,7 +1735,7 @@ select:focus-visible {
 
 .contact-form-intro h2 {
     font-size: clamp(28px, 4vw, 36px);
-    margin: 0 0 16px 0;
+    margin: 0 0 16px;
     color: var(--ted-black);
 }
 
@@ -1792,7 +1790,7 @@ select:focus-visible {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--teal);
-    box-shadow: 0 0 0 4px rgba(91, 142, 142, 0.08);
+    box-shadow: 0 0 0 4px rgb(91 142 142 / 8%);
 }
 
 .form-group textarea {
@@ -1812,13 +1810,13 @@ select:focus-visible {
 .contact-social h3 {
     font-size: 24px;
     color: var(--ted-black);
-    margin: 0 0 12px 0;
+    margin: 0 0 12px;
 }
 
 .contact-social p {
     font-size: 16px;
     color: var(--stone);
-    margin: 0 0 32px 0;
+    margin: 0 0 32px;
     line-height: 1.6;
 }
 
@@ -1858,78 +1856,6 @@ select:focus-visible {
     font-size: 15px;
 }
 
-/* Blog Posts */
-.blog-posts {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-}
-
-.blog-post {
-    padding-bottom: 48px;
-    border-bottom: 1px solid var(--sand);
-}
-
-.blog-post:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.blog-post-meta {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 12px;
-    font-size: 14px;
-    color: var(--stone);
-}
-
-.blog-post-date {
-    font-weight: 500;
-}
-
-.blog-post-author {
-    font-style: italic;
-}
-
-.blog-post-title {
-    font-size: clamp(24px, 4vw, 28px);
-    margin: 0 0 16px 0;
-}
-
-.blog-post-title a {
-    color: var(--ted-black);
-    text-decoration: none;
-    border-bottom: none;
-    transition: color 0.2s ease;
-}
-
-.blog-post-title a:hover {
-    color: var(--teal);
-}
-
-.blog-post-excerpt {
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--stone);
-    margin: 0 0 16px 0;
-}
-
-.blog-post-link {
-    display: inline-block;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--teal);
-    text-decoration: none;
-    border-bottom: 1px solid var(--teal-light);
-    transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.blog-post-link:hover {
-    color: var(--terracotta);
-    border-bottom-color: var(--terracotta);
-}
-
 /* Team Sections */
 .team-section {
     margin-top: 48px;
@@ -1959,7 +1885,7 @@ select:focus-visible {
 
 .team-member:hover {
     border-color: var(--teal-light);
-    box-shadow: 0 2px 8px rgba(91, 142, 142, 0.1);
+    box-shadow: 0 2px 8px rgb(91 142 142 / 10%);
 }
 
 .team-member img {
@@ -1975,23 +1901,23 @@ select:focus-visible {
     font-size: 16px;
     font-weight: 500;
     color: var(--ted-black);
-    margin: 20px 20px 8px 20px;
+    margin: 20px 20px 8px;
 }
 
 .team-member p {
     font-size: 14px;
     line-height: 1.5;
     color: var(--stone);
-    margin: 0 20px 20px 20px;
+    margin: 0 20px 20px;
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
     .page {
         padding-top: 64px;
     }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .page-header {
         padding: 40px 16px;
     }
@@ -2040,7 +1966,7 @@ select:focus-visible {
     }
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
     .page {
         padding-top: 52px;
     }
@@ -2068,17 +1994,17 @@ body.layout-post {
 
 .post {
     max-width: 800px;
-    margin: 120px 24px 48px 24px;
+    margin: 120px 24px 48px;
     padding: 0;
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 16px rgb(0 0 0 / 6%);
 }
 
-@media (min-width: 824px) {
+@media (width >= 824px) {
     .post {
-        margin: 120px auto 48px auto;
+        margin: 120px auto 48px;
     }
 }
 
@@ -2097,7 +2023,7 @@ body.layout-post {
 }
 
 .post-header-content {
-    padding: 40px 32px 0 32px;
+    padding: 40px 32px 0;
 }
 
 .post-meta {
@@ -2122,7 +2048,7 @@ body.layout-post {
 .post-title {
     font-size: clamp(32px, 5vw, 48px);
     line-height: 1.2;
-    margin: 0 0 40px 0;
+    margin: 0 0 40px;
     color: var(--ted-black);
 }
 
@@ -2130,18 +2056,18 @@ body.layout-post {
     font-size: 18px;
     line-height: 1.8;
     color: #4a4a4a;
-    padding: 0 32px 40px 32px;
+    padding: 0 32px 40px;
 }
 
 .post-content h2 {
     font-size: 28px;
-    margin: 48px 0 24px 0;
+    margin: 48px 0 24px;
     color: #2a2a2a;
 }
 
 .post-content h3 {
     font-size: 22px;
-    margin: 36px 0 16px 0;
+    margin: 36px 0 16px;
     color: #2a2a2a;
 }
 
@@ -2165,15 +2091,15 @@ body.layout-post {
 }
 
 .post-footer {
-    padding: 0 32px 40px 32px;
+    padding: 0 32px 40px;
     border-top: 1px solid var(--sand);
     padding-top: 32px;
     margin-top: 32px;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .post {
-        margin: 100px 16px 24px 16px;
+        margin: 100px 16px 24px;
     }
 
     .post-header-image {
@@ -2181,7 +2107,7 @@ body.layout-post {
     }
 
     .post-header-content {
-        padding: 32px 24px 0 24px;
+        padding: 32px 24px 0;
     }
 
     .post-title {
@@ -2190,7 +2116,7 @@ body.layout-post {
 
     .post-content {
         font-size: 16px;
-        padding: 0 24px 32px 24px;
+        padding: 0 24px 32px;
     }
 
     .post-content h2 {
@@ -2198,7 +2124,7 @@ body.layout-post {
     }
 
     .post-footer {
-        padding: 0 24px 32px 24px;
+        padding: 0 24px 32px;
     }
 }
 
@@ -2219,7 +2145,7 @@ body.layout-post {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 5%), 0 2px 4px rgb(0 0 0 / 3%);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding-bottom: 0;
     border-bottom: none;
@@ -2227,7 +2153,7 @@ body.layout-post {
 
 .blog-post:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 24px rgb(0 0 0 / 10%), 0 4px 8px rgb(0 0 0 / 6%);
 }
 
 .blog-post-image {
@@ -2241,11 +2167,8 @@ body.layout-post {
 .blog-post-image::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
+    inset: 0;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 10%) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -2295,7 +2218,7 @@ body.layout-post {
 .blog-post-title {
     font-size: 24px;
     line-height: 1.3;
-    margin: 0 0 16px 0;
+    margin: 0 0 16px;
 }
 
 .blog-post-title a {
@@ -2313,7 +2236,7 @@ body.layout-post {
     font-size: 16px;
     line-height: 1.6;
     color: var(--stone);
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
     flex: 1;
 }
 
@@ -2351,13 +2274,13 @@ body.layout-post {
     margin-bottom: 24px;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .blog-posts {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
     .blog-post-image {
         height: 240px;
     }
@@ -2376,7 +2299,7 @@ body.layout-post {
    ========================================================================== */
 
 /* Year section responsive layout */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .talks-year-section .section-header {
         grid-template-columns: 1fr !important;
         gap: 24px !important;
@@ -2406,7 +2329,7 @@ body.layout-post {
     transform: translate(-50%, -50%);
     width: 68px;
     height: 48px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgb(0 0 0 / 10%);
     border-radius: 12px;
     z-index: 1;
     transition: opacity 0.3s ease;
@@ -2422,7 +2345,7 @@ body.layout-post {
     height: 0;
     border-style: solid;
     border-width: 10px 0 10px 16px;
-    border-color: transparent transparent transparent rgba(0, 0, 0, 0.15);
+    border-color: transparent transparent transparent rgb(0 0 0 / 15%);
     z-index: 2;
     transition: opacity 0.3s ease;
 }
@@ -2509,20 +2432,23 @@ body.layout-post {
     object-position: center;
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     #main-event {
         padding: 0 !important;
     }
+
     .save-date-container {
         display: flex;
         flex-direction: column;
         min-height: auto;
         max-width: 100%;
     }
+
     .save-date-content {
         padding: 48px 16px;
         order: 1;
     }
+
     .save-date-image {
         position: relative;
         margin-right: 0;
@@ -2531,6 +2457,7 @@ body.layout-post {
         order: 2;
         width: 100%;
     }
+
     .save-date-image img {
         position: absolute;
         top: 0;
@@ -2540,16 +2467,19 @@ body.layout-post {
     }
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
     .save-date-content {
         padding: 40px 12px;
     }
+
     .save-date-content h2 {
         font-size: 2rem !important;
     }
+
     .save-date-content .date-large {
         font-size: 1.5rem !important;
     }
+
     .save-date-image {
         position: relative;
         height: 300px;
