@@ -29,23 +29,23 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       <h2 class="mb-32">Before You Apply</h2>
 
       <div style="display: grid; gap: 16px;">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Review <a href="https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide/speakers-program/prepare-your-speaker/content-guidelines" target="_blank" rel="noopener noreferrer">TED's Content Guidelines</a> in detail</p>
         </div>
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Applications received will be considered for the next upcoming event</p>
         </div>
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Fall notification of selection status</p>
         </div>
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Multiple idea submissions are welcome</p>
         </div>
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Previous speakers must wait at least three years before resubmitting</p>
         </div>
@@ -79,23 +79,23 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       <p style="margin-bottom: 24px; line-height: 1.7; color: var(--charcoal);">Talks should avoid being:</p>
 
       <div style="display: grid; gap: 12px; margin-bottom: 32px;">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--stone); font-weight: 700;">×</span>
           <p style="margin: 0; line-height: 1.7; color: var(--stone);">Motivational speeches with broad themes</p>
         </div>
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--stone); font-weight: 700;">×</span>
           <p style="margin: 0; line-height: 1.7; color: var(--stone);">Personal stories without drawn ideas/lessons</p>
         </div>
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--stone); font-weight: 700;">×</span>
           <p style="margin: 0; line-height: 1.7; color: var(--stone);">Lectures or biographies</p>
         </div>
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--stone); font-weight: 700;">×</span>
           <p style="margin: 0; line-height: 1.7; color: var(--stone);">Recycled professional circuit material</p>
         </div>
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--stone); font-weight: 700;">×</span>
           <p style="margin: 0; line-height: 1.7; color: var(--stone);">Lacking a single central idea</p>
         </div>
@@ -110,11 +110,11 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       <h2 class="mb-32">Additional Requirements</h2>
 
       <div style="display: grid; gap: 16px;">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">All cited data/facts must be fact-checked by applicant</p>
         </div>
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div class="flex-gap-12">
           <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Credible data and references required</p>
         </div>

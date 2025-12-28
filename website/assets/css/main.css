@@ -2792,3 +2792,9 @@ body.layout-post {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
+
+.flex-gap-12 {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
