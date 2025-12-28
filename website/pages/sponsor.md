@@ -25,7 +25,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
     </div>
 
     <div class="mb-80">
-      <div class="section-header" style="text-align: center; margin-bottom: 48px;">
+      <div class="section-header text-center mb-48">
         <h2 class="section-title">Our Mission & Values</h2>
       </div>
 
@@ -52,7 +52,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 <!-- Why Partner Section -->
 <section class="section section-full" style="background: var(--cream); padding: 80px 0;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
-    <div class="section-header" style="text-align: center; margin-bottom: 48px;">
+    <div class="section-header text-center mb-48">
       <h2 class="section-title">Why Partner with TEDxBreckenridge</h2>
     </div>
 
@@ -73,7 +73,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
     </div>
 
     <div class="mb-80">
-      <div class="section-header" style="text-align: center; margin-bottom: 48px;">
+      <div class="section-header text-center mb-48">
         <h2 class="section-title">2026 Sponsorship Packages</h2>
         <p style="max-width: 700px; margin: 24px auto 0; font-size: 1.0625rem; line-height: 1.7; color: var(--stone);">The TEDxBreckenridge sponsorship packages are designed to allow for customization and flexibility. As a supporter of this event, you will have the opportunity to select the promotional options best suited to reaching your target audience.</p>
       </div>
@@ -107,7 +107,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 
       <!-- Benefits Table -->
       <div style="margin-bottom: 48px;">
-        <h3 style="text-align: center; margin-bottom: 32px; color: var(--charcoal);">Sponsorship Benefits</h3>
+        <h3 class="text-center mb-32" style="color: var(--charcoal);">Sponsorship Benefits</h3>
 
         <div style="overflow-x: auto;">
           <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
