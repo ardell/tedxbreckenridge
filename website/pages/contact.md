@@ -19,7 +19,7 @@ description: Get in touch with TEDxBreckenridge. Apply to speak, volunteer, spon
     </div>
 
     <div style="margin-bottom: 80px;">
-      <img src="{{ '/assets/images/events/team-posing-all-together.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members gathered together at an event" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+      <img src="{{ '/assets/images/events/team-posing-all-together.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members gathered together at an event" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>
 
     <h2 style="text-align: center; margin-bottom: 48px;">Ways to Connect</h2>

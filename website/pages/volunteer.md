@@ -21,7 +21,7 @@ description: Join the TEDxBreckenridge volunteer team in Summit County. Help bri
     </div>
 
     <div style="margin: 80px 0;">
-      <img src="{{ '/assets/images/events/team-posing-in-front-of-tedxbreckenridge-x.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members posing together in front of TEDx signage" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+      <img src="{{ '/assets/images/events/team-posing-in-front-of-tedxbreckenridge-x.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members posing together in front of TEDx signage" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>
 
     <div style="margin-bottom: 80px;">
@@ -89,7 +89,7 @@ description: Join the TEDxBreckenridge volunteer team in Summit County. Help bri
     </div>
 
     <div style="margin: 80px 0;">
-      <img src="{{ '/assets/images/events/the-team-bowing-for-applause.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team taking a bow and receiving applause at the end of an event" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+      <img src="{{ '/assets/images/events/the-team-bowing-for-applause.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team taking a bow and receiving applause at the end of an event" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>
 
     <div style="margin-top: 80px; padding: 48px 32px; background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%); border-radius: 8px;">
