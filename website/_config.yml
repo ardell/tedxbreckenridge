@@ -67,15 +67,9 @@ exclude:
 # Social Media
 social:
   name: TEDxBreckenridge
-  twitter: tedxbreckenridge
   facebook: tedxbreckenridge
   instagram: tedxbreckenridge
   youtube: tedxbreckenridge
-
-# Twitter Card Settings
-twitter:
-  username: tedxbreckenridge
-  card: summary_large_image
 
 # Facebook/Open Graph Settings
 facebook:
