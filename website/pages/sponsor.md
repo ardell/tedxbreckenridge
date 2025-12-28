@@ -13,7 +13,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
     </div>
   </div>
 
-  <div class="page-content" style="max-width: 900px;">
+  <div class="page-content container-md">
     <div class="mb-80">
       <p style="font-size: 1.25rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 32px;">TEDxBreckenridge brings world-class conversations to the heart of the Rockies. We're a 100% volunteer-led nonprofit creating a platform for local voices to share expansive ideas that shift the way we see, connect, and evolve within our mountain community.</p>
 
@@ -51,12 +51,12 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 
 <!-- Why Partner Section -->
 <section class="section section-full" style="background: var(--cream); padding: 80px 0;">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+  <div class="container" style="padding: 0 24px;">
     <div class="section-header text-center mb-48">
       <h2 class="section-title">Why Partner with TEDxBreckenridge</h2>
     </div>
 
-    <div style="max-width: 900px; margin: 0 auto;">
+    <div class="container-md">
       <p style="font-size: 1.125rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 32px;">The successful production of TEDxBreckenridge requires the financial support of local businesses and organizations. Your sponsorship will expand innovative thinking and collaborative connections throughout our local community, while reaching an engaged audience of thought-leaders.</p>
 
       <p style="font-size: 1.125rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 32px;">With your help, we will bring Summit County together in a day of thoughtful conversation on ideas worth sharing. Our 2026 event will create an opportunity for speakers, participants, and volunteers to explore the ways we connect to our community, to our mountain environment, to each other, and to ourselves.</p>
@@ -67,7 +67,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 </section>
 
 <div class="page">
-  <div class="page-content" style="max-width: 900px;">
+  <div class="page-content container-md">
     <div style="margin: 80px 0;">
       <img src="{{ '/assets/images/events/wide-shot-of-venue-and-emcee-straight-on.jpg' | relative_url }}" alt="Professional TEDxBreckenridge event production at the Riverwalk Center showing the caliber of events sponsors support" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>

@@ -13,7 +13,7 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
     </div>
   </div>
 
-  <div class="page-content" style="max-width: 900px;">
+  <div class="page-content container-md">
     <div class="mb-60">
       <blockquote style="margin: 0; padding: 32px 40px; background: var(--cream); border-left: 4px solid var(--terracotta); font-size: 1.25rem; line-height: 1.6; font-style: italic; color: var(--charcoal);">
         "There is no greater agony than bearing an untold story inside you."
