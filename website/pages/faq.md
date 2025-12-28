@@ -14,6 +14,10 @@ description: Frequently asked questions about attending TEDxBreckenridge. Find a
   </div>
 
   <div class="page-content">
+    <div style="margin-bottom: 60px;">
+      <img src="{{ '/assets/images/events/family-in-front-of-tedxbreckenridge-x.jpg' | relative_url }}" alt="Family posing at TEDxBreckenridge event, showcasing our welcoming and family-friendly atmosphere" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+    </div>
+
     <div class="faq-section">
       <h2>When and where is the next TEDxBreckenridge event?</h2>
       <p>Our main event takes place annually each October at the Riverwalk Center in Breckenridge, Colorado. The next event is scheduled for October 3, 2026. Throughout the year, we also host intimate Salon events at various locations around Summit County. Check our <a href="/">homepage</a> for the latest event dates and <a href="/#mailing-list">join our mailing list</a> to stay updated.</p>

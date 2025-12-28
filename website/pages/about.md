@@ -20,9 +20,17 @@ description: Learn about TEDxBreckenridge, a local TEDx event in Breckenridge, C
     <h2>About TEDxBreckenridge</h2>
     <p>TEDxBreckenridge brings the spirit of TED to Summit County, Colorado. Based in Breckenridge and serving the greater Summit County community, our events feature local voices, innovative thinkers, and inspiring stories that reflect both our mountain culture and global perspectives.</p>
 
+    <div style="margin: 48px 0;">
+      <img src="{{ '/assets/images/events/wide-shot-of-venue-and-emcee-straight-on.jpg' | relative_url }}" alt="TEDxBreckenridge event at the Riverwalk Center in Breckenridge with emcee on stage and full audience" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+    </div>
+
     <p>Since our inaugural event in 2020, we've hosted five main events featuring 53 speakers who have shared transformative ideas with our community. Our talks have reached audiences far beyond the mountains, with videos garnering hundreds of thousands of views worldwide. Each October, we gather at the Riverwalk Center in Breckenridge for an evening of ideas worth spreading, bringing together locals and visitors alike for meaningful conversation and connection.</p>
 
     <p>Beyond our annual main event, we host intimate Salon gatherings throughout the year—smaller, conversational events designed to explore fascinating topics with local experts. These Salons create space for deeper discussion and genuine connection, embodying our belief that the best ideas emerge when curious minds come together.</p>
+
+    <div style="margin: 48px 0;">
+      <img src="{{ '/assets/images/events/attendees-mingling.jpg' | relative_url }}" alt="TEDxBreckenridge attendees connecting and networking during an event" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+    </div>
 
     <h3>Summit County, Colorado</h3>
     <p>Welcome to the place we call home. <a href="https://www.summitcountyco.gov/" target="_blank" rel="noopener noreferrer">Summit County</a> is a unique mountain community located 70 miles west of Denver, where the towns of <a href="https://www.townofbreckenridge.com/" target="_blank" rel="noopener noreferrer">Breckenridge</a>, <a href="https://www.silverthorne.org/" target="_blank" rel="noopener noreferrer">Silverthorne</a>, <a href="https://www.townofdillon.com/" target="_blank" rel="noopener noreferrer">Dillon</a>, and <a href="https://www.townoffrisco.com/" target="_blank" rel="noopener noreferrer">Frisco</a> unite to form our vibrant county. We are a diverse community of athletes, business owners, families, students, outdoor enthusiasts, intellectuals, and so much more.</p>
