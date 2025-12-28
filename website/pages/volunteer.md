@@ -13,7 +13,7 @@ description: Join the TEDxBreckenridge volunteer team in Summit County. Help bri
     </div>
   </div>
 
-  <div class="page-content" style="max-width: 900px;">
+  <div class="page-content container-md">
     <div class="mb-80">
       <p style="font-size: 1.25rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 32px;">TEDxBreckenridge is built entirely by passionate local volunteers who believe in the power of ideas to change our community. When you volunteer with us, you're not just helping to run an event—you're joining a dedicated team of innovators, creators, and community builders who are bringing world-class conversations to the heart of the Rockies. Learn more about <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer">the TEDx program</a>.</p>
 

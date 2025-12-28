@@ -2748,3 +2748,18 @@ body.layout-post {
 .text-center {
   text-align: center;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container-md {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container-sm {
+  max-width: 800px;
+  margin: 0 auto;
+}
