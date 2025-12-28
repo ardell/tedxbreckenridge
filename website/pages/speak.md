@@ -14,7 +14,7 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
   </div>
 
   <div class="page-content" style="max-width: 900px;">
-    <div style="margin-bottom: 60px;">
+    <div class="mb-60">
       <blockquote style="margin: 0; padding: 32px 40px; background: var(--cream); border-left: 4px solid var(--terracotta); font-size: 1.25rem; line-height: 1.6; font-style: italic; color: var(--charcoal);">
         "There is no greater agony than bearing an untold story inside you."
         <footer style="margin-top: 16px; font-size: 1rem; font-style: normal; font-weight: 500; color: var(--stone);">— Maya Angelou</footer>
@@ -25,8 +25,8 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       <img src="{{ '/assets/images/events/speaker-giving-a-talk-on-red-dot.jpg' | relative_url }}" alt="TEDxBreckenridge speaker delivering their talk on the iconic red dot stage" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>
 
-    <div style="margin-bottom: 80px;">
-      <h2 style="margin-bottom: 32px;">Before You Apply</h2>
+    <div class="mb-80">
+      <h2 class="mb-32">Before You Apply</h2>
 
       <div style="display: grid; gap: 16px;">
         <div style="display: flex; gap: 12px; align-items: flex-start;">
@@ -52,8 +52,8 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       </div>
     </div>
 
-    <div style="margin-bottom: 80px;">
-      <h2 style="margin-bottom: 32px;">Our Selection Process</h2>
+    <div class="mb-80">
+      <h2 class="mb-32">Our Selection Process</h2>
 
       <div style="display: grid; gap: 32px;">
         <div style="padding: 32px; background: var(--cream); border-radius: 8px;">
@@ -73,8 +73,8 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       </div>
     </div>
 
-    <div style="margin-bottom: 80px;">
-      <h2 style="margin-bottom: 32px;">What NOT to Submit</h2>
+    <div class="mb-80">
+      <h2 class="mb-32">What NOT to Submit</h2>
 
       <p style="margin-bottom: 24px; line-height: 1.7; color: var(--charcoal);">Talks should avoid being:</p>
 
@@ -106,8 +106,8 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       </div>
     </div>
 
-    <div style="margin-bottom: 80px;">
-      <h2 style="margin-bottom: 32px;">Additional Requirements</h2>
+    <div class="mb-80">
+      <h2 class="mb-32">Additional Requirements</h2>
 
       <div style="display: grid; gap: 16px;">
         <div style="display: flex; gap: 12px; align-items: flex-start;">

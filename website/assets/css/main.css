@@ -2728,3 +2728,19 @@ body.layout-post {
 .aspect-video {
   aspect-ratio: 16/9;
 }
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}

@@ -18,11 +18,11 @@ description: Get in touch with TEDxBreckenridge. Apply to speak, volunteer, spon
       <p style="font-size: 1.25rem; line-height: 1.7; color: var(--charcoal);">TEDxBreckenridge is run entirely by local volunteers passionate about bringing ideas worth spreading to Summit County. Whether you want to get involved, share your story, or support our mission, we'd love to hear from you.</p>
     </div>
 
-    <div style="margin-bottom: 80px;">
+    <div class="mb-80">
       <img src="{{ '/assets/images/events/team-posing-all-together.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members gathered together at an event" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>
 
-    <h2 style="text-align: center; margin-bottom: 48px;">Ways to Connect</h2>
+    <h2 style="text-align: center;" class="mb-48">Ways to Connect</h2>
 
     <div class="contact-options">
       <div class="contact-option">
