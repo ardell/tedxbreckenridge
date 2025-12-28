@@ -14,7 +14,7 @@ description: Meet the local volunteers who organize TEDxBreckenridge. Our passio
   </div>
 
   <div class="page-content">
-    <p style="font-size: 1.125rem; line-height: 1.7; color: var(--stone); margin-bottom: 60px;">TEDxBreckenridge is organized entirely by local volunteers who are passionate about bringing ideas worth spreading to Summit County. Our team works year-round to curate speakers, plan events, and build community.</p>
+    <p style="font-size: 1.125rem; line-height: 1.7; color: var(--stone); margin-bottom: 60px;">TEDxBreckenridge is organized entirely by local volunteers who are passionate about bringing <a href="https://www.ted.com/about/our-organization/our-policies-terms/ted-talks-usage-policy" target="_blank" rel="noopener noreferrer">ideas worth spreading</a> to Summit County. Our team works year-round to curate speakers, plan events, and build community.</p>
 
     <h2>2025 Planning Team</h2>
 

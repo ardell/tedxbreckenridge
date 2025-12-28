@@ -7,7 +7,7 @@ description: Meet the speakers at TEDxBreckenridge 2026. Discover thinkers, doer
 
 ## 2026 Speakers
 
-Our speaker lineup will be announced soon. We're curating an exceptional group of thinkers, doers, and innovators to share their ideas with our community.
+Our speaker lineup will be announced soon. We're curating an exceptional group of thinkers, doers, and innovators to share their ideas with our community. Have an idea worth spreading? <a href="/speak/">Apply to speak at TEDxBreckenridge 2026</a>.
 
 {% if site.speakers.size > 0 %}
 <div class="speakers-grid">
@@ -29,7 +29,7 @@ Our speaker lineup will be announced soon. We're curating an exceptional group o
 
 ## Past Speakers
 
-Since our inaugural event in 2020, TEDxBreckenridge has featured 53 speakers sharing ideas worth spreading from the heart of the Rockies. [Watch all talks →](/talks/)
+Since our inaugural event in 2020, TEDxBreckenridge has featured 53 speakers sharing ideas worth spreading from the heart of the Rockies. [Watch all talks](/talks/) or learn more about <a href="/about/">our mission and values</a>.
 
 ### 2025: METAMORPHOSIS
 Drew Petersen • Melanie Ash • Thayer Hirsh • Lauren Panasewicz • Gabriella Zheleznyak • Grace Klein • Patrick Murphy • Ellen Petry Leanse • Keila Perez Lopez • Erfa Alani • Andrew Young
