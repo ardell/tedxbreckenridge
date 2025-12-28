@@ -21,7 +21,7 @@ Want to be the first to know when tickets go on sale? Join our mailing list:
   {% include mailchimp-signup.html %}
 </div>
 
-<div style="margin: 60px 0;">
+<div class="my-60">
   <img src="{{ '/assets/images/events/attendees-dancing-outside-with-tambourine.jpg' | relative_url }}" alt="TEDxBreckenridge attendees dancing and celebrating outdoors showing the fun, festive atmosphere" style="width: 100%; height: auto;" class="rounded" loading="lazy">
 </div>
 
@@ -29,7 +29,7 @@ Want to be the first to know when tickets go on sale? Join our mailing list:
 
 Details about ticket pricing and packages will be announced closer to the event date.
 
-<div style="margin: 60px 0;">
+<div class="my-60">
   <img src="{{ '/assets/images/events/live-music-next-to-tedxbreckenridge-x.jpg' | relative_url }}" alt="Live musical performance at TEDxBreckenridge event showcasing the entertainment and community experience" style="width: 100%; height: auto;" class="rounded" loading="lazy">
 </div>
 

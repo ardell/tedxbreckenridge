@@ -121,7 +121,7 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       </div>
     </div>
 
-    <div style="margin: 80px 0;">
+    <div class="my-80">
       <img src="{{ '/assets/images/events/speaker-signing-instinct-poster.jpg' | relative_url }}" alt="TEDxBreckenridge speaker signing a poster after their talk, showing post-event engagement and impact" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>
 
