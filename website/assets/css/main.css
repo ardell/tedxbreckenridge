@@ -2744,3 +2744,7 @@ body.layout-post {
 .mb-80 {
   margin-bottom: 80px;
 }
+
+.text-center {
+  text-align: center;
+}

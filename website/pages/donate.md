@@ -43,18 +43,18 @@ description: Support TEDxBreckenridge, a 100% volunteer-led nonprofit bringing i
   <div class="page-content" style="max-width: 900px;">
 
     <div class="mb-60">
-      <h2 style="text-align: center; margin-bottom: 40px;">Make Your Donation</h2>
+      <h2 class="text-center" style="margin-bottom: 40px;">Make Your Donation</h2>
 
-      <div style="background: var(--cream); padding: 60px 40px; border-radius: 8px; text-align: center;">
+      <div class="text-center" style="background: var(--cream); padding: 60px 40px; border-radius: 8px;">
         <a class="button button-primary" href="https://givebutter.com/tedxbreckenridge" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 24px 48px; font-size: 1.5rem; font-weight: 700; text-decoration: none; background: var(--terracotta); color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s; border-radius: 8px;">Donate Now</a>
         <p style="margin-top: 24px; color: var(--charcoal); font-size: 1.1rem; font-weight: 500;">Support ideas worth spreading in our mountain community</p>
         <p style="margin-top: 12px; color: var(--stone); font-size: 0.95rem;">Secure donation processing via Givebutter</p>
       </div>
 
-      <p style="text-align: center; margin-top: 24px; color: var(--stone); font-size: 0.95rem;">TEDxBreckenridge is a 501(c)(3) nonprofit organization. Your donation is tax-deductible to the extent allowed by law.</p>
+      <p class="text-center" style="margin-top: 24px; color: var(--stone); font-size: 0.95rem;">TEDxBreckenridge is a 501(c)(3) nonprofit organization. Your donation is tax-deductible to the extent allowed by law.</p>
     </div>
 
-    <div style="margin-top: 80px; padding: 48px; background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%); border-radius: 8px; text-align: center;">
+    <div class="text-center" style="margin-top: 80px; padding: 48px; background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%); border-radius: 8px;">
       <h3 style="margin-bottom: 16px; color: var(--charcoal);">About TEDx</h3>
       <p style="max-width: 700px; margin: 0 auto; line-height: 1.7; color: var(--stone);">In the spirit of ideas worth spreading, <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer">TEDx</a> is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, <a href="https://www.ted.com/talks" target="_blank" rel="noopener noreferrer">TED Talks</a> video and live speakers combine to spark deep discussion and connection.</p>
     </div>
