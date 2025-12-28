@@ -2724,3 +2724,7 @@ body.layout-post {
 .rounded {
   border-radius: 8px;
 }
+
+.aspect-video {
+  aspect-ratio: 16/9;
+}
