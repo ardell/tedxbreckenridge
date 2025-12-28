@@ -29,10 +29,10 @@ Our speaker lineup will be announced soon. We're curating an exceptional group o
 
 ## Past Speakers
 
-Since our inaugural event in 2020, TEDxBreckenridge has featured 52 speakers sharing ideas worth spreading from the heart of the Rockies. [Watch all talks →](/talks/)
+Since our inaugural event in 2020, TEDxBreckenridge has featured 53 speakers sharing ideas worth spreading from the heart of the Rockies. [Watch all talks →](/talks/)
 
 ### 2025: METAMORPHOSIS
-Drew Petersen • Melanie Ash • Thayer Hirsh • Lauren Panasewicz • Gabriella Zheleznyak • Grace Klein • Patrick Murphy • Ellen Petry Leanse • Keila Perez Lopez • Erfa Alani
+Drew Petersen • Melanie Ash • Thayer Hirsh • Lauren Panasewicz • Gabriella Zheleznyak • Grace Klein • Patrick Murphy • Ellen Petry Leanse • Keila Perez Lopez • Erfa Alani • Andrew Young
 
 ### 2023: INSTINCT
 Kara Napolitano • Michael Ballard • Christopher Fisher • Andy Thorn • Tony Molina • Isabelle Amigues • Eligar Sadeh • Sarah Rubinson Levy • Garrett Scharton • Kenzie Reichert • George Gerchow
