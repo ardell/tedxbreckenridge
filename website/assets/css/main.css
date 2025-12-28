@@ -1427,6 +1427,12 @@ select:focus-visible {
     max-width: 280px;
 }
 
+.footer-address {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 24px;
+}
+
 .footer-logo {
     height: 28px;
 }
