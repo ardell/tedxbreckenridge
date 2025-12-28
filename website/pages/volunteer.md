@@ -28,22 +28,22 @@ description: Join the TEDxBreckenridge volunteer team in Summit County. Help bri
       <h2 class="mb-32">Why Volunteer with TEDxBreckenridge</h2>
 
       <div style="display: grid; gap: 32px; margin-bottom: 48px;">
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px; border-left: 4px solid var(--terracotta);">
+        <div class="card-accent-red">
           <h3 style="color: var(--terracotta); margin-bottom: 12px; font-size: 1.25rem;">Be Part of Something Meaningful</h3>
           <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">Help elevate local voices, foster innovation, and create a platform for ideas that can change our mountain community and the world.</p>
         </div>
 
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px; border-left: 4px solid var(--teal);">
+        <div class="card-accent-teal">
           <h3 style="color: var(--teal); margin-bottom: 12px; font-size: 1.25rem;">Connect with Remarkable People</h3>
           <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">Work alongside a diverse team of creative professionals, community leaders, and passionate individuals who share your enthusiasm for ideas worth spreading.</p>
         </div>
 
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px; border-left: 4px solid var(--terracotta);">
+        <div class="card-accent-red">
           <h3 style="color: var(--terracotta); margin-bottom: 12px; font-size: 1.25rem;">Develop New Skills</h3>
           <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">Gain hands-on experience in event production, media, community engagement, sponsorships, and more—all while contributing to your local nonprofit.</p>
         </div>
 
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px; border-left: 4px solid var(--teal);">
+        <div class="card-accent-teal">
           <h3 style="color: var(--teal); margin-bottom: 12px; font-size: 1.25rem;">Make an Impact</h3>
           <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">Your contributions directly support bringing inspiring talks, salon events, and meaningful conversations to Summit County throughout the year.</p>
         </div>

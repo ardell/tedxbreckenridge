@@ -2798,3 +2798,23 @@ body.layout-post {
   gap: 12px;
   align-items: flex-start;
 }
+
+.card {
+  padding: 32px;
+  background: var(--cream);
+  border-radius: 8px;
+}
+
+.card-accent-red {
+  padding: 32px;
+  background: var(--cream);
+  border-radius: 8px;
+  border-left: 4px solid var(--terracotta);
+}
+
+.card-accent-teal {
+  padding: 32px;
+  background: var(--cream);
+  border-radius: 8px;
+  border-left: 4px solid var(--teal);
+}

@@ -30,17 +30,17 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
       </div>
 
       <div style="display: grid; gap: 32px;">
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px; border-left: 4px solid var(--terracotta);">
+        <div class="card-accent-red">
           <h3 style="color: var(--terracotta); margin-bottom: 16px; font-size: 1.25rem;">Ideas</h3>
           <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">We believe that collective genius and expansive ideas can positively impact our community and, ultimately, the world.</p>
         </div>
 
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px; border-left: 4px solid var(--teal);">
+        <div class="card-accent-teal">
           <h3 style="color: var(--teal); margin-bottom: 16px; font-size: 1.25rem;">Community</h3>
           <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">We are here to serve and support a local experience that is unique to our mountain communities, that is inclusive, connection-centered and culturally beneficial.</p>
         </div>
 
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px; border-left: 4px solid var(--terracotta);">
+        <div class="card-accent-red">
           <h3 style="color: var(--terracotta); margin-bottom: 16px; font-size: 1.25rem;">Authenticity</h3>
           <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">We are committed in heart and mind to genuine, passionate and authentic experiences and connection.</p>
         </div>
