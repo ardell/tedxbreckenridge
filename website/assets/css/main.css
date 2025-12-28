@@ -2718,3 +2718,9 @@ body.layout-post {
         height: 300px;
     }
 }
+
+
+/* Utility Classes */
+.rounded {
+  border-radius: 8px;
+}

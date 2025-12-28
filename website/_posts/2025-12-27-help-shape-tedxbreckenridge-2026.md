@@ -24,7 +24,7 @@ Below, you'll find volunteer opportunities organized by category. Read through t
 ## Communications & Outreach
 
 <div style="margin: 2rem 0;">
-  <img src="/assets/images/blog/volunteer-communications.jpg" alt="TEDxBreckenridge event with speakers on stage and branded backdrop" style="width: 100%; border-radius: 8px;">
+  <img src="/assets/images/blog/volunteer-communications.jpg" alt="TEDxBreckenridge event with speakers on stage and branded backdrop" style="width: 100%;" class="rounded">
 </div>
 
 **Marketing**
@@ -63,7 +63,7 @@ Coordinate with caterers, rental companies, and other vendors to create exceptio
 ## Speaker Journey
 
 <div style="margin: 2rem 0;">
-  <img src="/assets/images/blog/volunteer-speaker-prep.jpg" alt="Volunteer helping a speaker prepare backstage with audio equipment" style="width: 100%; border-radius: 8px;">
+  <img src="/assets/images/blog/volunteer-speaker-prep.jpg" alt="Volunteer helping a speaker prepare backstage with audio equipment" style="width: 100%;" class="rounded">
 </div>
 
 **Speaker Selection & Proposal Evaluation**
@@ -108,7 +108,7 @@ Ensure our events are welcoming and accessible to everyone. Coordinate accommoda
 ## Production & Operations
 
 <div style="margin: 2rem 0;">
-  <img src="/assets/images/blog/volunteer-tech-crew.jpg" alt="Technical crew volunteers managing production equipment during an event" style="width: 100%; border-radius: 8px;">
+  <img src="/assets/images/blog/volunteer-tech-crew.jpg" alt="Technical crew volunteers managing production equipment during an event" style="width: 100%;" class="rounded">
 </div>
 
 **Event Photography & Videography**
@@ -131,7 +131,7 @@ Answer questions from ticket buyers, resolve issues, and provide friendly, helpf
 ## Find Your Role
 
 <div style="margin: 2rem 0;">
-  <img src="/assets/images/blog/volunteer-team-stage.jpg" alt="Three TEDxBreckenridge volunteers celebrating together on stage" style="width: 100%; border-radius: 8px;">
+  <img src="/assets/images/blog/volunteer-team-stage.jpg" alt="Three TEDxBreckenridge volunteers celebrating together on stage" style="width: 100%;" class="rounded">
 </div>
 
 Look, we know that's a lot. You might be thinking, "There's no way I can do all of that." And you're right—you can't. Nobody can. But you *can* do one thing exceptionally well.
@@ -147,7 +147,7 @@ TEDxBreckenridge happens because people like you show up. You bring your skills,
 Let's make 2026 unforgettable.
 
 <div style="margin: 2rem 0;">
-  <img src="/assets/images/blog/volunteers-2026.jpg" alt="The entire TEDxBreckenridge volunteer team celebrating together on stage" style="width: 100%; border-radius: 8px;">
+  <img src="/assets/images/blog/volunteers-2026.jpg" alt="The entire TEDxBreckenridge volunteer team celebrating together on stage" style="width: 100%;" class="rounded">
 </div>
 
 ---
