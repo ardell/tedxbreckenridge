@@ -20,6 +20,10 @@ description: Join the TEDxBreckenridge volunteer team in Summit County. Help bri
       <p style="font-size: 1.125rem; line-height: 1.7; color: var(--stone); margin-bottom: 0;">Whether you have a few hours or want to be deeply involved in planning our 2026 events, there's a place for you on our team. You'll work alongside talented professionals, meet inspiring speakers, and help create experiences that resonate throughout <a href="https://www.summitcountyco.gov/" target="_blank" rel="noopener noreferrer">Summit County</a> and beyond.</p>
     </div>
 
+    <div style="margin: 80px 0;">
+      <img src="{{ '/assets/images/events/team-posing-in-front-of-tedxbreckenridge-x.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members posing together in front of TEDx signage" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+    </div>
+
     <div style="margin-bottom: 80px;">
       <h2 style="margin-bottom: 32px;">Why Volunteer with TEDxBreckenridge</h2>
 
@@ -82,6 +86,10 @@ description: Join the TEDxBreckenridge volunteer team in Summit County. Help bri
           <p style="margin: 0; color: var(--stone); line-height: 1.7;">Have unique talents or expertise? We're always looking for creative ways volunteers can contribute to our mission.</p>
         </div>
       </div>
+    </div>
+
+    <div style="margin: 80px 0;">
+      <img src="{{ '/assets/images/events/the-team-bowing-for-applause.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team taking a bow and receiving applause at the end of an event" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
     </div>
 
     <div style="margin-top: 80px; padding: 48px 32px; background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%); border-radius: 8px;">
