@@ -101,7 +101,7 @@ description: TEDxBreckenridge 2026 - Ideas worth spreading in the heart of the R
             </p>
 
             <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                <a href="#newsletter" class="btn btn-primary">Join Our Mailing List</a>
+                <a href="#mailing-list" class="btn btn-primary">Join Our Mailing List</a>
                 <a href="https://tedxbreckenridge.com/speak" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="Apply to Speak (opens in new window)">Apply to Speak</a>
             </div>
         </div>
@@ -165,7 +165,7 @@ description: TEDxBreckenridge 2026 - Ideas worth spreading in the heart of the R
             <div class="support-icon" aria-hidden="true">◇</div>
             <h3>Join Our Mailing List</h3>
             <p>Stay connected and be the first to know about upcoming events, speaker announcements, and community gatherings.</p>
-            <a href="#newsletter" class="support-link">Subscribe now</a>
+            <a href="#mailing-list" class="support-link">Subscribe now</a>
         </div>
         <div class="support-card">
             <div class="support-icon" aria-hidden="true">○</div>
@@ -227,15 +227,11 @@ description: TEDxBreckenridge 2026 - Ideas worth spreading in the heart of the R
 </section>
 
 <!-- Mailing List Section -->
-<section class="newsletter-section" id="newsletter">
+<section class="newsletter-section" id="mailing-list">
     <div class="newsletter-content">
         <h2>Stay in the know</h2>
         <p>Join our mailing list for updates on upcoming events, speaker announcements, and Salon gatherings.</p>
-        <form class="newsletter-form" action="#" method="post">
-            <label for="newsletter-email" class="visually-hidden">Email address</label>
-            <input type="email" id="newsletter-email" name="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address for newsletter subscription">
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
+        {% include mailchimp-signup.html %}
     </div>
 </section>
 
