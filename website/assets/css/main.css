@@ -1229,6 +1229,128 @@ select:focus-visible {
     background: rgb(255 255 255 / 15%);
 }
 
+/* Mailchimp Form Styles */
+.mailchimp-embed {
+    background: transparent;
+    font-family: var(--font-primary);
+}
+
+.mailchimp-form {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.mailchimp-form-content {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.mailchimp-embed .mc-field-group {
+    flex: 1;
+    margin: 0;
+}
+
+.mailchimp-embed label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.mailchimp-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 300;
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    color: var(--white);
+    transition: border-color 0.2s ease, background 0.2s ease;
+    box-sizing: border-box;
+}
+
+.mailchimp-input::placeholder {
+    color: var(--teal-light);
+}
+
+.mailchimp-input:focus {
+    outline: none;
+    border-color: var(--teal);
+    background: rgb(255 255 255 / 15%);
+}
+
+.mailchimp-embed .clear {
+    flex-shrink: 0;
+}
+
+.mailchimp-embed .response {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.mailchimp-embed #mce-error-response {
+    background: rgb(239 68 68 / 10%);
+    border: 1px solid rgb(239 68 68 / 30%);
+    color: #ef4444;
+}
+
+.mailchimp-embed #mce-success-response {
+    background: rgb(34 197 94 / 10%);
+    border: 1px solid rgb(34 197 94 / 30%);
+    color: #22c55e;
+}
+
+/* Responsive Mailchimp Form */
+@media (width <= 640px) {
+    .mailchimp-form-content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .mailchimp-embed .mc-field-group {
+        width: 100%;
+    }
+
+    .mailchimp-embed .clear {
+        width: 100%;
+    }
+
+    .mailchimp-embed .btn {
+        width: 100%;
+    }
+}
+
+/* Page Signup Wrapper (for markdown pages) */
+.page-signup-wrapper {
+    margin: 24px 0;
+    padding: 24px;
+    background: rgb(0 0 0 / 5%);
+    border-radius: 8px;
+    border: 1px solid rgb(0 0 0 / 10%);
+}
+
+.page-signup-wrapper .mailchimp-input {
+    background: var(--white);
+    border-color: rgb(0 0 0 / 20%);
+    color: var(--charcoal);
+}
+
+.page-signup-wrapper .mailchimp-input::placeholder {
+    color: rgb(0 0 0 / 50%);
+}
+
+.page-signup-wrapper .mailchimp-input:focus {
+    border-color: var(--teal);
+    background: var(--white);
+}
+
 /* Footer */
 .footer {
     background: var(--ted-black);

@@ -40,7 +40,7 @@ description: Stories, updates, and insights from TEDxBreckenridge. Read about ou
     <div class="blog-cta">
       <h3>Stay Updated</h3>
       <p>Join our mailing list for event announcements, speaker reveals, and community stories.</p>
-      <a href="/#newsletter" class="btn btn-primary">Join Our Mailing List</a>
+      <a href="/#mailing-list" class="btn btn-primary">Join Our Mailing List</a>
     </div>
   </div>
 </div>
