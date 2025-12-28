@@ -22,24 +22,27 @@ description: Get in touch with TEDxBreckenridge. Apply to speak, volunteer, spon
 
     <div class="contact-options">
       <div class="contact-option">
-        <div class="contact-option-icon">💡</div>
-        <h3>Share Your Idea</h3>
-        <p>Have an idea worth spreading? We're looking for speakers who can inspire, challenge, and move our community.</p>
-        <a href="https://tedxbreckenridge.com/speak" target="_blank" class="contact-option-link">Apply to Speak →</a>
-      </div>
-
-      <div class="contact-option">
         <div class="contact-option-icon">🙌</div>
         <h3>Join the Team</h3>
-        <p>Help us create something special. From event planning to speaker coaching, there's a place for every skill.</p>
-        <a href="https://tedxbreckenridge.com/volunteer" target="_blank" class="contact-option-link">Volunteer →</a>
+        <p>TEDxBreckenridge is run entirely by local volunteers who are passionate about bringing ideas worth spreading to Summit County. We're always looking for people who want to help shape our events—whether that's coaching speakers, designing experiences, managing logistics, or spreading the word in our community. No prior experience required, just curiosity and a willingness to contribute. <a href="https://tedxbreckenridge.com/volunteer" target="_blank" class="contact-option-link">Learn about volunteering</a></p>
       </div>
 
       <div class="contact-option">
         <div class="contact-option-icon">🤝</div>
         <h3>Become a Partner</h3>
-        <p>Support local ideas and connect your business with our engaged community of curious minds.</p>
-        <a href="https://tedxbreckenridge.com/sponsor" target="_blank" class="contact-option-link">Explore Sponsorship →</a>
+        <p>Sponsoring TEDxBreckenridge connects your business with a community that values innovation, creativity, and meaningful conversation. Your support helps us keep ticket prices accessible, invest in high-quality production, and bring compelling speakers to our stage. We offer a range of partnership opportunities designed to showcase your brand while supporting ideas worth spreading in the Rockies. <a href="https://tedxbreckenridge.com/sponsor" target="_blank" class="contact-option-link">Explore sponsorship opportunities</a></p>
+      </div>
+
+      <div class="contact-option">
+        <div class="contact-option-icon">❤️</div>
+        <h3>Donate</h3>
+        <p>TEDxBreckenridge is a 501(c)(3) nonprofit organization run entirely by local volunteers. Every dollar you contribute goes directly toward making our events possible—from securing speakers and venues to producing high-quality content that reaches thousands in our community and beyond. Your donation helps ensure that transformative ideas remain accessible to everyone, regardless of their ability to pay. Together, we're building a platform for innovation, creativity, and meaningful conversation in the heart of the Rockies. <a href="https://givebutter.com/tedxbreckenridge" target="_blank" class="contact-option-link">Make a donation</a></p>
+      </div>
+
+      <div class="contact-option">
+        <div class="contact-option-icon">🎟️</div>
+        <h3>Attend</h3>
+        <p>Join us for inspiring talks, meaningful connections, and ideas worth spreading in the heart of the Rockies. Our main event takes place each October in Breckenridge, featuring local voices and compelling speakers. Throughout the year, we also host intimate Salon events that explore fascinating topics in smaller, conversational settings. Tickets are priced to be accessible to our community, and we offer suggested donations for Salon events—because ideas should be available to everyone. <a href="/salon/" class="contact-option-link">Learn about upcoming events</a></p>
       </div>
     </div>
 
@@ -59,15 +62,12 @@ description: Get in touch with TEDxBreckenridge. Apply to speak, volunteer, spon
       <p>Follow along for speaker announcements, event updates, and behind-the-scenes stories from the mountains.</p>
       <div class="social-links">
         <a href="https://instagram.com/{{ site.social.instagram }}" target="_blank" class="social-link">
-          <span class="social-icon">📷</span>
           <span class="social-label">Instagram</span>
         </a>
         <a href="https://youtube.com/{{ site.social.youtube }}" target="_blank" class="social-link">
-          <span class="social-icon">▶️</span>
           <span class="social-label">YouTube</span>
         </a>
         <a href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank" class="social-link">
-          <span class="social-icon">📸</span>
           <span class="social-label">Flickr</span>
         </a>
       </div>
