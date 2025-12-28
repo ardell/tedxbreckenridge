@@ -696,7 +696,7 @@ select:focus-visible {
 /* Theme Section */
 .theme-section {
     background: var(--cream);
-    padding: 100px 0;
+    padding: 0;
 }
 
 .theme-section:has(.theme-content-reverse) {
@@ -706,8 +706,26 @@ select:focus-visible {
 .theme-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    gap: 0;
+    align-items: stretch;
+}
+
+.theme-content .theme-text {
+    padding: 80px 64px 80px 48px;
+}
+
+.theme-content .theme-visual {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.theme-content .theme-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .theme-content-reverse {
@@ -1546,6 +1564,27 @@ select:focus-visible {
         padding: 0;
     }
 
+    .section.theme-section {
+        padding: 0;
+    }
+
+    .theme-content .theme-text {
+        padding: 48px 16px;
+    }
+
+    .theme-content .theme-visual {
+        min-height: 400px;
+        width: 100%;
+        height: auto;
+    }
+
+    .theme-content .theme-visual img {
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+        object-fit: cover;
+    }
+
     .theme-content-reverse .theme-visual {
         margin-left: 0;
         margin-right: 0;
@@ -1615,6 +1654,10 @@ select:focus-visible {
         padding: 40px 12px;
     }
 
+    .section.theme-section {
+        padding: 0;
+    }
+
     .section-inner {
         padding: 0;
     }
@@ -1625,6 +1668,10 @@ select:focus-visible {
 
     .hero-content {
         padding: 90px 12px 32px;
+    }
+
+    .theme-content .theme-text {
+        padding: 40px 12px;
     }
 
     .theme-content-reverse .theme-text {
@@ -2596,7 +2643,7 @@ body.layout-post {
 }
 
 .save-date-content {
-    padding: 80px 80px 80px 24px;
+    padding: 80px 64px 80px 64px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2604,7 +2651,7 @@ body.layout-post {
 
 .save-date-image {
     position: relative;
-    margin-right: -100px;
+    margin-left: 0;
     align-self: stretch;
 }
 
