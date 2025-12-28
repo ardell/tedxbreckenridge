@@ -103,10 +103,13 @@ assets/images/
 
 **Process**:
 1. Resize images to appropriate dimensions (no larger than needed)
-2. Compress with appropriate tool (mozjpeg for JPEG, pngquant for PNG)
-3. For photos, JPEG at 85% quality is usually optimal
-4. For graphics with transparency, use PNG or WebP
-5. Test file sizes - hero images should be <500KB, thumbnails <100KB
+2. **NEVER change the aspect ratio** - always maintain original proportions when resizing
+3. Compress with appropriate tool (mozjpeg for JPEG, pngquant for PNG)
+4. For photos, JPEG at 85% quality is usually optimal
+5. For graphics with transparency, use PNG or WebP
+6. Test file sizes - hero images should be <500KB, thumbnails <100KB
+
+**Important**: When using `sips` to resize images, use `-Z` (capital Z) to resize while maintaining aspect ratio, NOT `-z` (lowercase z) which forces specific dimensions and distorts the image.
 
 ---
 
