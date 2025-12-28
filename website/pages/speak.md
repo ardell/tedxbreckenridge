@@ -56,17 +56,17 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       <h2 class="mb-32">Our Selection Process</h2>
 
       <div style="display: grid; gap: 32px;">
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px;">
+        <div class="card">
           <h3 style="color: var(--terracotta); margin-bottom: 12px; font-size: 1.125rem;">Live Auditions</h3>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">20 applicants selected for 3-minute live auditions in Breckenridge</p>
         </div>
 
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px;">
+        <div class="card">
           <h3 style="color: var(--teal); margin-bottom: 12px; font-size: 1.125rem;">Main Stage Selection</h3>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">6-8 speakers and 2 performers invited to main stage</p>
         </div>
 
-        <div style="padding: 32px; background: var(--cream); border-radius: 8px;">
+        <div class="card">
           <h3 style="color: var(--terracotta); margin-bottom: 12px; font-size: 1.125rem;">Speaker Coaching</h3>
           <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Free required speaker coaching provided with one-on-one coach pairing for talk development</p>
         </div>
@@ -140,7 +140,7 @@ description: Have an idea worth spreading? Apply to speak at TEDxBreckenridge 20
       </blockquote>
     </div>
 
-    <div style="margin-top: 60px; padding: 32px; background: var(--cream); border-radius: 8px;">
+    <div class="card" style="margin-top: 60px;">
       <h3 style="margin-bottom: 16px; color: var(--charcoal); font-size: 1.125rem;">Non-Discrimination Statement</h3>
       <p style="margin: 0; line-height: 1.7; color: var(--stone); font-size: 0.95rem;">TEDxBreckenridge does not discriminate based on race, color, religion, gender, age, national origin, disability, marital status, sexual orientation, or military status.</p>
     </div>
