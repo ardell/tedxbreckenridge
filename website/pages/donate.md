@@ -45,7 +45,7 @@ description: Support TEDxBreckenridge, a 100% volunteer-led nonprofit bringing i
     <div class="mb-60">
       <h2 class="text-center" style="margin-bottom: 40px;">Make Your Donation</h2>
 
-      <div class="text-center" style="background: var(--cream); padding: 60px 40px; border-radius: 8px;">
+      <div class="text-center bg-cream" style="padding: 60px 40px; border-radius: 8px;">
         <a class="button button-primary" href="https://givebutter.com/tedxbreckenridge" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 24px 48px; font-size: 1.5rem; font-weight: 700; text-decoration: none; background: var(--terracotta); color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s; border-radius: 8px;">Donate Now</a>
         <p style="margin-top: 24px; color: var(--charcoal); font-size: 1.1rem; font-weight: 500;">Support ideas worth spreading in our mountain community</p>
         <p style="margin-top: 12px; color: var(--stone); font-size: 0.95rem;">Secure donation processing via Givebutter</p>
