@@ -56,7 +56,7 @@ description: Support TEDxBreckenridge, a 100% volunteer-led nonprofit bringing i
 
     <div style="margin-top: 80px; padding: 48px; background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%); border-radius: 8px; text-align: center;">
       <h3 style="margin-bottom: 16px; color: var(--charcoal);">About TEDx</h3>
-      <p style="max-width: 700px; margin: 0 auto; line-height: 1.7; color: var(--stone);">In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection.</p>
+      <p style="max-width: 700px; margin: 0 auto; line-height: 1.7; color: var(--stone);">In the spirit of ideas worth spreading, <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer">TEDx</a> is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, <a href="https://www.ted.com/talks" target="_blank" rel="noopener noreferrer">TED Talks</a> video and live speakers combine to spark deep discussion and connection.</p>
     </div>
   </div>
 </div>

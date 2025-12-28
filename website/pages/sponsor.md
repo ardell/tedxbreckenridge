@@ -254,7 +254,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 
     <div style="margin-top: 60px; padding: 32px; background: var(--cream); border-radius: 8px;">
       <h3 style="margin-bottom: 16px; color: var(--charcoal); font-size: 1.125rem;">About TEDx</h3>
-      <p style="margin: 0; line-height: 1.7; color: var(--stone); font-size: 0.95rem;">In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. TEDxBreckenridge is a 501(c)(3) nonprofit organization operated under license from TED. Your sponsorship is a tax-deductible contribution to the extent allowed by law.</p>
+      <p style="margin: 0; line-height: 1.7; color: var(--stone); font-size: 0.95rem;">In the spirit of ideas worth spreading, <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer">TEDx</a> is a program of local, self-organized events that bring people together to share a TED-like experience. TEDxBreckenridge is a 501(c)(3) nonprofit organization operated under license from <a href="https://www.ted.com/" target="_blank" rel="noopener noreferrer">TED</a>. Your sponsorship is a tax-deductible contribution to the extent allowed by law.</p>
     </div>
   </div>
 </div>
