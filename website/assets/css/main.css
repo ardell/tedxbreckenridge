@@ -1833,49 +1833,50 @@ select:focus-visible {
 /* Contact Options */
 .contact-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 24px;
     margin-bottom: 100px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-option {
-    padding: 40px 32px;
-    background: var(--white);
-    border: 2px solid var(--sand);
-    border-radius: 8px;
-    text-align: center;
-    transition: all 0.3s ease;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--sand);
 }
 
-.contact-option:hover {
-    border-color: var(--teal);
-    box-shadow: 0 8px 24px rgb(91 142 142 / 12%);
-    transform: translateY(-4px);
+.contact-option:last-child {
+    border-bottom: none;
 }
 
 .contact-option-icon {
-    font-size: 48px;
+    font-size: 32px;
     line-height: 1;
-    margin-bottom: 24px;
+    margin-right: 12px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .contact-option h3 {
-    font-size: 22px;
+    font-size: 24px;
     color: var(--ted-black);
-    margin: 0 0 16px;
+    margin: 0 0 12px;
     font-weight: 500;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .contact-option p {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.7;
     color: var(--stone);
-    margin: 0 0 24px;
+    margin: 0 0 16px;
 }
 
 .contact-option-link {
     display: inline-block;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--teal);
     text-decoration: none;
@@ -1991,10 +1992,11 @@ select:focus-visible {
 }
 
 .social-links {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .social-link {
@@ -2113,10 +2115,6 @@ select:focus-visible {
         height: 320px;
     }
 
-    .contact-options {
-        grid-template-columns: 1fr;
-    }
-
     .contact-form-section {
         padding: 32px 16px;
     }
@@ -2127,8 +2125,7 @@ select:focus-visible {
     }
 
     .social-links {
-        flex-direction: column;
-        align-items: stretch;
+        grid-template-columns: 1fr;
     }
 
     .social-link {
