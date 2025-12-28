@@ -14,7 +14,7 @@ description: Support TEDxBreckenridge, a 100% volunteer-led nonprofit bringing i
   </div>
 
   <div class="page-content" style="max-width: 900px;">
-    <div style="margin-bottom: 60px;">
+    <div class="mb-60">
       <p style="font-size: 1.25rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 32px;">Inspired by the power of ideas to change the world, TEDxBreckenridge has been igniting conversations and inspiring action in our mountain community. Beyond hosting talks, we serve as a catalyst for community impact, bringing together diverse voices to address pressing issues.</p>
     </div>
   </div>
@@ -42,7 +42,7 @@ description: Support TEDxBreckenridge, a 100% volunteer-led nonprofit bringing i
 <div class="page">
   <div class="page-content" style="max-width: 900px;">
 
-    <div style="margin-bottom: 60px;">
+    <div class="mb-60">
       <h2 style="text-align: center; margin-bottom: 40px;">Make Your Donation</h2>
 
       <div style="background: var(--cream); padding: 60px 40px; border-radius: 8px; text-align: center;">

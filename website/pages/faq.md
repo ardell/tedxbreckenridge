@@ -14,7 +14,7 @@ description: Frequently asked questions about attending TEDxBreckenridge. Find a
   </div>
 
   <div class="page-content">
-    <div style="margin-bottom: 60px;">
+    <div class="mb-60">
       <img src="{{ '/assets/images/events/family-in-front-of-tedxbreckenridge-x.jpg' | relative_url }}" alt="Family posing at TEDxBreckenridge event, showcasing our welcoming and family-friendly atmosphere" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>
 

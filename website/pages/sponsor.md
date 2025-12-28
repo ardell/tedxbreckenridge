@@ -14,7 +14,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
   </div>
 
   <div class="page-content" style="max-width: 900px;">
-    <div style="margin-bottom: 80px;">
+    <div class="mb-80">
       <p style="font-size: 1.25rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 32px;">TEDxBreckenridge brings world-class conversations to the heart of the Rockies. We're a 100% volunteer-led nonprofit creating a platform for local voices to share expansive ideas that shift the way we see, connect, and evolve within our mountain community.</p>
 
       <p style="font-size: 1.125rem; line-height: 1.7; color: var(--stone); margin-bottom: 0;">Our events spark meaningful conversations and genuine connections. We believe that collective genius and bold ideas can strengthen our community and ultimately impact the world beyond Summit County.</p>
@@ -24,7 +24,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
       <img src="{{ '/assets/images/events/attendees-in-front-of-step-and-repeat.jpg' | relative_url }}" alt="Attendees posing in front of TEDxBreckenridge step-and-repeat banner showing sponsor branding opportunities" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>
 
-    <div style="margin-bottom: 80px;">
+    <div class="mb-80">
       <div class="section-header" style="text-align: center; margin-bottom: 48px;">
         <h2 class="section-title">Our Mission & Values</h2>
       </div>
@@ -72,7 +72,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
       <img src="{{ '/assets/images/events/wide-shot-of-venue-and-emcee-straight-on.jpg' | relative_url }}" alt="Professional TEDxBreckenridge event production at the Riverwalk Center showing the caliber of events sponsors support" style="width: 100%; height: auto;" class="rounded" loading="lazy">
     </div>
 
-    <div style="margin-bottom: 80px;">
+    <div class="mb-80">
       <div class="section-header" style="text-align: center; margin-bottom: 48px;">
         <h2 class="section-title">2026 Sponsorship Packages</h2>
         <p style="max-width: 700px; margin: 24px auto 0; font-size: 1.0625rem; line-height: 1.7; color: var(--stone);">The TEDxBreckenridge sponsorship packages are designed to allow for customization and flexibility. As a supporter of this event, you will have the opportunity to select the promotional options best suited to reaching your target audience.</p>
