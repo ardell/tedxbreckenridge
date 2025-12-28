@@ -1216,7 +1216,7 @@ select:focus-visible {
 .newsletter-content p {
     font-size: 14px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgb(255 255 255 / 65%);
     margin-bottom: 28px;
 }
 
@@ -1238,7 +1238,7 @@ select:focus-visible {
 }
 
 .newsletter-input::placeholder {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(255 255 255 / 80%);
 }
 
 .newsletter-input:focus {
@@ -1259,7 +1259,7 @@ select:focus-visible {
 .newsletter-section .mailchimp-embed #mce-success-response {
     background: rgb(255 255 255 / 10%);
     border: 1px solid var(--teal);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(255 255 255 / 80%);
 }
 
 .newsletter-section .mailchimp-embed #mce-error-response {
@@ -1440,7 +1440,7 @@ select:focus-visible {
     font-size: 13px;
     font-weight: 400;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(255 255 255 / 80%);
     margin-top: 20px;
     max-width: 280px;
 }
@@ -1476,7 +1476,7 @@ select:focus-visible {
 .footer-column a {
     font-size: 13px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(255 255 255 / 80%);
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -1496,7 +1496,7 @@ select:focus-visible {
 .footer-legal {
     font-size: 11px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.825);
+    color: rgb(255 255 255 / 82.5%);
 }
 
 .footer-social {
@@ -1507,7 +1507,7 @@ select:focus-visible {
 .footer-social a {
     font-size: 12px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.875);
+    color: rgb(255 255 255 / 87.5%);
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -2643,7 +2643,7 @@ body.layout-post {
 }
 
 .save-date-content {
-    padding: 80px 64px 80px 64px;
+    padding: 80px 64px;
     display: flex;
     flex-direction: column;
     justify-content: center;
