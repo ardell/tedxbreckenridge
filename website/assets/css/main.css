@@ -1197,8 +1197,8 @@ select:focus-visible {
 
 .newsletter-content p {
     font-size: 14px;
-    font-weight: 300;
-    color: var(--teal-light);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.65);
     margin-bottom: 28px;
 }
 
@@ -1220,7 +1220,7 @@ select:focus-visible {
 }
 
 .newsletter-input::placeholder {
-    color: var(--teal-light);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .newsletter-input:focus {
@@ -1234,14 +1234,14 @@ select:focus-visible {
     margin-top: 16px;
     padding: 14px 18px;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     border-radius: 4px;
 }
 
 .newsletter-section .mailchimp-embed #mce-success-response {
     background: rgb(255 255 255 / 10%);
     border: 1px solid var(--teal);
-    color: var(--teal-light);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .newsletter-section .mailchimp-embed #mce-error-response {
