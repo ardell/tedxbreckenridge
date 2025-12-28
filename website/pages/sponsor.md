@@ -50,7 +50,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 </div>
 
 <!-- Why Partner Section -->
-<section class="section section-full" style="background: var(--cream); padding: 80px 0;">
+<section class="section section-full bg-cream" style="padding: 80px 0;">
   <div class="container" style="padding: 0 24px;">
     <div class="section-header text-center mb-48">
       <h2 class="section-title">Why Partner with TEDxBreckenridge</h2>
