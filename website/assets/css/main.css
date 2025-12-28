@@ -1706,6 +1706,11 @@ select:focus-visible {
     padding: 80px 24px;
 }
 
+/* Team page specific width */
+.page-content:has(.team-section) {
+    max-width: 1000px;
+}
+
 .page-content h2 {
     font-family: var(--font-primary);
     font-size: clamp(24px, 4vw, 32px);
@@ -2042,7 +2047,7 @@ select:focus-visible {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
 }
 
@@ -2062,7 +2067,7 @@ select:focus-visible {
 
 .team-member img {
     width: 100%;
-    height: 280px;
+    height: 220px;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -2103,7 +2108,7 @@ select:focus-visible {
     }
 
     .team-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 
@@ -2112,7 +2117,7 @@ select:focus-visible {
     }
 
     .team-member img {
-        height: 320px;
+        height: 240px;
     }
 
     .contact-form-section {
@@ -2148,6 +2153,14 @@ select:focus-visible {
 
     .contact-form-section {
         padding: 24px 12px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member img {
+        height: 280px;
     }
 }
 
