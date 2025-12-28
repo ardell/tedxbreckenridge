@@ -650,12 +650,12 @@ select:focus-visible {
 
 .section-eyebrow {
     font-family: var(--font-primary);
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--terracotta);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--stone);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
 }
 
 .section-title {
@@ -749,9 +749,9 @@ select:focus-visible {
 }
 
 .theme-text p {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 300;
-    line-height: 1.85;
+    line-height: 1.75;
     color: var(--charcoal);
     margin-bottom: 20px;
 }
