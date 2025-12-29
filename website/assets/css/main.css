@@ -163,7 +163,7 @@ select:focus-visible {
 
 .nav-links {
     display: flex;
-    gap: 36px;
+    gap: var(--space-40);
     list-style: none;
 }
 
@@ -305,7 +305,7 @@ select:focus-visible {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: var(--space-40);
 }
 
 /* Mobile Navigation Styles */
@@ -315,7 +315,7 @@ select:focus-visible {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 16px;
+        gap: var(--space-16);
     }
 
     .nav-logo {
@@ -524,7 +524,7 @@ select:focus-visible {
 
 .hero-meta {
     display: flex;
-    gap: 40px;
+    gap: var(--space-40);
     margin-bottom: 40px;
     opacity: 0;
     animation: fade-in 0.6s ease 0.3s forwards;
@@ -533,7 +533,7 @@ select:focus-visible {
 .hero-meta-item {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-4);
 }
 
 .hero-meta-label {
@@ -553,7 +553,7 @@ select:focus-visible {
 
 .hero-actions {
     display: flex;
-    gap: 16px;
+    gap: var(--space-16);
     opacity: 0;
     animation: fade-in 0.6s ease 0.4s forwards;
 }
@@ -694,7 +694,7 @@ select:focus-visible {
 .photo-banner {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 4px;
+    gap: var(--space-4);
     background: var(--black);
     padding: 4px;
 }
@@ -839,7 +839,7 @@ select:focus-visible {
 .speakers-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: var(--space-20);
 }
 
 .speaker-card {
@@ -948,7 +948,7 @@ select:focus-visible {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
+    gap: var(--space-8);
 }
 
 .gallery-item {
@@ -984,7 +984,7 @@ select:focus-visible {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-8);
     transition: color 0.2s ease;
 }
 
@@ -1004,7 +1004,7 @@ select:focus-visible {
 .salon-content {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
-    gap: 80px;
+    gap: var(--space-80);
     align-items: center;
 }
 
@@ -1064,7 +1064,7 @@ select:focus-visible {
 
 .salon-detail {
     display: flex;
-    gap: 16px;
+    gap: var(--space-16);
     font-size: 14px;
 }
 
@@ -1087,7 +1087,7 @@ select:focus-visible {
 .support-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: var(--space-24);
 }
 
 .support-card {
@@ -1139,13 +1139,13 @@ select:focus-visible {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-8);
     margin-top: 20px;
     transition: gap 0.2s ease, color 0.2s ease;
 }
 
 .support-link:hover {
-    gap: 12px;
+    gap: var(--space-12);
     color: var(--ted-red);
 }
 
@@ -1179,7 +1179,7 @@ select:focus-visible {
 .sponsors-logos {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: var(--space-32);
     align-items: center;
 }
 
@@ -1249,7 +1249,7 @@ select:focus-visible {
 
 .newsletter-form {
     display: flex;
-    gap: 12px;
+    gap: var(--space-12);
 }
 
 .newsletter-input {
@@ -1303,14 +1303,14 @@ select:focus-visible {
 
 .mailchimp-form {
     display: flex;
-    gap: 12px;
+    gap: var(--space-12);
     align-items: flex-start;
 }
 
 .mailchimp-form-content {
     width: 100%;
     display: flex;
-    gap: 12px;
+    gap: var(--space-12);
     align-items: flex-start;
 }
 
@@ -1459,7 +1459,7 @@ select:focus-visible {
 .footer-top {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 56px;
+    gap: var(--space-60);
     margin-bottom: 56px;
 }
 
@@ -1528,7 +1528,7 @@ select:focus-visible {
 
 .footer-social {
     display: flex;
-    gap: 20px;
+    gap: var(--space-20);
 }
 
 .footer-social a {
@@ -1565,7 +1565,7 @@ select:focus-visible {
 
     .hero-meta {
         flex-wrap: wrap;
-        gap: 24px;
+        gap: var(--space-24);
     }
 
     .section {
@@ -1657,13 +1657,13 @@ select:focus-visible {
 
     .footer-top {
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        gap: var(--space-40);
     }
 
     .sponsors-cta,
     .speakers-footer {
         flex-direction: column;
-        gap: 20px;
+        gap: var(--space-20);
         text-align: center;
     }
 }
@@ -1751,7 +1751,7 @@ select:focus-visible {
 
     .footer-bottom {
         flex-direction: column;
-        gap: 20px;
+        gap: var(--space-20);
         text-align: center;
     }
 }
@@ -1947,7 +1947,7 @@ select:focus-visible {
 .contact-options {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: var(--space-24);
     margin-bottom: 100px;
     max-width: 700px;
     margin-left: auto;
@@ -2036,7 +2036,7 @@ select:focus-visible {
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: var(--space-20);
     margin-bottom: 20px;
 }
 
@@ -2107,7 +2107,7 @@ select:focus-visible {
 .social-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: var(--space-16);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -2115,7 +2115,7 @@ select:focus-visible {
 .social-link {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-8);
     padding: 12px 24px;
     background: var(--white);
     border: 2px solid var(--sand);
@@ -2156,7 +2156,7 @@ select:focus-visible {
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: var(--space-32);
 }
 
 .team-member {
@@ -2221,7 +2221,7 @@ select:focus-visible {
 
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: var(--space-20);
     }
 
     .team-section {
@@ -2324,7 +2324,7 @@ body.layout-post {
 
 .post-meta {
     display: flex;
-    gap: 12px;
+    gap: var(--space-12);
     align-items: center;
     margin-bottom: 16px;
     font-size: 13px;
@@ -2431,7 +2431,7 @@ body.layout-post {
 .blog-posts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
-    gap: 48px;
+    gap: var(--space-48);
     margin-bottom: 48px;
 }
 
@@ -2493,7 +2493,7 @@ body.layout-post {
 
 .blog-post-meta {
     display: flex;
-    gap: 12px;
+    gap: var(--space-12);
     align-items: center;
     margin-bottom: 16px;
     font-size: 13px;
@@ -2539,7 +2539,7 @@ body.layout-post {
 .blog-post-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-8);
     font-size: 15px;
     font-weight: 600;
     color: var(--teal);
@@ -2551,7 +2551,7 @@ body.layout-post {
 
 .blog-post-link:hover {
     color: var(--terracotta);
-    gap: 12px;
+    gap: var(--space-12);
 }
 
 .blog-cta {
@@ -2598,7 +2598,7 @@ body.layout-post {
 @media (width <= 768px) {
     .talks-year-section .section-header {
         grid-template-columns: 1fr !important;
-        gap: 24px !important;
+        gap: var(--space-24) !important;
     }
 
     .talks-year-section .section-header img {
@@ -2859,10 +2859,41 @@ body.layout-post {
   background: var(--sand);
 }
 
+/* Grid Utilities */
+.grid {
+  display: grid;
+}
+
+.grid-gap-12 {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.grid-gap-16 {
+  display: grid;
+  gap: var(--space-16);
+}
+
+.grid-gap-24 {
+  display: grid;
+  gap: var(--space-24);
+}
+
+.grid-gap-32 {
+  display: grid;
+  gap: var(--space-32);
+}
+
 .grid-auto-fit {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-24);
+}
+
+.grid-auto-fit-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-32);
 }
 
 .flex-gap-12 {
