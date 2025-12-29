@@ -2790,8 +2790,8 @@ body.layout-post {
   aspect-ratio: 16/9;
 }
 
-/* Spacing Utilities - using spacing scale tokens */
-/* Use !important so utilities override component styles */
+/* Spacing Utilities - using spacing scale tokens
+   Use !important so utilities override component styles */
 .mb-16 { margin-bottom: var(--space-16) !important; }
 .mb-24 { margin-bottom: var(--space-24) !important; }
 .mb-32 { margin-bottom: var(--space-32) !important; }
@@ -3141,7 +3141,7 @@ body.layout-post {
 .cta-gradient {
   margin-top: var(--space-80);
   padding: var(--space-48) var(--space-32);
-  background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%);
+  background: linear-gradient(135deg, rgb(197 91 77 / 8%) 0%, rgb(91 142 142 / 8%) 100%);
   border-radius: 8px;
 }
 
@@ -3173,7 +3173,7 @@ body.layout-post {
 /* Callout gradient - smaller centered callout boxes */
 .callout-gradient {
   padding: var(--space-32);
-  background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%);
+  background: linear-gradient(135deg, rgb(197 91 77 / 8%) 0%, rgb(91 142 142 / 8%) 100%);
   border-radius: 8px;
   text-align: center;
 }
