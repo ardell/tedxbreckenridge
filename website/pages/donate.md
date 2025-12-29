@@ -7,7 +7,7 @@ description: Support TEDxBreckenridge, a 100% volunteer-led nonprofit bringing i
 container: container-md
 ---
 
-<p style="font-size: 1.25rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 32px;">Inspired by the power of ideas to change the world, TEDxBreckenridge has been igniting conversations and inspiring action in our mountain community. Beyond hosting talks, we serve as a catalyst for community impact, bringing together diverse voices to address pressing issues.</p>
+<p class="intro">Inspired by the power of ideas to change the world, TEDxBreckenridge has been igniting conversations and inspiring action in our mountain community. Beyond hosting talks, we serve as a catalyst for community impact, bringing together diverse voices to address pressing issues.</p>
 
 <div class="my-80">
   <img src="{{ '/assets/images/events/speaker-in-pink-dress.jpg' | relative_url }}" alt="TEDxBreckenridge speaker in pink dress on stage" class="img-fluid rounded" loading="lazy">
