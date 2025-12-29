@@ -613,6 +613,7 @@ select:focus-visible {
     text-decoration: none;
     transition: all 0.2s ease;
     display: inline-block;
+    vertical-align: middle;
     border: none;
 }
 
@@ -629,14 +630,14 @@ select:focus-visible {
 
 .btn-secondary {
     background: transparent;
-    color: var(--black);
-    border: 1px solid var(--charcoal);
+    color: var(--charcoal);
+    outline: 1px solid var(--charcoal);
+    outline-offset: -1px;
 }
 
 .btn-secondary:hover {
-    background: var(--charcoal);
-    color: var(--white);
-    border-color: var(--charcoal);
+    background: var(--sand);
+    color: var(--charcoal);
 }
 
 @keyframes fade-in {
@@ -1901,14 +1902,14 @@ select:focus-visible {
     color: var(--black);
 }
 
-.page-content a {
+.page-content a:not(.btn) {
     color: var(--teal);
     text-decoration: none;
     border-bottom: 1px solid var(--teal-light);
     transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.page-content a:hover {
+.page-content a:not(.btn):hover {
     color: var(--ted-red);
     border-bottom-color: var(--ted-red);
 }
