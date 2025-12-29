@@ -1793,7 +1793,7 @@ select:focus-visible {
 }
 
 .page-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 80px 24px;
 }
@@ -2953,6 +2953,32 @@ body.layout-post {
   margin: 0;
   color: var(--charcoal);
   line-height: 1.7;
+}
+
+/* Intro paragraph utilities */
+.intro {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--charcoal);
+  margin-bottom: var(--space-32);
+}
+
+.intro-secondary {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--stone);
+  margin-bottom: 0;
+}
+
+.body-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--charcoal);
+  margin-bottom: var(--space-32);
+}
+
+.body-lg:last-child {
+  margin-bottom: 0;
 }
 
 /* Styled quote blocks */

@@ -8,9 +8,9 @@ container: container-md
 ---
 
 <div class="mb-80">
-  <p style="font-size: 1.25rem; line-height: 1.7; color: var(--charcoal); margin-bottom: 32px;">TEDxBreckenridge is built entirely by passionate local volunteers who believe in the power of ideas to change our community. When you volunteer with us, you're not just helping to run an event—you're joining a dedicated team of innovators, creators, and community builders who are bringing world-class conversations to the heart of the Rockies. Learn more about <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer">the TEDx program</a>.</p>
+  <p class="intro">TEDxBreckenridge is built entirely by passionate local volunteers who believe in the power of ideas to change our community. When you volunteer with us, you're not just helping to run an event—you're joining a dedicated team of innovators, creators, and community builders who are bringing world-class conversations to the heart of the Rockies. Learn more about <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer">the TEDx program</a>.</p>
 
-  <p style="font-size: 1.125rem; line-height: 1.7; color: var(--stone); margin-bottom: 0;">Whether you have a few hours or want to be deeply involved in planning our 2026 events, there's a place for you on our team. You'll work alongside talented professionals, meet inspiring speakers, and help create experiences that resonate throughout <a href="https://www.summitcountyco.gov/" target="_blank" rel="noopener noreferrer">Summit County</a> and beyond.</p>
+  <p class="intro-secondary">Whether you have a few hours or want to be deeply involved in planning our 2026 events, there's a place for you on our team. You'll work alongside talented professionals, meet inspiring speakers, and help create experiences that resonate throughout <a href="https://www.summitcountyco.gov/" target="_blank" rel="noopener noreferrer">Summit County</a> and beyond.</p>
 </div>
 
 <div class="my-80">
@@ -46,7 +46,7 @@ container: container-md
 <div class="mb-80">
   <h2 class="mb-32">Volunteer Opportunities</h2>
 
-  <p style="margin-bottom: 32px; font-size: 1.0625rem; line-height: 1.7; color: var(--charcoal);">We're building our amazing crew of volunteers for our 2026 events. Whether you're interested in helping on event day or contributing your specialized skills year-round, we'd love to have you on the team.</p>
+  <p class="body-lg">We're building our amazing crew of volunteers for our 2026 events. Whether you're interested in helping on event day or contributing your specialized skills year-round, we'd love to have you on the team.</p>
 
   <div style="display: grid; gap: 24px; margin-bottom: 48px;">
     <div>
