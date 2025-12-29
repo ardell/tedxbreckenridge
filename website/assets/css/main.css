@@ -3135,6 +3135,55 @@ body.layout-post {
   margin-top: var(--space-16);
 }
 
+/* Gradient CTA sections - for form wrappers and callouts */
+.cta-gradient {
+  margin-top: var(--space-80);
+  padding: var(--space-48) var(--space-32);
+  background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%);
+  border-radius: 8px;
+}
+
+.cta-gradient h2 {
+  margin-bottom: var(--space-24);
+  color: var(--charcoal);
+}
+
+.cta-gradient > p {
+  max-width: 700px;
+  margin: 0 auto var(--space-40);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--stone);
+}
+
+.cta-gradient .form-wrapper {
+  max-width: 100%;
+  overflow: hidden;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.cta-gradient .form-wrapper iframe {
+  border: none;
+}
+
+/* Callout gradient - smaller centered callout boxes */
+.callout-gradient {
+  padding: var(--space-32);
+  background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.callout-gradient p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  font-style: italic;
+}
+
 .text-stone {
   color: var(--stone);
 }
