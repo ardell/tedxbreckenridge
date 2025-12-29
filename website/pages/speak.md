@@ -8,10 +8,7 @@ container: container-md
 ---
 
 <div class="mb-60">
-  <blockquote style="margin: 0; padding: 32px 40px; background: var(--cream); border-left: 4px solid var(--terracotta); font-size: 1.25rem; line-height: 1.6; font-style: italic; color: var(--charcoal);">
-    "There is no greater agony than bearing an untold story inside you."
-    <footer style="margin-top: 16px; font-size: 1rem; font-style: normal; font-weight: 500; color: var(--stone);">— Maya Angelou</footer>
-  </blockquote>
+  {% include quote.html text="There is no greater agony than bearing an untold story inside you." author="Maya Angelou" %}
 </div>
 
 <div style="margin: 60px 0 80px;">
@@ -49,19 +46,19 @@ container: container-md
   <h2 class="mb-32">Our Selection Process</h2>
 
   <div style="display: grid; gap: 32px;">
-    <div class="card">
-      <h3 style="color: var(--terracotta); margin-bottom: 12px; font-size: 1.125rem;">Live Auditions</h3>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">20 applicants selected for 3-minute live auditions in Breckenridge</p>
+    <div class="card-accent-red">
+      <h3>Live Auditions</h3>
+      <p>20 applicants selected for 3-minute live auditions in Breckenridge</p>
     </div>
 
-    <div class="card">
-      <h3 style="color: var(--teal); margin-bottom: 12px; font-size: 1.125rem;">Main Stage Selection</h3>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">6-8 speakers and 2 performers invited to main stage</p>
+    <div class="card-accent-teal">
+      <h3>Main Stage Selection</h3>
+      <p>6-8 speakers and 2 performers invited to main stage</p>
     </div>
 
-    <div class="card">
-      <h3 style="color: var(--terracotta); margin-bottom: 12px; font-size: 1.125rem;">Speaker Coaching</h3>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Free required speaker coaching provided with one-on-one coach pairing for talk development</p>
+    <div class="card-accent-red">
+      <h3>Speaker Coaching</h3>
+      <p>Free required speaker coaching provided with one-on-one coach pairing for talk development</p>
     </div>
   </div>
 </div>
@@ -126,14 +123,11 @@ container: container-md
   </div>
 </div>
 
-<div style="margin-top: 60px;">
-  <blockquote style="margin: 0; padding: 32px 40px; background: var(--cream); border-left: 4px solid var(--teal); font-size: 1.25rem; line-height: 1.6; font-style: italic; color: var(--charcoal);">
-    "The mind, once stretched by a new idea, never returns to its original dimensions."
-    <footer style="margin-top: 16px; font-size: 1rem; font-style: normal; font-weight: 500; color: var(--stone);">— Ralph Waldo Emerson</footer>
-  </blockquote>
+<div class="mt-60">
+  {% include quote.html text="The mind, once stretched by a new idea, never returns to its original dimensions." author="Ralph Waldo Emerson" color="teal" %}
 </div>
 
-<div class="card" style="margin-top: 60px;">
-  <h3 style="margin-bottom: 16px; color: var(--charcoal); font-size: 1.125rem;">Non-Discrimination Statement</h3>
-  <p style="margin: 0; line-height: 1.7; color: var(--stone); font-size: 0.95rem;">TEDxBreckenridge does not discriminate based on race, color, religion, gender, age, national origin, disability, marital status, sexual orientation, or military status.</p>
+<div class="card mt-60">
+  <h3>Non-Discrimination Statement</h3>
+  <p>TEDxBreckenridge does not discriminate based on race, color, religion, gender, age, national origin, disability, marital status, sexual orientation, or military status.</p>
 </div>
