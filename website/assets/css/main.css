@@ -1735,6 +1735,10 @@ select:focus-visible {
     min-height: 100vh;
 }
 
+.page.page-header-only {
+    min-height: auto;
+}
+
 .page-header {
     background: var(--cream);
     padding: 80px 24px;
@@ -1753,10 +1757,34 @@ select:focus-visible {
     margin: 0 auto;
 }
 
+.page-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--stone);
+    max-width: 600px;
+    margin: 16px auto 0;
+}
+
 .page-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 80px 24px;
+}
+
+/* Standalone content section for pages with full-width sections */
+.page-content-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+/* Reduce top padding when page-content-section immediately follows page header */
+.page + .page-content-section {
+    padding-top: 48px;
+}
+
+.page-content-section.narrow {
+    max-width: 800px;
 }
 
 /* Team page specific width */
@@ -2156,6 +2184,10 @@ select:focus-visible {
         padding: 40px 16px;
     }
 
+    .page-content-section {
+        padding: 40px 16px;
+    }
+
     .page-content li {
         padding-left: 20px;
     }
@@ -2201,6 +2233,10 @@ select:focus-visible {
     }
 
     .page-content {
+        padding: 32px 12px;
+    }
+
+    .page-content-section {
         padding: 32px 12px;
     }
 
