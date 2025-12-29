@@ -309,7 +309,7 @@ select:focus-visible {
 }
 
 /* Mobile Navigation Styles */
-@media (width <= 768px) {
+@media (width <= 1024px) {
     .nav {
         padding: 16px;
         display: flex;
