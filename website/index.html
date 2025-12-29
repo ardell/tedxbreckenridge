@@ -8,7 +8,7 @@ description: Join us for inspiring talks and meaningful connections in Summit Co
 <section class="hero">
     <div class="hero-content">
         <div class="hero-eyebrow">TEDxBreckenridge Salon • {{ site.salon.date }}</div>
-        <h1 class="hero-title" style="font-size: 2.5rem; line-height: 1.2;">{{ site.salon.title }}</h1>
+        <h1 class="hero-title hero-title-lg">{{ site.salon.title }}</h1>
         <p class="hero-description">{{ site.salon.description }}</p>
         <div class="hero-meta">
             <div class="hero-meta-item">
@@ -30,12 +30,12 @@ description: Join us for inspiring talks and meaningful connections in Summit Co
         </div>
     </div>
     <div class="hero-visual">
-        <img src="{{ '/assets/images/heroes/salon-elevated-cuisine.jpg' | relative_url }}" alt="Elevated Cuisine: The Science and Art of Cooking at Altitude - TEDxBreckenridge Salon January 15, 2026" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <img src="{{ '/assets/images/heroes/salon-elevated-cuisine.jpg' | relative_url }}" alt="Elevated Cuisine: The Science and Art of Cooking at Altitude - TEDxBreckenridge Salon January 15, 2026" class="hero-img-cover">
     </div>
 </section>
 
 <!-- Save the Date Section -->
-<section class="section section-full" id="main-event" style="background: var(--cream); border-top: 1px solid var(--border-color);">
+<section class="section section-full bg-cream section-bordered" id="main-event">
     <div class="save-date-container">
         <div class="save-date-image">
             <img src="{{ '/assets/images/events/save-the-date-event-photo.jpg' | relative_url }}" alt="TEDxBreckenridge 2026 main event at the Riverwalk Center - Save the date for October 3, 2026" loading="lazy">
@@ -43,17 +43,17 @@ description: Join us for inspiring talks and meaningful connections in Summit Co
 
         <div class="save-date-content">
             <div class="section-eyebrow">Save the Date</div>
-            <h2 style="font-size: 2.5rem; line-height: 1.2; margin: 16px 0 32px;">TEDxBreckenridge 2026 Main Event</h2>
+            <h2 class="save-date-title">TEDxBreckenridge 2026 Main Event</h2>
 
-            <div style="margin-bottom: 32px;">
-                <p class="date-large" style="font-size: 2rem; font-weight: 700; margin-bottom: 8px; color: var(--ted-red);">October 3, 2026</p>
-                <p style="font-size: 17px; font-weight: 300; color: var(--stone); margin-bottom: 24px;">Riverwalk Center<br>150 W Adams Ave<br>Breckenridge, Colorado 80424</p>
-                <div style="margin: 24px 0;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.869!2d-106.0436!3d39.4817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876a763d6f3c3c3d%3A0x8b3c3c3c3c3c3c3c!2s150%20W%20Adams%20Ave%2C%20Breckenridge%2C%20CO%2080424!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Riverwalk Center at 150 W Adams Ave, Breckenridge, CO 80424"></iframe>
+            <div class="save-date-block">
+                <p class="date-highlight">October 3, 2026</p>
+                <p class="venue-address">Riverwalk Center<br>150 W Adams Ave<br>Breckenridge, Colorado 80424</p>
+                <div class="event-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.869!2d-106.0436!3d39.4817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876a763d6f3c3c3d%3A0x8b3c3c3c3c3c3c3c!2s150%20W%20Adams%20Ave%2C%20Breckenridge%2C%20CO%2080424!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Riverwalk Center at 150 W Adams Ave, Breckenridge, CO 80424"></iframe>
                 </div>
             </div>
 
-            <p style="font-size: 17px; font-weight: 300; line-height: 1.75; margin-bottom: 32px; color: var(--charcoal);">
+            <p class="save-date-description">
                 Mark your calendar for an inspiring evening of ideas worth spreading. This year's theme, speaker lineup, and ticket information will be announced in the coming months.
             </p>
 
@@ -66,7 +66,7 @@ description: Join us for inspiring talks and meaningful connections in Summit Co
 </section>
 
 <!-- Donate Section -->
-<section class="section section-full theme-section" id="donate" style="background: var(--white); border-top: 1px solid var(--border-color);">
+<section class="section section-full theme-section bg-white section-bordered" id="donate">
     <div class="section-inner">
         <div class="theme-content">
             <div class="theme-text">
@@ -88,12 +88,12 @@ description: Join us for inspiring talks and meaningful connections in Summit Co
 </section>
 
 <!-- Featured Talks Section -->
-<section class="section section-full" id="featured-talks" style="background: var(--cream); border-top: 1px solid var(--border-color);">
+<section class="section section-full bg-cream section-bordered" id="featured-talks">
     <div class="section-inner container">
-        <div class="section-header" style="text-align: center; margin-bottom: 48px;">
+        <div class="section-header section-header-centered">
             <div class="section-eyebrow">Featured Talks</div>
             <h2 class="section-title">Ideas from Our Community</h2>
-            <p style="max-width: 600px; margin: 24px auto 0; font-size: 1.125rem; line-height: 1.6; color: var(--stone);">Watch compelling talks from local voices, innovators, and community leaders who've graced the TEDxBreckenridge stage.</p>
+            <p class="section-description">Watch compelling talks from local voices, innovators, and community leaders who've graced the TEDxBreckenridge stage.</p>
         </div>
 
         <div class="grid-auto-fit-sm mb-48">
@@ -130,7 +130,7 @@ description: Join us for inspiring talks and meaningful connections in Summit Co
 </section>
 
 <!-- Support Section -->
-<section class="section support-section" id="support" style="background: var(--cream); border-top: 1px solid var(--border-color);">
+<section class="section support-section bg-cream section-bordered" id="support">
     <div class="section-header">
         <div class="section-eyebrow">Get Involved</div>
         <h2 class="section-title">Help Make TEDxBreckenridge 2026 Happen</h2>
@@ -177,15 +177,15 @@ description: Join us for inspiring talks and meaningful connections in Summit Co
 </div>
 
 <!-- Sponsors Section -->
-<section class="section section-full sponsors-section" id="sponsors" style="background: var(--white); border-top: 1px solid var(--border-color);">
+<section class="section section-full sponsors-section bg-white section-bordered" id="sponsors">
     <div class="section-inner container-md">
-        <div class="section-header" style="text-align: center; margin-bottom: 48px;">
+        <div class="section-header section-header-centered">
             <div class="section-eyebrow">Partnership Opportunities</div>
             <h2 class="section-title">Why Sponsor TEDxBreckenridge?</h2>
         </div>
 
         <div class="container-sm">
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 32px; text-align: center; color: var(--stone);">
+            <p class="sponsors-description">
                 Sponsoring TEDxBreckenridge connects your business with a community passionate about innovation, creativity, and meaningful change. Your support helps bring world-class ideas to Summit County while demonstrating your commitment to local culture and education.
             </p>
 
@@ -215,7 +215,7 @@ description: Join us for inspiring talks and meaningful connections in Summit Co
 </section>
 
 <!-- Mailing List Section -->
-<section class="newsletter-section" id="mailing-list" style="border-top: 1px solid var(--border-color);">
+<section class="newsletter-section section-bordered" id="mailing-list">
     <div class="newsletter-content">
         <h2>Stay in the know</h2>
         <p>Join our mailing list for updates on upcoming events, speaker announcements, and Salon gatherings.</p>
