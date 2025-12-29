@@ -24,18 +24,18 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 
     <div style="display: grid; gap: 32px;">
       <div class="card-accent-red">
-        <h3 style="color: var(--terracotta); margin-bottom: 16px; font-size: 1.25rem;">Ideas</h3>
-        <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">We believe that collective genius and expansive ideas can positively impact our community and, ultimately, the world.</p>
+        <h3>Ideas</h3>
+        <p>We believe that collective genius and expansive ideas can positively impact our community and, ultimately, the world.</p>
       </div>
 
       <div class="card-accent-teal">
-        <h3 style="color: var(--teal); margin-bottom: 16px; font-size: 1.25rem;">Community</h3>
-        <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">We are here to serve and support a local experience that is unique to our mountain communities, that is inclusive, connection-centered and culturally beneficial.</p>
+        <h3>Community</h3>
+        <p>We are here to serve and support a local experience that is unique to our mountain communities, that is inclusive, connection-centered and culturally beneficial.</p>
       </div>
 
       <div class="card-accent-red">
-        <h3 style="color: var(--terracotta); margin-bottom: 16px; font-size: 1.25rem;">Authenticity</h3>
-        <p style="margin: 0; color: var(--charcoal); line-height: 1.7;">We are committed in heart and mind to genuine, passionate and authentic experiences and connection.</p>
+        <h3>Authenticity</h3>
+        <p>We are committed in heart and mind to genuine, passionate and authentic experiences and connection.</p>
       </div>
     </div>
   </div>
