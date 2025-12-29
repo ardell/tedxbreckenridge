@@ -729,23 +729,23 @@ select:focus-visible {
 }
 
 .theme-content-reverse {
-    gap: 100px;
+    gap: 0;
     align-items: stretch;
 }
 
 .theme-content-reverse .theme-visual {
-    margin-left: -100px;
     height: 100%;
 }
 
 .theme-content-reverse .theme-visual img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
 .theme-content-reverse .theme-text {
-    padding: 100px 20px;
+    padding: 80px 48px 80px 64px;
 }
 
 .theme-text p {
