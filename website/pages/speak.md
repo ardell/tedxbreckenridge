@@ -18,26 +18,21 @@ container: container-md
 <div class="mb-80">
   <h2 class="mb-32">Before You Apply</h2>
 
-  <div class="grid-gap-16">
-    <div class="flex-gap-12">
-      <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Review <a href="https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide/speakers-program/prepare-your-speaker/content-guidelines" target="_blank" rel="noopener noreferrer">TED's Content Guidelines</a> in detail</p>
+  <div class="checklist">
+    <div class="checklist-item">
+      <p>Review <a href="https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide/speakers-program/prepare-your-speaker/content-guidelines" target="_blank" rel="noopener noreferrer">TED's Content Guidelines</a> in detail</p>
     </div>
-    <div class="flex-gap-12">
-      <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Applications received will be considered for the next upcoming event</p>
+    <div class="checklist-item">
+      <p>Applications received will be considered for the next upcoming event</p>
     </div>
-    <div class="flex-gap-12">
-      <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Fall notification of selection status</p>
+    <div class="checklist-item">
+      <p>Fall notification of selection status</p>
     </div>
-    <div class="flex-gap-12">
-      <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Multiple idea submissions are welcome</p>
+    <div class="checklist-item">
+      <p>Multiple idea submissions are welcome</p>
     </div>
-    <div class="flex-gap-12">
-      <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Previous speakers must wait at least three years before resubmitting</p>
+    <div class="checklist-item">
+      <p>Previous speakers must wait at least three years before resubmitting</p>
     </div>
   </div>
 </div>
@@ -66,28 +61,23 @@ container: container-md
 <div class="mb-80">
   <h2 class="mb-32">What NOT to Submit</h2>
 
-  <p style="margin-bottom: 24px; line-height: 1.7; color: var(--charcoal);">Talks should avoid being:</p>
+  <p class="mb-24">Talks should avoid being:</p>
 
-  <div class="grid-gap-12 mb-32">
-    <div class="flex-gap-12">
-      <span style="color: var(--stone); font-weight: 700;">×</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--stone);">Motivational speeches with broad themes</p>
+  <div class="checklist-x mb-32">
+    <div class="checklist-x-item">
+      <p>Motivational speeches with broad themes</p>
     </div>
-    <div class="flex-gap-12">
-      <span style="color: var(--stone); font-weight: 700;">×</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--stone);">Personal stories without drawn ideas/lessons</p>
+    <div class="checklist-x-item">
+      <p>Personal stories without drawn ideas/lessons</p>
     </div>
-    <div class="flex-gap-12">
-      <span style="color: var(--stone); font-weight: 700;">×</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--stone);">Lectures or biographies</p>
+    <div class="checklist-x-item">
+      <p>Lectures or biographies</p>
     </div>
-    <div class="flex-gap-12">
-      <span style="color: var(--stone); font-weight: 700;">×</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--stone);">Recycled professional circuit material</p>
+    <div class="checklist-x-item">
+      <p>Recycled professional circuit material</p>
     </div>
-    <div class="flex-gap-12">
-      <span style="color: var(--stone); font-weight: 700;">×</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--stone);">Lacking a single central idea</p>
+    <div class="checklist-x-item">
+      <p>Lacking a single central idea</p>
     </div>
   </div>
 
@@ -99,14 +89,12 @@ container: container-md
 <div class="mb-80">
   <h2 class="mb-32">Additional Requirements</h2>
 
-  <div class="grid-gap-16">
-    <div class="flex-gap-12">
-      <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">All cited data/facts must be fact-checked by applicant</p>
+  <div class="checklist">
+    <div class="checklist-item">
+      <p>All cited data/facts must be fact-checked by applicant</p>
     </div>
-    <div class="flex-gap-12">
-      <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
-      <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Credible data and references required</p>
+    <div class="checklist-item">
+      <p>Credible data and references required</p>
     </div>
   </div>
 </div>
