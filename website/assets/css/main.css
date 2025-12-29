@@ -2790,45 +2790,46 @@ body.layout-post {
 }
 
 /* Spacing Utilities - using spacing scale tokens */
-.mb-16 { margin-bottom: var(--space-16); }
-.mb-24 { margin-bottom: var(--space-24); }
-.mb-32 { margin-bottom: var(--space-32); }
-.mb-40 { margin-bottom: var(--space-40); }
-.mb-48 { margin-bottom: var(--space-48); }
-.mb-60 { margin-bottom: var(--space-60); }
-.mb-80 { margin-bottom: var(--space-80); }
+/* Use !important so utilities override component styles */
+.mb-16 { margin-bottom: var(--space-16) !important; }
+.mb-24 { margin-bottom: var(--space-24) !important; }
+.mb-32 { margin-bottom: var(--space-32) !important; }
+.mb-40 { margin-bottom: var(--space-40) !important; }
+.mb-48 { margin-bottom: var(--space-48) !important; }
+.mb-60 { margin-bottom: var(--space-60) !important; }
+.mb-80 { margin-bottom: var(--space-80) !important; }
 
-.mt-16 { margin-top: var(--space-16); }
-.mt-24 { margin-top: var(--space-24); }
-.mt-32 { margin-top: var(--space-32); }
-.mt-40 { margin-top: var(--space-40); }
-.mt-48 { margin-top: var(--space-48); }
-.mt-60 { margin-top: var(--space-60); }
-.mt-80 { margin-top: var(--space-80); }
+.mt-16 { margin-top: var(--space-16) !important; }
+.mt-24 { margin-top: var(--space-24) !important; }
+.mt-32 { margin-top: var(--space-32) !important; }
+.mt-40 { margin-top: var(--space-40) !important; }
+.mt-48 { margin-top: var(--space-48) !important; }
+.mt-60 { margin-top: var(--space-60) !important; }
+.mt-80 { margin-top: var(--space-80) !important; }
 
 .my-32 {
-  margin-top: var(--space-32);
-  margin-bottom: var(--space-32);
+  margin-top: var(--space-32) !important;
+  margin-bottom: var(--space-32) !important;
 }
 
 .my-40 {
-  margin-top: var(--space-40);
-  margin-bottom: var(--space-40);
+  margin-top: var(--space-40) !important;
+  margin-bottom: var(--space-40) !important;
 }
 
 .my-48 {
-  margin-top: var(--space-48);
-  margin-bottom: var(--space-48);
+  margin-top: var(--space-48) !important;
+  margin-bottom: var(--space-48) !important;
 }
 
 .my-60 {
-  margin-top: var(--space-60);
-  margin-bottom: var(--space-60);
+  margin-top: var(--space-60) !important;
+  margin-bottom: var(--space-60) !important;
 }
 
 .my-80 {
-  margin-top: var(--space-80);
-  margin-bottom: var(--space-80);
+  margin-top: var(--space-80) !important;
+  margin-bottom: var(--space-80) !important;
 }
 
 .text-center {
@@ -2908,7 +2909,7 @@ body.layout-post {
 }
 
 .card h3 {
-  margin-bottom: var(--space-12);
+  margin: 0 0 var(--space-12);
   font-size: 1.125rem;
 }
 
