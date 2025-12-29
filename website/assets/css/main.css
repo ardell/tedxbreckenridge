@@ -2609,7 +2609,11 @@ body.layout-post {
 
 /* Talks year section styles */
 .talks-year-section {
-    padding: 60px 24px;
+    padding: 60px 48px;
+}
+
+.talks-year-section .section-inner {
+    max-width: none;
 }
 
 .talks-year-header {
@@ -2648,7 +2652,7 @@ body.layout-post {
 
 @media (width <= 768px) {
     .talks-year-section {
-        padding: 40px 16px;
+        padding: 40px 24px;
     }
 
     .talks-year-header {
@@ -3477,7 +3481,7 @@ body.layout-post {
   align-items: center;
   justify-content: center;
   gap: var(--space-12);
-  padding: var(--space-16) var(--space-24);
+  padding: var(--space-16) 48px;
   padding-top: calc(var(--space-16) + 80px);
   margin-top: -80px;
   background: var(--sand);
