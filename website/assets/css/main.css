@@ -6,7 +6,8 @@
 :root {
     /* Core TED Brand */
     --ted-red: #e4291c;
-    --ted-black: #000;
+    --ted-red-dark: #C70022;
+    --black: #000;
     --white: #FFF;
 
     /* 2026 Evergreen - Mountain Inspired Palette */
@@ -24,6 +25,11 @@
     --teal-light: #A3C4C4;
     --cream-dark: #EAE7E3;
     --sand-light: #F2F0ED;
+
+    /* Semantic Colors */
+    --color-error: #ef4444;
+    --color-success: #22c55e;
+    --color-placeholder: #aaa;
 
     /* Spacing Scale */
     --space-4: 4px;
@@ -64,7 +70,7 @@ body {
     font-family: var(--font-primary);
     font-weight: 400;
     background: var(--white);
-    color: var(--ted-black);
+    color: var(--black);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -165,7 +171,7 @@ select:focus-visible {
     font-family: var(--font-primary);
     font-size: 13px;
     font-weight: 400;
-    color: var(--ted-black);
+    color: var(--black);
     text-decoration: none;
     letter-spacing: 0.01em;
     transition: color 0.2s ease;
@@ -187,7 +193,7 @@ select:focus-visible {
     font-family: var(--font-primary);
     font-size: 13px;
     font-weight: 400;
-    color: var(--ted-black);
+    color: var(--black);
     text-decoration: none;
     letter-spacing: 0.01em;
     transition: color 0.2s ease;
@@ -232,7 +238,7 @@ select:focus-visible {
     font-family: var(--font-primary);
     font-size: 13px;
     font-weight: 400;
-    color: var(--ted-black);
+    color: var(--black);
     text-decoration: none;
     letter-spacing: 0.01em;
     transition: background 0.2s ease, color 0.2s ease;
@@ -256,7 +262,7 @@ select:focus-visible {
 }
 
 .nav-cta:hover {
-    background: #C70022;
+    background: var(--ted-red-dark);
 }
 
 /* Hamburger Menu */
@@ -371,7 +377,7 @@ select:focus-visible {
         text-align: left;
         background: none;
         border: none;
-        color: var(--ted-black);
+        color: var(--black);
     }
 
     .nav-dropdown-toggle::after {
@@ -500,7 +506,7 @@ select:focus-visible {
     line-height: 1;
     letter-spacing: -0.03em;
     margin-bottom: 32px;
-    color: var(--ted-black);
+    color: var(--black);
     opacity: 0;
     animation: fade-in 0.6s ease 0.1s forwards;
 }
@@ -542,7 +548,7 @@ select:focus-visible {
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 400;
-    color: var(--ted-black);
+    color: var(--black);
 }
 
 .hero-actions {
@@ -622,7 +628,7 @@ select:focus-visible {
 
 .btn-secondary {
     background: transparent;
-    color: var(--ted-black);
+    color: var(--black);
     border: 1px solid var(--charcoal);
 }
 
@@ -681,7 +687,7 @@ select:focus-visible {
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: var(--ted-black);
+    color: var(--black);
 }
 
 /* Photo Gallery Banner */
@@ -689,7 +695,7 @@ select:focus-visible {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 4px;
-    background: var(--ted-black);
+    background: var(--black);
     padding: 4px;
 }
 
@@ -921,7 +927,7 @@ select:focus-visible {
 
 /* Past Events Gallery */
 .gallery-section {
-    background: var(--ted-black);
+    background: var(--black);
     padding: 80px 0;
 }
 
@@ -1035,7 +1041,7 @@ select:focus-visible {
     font-weight: 400;
     margin-bottom: 20px;
     line-height: 1.3;
-    color: var(--ted-black);
+    color: var(--black);
 }
 
 .salon-text > p {
@@ -1070,7 +1076,7 @@ select:focus-visible {
 
 .salon-detail-value {
     font-weight: 400;
-    color: var(--ted-black);
+    color: var(--black);
 }
 
 /* Support Section */
@@ -1114,7 +1120,7 @@ select:focus-visible {
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 12px;
-    color: var(--ted-black);
+    color: var(--black);
 }
 
 .support-card p {
@@ -1358,13 +1364,13 @@ select:focus-visible {
 .mailchimp-embed #mce-error-response {
     background: rgb(239 68 68 / 10%);
     border: 1px solid rgb(239 68 68 / 30%);
-    color: #ef4444;
+    color: var(--color-error);
 }
 
 .mailchimp-embed #mce-success-response {
     background: rgb(34 197 94 / 10%);
     border: 1px solid rgb(34 197 94 / 30%);
-    color: #22c55e;
+    color: var(--color-success);
 }
 
 /* Responsive Mailchimp Form */
@@ -1440,7 +1446,7 @@ select:focus-visible {
 
 /* Footer */
 .footer {
-    background: var(--ted-black);
+    background: var(--black);
     color: var(--white);
     padding: 72px 48px 40px;
 }
@@ -1773,7 +1779,7 @@ select:focus-visible {
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: var(--ted-black);
+    color: var(--black);
     max-width: 800px;
     margin: 0 auto;
 }
@@ -1819,7 +1825,7 @@ select:focus-visible {
     font-weight: 400;
     line-height: 1.3;
     letter-spacing: -0.02em;
-    color: var(--ted-black);
+    color: var(--black);
     margin: 48px 0 24px;
 }
 
@@ -1891,7 +1897,7 @@ select:focus-visible {
 
 .page-content strong {
     font-weight: 500;
-    color: var(--ted-black);
+    color: var(--black);
 }
 
 .page-content a {
@@ -1927,7 +1933,7 @@ select:focus-visible {
 }
 
 .faq-section h3 {
-    color: var(--ted-black);
+    color: var(--black);
     margin: 0 0 16px;
     font-size: clamp(18px, 3vw, 20px);
 }
@@ -1967,7 +1973,7 @@ select:focus-visible {
 
 .contact-option h3 {
     font-size: 24px;
-    color: var(--ted-black);
+    color: var(--black);
     margin: 0 0 12px;
     font-weight: 500;
     display: inline-block;
@@ -2014,7 +2020,7 @@ select:focus-visible {
 .contact-form-intro h2 {
     font-size: clamp(28px, 4vw, 36px);
     margin: 0 0 16px;
-    color: var(--ted-black);
+    color: var(--black);
 }
 
 .contact-form-intro p {
@@ -2042,7 +2048,7 @@ select:focus-visible {
     display: block;
     font-size: 15px;
     font-weight: 500;
-    color: var(--ted-black);
+    color: var(--black);
     margin-bottom: 8px;
 }
 
@@ -2052,7 +2058,7 @@ select:focus-visible {
     padding: 14px 16px;
     font-family: var(--font-primary);
     font-size: 15px;
-    color: var(--ted-black);
+    color: var(--black);
     background: var(--white);
     border: 2px solid var(--sand);
     border-radius: 6px;
@@ -2061,7 +2067,7 @@ select:focus-visible {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #aaa;
+    color: var(--color-placeholder);
 }
 
 .form-group input:focus,
@@ -2087,7 +2093,7 @@ select:focus-visible {
 
 .contact-social h3 {
     font-size: 24px;
-    color: var(--ted-black);
+    color: var(--black);
     margin: 0 0 12px;
 }
 
@@ -2115,7 +2121,7 @@ select:focus-visible {
     border: 2px solid var(--sand);
     border-radius: 6px;
     text-decoration: none;
-    color: var(--ted-black);
+    color: var(--black);
     font-weight: 500;
     transition: all 0.2s ease;
 }
@@ -2179,7 +2185,7 @@ select:focus-visible {
     display: block;
     font-size: 16px;
     font-weight: 500;
-    color: var(--ted-black);
+    color: var(--black);
     margin: 20px 20px 8px;
 }
 
@@ -2286,7 +2292,7 @@ body.layout-post {
     max-width: 800px;
     margin: 120px 24px 48px;
     padding: 0;
-    background: #fff;
+    background: var(--white);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgb(0 0 0 / 6%);
@@ -2339,26 +2345,26 @@ body.layout-post {
     font-size: clamp(32px, 5vw, 48px);
     line-height: 1.2;
     margin: 0 0 40px;
-    color: var(--ted-black);
+    color: var(--black);
 }
 
 .post-content {
     font-size: 18px;
     line-height: 1.8;
-    color: #4a4a4a;
+    color: var(--stone);
     padding: 0 32px 40px;
 }
 
 .post-content h2 {
     font-size: 28px;
     margin: 48px 0 24px;
-    color: #2a2a2a;
+    color: var(--charcoal);
 }
 
 .post-content h3 {
     font-size: 22px;
     margin: 36px 0 16px;
-    color: #2a2a2a;
+    color: var(--charcoal);
 }
 
 .post-content p {
@@ -2366,7 +2372,7 @@ body.layout-post {
 }
 
 .post-content strong {
-    color: #2a2a2a;
+    color: var(--charcoal);
     font-weight: 600;
 }
 
@@ -2432,7 +2438,7 @@ body.layout-post {
 .blog-post {
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: var(--white);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgb(0 0 0 / 5%), 0 2px 4px rgb(0 0 0 / 3%);
@@ -2512,7 +2518,7 @@ body.layout-post {
 }
 
 .blog-post-title a {
-    color: var(--ted-black);
+    color: var(--black);
     text-decoration: none;
     border-bottom: none;
     transition: color 0.2s ease;
@@ -2642,7 +2648,7 @@ body.layout-post {
 
 .video-wrapper.loaded {
     animation: none;
-    background: #000;
+    background: var(--black);
 }
 
 .video-wrapper.loaded::before,
@@ -2669,7 +2675,7 @@ body.layout-post {
     font-size: 15px;
     font-weight: 500;
     line-height: 1.4;
-    color: var(--ted-black);
+    color: var(--black);
     margin-bottom: 6px;
 }
 
@@ -2686,7 +2692,7 @@ body.layout-post {
    ========================================================================== */
 
 #main-event {
-    background: #fafafa;
+    background: var(--sand-light);
     overflow: hidden;
     padding: 0;
 }
