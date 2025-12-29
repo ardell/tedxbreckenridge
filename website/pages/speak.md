@@ -18,7 +18,7 @@ container: container-md
 <div class="mb-80">
   <h2 class="mb-32">Before You Apply</h2>
 
-  <div style="display: grid; gap: 16px;">
+  <div class="grid-gap-16">
     <div class="flex-gap-12">
       <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
       <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">Review <a href="https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide/speakers-program/prepare-your-speaker/content-guidelines" target="_blank" rel="noopener noreferrer">TED's Content Guidelines</a> in detail</p>
@@ -45,7 +45,7 @@ container: container-md
 <div class="mb-80">
   <h2 class="mb-32">Our Selection Process</h2>
 
-  <div style="display: grid; gap: 32px;">
+  <div class="grid-gap-32">
     <div class="card-accent-red">
       <h3>Live Auditions</h3>
       <p>20 applicants selected for 3-minute live auditions in Breckenridge</p>
@@ -68,7 +68,7 @@ container: container-md
 
   <p style="margin-bottom: 24px; line-height: 1.7; color: var(--charcoal);">Talks should avoid being:</p>
 
-  <div style="display: grid; gap: 12px; margin-bottom: 32px;">
+  <div class="grid-gap-12 mb-32">
     <div class="flex-gap-12">
       <span style="color: var(--stone); font-weight: 700;">×</span>
       <p style="margin: 0; line-height: 1.7; color: var(--stone);">Motivational speeches with broad themes</p>
@@ -99,7 +99,7 @@ container: container-md
 <div class="mb-80">
   <h2 class="mb-32">Additional Requirements</h2>
 
-  <div style="display: grid; gap: 16px;">
+  <div class="grid-gap-16">
     <div class="flex-gap-12">
       <span style="color: var(--terracotta); font-weight: 700; font-size: 1.25rem;">•</span>
       <p style="margin: 0; line-height: 1.7; color: var(--charcoal);">All cited data/facts must be fact-checked by applicant</p>
