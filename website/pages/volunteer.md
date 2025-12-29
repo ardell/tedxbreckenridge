@@ -85,11 +85,11 @@ container: container-md
   <img src="{{ '/assets/images/events/the-team-bowing-for-applause.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team taking a bow and receiving applause at the end of an event" class="img-fluid rounded" loading="lazy">
 </div>
 
-<div style="margin-top: 80px; padding: 48px 32px; background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%); border-radius: 8px;">
-  <h2 class="text-center" style="margin-bottom: 24px; color: var(--charcoal);">Ready to Get Involved?</h2>
-  <p class="text-center" style="max-width: 700px; margin: 0 auto 40px; font-size: 1.125rem; line-height: 1.7; color: var(--stone);">Complete our volunteer interest form and we'll be in touch with scheduling details and next steps. Every contribution matters, and we're excited to welcome you to the team.</p>
-  <div style="max-width: 100%; overflow: hidden; background: white; border-radius: 8px; padding: 20px;">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScXv83rymrKwO89TqzrE0Byq1vp5Ba3C3UfcfIO-bfc66N_mw/viewform?embedded=true" width="100%" height="1350" frameborder="0" marginheight="0" marginwidth="0" style="border: none;" title="Volunteer Application Form">Loading…</iframe>
+<div class="cta-gradient text-center">
+  <h2>Ready to Get Involved?</h2>
+  <p>Complete our volunteer interest form and we'll be in touch with scheduling details and next steps. Every contribution matters, and we're excited to welcome you to the team.</p>
+  <div class="form-wrapper">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScXv83rymrKwO89TqzrE0Byq1vp5Ba3C3UfcfIO-bfc66N_mw/viewform?embedded=true" width="100%" height="1350" frameborder="0" marginheight="0" marginwidth="0" title="Volunteer Application Form">Loading…</iframe>
   </div>
 </div>
 
