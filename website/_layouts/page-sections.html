@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="page">
+<div class="page page-header-only">
   <div class="page-header">
     <div class="page-header-content">
       <h1 class="page-title">{{ page.title }}</h1>
@@ -11,8 +11,6 @@ layout: default
       {% endif %}
     </div>
   </div>
-
-  <div class="page-content{% if page.container %} {{ page.container }}{% endif %}">
-    {{ content }}
-  </div>
 </div>
+
+{{ content }}
