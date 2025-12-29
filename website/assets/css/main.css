@@ -30,6 +30,7 @@
     --color-error: #ef4444;
     --color-success: #22c55e;
     --color-placeholder: #aaa;
+    --border-color: #e0e0e0;
 
     /* Spacing Scale */
     --space-4: 4px;
@@ -2979,6 +2980,107 @@ body.layout-post {
 
 .body-lg:last-child {
   margin-bottom: 0;
+}
+
+/* Prose - consistent typography for any container */
+.prose p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--charcoal);
+  margin: 0 0 var(--space-16);
+}
+
+.prose a {
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid var(--teal-light);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.prose a:hover {
+  color: var(--ted-red);
+  border-bottom-color: var(--ted-red);
+}
+
+/* Button group - horizontal button container */
+.btn-group {
+  display: flex;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+}
+
+/* CTA block - centered call-to-action section */
+.cta-block {
+  text-align: center;
+  margin-top: var(--space-48);
+}
+
+.cta-block p {
+  font-size: 1.125rem;
+  color: var(--charcoal);
+  margin-bottom: var(--space-24);
+}
+
+/* Card variants */
+.card-sand {
+  padding: var(--space-32);
+  background: var(--sand);
+  border-radius: 8px;
+}
+
+.card-sand h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 var(--space-16);
+  color: var(--charcoal);
+}
+
+.card-sand p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--stone);
+}
+
+/* Video card - for YouTube embeds */
+.video-card {
+  display: block;
+}
+
+.video-card .video-wrapper {
+  aspect-ratio: 16/9;
+  margin-bottom: var(--space-16);
+}
+
+.video-card .video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.video-card h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0 0 var(--space-8);
+  line-height: 1.4;
+  color: var(--charcoal);
+}
+
+.video-card p {
+  margin: 0;
+  color: var(--stone);
 }
 
 /* Styled quote blocks */
