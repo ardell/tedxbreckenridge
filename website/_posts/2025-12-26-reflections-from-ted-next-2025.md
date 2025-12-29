@@ -89,9 +89,9 @@ I feel fortunate to have attended TED Next 2025. If you ever have the opportunit
 
 And if you're reading this because you're curious about TEDxBreckenridge—whether as an attendee, a speaker, a sponsor, or a supporter—I hope you'll take the next step. We're building something special in these mountains, and we'd love for you to be part of it.
 
-**Have an idea worth spreading?** [Apply to speak at TEDxBreckenridge.](https://www.tedxbreckenridge.com/audition-to-speak)
+**Have an idea worth spreading?** [Apply to speak at TEDxBreckenridge.](/speak/)
 
-**Want to stay connected?** [Join our mailing list](https://www.tedxbreckenridge.com/#block-021423eb6216f2b5f073) for updates on upcoming events.
+**Want to stay connected?** [Join our mailing list](/#mailing-list) for updates on upcoming events.
 
 ---
 

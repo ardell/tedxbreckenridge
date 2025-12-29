@@ -206,5 +206,5 @@ description: Meet the local volunteers who organize TEDxBreckenridge. Our passio
 <div style="margin-top: 80px; padding: 48px; background: var(--cream); border-radius: 8px; text-align: center;">
   <h3 style="margin-bottom: 16px;">Want to join our team?</h3>
   <p style="margin-bottom: 24px;">We're always looking for passionate volunteers to help make TEDxBreckenridge possible.</p>
-  <a href="https://tedxbreckenridge.com/volunteer" target="_blank" class="btn btn-primary">Volunteer With Us</a>
+  <a href="/volunteer/" class="btn btn-primary">Volunteer With Us</a>
 </div>
