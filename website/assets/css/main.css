@@ -2609,7 +2609,7 @@ body.layout-post {
 
 /* Talks year section styles */
 .talks-year-section {
-    padding: 120px 24px;
+    padding: 60px 24px;
 }
 
 .talks-year-header {
@@ -2648,7 +2648,7 @@ body.layout-post {
 
 @media (width <= 768px) {
     .talks-year-section {
-        padding: 80px 24px;
+        padding: 40px 16px;
     }
 
     .talks-year-header {
@@ -3469,4 +3469,45 @@ body.layout-post {
 .hero-title-lg {
   font-size: 2.5rem;
   line-height: 1.2;
+}
+
+/* Year navigation - jump links for talks page */
+.year-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  padding: var(--space-16) var(--space-24);
+  padding-top: calc(var(--space-16) + 80px);
+  margin-top: -80px;
+  background: var(--sand);
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.year-nav-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--stone);
+  line-height: 1;
+  padding: 6px 0;
+}
+
+.year-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--charcoal);
+  text-decoration: none;
+  background: var(--white);
+  border-radius: 100px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.year-nav-link:hover {
+  background: var(--charcoal);
+  color: var(--white);
 }
