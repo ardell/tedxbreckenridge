@@ -3184,6 +3184,59 @@ body.layout-post {
   font-style: italic;
 }
 
+/* Checklist - bullet list with colored markers */
+.checklist {
+  display: grid;
+  gap: var(--space-16);
+}
+
+.checklist-item {
+  display: flex;
+  gap: var(--space-12);
+  align-items: flex-start;
+}
+
+.checklist-item::before {
+  content: "•";
+  color: var(--terracotta);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  flex-shrink: 0;
+}
+
+.checklist-item p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--charcoal);
+}
+
+/* Checklist X - list with X markers for "don't do" items */
+.checklist-x {
+  display: grid;
+  gap: var(--space-12);
+}
+
+.checklist-x-item {
+  display: flex;
+  gap: var(--space-12);
+  align-items: flex-start;
+}
+
+.checklist-x-item::before {
+  content: "×";
+  color: var(--stone);
+  font-weight: 700;
+  line-height: 1.7;
+  flex-shrink: 0;
+}
+
+.checklist-x-item p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--stone);
+}
+
 .text-stone {
   color: var(--stone);
 }
