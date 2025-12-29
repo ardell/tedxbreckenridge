@@ -142,7 +142,7 @@ Whatever your strength is, we need it.
 
 TEDxBreckenridge happens because people like you show up. You bring your skills, your energy, and your belief that ideas can change the world—or at least our corner of it. And together, we create something extraordinary.
 
-**Ready to find your role?** [Sign up to volunteer](https://www.tedxbreckenridge.com/volunteer/) and let us know where you'd like to contribute. We'll be in touch soon to get you connected with the team.
+**Ready to find your role?** [Sign up to volunteer](/volunteer/) and let us know where you'd like to contribute. We'll be in touch soon to get you connected with the team.
 
 Let's make 2026 unforgettable.
 
@@ -152,4 +152,4 @@ Let's make 2026 unforgettable.
 
 ---
 
-*Questions about volunteering? [Contact us](https://www.tedxbreckenridge.com/contact/)—we'd love to hear from you.*
+*Questions about volunteering? [Contact us](/contact/)—we'd love to hear from you.*
