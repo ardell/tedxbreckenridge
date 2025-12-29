@@ -2978,3 +2978,54 @@ body.layout-post {
   font-weight: 500;
   color: var(--stone);
 }
+
+/* Additional Utility Classes */
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.card-white {
+  padding: var(--space-32);
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+}
+
+.card-white h3 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.card-white p {
+  margin: 0;
+  color: var(--stone);
+  line-height: 1.7;
+}
+
+.card-white p + p {
+  margin-top: var(--space-16);
+}
+
+.text-stone {
+  color: var(--stone);
+}
+
+.text-charcoal {
+  color: var(--charcoal);
+}
+
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

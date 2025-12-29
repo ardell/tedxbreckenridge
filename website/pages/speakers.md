@@ -10,7 +10,7 @@ description: Meet the speakers at TEDxBreckenridge 2026. Discover thinkers, doer
 Our speaker lineup will be announced soon. We're curating an exceptional group of thinkers, doers, and innovators to share their ideas with our community. Have an idea worth spreading? <a href="/speak/">Apply to speak at TEDxBreckenridge 2026</a>.
 
 <div style="margin: 48px 0 60px;">
-  <img src="{{ '/assets/images/events/speaker-on-red-dot-with-string-lights.jpg' | relative_url }}" alt="TEDxBreckenridge speaker presenting on the iconic red dot with beautiful venue lighting" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/speaker-on-red-dot-with-string-lights.jpg' | relative_url }}" alt="TEDxBreckenridge speaker presenting on the iconic red dot with beautiful venue lighting" class="img-fluid rounded" loading="lazy">
 </div>
 
 {% if site.speakers.size > 0 %}
@@ -36,7 +36,7 @@ Our speaker lineup will be announced soon. We're curating an exceptional group o
 Since our inaugural event in 2020, TEDxBreckenridge has featured 53 speakers sharing ideas worth spreading from the heart of the Rockies. [Watch all talks](/talks/) or learn more about <a href="/about/">our mission and values</a>.
 
 <div style="margin: 48px 0 60px;">
-  <img src="{{ '/assets/images/events/speakers-posing-outside.jpg' | relative_url }}" alt="TEDxBreckenridge speakers posing together outdoors, representing our community of local voices" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/speakers-posing-outside.jpg' | relative_url }}" alt="TEDxBreckenridge speakers posing together outdoors, representing our community of local voices" class="img-fluid rounded" loading="lazy">
 </div>
 
 ### 2025: METAMORPHOSIS
@@ -49,7 +49,7 @@ Kara Napolitano • Michael Ballard • Christopher Fisher • Andy Thorn • To
 Harold Tan • David Servinsky • Liliana Baylon • Jennifer Toda • Jacob Vos • Shanaynay Music • Monica Harris • Sherry Walling • Hallie Jaeger • Debbie Marielle • Haley Littleton
 
 <div style="margin: 48px 0 60px;">
-  <img src="{{ '/assets/images/events/speaker-raising-hand.jpg' | relative_url }}" alt="TEDxBreckenridge speaker engaging dynamically with the audience during their talk" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/speaker-raising-hand.jpg' | relative_url }}" alt="TEDxBreckenridge speaker engaging dynamically with the audience during their talk" class="img-fluid rounded" loading="lazy">
 </div>
 
 ### 2021: EXPAND

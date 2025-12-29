@@ -14,7 +14,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
   </div>
 
   <div class="my-80">
-    <img src="{{ '/assets/images/events/attendees-in-front-of-step-and-repeat.jpg' | relative_url }}" alt="Attendees posing in front of TEDxBreckenridge step-and-repeat banner showing sponsor branding opportunities" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+    <img src="{{ '/assets/images/events/attendees-in-front-of-step-and-repeat.jpg' | relative_url }}" alt="Attendees posing in front of TEDxBreckenridge step-and-repeat banner showing sponsor branding opportunities" class="img-fluid rounded" loading="lazy">
   </div>
 
   <div class="mb-80">
@@ -60,7 +60,7 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 
 <div class="page-content-section">
   <div class="my-80">
-    <img src="{{ '/assets/images/events/wide-shot-of-venue-and-emcee-straight-on.jpg' | relative_url }}" alt="Professional TEDxBreckenridge event production at the Riverwalk Center showing the caliber of events sponsors support" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+    <img src="{{ '/assets/images/events/wide-shot-of-venue-and-emcee-straight-on.jpg' | relative_url }}" alt="Professional TEDxBreckenridge event production at the Riverwalk Center showing the caliber of events sponsors support" class="img-fluid rounded" loading="lazy">
   </div>
 
   <div class="mb-80">
