@@ -48,35 +48,35 @@ container: container-md
 
   <p class="body-lg">We're building our amazing crew of volunteers for our 2026 events. Whether you're interested in helping on event day or contributing your specialized skills year-round, we'd love to have you on the team.</p>
 
-  <div class="grid-gap-24 mb-48">
-    <div>
-      <h3 style="color: var(--charcoal); margin-bottom: 8px; font-size: 1.125rem;">Event Day Volunteers</h3>
-      <p style="margin: 0; color: var(--stone); line-height: 1.7;">Help create an exceptional experience for attendees, speakers, and sponsors at our main event and salon series.</p>
+  <div class="definition-list mb-48">
+    <div class="definition-item">
+      <h3>Event Day Volunteers</h3>
+      <p>Help create an exceptional experience for attendees, speakers, and sponsors at our main event and salon series.</p>
     </div>
 
-    <div>
-      <h3 style="color: var(--charcoal); margin-bottom: 8px; font-size: 1.125rem;">Planning Committee</h3>
-      <p style="margin: 0; color: var(--stone); line-height: 1.7;">Join our core team in curating speakers, designing experiences, and shaping the future of TEDxBreckenridge throughout the year.</p>
+    <div class="definition-item">
+      <h3>Planning Committee</h3>
+      <p>Join our core team in curating speakers, designing experiences, and shaping the future of TEDxBreckenridge throughout the year.</p>
     </div>
 
-    <div>
-      <h3 style="color: var(--charcoal); margin-bottom: 8px; font-size: 1.125rem;">Sponsorships & Community Engagement</h3>
-      <p style="margin: 0; color: var(--stone); line-height: 1.7;">Build relationships with local businesses and community partners who support our mission.</p>
+    <div class="definition-item">
+      <h3>Sponsorships & Community Engagement</h3>
+      <p>Build relationships with local businesses and community partners who support our mission.</p>
     </div>
 
-    <div>
-      <h3 style="color: var(--charcoal); margin-bottom: 8px; font-size: 1.125rem;">Media & Content Creation</h3>
-      <p style="margin: 0; color: var(--stone); line-height: 1.7;">Contribute your skills in photography, videography, social media, or design to amplify our message.</p>
+    <div class="definition-item">
+      <h3>Media & Content Creation</h3>
+      <p>Contribute your skills in photography, videography, social media, or design to amplify our message.</p>
     </div>
 
-    <div>
-      <h3 style="color: var(--charcoal); margin-bottom: 8px; font-size: 1.125rem;">Accessibility & Translation</h3>
-      <p style="margin: 0; color: var(--stone); line-height: 1.7;">Help make our events accessible to everyone through sign language interpretation and translation services.</p>
+    <div class="definition-item">
+      <h3>Accessibility & Translation</h3>
+      <p>Help make our events accessible to everyone through sign language interpretation and translation services.</p>
     </div>
 
-    <div>
-      <h3 style="color: var(--charcoal); margin-bottom: 8px; font-size: 1.125rem;">Special Skills</h3>
-      <p style="margin: 0; color: var(--stone); line-height: 1.7;">Have unique talents or expertise? We're always looking for creative ways volunteers can contribute to our mission.</p>
+    <div class="definition-item">
+      <h3>Special Skills</h3>
+      <p>Have unique talents or expertise? We're always looking for creative ways volunteers can contribute to our mission.</p>
     </div>
   </div>
 </div>
