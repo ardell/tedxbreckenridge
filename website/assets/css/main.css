@@ -699,6 +699,10 @@ select:focus-visible {
     padding: 0;
 }
 
+.theme-section .section-inner {
+    max-width: none;
+}
+
 .theme-section:has(.theme-content-reverse) {
     padding: 0;
 }
@@ -2673,8 +2677,6 @@ body.layout-post {
 .save-date-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 1400px;
-    margin: 0 auto;
     min-height: 700px;
 }
 
