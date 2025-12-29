@@ -15,7 +15,7 @@ description: Learn about TEDxBreckenridge, a local TEDx event in Breckenridge, C
 <p>TEDxBreckenridge brings the spirit of TED to Summit County, Colorado. Based in Breckenridge and serving the greater Summit County community, our events feature local voices, innovative thinkers, and inspiring stories that reflect both our mountain culture and global perspectives.</p>
 
 <div class="my-48">
-  <img src="{{ '/assets/images/events/wide-shot-of-venue-and-emcee-straight-on.jpg' | relative_url }}" alt="TEDxBreckenridge event at the Riverwalk Center in Breckenridge with emcee on stage and full audience" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/wide-shot-of-venue-and-emcee-straight-on.jpg' | relative_url }}" alt="TEDxBreckenridge event at the Riverwalk Center in Breckenridge with emcee on stage and full audience" class="img-fluid rounded" loading="lazy">
 </div>
 
 <p>Since our inaugural event in 2020, we've hosted five main events featuring 53 speakers who have shared transformative ideas with our community. Our talks have reached audiences far beyond the mountains, with videos garnering hundreds of thousands of views worldwide. Each October, we gather at the Riverwalk Center in Breckenridge for an evening of ideas worth spreading, bringing together locals and visitors alike for meaningful conversation and connection.</p>
@@ -23,7 +23,7 @@ description: Learn about TEDxBreckenridge, a local TEDx event in Breckenridge, C
 <p>Beyond our annual main event, we host intimate Salon gatherings throughout the year—smaller, conversational events designed to explore fascinating topics with local experts. These Salons create space for deeper discussion and genuine connection, embodying our belief that the best ideas emerge when curious minds come together.</p>
 
 <div class="my-48">
-  <img src="{{ '/assets/images/events/attendees-mingling.jpg' | relative_url }}" alt="TEDxBreckenridge attendees connecting and networking during an event" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/attendees-mingling.jpg' | relative_url }}" alt="TEDxBreckenridge attendees connecting and networking during an event" class="img-fluid rounded" loading="lazy">
 </div>
 
 <h3>Summit County, Colorado</h3>

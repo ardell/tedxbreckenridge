@@ -7,7 +7,7 @@ description: Frequently asked questions about attending TEDxBreckenridge. Find a
 ---
 
 <div class="mb-60">
-  <img src="{{ '/assets/images/events/family-in-front-of-tedxbreckenridge-x.jpg' | relative_url }}" alt="Family posing at TEDxBreckenridge event, showcasing our welcoming and family-friendly atmosphere" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/family-in-front-of-tedxbreckenridge-x.jpg' | relative_url }}" alt="Family posing at TEDxBreckenridge event, showcasing our welcoming and family-friendly atmosphere" class="img-fluid rounded" loading="lazy">
 </div>
 
 <div class="faq-section">

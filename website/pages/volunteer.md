@@ -14,7 +14,7 @@ container: container-md
 </div>
 
 <div class="my-80">
-  <img src="{{ '/assets/images/events/team-posing-in-front-of-tedxbreckenridge-x.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members posing together in front of TEDx signage" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/team-posing-in-front-of-tedxbreckenridge-x.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members posing together in front of TEDx signage" class="img-fluid rounded" loading="lazy">
 </div>
 
 <div class="mb-80">
@@ -82,7 +82,7 @@ container: container-md
 </div>
 
 <div class="my-80">
-  <img src="{{ '/assets/images/events/the-team-bowing-for-applause.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team taking a bow and receiving applause at the end of an event" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/the-team-bowing-for-applause.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team taking a bow and receiving applause at the end of an event" class="img-fluid rounded" loading="lazy">
 </div>
 
 <div style="margin-top: 80px; padding: 48px 32px; background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%); border-radius: 8px;">

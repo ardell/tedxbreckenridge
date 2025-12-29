@@ -12,7 +12,7 @@ container: container-md
 </div>
 
 <div style="margin: 60px 0 80px;">
-  <img src="{{ '/assets/images/events/speaker-giving-a-talk-on-red-dot.jpg' | relative_url }}" alt="TEDxBreckenridge speaker delivering their talk on the iconic red dot stage" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/speaker-giving-a-talk-on-red-dot.jpg' | relative_url }}" alt="TEDxBreckenridge speaker delivering their talk on the iconic red dot stage" class="img-fluid rounded" loading="lazy">
 </div>
 
 <div class="mb-80">
@@ -112,7 +112,7 @@ container: container-md
 </div>
 
 <div class="my-80">
-  <img src="{{ '/assets/images/events/speaker-signing-instinct-poster.jpg' | relative_url }}" alt="TEDxBreckenridge speaker signing a poster after their talk, showing post-event engagement and impact" style="width: 100%; height: auto;" class="rounded" loading="lazy">
+  <img src="{{ '/assets/images/events/speaker-signing-instinct-poster.jpg' | relative_url }}" alt="TEDxBreckenridge speaker signing a poster after their talk, showing post-event engagement and impact" class="img-fluid rounded" loading="lazy">
 </div>
 
 <div style="margin-top: 80px; padding: 48px 32px; background: linear-gradient(135deg, rgba(197, 91, 77, 0.08) 0%, rgba(91, 142, 142, 0.08) 100%); border-radius: 8px;">
