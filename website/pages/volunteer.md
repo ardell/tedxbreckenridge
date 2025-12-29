@@ -20,7 +20,7 @@ container: container-md
 <div class="mb-80">
   <h2 class="mb-32">Why Volunteer with TEDxBreckenridge</h2>
 
-  <div style="display: grid; gap: 32px; margin-bottom: 48px;">
+  <div class="grid-gap-32 mb-48">
     <div class="card-accent-red">
       <h3>Be Part of Something Meaningful</h3>
       <p>Help elevate local voices, foster innovation, and create a platform for ideas that can change our mountain community and the world.</p>
@@ -48,7 +48,7 @@ container: container-md
 
   <p class="body-lg">We're building our amazing crew of volunteers for our 2026 events. Whether you're interested in helping on event day or contributing your specialized skills year-round, we'd love to have you on the team.</p>
 
-  <div style="display: grid; gap: 24px; margin-bottom: 48px;">
+  <div class="grid-gap-24 mb-48">
     <div>
       <h3 style="color: var(--charcoal); margin-bottom: 8px; font-size: 1.125rem;">Event Day Volunteers</h3>
       <p style="margin: 0; color: var(--stone); line-height: 1.7;">Help create an exceptional experience for attendees, speakers, and sponsors at our main event and salon series.</p>
