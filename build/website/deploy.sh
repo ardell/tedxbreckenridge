@@ -78,6 +78,19 @@ aws s3 sync "$BUILD_DIR" "s3://${S3_BUCKET}" \
 
 echo "✓ Files uploaded to S3"
 
+# Invalidate CloudFront cache if distribution ID is configured
+if [ -n "$CF_DISTRIBUTION_ID" ]; then
+  echo ""
+  echo "Step 4: Invalidating CloudFront cache..."
+  INVALIDATION_ID=$(aws cloudfront create-invalidation \
+    --distribution-id "$CF_DISTRIBUTION_ID" \
+    --paths "/*" \
+    --profile "$AWS_PROFILE" \
+    --query "Invalidation.Id" \
+    --output text)
+  echo "✓ CloudFront cache invalidation created: ${INVALIDATION_ID}"
+fi
+
 echo ""
 echo "========================================"
 echo "✓ Deployment complete!"
@@ -87,6 +100,15 @@ echo "Website URL: http://${S3_BUCKET}.s3-website-${AWS_REGION}.amazonaws.com"
 if [ -n "$WEBSITE_URL" ]; then
   echo "            ${WEBSITE_URL}"
 fi
+if [ -n "$CF_DISTRIBUTION_ID" ]; then
+  echo ""
+  echo "Production URLs (via CloudFront):"
+  echo "  https://www.tedxbreckenridge.com"
+  echo "  https://beta.tedxbreckenridge.com"
+fi
 echo ""
 echo "Note: It may take a few moments for changes to be visible"
+if [ -n "$CF_DISTRIBUTION_ID" ]; then
+  echo "      CloudFront cache invalidation typically completes in 1-2 minutes"
+fi
 echo ""
