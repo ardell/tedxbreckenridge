@@ -119,6 +119,21 @@ echo -e "${BLUE}Step 3: Attaching Deployment Permissions${NC}"
 POLICY_NAME="DeploymentPolicy"
 
 # Create permissions policy
+# Build CloudFront statement only if distribution ID is configured
+CLOUDFRONT_STATEMENT=""
+if [ -n "$CF_DISTRIBUTION_ID" ]; then
+  CLOUDFRONT_STATEMENT=',
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:CreateInvalidation",
+        "cloudfront:GetInvalidation",
+        "cloudfront:ListInvalidations"
+      ],
+      "Resource": "arn:aws:cloudfront::'"${AWS_ACCOUNT_ID}"':distribution/'"${CF_DISTRIBUTION_ID}"'"
+    }'
+fi
+
 PERMISSIONS_POLICY=$(cat <<EOF
 {
   "Version": "2012-10-17",
@@ -139,16 +154,7 @@ PERMISSIONS_POLICY=$(cat <<EOF
         "s3:DeleteObject"
       ],
       "Resource": "arn:aws:s3:::${S3_BUCKET}/*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "cloudfront:CreateInvalidation",
-        "cloudfront:GetInvalidation",
-        "cloudfront:ListInvalidations"
-      ],
-      "Resource": "arn:aws:cloudfront::${AWS_ACCOUNT_ID}:distribution/*"
-    }
+    }${CLOUDFRONT_STATEMENT}
   ]
 }
 EOF
