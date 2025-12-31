@@ -67,6 +67,13 @@ jobs:
             --cache-control "public, max-age=3600" \
             --exclude "*.DS_Store"
 
+      - name: Invalidate CloudFront cache
+        if: vars.CF_DISTRIBUTION_ID != ''
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} \
+            --paths "/*"
+
       - name: Deployment summary
         run: |
           echo "## Deployment Complete! :rocket:" >> $GITHUB_STEP_SUMMARY
@@ -74,5 +81,11 @@ jobs:
           echo "**S3 Bucket**: tedxbreckenridge-website" >> $GITHUB_STEP_SUMMARY
           echo "**Region**: us-west-1" >> $GITHUB_STEP_SUMMARY
           echo "**Website URL**: http://tedxbreckenridge-website.s3-website-us-west-1.amazonaws.com" >> $GITHUB_STEP_SUMMARY
+          if [ -n "${{ vars.CF_DISTRIBUTION_ID }}" ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Production URLs** (via CloudFront):" >> $GITHUB_STEP_SUMMARY
+            echo "- https://www.tedxbreckenridge.com" >> $GITHUB_STEP_SUMMARY
+            echo "- https://beta.tedxbreckenridge.com" >> $GITHUB_STEP_SUMMARY
+          fi
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Changes may take a few moments to be visible." >> $GITHUB_STEP_SUMMARY

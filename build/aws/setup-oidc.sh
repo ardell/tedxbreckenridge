@@ -112,11 +112,11 @@ else
     echo -e "${GREEN}✓ Role created${NC}"
 fi
 
-# Step 3: Attach S3 Permissions Policy
+# Step 3: Attach Deployment Permissions Policy
 echo ""
-echo -e "${BLUE}Step 3: Attaching S3 Permissions${NC}"
+echo -e "${BLUE}Step 3: Attaching Deployment Permissions${NC}"
 
-POLICY_NAME="S3DeploymentPolicy"
+POLICY_NAME="DeploymentPolicy"
 
 # Create permissions policy
 PERMISSIONS_POLICY=$(cat <<EOF
@@ -139,6 +139,15 @@ PERMISSIONS_POLICY=$(cat <<EOF
         "s3:DeleteObject"
       ],
       "Resource": "arn:aws:s3:::${S3_BUCKET}/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:CreateInvalidation",
+        "cloudfront:GetInvalidation",
+        "cloudfront:ListInvalidations"
+      ],
+      "Resource": "arn:aws:cloudfront::${AWS_ACCOUNT_ID}:distribution/*"
     }
   ]
 }
