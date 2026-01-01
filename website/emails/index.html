@@ -1,0 +1,140 @@
+---
+layout: null
+title: Email Templates
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Templates | TEDxBreckenridge</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    .header {
+      background: #2A2A2A;
+      color: white;
+      padding: 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .header p {
+      margin: 8px 0 0 0;
+      font-size: 14px;
+      color: #A3C4C4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+    .email-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .email-item {
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .email-item a {
+      display: block;
+      padding: 20px 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .email-item a:hover {
+      background: #fafafa;
+    }
+    .email-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #2A2A2A;
+      margin: 0 0 6px 0;
+    }
+    .email-meta {
+      font-size: 13px;
+      color: #666;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .email-date {
+      color: #888;
+    }
+    .email-subject {
+      color: #4A7470;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #666;
+    }
+    .empty-state h2 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #4A7470;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Email Templates</h1>
+    <p>Preview and copy HTML for Mailchimp campaigns</p>
+  </div>
+
+  <div class="container">
+    {% if site.emails %}
+    {% assign sorted_emails = site.emails | sort: 'date' | reverse %}
+    {% endif %}
+    {% if sorted_emails and sorted_emails.size > 0 %}
+    <ul class="email-list">
+      {% for email in sorted_emails %}
+      <li class="email-item">
+        <a href="{{ email.url }}">
+          <h2 class="email-title">{{ email.title }}</h2>
+          <div class="email-meta">
+            <span class="email-date">{{ email.date | date: "%B %d, %Y" }}</span>
+            {% if email.subject %}
+            <span class="email-subject">Subject: {{ email.subject }}</span>
+            {% endif %}
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <div class="empty-state">
+      <h2>No emails yet</h2>
+      <p>Add email templates to <code>website/_emails/</code></p>
+    </div>
+    {% endif %}
+
+    <a href="/" class="back-link">← Back to website</a>
+  </div>
+</body>
+</html>

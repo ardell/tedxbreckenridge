@@ -1,0 +1,232 @@
+---
+---
+{%- comment -%}
+Email layout - provides preview with merge tags substituted,
+plus source view for copying to Mailchimp.
+{%- endcomment -%}
+
+{%- capture raw_content -%}{{ content }}{%- endcapture -%}
+
+{%- comment -%} Substitute Mailchimp merge tags for preview {%- endcomment -%}
+{%- assign preview_content = raw_content -%}
+
+{%- comment -%} Handle the greeting conditional: *|IF:FNAME|*Hi *|FNAME|*,*|ELSE:|*Hi there,*|END:IF|* {%- endcomment -%}
+{%- capture fname_conditional -%}*|IF:FNAME|*Hi *|FNAME|*,*|ELSE:|*Hi there,*|END:IF|*{%- endcapture -%}
+{%- capture fname_replacement -%}Hi {{ site.data.email_preview.FNAME }},{%- endcapture -%}
+{%- assign preview_content = preview_content | replace: fname_conditional, fname_replacement -%}
+
+{%- comment -%} Handle the LIST conditional - just show the content {%- endcomment -%}
+{%- assign preview_content = preview_content | replace: '*|IF:LIST|*', '' -%}
+{%- assign preview_content = preview_content | replace: '*|END:IF|*', '' -%}
+
+{%- comment -%} Substitute standard merge tags {%- endcomment -%}
+{%- assign preview_content = preview_content | replace: '*|FNAME|*', site.data.email_preview.FNAME -%}
+{%- assign preview_content = preview_content | replace: '*|LNAME|*', site.data.email_preview.LNAME -%}
+{%- assign preview_content = preview_content | replace: '*|EMAIL|*', site.data.email_preview.EMAIL -%}
+{%- assign preview_content = preview_content | replace: '*|UNSUB|*', site.data.email_preview.UNSUB -%}
+{%- assign preview_content = preview_content | replace: '*|UPDATE_PROFILE|*', site.data.email_preview.UPDATE_PROFILE -%}
+{%- assign preview_content = preview_content | replace: '*|ARCHIVE|*', site.data.email_preview.ARCHIVE -%}
+{%- assign preview_content = preview_content | replace: '*|FORWARD|*', site.data.email_preview.FORWARD -%}
+{%- assign preview_content = preview_content | replace: '*|LIST:NAME|*', site.data.email_preview.LIST_NAME -%}
+{%- assign preview_content = preview_content | replace: '*|LIST:COMPANY|*', site.data.email_preview.LIST_COMPANY -%}
+{%- assign preview_content = preview_content | replace: '*|LIST:URL|*', site.data.email_preview.LIST_URL -%}
+{%- assign preview_content = preview_content | replace: '*|LIST:ADDRESS|*', site.data.email_preview.LIST_ADDRESS -%}
+{%- assign preview_content = preview_content | replace: '*|MC:SUBJECT|*', site.data.email_preview.MC_SUBJECT -%}
+{%- assign preview_content = preview_content | replace: '*|CURRENT_YEAR|*', site.data.email_preview.CURRENT_YEAR -%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Email Preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .email-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #2A2A2A;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .email-toolbar h1 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .email-toolbar-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .email-toolbar a {
+      color: #A3C4C4;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .email-toolbar a:hover {
+      color: white;
+    }
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #e62b1e;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { background: #c92418; color: white; }
+    .btn-secondary {
+      background: #555;
+    }
+    .btn-secondary:hover { background: #666; }
+
+    /* Preview view */
+    .email-frame {
+      max-width: 700px;
+      margin: 20px auto;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Source view */
+    .source-view {
+      display: none;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+    .source-view.active {
+      display: block;
+    }
+    .email-frame.hidden {
+      display: none;
+    }
+    .source-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .source-header h2 {
+      margin: 0;
+      font-size: 16px;
+      color: #333;
+    }
+    .source-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .copied {
+      color: #28a745;
+      font-weight: 500;
+      font-size: 13px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .copied.show { opacity: 1; }
+    textarea {
+      width: 100%;
+      height: calc(100vh - 220px);
+      min-height: 400px;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      font-size: 12px;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      resize: vertical;
+      background: #fafafa;
+    }
+    .subject-line {
+      margin-bottom: 16px;
+      padding: 12px 16px;
+      background: #f5f5f5;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .subject-line strong {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-toolbar">
+    <h1>{{ page.title }}</h1>
+    <div class="email-toolbar-actions">
+      <a href="/emails/">← All Emails</a>
+      <button class="btn" id="toggleBtn" onclick="toggleView()">View Source HTML</button>
+    </div>
+  </div>
+
+  <!-- Preview View -->
+  <div class="email-frame" id="previewView">
+    <div class="email-content">
+      {{ preview_content }}
+    </div>
+  </div>
+
+  <!-- Source View -->
+  <div class="source-view" id="sourceView">
+    <div class="source-header">
+      <h2>HTML Source for Mailchimp</h2>
+      <div class="source-actions">
+        <button class="btn" onclick="copySource()">Copy HTML</button>
+        <span class="copied" id="copied">Copied!</span>
+      </div>
+    </div>
+    {% if page.subject %}
+    <div class="subject-line">
+      <strong>Subject:</strong> {{ page.subject }}
+    </div>
+    {% endif %}
+    <textarea id="source" readonly>{{ raw_content | strip | xml_escape }}</textarea>
+  </div>
+
+  <script>
+    function toggleView() {
+      const preview = document.getElementById('previewView');
+      const source = document.getElementById('sourceView');
+      const btn = document.getElementById('toggleBtn');
+
+      if (source.classList.contains('active')) {
+        source.classList.remove('active');
+        preview.classList.remove('hidden');
+        btn.textContent = 'View Source HTML';
+      } else {
+        source.classList.add('active');
+        preview.classList.add('hidden');
+        btn.textContent = 'View Preview';
+      }
+    }
+
+    function copySource() {
+      const textarea = document.getElementById('source');
+      textarea.select();
+      textarea.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        const copied = document.getElementById('copied');
+        copied.classList.add('show');
+        setTimeout(() => copied.classList.remove('show'), 2000);
+      });
+    }
+  </script>
+</body>
+</html>
