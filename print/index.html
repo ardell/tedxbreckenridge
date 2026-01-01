@@ -1,6 +1,6 @@
 ---
 layout: null
-title: Email Templates
+title: Print Materials
 sitemap: false
 ---
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ sitemap: false
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email Templates | TEDxBreckenridge</title>
+  <title>Print Materials | TEDxBreckenridge</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -119,8 +119,8 @@ sitemap: false
       margin: 16px auto 0;
     }
 
-    /* Email List */
-    .email-list-container {
+    /* Print List */
+    .print-list-container {
       flex: 1;
       padding: 48px 48px 80px;
       max-width: 720px;
@@ -128,22 +128,22 @@ sitemap: false
       width: 100%;
     }
 
-    .email-list {
+    .print-list {
       list-style: none;
     }
 
-    .email-item + .email-item {
+    .print-item + .print-item {
       border-top: 1px solid var(--sand);
     }
 
-    .email-link {
+    .print-link {
       display: block;
       padding: 32px 0;
       text-decoration: none;
       color: inherit;
     }
 
-    .email-date {
+    .print-date {
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.08em;
@@ -152,7 +152,7 @@ sitemap: false
       margin-bottom: 8px;
     }
 
-    .email-title {
+    .print-title {
       font-size: 22px;
       font-weight: 400;
       color: var(--black);
@@ -161,14 +161,25 @@ sitemap: false
       transition: color 0.2s ease;
     }
 
-    .email-link:hover .email-title {
+    .print-link:hover .print-title {
       color: var(--teal);
     }
 
-    .email-subject {
+    .print-description {
       font-size: 15px;
       color: var(--stone);
-      font-style: italic;
+    }
+
+    .print-format {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--cream);
+      padding: 4px 8px;
+      margin-top: 12px;
     }
 
     /* Empty State */
@@ -242,15 +253,15 @@ sitemap: false
         padding: 60px 24px;
       }
 
-      .email-list-container {
+      .print-list-container {
         padding: 32px 24px 60px;
       }
 
-      .email-link {
+      .print-link {
         padding: 24px 0;
       }
 
-      .email-title {
+      .print-title {
         font-size: 18px;
       }
 
@@ -275,23 +286,26 @@ sitemap: false
 
   <main>
     <div class="page-header">
-      <h1 class="page-title">Email Templates</h1>
-      <p class="page-subtitle">Preview and copy HTML for Mailchimp campaigns</p>
+      <h1 class="page-title">Print Materials</h1>
+      <p class="page-subtitle">Preview and export print-ready HTML for flyers, handouts, and programs</p>
     </div>
 
-    <div class="email-list-container">
-      {% if site.emails %}
-      {% assign sorted_emails = site.emails | sort: 'date' | reverse %}
+    <div class="print-list-container">
+      {% if site.print %}
+      {% assign sorted_print = site.print | sort: 'date' | reverse %}
       {% endif %}
-      {% if sorted_emails and sorted_emails.size > 0 %}
-      <ul class="email-list">
-        {% for email in sorted_emails %}
-        <li class="email-item">
-          <a href="{{ email.url }}" class="email-link">
-            <div class="email-date">{{ email.date | date: "%B %d, %Y" }}</div>
-            <h2 class="email-title">{{ email.title }}</h2>
-            {% if email.subject %}
-            <div class="email-subject">"{{ email.subject }}"</div>
+      {% if sorted_print and sorted_print.size > 0 %}
+      <ul class="print-list">
+        {% for item in sorted_print %}
+        <li class="print-item">
+          <a href="{{ item.url }}" class="print-link">
+            <div class="print-date">{{ item.date | date: "%B %d, %Y" }}</div>
+            <h2 class="print-title">{{ item.title }}</h2>
+            {% if item.description %}
+            <div class="print-description">{{ item.description }}</div>
+            {% endif %}
+            {% if item.format %}
+            <span class="print-format">{{ item.format }}</span>
             {% endif %}
           </a>
         </li>
@@ -299,8 +313,8 @@ sitemap: false
       </ul>
       {% else %}
       <div class="empty-state">
-        <h2>No emails yet</h2>
-        <p>Add email templates to <code>website/_emails/</code></p>
+        <h2>No print materials yet</h2>
+        <p>Add print templates to <code>_print/</code></p>
       </div>
       {% endif %}
     </div>
@@ -308,8 +322,8 @@ sitemap: false
 
   <footer class="footer">
     <div class="footer-content">
-      <a href="/" class="footer-link">← Back to website</a>
-      <span class="footer-note">Development only · Not deployed to production</span>
+      <a href="/" class="footer-link">Back to website</a>
+      <span class="footer-note">Development only - Not deployed to production</span>
     </div>
   </footer>
 

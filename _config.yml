@@ -52,9 +52,23 @@ exclude:
   - .jekyll-cache/
   - gemfiles/
   - README.md
-  - style-guide/
+  - CLAUDE.md
+  - MISE_SETUP.md
+  - LICENSE
+  - package.json
+  - yarn.lock
+  - materials/
+  - build/
+  - config/
+  - design-system/
+  - docs/
+  - .github/
+  - website/README.md
+  # Emails and print excluded in production (included in dev via _config.dev.yml)
   - _emails/
   - emails/
+  - _print/
+  - print/
 
 # Social Media
 social:

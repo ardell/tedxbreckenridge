@@ -1,0 +1,53 @@
+# Development-only configuration
+# Used alongside _config.yml when running locally
+
+# Override URL for local development
+url: "http://localhost:4000"
+
+# Override exclude list to include emails and print directories (excluded in production)
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - README.md
+  - CLAUDE.md
+  - MISE_SETUP.md
+  - LICENSE
+  - package.json
+  - yarn.lock
+  - materials/
+  - build/
+  - config/
+  - design-system/
+  - docs/
+  - .github/
+  - website/README.md
+  # Note: _emails/, emails/, _print/, print/ NOT excluded in dev
+
+# Collections for development (not deployed to production)
+collections:
+  emails:
+    output: true
+    permalink: /emails/:title/
+  print:
+    output: true
+    permalink: /print/:title/
+
+# Default layouts for collections
+defaults:
+  - scope:
+      path: ""
+      type: "emails"
+    values:
+      layout: "email"
+      sitemap: false
+  - scope:
+      path: ""
+      type: "print"
+    values:
+      layout: "print"
+      sitemap: false
