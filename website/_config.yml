@@ -21,16 +21,6 @@ event:
   theme: "TBA"
   theme_description: "Save the date for our 2026 main event. Theme and details coming soon."
 
-# Salon Event
-salon:
-  date: "January 15, 2026"
-  time: "6:00 PM"
-  title: "Elevated Cuisine: The Science and Art of Cooking at Altitude"
-  venue: "EVO3 Workspace"
-  location: "620 E Main St #6, Frisco, CO 80443"
-  price: "$10 suggested donation"
-  description: "Join the culinary team from Colorado Mountain College as they explore how altitude changes the rules of cooking and baking—and what it takes to master flavor, texture, and technique in the High Rockies."
-
 # Build settings
 markdown: kramdown
 plugins:
