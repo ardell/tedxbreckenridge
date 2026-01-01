@@ -34,6 +34,18 @@ plus source view for copying to Mailchimp.
 {%- assign preview_content = preview_content | replace: '*|MC:SUBJECT|*', site.data.email_preview.MC_SUBJECT -%}
 {%- assign preview_content = preview_content | replace: '*|CURRENT_YEAR|*', site.data.email_preview.CURRENT_YEAR -%}
 
+{%- comment -%} Preview-only content: substitute in preview, strip from source {%- endcomment -%}
+{%- assign preview_content = preview_content | replace: '*|PREVIEW_PREHEADER|*', site.data.email_preview.PREVIEW_PREHEADER -%}
+{%- assign preview_content = preview_content | replace: '*|PREVIEW_BODY|*', site.data.email_preview.PREVIEW_BODY -%}
+{%- assign preview_content = preview_content | replace: '*|PREVIEW_CTA_URL|*', site.data.email_preview.PREVIEW_CTA_URL -%}
+{%- assign preview_content = preview_content | replace: '*|PREVIEW_CTA_TEXT|*', site.data.email_preview.PREVIEW_CTA_TEXT -%}
+
+{%- comment -%} Create source content: strip PREVIEW_* tags entirely {%- endcomment -%}
+{%- assign source_content = raw_content | replace: '*|PREVIEW_PREHEADER|*', '' -%}
+{%- assign source_content = source_content | replace: '*|PREVIEW_BODY|*', '' -%}
+{%- assign source_content = source_content | replace: '*|PREVIEW_CTA_URL|*', 'YOUR_URL_HERE' -%}
+{%- assign source_content = source_content | replace: '*|PREVIEW_CTA_TEXT|*', 'Your CTA Text' -%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -344,7 +356,7 @@ plus source view for copying to Mailchimp.
         <span class="copied" id="copied">Copied to clipboard</span>
       </div>
 
-      <textarea id="source" readonly>{{ raw_content | strip | xml_escape }}</textarea>
+      <textarea id="source" readonly>{{ source_content | strip | xml_escape }}</textarea>
     </div>
   </main>
 

@@ -1,0 +1,170 @@
+---
+title: "General Email Template"
+date: 2025-01-01
+subject: "Your subject line here"
+description: "Reusable template for quick emails"
+---
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>TEDxBreckenridge</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+        /* Reset styles */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; }
+
+        /* Remove spacing around tables in Outlook */
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        table { border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+
+        /* Mobile styles */
+        @media screen and (max-width: 600px) {
+            .mobile-padding { padding-left: 24px !important; padding-right: 24px !important; }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #F5F3F0;">
+    <!-- Preview text (shows in inbox, hidden in email) -->
+    <div style="display: none; max-height: 0; overflow: hidden;">
+        *|PREVIEW_PREHEADER|*
+        &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+    </div>
+
+    <!-- Email wrapper -->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3F0;">
+        <!-- View in browser -->
+        <tr>
+            <td align="center" style="padding: 16px 20px 0 20px;">
+                <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; color: #6B6B6B;">
+                    <a href="*|ARCHIVE|*" target="_blank" style="color: #5B8E8E; text-decoration: underline;">View this email in your browser</a>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding: 24px 20px 40px 20px;">
+
+                <!-- Email container -->
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; background-color: #FFFFFF;">
+
+                    <!-- Header with logo -->
+                    <tr>
+                        <td align="center" style="padding: 40px 40px 32px 40px; border-bottom: 1px solid #E8E6E3;">
+                            <img src="https://www.tedxbreckenridge.com/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge" width="200" style="display: block; max-width: 200px; height: auto;">
+                        </td>
+                    </tr>
+
+                    <!-- Main content -->
+                    <tr>
+                        <td class="mobile-padding" style="padding: 40px 48px;">
+
+                            <!-- Greeting -->
+                            <p style="margin: 0 0 24px 0; font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #2A2A2A;">
+                                *|IF:FNAME|*Hi *|FNAME|*,*|ELSE:|*Hi there,*|END:IF|*
+                            </p>
+
+                            <!-- Body content - replace this section -->
+                            *|PREVIEW_BODY|*
+
+                            <!-- CTA Button (optional - delete if not needed) -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 32px 0;">
+                                <tr>
+                                    <td align="center">
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://tedxbreckenridge.com" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="8%" strokecolor="#e62b1e" fillcolor="#e62b1e">
+                                        <w:anchorlock/>
+                                        <center style="color:#ffffff;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;">Learn More</center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                        <!--[if !mso]><!-->
+                                        <a href="*|PREVIEW_CTA_URL|*" target="_blank" style="display: inline-block; padding: 16px 32px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; color: #FFFFFF; background-color: #e62b1e; text-decoration: none; border-radius: 4px;">
+                                            *|PREVIEW_CTA_TEXT|*
+                                        </a>
+                                        <!--<![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Sign off -->
+                            <p style="margin: 32px 0 24px 0; font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #2A2A2A;">
+                                Warmly,<br>
+                                The TEDxBreckenridge Team
+                            </p>
+
+                            <!-- Forward -->
+                            <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #6B6B6B;">
+                                Know someone who'd enjoy this? <a href="*|FORWARD|*" target="_blank" style="color: #4A7470; text-decoration: underline;">Forward this email</a>
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 32px 40px; background-color: #2A2A2A;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 16px;">
+                                        <a href="https://tedxbreckenridge.com" target="_blank">
+                                            <img src="https://www.tedxbreckenridge.com/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png" alt="TEDxBreckenridge" width="180" style="display: block; margin: 0 auto; max-width: 180px; height: auto;">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-bottom: 16px;">
+                                        <a href="https://facebook.com/tedxbreckenridge" target="_blank" style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: #A3C4C4; text-decoration: none; margin: 0 8px;">Facebook</a>
+                                        <span style="color: #6B6B6B;">•</span>
+                                        <a href="https://instagram.com/tedxbreckenridge" target="_blank" style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: #A3C4C4; text-decoration: none; margin: 0 8px;">Instagram</a>
+                                        <span style="color: #6B6B6B;">•</span>
+                                        <a href="https://youtube.com/tedxbreckenridge" target="_blank" style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: #A3C4C4; text-decoration: none; margin: 0 8px;">YouTube</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.5; color: #6B6B6B;">
+                                            TEDxBreckenridge is an independently organized TED event.<br>
+                                            This event is operated under license from TED.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Unsubscribe -->
+                    <tr>
+                        <td align="center" style="padding: 24px 40px; background-color: #F5F3F0;">
+                            <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.5; color: #6B6B6B;">
+                                *|IF:LIST|*You're receiving this email because you signed up for updates from TEDxBreckenridge.*|END:IF|*<br>
+                                <a href="*|UPDATE_PROFILE|*" target="_blank" style="color: #5B8E8E; text-decoration: underline;">Update your preferences</a> or <a href="*|UNSUB|*" target="_blank" style="color: #5B8E8E; text-decoration: underline;">unsubscribe</a>
+                            </p>
+                            <p style="margin: 16px 0 0 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.5; color: #6B6B6B;">
+                                *|LIST:ADDRESS|*
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+                <!-- End email container -->
+
+            </td>
+        </tr>
+    </table>
+    <!-- End email wrapper -->
+
+</body>
+</html>
