@@ -120,6 +120,7 @@ a:hover {
 
 .skip-link:focus {
     top: 0;
+    color: var(--white);
 }
 
 /* Focus Indicators - Accessibility */
@@ -282,6 +283,7 @@ select:focus-visible {
 
 .nav-cta:hover {
     background: var(--ted-red-dark);
+    color: var(--white);
 }
 
 /* Hamburger Menu */
@@ -867,6 +869,7 @@ select:focus-visible {
     position: relative;
     aspect-ratio: 3/4;
     overflow: hidden;
+    border-bottom: none;
     transition: transform 0.3s ease;
 }
 
@@ -976,6 +979,7 @@ select:focus-visible {
     position: relative;
     overflow: hidden;
     aspect-ratio: 4/3;
+    border-bottom: none;
 }
 
 .gallery-item.large {
@@ -1503,6 +1507,7 @@ select:focus-visible {
 
 .footer-logo {
     height: 48px;
+    border-bottom: none;
 }
 
 .footer-column h4 {
@@ -2143,6 +2148,7 @@ select:focus-visible {
 .social-link:hover {
     border-color: var(--teal);
     background: var(--cream);
+    color: var(--black);
     transform: translateY(-2px);
 }
 
@@ -2470,6 +2476,7 @@ body.layout-post {
     height: 320px;
     overflow: hidden;
     background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    border-bottom: none;
 }
 
 .blog-post-image::after {
