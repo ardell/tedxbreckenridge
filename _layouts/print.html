@@ -117,66 +117,6 @@ plus source view for copying HTML and print functionality.
       background: var(--ted-red-dark);
     }
 
-    .nav-btn-secondary {
-      background: var(--teal);
-    }
-
-    .nav-btn-secondary:hover {
-      background: var(--forest);
-    }
-
-    /* Dropdown */
-    .nav-dropdown {
-      position: relative;
-      display: flex;
-    }
-
-    .nav-dropdown .nav-btn:first-child {
-      border-radius: 0;
-    }
-
-    .nav-dropdown-toggle {
-      padding: 12px 10px;
-      border-left: 1px solid rgb(255 255 255 / 20%);
-      border-radius: 0;
-    }
-
-    .nav-dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      margin-top: 4px;
-      background: var(--white);
-      box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-      min-width: 160px;
-      z-index: 200;
-    }
-
-    .nav-dropdown-menu.open {
-      display: block;
-    }
-
-    .nav-dropdown-menu a,
-    .nav-dropdown-menu button {
-      display: block;
-      width: 100%;
-      padding: 12px 16px;
-      font-size: 13px;
-      color: var(--charcoal);
-      text-decoration: none;
-      text-align: left;
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.15s ease;
-    }
-
-    .nav-dropdown-menu a:hover,
-    .nav-dropdown-menu button:hover {
-      background: var(--cream);
-    }
-
     /* Main Content */
     main {
       padding-top: 100px;
@@ -191,118 +131,6 @@ plus source view for copying HTML and print functionality.
       background: var(--white);
       box-shadow: 0 4px 24px rgb(0 0 0 / 20%);
       overflow: hidden;
-    }
-
-    .print-frame.hidden {
-      display: none;
-    }
-
-    /* Source View */
-    .source-view {
-      display: none;
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--white);
-      box-shadow: 0 4px 24px rgb(0 0 0 / 8%);
-      padding: 48px;
-    }
-
-    .source-view.active {
-      display: block;
-    }
-
-    .source-header {
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--sand);
-    }
-
-    .source-header h2 {
-      font-size: 24px;
-      font-weight: 300;
-      color: var(--black);
-      margin-bottom: 8px;
-    }
-
-    .source-header p {
-      font-size: 15px;
-      color: var(--stone);
-    }
-
-    .source-meta {
-      margin-bottom: 24px;
-      padding: 20px 24px;
-      background: var(--cream);
-      border-left: 3px solid var(--ted-red);
-    }
-
-    .source-meta-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--stone);
-      margin-bottom: 4px;
-    }
-
-    .source-meta-value {
-      font-size: 15px;
-      color: var(--black);
-    }
-
-    .source-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .btn {
-      font-family: var(--font-primary);
-      font-size: 13px;
-      font-weight: 500;
-      padding: 12px 24px;
-      background: var(--ted-red);
-      color: var(--white);
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    .btn:hover {
-      background: var(--ted-red-dark);
-    }
-
-    .copied {
-      font-size: 13px;
-      color: var(--forest);
-      font-weight: 500;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-    }
-
-    .copied.show {
-      opacity: 1;
-    }
-
-    textarea {
-      width: 100%;
-      height: calc(100vh - 400px);
-      min-height: 400px;
-      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-      font-size: 12px;
-      line-height: 1.6;
-      padding: 24px;
-      border: 1px solid var(--sand);
-      background: var(--cream);
-      color: var(--charcoal);
-      resize: vertical;
-    }
-
-    textarea:focus {
-      outline: none;
-      border-color: var(--teal);
     }
 
     /* Print Styles */
@@ -374,92 +202,16 @@ plus source view for copying HTML and print functionality.
       <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge">
     </a>
     <div class="nav-actions">
-      <a href="/print/" class="nav-link">All Print Materials</a>
-      <button class="nav-btn nav-btn-secondary" onclick="window.print()">Print / Save PDF</button>
-      <div class="nav-dropdown">
-        <button class="nav-btn" id="toggleBtn" onclick="toggleView()">View Source</button>
-        <button class="nav-btn nav-dropdown-toggle" onclick="toggleDropdown(event)" aria-label="More options">&#9662;</button>
-        <div class="nav-dropdown-menu" id="dropdownMenu">
-          <button onclick="window.print()">Print / Save as PDF</button>
-          <a href="?raw" target="_blank">View Raw HTML</a>
-        </div>
-      </div>
+      <a href="/print/" class="nav-link">&larr; All Print Materials</a>
+      <button class="nav-btn" onclick="window.print()">Print / Save PDF</button>
     </div>
   </nav>
 
   <main>
-    <!-- Preview View -->
     <div class="print-frame" id="previewView">
       {{ raw_content }}
     </div>
-
-    <!-- Source View -->
-    <div class="source-view" id="sourceView">
-      <div class="source-header">
-        <h2>HTML Source</h2>
-        <p>Copy the HTML to use in other tools or print directly</p>
-      </div>
-
-      {% if page.format %}
-      <div class="source-meta">
-        <div class="source-meta-label">Format</div>
-        <div class="source-meta-value">{{ page.format }}</div>
-      </div>
-      {% endif %}
-
-      <div class="source-actions">
-        <button class="btn" onclick="copySource()">Copy HTML</button>
-        <span class="copied" id="copied">Copied to clipboard</span>
-      </div>
-
-      <textarea id="source" readonly>{{ raw_content | strip | xml_escape }}</textarea>
-    </div>
   </main>
 
-  <script>
-    // Check for raw mode
-    if (window.location.search.includes('raw')) {
-      document.body.innerHTML = `{{ raw_content | strip | xml_escape }}`.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').replace(/&quot;/g, '"');
-    }
-
-    function toggleDropdown(e) {
-      e.stopPropagation();
-      const menu = document.getElementById('dropdownMenu');
-      menu.classList.toggle('open');
-    }
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function() {
-      const menu = document.getElementById('dropdownMenu');
-      menu.classList.remove('open');
-    });
-
-    function toggleView() {
-      const preview = document.getElementById('previewView');
-      const source = document.getElementById('sourceView');
-      const btn = document.getElementById('toggleBtn');
-
-      if (source.classList.contains('active')) {
-        source.classList.remove('active');
-        preview.classList.remove('hidden');
-        btn.textContent = 'View Source';
-      } else {
-        source.classList.add('active');
-        preview.classList.add('hidden');
-        btn.textContent = 'View Preview';
-      }
-    }
-
-    function copySource() {
-      const textarea = document.getElementById('source');
-      textarea.select();
-      textarea.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(textarea.value).then(() => {
-        const copied = document.getElementById('copied');
-        copied.classList.add('show');
-        setTimeout(() => copied.classList.remove('show'), 2000);
-      });
-    }
-  </script>
 </body>
 </html>
