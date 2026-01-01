@@ -6,7 +6,7 @@
 set -e
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-IMAGES_DIR="${REPO_ROOT}/website/assets/images"
+IMAGES_DIR="${REPO_ROOT}/assets/images"
 
 # Size limits (in KB)
 HERO_MAX_KB=500

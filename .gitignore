@@ -1,8 +1,8 @@
-# Jekyll
-website/_site/
-website/.sass-cache/
-website/.jekyll-cache/
-website/.jekyll-metadata
+# Jekyll (root level)
+/_site/
+/.sass-cache/
+/.jekyll-cache/
+/.jekyll-metadata
 
 # Dependencies
 **/node_modules/

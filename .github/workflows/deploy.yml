@@ -38,18 +38,16 @@ jobs:
       - name: Cache gems
         uses: actions/cache@v4
         with:
-          path: website/vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('website/Gemfile.lock') }}
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile.lock') }}
           restore-keys: ${{ runner.os }}-gems-
 
       - name: Install dependencies
-        working-directory: website
         run: |
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
 
       - name: Build Jekyll site for production
-        working-directory: website
         env:
           JEKYLL_ENV: production
         run: bundle exec jekyll build
@@ -62,7 +60,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync website/_site/ s3://tedxbreckenridge-website \
+          aws s3 sync _site/ s3://tedxbreckenridge-website \
             --delete \
             --cache-control "public, max-age=3600" \
             --exclude "*.DS_Store"

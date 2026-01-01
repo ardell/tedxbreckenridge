@@ -1,0 +1,330 @@
+---
+layout: null
+title: Email Templates
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Templates | TEDxBreckenridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Core TED Brand */
+      --ted-red: #e4291c;
+      --ted-red-dark: #C70022;
+      --black: #000;
+      --white: #FFF;
+
+      /* Evergreen Palette */
+      --teal: #3F6F6F;
+      --forest: #4A7470;
+      --charcoal: #2A2A2A;
+      --stone: #676767;
+      --cream: #F9F7F4;
+      --sand: #E8E6E3;
+      --teal-light: #A3C4C4;
+
+      /* Typography */
+      --font-primary: 'Helvetica Neue', helvetica, inter, arial, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    /* Navigation - matches main site */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--white);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 1px 0 rgb(0 0 0 / 8%);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      line-height: 0;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+      vertical-align: middle;
+      position: relative;
+      top: 2px;
+    }
+
+    /* Main Content */
+    main {
+      padding-top: 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-header {
+      background: var(--cream);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .page-title {
+      font-family: var(--font-primary);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .page-subtitle {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: var(--stone);
+      max-width: 600px;
+      margin: 16px auto 0;
+    }
+
+    /* Email List */
+    .email-list-container {
+      flex: 1;
+      padding: 48px 48px 80px;
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .email-list {
+      list-style: none;
+    }
+
+    .email-item + .email-item {
+      border-top: 1px solid var(--sand);
+    }
+
+    .email-link {
+      display: block;
+      padding: 32px 0;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .email-date {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 8px;
+    }
+
+    .email-title {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 8px;
+      line-height: 1.3;
+      transition: color 0.2s ease;
+    }
+
+    .email-link:hover .email-title {
+      color: var(--teal);
+    }
+
+    .email-subject {
+      font-size: 15px;
+      color: var(--stone);
+      font-style: italic;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--stone);
+    }
+
+    .empty-state h2 {
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .empty-state code {
+      background: var(--cream);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 40px 48px;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-link {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgb(255 255 255 / 80%);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--white);
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: rgb(255 255 255 / 60%);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav {
+        padding: 16px 24px;
+      }
+
+      .nav-logo img {
+        height: 32px;
+      }
+
+      main {
+        padding-top: 64px;
+      }
+
+      .page-header {
+        padding: 60px 24px;
+      }
+
+      .email-list-container {
+        padding: 32px 24px 60px;
+      }
+
+      .email-link {
+        padding: 24px 0;
+      }
+
+      .email-title {
+        font-size: 18px;
+      }
+
+      .footer {
+        padding: 32px 24px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="/" class="nav-logo">
+      <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge">
+    </a>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1 class="page-title">Email Templates</h1>
+      <p class="page-subtitle">Preview and copy HTML for Mailchimp campaigns</p>
+    </div>
+
+    <div class="email-list-container">
+      {% if site.emails %}
+      {% assign sorted_emails = site.emails | sort: 'date' | reverse %}
+      {% endif %}
+      {% if sorted_emails and sorted_emails.size > 0 %}
+      <ul class="email-list">
+        {% for email in sorted_emails %}
+        <li class="email-item">
+          <a href="{{ email.url }}" class="email-link">
+            <div class="email-date">{{ email.date | date: "%B %d, %Y" }}</div>
+            <h2 class="email-title">{{ email.title }}</h2>
+            {% if email.subject %}
+            <div class="email-subject">"{{ email.subject }}"</div>
+            {% endif %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <div class="empty-state">
+        <h2>No emails yet</h2>
+        <p>Add email templates to <code>_emails/</code></p>
+      </div>
+      {% endif %}
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <a href="/" class="footer-link">← Back to website</a>
+      <span class="footer-note">Development only · Not deployed to production</span>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation scroll effect
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

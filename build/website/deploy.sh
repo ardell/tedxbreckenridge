@@ -19,11 +19,11 @@ AWS_REGION=${AWS_REGION:-us-west-1}
 AWS_PROFILE=${AWS_PROFILE:-${AWS_SSO_PROFILE:-tedxbreckenridge-production}}
 S3_BUCKET=${S3_BUCKET:-"tedxbreckenridge-website"}
 
-SITE_DIR="$REPO_ROOT/website"
+SITE_DIR="$REPO_ROOT"
 BUILD_DIR="${SITE_DIR}/_site"
 
-if [ ! -d "$SITE_DIR" ]; then
-  echo "Error: Directory website/ does not exist"
+if [ ! -f "$SITE_DIR/Gemfile" ]; then
+  echo "Error: Gemfile not found at project root"
   exit 1
 fi
 
