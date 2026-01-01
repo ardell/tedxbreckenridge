@@ -4,10 +4,17 @@
 # Override URL for local development
 url: "http://localhost:4000"
 
-# Include emails directory (excluded in _config.yml for production)
-include:
-  - _emails/
-  - emails/
+# Override exclude list to include emails directories (excluded in production)
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - README.md
+  - style-guide/
 
 # Emails collection (dev only - not deployed to production)
 collections:
