@@ -1,0 +1,25 @@
+# Development-only configuration
+# Used alongside _config.yml when running locally
+
+# Override URL for local development
+url: "http://localhost:4000"
+
+# Include emails directory (excluded in _config.yml for production)
+include:
+  - _emails/
+  - emails/
+
+# Emails collection (dev only - not deployed to production)
+collections:
+  emails:
+    output: true
+    permalink: /emails/:title/
+
+# Include emails in development builds
+defaults:
+  - scope:
+      path: ""
+      type: "emails"
+    values:
+      layout: "email"
+      sitemap: false

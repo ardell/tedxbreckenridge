@@ -53,6 +53,8 @@ exclude:
   - gemfiles/
   - README.md
   - style-guide/
+  - _emails/
+  - emails/
 
 # Social Media
 social:
