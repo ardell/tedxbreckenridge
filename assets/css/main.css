@@ -2507,11 +2507,11 @@ body.layout-post {
     display: flex;
     gap: var(--space-12);
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     font-size: 13px;
     color: var(--stone);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05em;
 }
 
 .blog-post-date {
@@ -2526,7 +2526,7 @@ body.layout-post {
 .blog-post-title {
     font-size: 24px;
     line-height: 1.3;
-    margin: 0 0 16px;
+    margin: 0 0 8px;
 }
 
 .blog-post-title a {
