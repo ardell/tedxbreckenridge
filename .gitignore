@@ -22,6 +22,9 @@ website/.jekyll-metadata
 *.gem
 *.rbc
 
+# Email previews (generated)
+emails/_previews/
+
 # Environment files
 .env
 .env.local
