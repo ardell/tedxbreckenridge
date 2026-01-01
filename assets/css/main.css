@@ -76,6 +76,19 @@ body {
     overflow-x: hidden;
 }
 
+/* Default Link Styles */
+a {
+    color: var(--terracotta);
+    text-decoration: none;
+    border-bottom: 1px solid var(--terracotta-light);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    color: var(--ted-red);
+    border-bottom-color: var(--ted-red);
+}
+
 /* Visually Hidden - Accessibility */
 .visually-hidden {
     position: absolute;
@@ -98,6 +111,7 @@ body {
     color: var(--white);
     padding: 12px 20px;
     text-decoration: none;
+    border-bottom: none;
     font-weight: 500;
     z-index: 10000;
     border-radius: 0 0 4px;
@@ -151,6 +165,7 @@ select:focus-visible {
     display: flex;
     align-items: center;
     line-height: 0;
+    border-bottom: none;
 }
 
 .nav-logo img {
@@ -174,6 +189,7 @@ select:focus-visible {
     font-weight: 400;
     color: var(--black);
     text-decoration: none;
+    border-bottom: none;
     letter-spacing: 0.01em;
     transition: color 0.2s ease;
 }
@@ -241,6 +257,7 @@ select:focus-visible {
     font-weight: 400;
     color: var(--black);
     text-decoration: none;
+    border-bottom: none;
     letter-spacing: 0.01em;
     transition: background 0.2s ease, color 0.2s ease;
 }
@@ -259,6 +276,7 @@ select:focus-visible {
     background: var(--ted-red);
     color: var(--white);
     text-decoration: none;
+    border-bottom: none;
     transition: background 0.2s ease;
 }
 
@@ -611,6 +629,7 @@ select:focus-visible {
     letter-spacing: 0.02em;
     padding: 14px 28px;
     text-decoration: none;
+    border-bottom: none;
     transition: all 0.2s ease;
     display: inline-block;
     vertical-align: middle;
@@ -981,9 +1000,10 @@ select:focus-visible {
 }
 
 .gallery-cta a {
-    color: var(--teal-light);
+    color: var(--terracotta-light);
     font-size: 14px;
     text-decoration: none;
+    border-bottom: none;
     display: inline-flex;
     align-items: center;
     gap: var(--space-8);
@@ -1137,8 +1157,9 @@ select:focus-visible {
     font-family: var(--font-primary);
     font-size: 13px;
     font-weight: 400;
-    color: var(--teal);
+    color: var(--terracotta);
     text-decoration: none;
+    border-bottom: none;
     display: flex;
     align-items: center;
     gap: var(--space-8);
@@ -1507,6 +1528,7 @@ select:focus-visible {
     font-weight: 400;
     color: rgb(255 255 255 / 80%);
     text-decoration: none;
+    border-bottom: none;
     transition: color 0.2s ease;
 }
 
@@ -1538,6 +1560,7 @@ select:focus-visible {
     font-weight: 400;
     color: rgb(255 255 255 / 87.5%);
     text-decoration: none;
+    border-bottom: none;
     transition: color 0.2s ease;
 }
 
@@ -1902,18 +1925,6 @@ select:focus-visible {
     color: var(--black);
 }
 
-.page-content a:not(.btn) {
-    color: var(--teal);
-    text-decoration: none;
-    border-bottom: 1px solid var(--teal-light);
-    transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.page-content a:not(.btn):hover {
-    color: var(--ted-red);
-    border-bottom-color: var(--ted-red);
-}
-
 .page-content blockquote {
     margin: 32px 0;
     padding: 24px 32px;
@@ -1993,16 +2004,16 @@ select:focus-visible {
     display: inline-block;
     font-size: 16px;
     font-weight: 500;
-    color: var(--teal);
+    color: var(--terracotta);
     text-decoration: none;
-    border-bottom: 2px solid var(--teal-light);
+    border-bottom: 2px solid var(--terracotta-light);
     padding-bottom: 2px;
     transition: all 0.2s ease;
 }
 
 .contact-option-link:hover {
-    color: var(--terracotta);
-    border-bottom-color: var(--terracotta);
+    color: var(--ted-red);
+    border-bottom-color: var(--ted-red);
 }
 
 /* Contact Form Section */
@@ -2123,6 +2134,7 @@ select:focus-visible {
     border: 2px solid var(--sand);
     border-radius: 6px;
     text-decoration: none;
+    border-bottom: 2px solid var(--sand);
     color: var(--black);
     font-weight: 500;
     transition: all 0.2s ease;
@@ -2525,7 +2537,7 @@ body.layout-post {
 }
 
 .blog-post-title a:hover {
-    color: var(--teal);
+    color: var(--terracotta);
 }
 
 .blog-post-excerpt {
@@ -2542,7 +2554,7 @@ body.layout-post {
     gap: var(--space-8);
     font-size: 15px;
     font-weight: 600;
-    color: var(--teal);
+    color: var(--terracotta);
     text-decoration: none;
     border-bottom: none;
     transition: all 0.2s ease;
@@ -2550,7 +2562,7 @@ body.layout-post {
 }
 
 .blog-post-link:hover {
-    color: var(--terracotta);
+    color: var(--ted-red);
     gap: var(--space-12);
 }
 
@@ -3072,18 +3084,6 @@ body.layout-post {
   margin: 0 0 var(--space-16);
 }
 
-.prose a {
-  color: var(--teal);
-  text-decoration: none;
-  border-bottom: 1px solid var(--teal-light);
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.prose a:hover {
-  color: var(--ted-red);
-  border-bottom-color: var(--ted-red);
-}
-
 /* Button group - horizontal button container */
 .btn-group {
   display: flex;
@@ -3506,6 +3506,7 @@ body.layout-post {
   line-height: 1;
   color: var(--charcoal);
   text-decoration: none;
+  border-bottom: none;
   background: var(--white);
   border-radius: 100px;
   transition: background-color 0.15s ease, color 0.15s ease;
