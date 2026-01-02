@@ -264,6 +264,44 @@ assets/images/
 
 ---
 
+## Email Templates
+
+Email templates are stored in `_emails/` and use Jekyll's collection system. They're designed to be previewed locally and then copied into Mailchimp.
+
+### Front Matter Fields
+
+Each email template should include these front matter fields:
+
+```yaml
+---
+title: "Email Title (for internal reference)"
+date: 2026-01-01
+subject: "Subject line for the email"
+preview_text: "Preview text shown in inbox (150 chars max)"
+description: "Brief description of the email's purpose"
+---
+```
+
+### Field Guidelines
+
+| Field | Purpose | Guidelines |
+|-------|---------|------------|
+| `title` | Internal reference name | Descriptive, includes date/event if applicable |
+| `date` | Sort order in email list | Use the creation or send date |
+| `subject` | Email subject line | 50-60 characters, compelling and clear |
+| `preview_text` | Inbox preview snippet | **150 characters or less**. Appears after the subject line in email clients. Should complement (not repeat) the subject. |
+| `description` | Internal documentation | Brief note about the email's purpose |
+
+### Workflow
+
+1. Create/edit email in `_emails/`
+2. Preview locally at `/emails/`
+3. Click "View Source" to see recommended subject and preview text
+4. Copy HTML into Mailchimp's code editor
+5. Set subject line and preview text in Mailchimp campaign settings
+
+---
+
 ## Content Writing
 
 ### Brand Voice

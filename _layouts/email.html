@@ -423,6 +423,13 @@ plus source view for copying to Mailchimp.
       </div>
       {% endif %}
 
+      {% if page.preview_text %}
+      <div class="source-subject">
+        <div class="source-subject-label">Preview Text</div>
+        <div class="source-subject-value">{{ page.preview_text }}</div>
+      </div>
+      {% endif %}
+
       <div class="source-actions">
         <button class="btn" onclick="copySource()">Copy HTML</button>
         <span class="copied" id="copied">Copied to clipboard</span>
