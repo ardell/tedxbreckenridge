@@ -7,7 +7,7 @@ description: >-
   Join us for an evening of inspiring talks, local voices, and meaningful connections.
 
 baseurl: "" # subpath of your site, e.g. /2026
-url: "http://localhost:4000" # base hostname & protocol
+url: "https://www.tedxbreckenridge.com" # base hostname & protocol
 
 # Event Details
 event:
