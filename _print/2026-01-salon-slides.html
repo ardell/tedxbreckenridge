@@ -1,0 +1,710 @@
+---
+title: "January Salon Slides - Elevated Cuisine"
+date: 2026-01-01
+description: "Presentation slides for the January 2026 Salon event"
+format: "1920x1080 Slides"
+---
+<style>
+    @page {
+      size: 1920px 1080px;
+      margin: 0;
+    }
+
+    /* Preview scaling container */
+    .slides-container {
+      --container-width: min(calc(100vw - 80px), 1920px);
+      --scale: calc(var(--container-width) / 1920);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: calc(40px * var(--scale));
+      padding: 20px 0;
+      background: #2A2A2A;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slides-container * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @media screen {
+      .slide {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        transform-origin: top center;
+        transform: scale(var(--scale));
+        margin-bottom: calc(-1080px * (1 - var(--scale)));
+      }
+    }
+
+    /* Variables */
+    :root {
+      --ted-red: #e4291c;
+      --teal: #3F6F6F;
+      --forest: #4A7470;
+      --charcoal: #2A2A2A;
+      --cream: #F9F7F4;
+      --white: #fff;
+      --black: #000;
+    }
+
+    /* Slide base */
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    .slide:last-child {
+      page-break-after: avoid;
+    }
+
+    /* Dark slide with charcoal gradient */
+    .slide--dark {
+      background: linear-gradient(135deg, #2A2A2A 0%, #1a1a1a 100%);
+      color: var(--white);
+    }
+
+    /* Light slide */
+    .slide--light {
+      background: var(--cream);
+      color: var(--charcoal);
+    }
+
+    /* Background image support */
+    .slide__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide__overlay--dark {
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+    }
+
+    .slide__overlay--gradient {
+      background: linear-gradient(
+        to right,
+        rgba(42, 42, 42, 0.95) 0%,
+        rgba(42, 42, 42, 0.7) 50%,
+        rgba(42, 42, 42, 0.4) 100%
+      );
+    }
+
+    .slide__overlay--warm {
+      background: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.6) 40%,
+        rgba(0, 0, 0, 0.2) 70%,
+        transparent 100%
+      );
+    }
+
+    /* Content container */
+    .slide__content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      padding: 80px 120px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Title slide specific */
+    .slide--title .slide__content {
+      justify-content: flex-start;
+      padding-top: 160px;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .slide--title .logo {
+      width: 400px;
+      height: auto;
+      margin-bottom: 40px;
+    }
+
+    .slide--title .presents {
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 40px;
+    }
+
+    .slide--title .title {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 900px;
+      margin-bottom: 60px;
+    }
+
+    .slide--title .subtitle {
+      font-size: 32px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Section header */
+    .section-header {
+      margin-bottom: 60px;
+    }
+
+    .section-header__title {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-header__subtitle {
+      font-size: 28px;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    /* Split layout with featured image */
+    .slide__split {
+      display: flex;
+      gap: 80px;
+      flex: 1;
+      align-items: center;
+    }
+
+    .slide__split--reverse {
+      flex-direction: row-reverse;
+    }
+
+    .slide__split-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide__split-image {
+      flex: 0 0 500px;
+      height: 600px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .slide__split-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Photo grid for visual interest */
+    .photo-strip {
+      display: flex;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .photo-strip__item {
+      flex: 1;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-strip__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* List styling */
+    .content-list {
+      list-style: none;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .content-list li {
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1.4;
+      padding-left: 60px;
+      position: relative;
+    }
+
+    .content-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 24px;
+      height: 4px;
+      background: var(--ted-red);
+    }
+
+    .slide--light .content-list li::before {
+      background: var(--teal);
+    }
+
+    /* Agenda list */
+    .agenda-list {
+      list-style: none;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    .agenda-list li {
+      font-size: 44px;
+      font-weight: 400;
+      line-height: 1.3;
+      padding-left: 80px;
+      position: relative;
+    }
+
+    .agenda-list li::before {
+      content: attr(data-number);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--ted-red);
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(228, 41, 28, 0.15);
+      border-radius: 50%;
+    }
+
+    /* Speaker slide */
+    .speaker-layout {
+      flex: 1;
+      display: flex;
+      gap: 80px;
+      align-items: flex-start;
+    }
+
+    .speaker-bio {
+      flex: 1;
+      max-width: 900px;
+    }
+
+    .speaker-name {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .speaker-title {
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--teal);
+      margin-bottom: 40px;
+    }
+
+    .slide--dark .speaker-title {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .speaker-description {
+      font-size: 28px;
+      line-height: 1.5;
+      opacity: 0.9;
+      max-width: 750px;
+    }
+
+    /* Speaker slide with background - keep content top-left */
+    .slide--speaker .slide__content {
+      justify-content: flex-start;
+      padding-top: 100px;
+    }
+
+    .slide--speaker .section-header {
+      margin-bottom: 40px;
+    }
+
+    .slide--speaker .section-header__title {
+      font-size: 52px;
+      max-width: 800px;
+    }
+
+    /* Questions slide */
+    .questions-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px 80px;
+      align-content: center;
+    }
+
+    .question-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 40px;
+      border-left: 6px solid var(--ted-red);
+    }
+
+    .question-card__number {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ted-red);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .question-card__text {
+      font-size: 28px;
+      line-height: 1.4;
+    }
+
+    /* CTA slide */
+    .slide--cta .slide__content {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cta-message {
+      font-size: 52px;
+      font-weight: 500;
+      line-height: 1.4;
+      max-width: 1200px;
+      margin-bottom: 80px;
+    }
+
+    .cta-section {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .qr-code {
+      width: 280px;
+      height: 280px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .qr-code img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .cta-text {
+      text-align: left;
+    }
+
+    .cta-text__label {
+      font-size: 24px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+    }
+
+    .cta-text__title {
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    /* Footer branding */
+    .slide-footer {
+      position: absolute;
+      bottom: 40px;
+      right: 60px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .slide-footer__logo {
+      height: 32px;
+      width: auto;
+      opacity: 0.6;
+    }
+
+    /* Upcoming events */
+    .events-list {
+      list-style: none;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 60px;
+    }
+
+    .events-list li {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.3;
+      padding-left: 80px;
+      position: relative;
+    }
+
+    .events-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 48px;
+      color: var(--ted-red);
+    }
+
+    .event-date {
+      display: block;
+      font-size: 28px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 8px;
+    }
+
+    /* Print styles - must be at end to override base styles */
+    @media print {
+      .slides-container {
+        --scale: 1;
+        display: block;
+        padding: 0;
+        gap: 0;
+      }
+      .slide {
+        box-shadow: none;
+        transform: none;
+        margin-bottom: 0;
+      }
+      .slide__split-image,
+      .photo-strip__item {
+        box-shadow: none;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+    }
+
+  </style>
+
+  <div class="slides-container">
+
+  <!-- Slide 1: Title -->
+  <div class="slide slide--dark slide--title">
+    <div class="slide__background" style="background-image: url('/assets/images/heroes/salon-elevated-cuisine.jpg');"></div>
+    <div class="slide__overlay slide__overlay--dark"></div>
+    <div class="slide__content">
+      <img src="/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png" alt="TEDxBreckenridge" class="logo">
+      <div class="presents">Salon presents</div>
+      <h1 class="title">Elevated Cuisine: The Science and Art of Cooking at Altitude</h1>
+      <div class="subtitle">Featuring the culinary team from Colorado Mountain College</div>
+    </div>
+  </div>
+
+  <!-- Slide 2: Upcoming Events -->
+  <div class="slide slide--dark">
+    <div class="slide__content">
+      <div class="slide__split">
+        <div class="slide__split-content">
+          <div class="section-header">
+            <h2 class="section-header__title">Upcoming Events</h2>
+          </div>
+          <ul class="events-list">
+            <li>
+              Next Salon Event
+              <span class="event-date">March 2026</span>
+            </li>
+            <li>
+              TEDxBreckenridge Main Event
+              <span class="event-date">October 2026</span>
+            </li>
+          </ul>
+        </div>
+        <div class="slide__split-image">
+          <img src="/assets/images/events/wide-shot-of-venue-and-emcee-straight-on.jpg" alt="TEDxBreckenridge event">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png" alt="" class="slide-footer__logo">
+    </div>
+  </div>
+
+  <!-- Slide 3: What is a TEDx Salon? -->
+  <div class="slide slide--dark">
+    <div class="slide__content">
+      <div class="slide__split slide__split--reverse">
+        <div class="slide__split-content">
+          <div class="section-header">
+            <h2 class="section-header__title">What is a TEDx Salon?</h2>
+          </div>
+          <ul class="content-list">
+            <li>Smaller, more intimate gatherings designed for close connection</li>
+            <li>Community-oriented discussions rather than passive viewing</li>
+            <li>Single-topic focus, allowing deeper exploration and nuance</li>
+            <li>Interactive format with space for questions and shared perspectives</li>
+            <li>Built to grow a local community of curious, lifelong learners</li>
+          </ul>
+        </div>
+        <div class="slide__split-image">
+          <img src="/assets/images/events/attendees-mingling.jpg" alt="Attendees mingling at TEDxBreckenridge">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png" alt="" class="slide-footer__logo">
+    </div>
+  </div>
+
+  <!-- Slide 4: Agenda -->
+  <div class="slide slide--dark">
+    <div class="slide__content">
+      <div class="slide__split">
+        <div class="slide__split-content">
+          <div class="section-header">
+            <h2 class="section-header__title">Agenda</h2>
+          </div>
+          <ul class="agenda-list">
+            <li data-number="1">Bernhard Schrag — Cooking at Altitude</li>
+            <li data-number="2">Q&amp;A with Bernhard Schrag</li>
+            <li data-number="3">Community Discussion (in groups of 3)</li>
+          </ul>
+        </div>
+        <div class="slide__split-image">
+          <img src="/assets/images/events/speaker-on-red-dot-with-string-lights.jpg" alt="Speaker on stage" style="object-position: 10% center;">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png" alt="" class="slide-footer__logo">
+    </div>
+  </div>
+
+  <!-- Slide 5: Speaker Bio -->
+  <div class="slide slide--dark slide--speaker">
+    <div class="slide__background" style="background-image: url('/assets/images/heroes/salon-cutting-board.jpg');"></div>
+    <div class="slide__overlay slide__overlay--warm"></div>
+    <div class="slide__content">
+      <div class="section-header">
+        <h2 class="section-header__title">Elevated Cuisine: The Science<br>and Art of Cooking at Altitude</h2>
+      </div>
+      <div class="speaker-layout">
+        <div class="speaker-bio">
+          <h3 class="speaker-name">Bernhard Schrag</h3>
+          <div class="speaker-title">Associate Professor of Culinary Arts, Colorado Mountain College</div>
+          <p class="speaker-description">
+            Bernhard Schrag teaches culinary arts at CMC's Vail Valley campus in Edwards. With degrees in adult and vocational education from Australia and New Zealand, he brings a global perspective to high-altitude cooking. Beyond the classroom, Bernhard is an avid outdoorsman who enjoys camping with family, foraging for porcini mushrooms, and instructing skiing at Keystone.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png" alt="" class="slide-footer__logo">
+    </div>
+  </div>
+
+  <!-- Slide 6: Community Questions -->
+  <div class="slide slide--dark">
+    <div class="slide__content">
+      <div class="section-header">
+        <h2 class="section-header__title">Community Questions</h2>
+        <p class="section-header__subtitle">Discuss with your group of 3</p>
+      </div>
+      <div class="questions-grid">
+        <div class="question-card">
+          <div class="question-card__number">Question 1</div>
+          <div class="question-card__text">What's a recipe or dish that never seems to turn out right at altitude? What have you tried?</div>
+        </div>
+        <div class="question-card">
+          <div class="question-card__number">Question 2</div>
+          <div class="question-card__text">Have you discovered any unexpected cooking tricks since moving to the mountains?</div>
+        </div>
+        <div class="question-card">
+          <div class="question-card__number">Question 3</div>
+          <div class="question-card__text">How does altitude affect your approach to entertaining or cooking for guests?</div>
+        </div>
+        <div class="question-card">
+          <div class="question-card__number">Question 4</div>
+          <div class="question-card__text">What local or seasonal ingredients do you love cooking with in Colorado?</div>
+        </div>
+        <div class="question-card">
+          <div class="question-card__number">Question 5</div>
+          <div class="question-card__text">If you could master one dish at altitude, what would it be and why?</div>
+        </div>
+        <div class="question-card">
+          <div class="question-card__number">Question 6</div>
+          <div class="question-card__text">What's a family recipe that needed reinventing when you moved to high altitude?</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png" alt="" class="slide-footer__logo">
+    </div>
+  </div>
+
+  <!-- Slide 7: Call to Action -->
+  <div class="slide slide--dark slide--cta">
+    <div class="slide__content">
+      <p class="cta-message">Together, let's build a community where ideas inspire action.</p>
+      <div class="cta-section">
+        <!-- QR code for: https://givebutter.com/tedxbreckenridge -->
+        <!-- Generate at: https://api.qrserver.com/v1/create-qr-code/?size=510x510&data=https://givebutter.com/tedxbreckenridge -->
+        <div class="qr-code">
+          <img src="/assets/images/qr-codes/givebutter-tedxbreckenridge.png" alt="Donate to TEDxBreckenridge">
+        </div>
+        <div class="cta-text">
+          <div class="cta-text__label">Enjoyed this?</div>
+          <div class="cta-text__title">Donations make these events possible</div>
+        </div>
+      </div>
+      <div class="photo-strip">
+        <div class="photo-strip__item">
+          <img src="/assets/images/events/team-posing-in-front-of-tedxbreckenridge-x.jpg" alt="TEDxBreckenridge team">
+        </div>
+        <div class="photo-strip__item">
+          <img src="/assets/images/events/attendees-dancing-outside-with-tambourine.jpg" alt="Community celebration">
+        </div>
+        <div class="photo-strip__item">
+          <img src="/assets/images/events/speaker-giving-a-talk-on-red-dot.jpg" alt="Speaker on stage" style="object-position: center 20%;">
+        </div>
+        <div class="photo-strip__item">
+          <img src="/assets/images/events/the-team-bowing-for-applause.jpg" alt="Team taking a bow">
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png" alt="" class="slide-footer__logo">
+    </div>
+  </div>
+
+  </div><!-- .slides-container -->

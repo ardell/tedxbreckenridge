@@ -133,6 +133,16 @@ plus source view for copying HTML and print functionality.
       overflow: hidden;
     }
 
+    /* Slides Preview Frame - 1920x1080 scaled to viewport */
+    .print-frame--slides {
+      width: calc(100vw - 80px);
+      max-width: 1920px;
+      min-height: auto;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+    }
+
     /* Print Styles */
     @media print {
       body {
@@ -185,6 +195,11 @@ plus source view for copying HTML and print functionality.
         margin: 0 16px;
       }
 
+      .print-frame--slides {
+        width: calc(100vw - 32px);
+        margin: 0 16px;
+      }
+
       .source-view {
         margin: 0 16px;
         padding: 24px;
@@ -208,7 +223,7 @@ plus source view for copying HTML and print functionality.
   </nav>
 
   <main>
-    <div class="print-frame" id="previewView">
+    <div class="print-frame{% if page.format contains 'Slides' or page.format contains '1920' %} print-frame--slides{% endif %}" id="previewView">
       {{ raw_content }}
     </div>
   </main>
