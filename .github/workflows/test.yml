@@ -43,7 +43,7 @@ jobs:
           bundle install --jobs 4 --retry 3
 
       - name: Build Jekyll site for testing
-        run: bundle exec jekyll build --config _config.yml
+        run: bundle exec jekyll build --config _config.yml,_config.test.yml
 
       - name: Validate image sizes
         run: ./build/website/validate-images.sh

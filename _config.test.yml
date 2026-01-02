@@ -1,0 +1,5 @@
+# Test/CI configuration
+# Used alongside _config.yml when running tests in CI
+# Overrides URL so sitemap contains localhost URLs for pa11y testing
+
+url: "http://localhost:4000"
