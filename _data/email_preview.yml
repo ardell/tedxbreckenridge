@@ -16,10 +16,7 @@ FORWARD: "#forward-to-friend"
 LIST_NAME: TEDxBreckenridge Mailing List
 LIST_COMPANY: TEDxBreckenridge
 LIST_URL: https://tedxbreckenridge.com
-LIST_ADDRESS: |
-  TEDxBreckenridge<br>
-  PO Box 1234<br>
-  Breckenridge, CO 80424
+LIST_ADDRESS: "TEDxBreckenridge<br>PO Box 1234<br>Breckenridge, CO 80424"
 
 # Campaign info
 MC_SUBJECT: "[Preview] Email Subject Line"
