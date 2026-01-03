@@ -379,6 +379,25 @@ Optional givebutter parameters for additional tracking:
 
 **Important for Claude:** When adding any new ticketsauce.com or givebutter.com link, prompt the user to provide unique tracking parameters for that specific placement. Propose a name following the naming conventions above (e.g., "I suggest using `tedxbreckenridge.com-about-donate` for this givebutter placement"). Each interface element (button, link, QR code) should have its own unique `utm_campaign` to enable accurate conversion tracking. Do not reuse existing tracking links for new placements.
 
+**QR Code Best Practices:**
+
+When adding QR codes to print templates, always include HTML comments documenting:
+1. The full URL the QR code points to (for easy reference and updating)
+2. The URL to regenerate the QR code image (using a QR code generator API)
+
+Example:
+```html
+<!-- QR code for: https://givebutter.com/tedxbreckenridge?utm_source=print&utm_campaign=print-flyer-example -->
+<!-- Generate at: https://api.qrserver.com/v1/create-qr-code/?size=510x510&data=https://givebutter.com/tedxbreckenridge?utm_source=print%26utm_campaign=print-flyer-example -->
+<img src="/assets/images/qr-codes/example-qr.png" alt="Description of QR code destination">
+```
+
+Notes:
+- URL-encode special characters in the QR generator URL (e.g., `&` becomes `%26`)
+- Store QR code images in `/assets/images/qr-codes/`
+- Use descriptive filenames for QR images (e.g., `givebutter-tedxbreckenridge.png`, `ticketsauce-jan-salon.png`)
+- When updating a QR code URL, regenerate the image and update both comments
+
 #### 4. Test HTML (Internal Links)
 ```bash
 cd website
