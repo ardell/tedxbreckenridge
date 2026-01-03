@@ -398,7 +398,18 @@ Notes:
 - Use descriptive filenames for QR images (e.g., `givebutter-tedxbreckenridge.png`, `ticketsauce-jan-salon.png`)
 - When updating a QR code URL, regenerate the image and update both comments
 
-#### 4. Test HTML (Internal Links)
+#### 4. Validate QR Code Documentation
+```bash
+./build/website/validate-qr-codes.sh
+```
+
+Ensures all QR code images have proper documentation comments:
+- `<!-- QR code for: [human-readable URL] -->` - The URL the QR code points to
+- `<!-- Generate at: [generator URL] -->` - URL to regenerate the QR code image
+
+Checks print templates, website pages, and email templates for QR code images.
+
+#### 5. Test HTML (Internal Links)
 ```bash
 cd website
 bundle exec htmlproofer ./_site \
@@ -413,7 +424,7 @@ Checks:
 - All images have alt text
 - No missing image files
 
-#### 5. Lint CSS
+#### 6. Lint CSS
 ```bash
 yarn test:css
 ```
@@ -424,7 +435,7 @@ Validates:
 - No duplicate properties
 - Proper selector naming
 
-#### 6. Test Accessibility
+#### 7. Test Accessibility
 ```bash
 # Start a local server in one terminal
 cd website
@@ -441,7 +452,7 @@ Checks:
 - Keyboard navigation
 - Screen reader compatibility
 
-#### 7. Check External Links (Optional)
+#### 8. Check External Links (Optional)
 ```bash
 cd website
 bundle exec htmlproofer ./_site \
@@ -472,6 +483,7 @@ If tests fail:
    - Accessibility issues → Fix color contrast, heading hierarchy, etc.
    - Oversized images → Optimize images before committing
    - Missing affiliate tracking → Add required UTM parameters to ticketsauce.com and givebutter.com links
+   - Missing QR code documentation → Add `<!-- QR code for: -->` and `<!-- Generate at: -->` comments
 4. **Push the fix** - Tests will re-run automatically
 
 ### What Gets Tested
@@ -482,6 +494,7 @@ Our test suite covers:
 - ✅ **Link Checking**: No broken internal/external links
 - ✅ **Image Validation**: All images optimized and have alt text
 - ✅ **Affiliate Tracking**: All ticketsauce.com and givebutter.com links have tracking parameters
+- ✅ **QR Code Documentation**: All QR codes have URL and generator comments
 - ✅ **CSS Linting**: Consistent, valid CSS
 - ✅ **Accessibility**: WCAG compliance, keyboard navigation
 - ✅ **Performance**: Image size limits enforced

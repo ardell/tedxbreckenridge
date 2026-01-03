@@ -80,3 +80,6 @@ jobs:
 
       - name: Validate affiliate tracking links
         run: ./build/website/validate-affiliate-links.sh
+
+      - name: Validate QR code documentation
+        run: ./build/website/validate-qr-codes.sh
