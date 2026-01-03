@@ -361,6 +361,8 @@ Required parameters:
 - `utm_source=affiliate`
 - `utm_id=<affiliate_id>`
 
+**Important for Claude:** When adding any new ticketsauce.com link, prompt the user to provide a unique affiliate tracking URL for that specific placement. Each interface element (button, link, QR code) should have its own unique `utm_campaign` and `utm_id` to enable accurate conversion tracking. Do not reuse existing affiliate links for new placements.
+
 #### 4. Test HTML (Internal Links)
 ```bash
 cd website

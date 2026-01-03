@@ -19,6 +19,28 @@ echo "========================================="
 echo ""
 
 ERRORS=0
+WARNINGS=0
+
+# Temporary file to track campaign usage
+CAMPAIGN_LOG=$(mktemp)
+trap "rm -f $CAMPAIGN_LOG" EXIT
+
+# Function to extract utm_campaign from URL
+extract_campaign() {
+  local url="$1"
+  # Handle both normal and URL-encoded formats
+  local campaign=""
+
+  # Try normal format first: utm_campaign=value
+  campaign=$(echo "$url" | grep -oE 'utm_campaign=[^&]+' | head -1 | sed 's/utm_campaign=//' || true)
+
+  # If not found, try URL-encoded format: utm_campaign%3D
+  if [[ -z "$campaign" ]]; then
+    campaign=$(echo "$url" | grep -oE 'utm_campaign%3D[^%&]+' | head -1 | sed 's/utm_campaign%3D//' || true)
+  fi
+
+  echo "$campaign"
+}
 
 # Function to check if a URL has affiliate tracking
 check_affiliate_tracking() {
@@ -45,6 +67,13 @@ check_affiliate_tracking() {
     echo ""
     return 1
   fi
+
+  # Log the campaign for duplicate checking
+  local campaign=$(extract_campaign "$url")
+  if [[ -n "$campaign" ]]; then
+    echo "${campaign}|${file}:${line_num}" >> "$CAMPAIGN_LOG"
+  fi
+
   return 0
 }
 
@@ -139,20 +168,61 @@ while IFS= read -r file; do
   done < "$file"
 done < <(find "${REPO_ROOT}/_print" -name "*.html" -type f 2>/dev/null || true)
 
+# Check for duplicate campaigns
+echo ""
+echo "Checking for duplicate utm_campaign values..."
+
+# Get unique campaigns and their counts
+if [[ -s "$CAMPAIGN_LOG" ]]; then
+  # Sort and count campaigns
+  while IFS= read -r campaign; do
+    count=$(grep -c "^${campaign}|" "$CAMPAIGN_LOG" || true)
+    if [[ $count -gt 3 ]]; then
+      echo -e "${RED}✗ utm_campaign '${campaign}' used ${count} times (max 3):${NC}"
+      grep "^${campaign}|" "$CAMPAIGN_LOG" | while IFS='|' read -r _ location; do
+        echo "    - $location"
+      done
+      echo ""
+      ERRORS=$((ERRORS + 1))
+    elif [[ $count -gt 1 ]]; then
+      echo -e "${YELLOW}⚠ utm_campaign '${campaign}' used ${count} times:${NC}"
+      grep "^${campaign}|" "$CAMPAIGN_LOG" | while IFS='|' read -r _ location; do
+        echo "    - $location"
+      done
+      echo ""
+      WARNINGS=$((WARNINGS + 1))
+    fi
+  done < <(cut -d'|' -f1 "$CAMPAIGN_LOG" | sort -u)
+fi
+
 # Summary
 echo ""
 echo "========================================="
-if [ $ERRORS -eq 0 ]; then
+if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
   echo -e "${GREEN}✓ All ticketsauce.com links have affiliate tracking!${NC}"
+  echo -e "${GREEN}✓ All utm_campaign values are unique!${NC}"
   echo "========================================="
   exit 0
+elif [ $ERRORS -eq 0 ]; then
+  echo -e "${GREEN}✓ All ticketsauce.com links have affiliate tracking!${NC}"
+  echo -e "${YELLOW}⚠ ${WARNINGS} utm_campaign value(s) used multiple times${NC}"
+  echo "========================================="
+  echo ""
+  echo "Consider using unique utm_campaign values for better tracking."
+  echo ""
+  exit 0
 else
-  echo -e "${RED}✗ ${ERRORS} link(s) missing affiliate tracking${NC}"
+  echo -e "${RED}✗ ${ERRORS} error(s)${NC}"
+  if [ $WARNINGS -gt 0 ]; then
+    echo -e "${YELLOW}⚠ ${WARNINGS} warning(s)${NC}"
+  fi
   echo "========================================="
   echo ""
   echo "All ticketsauce.com links must include:"
   echo "  - utm_source=affiliate"
   echo "  - utm_id=<affiliate_id>"
+  echo ""
+  echo "Each utm_campaign should be unique (max 3 uses per campaign)."
   echo ""
   echo "Example:"
   echo "  https://tedxbreckenridge.ticketsauce.com/e/event-name?utm_source=affiliate&utm_name=tedxbreckenridge.com&utm_campaign=homepage&utm_id=695827faa4044dcbae486ce50a1e63a3"
