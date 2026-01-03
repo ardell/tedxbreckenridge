@@ -32,7 +32,7 @@ description: Get in touch with TEDxBreckenridge. Apply to speak, volunteer, spon
   <div class="contact-option">
     <div class="contact-option-icon">❤️</div>
     <h3>Donate</h3>
-    <p>TEDxBreckenridge is a 501(c)(3) nonprofit organization run entirely by local volunteers. Every dollar you contribute goes directly toward making our events possible—from securing speakers and venues to producing high-quality content that reaches thousands in our community and beyond. Your donation helps ensure that transformative ideas remain accessible to everyone, regardless of their ability to pay. Together, we're building a platform for innovation, creativity, and meaningful conversation in the heart of the Rockies. <a href="https://givebutter.com/tedxbreckenridge" target="_blank" class="contact-option-link">Make a donation</a></p>
+    <p>TEDxBreckenridge is a 501(c)(3) nonprofit organization run entirely by local volunteers. Every dollar you contribute goes directly toward making our events possible—from securing speakers and venues to producing high-quality content that reaches thousands in our community and beyond. Your donation helps ensure that transformative ideas remain accessible to everyone, regardless of their ability to pay. Together, we're building a platform for innovation, creativity, and meaningful conversation in the heart of the Rockies. <a href="https://givebutter.com/tedxbreckenridge?utm_source=website&utm_campaign=tedxbreckenridge.com-contact-donate" target="_blank" class="contact-option-link">Make a donation</a></p>
   </div>
 
   <div class="contact-option">
