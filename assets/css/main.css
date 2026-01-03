@@ -3523,3 +3523,274 @@ body.layout-post {
   background: var(--charcoal);
   color: var(--white);
 }
+
+/* Logo light/dark mode visibility (base state) */
+.logo-light {
+    display: block;
+}
+
+.logo-dark {
+    display: none;
+}
+
+/* ==========================================================================
+   DARK MODE
+   Automatic detection via prefers-color-scheme media query.
+   Overrides CSS custom properties for dark theme while preserving brand identity.
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Background/text inversions */
+        --white: #121212;
+        --black: #FFF;
+        --cream: #1E1E1E;
+        --sand: #252525;
+        --sand-light: #1A1A1A;
+        --cream-dark: #2A2A2A;
+        --charcoal: #E8E6E3;
+        --stone: #A0A0A0;
+        --border-color: #333;
+
+        /* Accent color adjustments for visibility on dark backgrounds */
+        --ted-red-dark: #FF3D33;
+        --terracotta: #D4655E;
+        --terracotta-light: #8B5550;
+        --teal: #5A9A9A;
+        --teal-light: #3D5858;
+        --forest: #6A9A96;
+        --rust: #D4705F;
+
+        /* Semantic colors - brightened for dark mode */
+        --color-error: #f87171;
+        --color-success: #4ade80;
+        --color-placeholder: #666;
+    }
+
+    /* Logo visibility toggle */
+    .logo-light {
+        display: none !important;
+    }
+
+    .logo-dark {
+        display: block !important;
+    }
+
+    /* Navigation adjustments */
+    .nav.scrolled {
+        box-shadow: 0 1px 0 rgb(255 255 255 / 8%);
+    }
+
+    .nav-dropdown-menu {
+        box-shadow: 0 4px 12px rgb(0 0 0 / 40%);
+    }
+
+    /* Mobile nav panel */
+    .nav-menu {
+        background: var(--white);
+    }
+
+    /* Hamburger menu lines */
+    .nav-hamburger span {
+        background: var(--black);
+    }
+
+    /* Skip link */
+    .skip-link:focus {
+        background: var(--cream);
+    }
+
+    /* Form inputs */
+    .form-group input,
+    .form-group textarea {
+        background: #1A1A1A;
+        border-color: #333;
+        color: var(--black);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        box-shadow: 0 0 0 4px rgb(90 154 154 / 15%);
+    }
+
+    /* Social links */
+    .social-link {
+        background: #1E1E1E;
+        border-color: #333;
+    }
+
+    .social-link:hover {
+        background: #252525;
+        border-color: var(--teal);
+    }
+
+    /* Team member cards */
+    .team-member {
+        background: #1E1E1E;
+        border-color: #333;
+    }
+
+    .team-member:hover {
+        box-shadow: 0 2px 8px rgb(90 154 154 / 20%);
+    }
+
+    /* Blog post cards */
+    .blog-post {
+        background: #1E1E1E;
+        box-shadow: 0 4px 6px rgb(0 0 0 / 20%), 0 2px 4px rgb(0 0 0 / 15%);
+    }
+
+    .blog-post:hover {
+        box-shadow: 0 12px 24px rgb(0 0 0 / 30%), 0 4px 8px rgb(0 0 0 / 20%);
+    }
+
+    .blog-post-image {
+        background: linear-gradient(135deg, #252525 0%, #1E1E1E 100%);
+    }
+
+    /* Single post page */
+    .post {
+        background: #1E1E1E;
+        box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+    }
+
+    .post-header-image {
+        background: linear-gradient(135deg, #252525 0%, #1E1E1E 100%);
+    }
+
+    /* Video skeleton loading */
+    .video-wrapper {
+        background: linear-gradient(90deg, #252525 25%, #2A2A2A 50%, #252525 75%);
+    }
+
+    /* CTA and callout gradients */
+    .cta-gradient,
+    .callout-gradient {
+        background: linear-gradient(135deg, rgb(212 101 94 / 10%) 0%, rgb(90 154 154 / 10%) 100%);
+    }
+
+    .cta-gradient .form-wrapper {
+        background: #1A1A1A;
+    }
+
+    /* Card variants */
+    .card-white {
+        background: #1E1E1E;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+    }
+
+    /* Contact form section */
+    .contact-form-section {
+        background: #1A1A1A;
+    }
+
+    /* Blog CTA */
+    .blog-cta {
+        background: #1A1A1A;
+    }
+
+    /* Year nav */
+    .year-nav {
+        background: #1A1A1A;
+        border-bottom-color: #333;
+    }
+
+    .year-nav-link {
+        background: #252525;
+    }
+
+    .year-nav-link:hover {
+        background: var(--charcoal);
+        color: #121212;
+    }
+
+    /* Newsletter section - keep dark but adjust slightly */
+    .newsletter-section {
+        background: #1A1A1A;
+    }
+
+    .newsletter-input {
+        background: rgb(255 255 255 / 8%);
+        border-color: rgb(255 255 255 / 12%);
+    }
+
+    /* Footer - preserve dark appearance */
+    .footer {
+        background: #000;
+        color: rgb(255 255 255 / 87.5%);
+    }
+
+    .footer-column a,
+    .footer-social a {
+        color: rgb(255 255 255 / 80%);
+    }
+
+    .footer-column a:hover,
+    .footer-social a:hover {
+        color: #FFF;
+    }
+
+    .footer-column h4 {
+        color: #D4655E; /* terracotta for dark mode */
+    }
+
+    .footer-legal {
+        color: rgb(255 255 255 / 60%);
+        border-top-color: rgb(255 255 255 / 10%);
+    }
+
+    /* Mailchimp form in page context */
+    .page-signup-wrapper .mailchimp-input {
+        background: #1A1A1A;
+        border-color: #333;
+        color: var(--black);
+    }
+
+    .page-signup-wrapper .mailchimp-input:focus {
+        border-color: var(--teal);
+    }
+
+    .page-signup-wrapper #mce-success-response {
+        background: rgb(74 222 128 / 15%);
+    }
+
+    .page-signup-wrapper #mce-error-response {
+        background: rgb(248 113 113 / 15%);
+    }
+
+    /* Salon details box */
+    .salon-details {
+        background: #1A1A1A;
+    }
+
+    /* Event details box */
+    .event-details {
+        background: #1A1A1A;
+    }
+
+    /* FAQ sections */
+    .faq-section {
+        border-bottom-color: #333;
+    }
+
+    /* Contact options */
+    .contact-option {
+        border-bottom-color: #333;
+    }
+
+    /* Contact social border */
+    .contact-social {
+        border-top-color: #333;
+    }
+
+    /* Blockquotes */
+    .page-content blockquote,
+    .post-content blockquote {
+        background: #1A1A1A;
+    }
+
+    /* Quote component */
+    .quote {
+        background: #1A1A1A;
+    }
+}

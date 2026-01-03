@@ -40,6 +40,36 @@ This document provides technical guidelines and best practices for AI-assisted d
 - Comment complex CSS patterns
 - Avoid `!important` unless absolutely necessary
 
+### Dark Mode
+The site supports automatic dark mode via the CSS `prefers-color-scheme` media query. Dark mode activates automatically based on the user's operating system setting.
+
+**Key principles for dark mode development:**
+- **Always use CSS variables** for colors - never hardcode hex values in component styles
+- **Test in both modes** before committing any visual changes
+- **Maintain contrast ratios** - WCAG AA minimum (4.5:1 for body text)
+- **Use the established dark palette** - don't introduce new dark mode colors without updating `:root`
+
+**Dark mode color mappings** (light → dark):
+| Light Mode | Dark Mode | Usage |
+|------------|-----------|-------|
+| `--white` (#FFF) | #121212 | Page backgrounds |
+| `--black` (#000) | #FFFFFF | Primary text |
+| `--cream` (#F9F7F4) | #1E1E1E | Section backgrounds |
+| `--sand` (#E8E6E3) | #252525 | Alternate backgrounds |
+| `--charcoal` (#2A2A2A) | #E8E6E3 | Body text |
+| `--stone` (#676767) | #A0A0A0 | Secondary text |
+| `--terracotta` (#B8433C) | #D4655E | Accent color (lightened) |
+| `--teal` (#3F6F6F) | #5A9A9A | Accent color (lightened) |
+
+**Logo handling:**
+- Navigation uses both `.logo-light` and `.logo-dark` images
+- CSS toggles visibility based on color scheme
+- Footer always uses white logo (dark background in both modes)
+
+**Components that stay dark in both modes:**
+- Footer (`.footer`) - always black background
+- Newsletter section (`.newsletter-section`) - always dark
+
 ### Accessibility
 - Follow general accessibility best practices (no strict WCAG level required)
 - Use proper heading hierarchy (`<h1>` → `<h2>` → `<h3>`)
