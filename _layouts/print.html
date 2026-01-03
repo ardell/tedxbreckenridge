@@ -3,6 +3,7 @@
 {%- comment -%}
 Print layout - provides preview with print-ready styling,
 plus source view for copying HTML and print functionality.
+Note: Does NOT use main.css to avoid dark mode affecting print content.
 {%- endcomment -%}
 
 {%- capture raw_content -%}{{ content }}{%- endcapture -%}
@@ -17,23 +18,15 @@ plus source view for copying HTML and print functionality.
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
+    /* Wrapper styles only - print content has its own styles */
     :root {
-      /* Core TED Brand */
       --ted-red: #e4291c;
       --ted-red-dark: #C70022;
       --black: #000;
       --white: #FFF;
-
-      /* Evergreen Palette */
       --teal: #3F6F6F;
-      --forest: #4A7470;
-      --charcoal: #2A2A2A;
       --stone: #676767;
-      --cream: #F9F7F4;
-      --sand: #E8E6E3;
-      --teal-light: #A3C4C4;
-
-      /* Typography */
+      --body-bg: #676767;
       --font-primary: 'Helvetica Neue', helvetica, inter, arial, sans-serif;
     }
 
@@ -45,10 +38,7 @@ plus source view for copying HTML and print functionality.
 
     body {
       font-family: var(--font-primary);
-      font-weight: 400;
-      background: var(--stone);
-      color: var(--black);
-      line-height: 1.6;
+      background: var(--body-bg);
     }
 
     /* Navigation */
@@ -76,11 +66,10 @@ plus source view for copying HTML and print functionality.
     .nav-logo img {
       height: 40px;
       width: auto;
-      display: block;
-      vertical-align: middle;
-      position: relative;
-      top: 2px;
     }
+
+    .logo-light { display: block; }
+    .logo-dark { display: none; }
 
     .nav-actions {
       display: flex;
@@ -88,32 +77,30 @@ plus source view for copying HTML and print functionality.
       gap: 24px;
     }
 
-    .nav-link {
+    .nav-back {
       font-size: 13px;
-      font-weight: 400;
       color: var(--stone);
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
-    .nav-link:hover {
+    .nav-back:hover {
       color: var(--teal);
     }
 
-    .nav-btn {
+    .nav-print-btn {
       font-family: var(--font-primary);
       font-size: 13px;
       font-weight: 500;
       padding: 12px 24px;
       background: var(--ted-red);
-      color: var(--white);
-      text-decoration: none;
+      color: #FFF;
       border: none;
       cursor: pointer;
       transition: background 0.2s ease;
     }
 
-    .nav-btn:hover {
+    .nav-print-btn:hover {
       background: var(--ted-red-dark);
     }
 
@@ -123,17 +110,16 @@ plus source view for copying HTML and print functionality.
       padding-bottom: 60px;
     }
 
-    /* Print Preview Frame - 8.5x11 aspect ratio */
+    /* Print Preview Frame */
     .print-frame {
       width: 8.5in;
       min-height: 11in;
       margin: 0 auto;
-      background: var(--white);
+      background: #FFF;
       box-shadow: 0 4px 24px rgb(0 0 0 / 20%);
       overflow: hidden;
     }
 
-    /* Slides Preview Frame - 1920x1080 scaled to viewport */
     .print-frame--slides {
       width: calc(100vw - 80px);
       max-width: 1920px;
@@ -143,14 +129,35 @@ plus source view for copying HTML and print functionality.
       overflow: visible;
     }
 
+    /* Dark mode - wrapper only */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --white: #121212;
+        --black: #FFF;
+        --stone: #A0A0A0;
+        --teal: #5A9A9A;
+        --body-bg: #1A1A1A;
+      }
+
+      .nav {
+        box-shadow: 0 1px 0 rgb(255 255 255 / 8%);
+      }
+
+      .logo-light { display: none; }
+      .logo-dark { display: block; }
+
+      .print-frame {
+        box-shadow: 0 4px 24px rgb(0 0 0 / 50%);
+      }
+    }
+
     /* Print Styles */
     @media print {
       body {
         background: none;
       }
 
-      .nav,
-      .source-view {
+      .nav {
         display: none !important;
       }
 
@@ -180,7 +187,7 @@ plus source view for copying HTML and print functionality.
         gap: 16px;
       }
 
-      .nav-link {
+      .nav-back {
         display: none;
       }
 
@@ -199,34 +206,25 @@ plus source view for copying HTML and print functionality.
         width: calc(100vw - 32px);
         margin: 0 16px;
       }
-
-      .source-view {
-        margin: 0 16px;
-        padding: 24px;
-      }
-
-      .source-header h2 {
-        font-size: 20px;
-      }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <a href="/" class="nav-logo">
-      <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge">
+      <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge" class="logo-light">
+      <img src="/assets/images/logos/tedx-breckenridge-logo-white.png" alt="TEDxBreckenridge" class="logo-dark">
     </a>
     <div class="nav-actions">
-      <a href="/print/" class="nav-link">&larr; All Print Materials</a>
-      <button class="nav-btn" onclick="window.print()">Print / Save PDF</button>
+      <a href="/print/" class="nav-back">← All Print Materials</a>
+      <button class="nav-print-btn" onclick="window.print()">Print / Save PDF</button>
     </div>
   </nav>
 
   <main>
-    <div class="print-frame{% if page.format contains 'Slides' or page.format contains '1920' %} print-frame--slides{% endif %}" id="previewView">
+    <div class="print-frame{% if page.format contains 'Slides' or page.format contains '1920' %} print-frame--slides{% endif %}">
       {{ raw_content }}
     </div>
   </main>
-
 </body>
 </html>

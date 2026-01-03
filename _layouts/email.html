@@ -3,6 +3,7 @@
 {%- comment -%}
 Email layout - provides preview with merge tags substituted,
 plus source view for copying to Mailchimp.
+Note: Does NOT use main.css to avoid dark mode affecting email content.
 {%- endcomment -%}
 
 {%- capture raw_content -%}{{ content }}{%- endcapture -%}
@@ -56,23 +57,18 @@ plus source view for copying to Mailchimp.
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
+    /* Wrapper styles only - email content has its own styles */
     :root {
-      /* Core TED Brand */
       --ted-red: #e4291c;
       --ted-red-dark: #C70022;
       --black: #000;
       --white: #FFF;
-
-      /* Evergreen Palette */
       --teal: #3F6F6F;
       --forest: #4A7470;
       --charcoal: #2A2A2A;
       --stone: #676767;
       --cream: #F9F7F4;
       --sand: #E8E6E3;
-      --teal-light: #A3C4C4;
-
-      /* Typography */
       --font-primary: 'Helvetica Neue', helvetica, inter, arial, sans-serif;
     }
 
@@ -84,10 +80,7 @@ plus source view for copying to Mailchimp.
 
     body {
       font-family: var(--font-primary);
-      font-weight: 400;
       background: var(--cream);
-      color: var(--black);
-      line-height: 1.6;
     }
 
     /* Navigation */
@@ -115,11 +108,10 @@ plus source view for copying to Mailchimp.
     .nav-logo img {
       height: 40px;
       width: auto;
-      display: block;
-      vertical-align: middle;
-      position: relative;
-      top: 2px;
     }
+
+    .logo-light { display: block; }
+    .logo-dark { display: none; }
 
     .nav-actions {
       display: flex;
@@ -127,15 +119,14 @@ plus source view for copying to Mailchimp.
       gap: 24px;
     }
 
-    .nav-link {
+    .nav-back {
       font-size: 13px;
-      font-weight: 400;
       color: var(--stone);
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
-    .nav-link:hover {
+    .nav-back:hover {
       color: var(--teal);
     }
 
@@ -145,8 +136,7 @@ plus source view for copying to Mailchimp.
       font-weight: 500;
       padding: 12px 24px;
       background: var(--ted-red);
-      color: var(--white);
-      text-decoration: none;
+      color: #FFF;
       border: none;
       cursor: pointer;
       transition: background 0.2s ease;
@@ -162,14 +152,9 @@ plus source view for copying to Mailchimp.
       display: flex;
     }
 
-    .nav-dropdown .nav-btn:first-child {
-      border-radius: 0;
-    }
-
     .nav-dropdown-toggle {
       padding: 12px 10px;
       border-left: 1px solid rgb(255 255 255 / 20%);
-      border-radius: 0;
     }
 
     .nav-dropdown-menu {
@@ -178,7 +163,7 @@ plus source view for copying to Mailchimp.
       top: 100%;
       right: 0;
       margin-top: 4px;
-      background: var(--white);
+      background: #FFF;
       box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
       min-width: 140px;
       z-index: 200;
@@ -205,13 +190,15 @@ plus source view for copying to Mailchimp.
     main {
       padding-top: 100px;
       padding-bottom: 60px;
+      background: var(--cream);
+      min-height: 100vh;
     }
 
-    /* Email Preview Frame */
+    /* Email Preview Frame - always light */
     .email-frame {
       max-width: 700px;
       margin: 0 auto;
-      background: var(--white);
+      background: #FFF;
       box-shadow: 0 4px 24px rgb(0 0 0 / 8%);
     }
 
@@ -219,12 +206,12 @@ plus source view for copying to Mailchimp.
       display: none;
     }
 
-    /* Source View */
+    /* Source View - always light */
     .source-view {
       display: none;
       max-width: 900px;
       margin: 0 auto;
-      background: var(--white);
+      background: #FFF;
       box-shadow: 0 4px 24px rgb(0 0 0 / 8%);
       padding: 48px;
     }
@@ -236,25 +223,25 @@ plus source view for copying to Mailchimp.
     .source-header {
       margin-bottom: 32px;
       padding-bottom: 24px;
-      border-bottom: 1px solid var(--sand);
+      border-bottom: 1px solid #E8E6E3;
     }
 
     .source-header h2 {
       font-size: 24px;
       font-weight: 300;
-      color: var(--black);
+      color: #000;
       margin-bottom: 8px;
     }
 
     .source-header p {
       font-size: 15px;
-      color: var(--stone);
+      color: #676767;
     }
 
     .source-subject {
       margin-bottom: 24px;
       padding: 20px 24px;
-      background: var(--cream);
+      background: #F9F7F4;
       border-left: 3px solid var(--ted-red);
     }
 
@@ -263,13 +250,13 @@ plus source view for copying to Mailchimp.
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--stone);
+      color: #676767;
       margin-bottom: 4px;
     }
 
     .source-subject-value {
       font-size: 15px;
-      color: var(--black);
+      color: #000;
     }
 
     .source-actions {
@@ -285,8 +272,7 @@ plus source view for copying to Mailchimp.
       font-weight: 500;
       padding: 12px 24px;
       background: var(--ted-red);
-      color: var(--white);
-      text-decoration: none;
+      color: #FFF;
       border: none;
       cursor: pointer;
       transition: background 0.2s ease;
@@ -316,15 +302,46 @@ plus source view for copying to Mailchimp.
       font-size: 12px;
       line-height: 1.6;
       padding: 24px;
-      border: 1px solid var(--sand);
-      background: var(--cream);
-      color: var(--charcoal);
+      border: 1px solid #E8E6E3;
+      background: #F9F7F4;
+      color: #2A2A2A;
       resize: vertical;
     }
 
     textarea:focus {
       outline: none;
       border-color: var(--teal);
+    }
+
+    /* Dark mode - wrapper only */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --white: #121212;
+        --black: #FFF;
+        --cream: #1A1A1A;
+        --stone: #A0A0A0;
+        --teal: #5A9A9A;
+      }
+
+      body {
+        background: var(--cream);
+      }
+
+      main {
+        background: var(--cream);
+      }
+
+      .nav {
+        box-shadow: 0 1px 0 rgb(255 255 255 / 8%);
+      }
+
+      .logo-light { display: none; }
+      .logo-dark { display: block; }
+
+      .email-frame,
+      .source-view {
+        box-shadow: 0 4px 24px rgb(0 0 0 / 30%);
+      }
     }
 
     /* Raw mode - shows just the email without wrapper */
@@ -362,7 +379,7 @@ plus source view for copying to Mailchimp.
         gap: 16px;
       }
 
-      .nav-link {
+      .nav-back {
         display: none;
       }
 
@@ -389,10 +406,11 @@ plus source view for copying to Mailchimp.
 <body>
   <nav class="nav">
     <a href="/" class="nav-logo">
-      <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge">
+      <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge" class="logo-light">
+      <img src="/assets/images/logos/tedx-breckenridge-logo-white.png" alt="TEDxBreckenridge" class="logo-dark">
     </a>
     <div class="nav-actions">
-      <a href="/emails/" class="nav-link">← All Emails</a>
+      <a href="/emails/" class="nav-back">← All Emails</a>
       <div class="nav-dropdown">
         <button class="nav-btn" id="toggleBtn" onclick="toggleView()">View Source</button>
         <button class="nav-btn nav-dropdown-toggle" onclick="toggleDropdown(event)" aria-label="More options">▾</button>
