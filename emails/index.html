@@ -224,6 +224,49 @@ sitemap: false
       color: rgb(255 255 255 / 60%);
     }
 
+    /* Logo light/dark mode visibility */
+    .logo-light {
+      display: block;
+    }
+
+    .logo-dark {
+      display: none;
+    }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --white: #121212;
+        --black: #FFF;
+        --cream: #1E1E1E;
+        --sand: #252525;
+        --charcoal: #E8E6E3;
+        --stone: #A0A0A0;
+        --teal: #5A9A9A;
+        --teal-light: #3D5858;
+      }
+
+      .logo-light {
+        display: none;
+      }
+
+      .logo-dark {
+        display: block;
+      }
+
+      .nav.scrolled {
+        box-shadow: 0 1px 0 rgb(255 255 255 / 8%);
+      }
+
+      .empty-state code {
+        background: #252525;
+      }
+
+      .footer {
+        background: #000;
+      }
+    }
+
     /* Mobile */
     @media (max-width: 768px) {
       .nav {
@@ -269,7 +312,8 @@ sitemap: false
 <body>
   <nav class="nav" id="nav">
     <a href="/" class="nav-logo">
-      <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge">
+      <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge" class="logo-light">
+      <img src="/assets/images/logos/tedx-breckenridge-logo-white.png" alt="TEDxBreckenridge" class="logo-dark">
     </a>
   </nav>
 
