@@ -347,7 +347,21 @@ Ensures images meet size requirements:
 - Thumbnails: <100KB
 - General images: <500KB
 
-#### 3. Test HTML (Internal Links)
+#### 3. Validate Affiliate Links
+```bash
+./build/website/validate-affiliate-links.sh
+```
+
+Ensures all ticketsauce.com links include affiliate tracking:
+- Website pages, layouts, and includes
+- Email templates
+- Print templates (QR code URLs)
+
+Required parameters:
+- `utm_source=affiliate`
+- `utm_id=<affiliate_id>`
+
+#### 4. Test HTML (Internal Links)
 ```bash
 cd website
 bundle exec htmlproofer ./_site \
@@ -362,7 +376,7 @@ Checks:
 - All images have alt text
 - No missing image files
 
-#### 4. Lint CSS
+#### 5. Lint CSS
 ```bash
 yarn test:css
 ```
@@ -373,7 +387,7 @@ Validates:
 - No duplicate properties
 - Proper selector naming
 
-#### 5. Test Accessibility
+#### 6. Test Accessibility
 ```bash
 # Start a local server in one terminal
 cd website
@@ -390,7 +404,7 @@ Checks:
 - Keyboard navigation
 - Screen reader compatibility
 
-#### 6. Check External Links (Optional)
+#### 7. Check External Links (Optional)
 ```bash
 cd website
 bundle exec htmlproofer ./_site \
@@ -420,6 +434,7 @@ If tests fail:
    - CSS syntax errors → Check for typos in CSS
    - Accessibility issues → Fix color contrast, heading hierarchy, etc.
    - Oversized images → Optimize images before committing
+   - Missing affiliate tracking → Add utm_source=affiliate and utm_id parameters to ticketsauce.com links
 4. **Push the fix** - Tests will re-run automatically
 
 ### What Gets Tested
@@ -429,6 +444,7 @@ Our test suite covers:
 - ✅ **HTML Validation**: Valid HTML5, semantic structure
 - ✅ **Link Checking**: No broken internal/external links
 - ✅ **Image Validation**: All images optimized and have alt text
+- ✅ **Affiliate Tracking**: All ticketsauce.com links have tracking parameters
 - ✅ **CSS Linting**: Consistent, valid CSS
 - ✅ **Accessibility**: WCAG compliance, keyboard navigation
 - ✅ **Performance**: Image size limits enforced

@@ -77,3 +77,6 @@ jobs:
           sleep 5
           yarn test:a11y
           kill $SERVER_PID
+
+      - name: Validate affiliate tracking links
+        run: ./build/website/validate-affiliate-links.sh
