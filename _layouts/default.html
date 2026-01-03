@@ -58,7 +58,8 @@
       ,{
         "@type": "Event",
         "name": "TEDxBreckenridge 2026",
-        "startDate": "2026-10-03",
+        "startDate": "2026-10-03T17:00:00-06:00",
+        "endDate": "2026-10-03T21:00:00-06:00",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "eventStatus": "https://schema.org/EventScheduled",
         "location": {
@@ -66,16 +67,31 @@
           "name": "Riverwalk Center",
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "150 W Adams Ave",
             "addressLocality": "Breckenridge",
             "addressRegion": "CO",
+            "postalCode": "80424",
             "addressCountry": "US"
           }
         },
         "organizer": {
           "@id": "{{ site.url }}/#organization"
         },
+        "performer": {
+          "@type": "PerformingGroup",
+          "name": "TEDxBreckenridge Speakers"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "{{ site.url }}/tickets/",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "USD",
+          "validFrom": "2026-01-01"
+        },
         "description": "TEDxBreckenridge 2026 - Ideas worth spreading in the heart of the Rockies. Join us for an evening of inspiring talks, local voices, and meaningful connections.",
-        "image": "{{ site.url }}{{ site.image }}"
+        "image": [
+          "{{ site.url }}/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png"
+        ]
       }
       {% endif %}
     ]
