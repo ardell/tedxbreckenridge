@@ -361,7 +361,15 @@ Required parameters:
 - `utm_source=affiliate`
 - `utm_id=<affiliate_id>`
 
-**Important for Claude:** When adding any new ticketsauce.com link, prompt the user to provide a unique affiliate tracking URL for that specific placement. Each interface element (button, link, QR code) should have its own unique `utm_campaign` and `utm_id` to enable accurate conversion tracking. Do not reuse existing affiliate links for new placements.
+**Naming conventions for `utm_campaign` and `utm_name`:**
+- Website placements: `tedxbreckenridge.com-<page>-<element>`
+  - Examples: `tedxbreckenridge.com-homepage-hero`, `tedxbreckenridge.com-nav-cta`, `tedxbreckenridge.com-tickets-page`
+- Email placements: `email-<campaign>-<element>`
+  - Examples: `email-jan-salon-cta`, `email-jan-salon-infobox`, `email-oct-event-hero`
+- Print/QR codes: `print-<type>-<variant>`
+  - Examples: `print-flyer-flour`, `print-flyer-veggies`, `print-postcard-jan-salon`
+
+**Important for Claude:** When adding any new ticketsauce.com link, prompt the user to provide a unique affiliate tracking URL for that specific placement. Propose a name following the naming conventions above (e.g., "I suggest using `tedxbreckenridge.com-about-cta` for this placement"). Each interface element (button, link, QR code) should have its own unique `utm_campaign` and `utm_id` to enable accurate conversion tracking. Do not reuse existing affiliate links for new placements.
 
 #### 4. Test HTML (Internal Links)
 ```bash
