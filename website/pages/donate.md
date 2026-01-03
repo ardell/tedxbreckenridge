@@ -25,7 +25,7 @@ container: container-md
   <h2 class="text-center mb-40">Make Your Donation</h2>
 
   <div class="text-center bg-cream" style="padding: 60px 40px; border-radius: 8px;">
-    <a class="btn btn-primary" href="https://givebutter.com/tedxbreckenridge" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 24px 48px; font-size: 1.5rem; font-weight: 700;">Donate Now</a>
+    <a class="btn btn-primary" href="https://givebutter.com/tedxbreckenridge?utm_source=website&utm_campaign=tedxbreckenridge.com-donate-page" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 24px 48px; font-size: 1.5rem; font-weight: 700;">Donate Now</a>
     <p style="margin-top: 24px; color: var(--charcoal); font-size: 1.1rem; font-weight: 500;">Support ideas worth spreading in our mountain community</p>
     <p style="margin-top: 12px; color: var(--stone); font-size: 0.95rem;">Secure donation processing via Givebutter</p>
   </div>
