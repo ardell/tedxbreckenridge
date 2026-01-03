@@ -352,24 +352,32 @@ Ensures images meet size requirements:
 ./build/website/validate-affiliate-links.sh
 ```
 
-Ensures all ticketsauce.com links include affiliate tracking:
-- Website pages, layouts, and includes
+Ensures all ticketsauce.com and givebutter.com links include tracking parameters:
+- Website pages (HTML and Markdown), layouts, and includes
 - Email templates
 - Print templates (QR code URLs)
 
-Required parameters:
+**Ticketsauce.com** - Required parameters:
 - `utm_source=affiliate`
 - `utm_id=<affiliate_id>`
 
-**Naming conventions for `utm_campaign` and `utm_name`:**
+**Givebutter.com** - Required parameters:
+- `utm_source=<source>` (e.g., `website`, `email`, `print`)
+- `utm_campaign=<campaign>` (unique identifier for the placement)
+
+Optional givebutter parameters for additional tracking:
+- `utm_medium=<medium>` (e.g., `cta`, `link`, `qr`)
+- `utm_content=<content>` (for A/B testing variations)
+
+**Naming conventions for `utm_campaign`:**
 - Website placements: `tedxbreckenridge.com-<page>-<element>`
-  - Examples: `tedxbreckenridge.com-homepage-hero`, `tedxbreckenridge.com-nav-cta`, `tedxbreckenridge.com-tickets-page`
+  - Examples: `tedxbreckenridge.com-homepage-hero`, `tedxbreckenridge.com-nav-cta`, `tedxbreckenridge.com-donate-page`
 - Email placements: `email-<campaign>-<element>`
   - Examples: `email-jan-salon-cta`, `email-jan-salon-infobox`, `email-oct-event-hero`
 - Print/QR codes: `print-<type>-<variant>`
   - Examples: `print-flyer-flour`, `print-flyer-veggies`, `print-postcard-jan-salon`
 
-**Important for Claude:** When adding any new ticketsauce.com link, prompt the user to provide a unique affiliate tracking URL for that specific placement. Propose a name following the naming conventions above (e.g., "I suggest using `tedxbreckenridge.com-about-cta` for this placement"). Each interface element (button, link, QR code) should have its own unique `utm_campaign` and `utm_id` to enable accurate conversion tracking. Do not reuse existing affiliate links for new placements.
+**Important for Claude:** When adding any new ticketsauce.com or givebutter.com link, prompt the user to provide unique tracking parameters for that specific placement. Propose a name following the naming conventions above (e.g., "I suggest using `tedxbreckenridge.com-about-donate` for this givebutter placement"). Each interface element (button, link, QR code) should have its own unique `utm_campaign` to enable accurate conversion tracking. Do not reuse existing tracking links for new placements.
 
 #### 4. Test HTML (Internal Links)
 ```bash
@@ -444,7 +452,7 @@ If tests fail:
    - CSS syntax errors → Check for typos in CSS
    - Accessibility issues → Fix color contrast, heading hierarchy, etc.
    - Oversized images → Optimize images before committing
-   - Missing affiliate tracking → Add utm_source=affiliate and utm_id parameters to ticketsauce.com links
+   - Missing affiliate tracking → Add required UTM parameters to ticketsauce.com and givebutter.com links
 4. **Push the fix** - Tests will re-run automatically
 
 ### What Gets Tested
@@ -454,7 +462,7 @@ Our test suite covers:
 - ✅ **HTML Validation**: Valid HTML5, semantic structure
 - ✅ **Link Checking**: No broken internal/external links
 - ✅ **Image Validation**: All images optimized and have alt text
-- ✅ **Affiliate Tracking**: All ticketsauce.com links have tracking parameters
+- ✅ **Affiliate Tracking**: All ticketsauce.com and givebutter.com links have tracking parameters
 - ✅ **CSS Linting**: Consistent, valid CSS
 - ✅ **Accessibility**: WCAG compliance, keyboard navigation
 - ✅ **Performance**: Image size limits enforced
