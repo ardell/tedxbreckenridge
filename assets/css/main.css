@@ -3377,6 +3377,32 @@ body.layout-post {
   }
 }
 
+/* Event card flyer variant - taller image for portrait flyers */
+.event-card-flyer {
+  grid-template-columns: 280px 1fr;
+}
+
+.event-card-flyer .event-card-image {
+  min-height: 400px;
+}
+
+.event-card-flyer .event-card-image img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media (width <= 768px) {
+  .event-card-flyer {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card-flyer .event-card-image {
+    min-height: auto;
+    aspect-ratio: 3/4;
+    max-height: 400px;
+  }
+}
+
 /* Gradient CTA sections - for form wrappers and callouts */
 .cta-gradient {
   margin-top: var(--space-80);
