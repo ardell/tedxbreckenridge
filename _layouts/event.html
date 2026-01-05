@@ -1,0 +1,143 @@
+---
+layout: default
+---
+
+{% include event-structured-data.html %}
+
+{% include format-time.html time=page.start_time %}
+{% assign display_time = formatted_time %}
+
+<div class="page">
+
+<!-- Event Header -->
+<div class="page-header">
+    <div class="page-header-content">
+        <div class="section-eyebrow">{% if page.event_type == "salon" %}TEDxBreckenridge Salon{% else %}TEDxBreckenridge {{ page.date | date: '%Y' }}{% endif %}</div>
+        <h1 class="page-title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <p class="page-subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Event Details Section -->
+{% if page.image_format == "flyer" %}
+<!-- Flyer layout: side-by-side with portrait flyer image -->
+<section class="section section-full theme-section" id="event-details">
+    <div class="section-inner">
+        <div class="theme-content{% if page.event_type == 'salon' %} theme-content-reverse{% endif %}">
+            <div class="theme-visual theme-visual-flyer">
+                <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+            </div>
+            <div class="theme-text">
+                <div class="event-details">
+                    <p><strong>{{ page.date | date: '%B %-d, %Y' }}{% if page.start_time %} • {{ display_time }}{% endif %}</strong><br>
+                    {{ page.venue_name }}<br>
+                    {{ page.venue_address }}, {{ page.venue_city }}, {{ page.venue_state }} {{ page.venue_zip }}</p>
+
+                    {% if page.map_embed_url %}
+                    <div class="event-details-map">
+                        <iframe src="{{ page.map_embed_url }}" width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing {{ page.venue_name }} location"></iframe>
+                    </div>
+                    {% endif %}
+
+                    <p><strong>{% if page.price == 0 %}Free{% else %}${{ page.price }}{% endif %}</strong>{% if page.price_display %}<br>{{ page.price_display }}{% endif %}</p>
+
+                    {% if page.event_type == "salon" %}
+                    <p><em>Ideas should be accessible to everyone. If cost is a barrier, join us anyway — your curiosity matters most.</em></p>
+                    {% endif %}
+                </div>
+
+                {% if page.ticket_url or page.calendar_url %}
+                <div class="btn-group mt-32">
+                    {% if page.ticket_url %}
+                    <a href="{{ page.ticket_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Tickets</a>
+                    {% endif %}
+                    {% if page.calendar_url %}
+                    <a href="{{ page.calendar_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Add to Calendar</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<!-- Standard layout: side-by-side image and content -->
+<section class="section section-full theme-section" id="event-details">
+    <div class="section-inner">
+        <div class="theme-content{% if page.event_type == 'salon' %} theme-content-reverse{% endif %}">
+            <div class="theme-visual">
+                <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+            </div>
+            <div class="theme-text">
+                <div class="event-details">
+                    <p><strong>{{ page.date | date: '%B %-d, %Y' }}{% if page.start_time %} • {{ display_time }}{% endif %}</strong><br>
+                    {{ page.venue_name }}<br>
+                    {{ page.venue_address }}, {{ page.venue_city }}, {{ page.venue_state }} {{ page.venue_zip }}</p>
+
+                    {% if page.map_embed_url %}
+                    <div class="event-details-map">
+                        <iframe src="{{ page.map_embed_url }}" width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing {{ page.venue_name }} location"></iframe>
+                    </div>
+                    {% endif %}
+
+                    <p><strong>{% if page.price == 0 %}Free{% else %}${{ page.price }}{% endif %}</strong>{% if page.price_display %}<br>{{ page.price_display }}{% endif %}</p>
+
+                    {% if page.event_type == "salon" %}
+                    <p><em>Ideas should be accessible to everyone. If cost is a barrier, join us anyway — your curiosity matters most.</em></p>
+                    {% endif %}
+                </div>
+
+                {% if page.ticket_url or page.calendar_url %}
+                <div class="btn-group mt-32">
+                    {% if page.ticket_url %}
+                    <a href="{{ page.ticket_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Tickets</a>
+                    {% endif %}
+                    {% if page.calendar_url %}
+                    <a href="{{ page.calendar_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Add to Calendar</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Event Content -->
+{% if content != "" %}
+<section class="section section-full bg-white">
+    <div class="section-inner container-sm prose">
+        {{ content }}
+    </div>
+</section>
+{% endif %}
+
+<!-- Photo Banner -->
+{% if page.photo_banner %}
+<div class="photo-banner{% if page.photo_banner.size > 5 %} photo-banner-scroll{% endif %}">
+    {% for photo in page.photo_banner %}
+    <div class="photo-banner-item">
+        <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Back to Events -->
+<section class="section section-full bg-cream">
+    <div class="section-inner container-sm">
+        <div class="cta-block">
+            <p class="text-stone">Explore more events from TEDxBreckenridge.</p>
+            <div class="btn-group">
+                <a href="/events/" class="btn btn-primary">Upcoming Events</a>
+                {% if page.event_type == "salon" %}
+                <a href="/salon/" class="btn btn-secondary">About Salons</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>

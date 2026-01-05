@@ -1,0 +1,45 @@
+{% comment %}
+  Event Structured Data (JSON-LD)
+  Include this in event pages to generate schema.org Event markup.
+  Usage: {% include event-structured-data.html %}
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "{{ page.title }}",
+  "startDate": "{{ page.date | date: '%Y-%m-%d' }}T{{ page.start_time | default: '18:00' }}:00-07:00",
+  "endDate": "{{ page.date | date: '%Y-%m-%d' }}T{{ page.end_time | default: '21:00' }}:00-07:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "{{ page.venue_name }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ page.venue_address }}",
+      "addressLocality": "{{ page.venue_city }}",
+      "addressRegion": "{{ page.venue_state }}",
+      "postalCode": "{{ page.venue_zip }}",
+      "addressCountry": "US"
+    }
+  },
+  "organizer": {
+    "@id": "{{ site.url }}/#organization"
+  },
+  "performer": {
+    "@type": "PerformingGroup",
+    "name": "TEDxBreckenridge Speakers"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ page.ticket_url | default: page.url | absolute_url }}",
+    "price": "{{ page.price | default: 0 }}",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/{{ page.availability | default: 'InStock' }}"{% if page.valid_from %},
+    "validFrom": "{{ page.valid_from }}"{% endif %}
+  },
+  "description": "{{ page.description | strip_html | strip_newlines | truncate: 300 }}",
+  "image": ["{{ page.image | prepend: site.url }}"]
+}
+</script>
