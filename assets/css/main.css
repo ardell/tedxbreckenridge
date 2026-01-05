@@ -767,6 +767,11 @@ select:focus-visible {
     scroll-snap-align: start;
 }
 
+/* Lazy loading placeholder for horizontal scroll */
+.photo-banner-scroll img.lazy-horizontal {
+    background: var(--charcoal);
+}
+
 /* Theme Section */
 .theme-section {
     background: var(--cream);

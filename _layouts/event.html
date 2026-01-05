@@ -119,10 +119,45 @@ layout: default
 <div class="photo-banner{% if page.photo_banner.size > 5 %} photo-banner-scroll{% endif %}">
     {% for photo in page.photo_banner %}
     <div class="photo-banner-item">
+        {% if page.photo_banner.size > 5 %}
+        <img data-src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" class="lazy-horizontal">
+        {% else %}
         <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
+        {% endif %}
     </div>
     {% endfor %}
 </div>
+{% if page.photo_banner.size > 5 %}
+<script>
+(function() {
+    var banner = document.querySelector('.photo-banner-scroll');
+    if (!banner) return;
+
+    var images = banner.querySelectorAll('img.lazy-horizontal');
+    if (!images.length) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    img.classList.remove('lazy-horizontal');
+                }
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        root: banner,
+        rootMargin: '0px 200px 0px 0px',
+        threshold: 0
+    });
+
+    images.forEach(function(img) { observer.observe(img); });
+})();
+</script>
+{% endif %}
 {% endif %}
 
 <!-- Back to Events -->
