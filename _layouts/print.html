@@ -139,6 +139,12 @@ plus source view for copying HTML and print functionality.
       overflow: visible;
     }
 
+    /* Table Tent Preview Frame - 4x18 aspect ratio */
+    .print-frame--table-tent {
+      aspect-ratio: 4 / 18;
+      max-width: 400px;
+    }
+
     /* Print Styles */
     @media print {
       body {
@@ -162,6 +168,15 @@ plus source view for copying HTML and print functionality.
       }
 
       .print-frame .flyer {
+        transform: none !important;
+      }
+
+      .print-frame--table-tent {
+        width: 4in;
+        height: 18in;
+      }
+
+      .print-frame--table-tent .table-tent {
         transform: none !important;
       }
     }
@@ -219,7 +234,7 @@ plus source view for copying HTML and print functionality.
   </nav>
 
   <main>
-    <div class="print-frame{% if page.format contains 'Slides' or page.format contains '1920' %} print-frame--slides{% endif %}" id="previewView">
+    <div class="print-frame{% if page.format contains 'Slides' or page.format contains '1920' %} print-frame--slides{% elsif page.format contains 'Table Tent' %} print-frame--table-tent{% endif %}" id="previewView">
       {{ raw_content }}
     </div>
   </main>
