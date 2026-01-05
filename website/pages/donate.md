@@ -24,13 +24,13 @@ container: container-md
 <div class="my-80">
   <h2 class="text-center mb-40">Make Your Donation</h2>
 
-  <div class="text-center bg-cream" style="padding: 60px 40px; border-radius: 8px;">
-    <a class="btn btn-primary" href="https://givebutter.com/tedxbreckenridge?utm_source=website&utm_campaign=tedxbreckenridge.com-donate-page" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 24px 48px; font-size: 1.5rem; font-weight: 700;">Donate Now</a>
-    <p style="margin-top: 24px; color: var(--charcoal); font-size: 1.1rem; font-weight: 500;">Support ideas worth spreading in our mountain community</p>
-    <p style="margin-top: 12px; color: var(--stone); font-size: 0.95rem;">Secure donation processing via Givebutter</p>
+  <div class="donate-box bg-cream">
+    <a class="btn btn-primary btn-lg" href="https://givebutter.com/tedxbreckenridge?utm_source=website&utm_campaign=tedxbreckenridge.com-donate-page" target="_blank" rel="noopener noreferrer">Donate Now</a>
+    <p class="donate-box-tagline">Support ideas worth spreading in our mountain community</p>
+    <p class="donate-box-note">Secure donation processing via Givebutter</p>
   </div>
 
-  <p class="text-center" style="margin-top: 24px; color: var(--stone); font-size: 0.95rem;">TEDxBreckenridge is a 501(c)(3) nonprofit organization. Your donation is tax-deductible to the extent allowed by law.</p>
+  <p class="text-center donate-disclaimer">TEDxBreckenridge is a 501(c)(3) nonprofit organization. Your donation is tax-deductible to the extent allowed by law.</p>
 </div>
 
 <div class="card mt-60">
