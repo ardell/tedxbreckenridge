@@ -1,0 +1,19 @@
+{% comment %}
+Convert 24h time format to 12h format (e.g., "18:00" → "6pm")
+
+Usage: {% include format-time.html time=page.start_time %}
+Result is stored in variable: formatted_time
+
+Example:
+  {% include format-time.html time="18:00" %}
+  {{ formatted_time }}  → "6pm"
+{% endcomment %}
+{%- assign _hour = include.time | split: ":" | first | plus: 0 -%}
+{%- if _hour >= 12 -%}
+  {%- assign _ampm = "pm" -%}
+  {%- if _hour > 12 -%}{%- assign _hour = _hour | minus: 12 -%}{%- endif -%}
+{%- else -%}
+  {%- assign _ampm = "am" -%}
+  {%- if _hour == 0 -%}{%- assign _hour = 12 -%}{%- endif -%}
+{%- endif -%}
+{%- assign formatted_time = _hour | append: _ampm -%}

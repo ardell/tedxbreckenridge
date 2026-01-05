@@ -54,46 +54,6 @@
           "@id": "{{ site.url }}/#organization"
         }
       }
-      {% if page.url == "/" or page.url == "/index.html" %}
-      ,{
-        "@type": "Event",
-        "name": "TEDxBreckenridge 2026",
-        "startDate": "2026-10-03T17:00:00-06:00",
-        "endDate": "2026-10-03T21:00:00-06:00",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "location": {
-          "@type": "Place",
-          "name": "Riverwalk Center",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "150 W Adams Ave",
-            "addressLocality": "Breckenridge",
-            "addressRegion": "CO",
-            "postalCode": "80424",
-            "addressCountry": "US"
-          }
-        },
-        "organizer": {
-          "@id": "{{ site.url }}/#organization"
-        },
-        "performer": {
-          "@type": "PerformingGroup",
-          "name": "TEDxBreckenridge Speakers"
-        },
-        "offers": {
-          "@type": "Offer",
-          "url": "{{ site.url }}/tickets/",
-          "availability": "https://schema.org/InStock",
-          "priceCurrency": "USD",
-          "validFrom": "2026-01-01"
-        },
-        "description": "TEDxBreckenridge 2026 - Ideas worth spreading in the heart of the Rockies. Join us for an evening of inspiring talks, local voices, and meaningful connections.",
-        "image": [
-          "{{ site.url }}/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png"
-        ]
-      }
-      {% endif %}
     ]
   }
   </script>
@@ -130,8 +90,10 @@
         <li class="nav-dropdown">
           <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Attend</button>
           <ul class="nav-dropdown-menu" role="menu">
+            <li role="menuitem"><a href="/events/">Upcoming Events</a></li>
+            <li role="menuitem"><a href="/events/2026-10-03-tedxbreckenridge-2026/">TEDxBreckenridge 2026</a></li>
             <li role="menuitem"><a href="/salon/">Salon Events</a></li>
-            <li role="menuitem"><a href="/#main-event">October 2026 Main Event</a></li>
+            <li role="menuitem"><a href="/past-events/">Past Events</a></li>
             <li role="menuitem"><a href="/faq/">FAQ</a></li>
           </ul>
         </li>
@@ -289,8 +251,10 @@
         <div class="footer-column">
           <h4>Attend</h4>
           <ul>
-            <li><a href="/tickets/">Get Tickets</a></li>
-            <li><a href="/speakers/">Speakers</a></li>
+            <li><a href="/events/">Upcoming Events</a></li>
+            <li><a href="/events/2026-10-03-tedxbreckenridge-2026/">TEDxBreckenridge 2026</a></li>
+            <li><a href="/salon/">Salon Events</a></li>
+            <li><a href="/past-events/">Past Events</a></li>
             <li><a href="/faq/">FAQ</a></li>
           </ul>
         </div>

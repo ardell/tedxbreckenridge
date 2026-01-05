@@ -23,6 +23,7 @@ event:
 
 # Build settings
 markdown: kramdown
+future: true  # Generate pages for future-dated events
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -41,6 +42,9 @@ collections:
   team:
     output: true
     permalink: /team/:name/
+  events:
+    output: true
+    permalink: /events/:name/
 
 # Exclude from processing
 exclude:
