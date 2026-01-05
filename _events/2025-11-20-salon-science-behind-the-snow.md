@@ -72,4 +72,12 @@ In this TEDxBreckenridge Salon, the snowmaking team from Arapahoe Basin Ski Area
 - What it means to operate at 10,530+ feet
 - The regulatory considerations that shape mountain operations
 
+## Why Are Snowflakes Hexagonal?
+
+We also watched this video exploring why snowflakes form in hexagonal structures and why no two snowflakes are the same.
+
+<div class="video-responsive">
+  <iframe src="https://www.youtube.com/embed/FwGH4gulLX4" title="Why are snowflakes hexagonal?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+
 <p class="mt-32">Thank you to everyone who joined us for this fascinating look at the intersection of science, strategy, and skiing!</p>
