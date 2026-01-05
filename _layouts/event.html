@@ -120,7 +120,7 @@ layout: default
     {% for photo in page.photo_banner %}
     <div class="photo-banner-item">
         {% if page.photo_banner.size > 5 %}
-        <img data-src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" class="lazy-horizontal">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" class="lazy-horizontal">
         {% else %}
         <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
         {% endif %}
