@@ -3367,7 +3367,7 @@ body.layout-post {
   padding-top: var(--space-16);
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .event-card {
     grid-template-columns: 1fr;
   }
