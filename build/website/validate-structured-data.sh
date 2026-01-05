@@ -40,7 +40,7 @@ validate_event_page() {
         return 0
     fi
 
-    ((CHECKED++))
+    ((CHECKED++)) || true
     echo "Checking: $relative_path"
 
     # Check required top-level fields
@@ -96,7 +96,7 @@ validate_event_page() {
     if [[ $has_error -eq 0 ]]; then
         echo -e "  ${GREEN}✓ All required fields present${NC}"
     else
-        ((ERRORS++))
+        ((ERRORS++)) || true
     fi
 
     return 0
