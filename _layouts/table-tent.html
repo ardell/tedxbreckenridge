@@ -1,0 +1,137 @@
+---
+layout: print
+---
+<style>
+    @page {
+      size: 4in 18in;
+      margin: 0;
+    }
+
+    .table-tent {
+      position: relative;
+      width: 4in;
+      height: 18in;
+      overflow: hidden;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      background: #fff;
+    }
+
+    .table-tent * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Top base strip */
+    .tent-base-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4in;
+      height: 3in;
+      background: #fff;
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+    }
+
+    /* Dotted cut line in center of top base (vertical, top half only) */
+    .tent-base-top::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 1.5in;
+      border-left: 1px dotted rgba(0, 0, 0, 0.3);
+    }
+
+    /* Inverted face */
+    .tent-face-inverted {
+      position: absolute;
+      top: 3in;
+      left: 0;
+      width: 4in;
+      height: 6in;
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+      transform: rotate(180deg);
+      transform-origin: center center;
+    }
+
+    /* Regular face */
+    .tent-face-regular {
+      position: absolute;
+      top: 9in;
+      left: 0;
+      width: 4in;
+      height: 6in;
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+    }
+
+    /* Bottom base strip */
+    .tent-base-bottom {
+      position: absolute;
+      top: 15in;
+      left: 0;
+      width: 4in;
+      height: 3in;
+      background: #fff;
+    }
+
+    /* Dotted cut line in center of bottom base (vertical, bottom half only) */
+    .tent-base-bottom::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      height: 1.5in;
+      border-left: 1px dotted rgba(0, 0, 0, 0.3);
+    }
+
+    @media print {
+      .table-tent {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        transform: none !important;
+      }
+    }
+</style>
+
+<div class="table-tent">
+  <div class="tent-base-top"></div>
+
+  <div class="tent-face-inverted">
+    {{ content }}
+  </div>
+
+  <div class="tent-face-regular">
+    {{ content }}
+  </div>
+
+  <div class="tent-base-bottom"></div>
+</div>
+
+<script>
+// Scale table tent to fit container on screen
+(function() {
+  if (window.matchMedia('print').matches) return;
+
+  var frame = document.querySelector('.print-frame:not(.print-frame--slides)');
+  var tent = document.querySelector('.table-tent');
+  if (!frame || !tent) return;
+
+  function scaleContent() {
+    var containerWidth = frame.offsetWidth;
+    // 4in = 384px at 96dpi
+    var contentWidth = 384;
+    var scale = containerWidth / contentWidth;
+
+    tent.style.transformOrigin = 'top left';
+    tent.style.transform = 'scale(' + scale + ')';
+  }
+
+  scaleContent();
+  window.addEventListener('resize', scaleContent);
+})();
+</script>

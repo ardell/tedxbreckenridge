@@ -1,0 +1,76 @@
+---
+layout: table-tent
+title: "January Salon Table Tent - Happy Hour"
+date: 2026-01-01
+description: "A-frame table tent for happy hour before the January 2026 Salon event"
+format: "4 x 18 Table Tent"
+---
+
+<style>
+  .tent-content {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Bold corner triangles for dynamic energy */
+  .corner-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1.8in 1.8in 0 0;
+    border-color: #e62b1e transparent transparent transparent;
+    z-index: 0;
+  }
+
+  .corner-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 1.8in 1.8in;
+    border-color: transparent transparent #e62b1e transparent;
+    z-index: 0;
+  }
+
+  /* Center white circle behind logo for contrast */
+  .tent-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3.2in;
+    height: 3.2in;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 0;
+    box-shadow: 0 0 0 3px #e62b1e;
+  }
+
+  .tent-logo {
+    width: 2.6in;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+</style>
+
+<div class="tent-content">
+  <div class="corner-top-left"></div>
+  <div class="corner-bottom-right"></div>
+  <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge" class="tent-logo">
+</div>
