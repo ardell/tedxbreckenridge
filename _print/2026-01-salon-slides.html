@@ -461,6 +461,67 @@ format: "1920x1080 Slides"
       opacity: 0.6;
     }
 
+    /* Thank you slide */
+    .slide--thanks .slide__content {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .thanks-title {
+      font-size: 64px;
+      font-weight: 700;
+      margin-bottom: 80px;
+    }
+
+    .thanks-grid {
+      display: flex;
+      gap: 200px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .thanks-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .thanks-item__logo {
+      height: 300px;
+      width: auto;
+      max-width: 600px;
+      object-fit: contain;
+    }
+
+    .thanks-item__logo--invert {
+      filter: invert(1);
+    }
+
+    .thanks-item__logo--on-light {
+      background: var(--white);
+      padding: 20px 28px;
+      border-radius: 12px;
+    }
+
+    .thanks-item__logo--rounded {
+      border-radius: 24px;
+    }
+
+    .thanks-item__label {
+      font-size: 24px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .thanks-item__name {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
     /* Upcoming events */
     .events-list {
       list-style: none;
@@ -531,7 +592,29 @@ format: "1920x1080 Slides"
     </div>
   </div>
 
-  <!-- Slide 2: Upcoming Events -->
+  <!-- Slide 2: Thank You -->
+  <div class="slide slide--dark slide--thanks">
+    <div class="slide__content">
+      <h2 class="thanks-title">Thank You</h2>
+      <div class="thanks-grid">
+        <div class="thanks-item">
+          <img src="/assets/images/sponsors/evo3-workspace-logo-dark.png" alt="EVO3 Workspace" class="thanks-item__logo thanks-item__logo--invert">
+          <div class="thanks-item__label">Venue host</div>
+          <div class="thanks-item__name">EVO3 Workspace</div>
+        </div>
+        <div class="thanks-item">
+          <img src="/assets/images/sponsors/colorado-mountain-college-logo-yellow-on-blue.png" alt="Colorado Mountain College" class="thanks-item__logo thanks-item__logo--rounded">
+          <div class="thanks-item__label">Speaker</div>
+          <div class="thanks-item__name">Colorado Mountain College</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="/assets/images/logos/tedxbreckenridge-evergreen-logo-white.png" alt="" class="slide-footer__logo">
+    </div>
+  </div>
+
+  <!-- Slide 3: Upcoming Events -->
   <div class="slide slide--dark">
     <div class="slide__content">
       <div class="slide__split">
@@ -560,7 +643,7 @@ format: "1920x1080 Slides"
     </div>
   </div>
 
-  <!-- Slide 3: Volunteer Needs -->
+  <!-- Slide 4: Volunteer Needs -->
   <div class="slide slide--dark">
     <div class="slide__content">
       <div class="slide__split slide__split--reverse">
@@ -586,7 +669,7 @@ format: "1920x1080 Slides"
     </div>
   </div>
 
-  <!-- Slide 4: What is a TEDx Salon? -->
+  <!-- Slide 5: What is a TEDx Salon? -->
   <div class="slide slide--dark">
     <div class="slide__content">
       <div class="slide__split slide__split--reverse">
@@ -612,7 +695,7 @@ format: "1920x1080 Slides"
     </div>
   </div>
 
-  <!-- Slide 5: Agenda -->
+  <!-- Slide 6: Agenda -->
   <div class="slide slide--dark">
     <div class="slide__content">
       <div class="slide__split">
@@ -636,7 +719,7 @@ format: "1920x1080 Slides"
     </div>
   </div>
 
-  <!-- Slide 6: Speaker Bio -->
+  <!-- Slide 7: Speaker Bio -->
   <div class="slide slide--dark slide--speaker">
     <div class="slide__background" style="background-image: url('/assets/images/heroes/salon-cutting-board.jpg');"></div>
     <div class="slide__overlay slide__overlay--warm"></div>
@@ -659,7 +742,7 @@ format: "1920x1080 Slides"
     </div>
   </div>
 
-  <!-- Slide 7: Community Questions -->
+  <!-- Slide 8: Community Questions -->
   <div class="slide slide--dark">
     <div class="slide__content">
       <div class="section-header">
@@ -698,7 +781,7 @@ format: "1920x1080 Slides"
     </div>
   </div>
 
-  <!-- Slide 8: Call to Action -->
+  <!-- Slide 9: Call to Action -->
   <div class="slide slide--dark slide--cta">
     <div class="slide__content">
       <p class="cta-message">Together, let's build a community where ideas inspire action.</p>
