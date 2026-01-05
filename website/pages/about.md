@@ -3,6 +3,9 @@ layout: page
 title: About
 subtitle: Ideas worth spreading in the heart of the Rockies
 permalink: /about/
+redirect_from:
+  - /discover
+  - /discover/
 description: Learn about TEDxBreckenridge, a local TEDx event in Breckenridge, Colorado. Discover our mission to share innovative ideas and build meaningful connections.
 ---
 

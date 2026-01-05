@@ -3,6 +3,9 @@ layout: page
 title: Donate
 subtitle: Support ideas worth spreading in our mountain community
 permalink: /donate-local-nonprofit-in-breckenridge/
+redirect_from:
+  - /support
+  - /support/
 description: Support TEDxBreckenridge, a 100% volunteer-led nonprofit bringing ideas worth spreading to Summit County, Colorado. Your donation helps produce inspiring talks and build community.
 container: container-md
 ---

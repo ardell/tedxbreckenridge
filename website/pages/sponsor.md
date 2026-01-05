@@ -3,6 +3,9 @@ layout: page
 title: Become a Sponsor
 subtitle: Partner with us to expand innovative thinking in our mountain community
 permalink: /sponsor/
+redirect_from:
+  - /become-a-sponsor
+  - /become-a-sponsor/
 description: Partner with TEDxBreckenridge to bring ideas worth spreading to Summit County. Support local voices, community connections, and world-class conversations in the Rockies.
 ---
 

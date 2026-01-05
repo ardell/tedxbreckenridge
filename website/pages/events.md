@@ -3,6 +3,9 @@ layout: page
 title: Upcoming Events
 subtitle: Ideas worth spreading in Summit County
 permalink: /events/
+redirect_from:
+  - /attend
+  - /attend/
 description: Upcoming TEDxBreckenridge events including Salon gatherings and our annual main event. Join us for inspiring talks and meaningful connections in the heart of the Rockies.
 ---
 
