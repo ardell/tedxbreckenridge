@@ -119,25 +119,21 @@ plus source view for copying HTML and print functionality.
 
     /* Main Content */
     main {
-      padding-top: 100px;
-      padding-bottom: 60px;
+      padding: 100px 48px 60px 48px;
     }
 
     /* Print Preview Frame - 8.5x11 aspect ratio */
     .print-frame {
-      width: 8.5in;
-      min-height: 11in;
-      margin: 0 auto;
-      background: var(--white);
-      box-shadow: 0 4px 24px rgb(0 0 0 / 20%);
+      width: 100%;
+      aspect-ratio: 8.5 / 11;
+      background: transparent;
       overflow: hidden;
     }
 
     /* Slides Preview Frame - 1920x1080 scaled to viewport */
     .print-frame--slides {
-      width: calc(100vw - 80px);
       max-width: 1920px;
-      min-height: auto;
+      aspect-ratio: auto;
       background: transparent;
       box-shadow: none;
       overflow: visible;
@@ -159,10 +155,14 @@ plus source view for copying HTML and print functionality.
       }
 
       .print-frame {
-        width: 100%;
-        min-height: auto;
-        margin: 0;
+        width: 8.5in;
+        height: 11in;
+        aspect-ratio: auto;
         box-shadow: none;
+      }
+
+      .print-frame .flyer {
+        transform: none !important;
       }
     }
 
@@ -185,23 +185,19 @@ plus source view for copying HTML and print functionality.
       }
 
       main {
-        padding-top: 80px;
-        padding-bottom: 40px;
+        padding: 80px 24px 40px 24px;
       }
 
       .print-frame {
-        width: calc(100% - 32px);
-        min-height: auto;
-        margin: 0 16px;
+        width: 100%;
       }
 
       .print-frame--slides {
-        width: calc(100vw - 32px);
-        margin: 0 16px;
+        width: 100%;
       }
 
       .source-view {
-        margin: 0 16px;
+        margin: 0;
         padding: 24px;
       }
 
@@ -227,6 +223,33 @@ plus source view for copying HTML and print functionality.
       {{ raw_content }}
     </div>
   </main>
+
+  <script>
+  // Scale flyer content to fit container on screen (slides handle their own scaling)
+  (function() {
+    if (window.matchMedia('print').matches) return;
+
+    var frame = document.querySelector('.print-frame:not(.print-frame--slides)');
+    if (!frame) return;
+
+    // Find the flyer element (may be outside frame due to nested HTML parsing)
+    var flyer = document.querySelector('.flyer');
+    if (!flyer) return;
+
+    function scaleContent() {
+      var containerWidth = frame.offsetWidth;
+      // 8.5in = 816px at 96dpi
+      var contentWidth = 816;
+      var scale = containerWidth / contentWidth;
+
+      flyer.style.transformOrigin = 'top left';
+      flyer.style.transform = 'scale(' + scale + ')';
+    }
+
+    scaleContent();
+    window.addEventListener('resize', scaleContent);
+  })();
+  </script>
 
 </body>
 </html>
