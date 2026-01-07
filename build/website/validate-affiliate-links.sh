@@ -48,6 +48,11 @@ check_ticketsauce_tracking() {
   local file="$2"
   local line_num="$3"
 
+  # Skip privacy policy and informational links (not affiliate links)
+  if [[ "$url" == *"/privacy-policy"* ]] || [[ "$url" == *"/privacy"* ]] || [[ "$url" == *"/terms"* ]]; then
+    return 0
+  fi
+
   # Check for required affiliate parameters (support both normal and URL-encoded formats)
   local has_source=false
   local has_id=false
@@ -82,6 +87,11 @@ check_givebutter_tracking() {
   local url="$1"
   local file="$2"
   local line_num="$3"
+
+  # Skip privacy policy and informational links (not affiliate links)
+  if [[ "$url" == *"/privacy-policy"* ]] || [[ "$url" == *"/privacy"* ]] || [[ "$url" == *"/terms"* ]]; then
+    return 0
+  fi
 
   # Check for required UTM parameters (support both normal and URL-encoded formats)
   local has_source=false
