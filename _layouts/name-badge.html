@@ -1,0 +1,90 @@
+---
+layout: print
+---
+<style>
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    .badges-sheet {
+      position: relative;
+      width: 8.5in;
+      height: 11in;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 3.375in 3.375in;
+      grid-template-rows: repeat(4, 2.333in);
+      column-gap: 0.375in;
+      row-gap: 0.187in;
+      padding: 0.554in 0.688in;
+    }
+
+    .badges-sheet * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Each badge - Avery 8395: 3.375" wide × 2.333" tall (LANDSCAPE) */
+    .badge {
+      position: relative;
+      width: 3.375in;
+      height: 2.333in;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 0.2in 0.3in;
+      border: 1px dotted rgba(0, 0, 0, 0.15);
+    }
+
+    @media print {
+      .badges-sheet {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        transform: none !important;
+      }
+
+      .badge {
+        page-break-inside: avoid;
+      }
+    }
+</style>
+
+<div class="badges-sheet">
+  {{ content }}
+  {{ content }}
+  {{ content }}
+  {{ content }}
+  {{ content }}
+  {{ content }}
+  {{ content }}
+  {{ content }}
+</div>
+
+<script>
+// Scale badges sheet to fit container on screen
+(function() {
+  if (window.matchMedia('print').matches) return;
+
+  var frame = document.querySelector('.print-frame:not(.print-frame--slides)');
+  var sheet = document.querySelector('.badges-sheet');
+  if (!frame || !sheet) return;
+
+  function scaleContent() {
+    var containerWidth = frame.offsetWidth;
+    // 8.5in = 816px at 96dpi
+    var contentWidth = 816;
+    var scale = containerWidth / contentWidth;
+
+    sheet.style.transformOrigin = 'top left';
+    sheet.style.transform = 'scale(' + scale + ')';
+  }
+
+  scaleContent();
+  window.addEventListener('resize', scaleContent);
+})();
+</script>
