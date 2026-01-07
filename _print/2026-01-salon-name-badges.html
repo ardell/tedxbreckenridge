@@ -8,61 +8,65 @@ format: "Avery 8395 (8 badges)"
 
 <style>
   .badge-logo {
-    max-width: 75%;
+    max-width: 70%;
     height: auto;
     display: block;
-    margin: 0 0 0.08in 0;
+    margin: 0 0 0.1in 0;
   }
 
-  .badge-divider {
-    width: 100%;
-    height: 0.5px;
-    background: #5B8E8E;
-    margin-bottom: 0.12in;
+  .badge-red-bar {
+    width: 0.8in;
+    height: 3px;
+    background: #e62b1e;
+    margin-bottom: 0.18in;
   }
 
   .badge-name-area {
     flex: 1;
-    margin-bottom: 0.15in;
+    margin-bottom: 0.2in;
     position: relative;
+    border-left: 3px solid #5B8E8E;
+    padding-left: 0.12in;
+    padding-top: 0.15in;
   }
 
   .badge-name-label {
-    font-size: 7pt;
-    font-weight: 400;
-    color: #B0B0B0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 6pt;
+    font-weight: 700;
+    color: #5B8E8E;
+    letter-spacing: 0.02em;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0.12in;
   }
 
   .badge-dish-area {
     height: 0.5in;
     position: relative;
+    padding-top: 0.12in;
+    padding-left: 0.12in;
+    border-left: 2px solid #E8E6E3;
   }
 
   .badge-dish-label {
-    font-size: 6pt;
-    font-weight: 400;
-    color: #B0B0B0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 5pt;
+    font-weight: 600;
+    color: #999999;
+    letter-spacing: 0.02em;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0.12in;
     white-space: nowrap;
   }
 </style>
 
 <div class="badge">
   <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge" class="badge-logo">
-  <div class="badge-divider"></div>
+  <div class="badge-red-bar"></div>
   <div class="badge-name-area">
-    <div class="badge-name-label">NAME</div>
+    <div class="badge-name-label">First Name</div>
   </div>
   <div class="badge-dish-area">
-    <div class="badge-dish-label">FAVORITE DISH (at a Summit County restaurant)</div>
+    <div class="badge-dish-label">Favorite Dish (at a Summit County restaurant)</div>
   </div>
 </div>
