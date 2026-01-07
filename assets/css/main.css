@@ -1607,6 +1607,18 @@ select:focus-visible {
     color: rgb(255 255 255 / 82.5%);
 }
 
+.footer-legal a {
+    color: rgb(255 255 255 / 87.5%);
+    border-bottom: 1px solid rgb(255 255 255 / 30%);
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--white);
+    border-bottom-color: rgb(255 255 255 / 60%);
+}
+
 .footer-social {
     display: flex;
     gap: var(--space-20);
