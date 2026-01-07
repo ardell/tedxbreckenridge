@@ -14,7 +14,7 @@ layout: print
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
-      background: #fff;
+      background: transparent;
       display: grid;
       grid-template-columns: 3.375in 3.375in;
       grid-template-rows: repeat(4, 2.333in);
@@ -38,7 +38,12 @@ layout: print
       display: flex;
       flex-direction: column;
       padding: 0.2in 0.3in;
-      border: 1px dotted rgba(0, 0, 0, 0.15);
+    }
+
+    @media screen {
+      .badge {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
     }
 
     @media print {
@@ -46,10 +51,12 @@ layout: print
         page-break-after: avoid;
         page-break-inside: avoid;
         transform: none !important;
+        background: #fff;
       }
 
       .badge {
         page-break-inside: avoid;
+        box-shadow: none;
       }
     }
 </style>
