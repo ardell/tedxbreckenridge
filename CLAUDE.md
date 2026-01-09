@@ -135,6 +135,20 @@ assets/images/
 - Avoid dates in URLs (content is evergreen)
 - Use hyphens, not underscores
 
+### Redirects
+- Use `jekyll-redirect-from` plugin for URL redirects
+- **Important**: Always include BOTH versions of redirect paths:
+  - Without trailing slash: `/elevated-cuisine`
+  - With trailing slash: `/elevated-cuisine/`
+- This ensures CloudFront/S3 can serve the redirect for both extensionless URLs and directory-style URLs
+- Example front matter:
+  ```yaml
+  redirect_from:
+    - /old-url
+    - /old-url/
+  ```
+- The trailing slash version creates `/old-url/index.html` which makes extensionless URLs work correctly
+
 ### Performance (affects SEO)
 - Optimize images (see Image Optimization above)
 - Minimize render-blocking resources
