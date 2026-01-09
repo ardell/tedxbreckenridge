@@ -7,6 +7,7 @@ start_time: "18:00"
 end_time: "19:30"
 redirect_from:
   - /elevated-cuisine
+  - /elevated-cuisine/
 
 # Location
 venue_name: "EVO3 Workspace"
