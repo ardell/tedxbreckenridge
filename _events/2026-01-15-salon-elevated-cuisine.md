@@ -40,9 +40,9 @@ Living and cooking in the mountains presents unique challenges that sea-level re
 
 ## About the Speakers
 
-**[Chef Kevin Clarke](https://coloradomtn.edu/faculty/clarke-kevin/)** serves as Director of Culinary Education at Colorado Mountain College and has led the Keystone campus culinary program since 2000. A 1996 graduate of CMC's inaugural Culinary Arts class, he returned to guide the next generation of mountain chefs after working at the historic Ski Tip Lodge and in Colorado's outdoor hospitality industry. Chef Clarke actively coaches student competition teams to state championships and brings deep expertise in high-altitude culinary education.
+**[Chef Kevin Clarke, CCE, JD](https://coloradomtn.edu/faculty/clarke-kevin/)** serves as Director of Culinary Education at Colorado Mountain College and has led the Summit Campus culinary program since 2000. A 1996 graduate of CMC's inaugural Culinary Arts class, he returned to guide the next generation of mountain chefs after working at the historic Ski Tip Lodge and in Colorado's outdoor hospitality industry. Chef Clarke actively coaches student competition teams to state championships and brings deep expertise in high-altitude culinary education.
 
-**[Chef Bernhard Schrag](https://coloradomtn.edu/faculty/schrag-bernhard/)** teaches culinary arts at CMC's Vail Valley campus in Edwards. With degrees in adult and vocational education from Australia and New Zealand, he brings an international perspective to the challenges and opportunities of cooking in the High Rockies. His teaching emphasizes both technical precision and creative adaptation—essential skills for successful high-altitude cooking.
+**[Chef Bernhard Schrag](https://coloradomtn.edu/faculty/schrag-bernhard/)** serves as Executive Chef of the Recreational Culinary Institute at Colorado Mountain College's Summit Campus. With degrees in adult and vocational education from Australia and New Zealand, he brings an international perspective to the challenges and opportunities of cooking in the High Rockies. His teaching emphasizes both technical precision and creative adaptation—essential skills for successful high-altitude cooking.
 
 ## What to Expect
 
