@@ -182,16 +182,20 @@ while IFS= read -r file; do
   while IFS= read -r line; do
     line_num=$((line_num + 1))
     if [[ "$line" == *"ticketsauce.com"* ]]; then
-      urls=$(echo "$line" | grep -oE 'https?://[^"'"'"'<>]+ticketsauce\.com[^"'"'"'<>]*' || true)
+      # Extract ticketsauce URLs - allow & and % in query strings, stop at space or closing tags
+      urls=$(echo "$line" | grep -oE 'https?://[a-zA-Z0-9.-]*ticketsauce\.com[^"'"'"'<> ]*' || true)
       for url in $urls; do
+        [[ -z "$url" || "$url" == "--"* ]] && continue
         if ! check_ticketsauce_tracking "$url" "$file" "$line_num"; then
           ERRORS=$((ERRORS + 1))
         fi
       done
     fi
     if [[ "$line" == *"givebutter.com"* ]]; then
-      urls=$(echo "$line" | grep -oE 'https?://[^"'"'"'<>]*givebutter\.com[^"'"'"'<>]*' || true)
+      # Extract givebutter URLs - allow & and % in query strings, stop at space or closing tags
+      urls=$(echo "$line" | grep -oE 'https?://[a-zA-Z0-9.-]*givebutter\.com[^"'"'"'<> ]*' || true)
       for url in $urls; do
+        [[ -z "$url" || "$url" == "--"* ]] && continue
         if ! check_givebutter_tracking "$url" "$file" "$line_num"; then
           ERRORS=$((ERRORS + 1))
         fi
