@@ -1,0 +1,196 @@
+// ==========================================================================
+// Video Player (Talks Page)
+// ==========================================================================
+
+// Year section responsive layout
+@media (width <= 768px) {
+    .talks-year-section .section-header {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-24) !important;
+    }
+
+    .talks-year-section .section-header img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
+
+// Talks year section styles
+.talks-year-section {
+    padding: 60px 48px;
+}
+
+.talks-year-section .section-inner {
+    max-width: none;
+}
+
+.talks-year-header {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--space-48);
+    align-items: center;
+    margin-bottom: var(--space-60);
+}
+
+.talks-year-header .section-eyebrow {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.talks-year-header .section-title {
+    font-size: 2.5rem;
+    margin: var(--space-16) 0 var(--space-24);
+}
+
+.talks-year-header p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--stone);
+    margin: 0;
+}
+
+// Eyebrow color variants for talks
+.talks-year-header .section-eyebrow.eyebrow-terracotta {
+    color: var(--terracotta);
+}
+
+.talks-year-header .section-eyebrow.eyebrow-teal {
+    color: var(--teal);
+}
+
+@media (width <= 768px) {
+    .talks-year-section {
+        padding: 40px 24px;
+    }
+
+    .talks-year-header {
+        grid-template-columns: 1fr;
+        gap: var(--space-24);
+    }
+
+    .talks-year-header img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .talks-year-header .section-title {
+        font-size: 2rem;
+    }
+}
+
+// Video skeleton loading
+.video-wrapper {
+    position: relative;
+    background: linear-gradient(90deg, #e8e6e3 25%, #f5f3f0 50%, #e8e6e3 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px;
+    height: 48px;
+    background: rgb(0 0 0 / 10%);
+    border-radius: 12px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 16px;
+    border-color: transparent transparent transparent rgb(0 0 0 / 15%);
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper.loaded {
+    animation: none;
+    background: var(--black);
+}
+
+.video-wrapper.loaded::before,
+.video-wrapper.loaded::after {
+    opacity: 0;
+}
+
+.video-wrapper iframe {
+    position: relative;
+    z-index: 3;
+}
+
+.video-info {
+    padding: 16px 0;
+}
+
+.video-title {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--black);
+    margin-bottom: 6px;
+}
+
+.video-speaker {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--stone);
+    line-height: 1.3;
+}
+
+// Year navigation - jump links for talks page
+.year-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-12);
+    padding: var(--space-16) 48px;
+    padding-top: calc(var(--space-16) + 80px);
+    margin-top: -80px;
+    background: var(--sand);
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.year-nav-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--stone);
+    line-height: 1;
+    padding: 6px 0;
+}
+
+.year-nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--charcoal);
+    text-decoration: none;
+    border-bottom: none;
+    background: var(--white);
+    border-radius: 100px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.year-nav-link:hover {
+    background: var(--charcoal);
+    color: var(--white);
+}

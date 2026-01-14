@@ -1,0 +1,29 @@
+// ==========================================================================
+// Donate Page
+// ==========================================================================
+
+// Donate box - prominent CTA container
+.donate-box {
+    padding: 60px 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.donate-box-tagline {
+    margin-top: var(--space-24);
+    color: var(--charcoal);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.donate-box-note {
+    margin-top: var(--space-12);
+    color: var(--stone);
+    font-size: 0.95rem;
+}
+
+.donate-disclaimer {
+    margin-top: var(--space-24);
+    color: var(--stone);
+    font-size: 0.95rem;
+}

@@ -1,0 +1,45 @@
+// ==========================================================================
+// Grid Utilities
+// ==========================================================================
+
+.grid {
+    display: grid;
+}
+
+.grid-gap-12 {
+    display: grid;
+    gap: var(--space-12);
+}
+
+.grid-gap-16 {
+    display: grid;
+    gap: var(--space-16);
+}
+
+.grid-gap-24 {
+    display: grid;
+    gap: var(--space-24);
+}
+
+.grid-gap-32 {
+    display: grid;
+    gap: var(--space-32);
+}
+
+.grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-24);
+}
+
+.grid-auto-fit-sm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: var(--space-32);
+}
+
+.flex-gap-12 {
+    display: flex;
+    gap: var(--space-12);
+    align-items: flex-start;
+}

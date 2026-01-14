@@ -1,0 +1,89 @@
+// ==========================================================================
+// Section Styling - Generic Section Components
+// ==========================================================================
+
+.section {
+    padding: 100px 48px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-full {
+    max-width: none;
+}
+
+.section-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.section-header {
+    margin-bottom: 48px;
+}
+
+.section-eyebrow {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--stone);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--black);
+}
+
+// Section header - centered variant
+.section-header-centered {
+    text-align: center;
+    margin-bottom: var(--space-48);
+}
+
+// Section description - centered text under section header
+.section-description {
+    max-width: 600px;
+    margin: var(--space-24) auto 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--stone);
+    text-align: center;
+}
+
+// Section with border top
+.section-bordered {
+    border-top: 1px solid var(--border-color);
+}
+
+// Section padding variants
+.section-pt-40 {
+    padding-top: 40px !important;
+}
+
+// Responsive
+@media (width <= 1024px) {
+    .section {
+        padding: 48px 16px;
+    }
+
+    .section-inner {
+        padding: 0;
+    }
+}
+
+@media (width <= 640px) {
+    .section {
+        padding: 40px 12px;
+    }
+
+    .section-inner {
+        padding: 0;
+    }
+}

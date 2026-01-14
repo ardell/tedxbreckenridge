@@ -1,0 +1,61 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+.btn {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-bottom: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--terracotta);
+    color: var(--white) !important;
+    border-bottom: none !important;
+}
+
+.btn-primary:hover {
+    background: var(--rust);
+    color: var(--white) !important;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--charcoal);
+    outline: 1px solid var(--charcoal);
+    outline-offset: -1px;
+}
+
+.btn-secondary:hover {
+    background: var(--sand);
+    color: var(--charcoal);
+}
+
+// Button size variants
+.btn-lg {
+    padding: 24px 48px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+// Button group - horizontal button container
+.btn-group {
+    display: flex;
+    gap: var(--space-16);
+    flex-wrap: wrap;
+}
+
+// Responsive
+@media (width <= 640px) {
+    .btn {
+        text-align: center;
+    }
+}

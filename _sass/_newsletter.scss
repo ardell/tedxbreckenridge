@@ -1,0 +1,234 @@
+// ==========================================================================
+// Newsletter / Mailing List Section
+// ==========================================================================
+
+.newsletter-section {
+    background: var(--charcoal);
+    padding: 72px 48px;
+    color: var(--white);
+}
+
+.newsletter-content {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-content h2 {
+    font-family: var(--font-primary);
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.newsletter-content p {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(255 255 255 / 65%);
+    margin-bottom: 28px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: var(--space-12);
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 14px 18px;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 300;
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    color: var(--white);
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.newsletter-input::placeholder {
+    color: rgb(255 255 255 / 80%);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--teal);
+    background: rgb(255 255 255 / 15%);
+}
+
+// Newsletter Section - Mailchimp Message Overrides
+.newsletter-section .mailchimp-embed .response {
+    margin-top: 16px;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.newsletter-section .mailchimp-embed #mce-success-response {
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid var(--teal);
+    color: rgb(255 255 255 / 80%);
+}
+
+.newsletter-section .mailchimp-embed #mce-error-response {
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid rgb(239 68 68 / 50%);
+    color: rgb(239 68 68);
+}
+
+// Mailchimp Form Styles
+.mailchimp-embed {
+    background: transparent;
+    font-family: var(--font-primary);
+}
+
+.mailchimp-form {
+    display: flex;
+    gap: var(--space-12);
+    align-items: flex-start;
+}
+
+.mailchimp-form-content {
+    width: 100%;
+    display: flex;
+    gap: var(--space-12);
+    align-items: flex-start;
+}
+
+.mailchimp-embed .mc-field-group {
+    flex: 1;
+    margin: 0;
+}
+
+.mailchimp-embed label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.mailchimp-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 300;
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    color: var(--white);
+    transition: border-color 0.2s ease, background 0.2s ease;
+    box-sizing: border-box;
+}
+
+.mailchimp-input::placeholder {
+    color: var(--teal-light);
+}
+
+.mailchimp-input:focus {
+    outline: none;
+    border-color: var(--teal);
+    background: rgb(255 255 255 / 15%);
+}
+
+.mailchimp-embed .clear {
+    flex-shrink: 0;
+}
+
+.mailchimp-embed .response {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.mailchimp-embed #mce-error-response {
+    background: rgb(239 68 68 / 10%);
+    border: 1px solid rgb(239 68 68 / 30%);
+    color: var(--color-error);
+}
+
+.mailchimp-embed #mce-success-response {
+    background: rgb(34 197 94 / 10%);
+    border: 1px solid rgb(34 197 94 / 30%);
+    color: var(--color-success);
+}
+
+// Responsive Mailchimp Form
+@media (width <= 640px) {
+    .mailchimp-form-content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .mailchimp-embed .mc-field-group {
+        width: 100%;
+    }
+
+    .mailchimp-embed .clear {
+        width: 100%;
+    }
+
+    .mailchimp-embed .btn {
+        width: 100%;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-section {
+        padding: 56px 12px;
+    }
+}
+
+// Page Signup Wrapper (for markdown pages)
+.page-signup-wrapper {
+    margin: 32px 0;
+    max-width: 500px;
+}
+
+.page-signup-wrapper .mailchimp-input {
+    background: var(--white);
+    border: 2px solid rgb(0 0 0 / 15%);
+    color: var(--charcoal);
+    padding: 12px 16px;
+    font-size: 16px;
+}
+
+.page-signup-wrapper .mailchimp-input::placeholder {
+    color: rgb(0 0 0 / 45%);
+}
+
+.page-signup-wrapper .mailchimp-input:focus {
+    border-color: var(--ted-red);
+    background: var(--white);
+}
+
+.page-signup-wrapper .btn {
+    padding: 12px 32px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+// Page Signup Wrapper - Message Overrides
+.page-signup-wrapper .mailchimp-embed .response {
+    margin-top: 16px;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.page-signup-wrapper .mailchimp-embed #mce-success-response {
+    background: rgb(236 253 245);
+    border: 1px solid rgb(16 185 129 / 30%);
+    color: rgb(6 78 59);
+}
+
+.page-signup-wrapper .mailchimp-embed #mce-error-response {
+    background: rgb(254 242 242);
+    border: 1px solid rgb(239 68 68 / 30%);
+    color: rgb(127 29 29);
+}

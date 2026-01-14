@@ -1,0 +1,23 @@
+// ==========================================================================
+// FAQ Sections
+// ==========================================================================
+
+.faq-section {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--sand);
+}
+
+.faq-section:last-of-type {
+    border-bottom: none;
+}
+
+.faq-section h3 {
+    color: var(--black);
+    margin: 0 0 16px;
+    font-size: clamp(18px, 3vw, 20px);
+}
+
+.faq-section p {
+    margin: 0;
+    color: var(--stone);
+}

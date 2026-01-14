@@ -1,0 +1,56 @@
+// ==========================================================================
+// Variables - CSS Custom Properties
+// ==========================================================================
+
+:root {
+    // Core TED Brand
+    --ted-red: #e4291c;
+    --ted-red-dark: #C70022;
+    --black: #000;
+    --white: #FFF;
+
+    // 2026 Evergreen - Mountain Inspired Palette
+    --terracotta: #B8433C;
+    --rust: #B8503F;
+    --teal: #3F6F6F;
+    --forest: #4A7470;
+    --charcoal: #2A2A2A;
+    --stone: #676767;
+    --cream: #F9F7F4;
+    --sand: #E8E6E3;
+
+    // Tints
+    --terracotta-light: #E6A199;
+    --teal-light: #A3C4C4;
+    --cream-dark: #EAE7E3;
+    --sand-light: #F2F0ED;
+
+    // Semantic Colors
+    --color-error: #ef4444;
+    --color-success: #22c55e;
+    --color-placeholder: #aaa;
+    --border-color: #e0e0e0;
+
+    // Spacing Scale
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-20: 20px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-40: 40px;
+    --space-48: 48px;
+    --space-60: 60px;
+    --space-64: 64px;
+    --space-80: 80px;
+    --space-100: 100px;
+    --space-120: 120px;
+    --space-160: 160px;
+
+    // Typography - TED Brand Standard with fallbacks
+    // Helvetica Neue/Helvetica: Pre-installed on macOS (authentic TED look)
+    // Inter: Open-source alternative for Windows/Linux (brand-approved)
+    // Arial: System fallback
+    --font-primary: 'Helvetica Neue', helvetica, inter, arial, sans-serif;
+}

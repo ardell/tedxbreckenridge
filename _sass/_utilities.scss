@@ -1,0 +1,122 @@
+// ==========================================================================
+// Utility Classes
+// ==========================================================================
+
+.rounded {
+    border-radius: 8px;
+}
+
+.aspect-video {
+    aspect-ratio: 16/9;
+}
+
+// Spacing Utilities - using spacing scale tokens
+// Use !important so utilities override component styles
+.mb-16 { margin-bottom: var(--space-16) !important; }
+.mb-24 { margin-bottom: var(--space-24) !important; }
+.mb-32 { margin-bottom: var(--space-32) !important; }
+.mb-40 { margin-bottom: var(--space-40) !important; }
+.mb-48 { margin-bottom: var(--space-48) !important; }
+.mb-60 { margin-bottom: var(--space-60) !important; }
+.mb-80 { margin-bottom: var(--space-80) !important; }
+
+.mt-16 { margin-top: var(--space-16) !important; }
+.mt-24 { margin-top: var(--space-24) !important; }
+.mt-32 { margin-top: var(--space-32) !important; }
+.mt-40 { margin-top: var(--space-40) !important; }
+.mt-48 { margin-top: var(--space-48) !important; }
+.mt-60 { margin-top: var(--space-60) !important; }
+.mt-80 { margin-top: var(--space-80) !important; }
+
+.my-32 {
+    margin-top: var(--space-32) !important;
+    margin-bottom: var(--space-32) !important;
+}
+
+.my-40 {
+    margin-top: var(--space-40) !important;
+    margin-bottom: var(--space-40) !important;
+}
+
+.my-48 {
+    margin-top: var(--space-48) !important;
+    margin-bottom: var(--space-48) !important;
+}
+
+.my-60 {
+    margin-top: var(--space-60) !important;
+    margin-bottom: var(--space-60) !important;
+}
+
+.my-80 {
+    margin-top: var(--space-80) !important;
+    margin-bottom: var(--space-80) !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+// Container utilities
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-md {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.container-sm {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+// Background utilities
+.bg-white {
+    background: var(--white);
+}
+
+.bg-cream {
+    background: var(--cream);
+}
+
+.bg-sand {
+    background: var(--sand);
+}
+
+// Text color utilities
+.text-stone {
+    color: var(--stone);
+}
+
+.text-charcoal {
+    color: var(--charcoal);
+}
+
+.text-red {
+    color: var(--ted-red);
+}
+
+// Image utilities
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+// Video responsive wrapper
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

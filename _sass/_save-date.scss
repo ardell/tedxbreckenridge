@@ -1,0 +1,114 @@
+// ==========================================================================
+// Homepage - Save the Date Section
+// ==========================================================================
+
+#main-event {
+    background: var(--sand-light);
+    overflow: hidden;
+    padding: 0;
+}
+
+.save-date-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 700px;
+}
+
+.save-date-content {
+    padding: 80px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.save-date-image {
+    position: relative;
+    margin-left: 0;
+    align-self: stretch;
+}
+
+.save-date-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+// Save the date section title
+.save-date-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: var(--space-16) 0 var(--space-32);
+}
+
+// Save the date content block
+.save-date-block {
+    margin-bottom: var(--space-32);
+}
+
+// Save the date description
+.save-date-description {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: var(--space-32);
+    color: var(--charcoal);
+}
+
+// Responsive
+@media (width <= 1024px) {
+    #main-event {
+        padding: 0 !important;
+    }
+
+    .save-date-container {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+        max-width: 100%;
+    }
+
+    .save-date-content {
+        padding: 48px 16px;
+        order: 1;
+    }
+
+    .save-date-image {
+        position: relative;
+        margin-right: 0;
+        margin-left: 0;
+        height: 400px;
+        order: 2;
+        width: 100%;
+    }
+
+    .save-date-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (width <= 640px) {
+    .save-date-content {
+        padding: 40px 12px;
+    }
+
+    .save-date-content h2 {
+        font-size: 2rem !important;
+    }
+
+    .save-date-content .date-large {
+        font-size: 1.5rem !important;
+    }
+
+    .save-date-image {
+        position: relative;
+        height: 300px;
+    }
+}

@@ -1,0 +1,83 @@
+// ==========================================================================
+// Photo Gallery Banner
+// ==========================================================================
+
+.photo-banner {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-4);
+    background: var(--black);
+    padding: 4px;
+}
+
+.photo-banner-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-banner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.photo-banner-item:hover img {
+    transform: scale(1.05);
+}
+
+// Scrollable photo banner variant
+.photo-banner-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--stone) var(--charcoal);
+}
+
+.photo-banner-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.photo-banner-scroll::-webkit-scrollbar-track {
+    background: var(--charcoal);
+}
+
+.photo-banner-scroll::-webkit-scrollbar-thumb {
+    background: var(--stone);
+    border-radius: 4px;
+}
+
+.photo-banner-scroll .photo-banner-item {
+    flex: 0 0 250px;
+    scroll-snap-align: start;
+}
+
+// Lazy loading placeholder for horizontal scroll
+.photo-banner-scroll img.lazy-horizontal {
+    background: var(--charcoal);
+}
+
+// Responsive
+@media (width <= 1024px) {
+    .photo-banner {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .photo-banner-item:nth-child(4),
+    .photo-banner-item:nth-child(5) {
+        display: none;
+    }
+}
+
+@media (width <= 640px) {
+    .photo-banner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-banner-item:nth-child(3) {
+        display: none;
+    }
+}

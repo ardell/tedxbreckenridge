@@ -1,0 +1,38 @@
+// ==========================================================================
+// Base - Reset and Default Styles
+// ==========================================================================
+
+// Inter: Open-source Helvetica alternative (TED brand-approved)
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+// Default Link Styles
+a {
+    color: var(--terracotta);
+    text-decoration: none;
+    border-bottom: 1px solid var(--terracotta-light);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    color: var(--ted-red);
+    border-bottom-color: var(--ted-red);
+}

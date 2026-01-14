@@ -1,0 +1,137 @@
+// ==========================================================================
+// Event Cards and Event Details
+// ==========================================================================
+
+// Event card with image
+.event-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+    overflow: hidden;
+}
+
+.event-card-image {
+    overflow: hidden;
+}
+
+.event-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-card-content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-24);
+}
+
+.event-card-content h3 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+}
+
+.event-card-content p {
+    margin: 0;
+    color: var(--stone);
+    line-height: 1.7;
+}
+
+.event-card-content p + p {
+    margin-top: var(--space-16);
+}
+
+.event-card-content .btn-group {
+    margin-top: auto;
+    padding-top: var(--space-16);
+}
+
+@media (width <= 600px) {
+    .event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card-image {
+        aspect-ratio: 16/9;
+    }
+}
+
+// Event card flyer variant - taller image for portrait flyers
+.event-card-flyer {
+    grid-template-columns: 280px 1fr;
+}
+
+.event-card-flyer .event-card-image {
+    min-height: 400px;
+}
+
+.event-card-flyer .event-card-image img {
+    object-fit: cover;
+    object-position: top center;
+}
+
+@media (width <= 768px) {
+    .event-card-flyer {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card-flyer .event-card-image {
+        min-height: auto;
+        aspect-ratio: 3/4;
+        max-height: 400px;
+    }
+}
+
+// Event details box - for salon event info
+.event-details {
+    margin-top: var(--space-32);
+    padding: var(--space-24);
+    background: var(--sand);
+    border-radius: 8px;
+}
+
+.event-details p {
+    margin: 0;
+    color: var(--charcoal);
+}
+
+.event-details p + p {
+    margin-top: var(--space-16);
+}
+
+.event-details-map {
+    margin: var(--space-16) 0;
+}
+
+.event-details-map iframe {
+    border: 0;
+    border-radius: 8px;
+}
+
+// Date highlight - large prominent date display
+.date-highlight {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-8);
+    color: var(--ted-red);
+}
+
+// Venue address text
+.venue-address {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--stone);
+    margin-bottom: var(--space-24);
+}
+
+// Event map container
+.event-map {
+    margin: var(--space-24) 0;
+}
+
+.event-map iframe {
+    border: 0;
+    border-radius: 8px;
+}

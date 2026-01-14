@@ -24,6 +24,12 @@ event:
 # Build settings
 markdown: kramdown
 future: true  # Generate pages for future-dated events
+
+# Sass/SCSS configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

@@ -1,0 +1,138 @@
+// ==========================================================================
+// Card Components
+// ==========================================================================
+
+.card {
+    padding: var(--space-32);
+    background: var(--cream);
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 0 0 var(--space-12);
+    font-size: 1.125rem;
+}
+
+.card p {
+    margin: 0;
+    line-height: 1.7;
+    color: var(--charcoal);
+}
+
+// Card with accent border - red
+.card-accent-red {
+    padding: var(--space-32);
+    background: var(--cream);
+    border-radius: 8px;
+    border-left: 4px solid var(--terracotta);
+}
+
+.card-accent-red h3 {
+    color: var(--terracotta);
+    margin-bottom: var(--space-12);
+    font-size: 1.25rem;
+}
+
+.card-accent-red p {
+    margin: 0;
+    color: var(--charcoal);
+    line-height: 1.7;
+}
+
+// Card with accent border - teal
+.card-accent-teal {
+    padding: var(--space-32);
+    background: var(--cream);
+    border-radius: 8px;
+    border-left: 4px solid var(--teal);
+}
+
+.card-accent-teal h3 {
+    color: var(--teal);
+    margin-bottom: var(--space-12);
+    font-size: 1.25rem;
+}
+
+.card-accent-teal p {
+    margin: 0;
+    color: var(--charcoal);
+    line-height: 1.7;
+}
+
+// Card variants
+.card-sand {
+    padding: var(--space-32);
+    background: var(--sand);
+    border-radius: 8px;
+}
+
+.card-sand h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 var(--space-16);
+    color: var(--charcoal);
+}
+
+.card-sand p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--stone);
+}
+
+// White card with shadow
+.card-white {
+    padding: var(--space-32);
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+}
+
+.card-white h3 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+}
+
+.card-white p {
+    margin: 0;
+    color: var(--stone);
+    line-height: 1.7;
+}
+
+.card-white p + p {
+    margin-top: var(--space-16);
+}
+
+// Card meta text - small text for dates, locations
+.card-meta {
+    font-size: 0.875rem;
+    margin-top: var(--space-16);
+}
+
+// Video card - for YouTube embeds
+.video-card {
+    display: block;
+}
+
+.video-card .video-wrapper {
+    aspect-ratio: 16/9;
+    margin-bottom: var(--space-16);
+}
+
+.video-card .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.video-card h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 0 0 var(--space-8);
+    line-height: 1.4;
+    color: var(--charcoal);
+}
+
+.video-card p {
+    margin: 0;
+    color: var(--stone);
+}
