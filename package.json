@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "pa11y-ci": "^4.0.0",
+    "pptxgenjs": "^4.0.1",
+    "puppeteer": "^24.35.0",
     "serve": "^14.2.3",
     "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1"

@@ -35,3 +35,7 @@ deploy.log
 # Generated outputs (stored in Google Drive, not repo)
 materials/**/*.pdf
 *.pdf
+*.pptx
+
+# Temp files from slide export script
+_temp_slides/
