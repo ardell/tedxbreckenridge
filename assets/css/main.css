@@ -834,6 +834,7 @@ select:focus-visible {
 }
 
 .theme-content-reverse .theme-visual {
+    order: -1;
     height: 100%;
 }
 
