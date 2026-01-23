@@ -36,7 +36,7 @@ layout: default
                     {{ page.venue_name }}, {{ page.venue_city }}
                 </p>
                 <p class="text-stone card-meta">
-                    <strong>{% if page.price == 0 %}Free{% else %}${{ page.price }}{% endif %}</strong>{% if page.price_display %} · {{ page.price_display }}{% endif %}
+                    <strong>{% if page.price_display %}{{ page.price_display }}{% elsif page.price == 0 %}Free{% else %}${{ page.price }}{% endif %}</strong>
                 </p>
                 {% if page.event_type == "salon" %}
                 <p class="text-stone card-meta"><em>Ideas should be accessible to everyone. If cost is a barrier, join us anyway — your curiosity matters most.</em></p>
@@ -75,7 +75,7 @@ layout: default
                     </div>
                     {% endif %}
 
-                    <p><strong>{% if page.price == 0 %}Free{% else %}${{ page.price }}{% endif %}</strong>{% if page.price_display %}<br>{{ page.price_display }}{% endif %}</p>
+                    <p><strong>{% if page.price_display %}{{ page.price_display }}{% elsif page.price == 0 %}Free{% else %}${{ page.price }}{% endif %}</strong></p>
 
                     {% if page.event_type == "salon" %}
                     <p><em>Ideas should be accessible to everyone. If cost is a barrier, join us anyway — your curiosity matters most.</em></p>

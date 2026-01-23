@@ -1903,6 +1903,7 @@ select:focus-visible {
     color: var(--black);
     max-width: 800px;
     margin: 0 auto;
+    text-wrap: balance;
 }
 
 .page-subtitle {
