@@ -1,0 +1,172 @@
+---
+layout: print
+---
+<style>
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    .poster {
+      position: relative;
+      width: 8.5in;
+      height: 11in;
+      overflow: hidden;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .poster * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .poster .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .poster .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .poster .overlay--dark {
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+
+    .poster .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      padding: 0.6in 0.6in 0.9in;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .poster .header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .poster .logo {
+      width: 6in;
+      height: auto;
+      margin-bottom: 0.35in;
+      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
+    }
+
+    .poster .presents {
+      font-size: 14pt;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.15in;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .poster .title {
+      font-size: 46pt;
+      font-weight: 700;
+      line-height: 1.1;
+      max-width: 6.5in;
+      color: #fff;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .poster .footer {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 0.3in;
+    }
+
+    .poster .details {
+      font-size: 17pt;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #fff;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .poster .details .date {
+      font-weight: 700;
+    }
+
+    .poster .qr-code {
+      width: 1.2in;
+      height: 1.2in;
+      border: 4px solid #fff;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .poster .featuring {
+      font-size: 15pt;
+      font-weight: 400;
+      margin-top: 0.2in;
+      color: #fff;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .poster .featuring strong {
+      font-weight: 700;
+    }
+
+    .poster .partner-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.08in;
+      margin-top: 0.25in;
+    }
+
+    .poster .partner-label {
+      font-size: 9pt;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .poster .partner-logo {
+      height: 0.8in;
+      width: auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.1in 0.15in;
+      border-radius: 5px;
+    }
+
+    @media print {
+      .poster {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        transform: none !important;
+      }
+    }
+</style>
+
+<div class="poster">
+{{ content }}
+</div>

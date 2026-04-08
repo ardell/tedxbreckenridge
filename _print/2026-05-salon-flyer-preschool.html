@@ -1,0 +1,128 @@
+---
+layout: poster
+title: "May Salon Poster - Preschool Flyer"
+date: 2026-05-01
+description: "Poster for the May 2026 Salon event - preschool audience, firetruck background"
+format: "8.5 x 11 Poster"
+---
+
+<style>
+  .poster .background--split {
+    height: 100%;
+    background-position: center 105%;
+  }
+
+  .poster .overlay--split {
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.4) 18%,
+      rgba(0, 0, 0, 0) 28%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .poster .content--split {
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .poster .image-area {
+    position: relative;
+    flex: 1;
+    padding: 0.4in 0.6in;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .poster .image-area .logo {
+    margin-bottom: 0.25in;
+  }
+
+  .poster .text-area {
+    padding: 0.3in 0.6in 0.4in;
+    background: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25in;
+  }
+
+  .poster .subtitle {
+    font-size: 13pt;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.4;
+    margin-top: 0.15in;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .poster .body-copy {
+    font-size: 13pt;
+    font-weight: 400;
+    line-height: 1.55;
+    max-width: 7in;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .poster .callout {
+    display: inline-block;
+    background: rgba(228, 41, 28, 0.15);
+    border-left: 4px solid #e4291c;
+    padding: 0.08in 0.2in;
+    font-size: 12pt;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .poster .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+
+  .poster .bottom-row .partner-section {
+    margin-top: 0;
+    align-items: flex-end;
+    position: relative;
+    top: -13px;
+  }
+</style>
+
+<div class="background background--split" style="background-image: url('/assets/images/backgrounds/salon-wildfire-firetruck.jpg');"></div>
+<div class="overlay overlay--split"></div>
+<div class="content content--split">
+  <div class="image-area">
+    <img src="/assets/images/logos/tedx-breckenridge-logo-white.png" alt="TEDxBreckenridge" class="logo">
+    <div class="presents">Salon presents</div>
+    <h1 class="title" style="font-size: 34pt; white-space: nowrap;">Why Do Forests Need Fire?</h1>
+  </div>
+  <div class="text-area">
+    <div class="body-copy">
+      <p><strong>🚒 Explore a real firetruck</strong> with Summit Fire &amp; EMS firefighters</p>
+      <p><strong>🔬 Hands-on science activities</strong> by Keystone Science School</p>
+      <p><strong>🌲 An eye-opening talk</strong> about wildfire and our mountain forests</p>
+    </div>
+    <div class="callout">Fun for the whole family — kids activities 5:30-7pm</div>
+    <div class="bottom-row">
+      <div class="details" style="display: flex; flex-direction: row; align-items: center; gap: 0.2in;">
+        <!-- QR code for: https://tedxbreckenridge.ticketsauce.com/e/wildfire-expert?utm_source=affiliate&utm_name=Kids-flyer&utm_campaign=Kids-flyer&utm_id=69d666ac008c4a769e9f00750a1e63d7 -->
+        <!-- Generate at: https://api.qrserver.com/v1/create-qr-code/?size=510x510&data=https://tedxbreckenridge.ticketsauce.com/e/wildfire-expert?utm_source=affiliate%26utm_name=Kids-flyer%26utm_campaign=Kids-flyer%26utm_id=69d666ac008c4a769e9f00750a1e63d7 -->
+        <img src="/assets/images/qr-codes/salon-2026-05-wildfire-kids.png" alt="Get Tickets" class="qr-code" style="width: 1in; height: 1in; flex-shrink: 0;">
+        <div>
+          <div class="date">Tuesday, May 5th</div>
+          <div>Silverthorne Pavilion</div>
+          <div>Doors 5:30pm &middot; Talk 6:00pm</div>
+        </div>
+      </div>
+      <div class="partner-section">
+        <span class="partner-label">In partnership with</span>
+        <img src="/assets/images/logos/keystone-science-school.png" alt="Keystone Science School" class="partner-logo">
+      </div>
+    </div>
+  </div>
+</div>

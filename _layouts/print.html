@@ -146,6 +146,18 @@ plus source view for copying HTML and print functionality.
     }
 
     /* Print Styles */
+    {% if page.format contains 'Table Tent' %}
+    @page {
+      size: 4in 18in;
+      margin: 0;
+    }
+    {% else %}
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+    {% endif %}
+
     @media print {
       body {
         background: none;
@@ -179,6 +191,7 @@ plus source view for copying HTML and print functionality.
       .print-frame--table-tent .table-tent {
         transform: none !important;
       }
+
     }
 
     /* Mobile */
@@ -240,16 +253,16 @@ plus source view for copying HTML and print functionality.
   </main>
 
   <script>
-  // Scale flyer content to fit container on screen (slides handle their own scaling)
+  // Scale print content to fit container on screen (slides handle their own scaling)
   (function() {
     if (window.matchMedia('print').matches) return;
 
     var frame = document.querySelector('.print-frame:not(.print-frame--slides)');
     if (!frame) return;
 
-    // Find the flyer element (may be outside frame due to nested HTML parsing)
-    var flyer = document.querySelector('.flyer');
-    if (!flyer) return;
+    // Find the printable element
+    var content = document.querySelector('.flyer') || document.querySelector('.poster');
+    if (!content) return;
 
     function scaleContent() {
       var containerWidth = frame.offsetWidth;
@@ -257,8 +270,8 @@ plus source view for copying HTML and print functionality.
       var contentWidth = 816;
       var scale = containerWidth / contentWidth;
 
-      flyer.style.transformOrigin = 'top left';
-      flyer.style.transform = 'scale(' + scale + ')';
+      content.style.transformOrigin = 'top left';
+      content.style.transform = 'scale(' + scale + ')';
     }
 
     scaleContent();
