@@ -38,7 +38,7 @@ We live in one of the most beautiful forested landscapes in the country — and 
 
 ## About the Speaker
 
-**Hannah Ohlson** is a Fuels Specialist with [Summit Fire & EMS](https://www.summitfire.org/), where she leads wildfire mitigation efforts across Summit County. Before joining Summit Fire, she served on U.S. Forest Service Interagency Hotshot Crews and Helitack teams — some of the most demanding roles in wildland firefighting. She's also a certified Burn Boss, overseeing prescribed burns that help our forests stay healthy. In early 2026, Hannah was chosen to receive the Wildfire Mitigation Award from the International Association of Fire Chiefs — the highest national honor for wildfire preparedness and mitigation work.
+**Hannah Ohlson** is a Fuels Specialist with [Summit Fire & EMS](https://www.summitfire.org/), leading wildfire mitigation across Summit County. Before joining Summit Fire, she served on U.S. Forest Service Interagency Hotshot Crews and Helitack teams — some of the most demanding roles in wildland firefighting. She holds operational qualifications in wildfire suppression and prescribed fire, and is currently completing a Master's degree in Natural Resources Stewardship from Colorado State University. In early 2026, Hannah received the Wildfire Mitigation Award from the International Association of Fire Chiefs — the highest national honor for wildfire preparedness and mitigation work.
 
 ## What to Expect
 
