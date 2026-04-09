@@ -61,21 +61,24 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Enable Corepack for Yarn
-        run: corepack enable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Install JavaScript dependencies
-        run: yarn install --immutable
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Puppeteer browsers
+        run: pnpm exec puppeteer browsers install chrome
 
       - name: Lint CSS with Stylelint
-        run: yarn test:css
+        run: pnpm test:css
 
       - name: Test accessibility with pa11y-ci
         run: |
-          yarn serve &
+          pnpm serve &
           SERVER_PID=$!
           sleep 5
-          yarn test:a11y
+          pnpm test:a11y
           kill $SERVER_PID
 
       - name: Validate affiliate tracking links

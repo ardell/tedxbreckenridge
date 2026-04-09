@@ -60,7 +60,7 @@ exclude:
   - MISE_SETUP.md
   - LICENSE
   - package.json
-  - yarn.lock
+  - pnpm-lock.yaml
   - materials/
   - build/
   - config/

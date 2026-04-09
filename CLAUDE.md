@@ -440,7 +440,7 @@ Checks:
 
 #### 6. Lint CSS
 ```bash
-yarn test:css
+pnpm test:css
 ```
 
 Validates:
@@ -456,7 +456,7 @@ cd website
 bundle exec jekyll serve
 
 # In another terminal
-yarn test:a11y
+pnpm test:a11y
 ```
 
 Checks:
@@ -524,40 +524,42 @@ Our test suite covers:
 ### Tools Used
 
 - **html-proofer** (Ruby gem): HTML validation and link checking
-- **stylelint** (yarn): CSS linting
-- **pa11y-ci** (yarn): Accessibility testing
-- **serve** (yarn): Local web server for testing
+- **stylelint** (pnpm): CSS linting
+- **pa11y-ci** (pnpm): Accessibility testing
+- **serve** (pnpm): Local web server for testing
 - **Custom script**: Image size validation
 
 ### JavaScript Dependencies
 
-JavaScript dependencies are managed with **Yarn** (not npm).
+JavaScript dependencies are managed with **pnpm** (not npm or yarn).
 
 **Install dependencies**:
 ```bash
-yarn install
+pnpm install
 ```
 
 **Run scripts**:
 ```bash
-yarn test:css    # Lint CSS
-yarn test:a11y   # Test accessibility
-yarn serve       # Start local server for testing
+pnpm test:css    # Lint CSS
+pnpm test:a11y   # Test accessibility
+pnpm serve       # Start local server for testing
 ```
 
 **Add new dependencies**:
 ```bash
-yarn add --dev <package-name>
+pnpm add -D <package-name>
 ```
 
 **Update dependencies**:
 ```bash
-yarn upgrade-interactive
+pnpm update --interactive
 ```
 
 **Files**:
 - `package.json` - Dependency definitions and scripts
-- `yarn.lock` - Locked versions (commit this file!)
+- `pnpm-lock.yaml` - Locked versions (commit this file!)
+- `.npmrc` - Security settings (ignore-scripts, minimum-release-age)
+- `pnpm-workspace.yaml` - Workspace config (blockExoticSubdeps)
 
 ---
 
