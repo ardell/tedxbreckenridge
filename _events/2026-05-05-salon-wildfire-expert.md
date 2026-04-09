@@ -57,6 +57,10 @@ Doors 5:30pm · Talk 6:00pm
 
 Drinks and snacks available for purchase, with proceeds supporting Keystone Science School programming.
 
+## Thank You
+
+This event is made possible by Hannah Ohlson and [Summit Fire & EMS](https://www.summitfire.org/), Brooke Morehardt and [Keystone Science School](https://www.keystonescienceschool.org/), the [Silverthorne Pavilion](https://www.silverthornepavilion.com/), the [Town of Silverthorne](https://www.silverthorne.org/), and Aaron Williams, Jill Marek, Angie Hildebrand, Alaina Perkins, and the TEDxBreckenridge team.
+
 ## About TEDxBreckenridge Salons
 
 TEDxBreckenridge Salon events are conversational gatherings that bring curious minds together to explore compelling topics. Unlike traditional lectures, Salons emphasize discussion, questions, and the exchange of ideas — creating space for deeper learning and authentic community connection.
