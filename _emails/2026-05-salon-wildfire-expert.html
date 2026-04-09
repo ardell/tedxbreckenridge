@@ -35,9 +35,12 @@ description: "Salon event invitation for Seeing Through the Eyes of a Wildfire E
 
         /* Mobile styles */
         @media screen and (max-width: 600px) {
-            .mobile-padding { padding-left: 24px !important; padding-right: 24px !important; }
+            .mobile-padding { padding-left: 16px !important; padding-right: 16px !important; }
+            .mobile-wrapper { padding-left: 0 !important; padding-right: 0 !important; }
+            .email-wrapper { background-color: #FFFFFF !important; }
+            .email-container { width: 100% !important; }
             .mobile-stack { display: block !important; width: 100% !important; padding: 16px !important; }
-            .mobile-stack img { width: 100% !important; max-width: 100% !important; }
+            .mobile-stack img { width: 100% !important; max-width: 100% !important; height: auto !important; }
         }
     </style>
 </head>
@@ -49,25 +52,25 @@ description: "Salon event invitation for Seeing Through the Eyes of a Wildfire E
     </div>
 
     <!-- Email wrapper -->
-    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3F0;">
+    <table class="email-wrapper" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3F0;">
         <!-- View in browser -->
         <tr>
-            <td align="center" style="padding: 16px 20px 0 20px;">
+            <td class="mobile-wrapper" align="center" style="padding: 16px 20px 0 20px;">
                 <p style="margin: 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; color: #6B6B6B;">
                     <a href="*|ARCHIVE|*" target="_blank" style="color: #5B8E8E; text-decoration: underline;">View this email in your browser</a>
                 </p>
             </td>
         </tr>
         <tr>
-            <td align="center" style="padding: 24px 20px 40px 20px;">
+            <td class="mobile-wrapper" align="center" style="padding: 24px 20px 40px 20px;">
 
                 <!-- Email container -->
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; background-color: #FFFFFF;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0" width="560" style="background-color: #FFFFFF;">
 
                     <!-- Header with logo -->
                     <tr>
                         <td align="center" style="padding: 40px 40px 32px 40px; border-bottom: 1px solid #E8E6E3;">
-                            <img src="https://www.tedxbreckenridge.com/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge" width="200" style="display: block; max-width: 200px; height: auto;">
+                            <img src="https://www.tedxbreckenridge.com/assets/images/logos/tedx-breckenridge-logo-black-on-white.png" alt="TEDxBreckenridge" width="200" style="display: block; max-width: 200px; height: auto;">
                         </td>
                     </tr>
 
@@ -86,10 +89,10 @@ description: "Salon event invitation for Seeing Through the Eyes of a Wildfire E
                             </p>
 
                             <!-- Event details box with image -->
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3F0; border-left: 4px solid #e62b1e; margin-bottom: 32px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3F0; border-left: 4px solid #e62b1e; margin-bottom: 32px; table-layout: fixed;">
                                 <tr>
-                                    <td style="padding: 0;">
-                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <td style="padding: 0; overflow: hidden;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="table-layout: fixed;">
                                             <tr>
                                                 <!--[if mso]>
                                                 <td width="160" valign="top" style="padding: 16px 0 16px 16px;">
