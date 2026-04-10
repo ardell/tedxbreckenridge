@@ -1,0 +1,341 @@
+---
+layout: social-image
+title: "May Salon Instagram Carousel - Wildfire Expert"
+date: 2026-05-01
+description: "Instagram carousel for the May 2026 Salon event"
+format: "Instagram Carousel"
+---
+
+<style>
+  .slide {
+    width: 1200px;
+    height: 1200px;
+  }
+
+  .slide .overlay--dark {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0.1) 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .slide .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 80px;
+  }
+
+  /* --- Slide 1: Title + Date --- */
+
+  .slide-1 .background {
+    background-position: 26% 60%;
+    background-size: 180%;
+  }
+
+  .slide-1 .content {
+    justify-content: space-between;
+  }
+
+  .slide-1 .top {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .slide-1 .logo {
+    width: 560px;
+    height: auto;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.7));
+  }
+
+  .slide-1 .presents {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .slide-1 .title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5), -2px -2px 0 rgba(0, 0, 0, 0.5), 2px -2px 0 rgba(0, 0, 0, 0.5), -2px 2px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .slide-1 .date-line {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  /* --- Slide 2: Speaker --- */
+
+  .slide-2 .background {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .slide-2 .overlay--dark {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .slide-2 .content {
+    justify-content: flex-end;
+  }
+
+  .slide-2 .speaker-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .slide-2 .featuring-label {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .slide-2 .speaker-name {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5), -2px -2px 0 rgba(0, 0, 0, 0.5), 2px -2px 0 rgba(0, 0, 0, 0.5), -2px 2px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .slide-2 .speaker-role {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .slide-2 .speaker-bio {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 900px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  /* --- Slide 3: Details + Tickets --- */
+
+  .slide-3 .background {
+    background-position: center 46%;
+    background-size: cover;
+  }
+
+  .slide-3 .overlay--dark {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 40%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+  }
+
+  .slide-3 .content {
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .slide-3 .section-title {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 12px;
+  }
+
+  .slide-3 .detail-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .slide-3 .detail-row {
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.4;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .slide-3 .detail-row strong {
+    font-weight: 700;
+  }
+
+  .slide-3 .ticket-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .slide-3 .ticket-price {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .slide-3 .ticket-note {
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .slide-3 .kids-note {
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  /* --- Slide 4: Partners --- */
+
+  .slide-4 .background {
+    background-position: 26% 60%;
+    background-size: 180%;
+  }
+
+  .slide-4 .overlay--dark {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .slide-4 .content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .slide-4 .presented-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .slide-4 .presented-label {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .slide-4 .logo {
+    width: 600px;
+    height: auto;
+  }
+
+  .slide-4 .partner-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .slide-4 .partner-label {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .slide-4 .partner-logo {
+    height: 120px;
+    width: auto;
+  }
+</style>
+
+<!-- Slide 1: Title + Date -->
+<div class="preview-label">Slide 1 — Title + Date (1200×1200)</div>
+<div class="social-image slide slide-1">
+  <div class="background" style="background-image: url('/assets/images/backgrounds/salon-wildfire-pinecone.jpg');"></div>
+  <div class="overlay overlay--dark"></div>
+  <div class="content">
+    <div class="top">
+      <img src="/assets/images/logos/tedx-breckenridge-logo-white.png" alt="TEDxBreckenridge" class="logo">
+      <div class="presents">Salon presents</div>
+      <h1 class="title">Seeing Through<br>the Eyes of a<br>Wildfire Expert</h1>
+    </div>
+    <div class="date-line">Tuesday, May 5th &middot; Silverthorne Pavilion</div>
+  </div>
+</div>
+
+<!-- Slide 2: Speaker -->
+<div class="preview-label">Slide 2 — Speaker (1200×1200)</div>
+<div class="social-image slide slide-2">
+  <div class="background" style="background-image: url('/assets/images/backgrounds/salon-wildfire-forest.jpg');"></div>
+  <div class="overlay overlay--dark"></div>
+  <div class="content">
+    <div class="speaker-info">
+      <div class="featuring-label">Featuring</div>
+      <div class="speaker-name">Hannah Ohlson</div>
+      <div class="speaker-role">Fuels Specialist at Summit Fire &amp; EMS</div>
+      <div class="speaker-bio">Hannah served on U.S. Forest Service Hotshot Crews and Helitack teams. In 2026, she received the Wildfire Mitigation Award from the International Association of Fire Chiefs — the highest national honor for wildfire preparedness.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 3: Details + Tickets -->
+<div class="preview-label">Slide 3 — Details + Tickets (1200×1200)</div>
+<div class="social-image slide slide-3">
+  <div class="background" style="background-image: url('/assets/images/backgrounds/salon-wildfire-firetruck.jpg');"></div>
+  <div class="overlay overlay--dark"></div>
+  <div class="content">
+    <div class="detail-block">
+      <div class="section-title">Event Details</div>
+      <div class="detail-row"><strong>Tuesday, May 5th</strong></div>
+      <div class="detail-row">Silverthorne Pavilion</div>
+      <div class="detail-row">Doors 5:30pm &middot; Talk 6:00pm</div>
+    </div>
+    <div class="ticket-block">
+      <div class="section-title">Tickets</div>
+      <div class="ticket-price">$10 Adults &middot; $10 Kids (ages 4+)</div>
+      <div class="ticket-note">Ideas should be accessible to everyone — if cost is a barrier, you're welcome to join anyway.</div>
+    </div>
+    <div class="kids-note">&#x1F692; Kids activities include fire truck tours &amp; hands-on wildfire science!</div>
+  </div>
+</div>
+
+<!-- Slide 4: Partners -->
+<div class="preview-label">Slide 4 — Partners (1200×1200)</div>
+<div class="social-image slide slide-4">
+  <div class="background" style="background-image: url('/assets/images/backgrounds/salon-wildfire-pinecone.jpg');"></div>
+  <div class="overlay overlay--dark"></div>
+  <div class="content">
+    <div class="presented-section">
+      <div class="presented-label">Presented by</div>
+      <img src="/assets/images/logos/tedx-breckenridge-logo-white.png" alt="TEDxBreckenridge" class="logo">
+    </div>
+    <div class="partner-section">
+      <div class="partner-label">In partnership with</div>
+      <img src="/assets/images/logos/keystone-science-school-white.png" alt="Keystone Science School" class="partner-logo">
+    </div>
+  </div>
+</div>
