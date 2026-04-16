@@ -122,10 +122,14 @@ plus source view for copying HTML and print functionality.
       padding: 100px 48px 60px 48px;
     }
 
-    /* Print Preview Frame - 8.5x11 aspect ratio */
+    {%- assign bleed = page.bleed | default: 0 -%}
+    {%- assign page_w_in = 8.5 | plus: bleed | plus: bleed -%}
+    {%- assign page_h_in = 11 | plus: bleed | plus: bleed -%}
+
+    /* Print Preview Frame - matches page aspect ratio (including bleed if set) */
     .print-frame {
       width: 100%;
-      aspect-ratio: 8.5 / 11;
+      aspect-ratio: {{ page_w_in }} / {{ page_h_in }};
       background: transparent;
       overflow: hidden;
     }
@@ -153,7 +157,7 @@ plus source view for copying HTML and print functionality.
     }
     {% else %}
     @page {
-      size: 8.5in 11in;
+      size: {{ page_w_in }}in {{ page_h_in }}in;
       margin: 0;
     }
     {% endif %}
@@ -173,8 +177,8 @@ plus source view for copying HTML and print functionality.
       }
 
       .print-frame {
-        width: 8.5in;
-        height: 11in;
+        width: {{ page_w_in }}in;
+        height: {{ page_h_in }}in;
         aspect-ratio: auto;
         box-shadow: none;
       }
@@ -266,8 +270,8 @@ plus source view for copying HTML and print functionality.
 
     function scaleContent() {
       var containerWidth = frame.offsetWidth;
-      // 8.5in = 816px at 96dpi
-      var contentWidth = 816;
+      // Page width in inches × 96dpi
+      var contentWidth = {{ page_w_in }} * 96;
       var scale = containerWidth / contentWidth;
 
       content.style.transformOrigin = 'top left';
