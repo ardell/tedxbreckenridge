@@ -2,15 +2,22 @@
 layout: print
 ---
 <style>
+    {%- assign bleed = page.bleed | default: 0 -%}
+    {%- assign page_w_in = 8.5 | plus: bleed | plus: bleed -%}
+    {%- assign page_h_in = 11 | plus: bleed | plus: bleed -%}
+    {%- assign pad_top = 0.6 | plus: bleed -%}
+    {%- assign pad_side = 0.6 | plus: bleed -%}
+    {%- assign pad_bottom = 0.9 | plus: bleed -%}
+
     @page {
-      size: 8.5in 11in;
+      size: {{ page_w_in }}in {{ page_h_in }}in;
       margin: 0;
     }
 
     .poster {
       position: relative;
-      width: 8.5in;
-      height: 11in;
+      width: {{ page_w_in }}in;
+      height: {{ page_h_in }}in;
       overflow: hidden;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       -webkit-print-color-adjust: exact;
@@ -55,7 +62,7 @@ layout: print
       z-index: 1;
       width: 100%;
       height: 100%;
-      padding: 0.6in 0.6in 0.9in;
+      padding: {{ pad_top }}in {{ pad_side }}in {{ pad_bottom }}in;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
