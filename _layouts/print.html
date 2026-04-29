@@ -264,6 +264,10 @@ plus source view for copying HTML and print functionality.
     var frame = document.querySelector('.print-frame:not(.print-frame--slides)');
     if (!frame) return;
 
+    // If a layout has its own outer canvas (e.g. .poster-page when crop_marks is on),
+    // it owns scaling — bail out so we don't double-transform.
+    if (document.querySelector('.poster-page')) return;
+
     // Find the printable element
     var content = document.querySelector('.flyer') || document.querySelector('.poster');
     if (!content) return;

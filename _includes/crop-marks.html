@@ -1,0 +1,73 @@
+{%- comment -%}
+Crop marks include — emits 4 L-shaped corner marks at the trim line of a printed piece.
+
+Required params (all in inches):
+  - trim_w:    trim width
+  - trim_h:    trim height
+  - bleed:     bleed amount on each side (typically 0.125)
+  - slug:      additional space outside the bleed where the marks live (typically 0.25)
+
+The parent container must be `position: relative` and sized to (trim_w + 2*bleed + 2*slug)
+× (trim_h + 2*bleed + 2*slug). The artwork (trim + bleed) is centered inside via a `slug`
+inset; this include positions marks at the four trim corners.
+
+Mark geometry:
+  - Gap from trim edge to start of mark line: 0.0625in
+  - Mark length: 0.1875in
+  - Stroke: 0.5pt black, no anti-aliased softening
+{%- endcomment -%}
+
+{%- assign trim_w = include.trim_w -%}
+{%- assign trim_h = include.trim_h -%}
+{%- assign bleed = include.bleed -%}
+{%- assign slug = include.slug -%}
+
+{%- comment -%} Trim corners (in inches from the outer page edge) {%- endcomment -%}
+{%- assign trim_left = slug | plus: bleed -%}
+{%- assign trim_top = slug | plus: bleed -%}
+{%- assign trim_right_from_edge = slug | plus: bleed -%}
+{%- assign trim_bottom_from_edge = slug | plus: bleed -%}
+
+<div class="crop-marks" aria-hidden="true">
+  {%- comment -%} Top-left corner: horizontal mark + vertical mark {%- endcomment -%}
+  <span class="crop-mark crop-mark--h" style="top: {{ trim_top }}in; left: calc({{ trim_left }}in - 0.0625in - 0.1875in);"></span>
+  <span class="crop-mark crop-mark--v" style="left: {{ trim_left }}in; top: calc({{ trim_top }}in - 0.0625in - 0.1875in);"></span>
+
+  {%- comment -%} Top-right corner {%- endcomment -%}
+  <span class="crop-mark crop-mark--h" style="top: {{ trim_top }}in; right: calc({{ trim_right_from_edge }}in - 0.0625in - 0.1875in);"></span>
+  <span class="crop-mark crop-mark--v" style="right: {{ trim_right_from_edge }}in; top: calc({{ trim_top }}in - 0.0625in - 0.1875in);"></span>
+
+  {%- comment -%} Bottom-left corner {%- endcomment -%}
+  <span class="crop-mark crop-mark--h" style="bottom: {{ trim_bottom_from_edge }}in; left: calc({{ trim_left }}in - 0.0625in - 0.1875in);"></span>
+  <span class="crop-mark crop-mark--v" style="left: {{ trim_left }}in; bottom: calc({{ trim_bottom_from_edge }}in - 0.0625in - 0.1875in);"></span>
+
+  {%- comment -%} Bottom-right corner {%- endcomment -%}
+  <span class="crop-mark crop-mark--h" style="bottom: {{ trim_bottom_from_edge }}in; right: calc({{ trim_right_from_edge }}in - 0.0625in - 0.1875in);"></span>
+  <span class="crop-mark crop-mark--v" style="right: {{ trim_right_from_edge }}in; bottom: calc({{ trim_bottom_from_edge }}in - 0.0625in - 0.1875in);"></span>
+</div>
+
+<style>
+  .crop-marks {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  .crop-mark {
+    position: absolute;
+    background: #000;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .crop-mark--h {
+    width: 0.1875in;
+    height: 0.5pt;
+  }
+
+  .crop-mark--v {
+    width: 0.5pt;
+    height: 0.1875in;
+  }
+</style>
