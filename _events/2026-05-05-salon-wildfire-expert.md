@@ -1,6 +1,6 @@
 ---
 layout: event
-title: "Seeing Through the Eyes of a Wildfire Expert"
+title: "Rethinking Wildfire: A Family-Friendly Night with TEDxBreckenridge"
 event_type: salon
 date: 2026-05-05
 start_time: "18:00"
@@ -46,7 +46,9 @@ An eye-opening talk from Hannah followed by small-group discussion, where you'll
 
 ## Kids Programming
 
-Bring the whole family! Kids (ages 4+) can enjoy hands-on wildfire science activities by [Keystone Science School](https://www.keystonescienceschool.org/) and a fire truck tour with [Summit Fire & EMS](https://www.summitfire.org/) firefighters. A kids ticket is required to participate — space is limited.
+We've made this event easy for parents! While you engage in eye-opening conversation, your kids (ages 4+) will be having an adventure of their own right next door — hands-on wildfire science activities by [Keystone Science School](https://www.keystonescienceschool.org/) and a fire truck tour with [Summit Fire & EMS](https://www.summitfire.org/) firefighters.
+
+A kids ticket is required to participate — space is limited.
 
 ## Details
 
