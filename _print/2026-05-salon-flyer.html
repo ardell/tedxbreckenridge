@@ -2,10 +2,31 @@
 layout: poster
 title: "May Salon Poster - Wildfire Expert"
 date: 2026-05-01
-description: "Poster for the May 2026 Salon event - pinecone background"
-format: "8.5 x 11 Poster"
+description: "Poster for the May 2026 Salon event - pinecone background. Trim 11 x 14.235 (uniform 1.2941x scale of original 8.5 x 11 design), 1/8\" bleed all sides, crop marks included."
+format: "11 x 14.235 Poster"
 bleed: 0.125
+crop_marks: true
+trim_w: 11
+trim_h: 14.235
 ---
+
+{%- comment -%}
+  Scale factor from the layout's 8.5"-wide baseline. Used to scale the few values
+  this template overrides on top of poster.html so the design grows uniformly.
+{%- endcomment -%}
+{%- assign s = page.trim_w | divided_by: 8.5 | times: 1.0 -%}
+{%- assign title_size = 48 | times: s -%}
+{%- assign subtitle_size = 18 | times: s -%}
+{%- assign subtitle_mt = 0.15 | times: s -%}
+{%- assign outer_gap = 0.25 | times: s -%}
+{%- assign callout_pad_v = 0.08 | times: s -%}
+{%- assign callout_pad_h = 0.2 | times: s -%}
+{%- assign callout_size = 14 | times: s -%}
+{%- assign callout_border = 4 | times: s -%}
+{%- assign qr_wrap_gap = 0.08 | times: s -%}
+{%- assign tickets_size = 14 | times: s -%}
+{%- assign qr_size = 1.6 | times: s -%}
+{%- assign details_size = 21 | times: s -%}
 
 <div class="background" style="background-image: url('/assets/images/backgrounds/salon-wildfire-pinecone-cropped.jpg');"></div>
 <div class="overlay overlay--dark"></div>
@@ -13,24 +34,24 @@ bleed: 0.125
   <div class="header">
     <img src="/assets/images/logos/tedx-breckenridge-logo-white.svg" alt="TEDxBreckenridge" class="logo">
     <div class="presents">Salon presents</div>
-    <h1 class="title" style="white-space: nowrap; font-size: 48pt;">Why Forests Need Fire</h1>
-    <div class="subtitle" style="font-size: 18pt; font-weight: 400; font-style: italic; margin-top: 0.15in; color: rgba(255, 255, 255, 0.9); text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);">The science and ecology of wildfire</div>
+    <h1 class="title" style="white-space: nowrap; font-size: {{ title_size }}pt;">Why Forests Need Fire</h1>
+    <div class="subtitle" style="font-size: {{ subtitle_size }}pt; font-weight: 400; font-style: italic; margin-top: {{ subtitle_mt }}in; color: rgba(255, 255, 255, 0.9); text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);">The science and ecology of wildfire</div>
     <div class="featuring">Featuring <strong>Hannah Ohlson</strong>, Fuels Specialist at Summit Fire &amp; EMS</div>
     <div class="partner-section">
       <span class="partner-label">In partnership with</span>
       <img src="/assets/images/logos/keystone-science-school-white.svg" alt="Keystone Science School" class="partner-logo">
     </div>
   </div>
-  <div style="display: flex; flex-direction: column; gap: 0.25in; align-items: flex-start;">
-    <div style="display: inline-block; background: rgba(228, 41, 28, 0.45); border-left: 4px solid #e4291c; padding: 0.08in 0.2in; font-size: 14pt; font-weight: 600; line-height: 1.4; color: #fff; border-radius: 0 4px 4px 0;">🚒&nbsp;&nbsp;Bring the kids &mdash; hands-on science<br>and a firetruck tour</div>
+  <div style="display: flex; flex-direction: column; gap: {{ outer_gap }}in; align-items: flex-start;">
+    <div style="display: inline-block; background: rgba(228, 41, 28, 0.45); border-left: {{ callout_border }}px solid #e4291c; padding: {{ callout_pad_v }}in {{ callout_pad_h }}in; font-size: {{ callout_size }}pt; font-weight: 600; line-height: 1.4; color: #fff; border-radius: 0 4px 4px 0;">🚒&nbsp;&nbsp;Bring the kids &mdash; hands-on science<br>and a firetruck tour</div>
     <div class="footer" style="width: 100%;">
       <!-- QR code for: https://tedxbreckenridge.ticketsauce.com/e/wildfire-expert?utm_source=affiliate&utm_name=Pine-cone-flyer&utm_campaign=Pine-cone-flyer&utm_id=69d6669f1bb84e7b86e200370a1e60f1 -->
       <!-- Generate at: https://api.qrserver.com/v1/create-qr-code/?size=510x510&data=https://tedxbreckenridge.ticketsauce.com/e/wildfire-expert?utm_source=affiliate%26utm_name=Pine-cone-flyer%26utm_campaign=Pine-cone-flyer%26utm_id=69d6669f1bb84e7b86e200370a1e60f1 -->
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.08in;">
-        <div style="font-size: 14pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);">Tickets $10</div>
-        <img src="/assets/images/qr-codes/salon-2026-05-wildfire-pinecone.png" alt="Get Tickets" class="qr-code" style="width: 1.6in; height: 1.6in;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: {{ qr_wrap_gap }}in;">
+        <div style="font-size: {{ tickets_size }}pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);">Tickets $10</div>
+        <img src="/assets/images/qr-codes/salon-2026-05-wildfire-pinecone.png" alt="Get Tickets" class="qr-code" style="width: {{ qr_size }}in; height: {{ qr_size }}in;">
       </div>
-      <div class="details" style="font-size: 21pt;">
+      <div class="details" style="font-size: {{ details_size }}pt;">
         <div class="date">Tuesday, May 5th</div>
         <div>Silverthorne Pavilion</div>
         <div>Doors 5:30pm &middot; Talk 6:00pm</div>

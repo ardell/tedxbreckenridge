@@ -1,0 +1,127 @@
+---
+layout: print
+title: "Emcee Cue Cards"
+date: 2026-04-29
+description: "4x6 landscape cue card (back side) with the TEDxBreckenridge logo for audience-facing branding while the emcee holds the card on stage. Includes 1/8\" bleed and crop marks. Print on heavy cardstock (100-110 lb cover, ~270-300 gsm), then trim to 4x6 along the crop marks."
+format: "4 x 6 Landscape Cue Card"
+---
+
+<style>
+  /* Page dimensions:
+       trim:           6in    x 4in
+       + bleed (1/8"): 6.25in x 4.25in
+       + slug (1/4"):  6.75in x 4.75in   ← printable page size, holds the crop marks */
+  @page {
+    size: 6.75in 4.75in;
+    margin: 0;
+  }
+
+  /* On-screen preview frame: override the inherited 8.5/11 portrait aspect ratio. */
+  .print-frame {
+    aspect-ratio: 6.75 / 4.75;
+    width: 100%;
+    max-width: 760px;
+    background: transparent;
+  }
+
+  /* Outer page (slug + bleed + trim) — holds the crop marks. */
+  .cue-page {
+    position: relative;
+    width: 6.75in;
+    height: 4.75in;
+    background: #fff;
+    overflow: hidden;
+    transform-origin: top left;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Card artwork (trim + bleed) — centered inside the page, offset by the slug amount. */
+  .cue-card {
+    position: absolute;
+    top: 0.25in;    /* slug */
+    left: 0.25in;   /* slug */
+    width: 6.25in;  /* trim + bleed */
+    height: 4.25in; /* trim + bleed */
+    overflow: hidden;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625in; /* 0.125 bleed + 0.5 safe inset — keeps logo inside the safe zone */
+  }
+
+  .cue-card * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .cue-card .logo {
+    width: 4.5in;
+    height: auto;
+    display: block;
+  }
+
+  @media print {
+    /* Override the layout's @media print rules that force a letter-sized frame */
+    html, body {
+      width: 6.75in;
+      height: 4.75in;
+      margin: 0;
+      padding: 0;
+    }
+
+    .print-frame,
+    .print-frame.print-frame {
+      width: 6.75in !important;
+      height: 4.75in !important;
+      max-width: none !important;
+      aspect-ratio: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    main {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .cue-page {
+      transform: none !important;
+      page-break-inside: avoid;
+      page-break-after: avoid;
+    }
+  }
+</style>
+
+<div class="cue-page">
+  <div class="cue-card">
+    <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge" class="logo">
+  </div>
+  {% include crop-marks.html trim_w=6 trim_h=4 bleed=0.125 slug=0.25 %}
+</div>
+
+<script>
+  // Scale the page wrapper to fit the print-frame width on screen.
+  // The print layout's built-in scaler targets .flyer/.poster (neither of which we use),
+  // so it leaves us alone and we handle our own scaling at the correct 6.75in width.
+  (function() {
+    if (window.matchMedia('print').matches) return;
+
+    var frame = document.querySelector('.print-frame');
+    var page = document.querySelector('.cue-page');
+    if (!frame || !page) return;
+
+    function scale() {
+      var containerWidth = frame.offsetWidth;
+      var contentWidth = 6.75 * 96; // 6.75in at 96dpi
+      var s = containerWidth / contentWidth;
+      page.style.transform = 'scale(' + s + ')';
+    }
+
+    scale();
+    window.addEventListener('resize', scale);
+  })();
+</script>

@@ -3,21 +3,62 @@ layout: print
 ---
 <style>
     {%- assign bleed = page.bleed | default: 0 -%}
-    {%- assign page_w_in = 8.5 | plus: bleed | plus: bleed -%}
-    {%- assign page_h_in = 11 | plus: bleed | plus: bleed -%}
-    {%- assign pad_top = 0.6 | plus: bleed -%}
-    {%- assign pad_side = 0.6 | plus: bleed -%}
-    {%- assign pad_bottom = 0.9 | plus: bleed -%}
+    {%- assign slug = 0 -%}
+    {%- if page.crop_marks -%}
+      {%- assign slug = 0.25 -%}
+    {%- endif -%}
+    {%- assign trim_w_in = page.trim_w | default: 8.5 -%}
+    {%- assign trim_h_in = page.trim_h | default: 11 -%}
+    {%- comment -%}
+      All built-in sizes below are calibrated for an 8.5" wide trim. When trim_w is
+      overridden, scale fonts/paddings/widths uniformly by trim_w / 8.5 so the layout
+      keeps the same relative proportions at any size.
+    {%- endcomment -%}
+    {%- assign s = trim_w_in | divided_by: 8.5 | times: 1.0 -%}
+    {%- assign poster_w_in = trim_w_in | plus: bleed | plus: bleed -%}
+    {%- assign poster_h_in = trim_h_in | plus: bleed | plus: bleed -%}
+    {%- assign page_w_in = poster_w_in | plus: slug | plus: slug -%}
+    {%- assign page_h_in = poster_h_in | plus: slug | plus: slug -%}
+    {%- assign pad_top = 0.6 | times: s | plus: bleed -%}
+    {%- assign pad_side = 0.6 | times: s | plus: bleed -%}
+    {%- assign pad_bottom = 0.9 | times: s | plus: bleed -%}
+    {%- assign logo_w = 6 | times: s -%}
+    {%- assign logo_mb = 0.35 | times: s -%}
+    {%- assign presents_size = 14 | times: s -%}
+    {%- assign presents_mb = 0.15 | times: s -%}
+    {%- assign title_size = 46 | times: s -%}
+    {%- assign title_max_w = 6.5 | times: s -%}
+    {%- assign footer_gap = 0.3 | times: s -%}
+    {%- assign details_size = 17 | times: s -%}
+    {%- assign qr_size = 1.2 | times: s -%}
+    {%- assign featuring_size = 15 | times: s -%}
+    {%- assign featuring_mt = 0.2 | times: s -%}
+    {%- assign partner_gap = 0.08 | times: s -%}
+    {%- assign partner_mt = 0.25 | times: s -%}
+    {%- assign partner_label_size = 9 | times: s -%}
+    {%- assign partner_logo_h = 1.0 | times: s -%}
 
     @page {
       size: {{ page_w_in }}in {{ page_h_in }}in;
       margin: 0;
     }
 
-    .poster {
+    .poster-page {
       position: relative;
       width: {{ page_w_in }}in;
       height: {{ page_h_in }}in;
+      background: #fff;
+      overflow: hidden;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .poster {
+      position: absolute;
+      top: {{ slug }}in;
+      left: {{ slug }}in;
+      width: {{ poster_w_in }}in;
+      height: {{ poster_h_in }}in;
       overflow: hidden;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       -webkit-print-color-adjust: exact;
@@ -76,27 +117,27 @@ layout: print
     }
 
     .poster .logo {
-      width: 6in;
+      width: {{ logo_w }}in;
       height: auto;
-      margin-bottom: 0.35in;
+      margin-bottom: {{ logo_mb }}in;
       filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
     }
 
     .poster .presents {
-      font-size: 14pt;
+      font-size: {{ presents_size }}pt;
       font-weight: 400;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: #fff;
-      margin-bottom: 0.15in;
+      margin-bottom: {{ presents_mb }}in;
       text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
     }
 
     .poster .title {
-      font-size: 46pt;
+      font-size: {{ title_size }}pt;
       font-weight: 700;
       line-height: 1.1;
-      max-width: 6.5in;
+      max-width: {{ title_max_w }}in;
       color: #fff;
       text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
     }
@@ -105,11 +146,11 @@ layout: print
       display: flex;
       flex-direction: row;
       align-items: flex-end;
-      gap: 0.3in;
+      gap: {{ footer_gap }}in;
     }
 
     .poster .details {
-      font-size: 17pt;
+      font-size: {{ details_size }}pt;
       font-weight: 500;
       line-height: 1.6;
       color: #fff;
@@ -121,17 +162,17 @@ layout: print
     }
 
     .poster .qr-code {
-      width: 1.2in;
-      height: 1.2in;
+      width: {{ qr_size }}in;
+      height: {{ qr_size }}in;
       border: 4px solid #fff;
       border-radius: 4px;
       flex-shrink: 0;
     }
 
     .poster .featuring {
-      font-size: 15pt;
+      font-size: {{ featuring_size }}pt;
       font-weight: 400;
-      margin-top: 0.2in;
+      margin-top: {{ featuring_mt }}in;
       color: #fff;
       text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
     }
@@ -144,12 +185,12 @@ layout: print
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.08in;
-      margin-top: 0.25in;
+      gap: {{ partner_gap }}in;
+      margin-top: {{ partner_mt }}in;
     }
 
     .poster .partner-label {
-      font-size: 9pt;
+      font-size: {{ partner_label_size }}pt;
       font-weight: 400;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -158,11 +199,43 @@ layout: print
     }
 
     .poster .partner-logo {
-      height: 1.0in;
+      height: {{ partner_logo_h }}in;
       width: auto;
     }
 
+    /* On-screen preview: override print.html's frame aspect ratio so the slug area
+       (where the crop marks live) is visible when crop_marks is on. */
+    .print-frame {
+      aspect-ratio: {{ page_w_in }} / {{ page_h_in }};
+    }
+
     @media print {
+      /* Override print.html's frame sizing so the slug area (and its crop marks)
+         isn't clipped by the inherited 8.75x11.25 frame. */
+      html, body {
+        width: {{ page_w_in }}in;
+        height: {{ page_h_in }}in;
+        margin: 0;
+        padding: 0;
+      }
+
+      .print-frame,
+      .print-frame.print-frame {
+        width: {{ page_w_in }}in !important;
+        height: {{ page_h_in }}in !important;
+        max-width: none !important;
+        aspect-ratio: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+      }
+
+      main {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .poster-page,
       .poster {
         page-break-after: avoid;
         page-break-inside: avoid;
@@ -171,6 +244,34 @@ layout: print
     }
 </style>
 
-<div class="poster">
+<div class="poster-page">
+  <div class="poster">
 {{ content }}
+  </div>
+  {%- if page.crop_marks -%}
+    {%- include crop-marks.html trim_w=trim_w_in trim_h=trim_h_in bleed=bleed slug=slug -%}
+  {%- endif -%}
 </div>
+
+<script>
+  // Scale .poster-page (the full slug + bleed + trim canvas) to fit the print-frame
+  // width on screen. print.html's autoscaler bails out when .poster-page is present.
+  (function() {
+    if (window.matchMedia('print').matches) return;
+
+    var frame = document.querySelector('.print-frame');
+    var page = document.querySelector('.poster-page');
+    if (!frame || !page) return;
+
+    function scale() {
+      var containerWidth = frame.offsetWidth;
+      var contentWidth = {{ page_w_in }} * 96;
+      var s = containerWidth / contentWidth;
+      page.style.transformOrigin = 'top left';
+      page.style.transform = 'scale(' + s + ')';
+    }
+
+    scale();
+    window.addEventListener('resize', scale);
+  })();
+</script>
