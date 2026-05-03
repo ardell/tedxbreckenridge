@@ -1,0 +1,164 @@
+---
+layout: print
+title: "Staff Name Badges"
+date: 2026-05-02
+description: "3in x 1.5in name badges for staff (sublimated onto plastic with magnetic fastener). One badge per page."
+format: "Name Badge (3in x 1.5in)"
+names:
+  - Jason Ardell
+  - Leah Rybak
+  - Jill Marek
+  - Aaron Williams
+  - Tina Kuo
+  - Angie Hildebrand
+---
+
+<style>
+  @page {
+    size: 3in 1.5in;
+    margin: 0;
+  }
+
+  /* Screen preview: stack the badges vertically with a small gap
+     so each is fully visible. Print uses page-break-after to put
+     each badge on its own page. */
+  .print-frame {
+    aspect-ratio: auto !important;
+    max-width: 600px;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  @media print {
+    .print-frame {
+      width: 3in !important;
+      height: auto !important;
+      gap: 0;
+    }
+  }
+
+  /* Wrapper: reserves layout space at the scaled-down size on screen,
+     and acts as the per-page container in print. */
+  .staff-badge-page {
+    width: 3in;
+    height: 1.5in;
+  }
+
+  .staff-badge-page + .staff-badge-page {
+    page-break-before: always;
+  }
+
+  .staff-badge {
+    width: 3in;
+    height: 1.5in;
+    background: #fff;
+    color: #000;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .staff-badge * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Top: white area with the logo, large and centered.
+     The logo's natural aspect (~8.62:1): at 2.5in wide it's ~0.29in tall.
+     Top area is 1.1in tall, leaving ~0.4in clearspace top + bottom — well above
+     TEDx clearspace requirements (≈ height of the "T", ~0.29in here). */
+  .staff-badge-top {
+    height: 1.1in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.2in;
+  }
+
+  .staff-badge-logo {
+    width: 2.5in;
+    height: auto;
+    display: block;
+    /* Optical-center nudge: the descender on the "g" adds visual weight to
+       the bottom of the wordmark, so the bulk of the logo reads as sitting
+       too high when the bounding box is geometrically centered. The descender
+       is ~30px of the logo's 258px height; nudging the logo down by half
+       that (~5.8%) re-centers the visual mass. */
+    transform: translateY(5.8%);
+  }
+
+  /* Bottom: stone-grey band with name (bold, uppercase, white). */
+  .staff-badge-bottom {
+    flex: 1;
+    background: #676767;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.04in 0.18in;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .staff-badge-name {
+    font-size: 13pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+</style>
+
+{% for name in page.names %}
+<div class="staff-badge-page">
+  <div class="staff-badge">
+    <div class="staff-badge-top">
+      <img src="/assets/images/logos/tedx-breckenridge-logo-black.png" alt="TEDxBreckenridge" class="staff-badge-logo">
+    </div>
+    <div class="staff-badge-bottom">
+      <div class="staff-badge-name">{{ name }}</div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<script>
+// Override the parent print layout's scaler — it expects an 8.5x11 page
+// and a .flyer/.poster element. For this badge we manage the size directly.
+(function() {
+  if (window.matchMedia('print').matches) return;
+
+  var frame = document.querySelector('.print-frame');
+  var pages = document.querySelectorAll('.staff-badge-page');
+  var badges = document.querySelectorAll('.staff-badge');
+  if (!frame || !badges.length) return;
+
+  function scaleBadges() {
+    var containerWidth = frame.offsetWidth;
+    var contentWidth = 3 * 96; // 3in at 96dpi
+    var scale = Math.min(containerWidth / contentWidth, 1);
+    var scaledW = 3 * 96 * scale;
+    var scaledH = 1.5 * 96 * scale;
+    pages.forEach(function(p) {
+      p.style.width = scaledW + 'px';
+      p.style.height = scaledH + 'px';
+    });
+    badges.forEach(function(badge) {
+      badge.style.transformOrigin = 'top left';
+      badge.style.transform = 'scale(' + scale + ')';
+    });
+  }
+
+  scaleBadges();
+  window.addEventListener('resize', scaleBadges);
+})();
+</script>
