@@ -15,7 +15,7 @@ venue_zip: "80424"
 
 # Pricing
 price: 65
-price_display: "$65 early bird ($75 after July 1)"
+price_display: "$65 early bird (until July 1)"
 availability: "InStock"
 
 # Meta
@@ -30,7 +30,7 @@ map_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.869!2
 
 Mark your calendar for an inspiring evening of ideas worth spreading.
 
-TEDxBreckenridge 2026 brings together curious minds, local voices, and transformative ideas at the beautiful Riverwalk Center in Breckenridge. Tickets are on sale now — grab the early bird price of $65 through July 1 (regular price $75 after). The full theme and speaker lineup will be announced in the coming months.
+TEDxBreckenridge 2026 brings together curious minds, local voices, and transformative ideas at the beautiful Riverwalk Center in Breckenridge. Tickets are on sale now — grab the early bird price of $65 through July 1. The full theme and speaker lineup will be announced in the coming months.
 
 ## What to Expect
 
