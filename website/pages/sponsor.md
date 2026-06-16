@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Become a Sponsor
+title: "Sponsor TEDxBreckenridge 2026 | Become a Partner"
 subtitle: Partner with us to expand innovative thinking in our mountain community
 permalink: /sponsor/
 redirect_from:
   - /become-a-sponsor
   - /become-a-sponsor/
-description: Partner with TEDxBreckenridge to bring ideas worth spreading to Summit County. Support local voices, community connections, and world-class conversations in the Rockies.
+description: Support ideas worth spreading in Summit County. TEDxBreckenridge 2026 sponsorship packages start at $1,000. Join us October 3 in Breckenridge.
 ---
 
 <p class="intro">TEDxBreckenridge brings world-class conversations to the heart of the Rockies. We're a 100% volunteer-led nonprofit creating a platform for local voices to share expansive ideas that shift the way we see, connect, and evolve within our mountain community.</p>
@@ -48,31 +48,49 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 
 <h2 class="mb-32">2026 Sponsorship Packages</h2>
 
-<p>The TEDxBreckenridge sponsorship packages are designed to allow for customization and flexibility. As a supporter of this event, you will have the opportunity to select the promotional options best suited to reaching your target audience.</p>
+<p>Your sponsorship supports a full year of TEDxBreckenridge events — our main event on October 3, 2026, plus all five of our intimate Salon gatherings held throughout the year around Summit County.</p>
+
+<p>Our sponsorship packages are designed for flexibility. Whether you're a local business making your first community investment or an organization ready to take the lead, there's a place for you at the table. In-kind contributions of materials and services are also welcome.</p>
 
 <div class="grid-gap-24 my-48">
   <div style="padding: 32px; background: linear-gradient(135deg, rgba(197, 91, 77, 0.12) 0%, rgba(91, 142, 142, 0.12) 100%); border-radius: 8px; border: 2px solid var(--terracotta);">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
-      <h3 style="color: var(--terracotta); margin: 0; font-size: 1.5rem; font-weight: 700;">Platinum Partner</h3>
-      <span style="font-size: 1.5rem; font-weight: 700; color: var(--terracotta);">$20,000</span>
+      <h3 style="color: var(--terracotta); margin: 0; font-size: 1.5rem; font-weight: 700;">Premier Partner</h3>
+      <span style="font-size: 1.5rem; font-weight: 700; color: var(--terracotta);">$15,000</span>
     </div>
-    <p style="margin: 0; color: var(--charcoal); line-height: 1.7; font-size: 0.95rem;">Only 2 available • Maximum visibility and impact</p>
+    <p style="margin: 0; color: var(--charcoal); line-height: 1.7; font-size: 0.95rem;"><strong>Only 1 remaining.</strong> The highest level of community investment and brand presence. Premier Partners are woven into the event experience from first promotion to final bow.</p>
   </div>
 
   <div style="padding: 32px; background: linear-gradient(135deg, rgba(91, 142, 142, 0.12) 0%, rgba(197, 91, 77, 0.08) 100%); border-radius: 8px; border: 2px solid var(--teal);">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
-      <h3 style="color: var(--teal); margin: 0; font-size: 1.5rem; font-weight: 700;">Pioneer Partner</h3>
+      <h3 style="color: var(--teal); margin: 0; font-size: 1.5rem; font-weight: 700;">Anchor Partner</h3>
       <span style="font-size: 1.5rem; font-weight: 700; color: var(--teal);">$7,500</span>
     </div>
-    <p style="margin: 0; color: var(--charcoal); line-height: 1.7; font-size: 0.95rem;">Strong community presence and engagement</p>
+    <p style="margin: 0; color: var(--charcoal); line-height: 1.7; font-size: 0.95rem;">Strong community presence and meaningful engagement throughout the year. Anchor Partners are integral to making TEDxBreckenridge possible.</p>
+  </div>
+
+  <div style="padding: 32px; background: var(--cream); border-radius: 8px; border: 2px solid var(--stone);">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+      <h3 style="color: var(--charcoal); margin: 0; font-size: 1.5rem; font-weight: 700;">Supporting Partner</h3>
+      <span style="font-size: 1.5rem; font-weight: 700; color: var(--charcoal);">$3,000</span>
+    </div>
+    <p style="margin: 0; color: var(--charcoal); line-height: 1.7; font-size: 0.95rem;">Essential support for ideas worth spreading. Supporting Partners join a growing network of local organizations committed to Summit County's intellectual and creative life.</p>
   </div>
 
   <div style="padding: 32px; background: var(--cream); border-radius: 8px; border: 2px solid var(--stone);">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
       <h3 style="color: var(--charcoal); margin: 0; font-size: 1.5rem; font-weight: 700;">Community Partner</h3>
-      <span style="font-size: 1.5rem; font-weight: 700; color: var(--charcoal);">$3,000</span>
+      <span style="font-size: 1.5rem; font-weight: 700; color: var(--charcoal);">$1,000</span>
     </div>
-    <p style="margin: 0; color: var(--charcoal); line-height: 1.7; font-size: 0.95rem;">Essential support for ideas worth spreading</p>
+    <p style="margin: 0; color: var(--charcoal); line-height: 1.7; font-size: 0.95rem;">An accessible entry point for local businesses and individuals who believe in this community and want to show it. Every dollar counts.</p>
+  </div>
+
+  <div style="padding: 32px; background: var(--cream); border-radius: 8px; border: 2px solid var(--stone);">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+      <h3 style="color: var(--charcoal); margin: 0; font-size: 1.5rem; font-weight: 700;">Mountain Partner</h3>
+      <span style="font-size: 1.5rem; font-weight: 700; color: var(--charcoal);">In-Kind</span>
+    </div>
+    <p style="margin: 0; color: var(--charcoal); line-height: 1.7; font-size: 0.95rem;">Not every contribution is cash, and we know it. If you can offer a product, service, space, or media trade that helps make this event happen, you are a partner. Full stop. Let's talk.</p>
   </div>
 </div>
 
@@ -82,126 +100,174 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
   <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
     <thead>
       <tr style="background: var(--charcoal); color: var(--white);">
-        <th style="padding: 16px; text-align: left; font-weight: 600; border: 1px solid var(--border-color);">Benefit</th>
-        <th style="padding: 16px; text-align: center; font-weight: 600; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.3);">Platinum<br>$20k</th>
-        <th style="padding: 16px; text-align: center; font-weight: 600; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.3);">Pioneer<br>$7.5k</th>
-        <th style="padding: 16px; text-align: center; font-weight: 600; border: 1px solid var(--border-color);">Community<br>$3k</th>
+        <th style="padding: 14px 12px; text-align: left; font-weight: 600; border: 1px solid var(--border-color);">Benefit</th>
+        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.3);">Premier<br>$15k</th>
+        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.3);">Anchor<br>$7.5k</th>
+        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color);">Supporting<br>$3k</th>
+        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color);">Community<br>$1k</th>
+        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color);">Mountain<br>In-Kind</th>
       </tr>
     </thead>
     <tbody>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo in front of every 2026 talk (~600k video views)</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo in front of every 2026 talk (~600k video views)</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Company name on Main Street banner</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Company name on Main Street banner</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Company mention on local radio stations</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Company mention on local radio stations</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Event spotlight, special acknowledgement</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Event spotlight, special acknowledgment</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Free booth at Innovation Alley</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Free booth at Innovation Alley</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Two free tickets VIP experience</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Two free VIP tickets</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Two newspaper quotes, press dependent</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Press mentions / newspaper quotes (press dependent)</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">TEDxBreckenridge website spotlight: 1 year</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">TEDxBreckenridge website spotlight: 1 year</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Social media package / features</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Social media package / features</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Newsletter spotlight + featured in footer (2,500 contacts)</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Newsletter spotlight + footer (2,500 contacts)</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Backstage access, speaker intros</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Backstage access, speaker introductions</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Ad in TEDxBreckenridge digital program</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">Full-Page</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">1/2 Page</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">1/4 Page</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Ad in TEDxBreckenridge digital program</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">Full-Page</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">Half-Page</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">Quarter-Page</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Free tickets for company (on demand)</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Free tickets for your team</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo on live event slide</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo on live event slide</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
       </tr>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo on event program</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo on event program</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
       </tr>
       <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Option to include branded item in swag or store</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo on TEDxBreckenridge website</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
       </tr>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">Branded support auction item</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Option to include branded item in swag or store</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary);">2 pieces TEDxBreckenridge swag</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Branded item in supporter auction</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
       </tr>
       <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px 16px; border: 1px solid var(--border-color); color: var(--text-primary); font-weight: 600;">501(c)(3) contribution + tax break</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px 16px; text-align: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">2 pieces TEDxBreckenridge swag</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      </tr>
+      <tr style="background: var(--bg-secondary);">
+        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary); font-weight: 600;">501(c)(3) contribution, tax-deductible</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
       </tr>
     </tbody>
   </table>
@@ -210,6 +276,12 @@ description: Partner with TEDxBreckenridge to bring ideas worth spreading to Sum
 <div class="card mb-60">
   <h3>Nonprofit Partner</h3>
   <p>We offer custom sponsorship packages for nonprofit organizations. Please contact our sponsorship team to discuss options tailored to your organization's needs and budget.</p>
+</div>
+
+<div class="card mb-60">
+  <h3>Want to sponsor a specific talk?</h3>
+  <p>This year, we're offering a limited number of per-talk sponsorships, pairing one organization with one speaker based on shared values, industry, or mission. It's a deeper, more targeted connection than a traditional event sponsorship.</p>
+  <p>Spots are limited and filled on a first-come basis. <a href="/contact/">Contact our sponsorship team</a> to learn more.</p>
 </div>
 
 <div class="my-80">
