@@ -1317,6 +1317,64 @@ select:focus-visible {
     color: var(--charcoal);
 }
 
+/* Sponsorship Benefits Comparison Table */
+.benefits-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 48px;
+}
+
+.benefits-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.benefits-table th,
+.benefits-table td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+/* Benefit name column reads left-aligned */
+.benefits-table th:first-child,
+.benefits-table td:first-child {
+    text-align: left;
+}
+
+.benefits-table thead th {
+    padding: 14px 12px;
+    font-weight: 600;
+    background: var(--charcoal);
+    color: var(--white);
+}
+
+/* Tier accent columns: terracotta (Premier), teal (Anchor) */
+.benefits-table thead .col-premier {
+    background: rgb(184 67 60 / 30%);
+}
+
+.benefits-table thead .col-anchor {
+    background: rgb(63 111 111 / 30%);
+}
+
+.benefits-table .col-premier {
+    background: rgb(184 67 60 / 8%);
+}
+
+.benefits-table .col-anchor {
+    background: rgb(63 111 111 / 8%);
+}
+
+/* Tiers not included in a given benefit */
+.benefits-table .benefit-none {
+    color: var(--stone);
+}
+
+.benefits-table .benefit-name-strong {
+    font-weight: 600;
+}
+
 /* Mailing List Section */
 .newsletter-section {
     background: var(--charcoal);
