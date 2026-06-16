@@ -1349,20 +1349,24 @@ select:focus-visible {
     color: var(--white);
 }
 
-/* Tier accent columns: terracotta (Premier), teal (Anchor) */
+/*
+ * Premier and Anchor are the featured tiers. The header stays solid
+ * charcoal across every column; the two featured columns are marked with a
+ * brand-colored accent bar under the header and a subtle body-cell tint.
+ */
 .benefits-table thead .col-premier {
-    background: rgb(184 67 60 / 30%);
+    border-bottom: 3px solid var(--terracotta);
 }
 
 .benefits-table thead .col-anchor {
-    background: rgb(63 111 111 / 30%);
+    border-bottom: 3px solid var(--teal);
 }
 
-.benefits-table .col-premier {
+.benefits-table tbody .col-premier {
     background: rgb(184 67 60 / 8%);
 }
 
-.benefits-table .col-anchor {
+.benefits-table tbody .col-anchor {
     background: rgb(63 111 111 / 8%);
 }
 
