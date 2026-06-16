@@ -96,178 +96,178 @@ description: Support ideas worth spreading in Summit County. TEDxBreckenridge 20
 
 <h3 class="mb-32">Sponsorship Benefits</h3>
 
-<div style="overflow-x: auto; margin-bottom: 48px;">
-  <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+<div class="benefits-table-wrap">
+  <table class="benefits-table">
     <thead>
-      <tr style="background: var(--charcoal); color: var(--white);">
-        <th style="padding: 14px 12px; text-align: left; font-weight: 600; border: 1px solid var(--border-color);">Benefit</th>
-        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.3);">Premier<br>$15k</th>
-        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.3);">Anchor<br>$7.5k</th>
-        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color);">Supporting<br>$3k</th>
-        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color);">Community<br>$1k</th>
-        <th style="padding: 14px 12px; text-align: center; font-weight: 600; border: 1px solid var(--border-color);">Mountain<br>In-Kind</th>
+      <tr>
+        <th>Benefit</th>
+        <th class="col-premier">Premier<br>$15k</th>
+        <th class="col-anchor">Anchor<br>$7.5k</th>
+        <th>Supporting<br>$3k</th>
+        <th>Community<br>$1k</th>
+        <th>Mountain<br>In-Kind</th>
       </tr>
     </thead>
     <tbody>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo in front of every 2026 talk (~600k video views)</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Logo in front of every 2026 talk (~600k video views)</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Company name on Main Street banner</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Company name on Main Street banner</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Company mention on local radio stations</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Company mention on local radio stations</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Event spotlight, special acknowledgment</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Event spotlight, special acknowledgment</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Free booth at Innovation Alley</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Free booth at Innovation Alley</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Two free VIP tickets</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Two free VIP tickets</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Press mentions / newspaper quotes (press dependent)</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Press mentions / newspaper quotes (press dependent)</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">TEDxBreckenridge website spotlight: 1 year</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>TEDxBreckenridge website spotlight: 1 year</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Social media package / features</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Social media package / features</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Newsletter spotlight + footer (2,500 contacts)</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Newsletter spotlight + footer (2,500 contacts)</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Backstage access, speaker introductions</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Backstage access, speaker introductions</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Ad in TEDxBreckenridge digital program</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">Full-Page</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">Half-Page</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">Quarter-Page</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Ad in TEDxBreckenridge digital program</td>
+        <td class="col-premier">Full-Page</td>
+        <td class="col-anchor">Half-Page</td>
+        <td>Quarter-Page</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Free tickets for your team</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Free tickets for your team</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo on live event slide</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+      <tr>
+        <td>Logo on live event slide</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>✓</td>
       </tr>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo on event program</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+      <tr>
+        <td>Logo on event program</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>✓</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Logo on TEDxBreckenridge website</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+      <tr>
+        <td>Logo on TEDxBreckenridge website</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>✓</td>
       </tr>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Option to include branded item in swag or store</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Option to include branded item in swag or store</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">Branded item in supporter auction</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>Branded item in supporter auction</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td>✓</td>
+        <td class="benefit-none">—</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-primary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary);">2 pieces TEDxBreckenridge swag</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-muted);">—</td>
+      <tr>
+        <td>2 pieces TEDxBreckenridge swag</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td class="benefit-none">—</td>
       </tr>
-      <tr style="background: var(--bg-secondary);">
-        <td style="padding: 12px; border: 1px solid var(--border-color); color: var(--text-primary); font-weight: 600;">501(c)(3) contribution, tax-deductible</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(197, 91, 77, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); background: rgba(91, 142, 142, 0.08); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
-        <td style="padding: 12px; text-align: center; border: 1px solid var(--border-color); color: var(--text-primary);">✓</td>
+      <tr>
+        <td class="benefit-name-strong">501(c)(3) contribution, tax-deductible</td>
+        <td class="col-premier">✓</td>
+        <td class="col-anchor">✓</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>✓</td>
       </tr>
     </tbody>
   </table>
