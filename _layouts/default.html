@@ -157,8 +157,8 @@
     const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
     dropdownToggles.forEach(toggle => {
       toggle.addEventListener('click', function(e) {
-        // On mobile, toggle dropdowns
-        if (window.innerWidth <= 900) {
+        // On mobile, toggle dropdowns (matches the 1024px nav breakpoint)
+        if (window.innerWidth <= 1024) {
           e.preventDefault();
           const parent = this.parentElement;
           const wasActive = parent.classList.contains('active');
