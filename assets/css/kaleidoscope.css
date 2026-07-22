@@ -40,6 +40,13 @@
   --k-wing-gold: #e8c55a;
   --k-burnt-sienna: #c84a1a;
 
+  /* Accessible (WCAG AA) warm tones: deeper orange for solid buttons
+     with white text, and a dark terracotta for small orange text on
+     light grounds (eyebrows). The lighter --k-monarch-orange stays for
+     large decorative use. */
+  --k-orange-deep: #b85200;
+  --k-orange-text: #a83c14;
+
   /* Accent (chrysalis) */
   --k-teal: #1a7a6d;
   --k-teal-dark: #145d53;
@@ -193,17 +200,19 @@
 }
 
 .k-btn-primary {
-  background: var(--k-ted-red);
-  color: var(--k-white);
-}
-
-.k-btn-primary:hover {
+  /* AA: white on --k-ted-red (#e62b1e) is only 4.44:1, so use the
+     slightly deeper red (5.32:1) as the button base. */
   background: var(--k-ted-red-hover);
   color: var(--k-white);
 }
 
+.k-btn-primary:hover {
+  background: #b91f13;
+  color: var(--k-white);
+}
+
 .k-btn-warm {
-  background: var(--k-monarch-orange);
+  background: var(--k-orange-deep);
   color: var(--k-white);
 }
 
@@ -397,9 +406,9 @@
 }
 
 .theme-kaleidoscope .nav-cta {
-  background: var(--k-monarch-orange);
+  background: var(--k-orange-deep);
   color: var(--k-white);
-  border-color: var(--k-monarch-orange);
+  border-color: var(--k-orange-deep);
 }
 
 .theme-kaleidoscope .nav-cta:hover {
@@ -541,7 +550,7 @@
   padding: var(--space-100) var(--space-48);
 }
 
-.k-savedate .k-eyebrow { color: var(--k-wing-gold); }
+.k-savedate .k-eyebrow { color: var(--k-white); }
 
 /* The event name is the anchor of this block — set in the Ambroise
    wordmark face (its one sanctioned use besides the hero) so it reads
@@ -605,7 +614,7 @@
   margin-bottom: var(--space-48);
 }
 
-.k-section-head .k-eyebrow { color: var(--k-monarch-orange); }
+.k-section-head .k-eyebrow { color: var(--k-orange-text); }
 
 .k-section-title {
   font-size: var(--k-display-section);
@@ -634,7 +643,7 @@
   border-top: 5px solid var(--k-burnt-sienna);
 }
 
-.k-talk-card:nth-child(2) { border-top-color: var(--k-monarch-orange); }
+.k-talk-card:nth-child(2) { border-top-color: var(--k-orange-text); }
 .k-talk-card:nth-child(3) { border-top-color: var(--k-wing-gold); }
 
 .k-talk-video {
@@ -723,9 +732,9 @@
   margin: 0 auto var(--space-20);
 }
 
-.k-involved-badge-orange { background: var(--k-monarch-orange); }
-.k-involved-badge-teal { background: var(--k-teal); }
-.k-involved-badge-red { background: var(--k-ted-red); }
+.k-involved-badge-orange { background: var(--k-orange-deep); }
+.k-involved-badge-teal { background: var(--k-teal-dark); }
+.k-involved-badge-red { background: var(--k-ted-red-hover); }
 
 .k-involved-card h3 {
   color: var(--k-white);
@@ -1018,7 +1027,7 @@
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: var(--space-16);
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
 }
 
 .theme-kaleidoscope .fk-header-warm .fk-header-eyebrow,
@@ -1169,7 +1178,7 @@
   font-size: var(--k-text-xs);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   font-weight: 700;
   margin-bottom: var(--space-8);
 }
@@ -1231,7 +1240,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   margin: var(--space-24) 0 var(--space-8);
 }
 
@@ -1273,7 +1282,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   font-size: 0.8em;
 }
 
@@ -1367,7 +1376,7 @@
   width: 52px;
   height: 52px;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  background: var(--k-monarch-orange);
+  background: var(--k-orange-deep);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1376,7 +1385,7 @@
   margin-bottom: var(--space-20);
 }
 
-.theme-kaleidoscope .fk-card-accent-red .fk-card-glyph { background: var(--k-ted-red); }
+.theme-kaleidoscope .fk-card-accent-red .fk-card-glyph { background: var(--k-ted-red-hover); }
 .theme-kaleidoscope .fk-card-accent-teal .fk-card-glyph { background: var(--k-teal); }
 
 .theme-kaleidoscope .fk-card-accent-gold .fk-card-glyph {
@@ -1389,7 +1398,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   margin-bottom: var(--space-8);
 }
 
@@ -1452,7 +1461,7 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   margin-bottom: var(--space-16);
 }
 
@@ -1535,7 +1544,7 @@
   font-size: var(--k-text-2xs);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -1549,7 +1558,7 @@
 
 .theme-kaleidoscope .fk-sponsor-tier-price {
   font-size: var(--k-text-md);
-  color: var(--k-burnt-sienna);
+  color: var(--k-orange-text);
   font-weight: 700;
   margin-top: 4px;
 }
@@ -1583,7 +1592,7 @@
 }
 
 .theme-kaleidoscope .fk-nocheck {
-  color: var(--k-sand);
+  color: var(--k-stone);
   font-size: 18px;
 }
 
@@ -1593,7 +1602,7 @@
   font-weight: 600;
 }
 
-.theme-kaleidoscope .fk-sponsor-cell-featured .fk-sponsor-val { color: var(--k-burnt-sienna); }
+.theme-kaleidoscope .fk-sponsor-cell-featured .fk-sponsor-val { color: var(--k-orange-text); }
 
 /* mobile stacked cards */
 .theme-kaleidoscope .fk-sponsor-card {
@@ -1604,7 +1613,7 @@
   border-top: 4px solid var(--k-sand);
 }
 
-.theme-kaleidoscope .fk-sponsor-card-featured { border-top-color: var(--k-monarch-orange); }
+.theme-kaleidoscope .fk-sponsor-card-featured { border-top-color: var(--k-orange-text); }
 
 .theme-kaleidoscope .fk-sponsor-card-head {
   display: flex;
@@ -1673,7 +1682,7 @@
   width: 48px;
   height: 48px;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  background: var(--k-monarch-orange);
+  background: var(--k-orange-deep);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1688,7 +1697,7 @@
   color: var(--k-wing-black);
 }
 
-.theme-kaleidoscope .fk-icontile-red .fk-icontile-glyph { background: var(--k-ted-red); }
+.theme-kaleidoscope .fk-icontile-red .fk-icontile-glyph { background: var(--k-ted-red-hover); }
 
 .theme-kaleidoscope .fk-icontile-label {
   font-size: var(--k-text-xs);
@@ -1742,7 +1751,7 @@
   font-size: var(--k-text-xs);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   font-weight: 700;
   margin-bottom: var(--space-8);
 }
@@ -2039,7 +2048,7 @@
   font-size: var(--k-text-xs);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--k-stone);
+  color: #8a8a8a;
   font-weight: 700;
 }
 
@@ -2071,7 +2080,7 @@
   font-size: var(--k-text-xs);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   font-weight: 700;
   margin-bottom: var(--space-8);
 }
@@ -2192,7 +2201,7 @@
   font-size: var(--k-text-xs);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   font-weight: 700;
   margin-bottom: var(--space-8);
 }
@@ -2236,7 +2245,7 @@
   font-size: var(--k-text-2xs);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--k-monarch-orange);
+  color: var(--k-orange-text);
   font-weight: 700;
   margin-bottom: 4px;
 }
