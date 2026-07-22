@@ -1034,6 +1034,22 @@
 
 .theme-kaleidoscope .fk-breadcrumb .fk-breadcrumb-current { color: var(--k-burnt-sienna); }
 
+/* On warm/dark header grounds the breadcrumb reads white. */
+.theme-kaleidoscope .fk-header-warm .fk-breadcrumb,
+.theme-kaleidoscope .fk-header-dark .fk-breadcrumb {
+  color: rgb(255 255 255 / 65%);
+}
+
+.theme-kaleidoscope .fk-header-warm .fk-breadcrumb a,
+.theme-kaleidoscope .fk-header-dark .fk-breadcrumb a {
+  color: var(--k-white);
+}
+
+.theme-kaleidoscope .fk-header-warm .fk-breadcrumb .fk-breadcrumb-current,
+.theme-kaleidoscope .fk-header-dark .fk-breadcrumb .fk-breadcrumb-current {
+  color: var(--k-wing-gold);
+}
+
 /* ---- 2. SectionBand ---- */
 .theme-kaleidoscope .fk-band {
   position: relative;
@@ -1943,16 +1959,24 @@
 }
 
 /* ---- Talks archive (year-grouped video grids) ---- */
+
+/* Full-bleed sticky dark bar; its content is centered to the same
+   1400px box as the header and year sections so "Jump to" lines up. */
 .theme-kaleidoscope .fk-yearnav {
   position: sticky;
   top: 74px;
   z-index: 20;
+  background: var(--k-wing-black);
+}
+
+.theme-kaleidoscope .fk-yearnav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-48);
   display: flex;
   align-items: center;
   gap: var(--space-16);
   flex-wrap: wrap;
-  background: var(--k-wing-black);
-  padding: var(--space-12) var(--space-48);
 }
 
 .theme-kaleidoscope .fk-yearnav-label {
