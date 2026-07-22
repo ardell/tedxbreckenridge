@@ -1,0 +1,855 @@
+/* ============================================================
+   TEDxBreckenridge — Kaleidoscope theme (Facets homepage)
+   ------------------------------------------------------------
+   A self-contained stylesheet for the Kaleidoscope "Facets"
+   homepage. Everything is scoped under `.theme-kaleidoscope`
+   (set on <body> for the homepage only) so it never leaks into
+   the rest of the site, which keeps using main.css.
+
+   Palette: warm monarch-butterfly-wing (orange / amber / gold /
+   burnt sienna) with a Chrysalis Teal accent on warm parchment.
+   Values from the Kaleidoscope brand style guide.
+   ============================================================ */
+
+/* Inter (body/UI) — Ambroise (wordmark art only) is @font-face'd below. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* The high-contrast Didone reserved EXCLUSIVELY for the "Kaleidoscope"
+   wordmark. Never use for headings, body, or UI copy. */
+@font-face {
+  font-family: Ambroise;
+  src: url("/assets/fonts/ambroise-bold.woff2") format("woff2"),
+       url("/assets/fonts/ambroise-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------
+   Tokens — scoped so global main.css tokens stay untouched.
+   --------------------------------------------------------------- */
+.theme-kaleidoscope {
+  /* Brand (permanent) */
+  --k-ted-red: #e62b1e;
+  --k-ted-red-hover: #cf261a;
+  --k-white: #fff;
+
+  /* Kaleidoscope warm tones (monarch wing) */
+  --k-monarch-orange: #e87a1e;
+  --k-amber: #f2a93b;
+  --k-wing-gold: #e8c55a;
+  --k-burnt-sienna: #c84a1a;
+
+  /* Accent (chrysalis) */
+  --k-teal: #1a7a6d;
+  --k-teal-dark: #145d53;
+  --k-teal-light: #7cb3aa;
+
+  /* Darks */
+  --k-wing-black: #1a1a1a;
+  --k-obsidian: #2a2a2a;
+
+  /* Warm-shifted neutrals */
+  --k-charcoal: #2a2a2a;
+  --k-stone: #6b6b6b;
+  --k-parchment: #fdf8f0;
+  --k-parchment-dark: #f0e8da;
+  --k-sand: #e8e2d6;
+  --k-sand-light: #f5f1ea;
+
+  /* Fonts */
+  --k-font-primary: "Inter", "Helvetica Neue", helvetica, arial, sans-serif;
+  --k-font-wordmark: "Ambroise", georgia, "Times New Roman", serif;
+
+  /* Type scale */
+  --k-text-2xs: 0.6875rem;
+  --k-text-xs: 0.75rem;
+  --k-text-sm: 0.8125rem;
+  --k-text-base: 1rem;
+  --k-text-md: 1.0625rem;
+  --k-text-lg: 1.25rem;
+  --k-text-xl: 1.75rem;
+  --k-text-2xl: 2rem;
+  --k-display-section: clamp(28px, 4vw, 40px);
+
+  /* Radii */
+  --k-radius-sm: 4px;
+  --k-radius-lg: 8px;
+  --k-radius-xl: 12px;
+  --k-radius-pill: 999px;
+
+  /* Shadows — soft, low-contrast, warm-tinted */
+  --k-shadow-md: 0 4px 12px rgb(26 26 26 / 10%);
+  --k-shadow-hover: 0 12px 28px rgb(200 74 26 / 14%), 0 4px 8px rgb(26 26 26 / 6%);
+
+  /* Motion */
+  --k-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --k-duration-base: 300ms;
+  --k-duration-fast: 200ms;
+
+  /* Signature gradients */
+  --k-gradient-spectrum: linear-gradient(90deg, #c84a1a 0%, #e87a1e 25%, #f2a93b 50%, #e8c55a 75%, #1a7a6d 100%);
+
+  background: var(--k-parchment);
+  font-family: var(--k-font-primary);
+  color: var(--k-charcoal);
+  overflow-x: hidden;
+}
+
+/* The homepage supplies its own full-bleed sections, so drop the
+   default layout's <main> side padding/max-width for this page only.
+   Keep the top padding that clears the fixed nav (matches main.css). */
+.theme-kaleidoscope #main-content {
+  max-width: none;
+  padding: 80px 0 0;
+  margin: 0;
+}
+
+@media (width <= 768px) {
+  .theme-kaleidoscope #main-content { padding-top: 64px; }
+}
+
+@media (width <= 640px) {
+  .theme-kaleidoscope #main-content { padding-top: 52px; }
+}
+
+/* In-page anchor target that clears the sticky nav on jump. */
+.k-anchor {
+  display: block;
+  height: 0;
+  scroll-margin-top: 90px;
+}
+
+/* ---------------------------------------------------------------
+   Layout primitives
+   --------------------------------------------------------------- */
+.k-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-48);
+}
+
+.k-section-pad {
+  padding-top: var(--space-100);
+  padding-bottom: var(--space-100);
+}
+
+/* ---------------------------------------------------------------
+   SpectrumBar — the signature full-spectrum gradient divider
+   --------------------------------------------------------------- */
+.k-spectrum {
+  width: 100%;
+  height: 6px;
+  background: var(--k-gradient-spectrum);
+  border: 0;
+}
+
+.k-spectrum-pill {
+  border-radius: var(--k-radius-pill);
+}
+
+/* ---------------------------------------------------------------
+   Buttons — mirrors the design-system Button variants
+   --------------------------------------------------------------- */
+.k-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: 14px 28px;
+  font-family: var(--k-font-primary);
+  font-size: var(--k-text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  border-radius: var(--k-radius-sm);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background var(--k-duration-fast) ease,
+    color var(--k-duration-fast) ease;
+}
+
+.k-btn-sm { padding: 10px 20px; }
+
+.k-btn-lg {
+  padding: 16px 36px;
+  font-size: var(--k-text-base);
+}
+
+.k-btn-primary {
+  background: var(--k-ted-red);
+  color: var(--k-white);
+}
+
+.k-btn-primary:hover {
+  background: var(--k-ted-red-hover);
+  color: var(--k-white);
+}
+
+.k-btn-warm {
+  background: var(--k-monarch-orange);
+  color: var(--k-white);
+}
+
+.k-btn-warm:hover {
+  background: var(--k-burnt-sienna);
+  color: var(--k-white);
+}
+
+.k-btn-secondary {
+  background: transparent;
+  color: var(--k-teal);
+  box-shadow: inset 0 0 0 1.5px var(--k-teal);
+}
+
+.k-btn-secondary:hover {
+  background: var(--k-teal);
+  color: var(--k-white);
+}
+
+/* On dark/warm backgrounds the secondary button reads white. */
+.k-btn-secondary-inverse {
+  color: var(--k-white);
+  box-shadow: inset 0 0 0 1.5px var(--k-white);
+}
+
+.k-btn-secondary-inverse:hover {
+  background: var(--k-white);
+  color: var(--k-wing-black);
+}
+
+.k-btn-ghost {
+  background: transparent;
+  color: var(--k-white);
+}
+
+.k-btn-ghost:hover {
+  color: var(--k-wing-gold);
+}
+
+.k-btn-group {
+  display: flex;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------------
+   Shared decorative pieces
+   --------------------------------------------------------------- */
+.k-hex {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.k-eyebrow {
+  font-size: var(--k-text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--space-12);
+}
+
+/* Opt a run of text out of an uppercasing parent (e.g. the brand name,
+   which keeps its mixed case and lowercase "x" inside an eyebrow). */
+.k-nocaps {
+  text-transform: none;
+}
+
+/* Fine paper grain — a background layer behind content, never over it. */
+.k-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: soft-light;
+  background-image: radial-gradient(rgb(80 40 15 / 90%) 0.5px, transparent 1px);
+  background-size: 7px 7px;
+}
+
+/* Line-hex wire pattern (white strokes, low opacity). */
+.k-hexbg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='96' viewBox='0 0 56 96'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.18' stroke-width='1.5'%3E%3Cpath d='M28 0 L56 16 L56 48 L28 64 L0 48 L0 16 Z'/%3E%3Cpath d='M28 48 L56 64 L56 96 L28 112 L0 96 L0 64 Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Animated warm monarch gradient. */
+.k-anim-warm {
+  background: linear-gradient(125deg, #a83c14 0%, #c84a1a 22%, #e87a1e 48%, #f2a93b 72%, #e8c55a 100%);
+  background-size: 260% 260%;
+  animation: k-shift 16s ease-in-out infinite;
+}
+
+@keyframes k-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Hover lift on tiles/cards. */
+.k-tile {
+  transition: transform var(--k-duration-base) var(--k-ease-out);
+}
+
+.k-tile:hover {
+  transform: translateY(-6px) rotate(-1deg);
+}
+
+/* ---------------------------------------------------------------
+   Navigation (dark bar + spectrum cap) for the homepage
+   --------------------------------------------------------------- */
+.theme-kaleidoscope .nav {
+  background: var(--k-wing-black);
+  border-bottom: none;
+}
+
+/* On the desktop dark nav bar, whiten only the top-level menu labels —
+   NOT the links inside the dropdown panels (white background), and NOT
+   the mobile fly-out menu, which is also a white panel from main.css.
+   Below 1025px the nav collapses to that fly-out, so this must not
+   apply there. */
+@media (width >= 1025px) {
+  .theme-kaleidoscope .nav > .nav-menu > .nav-links > li > a,
+  .theme-kaleidoscope .nav-dropdown-toggle {
+    color: var(--k-white);
+  }
+}
+
+.theme-kaleidoscope .nav-cta {
+  background: var(--k-monarch-orange);
+  color: var(--k-white);
+  border-color: var(--k-monarch-orange);
+}
+
+.theme-kaleidoscope .nav-cta:hover {
+  background: var(--k-burnt-sienna);
+  border-color: var(--k-burnt-sienna);
+}
+
+/* ---------------------------------------------------------------
+   Hero
+   --------------------------------------------------------------- */
+.k-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.k-hero-inner {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: var(--space-48);
+  align-items: center;
+  padding: var(--space-100) var(--space-48);
+}
+
+.k-hero-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  background: var(--k-wing-black);
+  color: var(--k-white);
+  padding: 8px 16px;
+  border-radius: var(--k-radius-pill);
+  font-size: var(--k-text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--space-24);
+}
+
+.k-hero-flag .k-hex-glyph { color: var(--k-amber); }
+
+.k-hero-title {
+  font-family: var(--k-font-wordmark);
+  color: var(--k-white);
+  font-size: clamp(56px, 7vw, 124px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--space-24);
+  font-weight: 700;
+  white-space: nowrap;
+  text-shadow: 0 6px 30px rgb(120 40 10 / 40%);
+}
+
+.k-hero-lede {
+  color: var(--k-white);
+  font-size: var(--k-text-lg);
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 500px;
+  margin-bottom: var(--space-32);
+  text-shadow: 0 1px 12px rgb(120 40 10 / 35%);
+}
+
+.k-hero-art {
+  display: flex;
+  justify-content: center;
+}
+
+.k-hero-art img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 60px rgb(80 20 0 / 50%));
+}
+
+/* ---------------------------------------------------------------
+   Marquee ticker
+   --------------------------------------------------------------- */
+.k-marquee {
+  background: var(--k-wing-black);
+  color: var(--k-white);
+  overflow: hidden;
+  padding: var(--space-16) 0;
+  position: relative;
+  z-index: 4;
+}
+
+.k-marquee-track {
+  display: inline-flex;
+  gap: var(--space-40);
+  white-space: nowrap;
+  animation: k-marq 26s linear infinite;
+}
+
+.k-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-40);
+  font-size: var(--k-text-md);
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: rgb(255 255 255 / 90%);
+}
+
+.k-marquee-item .k-hex-glyph { color: var(--k-amber); }
+
+@keyframes k-marq {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------------------------------------------------------------
+   Save the Date (teal band)
+   --------------------------------------------------------------- */
+.k-savedate {
+  background: var(--k-teal);
+  color: var(--k-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.k-savedate-dots {
+  position: absolute;
+  inset: 0;
+  opacity: 0.14;
+  pointer-events: none;
+  background-image: radial-gradient(rgb(255 255 255 / 16%) 1px, transparent 1.4px);
+  background-size: 9px 9px;
+}
+
+.k-savedate-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-64);
+  align-items: center;
+  padding: var(--space-100) var(--space-48);
+}
+
+.k-savedate .k-eyebrow { color: var(--k-wing-gold); }
+
+/* The event name is the anchor of this block — set in the Ambroise
+   wordmark face (its one sanctioned use besides the hero) so it reads
+   as the theme, not a tagline. */
+.k-savedate-title {
+  color: var(--k-white);
+  font-family: var(--k-font-wordmark);
+  font-weight: 700;
+  font-size: clamp(44px, 6vw, 84px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--space-24);
+}
+
+.k-savedate-lead {
+  color: var(--k-white);
+  font-size: var(--k-text-lg);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 440px;
+  margin: 0 0 var(--space-24);
+}
+
+.k-savedate-date {
+  font-size: var(--k-text-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--space-8);
+  letter-spacing: -0.01em;
+}
+
+.k-savedate-meta {
+  color: rgb(255 255 255 / 82%);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: var(--space-24);
+}
+
+.k-savedate-photo {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: var(--k-wing-black);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 30%);
+}
+
+.k-savedate-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------------
+   Talks (parchment)
+   --------------------------------------------------------------- */
+.k-talks {
+  background: var(--k-parchment);
+  position: relative;
+}
+
+.k-section-head {
+  text-align: center;
+  margin-bottom: var(--space-48);
+}
+
+.k-section-head .k-eyebrow { color: var(--k-monarch-orange); }
+
+.k-section-title {
+  font-size: var(--k-display-section);
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--k-wing-black);
+}
+
+.k-section-rule {
+  max-width: 200px;
+  height: 4px;
+  margin: var(--space-24) auto 0;
+}
+
+.k-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-32);
+}
+
+.k-talk-card {
+  background: var(--k-white);
+  border-radius: var(--k-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--k-shadow-md);
+  border-top: 5px solid var(--k-burnt-sienna);
+}
+
+.k-talk-card:nth-child(2) { border-top-color: var(--k-monarch-orange); }
+.k-talk-card:nth-child(3) { border-top-color: var(--k-wing-gold); }
+
+.k-talk-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--k-sand);
+}
+
+.k-talk-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.k-talk-body {
+  padding: var(--space-20) var(--space-20) var(--space-24);
+}
+
+.k-talk-body h3 {
+  font-size: var(--k-text-md);
+  margin: 0 0 var(--space-4);
+  line-height: 1.25;
+  color: var(--k-wing-black);
+}
+
+.k-talk-speaker {
+  color: var(--k-stone);
+  font-size: var(--k-text-sm);
+}
+
+.k-center { text-align: center; }
+
+.k-mt-48 { margin-top: var(--space-48); }
+
+/* ---------------------------------------------------------------
+   Get Involved (dark, slanted top)
+   --------------------------------------------------------------- */
+.k-involved {
+  background: var(--k-wing-black);
+  color: var(--k-white);
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
+  margin-top: -3vw;
+  padding-top: 3vw;
+}
+
+.k-involved-inner {
+  position: relative;
+  padding: var(--space-100) var(--space-48);
+}
+
+.k-involved-title {
+  color: var(--k-white);
+  font-size: var(--k-display-section);
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: var(--space-48);
+}
+
+.k-involved-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-24);
+}
+
+.k-involved-card {
+  background: var(--k-obsidian);
+  border-radius: var(--k-radius-xl);
+  padding: var(--space-40) var(--space-32);
+  text-align: center;
+  border: 1px solid rgb(255 255 255 / 6%);
+}
+
+.k-involved-badge {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--k-white);
+  margin: 0 auto var(--space-20);
+}
+
+.k-involved-badge-orange { background: var(--k-monarch-orange); }
+.k-involved-badge-teal { background: var(--k-teal); }
+.k-involved-badge-red { background: var(--k-ted-red); }
+
+.k-involved-card h3 {
+  color: var(--k-white);
+  font-size: var(--k-text-xl);
+  margin: 0 0 var(--space-12);
+}
+
+.k-involved-card p {
+  color: rgb(255 255 255 / 70%);
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0 0 var(--space-16);
+}
+
+.k-involved-card a {
+  color: var(--k-wing-gold);
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.k-involved-card a:hover { color: var(--k-amber); }
+
+/* ---------------------------------------------------------------
+   Photo band
+   --------------------------------------------------------------- */
+.k-photoband {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  background: var(--k-wing-black);
+  padding: 6px;
+}
+
+.k-photoband-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.k-photoband-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------------
+   Sponsors (parchment) + Newsletter
+   --------------------------------------------------------------- */
+.k-sponsors {
+  background: var(--k-parchment);
+}
+
+.k-sponsors-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-100) var(--space-48);
+}
+
+.k-sponsors-lede {
+  text-align: center;
+  color: var(--k-charcoal);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto var(--space-48);
+}
+
+.k-sponsors-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-24);
+  margin-bottom: var(--space-48);
+}
+
+.k-sponsors-card {
+  background: var(--k-sand-light);
+  border-radius: var(--k-radius-xl);
+  padding: var(--space-32);
+  border-top: 4px solid var(--k-teal);
+}
+
+.k-sponsors-card h3 {
+  font-size: var(--k-text-lg);
+  margin: 0 0 var(--space-12);
+  color: var(--k-wing-black);
+}
+
+.k-sponsors-card p {
+  color: var(--k-charcoal);
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   Footer CTA (warm gradient) — sits above the site footer
+   --------------------------------------------------------------- */
+.k-cta {
+  position: relative;
+  color: var(--k-white);
+  text-align: center;
+  padding: var(--space-80) var(--space-48);
+  overflow: hidden;
+}
+
+.k-cta-title {
+  color: var(--k-white);
+  font-size: clamp(32px, 5vw, 64px);
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-16);
+  text-shadow: 0 4px 24px rgb(120 40 10 / 40%);
+}
+
+.k-cta-meta {
+  color: rgb(255 255 255 / 90%);
+  font-weight: 300;
+  margin-bottom: var(--space-32);
+}
+
+/* ---------------------------------------------------------------
+   Reduced motion + responsive
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .k-anim-warm,
+  .k-marquee-track {
+    animation: none;
+  }
+}
+
+@media (width <= 900px) {
+  .k-wrap { padding: 0 var(--space-24); }
+
+  .k-hero-inner,
+  .k-savedate-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-40);
+  }
+
+  /* "Kaleidoscope" is a single unbreakable word, so it must be scaled to
+     fit the viewport rather than wrapped — the clamp floor keeps it from
+     overflowing on the narrowest phones. */
+  .k-hero-title {
+    font-size: clamp(30px, 11vw, 88px);
+  }
+
+  .k-grid-3,
+  .k-involved-grid,
+  .k-sponsors-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Keep the photo band a single row — drop the last two tiles rather
+     than wrapping to a second row. */
+  .k-photoband {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .k-photoband-item:nth-child(n + 4) {
+    display: none;
+  }
+
+  /* Tighten the generous 100px section rhythm for smaller screens. */
+  .k-section-pad {
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-64);
+  }
+
+  .k-hero-inner,
+  .k-savedate-inner,
+  .k-involved-inner,
+  .k-sponsors-inner {
+    padding: var(--space-64) var(--space-24);
+  }
+
+  .k-cta {
+    padding: var(--space-64) var(--space-24);
+  }
+}
+
+@media (width <= 600px) {
+  .k-hero-title {
+    font-size: clamp(28px, 12vw, 64px);
+  }
+
+  .k-section-pad {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-48);
+  }
+
+  .k-hero-inner,
+  .k-savedate-inner,
+  .k-involved-inner,
+  .k-sponsors-inner,
+  .k-cta {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-48);
+  }
+
+  .k-photoband {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .k-photoband-item:nth-child(n + 3) {
+    display: none;
+  }
+}
