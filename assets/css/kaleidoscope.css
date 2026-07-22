@@ -355,6 +355,11 @@
     color: var(--k-white);
   }
 
+  .theme-kaleidoscope .nav-dropdown-toggle:hover,
+  .theme-kaleidoscope .nav > .nav-menu > .nav-links > li > a:hover {
+    color: var(--k-amber);
+  }
+
   .theme-kaleidoscope .nav-dropdown-toggle::after {
     color: rgb(255 255 255 / 55%);
   }
@@ -363,8 +368,19 @@
     color: rgb(255 255 255 / 70%);
   }
 
+  /* Clear the light cream hover background from main.css (it clashes on
+     the dark panel) and use amber text with a brighter accent dash. */
   .theme-kaleidoscope .nav-dropdown-menu a:hover {
+    background: transparent;
     color: var(--k-amber);
+  }
+
+  .theme-kaleidoscope .nav-dropdown-menu a::before {
+    background: var(--k-amber);
+  }
+
+  .theme-kaleidoscope .nav-dropdown-menu a:hover::before {
+    opacity: 1;
   }
 }
 
