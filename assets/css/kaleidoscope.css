@@ -127,11 +127,17 @@
   margin: 0;
 }
 
-/* Below 1024px the nav collapses to a fixed ~64px mobile bar, so the
-   content clearance must drop to match — otherwise an 80px clearance
-   leaves a white strip between the nav and the header. */
+/* Below 1024px the nav collapses to a fixed mobile bar, so the content
+   clearance must drop to match its height at each breakpoint — otherwise
+   the extra clearance shows as a white strip between the nav and header.
+   Heights: ~64px (<=1024px, 16px pad + 32px logo), ~52px (<=640px,
+   12px pad + 28px logo) — mirrors main.css's #main-content offsets. */
 @media (width <= 1024px) {
   .theme-kaleidoscope #main-content { padding-top: 64px; }
+}
+
+@media (width <= 640px) {
+  .theme-kaleidoscope #main-content { padding-top: 52px; }
 }
 
 /* In-page anchor target that clears the sticky nav on jump. */
