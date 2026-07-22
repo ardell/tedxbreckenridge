@@ -59,8 +59,10 @@
   </script>
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  {% if page.extra_css %}
-  {% for stylesheet in page.extra_css %}
+  {% comment %}Extra stylesheets may be declared on the page or on its layout.{% endcomment %}
+  {% assign extra_css = page.extra_css | default: layout.extra_css %}
+  {% if extra_css %}
+  {% for stylesheet in extra_css %}
   <link rel="stylesheet" href="{{ stylesheet | relative_url }}">
   {% endfor %}
   {% endif %}
@@ -76,14 +78,15 @@
   </script>
   {% endif %}
 </head>
-<body class="{% if page.layout == 'post' %}layout-post {% endif %}{{ page.body_class }}">
+{% assign body_class = page.body_class | default: layout.body_class %}
+<body class="{% if page.layout == 'post' %}layout-post {% endif %}{{ body_class }}">
   <!-- Skip Navigation Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Navigation -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <a href="/" class="nav-logo">
-      {% if page.body_class contains 'theme-kaleidoscope' %}
+      {% if body_class contains 'theme-kaleidoscope' %}
       <img src="{{ '/assets/images/logos/tedx-breckenridge-logo-white.svg' | relative_url }}" alt="TEDxBreckenridge - Ideas worth spreading in Breckenridge, Colorado">
       {% else %}
       <img src="{{ '/assets/images/logos/tedx-breckenridge-logo-black.png' | relative_url }}" alt="TEDxBreckenridge - Ideas worth spreading in Breckenridge, Colorado">

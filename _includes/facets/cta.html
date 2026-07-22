@@ -1,0 +1,32 @@
+{%- comment -%}
+Centered CTA block (Facets kit).
+Params:
+  tone     — sand (default) | parchment | warm | dark
+  eyebrow  — optional kicker
+  title    — heading (optional)
+  text     — supporting copy (optional)
+  primary_label / primary_url        — primary button (optional)
+  secondary_label / secondary_url    — secondary button (optional)
+{%- endcomment -%}
+{%- assign tone = include.tone | default: "sand" -%}
+<div class="fk-cta fk-cta-{{ tone }}">
+  {%- if tone == "warm" -%}<div class="fk-grain" aria-hidden="true"></div>{%- endif -%}
+  {%- if tone == "dark" -%}<div class="fk-honeycomb" aria-hidden="true"></div>{%- endif -%}
+  <div class="fk-cta-inner">
+    {%- if include.eyebrow -%}<div class="fk-cta-eyebrow">{{ include.eyebrow }}</div>{%- endif -%}
+    {%- if include.title -%}<h2 class="fk-cta-title">{{ include.title }}</h2>{%- endif -%}
+    {%- if include.text -%}<p class="fk-cta-text">{{ include.text }}</p>{%- endif -%}
+    {%- if include.primary_label or include.secondary_label -%}
+    <div class="fk-cta-buttons">
+      {%- if include.primary_label -%}
+      <a href="{{ include.primary_url | default: '#' }}" class="k-btn k-btn-primary k-btn-lg"{% if include.primary_blank %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ include.primary_label }}</a>
+      {%- endif -%}
+      {%- if include.secondary_label -%}
+      {%- assign sec_class = "k-btn k-btn-secondary k-btn-lg" -%}
+      {%- if tone == "warm" or tone == "dark" -%}{%- assign sec_class = "k-btn k-btn-secondary-inverse k-btn-lg" -%}{%- endif -%}
+      <a href="{{ include.secondary_url | default: '#' }}" class="{{ sec_class }}"{% if include.secondary_blank %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ include.secondary_label }}</a>
+      {%- endif -%}
+    </div>
+    {%- endif -%}
+  </div>
+</div>

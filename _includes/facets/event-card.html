@@ -1,0 +1,34 @@
+{%- comment -%}
+Compact event list card (Facets kit).
+Params:
+  url    — link target
+  image  — image src (already resolved, or a repo path)
+  month  — e.g. "Oct"
+  day    — e.g. "03"
+  tag    — small label (e.g. "Salon Series")
+  title  — event title
+  blurb  — one-line description
+  sold   — if true, show a "Sold Out" badge
+  alt    — image alt text
+{%- endcomment -%}
+<a href="{{ include.url | default: '#' }}" class="fk-eventcard">
+  <div class="fk-eventcard-media">
+    {%- if include.image -%}<img src="{{ include.image | relative_url }}" alt="{{ include.alt | default: include.title }}" loading="lazy">{%- endif -%}
+    {%- if include.month -%}
+    <div class="fk-eventcard-datechip">
+      <div class="fk-eventcard-month">{{ include.month }}</div>
+      <div class="fk-eventcard-day">{{ include.day }}</div>
+    </div>
+    {%- endif -%}
+  </div>
+  <div class="fk-eventcard-body">
+    {%- if include.tag or include.sold -%}
+    <div class="fk-eventcard-tags">
+      {%- if include.tag -%}<span class="fk-eventcard-tag">{{ include.tag }}</span>{%- endif -%}
+      {%- if include.sold -%}<span class="fk-eventcard-sold">Sold Out</span>{%- endif -%}
+    </div>
+    {%- endif -%}
+    <h3>{{ include.title }}</h3>
+    {%- if include.blurb -%}<p class="fk-eventcard-blurb">{{ include.blurb }}</p>{%- endif -%}
+  </div>
+</a>

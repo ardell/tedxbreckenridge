@@ -4,67 +4,86 @@ title: Get in Touch
 subtitle: Connect with our community of volunteers, thinkers, and doers
 permalink: /contact/
 description: Get in touch with TEDxBreckenridge. Apply to speak, volunteer, sponsor, or reach out with questions. Connect with our community of local volunteers.
+full_width: true
+eyebrow: Contact
+socials:
+  - type: instagram
+    url: https://instagram.com/tedxbreckenridge
+    blank: true
+  - type: youtube
+    url: https://youtube.com/@tedxbreckenridge
+    blank: true
+  - type: flickr
+    url: https://www.flickr.com/photos/tedxbreckenridge/
+    blank: true
 ---
 
-<div class="text-center mb-48">
-  <p class="intro" style="margin-bottom: 0;">TEDxBreckenridge is run entirely by local volunteers passionate about bringing ideas worth spreading to Summit County. Whether you want to get involved, share your story, or support our mission, we'd love to hear from you.</p>
-</div>
-
-<div class="mb-80">
-  <img src="{{ '/assets/images/events/team-posing-all-together.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members gathered together at an event" class="img-fluid rounded" loading="lazy">
-</div>
-
-<h2 class="text-center mb-48">Ways to Connect</h2>
-
-<div class="contact-options">
-  <div class="contact-option">
-    <div class="contact-option-icon">🙌</div>
-    <h3>Join the Team</h3>
-    <p>TEDxBreckenridge is run entirely by local volunteers who are passionate about bringing ideas worth spreading to Summit County. We're always looking for people who want to help shape our events—whether that's coaching speakers, designing experiences, managing logistics, or spreading the word in our community. No prior experience required, just curiosity and a willingness to contribute. <a href="https://tedxbreckenridge.com/volunteer" target="_blank" class="contact-option-link">Learn about volunteering</a></p>
+<section class="fk-band fk-band-parchment">
+  <div class="fk-band-inner">
+    <div class="fk-prose fk-center" style="max-width: 720px; margin: 0 auto var(--space-48);">
+      <p>TEDxBreckenridge is run entirely by local volunteers passionate about bringing ideas worth spreading to Summit County. Whether you want to get involved, share your story, or support our mission, we'd love to hear from you.</p>
+    </div>
+    <div class="fk-prose" style="max-width: none;">
+      <img src="{{ '/assets/images/events/team-posing-all-together.jpg' | relative_url }}" alt="TEDxBreckenridge volunteer team members gathered together at an event" loading="lazy">
+    </div>
   </div>
+</section>
 
-  <div class="contact-option">
-    <div class="contact-option-icon">🤝</div>
-    <h3>Become a Partner</h3>
-    <p>Sponsoring TEDxBreckenridge connects your business with a community that values innovation, creativity, and meaningful conversation. Your support helps us keep ticket prices accessible, invest in high-quality production, and bring compelling speakers to our stage. We offer a range of partnership opportunities designed to showcase your brand while supporting ideas worth spreading in the Rockies. <a href="https://tedxbreckenridge.com/sponsor" target="_blank" class="contact-option-link">Explore sponsorship opportunities</a></p>
+<section class="fk-band fk-band-white">
+  <div class="fk-band-inner">
+    <div class="fk-band-head fk-center">
+      <div class="fk-band-eyebrow">Get Involved</div>
+      <h2 class="fk-band-title">Ways to Connect</h2>
+    </div>
+    <div class="fk-grid-2">
+      <div class="fk-card fk-card-accent-teal">
+        <div class="fk-card-glyph" aria-hidden="true">✻</div>
+        <h3>Join the Team</h3>
+        <div class="fk-card-body"><p>TEDxBreckenridge is run entirely by local volunteers passionate about bringing ideas worth spreading to Summit County. We're always looking for people who want to help shape our events—coaching speakers, designing experiences, managing logistics, or spreading the word. No prior experience required, just curiosity.</p></div>
+        <a href="/volunteer/" class="fk-cardlink">Learn about volunteering →</a>
+      </div>
+      <div class="fk-card fk-card-accent-orange">
+        <div class="fk-card-glyph" aria-hidden="true">🤝</div>
+        <h3>Become a Partner</h3>
+        <div class="fk-card-body"><p>Sponsoring TEDxBreckenridge connects your business with a community that values innovation, creativity, and meaningful conversation. Your support keeps ticket prices accessible, invests in high-quality production, and brings compelling speakers to our stage.</p></div>
+        <a href="/sponsor/" class="fk-cardlink">Explore sponsorship →</a>
+      </div>
+      <div class="fk-card fk-card-accent-red">
+        <div class="fk-card-glyph" aria-hidden="true">❤</div>
+        <h3>Donate</h3>
+        <div class="fk-card-body"><p>We're a 501(c)(3) nonprofit run entirely by local volunteers. Every dollar goes directly toward making our events possible—securing speakers and venues, and producing content that reaches thousands. Your gift keeps transformative ideas accessible to everyone.</p></div>
+        <a href="https://givebutter.com/tedxbreckenridge?utm_source=website&utm_campaign=tedxbreckenridge.com-contact-donate" target="_blank" rel="noopener noreferrer" class="fk-cardlink">Make a donation →</a>
+      </div>
+      <div class="fk-card fk-card-accent-gold">
+        <div class="fk-card-glyph" aria-hidden="true">⬢</div>
+        <h3>Attend</h3>
+        <div class="fk-card-body"><p>Join us for inspiring talks, meaningful connections, and ideas worth spreading. Our main event is each October in Breckenridge; throughout the year we host intimate Salon events. Tickets are priced to be accessible, with suggested donations for Salons—ideas should be available to everyone.</p></div>
+        <a href="/events/" class="fk-cardlink">Learn about upcoming events →</a>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="contact-option">
-    <div class="contact-option-icon">❤️</div>
-    <h3>Donate</h3>
-    <p>TEDxBreckenridge is a 501(c)(3) nonprofit organization run entirely by local volunteers. Every dollar you contribute goes directly toward making our events possible—from securing speakers and venues to producing high-quality content that reaches thousands in our community and beyond. Your donation helps ensure that transformative ideas remain accessible to everyone, regardless of their ability to pay. Together, we're building a platform for innovation, creativity, and meaningful conversation in the heart of the Rockies. <a href="https://givebutter.com/tedxbreckenridge?utm_source=website&utm_campaign=tedxbreckenridge.com-contact-donate" target="_blank" class="contact-option-link">Make a donation</a></p>
+<section class="fk-band fk-band-parchment">
+  <div class="fk-band-inner">
+    <div class="fk-band-head fk-center">
+      <div class="fk-band-eyebrow">Questions or Comments?</div>
+      <h2 class="fk-band-title">Drop us a line</h2>
+      <p style="color: var(--k-stone); font-weight: 300; margin-top: var(--space-12);">We'll get back to you soon. Real humans read every message.</p>
+    </div>
+    <div style="max-width: 760px; margin: 0 auto; overflow: hidden;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScE1tHIgUEu6e3iP6WW79sxPT-5MsqIeHoecOX7xIO20A5s4Q/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0" style="border: none;" title="Contact Form">Loading…</iframe>
+    </div>
   </div>
+</section>
 
-  <div class="contact-option">
-    <div class="contact-option-icon">🎟️</div>
-    <h3>Attend</h3>
-    <p>Join us for inspiring talks, meaningful connections, and ideas worth spreading in the heart of the Rockies. Our main event takes place each October in Breckenridge, featuring local voices and compelling speakers. Throughout the year, we also host intimate Salon events that explore fascinating topics in smaller, conversational settings. Tickets are priced to be accessible to our community, and we offer suggested donations for Salon events—because ideas should be available to everyone. <a href="/salon/" class="contact-option-link">Learn about upcoming events</a></p>
+<section class="fk-band fk-band-dark fk-band-sm fk-center">
+  <div class="fk-band-inner">
+    <div class="fk-band-eyebrow" style="color: var(--k-wing-gold);">Stay Connected</div>
+    <h2 class="fk-band-title">Find us online</h2>
+    <p style="color: rgba(255,255,255,0.7); font-weight: 300; max-width: 520px; margin: var(--space-12) auto var(--space-24);">Follow along for speaker announcements, event updates, and behind-the-scenes stories from the mountains.</p>
+    <div style="display: flex; justify-content: center;">
+      {% include facets/social-row.html tone="dark" links=page.socials %}
+    </div>
   </div>
-</div>
-
-<div class="contact-form-section">
-  <div class="contact-form-intro">
-    <h2>Questions or Comments?</h2>
-    <p>Drop us a line and we'll get back to you soon. Real humans read every message.</p>
-  </div>
-
-  <div style="max-width: 100%; overflow: hidden;">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScE1tHIgUEu6e3iP6WW79sxPT-5MsqIeHoecOX7xIO20A5s4Q/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0" style="border: none;" title="Contact Form">Loading…</iframe>
-  </div>
-</div>
-
-<div class="contact-social">
-  <h3>Find Us Online</h3>
-  <p>Follow along for speaker announcements, event updates, and behind-the-scenes stories from the mountains.</p>
-  <div class="social-links">
-    <a href="https://instagram.com/{{ site.social.instagram }}" target="_blank" class="social-link">
-      <span class="social-label">Instagram</span>
-    </a>
-    <a href="https://youtube.com/{{ site.social.youtube }}" target="_blank" class="social-link">
-      <span class="social-label">YouTube</span>
-    </a>
-    <a href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank" class="social-link">
-      <span class="social-label">Flickr</span>
-    </a>
-  </div>
-</div>
+</section>

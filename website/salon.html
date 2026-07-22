@@ -4,74 +4,67 @@ title: TEDxBreckenridge Salon
 description: TEDxBreckenridge Salon events are small, conversational gatherings designed to spark curiosity and build connections. Join us for intimate discussions on fascinating topics throughout the year.
 permalink: /salon/
 redirect_from: /salons/
+body_class: theme-kaleidoscope
+extra_css:
+  - /assets/css/kaleidoscope.css
 ---
 
-<div class="page">
+{% include facets/page-header.html
+   tone="parchment"
+   eyebrow="Salon Series"
+   title="Salon Events"
+   subtitle="Small gatherings, big ideas" %}
 
-<!-- What is a Salon -->
-<div class="page-header">
-    <div class="page-header-content">
-        <h1 class="page-title">TEDxBreckenridge Salon</h1>
-        <p class="page-subtitle">Small Gatherings, Big Ideas</p>
+<section class="fk-band fk-band-white">
+  <div class="fk-band-inner">
+    <div class="fk-prose">
+      <p>TEDxBreckenridge Salon events are intimate, conversational gatherings that bring together curious minds to explore fascinating topics. Unlike our main annual event, Salons are smaller by design—creating space for deeper discussion, questions, and genuine connection.</p>
+      <p>Each Salon features a short talk or presentation from a local expert, followed by guided conversation where everyone's voice matters. It's learning that feels less like a lecture and more like sitting around a table with friends who love to explore ideas together.</p>
+      <p>Topics vary throughout the year—from science and technology to art, culture, and community challenges. What stays constant is the spirit: curiosity-driven, accessible to all, and designed to leave you thinking differently about the world around you.</p>
     </div>
-</div>
-
-<section class="section section-full bg-white section-pt-40">
-    <div class="section-inner container-sm prose">
-        <p class="intro">TEDxBreckenridge Salon events are intimate, conversational gatherings that bring together curious minds to explore fascinating topics. Unlike our main annual event, Salons are smaller by design—creating space for deeper discussion, questions, and genuine connection.</p>
-
-        <p>Each Salon features a short talk or presentation from a local expert, followed by guided conversation where everyone's voice matters. It's learning that feels less like a lecture and more like sitting around a table with friends who love to explore ideas together.</p>
-
-        <p>Topics vary throughout the year—from science and technology to art, culture, and community challenges. What stays constant is the spirit: curiosity-driven, accessible to all, and designed to leave you thinking differently about the world around you.</p>
-    </div>
+  </div>
 </section>
 
-<!-- Upcoming Salon Events -->
-<section class="section section-full bg-cream">
-    <div class="section-inner container-sm">
-        <div class="section-header section-header-centered">
-            <div class="section-eyebrow">2026 Season</div>
-            <h2 class="section-title">Upcoming Salon Events</h2>
-        </div>
-
-        <div class="grid-gap-24">
-            {% assign salon_events = site.events | where: "event_type", "salon" | where_exp: "event", "event.date >= site.time" | sort: "date" %}
-
-            {% if salon_events.size > 0 %}
-            {% for event in salon_events %}
-            {% include format-time.html time=event.start_time %}
-            <div class="event-card">
-                <div class="event-card-image">
-                    <img src="{{ event.image | relative_url }}" alt="{{ event.title }}" loading="lazy">
-                </div>
-                <div class="event-card-content">
-                    <h3 class="text-red"><a href="{{ event.url }}">{{ event.title }}</a></h3>
-                    <p>{{ event.description | truncate: 200 }}</p>
-                    <p class="text-stone card-meta">
-                        <strong>{{ event.date | date: '%B %-d, %Y' }}{% if event.start_time %} • {{ formatted_time }}{% endif %}</strong><br>
-                        {{ event.venue_name }}, {{ event.venue_city }}
-                    </p>
-                    <div class="btn-group">
-                        {% if event.ticket_url %}
-                        <a href="{{ event.ticket_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Tickets</a>
-                        {% endif %}
-                        <a href="{{ event.url }}" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% else %}
-            <div class="card-white">
-                <p>No upcoming Salon events at this time. Join our mailing list to be notified when new events are announced.</p>
-            </div>
-            {% endif %}
-        </div>
-
-        <div class="cta-block">
-            <p class="text-stone">Join our mailing list to be notified when new Salon events are announced.</p>
-            <a href="/#mailing-list" class="btn btn-primary">Join Our Mailing List</a>
-        </div>
+<section class="fk-band fk-band-parchment">
+  <div class="fk-band-inner">
+    <div class="fk-band-head fk-center">
+      <div class="fk-band-eyebrow">2026 Season</div>
+      <h2 class="fk-band-title">Upcoming Salon Events</h2>
     </div>
+    {% assign salon_events = site.events | where: "event_type", "salon" | where_exp: "event", "event.date >= site.time" | sort: "date" %}
+    {% if salon_events.size > 0 %}
+    <div class="fk-stack">
+      {% for event in salon_events %}
+      {% assign ev_month = event.date | date: "%b" %}
+      {% assign ev_day = event.date | date: "%d" %}
+      {% assign ev_blurb = event.description | truncate: 160 %}
+      {% include facets/event-card.html
+         url=event.url
+         image=event.image
+         month=ev_month
+         day=ev_day
+         tag="Salon Series"
+         title=event.title
+         blurb=ev_blurb
+         alt=event.title %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="fk-card fk-center">
+      <div class="fk-card-body"><p>No upcoming Salon events at this time. Join our mailing list to be notified when new events are announced.</p></div>
+    </div>
+    {% endif %}
+  </div>
 </section>
 
-</div>
+<section class="fk-band fk-band-sand fk-band-sm">
+  <div class="fk-band-inner">
+    {% include facets/cta.html
+       tone="sand"
+       eyebrow="Stay in the loop"
+       title="Never miss a Salon"
+       text="Join our mailing list to be notified when new Salon events are announced."
+       primary_label="Join Our Mailing List"
+       primary_url="/#mailing-list" %}
+  </div>
+</section>

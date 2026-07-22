@@ -1,0 +1,24 @@
+{%- comment -%}
+Social links row (Facets kit) — inline SVG icons, tinted teal.
+Params:
+  tone  — light (default) | dark
+  links — list of { type, url } where type is one of:
+          instagram | youtube | facebook | linkedin | mail | flickr
+{%- endcomment -%}
+{%- assign tone = include.tone | default: "light" -%}
+<div class="fk-social-row{% if tone == 'dark' %} fk-social-row-dark{% endif %}">
+  {%- for link in include.links -%}
+  <a href="{{ link.url | default: '#' }}" class="fk-social" aria-label="{{ link.type }}"{% if link.blank %} target="_blank" rel="noopener noreferrer"{% endif %}>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      {%- case link.type -%}
+      {%- when "instagram" -%}<rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="17" cy="7" r="0.6" fill="currentColor" stroke="none"></circle>
+      {%- when "youtube" -%}<rect x="3" y="5.5" width="18" height="13" rx="3"></rect><path d="M10 9l5 3-5 3z"></path>
+      {%- when "facebook" -%}<path d="M14 8h2.5V5H14c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.2l.5-3H14V8.5c0-.3.2-.5.5-.5z"></path>
+      {%- when "linkedin" -%}<rect x="4" y="8" width="3" height="11"></rect><circle cx="5.5" cy="5.5" r="1.4"></circle><path d="M10 8h3v1.5c.5-1 1.7-1.8 3.2-1.8 2.3 0 3.8 1.5 3.8 4.3V19h-3v-6c0-1.4-.7-2.2-1.8-2.2S13 11.6 13 13v6h-3z"></path>
+      {%- when "flickr" -%}<circle cx="8" cy="12" r="3"></circle><circle cx="16" cy="12" r="3"></circle>
+      {%- else -%}<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path>
+      {%- endcase -%}
+    </svg>
+  </a>
+  {%- endfor -%}
+</div>

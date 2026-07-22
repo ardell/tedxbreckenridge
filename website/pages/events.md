@@ -7,44 +7,50 @@ redirect_from:
   - /attend
   - /attend/
 description: Upcoming TEDxBreckenridge events including Salon gatherings and our annual main event. Join us for inspiring talks and meaningful connections in the heart of the Rockies.
+full_width: true
+eyebrow: Attend
 ---
 
-<div class="grid-gap-24">
-{% assign now = site.time | date: '%Y-%m-%d' %}
-{% assign upcoming_events = site.events | where_exp: "event", "event.date >= site.time" | sort: "date" %}
+<section class="fk-band fk-band-white">
+  <div class="fk-band-inner">
+    {% assign upcoming_events = site.events | where_exp: "event", "event.date >= site.time" | sort: "date" %}
+    {% if upcoming_events.size > 0 %}
+    <div class="fk-stack">
+      {% for event in upcoming_events %}
+      {% if event.event_type == "salon" %}{% assign tag = "Salon Events" %}{% else %}{% assign tag = "Main Event" %}{% endif %}
+      {% assign ev_month = event.date | date: "%b" %}
+      {% assign ev_day = event.date | date: "%d" %}
+      {% assign ev_blurb = event.description | truncate: 160 %}
+      {% include facets/event-card.html
+         url=event.url
+         image=event.image
+         month=ev_month
+         day=ev_day
+         tag=tag
+         title=event.title
+         blurb=ev_blurb
+         alt=event.title %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="fk-card fk-center">
+      <div class="fk-card-body"><p>No upcoming events at this time. Join our mailing list to be notified when new events are announced.</p></div>
+      <div style="margin-top: var(--space-16);">
+        <a href="/#mailing-list" class="k-btn k-btn-primary">Join Our Mailing List</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
 
-{% if upcoming_events.size > 0 %}
-{% for event in upcoming_events %}
-{% include format-time.html time=event.start_time %}
-<div class="event-card">
-    <div class="event-card-image">
-        <img src="{{ event.image | relative_url }}" alt="{{ event.title }}" loading="lazy">
-    </div>
-    <div class="event-card-content">
-        <div class="section-eyebrow">{% if event.event_type == "salon" %}TEDxBreckenridge Salon{% else %}Main Event{% endif %}</div>
-        <h3 class="text-red"><a href="{{ event.url }}">{{ event.title }}</a></h3>
-        <p>{{ event.description | truncate: 200 }}</p>
-        <p class="text-stone card-meta">
-            <strong>{{ event.date | date: '%B %-d, %Y' }}{% if event.start_time %} • {{ formatted_time }}{% endif %}</strong><br>
-            {{ event.venue_name }}, {{ event.venue_city }}
-        </p>
-        <div class="btn-group">
-            <a href="{{ event.url }}" class="btn btn-primary">Learn More</a>
-        </div>
-    </div>
-</div>
-{% endfor %}
-{% else %}
-<div class="card-white">
-    <p>No upcoming events at this time. Join our mailing list to be notified when new events are announced.</p>
-    <div class="mt-24">
-        <a href="/#mailing-list" class="btn btn-primary">Join Our Mailing List</a>
-    </div>
-</div>
-{% endif %}
-</div>
-
-<div class="cta-block">
-    <p class="text-stone">Looking for past events?</p>
-    <a href="/past-events/" class="btn btn-secondary">View Past Events</a>
-</div>
+<section class="fk-band fk-band-sand fk-band-sm">
+  <div class="fk-band-inner">
+    {% include facets/cta.html
+       tone="sand"
+       eyebrow="Catch up"
+       title="Looking for past events?"
+       text="Browse five years of TEDxBreckenridge talks, Salons, and gatherings."
+       primary_label="View Past Events"
+       primary_url="/past-events/" %}
+  </div>
+</section>

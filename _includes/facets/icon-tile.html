@@ -1,0 +1,16 @@
+{%- comment -%}
+Icon-option tile (Facets kit) — a hexagon glyph + label + value link.
+Params:
+  url    — link target
+  glyph  — a single character/emoji shown in the hex
+  accent — orange (default) | teal | gold | red
+  label  — small uppercase label
+  value  — the main line
+  blank  — if true, open in a new tab
+{%- endcomment -%}
+{%- assign accent = include.accent | default: "orange" -%}
+<a href="{{ include.url | default: '#' }}" class="fk-icontile fk-icontile-{{ accent }}"{% if include.blank %} target="_blank" rel="noopener noreferrer"{% endif %}>
+  <div class="fk-icontile-glyph" aria-hidden="true">{{ include.glyph }}</div>
+  <div class="fk-icontile-label">{{ include.label }}</div>
+  <div class="fk-icontile-value">{{ include.value }}</div>
+</a>

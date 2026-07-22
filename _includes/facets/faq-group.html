@@ -1,0 +1,23 @@
+{%- comment -%}
+FAQ group — native <details>/<summary> accordion (Facets kit).
+Params:
+  group_title — optional uppercase section label
+  items       — list of { q, a } (a is HTML/markdown-rendered string)
+  open_first  — if true, the first item starts expanded
+{%- endcomment -%}
+<div class="fk-faq-group">
+  {%- if include.group_title -%}<h3 class="fk-faq-group-title">{{ include.group_title }}</h3>{%- endif -%}
+  <div class="fk-faq-list">
+    {%- for item in include.items -%}
+    <details class="fk-faq-item"{% if forloop.first and include.open_first %} open{% endif %}>
+      <summary class="fk-faq-q">
+        <span>{{ item.q }}</span>
+        <span class="fk-faq-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="fk-faq-a">
+        <div class="fk-prose" style="font-size: var(--k-text-base);">{{ item.a | markdownify }}</div>
+      </div>
+    </details>
+    {%- endfor -%}
+  </div>
+</div>

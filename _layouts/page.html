@@ -1,18 +1,29 @@
 ---
 layout: default
+body_class: theme-kaleidoscope
+extra_css:
+  - /assets/css/kaleidoscope.css
 ---
 
-<div class="page">
-  <div class="page-header">
-    <div class="page-header-content">
-      <h1 class="page-title">{{ page.title }}</h1>
-      {% if page.subtitle %}
-      <p class="page-subtitle">{{ page.subtitle }}</p>
-      {% endif %}
+{% include facets/page-header.html
+   tone=page.header_tone
+   eyebrow=page.eyebrow
+   title=page.title
+   subtitle=page.subtitle %}
+
+{% comment %}
+  Pages with their own component markup (bands, tables, tiles) set
+  `full_width: true` and lay out their own sections. Plain content
+  pages get a constrained prose band automatically.
+{% endcomment %}
+{% if page.full_width %}
+{{ content }}
+{% else %}
+<section class="fk-band fk-band-{{ page.band_tone | default: 'parchment' }}">
+  <div class="fk-band-inner">
+    <div class="fk-prose">
+      {{ content }}
     </div>
   </div>
-
-  <div class="page-content{% if page.container %} {{ page.container }}{% endif %}">
-    {{ content }}
-  </div>
-</div>
+</section>
+{% endif %}

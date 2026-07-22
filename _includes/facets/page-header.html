@@ -1,0 +1,22 @@
+{%- comment -%}
+Interior page header (Facets kit).
+Params:
+  tone     — parchment (default) | warm | dark
+  eyebrow  — small uppercase kicker (optional)
+  title    — h1 text (required)
+  subtitle — supporting line (optional)
+  align    — left (default) | center
+  extra    — pre-captured HTML appended below the subtitle (e.g. breadcrumbs)
+{%- endcomment -%}
+{%- assign tone = include.tone | default: "parchment" -%}
+<header class="fk-header fk-header-{{ tone }}{% if include.align == 'center' %} fk-header-center{% endif %}">
+  {%- if tone == "warm" -%}<div class="fk-grain" aria-hidden="true"></div>{%- endif -%}
+  {%- if tone == "dark" -%}<div class="fk-honeycomb" aria-hidden="true"></div>{%- endif -%}
+  <div class="fk-header-inner">
+    {%- if include.eyebrow -%}<div class="fk-header-eyebrow">{{ include.eyebrow }}</div>{%- endif -%}
+    <h1 class="fk-header-title">{{ include.title }}</h1>
+    {%- if include.subtitle -%}<p class="fk-header-sub">{{ include.subtitle }}</p>{%- endif -%}
+    {%- if include.extra -%}<div class="fk-header-extra">{{ include.extra }}</div>{%- endif -%}
+  </div>
+  <div class="k-spectrum" style="height: {% if tone == 'dark' %}5px{% else %}4px{% endif %};" aria-hidden="true"></div>
+</header>
