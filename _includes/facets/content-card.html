@@ -1,0 +1,20 @@
+{%- comment -%}
+Content card (Facets kit).
+Params:
+  surface   — white (default) | sand
+  accent    — red | teal | gold | orange (optional accent top border)
+  glyph     — optional hex glyph character
+  eyebrow   — optional small uppercase kicker
+  title     — optional h3
+  body       — body text/HTML (optional)
+  link_label / link_url — optional footer link
+For richer bodies, use the .fk-card classes directly in markup instead.
+{%- endcomment -%}
+{%- assign surface = include.surface | default: "white" -%}
+<div class="fk-card{% if surface == 'sand' %} fk-card-sand{% endif %}{% if include.accent %} fk-card-accent-{{ include.accent }}{% endif %}">
+  {%- if include.glyph -%}<div class="fk-card-glyph" aria-hidden="true">{{ include.glyph }}</div>{%- endif -%}
+  {%- if include.eyebrow -%}<div class="fk-card-eyebrow">{{ include.eyebrow }}</div>{%- endif -%}
+  {%- if include.title -%}<h3>{{ include.title }}</h3>{%- endif -%}
+  {%- if include.body -%}<div class="fk-card-body">{{ include.body }}</div>{%- endif -%}
+  {%- if include.link_label -%}<a href="{{ include.link_url | default: '#' }}" class="fk-cardlink">{{ include.link_label }} →</a>{%- endif -%}
+</div>

@@ -6,548 +6,195 @@ redirect_from:
   - /watch
   - /watch/
 description: Watch inspiring TEDx talks from Breckenridge speakers. Explore ideas from past TEDxBreckenridge events including innovation, community, and mountain culture.
+body_class: theme-kaleidoscope
+extra_css:
+  - /assets/css/kaleidoscope.css
 ---
 
-<div class="page">
-  <nav class="year-nav" aria-label="Jump to year">
-    <span class="year-nav-label">Jump to:</span>
-    <a href="#metamorphosis" class="year-nav-link">2025</a>
-    <a href="#instinct" class="year-nav-link">2023</a>
-    <a href="#integrate" class="year-nav-link">2022</a>
-    <a href="#expand" class="year-nav-link">2021</a>
-    <a href="#connection" class="year-nav-link">2020</a>
-  </nav>
+{% include facets/page-header.html
+   tone="parchment"
+   eyebrow="Watch"
+   title="Ideas worth spreading"
+   subtitle="Explore talks from five years of TEDxBreckenridge — local voices with ideas that travel the world." %}
+
+<nav class="fk-yearnav" aria-label="Jump to year">
+  <span class="fk-yearnav-label">Jump to</span>
+  <a href="#metamorphosis">2025</a>
+  <a href="#instinct">2023</a>
+  <a href="#integrate">2022</a>
+  <a href="#expand">2021</a>
+  <a href="#connection">2020</a>
+</nav>
 
 <!-- 2025: METAMORPHOSIS -->
-<section class="section talks-year-section bg-white" id="metamorphosis">
-    <div class="section-inner container">
-        <div class="talks-year-header">
-            <img src="{{ '/assets/images/heroes/2025_metamorphosis.webp' | relative_url }}" alt="TEDxBreckenridge 2025 Metamorphosis event logo - transformation and evolution theme" class="img-fluid">
-            <div>
-                <div class="section-eyebrow eyebrow-terracotta">2025</div>
-                <h2 class="section-title">METAMORPHOSIS</h2>
-                <p>Our 2025 talks explore transformation—the moments when we evolve, adapt, and emerge fundamentally changed.</p>
-            </div>
-        </div>
-
-        <div class="grid-auto-fit">
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="iIWd6FbQqtM"></div>
-                <div class="video-info">
-                    <div class="video-title">How asking for help saved me & can change mental health culture</div>
-                    <div class="video-speaker">Drew Petersen</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="FnEokTC_ndY"></div>
-                <div class="video-info">
-                    <div class="video-title">More than hair: styling wellness from the inside out</div>
-                    <div class="video-speaker">Melanie Ash</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="cWqgfqj0rNM"></div>
-                <div class="video-info">
-                    <div class="video-title">Beyond the slopes: diversifying a mountain economy</div>
-                    <div class="video-speaker">Thayer Hirsh</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="qY_lofD4my0"></div>
-                <div class="video-info">
-                    <div class="video-title">Your mobility, your mountain: mobility, access, & inclusion</div>
-                    <div class="video-speaker">Lauren Panasewicz</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="CObMOUK2BQQ"></div>
-                <div class="video-info">
-                    <div class="video-title">How a teenager can help you overcome peer pressure</div>
-                    <div class="video-speaker">Gabriella Zheleznyak</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="ye8UCjqb_qk"></div>
-                <div class="video-info">
-                    <div class="video-title">Finding yourself through the echoes of the canvas</div>
-                    <div class="video-speaker">Grace Klein</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="rAE9PDAvv8Y"></div>
-                <div class="video-info">
-                    <div class="video-title">Why restaurants are essential for human connection</div>
-                    <div class="video-speaker">Patrick Murphy</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="UHasiKs1H64"></div>
-                <div class="video-info">
-                    <div class="video-title">Neuroscience, ancient wisdom, and our path forward</div>
-                    <div class="video-speaker">Ellen Petry Leanse</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="SopmK4qNrSI"></div>
-                <div class="video-info">
-                    <div class="video-title">The power of poetry to humanize the undocumented</div>
-                    <div class="video-speaker">Keila Perez Lopez</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="Z2hWJzp4oqA"></div>
-                <div class="video-info">
-                    <div class="video-title">The play paradigm: unlocking potential through joy</div>
-                    <div class="video-speaker">Erfa Alani</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="paskZOwcpMU"></div>
-                <div class="video-info">
-                    <div class="video-title">How "Big Mail" is sabotaging the postal service</div>
-                    <div class="video-speaker">Andrew Young</div>
-                </div>
-            </div>
-        </div>
+<section class="fk-band fk-band-white" id="metamorphosis">
+  <div class="fk-band-inner">
+    <div class="fk-yearhead">
+      <img src="{{ '/assets/images/heroes/2025_metamorphosis.webp' | relative_url }}" alt="TEDxBreckenridge 2025 Metamorphosis event logo - transformation and evolution theme">
+      <div>
+        <div class="fk-yearhead-eyebrow">2025</div>
+        <h2>Metamorphosis</h2>
+        <p>Our 2025 talks explore transformation—the moments when we evolve, adapt, and emerge fundamentally changed.</p>
+      </div>
     </div>
+    <div class="fk-talkgrid">
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="iIWd6FbQqtM"></div><div class="video-info"><div class="video-title fk-video-title">How asking for help saved me &amp; can change mental health culture</div><div class="video-speaker fk-video-speaker">Drew Petersen</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="FnEokTC_ndY"></div><div class="video-info"><div class="video-title fk-video-title">More than hair: styling wellness from the inside out</div><div class="video-speaker fk-video-speaker">Melanie Ash</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="cWqgfqj0rNM"></div><div class="video-info"><div class="video-title fk-video-title">Beyond the slopes: diversifying a mountain economy</div><div class="video-speaker fk-video-speaker">Thayer Hirsh</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="qY_lofD4my0"></div><div class="video-info"><div class="video-title fk-video-title">Your mobility, your mountain: mobility, access, &amp; inclusion</div><div class="video-speaker fk-video-speaker">Lauren Panasewicz</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="CObMOUK2BQQ"></div><div class="video-info"><div class="video-title fk-video-title">How a teenager can help you overcome peer pressure</div><div class="video-speaker fk-video-speaker">Gabriella Zheleznyak</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="ye8UCjqb_qk"></div><div class="video-info"><div class="video-title fk-video-title">Finding yourself through the echoes of the canvas</div><div class="video-speaker fk-video-speaker">Grace Klein</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="rAE9PDAvv8Y"></div><div class="video-info"><div class="video-title fk-video-title">Why restaurants are essential for human connection</div><div class="video-speaker fk-video-speaker">Patrick Murphy</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="UHasiKs1H64"></div><div class="video-info"><div class="video-title fk-video-title">Neuroscience, ancient wisdom, and our path forward</div><div class="video-speaker fk-video-speaker">Ellen Petry Leanse</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="SopmK4qNrSI"></div><div class="video-info"><div class="video-title fk-video-title">The power of poetry to humanize the undocumented</div><div class="video-speaker fk-video-speaker">Keila Perez Lopez</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="Z2hWJzp4oqA"></div><div class="video-info"><div class="video-title fk-video-title">The play paradigm: unlocking potential through joy</div><div class="video-speaker fk-video-speaker">Erfa Alani</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="paskZOwcpMU"></div><div class="video-info"><div class="video-title fk-video-title">How "Big Mail" is sabotaging the postal service</div><div class="video-speaker fk-video-speaker">Andrew Young</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- 2023: INSTINCT -->
-<section class="section talks-year-section bg-sand" id="instinct">
-    <div class="section-inner container">
-        <div class="talks-year-header">
-            <img src="{{ '/assets/images/heroes/2023_instinct.webp' | relative_url }}" alt="TEDxBreckenridge 2023 Instinct event logo - intuition and inner wisdom theme" class="img-fluid">
-            <div>
-                <div class="section-eyebrow eyebrow-teal">2023</div>
-                <h2 class="section-title">INSTINCT</h2>
-                <p>11 speakers explored the power of instinct—the gut feelings, intuitions, and innate knowledge that guide us through life's most important decisions.</p>
-            </div>
-        </div>
-
-        <div class="grid-auto-fit">
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="t-J0-Ymvr0o"></div>
-                <div class="video-info">
-                    <div class="video-title">Hidden in Plain Sight: Labor + Sex Trafficking in Your Community</div>
-                    <div class="video-speaker">Kara Napolitano</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="GK8eqwWqw-k"></div>
-                <div class="video-info">
-                    <div class="video-title">Why is it so hard to apologize?</div>
-                    <div class="video-speaker">Michael Ballard</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="MVwrEd1jSWU"></div>
-                <div class="video-info">
-                    <div class="video-title">The Art of Elective Suffering</div>
-                    <div class="video-speaker">Christopher Fisher</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="gX3MTAoknp8"></div>
-                <div class="video-info">
-                    <div class="video-title">How the Patterns in Nature Echo into Music</div>
-                    <div class="video-speaker">Andy Thorn</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="IKTOsb1Zdrc"></div>
-                <div class="video-info">
-                    <div class="video-title">Inquieto</div>
-                    <div class="video-speaker">Tony Molina</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="VfbMljfqdlo"></div>
-                <div class="video-info">
-                    <div class="video-title">Changing the Relationship to our (Health) Challenges</div>
-                    <div class="video-speaker">Isabelle Amigues</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="iOrHBCVPjZU"></div>
-                <div class="video-info">
-                    <div class="video-title">The Space Revolution and Humanity's Future</div>
-                    <div class="video-speaker">Eligar Sadeh</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="OIz8wL9nVxw"></div>
-                <div class="video-info">
-                    <div class="video-title">Why AI is the Catalyst We Need to Change Education Forever</div>
-                    <div class="video-speaker">Sarah Rubinson Levy</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="UPj15u33EFY"></div>
-                <div class="video-info">
-                    <div class="video-title">Out of Thin Air: Housing Solutions in the Mountain West</div>
-                    <div class="video-speaker">Garrett Scharton</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="052sVElF30c"></div>
-                <div class="video-info">
-                    <div class="video-title">Sound and The Consequence of Silence</div>
-                    <div class="video-speaker">Kenzie Reichert</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="z651z4pfMZs"></div>
-                <div class="video-info">
-                    <div class="video-title">Fentanyl: Poisoning or Overdose?</div>
-                    <div class="video-speaker">George Gerchow</div>
-                </div>
-            </div>
-        </div>
+<section class="fk-band fk-band-sand" id="instinct">
+  <div class="fk-band-inner">
+    <div class="fk-yearhead">
+      <img src="{{ '/assets/images/heroes/2023_instinct.webp' | relative_url }}" alt="TEDxBreckenridge 2023 Instinct event logo - intuition and inner wisdom theme">
+      <div>
+        <div class="fk-yearhead-eyebrow">2023</div>
+        <h2>Instinct</h2>
+        <p>11 speakers explored the power of instinct—the gut feelings, intuitions, and innate knowledge that guide us through life's most important decisions.</p>
+      </div>
     </div>
+    <div class="fk-talkgrid">
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="t-J0-Ymvr0o"></div><div class="video-info"><div class="video-title fk-video-title">Hidden in Plain Sight: Labor + Sex Trafficking in Your Community</div><div class="video-speaker fk-video-speaker">Kara Napolitano</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="GK8eqwWqw-k"></div><div class="video-info"><div class="video-title fk-video-title">Why is it so hard to apologize?</div><div class="video-speaker fk-video-speaker">Michael Ballard</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="MVwrEd1jSWU"></div><div class="video-info"><div class="video-title fk-video-title">The Art of Elective Suffering</div><div class="video-speaker fk-video-speaker">Christopher Fisher</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="gX3MTAoknp8"></div><div class="video-info"><div class="video-title fk-video-title">How the Patterns in Nature Echo into Music</div><div class="video-speaker fk-video-speaker">Andy Thorn</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="IKTOsb1Zdrc"></div><div class="video-info"><div class="video-title fk-video-title">Inquieto</div><div class="video-speaker fk-video-speaker">Tony Molina</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="VfbMljfqdlo"></div><div class="video-info"><div class="video-title fk-video-title">Changing the Relationship to our (Health) Challenges</div><div class="video-speaker fk-video-speaker">Isabelle Amigues</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="iOrHBCVPjZU"></div><div class="video-info"><div class="video-title fk-video-title">The Space Revolution and Humanity's Future</div><div class="video-speaker fk-video-speaker">Eligar Sadeh</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="OIz8wL9nVxw"></div><div class="video-info"><div class="video-title fk-video-title">Why AI is the Catalyst We Need to Change Education Forever</div><div class="video-speaker fk-video-speaker">Sarah Rubinson Levy</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="UPj15u33EFY"></div><div class="video-info"><div class="video-title fk-video-title">Out of Thin Air: Housing Solutions in the Mountain West</div><div class="video-speaker fk-video-speaker">Garrett Scharton</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="052sVElF30c"></div><div class="video-info"><div class="video-title fk-video-title">Sound and The Consequence of Silence</div><div class="video-speaker fk-video-speaker">Kenzie Reichert</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="z651z4pfMZs"></div><div class="video-info"><div class="video-title fk-video-title">Fentanyl: Poisoning or Overdose?</div><div class="video-speaker fk-video-speaker">George Gerchow</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- 2022: INTEGRATE -->
-<section class="section talks-year-section bg-white" id="integrate">
-    <div class="section-inner container">
-        <div class="talks-year-header">
-            <img src="{{ '/assets/images/heroes/2022_integrate.webp' | relative_url }}" alt="TEDxBreckenridge 2022 Integrate event logo - connection and unity theme" class="img-fluid">
-            <div>
-                <div class="section-eyebrow eyebrow-terracotta">2022</div>
-                <h2 class="section-title">INTEGRATE</h2>
-                <p>11 speakers examined how we bring together disparate parts—ideas, communities, technologies, and identities—to create something greater than the sum.</p>
-            </div>
-        </div>
-
-        <div class="grid-auto-fit">
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="b64-KsZR6Gs"></div>
-                <div class="video-info">
-                    <div class="video-title">The evolution of money, from gold to Bitcoin</div>
-                    <div class="video-speaker">Harold Tan</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="Yr8w4886Wts"></div>
-                <div class="video-info">
-                    <div class="video-title">From never-ever to forever-after</div>
-                    <div class="video-speaker">David Servinsky</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="mgo-fGlBINI"></div>
-                <div class="video-info">
-                    <div class="video-title">Being understood as an immigrant</div>
-                    <div class="video-speaker">Liliana Baylon</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="F8IANzlgwY8"></div>
-                <div class="video-info">
-                    <div class="video-title">Worldschooling: Let the world be our classroom and playground</div>
-                    <div class="video-speaker">Jennifer Toda</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="9ujW_0o8YsQ"></div>
-                <div class="video-info">
-                    <div class="video-title">Surfing endless river waves</div>
-                    <div class="video-speaker">Jacob Vos</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="WyMy7vLf-ak"></div>
-                <div class="video-info">
-                    <div class="video-title">Original Performance</div>
-                    <div class="video-speaker">Shanaynay Music</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="36wO-hpcsJo"></div>
-                <div class="video-info">
-                    <div class="video-title">The labels that divide us</div>
-                    <div class="video-speaker">Monica Harris</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="EXa5Mm4x7Ew"></div>
-                <div class="video-info">
-                    <div class="video-title">Why a grieving psychologist joined the circus</div>
-                    <div class="video-speaker">Sherry Walling</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="3koZI-KXJbs"></div>
-                <div class="video-info">
-                    <div class="video-title">What does disabled mean?</div>
-                    <div class="video-speaker">Hallie Jaeger</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="-MHgp_I7OyM"></div>
-                <div class="video-info">
-                    <div class="video-title">More sex, intimacy and love in marriage</div>
-                    <div class="video-speaker">Debbie Marielle</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="J6VZednBLlY"></div>
-                <div class="video-info">
-                    <div class="video-title">Retreat and return</div>
-                    <div class="video-speaker">Haley Littleton</div>
-                </div>
-            </div>
-        </div>
+<section class="fk-band fk-band-white" id="integrate">
+  <div class="fk-band-inner">
+    <div class="fk-yearhead">
+      <img src="{{ '/assets/images/heroes/2022_integrate.webp' | relative_url }}" alt="TEDxBreckenridge 2022 Integrate event logo - connection and unity theme">
+      <div>
+        <div class="fk-yearhead-eyebrow">2022</div>
+        <h2>Integrate</h2>
+        <p>11 speakers examined how we bring together disparate parts—ideas, communities, technologies, and identities—to create something greater than the sum.</p>
+      </div>
     </div>
+    <div class="fk-talkgrid">
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="b64-KsZR6Gs"></div><div class="video-info"><div class="video-title fk-video-title">The evolution of money, from gold to Bitcoin</div><div class="video-speaker fk-video-speaker">Harold Tan</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="Yr8w4886Wts"></div><div class="video-info"><div class="video-title fk-video-title">From never-ever to forever-after</div><div class="video-speaker fk-video-speaker">David Servinsky</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="mgo-fGlBINI"></div><div class="video-info"><div class="video-title fk-video-title">Being understood as an immigrant</div><div class="video-speaker fk-video-speaker">Liliana Baylon</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="F8IANzlgwY8"></div><div class="video-info"><div class="video-title fk-video-title">Worldschooling: Let the world be our classroom and playground</div><div class="video-speaker fk-video-speaker">Jennifer Toda</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="9ujW_0o8YsQ"></div><div class="video-info"><div class="video-title fk-video-title">Surfing endless river waves</div><div class="video-speaker fk-video-speaker">Jacob Vos</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="WyMy7vLf-ak"></div><div class="video-info"><div class="video-title fk-video-title">Original Performance</div><div class="video-speaker fk-video-speaker">Shanaynay Music</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="36wO-hpcsJo"></div><div class="video-info"><div class="video-title fk-video-title">The labels that divide us</div><div class="video-speaker fk-video-speaker">Monica Harris</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="EXa5Mm4x7Ew"></div><div class="video-info"><div class="video-title fk-video-title">Why a grieving psychologist joined the circus</div><div class="video-speaker fk-video-speaker">Sherry Walling</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="3koZI-KXJbs"></div><div class="video-info"><div class="video-title fk-video-title">What does disabled mean?</div><div class="video-speaker fk-video-speaker">Hallie Jaeger</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="-MHgp_I7OyM"></div><div class="video-info"><div class="video-title fk-video-title">More sex, intimacy and love in marriage</div><div class="video-speaker fk-video-speaker">Debbie Marielle</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="J6VZednBLlY"></div><div class="video-info"><div class="video-title fk-video-title">Retreat and return</div><div class="video-speaker fk-video-speaker">Haley Littleton</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- 2021: EXPAND -->
-<section class="section talks-year-section bg-sand" id="expand">
-    <div class="section-inner container">
-        <div class="talks-year-header">
-            <img src="{{ '/assets/images/heroes/2021_expand.webp' | relative_url }}" alt="TEDxBreckenridge 2021 Expand event logo - growth and possibilities theme" class="img-fluid">
-            <div>
-                <div class="section-eyebrow eyebrow-teal">2021</div>
-                <h2 class="section-title">EXPAND</h2>
-                <p>10 speakers challenged us to push boundaries, broaden perspectives, and grow beyond our perceived limits.</p>
-            </div>
-        </div>
-
-        <div class="grid-auto-fit">
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="PctYfeyWhc4"></div>
-                <div class="video-info">
-                    <div class="video-title">Masking Up to De-Armor</div>
-                    <div class="video-speaker">Anita Bangale</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="pPRgPf2GNL0"></div>
-                <div class="video-info">
-                    <div class="video-title">To Explore, We Must Risk Failure</div>
-                    <div class="video-speaker">Douglas Vakoch</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="avFQbkLmcQQ"></div>
-                <div class="video-info">
-                    <div class="video-title">We are all Beautiful Bioreactors</div>
-                    <div class="video-speaker">Christopher Leidli</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="D42Ko_r4iF4"></div>
-                <div class="video-info">
-                    <div class="video-title">City to Gritty</div>
-                    <div class="video-speaker">Rachel Cronin</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="RDVS2yAwwmE"></div>
-                <div class="video-info">
-                    <div class="video-title">Your Taste Buds: Ambassadors to Nature</div>
-                    <div class="video-speaker">Sherry Hess</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="xbu0oTNPgH0"></div>
-                <div class="video-info">
-                    <div class="video-title">The Magic of Libraries</div>
-                    <div class="video-speaker">Stephanie Ralph</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="X2DBoEuIufQ"></div>
-                <div class="video-info">
-                    <div class="video-title">Gentle Chair Yoga</div>
-                    <div class="video-speaker">Dixie Chamness</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="4p5DdidEozg"></div>
-                <div class="video-info">
-                    <div class="video-title">The Fire Inside Her</div>
-                    <div class="video-speaker">Diane Schroeder</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="vKKeAah3NJg"></div>
-                <div class="video-info">
-                    <div class="video-title">Coming Home</div>
-                    <div class="video-speaker">Jennifer Rae Getz</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="UM1niopWenA"></div>
-                <div class="video-info">
-                    <div class="video-title">It's Beautiful… And Good for Your Health</div>
-                    <div class="video-speaker">Don Ruggles</div>
-                </div>
-            </div>
-        </div>
+<section class="fk-band fk-band-sand" id="expand">
+  <div class="fk-band-inner">
+    <div class="fk-yearhead">
+      <img src="{{ '/assets/images/heroes/2021_expand.webp' | relative_url }}" alt="TEDxBreckenridge 2021 Expand event logo - growth and possibilities theme">
+      <div>
+        <div class="fk-yearhead-eyebrow">2021</div>
+        <h2>Expand</h2>
+        <p>10 speakers challenged us to push boundaries, broaden perspectives, and grow beyond our perceived limits.</p>
+      </div>
     </div>
+    <div class="fk-talkgrid">
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="PctYfeyWhc4"></div><div class="video-info"><div class="video-title fk-video-title">Masking Up to De-Armor</div><div class="video-speaker fk-video-speaker">Anita Bangale</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="pPRgPf2GNL0"></div><div class="video-info"><div class="video-title fk-video-title">To Explore, We Must Risk Failure</div><div class="video-speaker fk-video-speaker">Douglas Vakoch</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="avFQbkLmcQQ"></div><div class="video-info"><div class="video-title fk-video-title">We are all Beautiful Bioreactors</div><div class="video-speaker fk-video-speaker">Christopher Leidli</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="D42Ko_r4iF4"></div><div class="video-info"><div class="video-title fk-video-title">City to Gritty</div><div class="video-speaker fk-video-speaker">Rachel Cronin</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="RDVS2yAwwmE"></div><div class="video-info"><div class="video-title fk-video-title">Your Taste Buds: Ambassadors to Nature</div><div class="video-speaker fk-video-speaker">Sherry Hess</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="xbu0oTNPgH0"></div><div class="video-info"><div class="video-title fk-video-title">The Magic of Libraries</div><div class="video-speaker fk-video-speaker">Stephanie Ralph</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="X2DBoEuIufQ"></div><div class="video-info"><div class="video-title fk-video-title">Gentle Chair Yoga</div><div class="video-speaker fk-video-speaker">Dixie Chamness</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="4p5DdidEozg"></div><div class="video-info"><div class="video-title fk-video-title">The Fire Inside Her</div><div class="video-speaker fk-video-speaker">Diane Schroeder</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="vKKeAah3NJg"></div><div class="video-info"><div class="video-title fk-video-title">Coming Home</div><div class="video-speaker fk-video-speaker">Jennifer Rae Getz</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="UM1niopWenA"></div><div class="video-info"><div class="video-title fk-video-title">It's Beautiful… And Good for Your Health</div><div class="video-speaker fk-video-speaker">Don Ruggles</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- 2020: CONNECTION -->
-<section class="section talks-year-section bg-white" id="connection">
-    <div class="section-inner container">
-        <div class="talks-year-header">
-            <img src="{{ '/assets/images/heroes/2020_connection.webp' | relative_url }}" alt="TEDxBreckenridge 2020 Connection event logo - community and relationships theme" class="img-fluid">
-            <div>
-                <div class="section-eyebrow eyebrow-terracotta">2020 • First Event</div>
-                <h2 class="section-title">CONNECTION</h2>
-                <p>10 speakers launched TEDxBreckenridge by exploring what connects us—to each other, to our environment, and to ideas worth spreading.</p>
-            </div>
-        </div>
-
-        <div class="grid-auto-fit">
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="r2PRMGwnuLQ"></div>
-                <div class="video-info">
-                    <div class="video-title">Getting Cozy with Grief</div>
-                    <div class="video-speaker">Stacy Smith</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="YBqWL4C1XAo"></div>
-                <div class="video-info">
-                    <div class="video-title">Currencies for Connection</div>
-                    <div class="video-speaker">Ashley Hughes</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="qx73lE0a8GI"></div>
-                <div class="video-info">
-                    <div class="video-title">Prisoners of the Mind</div>
-                    <div class="video-speaker">Jeff Haugland</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="abzqjuhlfP4"></div>
-                <div class="video-info">
-                    <div class="video-title">Why We Need Intergenerational Relationships</div>
-                    <div class="video-speaker">Jenna & Jordan McMurtry</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="LjSombWneQE"></div>
-                <div class="video-info">
-                    <div class="video-title">You Don't Want to See Me Anymore</div>
-                    <div class="video-speaker">Lisa Lee</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="ttlQAmnq99c"></div>
-                <div class="video-info">
-                    <div class="video-title">Building a Village to Raise a Child</div>
-                    <div class="video-speaker">Jaci Ohayon</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="1j2sVT9Tcgc"></div>
-                <div class="video-info">
-                    <div class="video-title">Connection with the Enemy</div>
-                    <div class="video-speaker">Sean Hansen</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="Yy7e_5Nf6kY"></div>
-                <div class="video-info">
-                    <div class="video-title">What Artificial Intelligence Taught Me About Music</div>
-                    <div class="video-speaker">Lucas Cantor</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="mVZTDHhj4gI"></div>
-                <div class="video-info">
-                    <div class="video-title">The Art of Human Connection</div>
-                    <div class="video-speaker">Ashlie Weisel</div>
-                </div>
-            </div>
-            <div>
-                <div class="video-wrapper aspect-video" data-video-id="g_k5LG6Duyc"></div>
-                <div class="video-info">
-                    <div class="video-title">George Johnson: Mountain Man of Modern Breckenridge</div>
-                    <div class="video-speaker">Leigh Girvin</div>
-                </div>
-            </div>
-        </div>
+<section class="fk-band fk-band-white" id="connection">
+  <div class="fk-band-inner">
+    <div class="fk-yearhead">
+      <img src="{{ '/assets/images/heroes/2020_connection.webp' | relative_url }}" alt="TEDxBreckenridge 2020 Connection event logo - community and relationships theme">
+      <div>
+        <div class="fk-yearhead-eyebrow">2020 · First Event</div>
+        <h2>Connection</h2>
+        <p>10 speakers launched TEDxBreckenridge by exploring what connects us—to each other, to our environment, and to ideas worth spreading.</p>
+      </div>
     </div>
+    <div class="fk-talkgrid">
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="r2PRMGwnuLQ"></div><div class="video-info"><div class="video-title fk-video-title">Getting Cozy with Grief</div><div class="video-speaker fk-video-speaker">Stacy Smith</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="YBqWL4C1XAo"></div><div class="video-info"><div class="video-title fk-video-title">Currencies for Connection</div><div class="video-speaker fk-video-speaker">Ashley Hughes</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="qx73lE0a8GI"></div><div class="video-info"><div class="video-title fk-video-title">Prisoners of the Mind</div><div class="video-speaker fk-video-speaker">Jeff Haugland</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="abzqjuhlfP4"></div><div class="video-info"><div class="video-title fk-video-title">Why We Need Intergenerational Relationships</div><div class="video-speaker fk-video-speaker">Jenna &amp; Jordan McMurtry</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="LjSombWneQE"></div><div class="video-info"><div class="video-title fk-video-title">You Don't Want to See Me Anymore</div><div class="video-speaker fk-video-speaker">Lisa Lee</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="ttlQAmnq99c"></div><div class="video-info"><div class="video-title fk-video-title">Building a Village to Raise a Child</div><div class="video-speaker fk-video-speaker">Jaci Ohayon</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="1j2sVT9Tcgc"></div><div class="video-info"><div class="video-title fk-video-title">Connection with the Enemy</div><div class="video-speaker fk-video-speaker">Sean Hansen</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="Yy7e_5Nf6kY"></div><div class="video-info"><div class="video-title fk-video-title">What Artificial Intelligence Taught Me About Music</div><div class="video-speaker fk-video-speaker">Lucas Cantor</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="mVZTDHhj4gI"></div><div class="video-info"><div class="video-title fk-video-title">The Art of Human Connection</div><div class="video-speaker fk-video-speaker">Ashlie Weisel</div></div></div>
+      <div><div class="video-wrapper fk-video-wrap aspect-video" data-video-id="g_k5LG6Duyc"></div><div class="video-info"><div class="video-title fk-video-title">George Johnson: Mountain Man of Modern Breckenridge</div><div class="video-speaker fk-video-speaker">Leigh Girvin</div></div></div>
+    </div>
+  </div>
 </section>
-
-</div>
 
 <script>
 // Lazy load and unload YouTube videos to reduce memory usage on mobile
 (function() {
     'use strict';
-
-    // Create an intersection observer to detect when videos come into view
-    const observerOptions = {
-        // Start loading when video is 200px away from viewport
-        // Unload when video is 400px away from viewport
-        rootMargin: '400px',
-        threshold: 0.01
-    };
+    const observerOptions = { rootMargin: '400px', threshold: 0.01 };
 
     function loadVideo(wrapper) {
         const videoId = wrapper.getAttribute('data-video-id');
-
-        // Skip if already loaded or no video ID
-        if (!videoId || wrapper.querySelector('iframe')) {
-            return;
-        }
-
-        // Get talk title for iframe title attribute
+        if (!videoId || wrapper.querySelector('iframe')) { return; }
         const talkTitle = wrapper.closest('div').querySelector('.video-title')?.textContent || 'TEDxBreckenridge talk';
         const speakerName = wrapper.closest('div').querySelector('.video-speaker')?.textContent || '';
         const iframeTitle = speakerName ? `${talkTitle} - ${speakerName}` : talkTitle;
-
-        // Create iframe
         const iframe = document.createElement('iframe');
-        iframe.setAttribute('width', '100%');
-        iframe.setAttribute('height', '100%');
         iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}`);
         iframe.setAttribute('title', iframeTitle);
         iframe.setAttribute('frameborder', '0');
         iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
         iframe.setAttribute('allowfullscreen', '');
-        iframe.setAttribute('loading', '');
-        iframe.style.borderRadius = '8px';
-
-        // Add iframe to wrapper
         wrapper.appendChild(iframe);
         wrapper.classList.add('loaded');
     }
 
     function unloadVideo(wrapper) {
         const iframe = wrapper.querySelector('iframe');
-
-        // Remove iframe if it exists
-        if (iframe) {
-            iframe.remove();
-            wrapper.classList.remove('loaded');
-        }
+        if (iframe) { iframe.remove(); wrapper.classList.remove('loaded'); }
     }
 
-    // Create observer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Load video when it enters viewport (or is close)
-                loadVideo(entry.target);
-            } else {
-                // Unload video when it's far from viewport
-                unloadVideo(entry.target);
-            }
+            if (entry.isIntersecting) { loadVideo(entry.target); }
+            else { unloadVideo(entry.target); }
         });
     }, observerOptions);
 
-    // Observe all video wrappers
     document.addEventListener('DOMContentLoaded', () => {
-        const videoWrappers = document.querySelectorAll('.video-wrapper[data-video-id]');
-        videoWrappers.forEach(wrapper => {
-            observer.observe(wrapper);
-        });
+        document.querySelectorAll('.video-wrapper[data-video-id]').forEach(wrapper => observer.observe(wrapper));
     });
 })();
 </script>

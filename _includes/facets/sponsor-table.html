@@ -1,0 +1,70 @@
+{%- comment -%}
+Sponsorship tier comparison (Facets kit).
+Desktop: semantic table. Mobile (<=760px): stacked per-tier cards.
+Params:
+  tiers — list of { name, price, note, featured (bool) }
+  rows  — list of { label, cells } where cells is a list aligned to tiers,
+          each cell being true | false | "text value"
+{%- endcomment -%}
+<div class="fk-sponsor">
+  {%- comment -%} ---- desktop table ---- {%- endcomment -%}
+  <table class="fk-sponsor-table">
+    <thead>
+      <tr>
+        <th class="fk-sponsor-benefit-head"><span>Benefit</span></th>
+        {%- for t in include.tiers -%}
+        <th class="fk-sponsor-tier{% if t.featured %} fk-sponsor-tier-featured{% endif %}">
+          {%- if t.popular -%}<div class="fk-sponsor-popular">Most Popular</div>{%- endif -%}
+          <div class="fk-sponsor-tier-name">{{ t.name }}</div>
+          <div class="fk-sponsor-tier-price">{{ t.price }}</div>
+          {%- if t.note -%}<div class="fk-sponsor-tier-note">{{ t.note }}</div>{%- endif -%}
+        </th>
+        {%- endfor -%}
+      </tr>
+    </thead>
+    <tbody>
+      {%- for row in include.rows -%}
+      <tr>
+        <td class="fk-sponsor-row-label">{{ row.label }}</td>
+        {%- for t in include.tiers -%}
+        {%- assign cell = row.cells[forloop.index0] -%}
+        <td class="fk-sponsor-cell{% if t.featured %} fk-sponsor-cell-featured{% endif %}">
+          {%- if cell == true -%}<span class="fk-check" aria-label="Included">✓</span>
+          {%- elsif cell == false or cell == nil or cell == "" -%}<span class="fk-nocheck" aria-label="Not included">–</span>
+          {%- else -%}<span class="fk-sponsor-val">{{ cell }}</span>{%- endif -%}
+        </td>
+        {%- endfor -%}
+      </tr>
+      {%- endfor -%}
+    </tbody>
+  </table>
+
+  {%- comment -%} ---- mobile stacked cards ---- {%- endcomment -%}
+  <div class="fk-sponsor-cards">
+    {%- for t in include.tiers -%}
+    {%- assign ti = forloop.index0 -%}
+    <div class="fk-sponsor-card{% if t.featured %} fk-sponsor-card-featured{% endif %}">
+      {%- if t.popular -%}<div class="fk-sponsor-popular">Most Popular</div>{%- endif -%}
+      <div class="fk-sponsor-card-head">
+        <span class="fk-sponsor-tier-name">{{ t.name }}</span>
+        <span class="fk-sponsor-tier-price">{{ t.price }}</span>
+      </div>
+      <ul>
+        {%- for row in include.rows -%}
+        {%- assign cell = row.cells[ti] -%}
+        {%- assign is_off = false -%}
+        {%- if cell == false or cell == nil or cell == "" -%}{%- assign is_off = true -%}{%- endif -%}
+        <li{% if is_off %} class="fk-sponsor-off"{% endif %}>
+          <span>
+            {%- if cell == true -%}<span class="fk-check">✓</span>
+            {%- elsif is_off -%}<span class="fk-nocheck">–</span>
+            {%- else -%}<span class="fk-check">✓</span>{%- endif -%}
+          </span>
+          <span>{{ row.label }}{% unless is_off or cell == true %} <strong class="fk-sponsor-val">— {{ cell }}</strong>{% endunless %}</span>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    {%- endfor -%}
+  </div>
+</div>
