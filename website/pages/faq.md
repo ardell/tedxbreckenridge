@@ -8,6 +8,9 @@ full_width: true
 header_align: reading
 eyebrow: Good to Know
 faqs:
+  - q: Who's speaking at TEDxBreckenridge 2026?
+    a: >-
+      Our 2026 lineup features voices from our mountain community and beyond, each carrying an idea worth spreading. [Meet the 2026 speakers](/speakers/) to read their bios and the ideas they'll bring to the red dot.
   - q: When and where is the next TEDxBreckenridge event?
     a: >-
       Our main event takes place annually each October at the Riverwalk Center in Breckenridge, Colorado. The next event is scheduled for October 3, 2026. Throughout the year, we also host intimate Salon events at various locations around Summit County. Check our [homepage](/) for the latest event dates and [join our mailing list](/#mailing-list) to stay updated.
