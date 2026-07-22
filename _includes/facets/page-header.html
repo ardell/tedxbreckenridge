@@ -5,11 +5,13 @@ Params:
   eyebrow  — small uppercase kicker (optional)
   title    — h1 text (required)
   subtitle — supporting line (optional)
-  align    — left (default) | center
+  align    — left (default) | center | reading
+             ("reading" centers the header block to the prose measure
+              on the page but keeps the text left-aligned)
   extra    — pre-captured HTML appended below the subtitle (e.g. breadcrumbs)
 {%- endcomment -%}
 {%- assign tone = include.tone | default: "parchment" -%}
-<header class="fk-header fk-header-{{ tone }}{% if include.align == 'center' %} fk-header-center{% endif %}">
+<header class="fk-header fk-header-{{ tone }}{% if include.align == 'center' %} fk-header-center{% elsif include.align == 'reading' %} fk-header-reading{% endif %}">
   {%- if tone == "warm" -%}<div class="fk-grain" aria-hidden="true"></div>{%- endif -%}
   {%- if tone == "dark" -%}<div class="fk-honeycomb" aria-hidden="true"></div>{%- endif -%}
   <div class="fk-header-inner">

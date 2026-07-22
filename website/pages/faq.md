@@ -5,6 +5,7 @@ subtitle: Everything you need to know about attending TEDxBreckenridge
 permalink: /faq/
 description: Frequently asked questions about attending TEDxBreckenridge. Find answers about tickets, venue, volunteering, dress code, and more.
 full_width: true
+header_align: reading
 eyebrow: Good to Know
 faqs:
   - q: When and where is the next TEDxBreckenridge event?
@@ -47,7 +48,7 @@ faqs:
 
 <section class="fk-band fk-band-parchment">
   <div class="fk-band-inner">
-    <div style="max-width: 820px; margin: 0 auto;">
+    <div class="fk-reading">
       {% include facets/faq-group.html items=page.faqs open_first=true %}
     </div>
   </div>

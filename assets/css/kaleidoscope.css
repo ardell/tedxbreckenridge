@@ -86,6 +86,11 @@
   /* Borders */
   --k-border-subtle: var(--k-sand);
 
+  /* Shared reading-column width (fixed px, not ch, so the header and
+     body columns line up exactly — ch is font-relative and differs
+     between the display header and body text). */
+  --k-reading-width: 680px;
+
   /* Shadows — soft, low-contrast, warm-tinted */
   --k-shadow-sm: 0 4px 6px rgb(26 26 26 / 5%), 0 2px 4px rgb(26 26 26 / 3%);
   --k-shadow-md: 0 4px 12px rgb(26 26 26 / 10%);
@@ -314,6 +319,13 @@
 .theme-kaleidoscope .nav {
   background: var(--k-wing-black);
   border-bottom: none;
+}
+
+/* The hamburger bars default to dark (main.css) for a light nav; on the
+   dark themed nav bar they must be white in both closed and open (X)
+   states — the toggle stays in the dark bar, not over the fly-out panel. */
+.theme-kaleidoscope .nav-hamburger span {
+  background: var(--k-white);
 }
 
 /* On the desktop dark nav bar, whiten only the top-level menu labels —
@@ -786,7 +798,7 @@
   }
 }
 
-@media (width <= 900px) {
+@media (width <= 1024px) {
   .k-wrap { padding: 0 var(--space-24); }
 
   .k-hero-inner,
@@ -930,6 +942,20 @@
 
 .theme-kaleidoscope .fk-header-center { text-align: center; }
 
+/* "reading" — the header band stays full-width (background + spectrum
+   bar span the screen), but its text is constrained to the same centered
+   reading column as the prose body below, so the title's left edge lines
+   up with the body copy. One centered wrapper; children inherit the edge.
+   The inner keeps its 48px side padding, so the box = column + 96px. */
+.theme-kaleidoscope .fk-header-reading .fk-header-inner {
+  max-width: calc(680px + 96px);
+}
+
+.theme-kaleidoscope .fk-header-reading .fk-header-title,
+.theme-kaleidoscope .fk-header-reading .fk-header-sub {
+  max-width: none;
+}
+
 .theme-kaleidoscope .fk-header-eyebrow {
   font-size: var(--k-text-xs);
   letter-spacing: 0.15em;
@@ -955,6 +981,7 @@
   /* Cap only very long titles; short ones should stay on one line. */
   max-width: 24ch;
 }
+
 
 .theme-kaleidoscope .fk-header-warm .fk-header-title {
   color: var(--k-white);
@@ -1049,7 +1076,10 @@
 .theme-kaleidoscope .fk-band-slant {
   clip-path: polygon(0 3vw, 100% 0, 100% 100%, 0 100%);
   margin-top: -3vw;
-  padding-top: calc(var(--space-100) + 3vw);
+
+  /* 100px (--space-100) literal, not var() — the minifier mangles
+     var(--custom-prop) inside calc(). */
+  padding-top: calc(100px + 3vw);
 }
 
 .theme-kaleidoscope .fk-band-inner {
@@ -1091,6 +1121,17 @@
   line-height: 1.75;
   text-wrap: pretty;
   max-width: 68ch;
+}
+
+/* Reading pages center the column on the page (text stays left-aligned
+   inside it) so the page reads balanced rather than left-adrift. Use the
+   shared fixed reading width so this column and the reading-mode header
+   line up exactly. */
+.theme-kaleidoscope .fk-prose-centered,
+.theme-kaleidoscope .fk-reading {
+  max-width: var(--k-reading-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .theme-kaleidoscope .fk-prose > :first-child { margin-top: 0; }
@@ -2034,7 +2075,7 @@
 .theme-kaleidoscope .fk-center { text-align: center; }
 
 /* ---- Interior responsive ---- */
-@media (width <= 900px) {
+@media (width <= 1024px) {
   .theme-kaleidoscope .fk-header-inner,
   .theme-kaleidoscope .fk-band-inner {
     padding-left: var(--space-24);
@@ -2080,3 +2121,54 @@
   .theme-kaleidoscope .fk-social,
   .theme-kaleidoscope .fk-photoband-cell img { transition: none; }
 }
+
+/* ===============================================================
+   Overrides for main.css components that appear on themed pages
+   not yet fully rebuilt (Team, etc.) — give them the Facets card
+   treatment: rounded, padded, warm-lift on hover.
+   =============================================================== */
+
+/* ---- Team member cards ---- */
+.theme-kaleidoscope .team-member {
+  background: var(--k-white);
+  border: none;
+  border-radius: var(--k-radius-xl);
+  box-shadow: var(--k-shadow-sm);
+  overflow: hidden;
+  transition: transform 240ms var(--k-ease-out), box-shadow 240ms;
+}
+
+.theme-kaleidoscope .team-member:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--k-shadow-hover);
+}
+
+.theme-kaleidoscope .team-member img {
+  border-radius: 0;
+}
+
+/* The name and role sit directly under the image with no wrapper, so
+   pad them individually to give the card an even interior gutter.
+   Zero the inherited main.css margins and left-align both so the name
+   lines up with the role beneath it. */
+.theme-kaleidoscope .team-member strong {
+  display: block;
+  margin: 0;
+  padding: var(--space-20) var(--space-20) 0;
+  text-align: left;
+  font-size: var(--k-text-md);
+  font-weight: 600;
+  color: var(--k-wing-black);
+}
+
+.theme-kaleidoscope .team-member p {
+  margin: 0;
+  padding: var(--space-4) var(--space-20) var(--space-24);
+  text-align: left;
+  color: var(--k-stone);
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: var(--k-text-sm);
+}
+
+.theme-kaleidoscope .team-section { margin-bottom: var(--space-48); }
