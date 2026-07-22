@@ -120,12 +120,11 @@
   margin: 0;
 }
 
-@media (width <= 768px) {
+/* Below 1024px the nav collapses to a fixed ~64px mobile bar, so the
+   content clearance must drop to match — otherwise an 80px clearance
+   leaves a white strip between the nav and the header. */
+@media (width <= 1024px) {
   .theme-kaleidoscope #main-content { padding-top: 64px; }
-}
-
-@media (width <= 640px) {
-  .theme-kaleidoscope #main-content { padding-top: 52px; }
 }
 
 /* In-page anchor target that clears the sticky nav on jump. */
@@ -328,15 +327,44 @@
   background: var(--k-white);
 }
 
-/* On the desktop dark nav bar, whiten only the top-level menu labels —
-   NOT the links inside the dropdown panels (white background), and NOT
-   the mobile fly-out menu, which is also a white panel from main.css.
-   Below 1025px the nav collapses to that fly-out, so this must not
-   apply there. */
+/* On the desktop dark nav bar, whiten the top-level menu labels — NOT the
+   links inside the dropdown panels (white background). Below 1025px the
+   nav collapses to the mobile fly-out, which gets its own dark treatment
+   below, so this desktop rule is gated to >= 1025px. */
 @media (width >= 1025px) {
   .theme-kaleidoscope .nav > .nav-menu > .nav-links > li > a,
   .theme-kaleidoscope .nav-dropdown-toggle {
     color: var(--k-white);
+  }
+}
+
+/* Mobile fly-out menu (<= 1024px): dark panel with light text, so it
+   matches the dark nav bar and the white hamburger/X stays visible. */
+@media (width <= 1024px) {
+  .theme-kaleidoscope .nav-menu {
+    background: var(--k-wing-black);
+    box-shadow: -2px 0 12px rgb(0 0 0 / 40%);
+  }
+
+  .theme-kaleidoscope .nav-dropdown {
+    border-bottom-color: rgb(255 255 255 / 12%);
+  }
+
+  .theme-kaleidoscope .nav-dropdown-toggle,
+  .theme-kaleidoscope .nav > .nav-menu > .nav-links > li > a {
+    color: var(--k-white);
+  }
+
+  .theme-kaleidoscope .nav-dropdown-toggle::after {
+    color: rgb(255 255 255 / 55%);
+  }
+
+  .theme-kaleidoscope .nav-dropdown-menu a {
+    color: rgb(255 255 255 / 70%);
+  }
+
+  .theme-kaleidoscope .nav-dropdown-menu a:hover {
+    color: var(--k-amber);
   }
 }
 

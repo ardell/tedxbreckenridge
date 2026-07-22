@@ -5,7 +5,7 @@ permalink: /speakers/
 description: Meet the 2026 TEDxBreckenridge speakers — voices from our mountain community and beyond, each carrying an idea worth spreading in Breckenridge, Colorado.
 full_width: true
 eyebrow: The 2026 Lineup
-subtitle: Voices from our mountain community and beyond — each carrying an idea worth spreading. Every perspective is a facet; together they form the kaleidoscope.
+subtitle: Meet the thinkers, makers, and neighbors taking the red dot in 2026.
 speakers:
   - name: Leon Joseph Littlebird
     theme: The indigenous history of music
