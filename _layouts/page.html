@@ -5,23 +5,30 @@ extra_css:
   - /assets/css/kaleidoscope.css
 ---
 
+{% comment %}
+  Reading pages (the default) center a constrained column on the page
+  but keep the text left-aligned inside it, so the header title's left
+  edge lines up with the body copy. Pages with their own component
+  markup set `full_width: true` and lay out their own sections.
+{% endcomment %}
+{% if page.full_width %}
 {% include facets/page-header.html
    tone=page.header_tone
    eyebrow=page.eyebrow
    title=page.title
-   subtitle=page.subtitle %}
-
-{% comment %}
-  Pages with their own component markup (bands, tables, tiles) set
-  `full_width: true` and lay out their own sections. Plain content
-  pages get a constrained prose band automatically.
-{% endcomment %}
-{% if page.full_width %}
+   subtitle=page.subtitle
+   align=page.header_align %}
 {{ content }}
 {% else %}
+{% include facets/page-header.html
+   tone=page.header_tone
+   eyebrow=page.eyebrow
+   title=page.title
+   subtitle=page.subtitle
+   align="reading" %}
 <section class="fk-band fk-band-{{ page.band_tone | default: 'parchment' }}">
   <div class="fk-band-inner">
-    <div class="fk-prose">
+    <div class="fk-prose fk-prose-centered">
       {{ content }}
     </div>
   </div>
