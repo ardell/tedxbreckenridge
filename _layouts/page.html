@@ -10,10 +10,13 @@ extra_css:
   but keep the text left-aligned inside it, so the header title's left
   edge lines up with the body copy. Pages with their own component
   markup set `full_width: true` and lay out their own sections.
+  Headers default to the warm (orange) tone; a page can override with
+  its own `header_tone` (parchment / dark).
 {% endcomment %}
+{% assign header_tone = page.header_tone | default: 'warm' %}
 {% if page.full_width %}
 {% include facets/page-header.html
-   tone=page.header_tone
+   tone=header_tone
    eyebrow=page.eyebrow
    title=page.title
    subtitle=page.subtitle
@@ -21,7 +24,7 @@ extra_css:
 {{ content }}
 {% else %}
 {% include facets/page-header.html
-   tone=page.header_tone
+   tone=header_tone
    eyebrow=page.eyebrow
    title=page.title
    subtitle=page.subtitle
