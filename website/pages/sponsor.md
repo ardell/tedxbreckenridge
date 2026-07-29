@@ -28,15 +28,15 @@ rows:
     cells: [true, false, false, false, false]
   - label: Company name on Main Street banner
     cells: [true, false, false, false, false]
-  - label: Company mention on local radio stations
-    cells: [true, false, false, false, false]
-  - label: Event spotlight, special acknowledgment
+  - label: Special acknowledgement from stage
     cells: [true, false, false, false, false]
   - label: Press mentions / newspaper quotes (press dependent)
-    cells: [true, true, false, false, false]
+    cells: [true, false, false, false, false]
   - label: "TEDxBreckenridge website spotlight: 1 year"
     cells: [true, true, false, false, false]
-  - label: Social media package / features
+  - label: "Salon sponsorship: 12 months"
+    cells: [true, true, true, true, true]
+  - label: Featured collab post on social media / website
     cells: [true, true, false, false, false]
   - label: Newsletter spotlight + footer (2,500 contacts)
     cells: [true, true, false, false, false]
@@ -44,18 +44,14 @@ rows:
     cells: [true, true, false, false, false]
   - label: Ad in TEDxBreckenridge digital program
     cells: ["Full-Page", "Half-Page", "Quarter-Page", false, false]
-  - label: Free tickets for your team
-    cells: [true, true, true, true, false]
+  - label: Free tickets for your team, by request up to
+    cells: ["10 tickets", "6 tickets", "4 tickets", "2 tickets", false]
   - label: Logo on live event slide
     cells: [true, true, true, true, true]
   - label: Logo on digital event program
     cells: [true, true, true, true, true]
   - label: Logo on TEDxBreckenridge website
     cells: [true, true, true, true, true]
-  - label: Option to include branded item in swag or store
-    cells: [true, true, true, true, false]
-  - label: 2 pieces TEDxBreckenridge swag
-    cells: [true, true, true, true, false]
   - label: 501(c)(3) contribution, tax-deductible
     cells: [true, true, true, true, true]
 ---
