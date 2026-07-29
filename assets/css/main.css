@@ -1921,22 +1921,45 @@ a.sponsor-card:focus-visible .sponsor-logo-inv {
     border-bottom-color: rgb(255 255 255 / 60%);
 }
 
+/* Social icon buttons — translucent plates on the dark footer that fill teal
+   on hover. The links carry the accessible name; the glyphs are aria-hidden. */
 .footer-social {
     display: flex;
-    gap: var(--space-20);
+    gap: var(--space-12);
+    flex-wrap: wrap;
 }
 
-.footer-social a {
-    font-size: 12px;
-    font-weight: 400;
-    color: rgb(255 255 255 / 87.5%);
-    text-decoration: none;
-    border-bottom: none;
-    transition: color 0.2s ease;
-}
-
-.footer-social a:hover {
+.footer-social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255 255 255 / 8%);
+    border: 1px solid rgb(255 255 255 / 14%);
     color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-social-icon:hover,
+.footer-social-icon:focus-visible {
+    background: var(--teal);
+    border-color: var(--teal);
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-social-icon {
+        transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .footer-social-icon:hover,
+    .footer-social-icon:focus-visible {
+        transform: none;
+    }
 }
 
 /* Responsive */
