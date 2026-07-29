@@ -56,6 +56,15 @@ rows:
     cells: [true, true, true, true, true]
 ---
 
+<nav class="fk-yearnav" aria-label="Jump to section">
+  <div class="fk-yearnav-inner">
+    <span class="fk-yearnav-label">Jump to</span>
+    <a href="#packages">Sponsorship Packages</a>
+    <a href="#why-partner">Why Partner</a>
+    <a href="#custom-packages">Custom Packages</a>
+  </div>
+</nav>
+
 <section class="fk-band fk-band-parchment">
   <div class="fk-band-inner">
     <div class="fk-prose">
@@ -79,7 +88,7 @@ rows:
   </div>
 </section>
 
-<section class="fk-band fk-band-parchment">
+<section class="fk-band fk-band-parchment" id="why-partner">
   <div class="fk-band-inner">
     <div class="fk-prose">
       <h2>Why partner with TEDxBreckenridge</h2>
@@ -89,7 +98,7 @@ rows:
   </div>
 </section>
 
-<section class="fk-band fk-band-white">
+<section class="fk-band fk-band-white" id="packages">
   <div class="fk-band-inner">
     <div class="fk-band-head fk-center">
       <div class="fk-band-eyebrow">2026 Packages</div>
@@ -99,7 +108,7 @@ rows:
   </div>
 </section>
 
-<section class="fk-band fk-band-sand">
+<section class="fk-band fk-band-sand" id="custom-packages">
   <div class="fk-band-inner">
     <div class="fk-grid-2">
       <div class="fk-card"><h3>Nonprofit Partner</h3><div class="fk-card-body"><p>We offer custom sponsorship packages for nonprofit organizations. Contact our sponsorship team to discuss options tailored to your organization's needs and budget.</p></div></div>
