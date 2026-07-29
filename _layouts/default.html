@@ -248,6 +248,15 @@
     {{ content }}
   </main>
 
+  {% comment %}
+    Sponsor pre-footer. Appears on every page; a page can opt out with
+    `sponsor_wall: false` in its front matter (the Our Sponsors page does,
+    since it already lists the full roster).
+  {% endcomment %}
+  {% unless page.sponsor_wall == false %}
+  {% include facets/sponsor-wall.html %}
+  {% endunless %}
+
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="footer-content">

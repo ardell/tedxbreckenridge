@@ -1,0 +1,50 @@
+{%- comment -%}
+Sponsor wall — the "Our Sponsors" pre-footer that appears on every page.
+
+Rendered from _data/sponsors.yml so the roster lives in exactly one place.
+Logos scroll in a slow marquee that pauses on hover and on keyboard focus;
+under prefers-reduced-motion the animation is dropped and the strip becomes a
+static wrapped grid (see .sponsor-wall in assets/css/main.css).
+
+The list is duplicated once to make the loop seamless. The clone is
+aria-hidden and removed from the tab order so screen readers and keyboard
+users see each sponsor exactly once.
+
+Params:
+  heading — section heading (default: "Made possible by our neighbors")
+  eyebrow — small label above the heading (default: "Our Sponsors")
+{%- endcomment -%}
+{%- assign eyebrow = include.eyebrow | default: "Our Sponsors" -%}
+{%- assign heading = include.heading | default: "Made possible by our neighbors" -%}
+{%- if site.data.sponsors and site.data.sponsors.size > 0 -%}
+<section class="sponsor-wall" aria-labelledby="sponsor-wall-title">
+  <div class="sponsor-wall-head">
+    <div class="sponsor-wall-eyebrow">{{ eyebrow }}</div>
+    <h2 class="sponsor-wall-title" id="sponsor-wall-title">{{ heading }}</h2>
+    <div class="sponsor-wall-rule" aria-hidden="true"></div>
+  </div>
+
+  <div class="sponsor-wall-viewport">
+    <div class="sponsor-wall-track">
+      {%- for pass in (1..2) -%}
+      {%- assign is_clone = false -%}
+      {%- if pass == 2 %}{% assign is_clone = true %}{% endif -%}
+      <div class="sponsor-wall-strip{% if is_clone %} sponsor-wall-clone{% endif %}"{% if is_clone %} aria-hidden="true"{% endif %}>
+        {%- for sponsor in site.data.sponsors -%}
+        {%- assign logo_url = sponsor.logo -%}
+        {%- if logo_url contains "/assets/" %}{% assign logo_url = sponsor.logo | relative_url %}{% endif -%}
+        {%- capture logo_img -%}
+        <img src="{{ logo_url }}" alt="{% unless is_clone %}{{ sponsor.name }}{% endunless %}" class="sponsor-logo-{{ sponsor.tone | default: 'dk' }}" loading="lazy" style="height: {{ sponsor.wall_height | default: 40 }}px;">
+        {%- endcapture -%}
+        {%- if sponsor.url -%}
+        <a class="sponsor-wall-logo" href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer" title="{{ sponsor.name }}"{% if is_clone %} tabindex="-1"{% endif %}>{{ logo_img }}</a>
+        {%- else -%}
+        <span class="sponsor-wall-logo" title="{{ sponsor.name }}">{{ logo_img }}</span>
+        {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}

@@ -1605,9 +1605,9 @@ select:focus-visible {
 
 /* ==========================================================================
    Sponsor logo tones
-   Used by the Our Sponsors page cards (.sponsor-card, sized in
-   kaleidoscope.css); defined against the logo class rather than per-surface
-   so other sponsor-logo surfaces can share them.
+   Shared by the Our Sponsors page cards (.sponsor-card, sized in
+   kaleidoscope.css) and the sponsor-wall pre-footer below, so they are
+   defined once against the logo class rather than per-surface.
 
    Logos arrive from a dozen sources in every possible value and background,
    so each needs its own neutralizing treatment before the shared hover can
@@ -1642,6 +1642,187 @@ a.sponsor-card:focus-visible .sponsor-logo-mu {
 a.sponsor-card:hover .sponsor-logo-inv,
 a.sponsor-card:focus-visible .sponsor-logo-inv {
     filter: invert(100%) grayscale(0%) opacity(100%);
+}
+
+/* ==========================================================================
+   Sponsor Wall — the "Our Sponsors" pre-footer on every page
+   Markup: _includes/facets/sponsor-wall.html (data: _data/sponsors.yml)
+
+   Deliberately theme-independent: this band renders on every page, including
+   ones that never load kaleidoscope.css, so it cannot rely on the
+   theme-scoped fk- classes or k- custom properties.
+   ========================================================================== */
+.sponsor-wall {
+    background: var(--cream);
+    padding: var(--space-80) 0;
+    border-top: 1px solid var(--sand);
+}
+
+.sponsor-wall-head {
+    max-width: 1400px;
+    margin: 0 auto var(--space-32);
+    padding: 0 var(--space-48);
+    text-align: center;
+}
+
+.sponsor-wall-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: var(--space-12);
+}
+
+.sponsor-wall-title {
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--charcoal);
+}
+
+/* Spectrum rule under the heading, echoing the design's SpectrumBar */
+.sponsor-wall-rule {
+    max-width: 200px;
+    height: 4px;
+    margin: var(--space-20) auto 0;
+    border-radius: 2px;
+    background: linear-gradient(
+        90deg,
+        var(--ted-red) 0%,
+        var(--terracotta) 35%,
+        #e8963b 70%,
+        var(--teal) 100%
+    );
+}
+
+/* The viewport masks the marquee's entry/exit so logos fade at the edges */
+.sponsor-wall-viewport {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+}
+
+/* The gap must live on each strip, not on the animated track: with a gapped
+   parent the track is 2S+gap wide, so -50% advances S+gap/2 and the loop
+   snaps by gap/2 each cycle. Each strip carrying its own trailing gap makes
+   -50% land exactly one strip forward — a seamless wrap. */
+.sponsor-wall-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: max-content;
+    animation: sponsor-wall-scroll 62s linear infinite;
+}
+
+.sponsor-wall-strip {
+    display: flex;
+    align-items: center;
+    gap: var(--space-80);
+    flex: none;
+    padding-right: var(--space-80);
+}
+
+/* Pause for anyone reading a logo, by pointer or by keyboard */
+.sponsor-wall-viewport:hover .sponsor-wall-track,
+.sponsor-wall-viewport:focus-within .sponsor-wall-track {
+    animation-play-state: paused;
+}
+
+.sponsor-wall-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    border-bottom: none;
+}
+
+.sponsor-wall-logo img {
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Neutralized logos bloom back to full colour on hover/focus. */
+.sponsor-wall-logo:hover .sponsor-logo-dk,
+.sponsor-wall-logo:focus-visible .sponsor-logo-dk {
+    filter: none;
+}
+
+.sponsor-wall-logo:hover .sponsor-logo-mu,
+.sponsor-wall-logo:focus-visible .sponsor-logo-mu {
+    filter: grayscale(0%) opacity(100%);
+}
+
+.sponsor-wall-logo:hover .sponsor-logo-inv,
+.sponsor-wall-logo:focus-visible .sponsor-logo-inv {
+    filter: invert(100%) grayscale(0%) opacity(100%);
+}
+
+/* The marquee logos also lift slightly on hover; the cards lift as a whole. */
+.sponsor-wall-logo:hover img,
+.sponsor-wall-logo:focus-visible img {
+    transform: scale(1.05);
+}
+
+@keyframes sponsor-wall-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (width <= 768px) {
+    .sponsor-wall {
+        padding: var(--space-60) 0;
+    }
+
+    .sponsor-wall-head {
+        padding: 0 var(--space-24);
+        margin-bottom: var(--space-32);
+    }
+
+    .sponsor-wall-strip {
+        gap: var(--space-48);
+        padding-right: var(--space-48);
+    }
+}
+
+/* Reduced motion: no marquee. The strip becomes a static wrapped grid and the
+   duplicate is dropped so every sponsor appears exactly once. */
+@media (prefers-reduced-motion: reduce) {
+    .sponsor-wall-track {
+        animation: none;
+        width: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sponsor-wall-strip {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-48);
+        padding-right: 0;
+    }
+
+    .sponsor-wall-clone {
+        display: none;
+    }
+
+    .sponsor-wall-viewport {
+        mask-image: none;
+    }
+
+    .sponsor-wall-logo img {
+        transition: none;
+    }
+
+    .sponsor-wall-logo:hover img {
+        transform: none;
+    }
 }
 
 /* Footer */
