@@ -5,7 +5,7 @@ subtitle: Every talk on the red dot, every Salon around Summit County, and every
 permalink: /sponsors/
 description: Meet the businesses, foundations, and nonprofits whose support makes TEDxBreckenridge possible — from our premier partner to the local companies behind every Salon.
 full_width: true
-header_tone: parchment
+header_tone: warm
 eyebrow: Our Sponsors
 # This page already lists every sponsor, so the pre-footer wall would repeat it.
 sponsor_wall: false
