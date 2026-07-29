@@ -303,17 +303,30 @@
           <p>This independent TEDx event is operated under license from TED.</p>
           <p><a href="/privacy-policy/">Privacy Policy</a></p>
         </div>
+        {% comment %}
+          Social icon buttons. Order matches the design: Instagram, YouTube,
+          Facebook, Flickr. The label doubles as the accessible name, since
+          the icons carry no text.
+        {% endcomment %}
         <div class="footer-social">
           {% if site.social.instagram %}
-          <a href="https://instagram.com/{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram (opens in new window)">Instagram</a>
+          <a href="https://instagram.com/{{ site.social.instagram }}" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram (opens in new window)">
+            {% include facets/social-icon.html type="instagram" %}
+          </a>
           {% endif %}
           {% if site.social.youtube %}
-          <a href="https://youtube.com/{{ site.social.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="Watch us on YouTube (opens in new window)">YouTube</a>
+          <a href="https://youtube.com/{{ site.social.youtube }}" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Watch us on YouTube (opens in new window)">
+            {% include facets/social-icon.html type="youtube" %}
+          </a>
           {% endif %}
           {% if site.social.facebook %}
-          <a href="https://facebook.com/{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook (opens in new window)">Facebook</a>
+          <a href="https://facebook.com/{{ site.social.facebook }}" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook (opens in new window)">
+            {% include facets/social-icon.html type="facebook" %}
+          </a>
           {% endif %}
-          <a href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank" rel="noopener noreferrer" aria-label="View our photos on Flickr (opens in new window)">Flickr</a>
+          <a href="https://www.flickr.com/photos/tedxbreckenridge/" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="View our photos on Flickr (opens in new window)">
+            {% include facets/social-icon.html type="flickr" %}
+          </a>
         </div>
       </div>
     </div>
