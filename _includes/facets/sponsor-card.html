@@ -1,0 +1,31 @@
+{%- comment -%}
+Sponsor card (Facets kit) — a logo plate over the sponsor's name.
+
+Logos rest neutralized and bloom to full colour on hover, echoing the
+speaker-portrait treatment. Used by the Our Sponsors page; the roster lives in
+_data/sponsors.yml.
+
+Params:
+  sponsor — an entry from site.data.sponsors
+  size    — xl (premier) | lg (anchor) | md (community, default) | sm (corporate)
+  alt     — true on parchment bands, where the card takes the flatter fill
+{%- endcomment -%}
+{%- assign sponsor = include.sponsor -%}
+{%- assign size = include.size | default: "md" -%}
+{%- assign logo_url = sponsor.logo -%}
+{%- if logo_url contains "/assets/" %}{% assign logo_url = sponsor.logo | relative_url %}{% endif -%}
+{%- capture card_class -%}sponsor-card sponsor-card-{{ size }}{% if include.alt %} sponsor-card-alt{% endif %}{%- endcapture -%}
+{%- capture card_body -%}
+  <div class="sponsor-card-plate">
+    <img src="{{ logo_url }}" alt="{{ sponsor.name }} logo" class="sponsor-logo-{{ sponsor.tone | default: 'dk' }}" loading="lazy" style="height: {{ sponsor.height | default: 60 }}px;{% if sponsor.max_width %} max-width: {{ sponsor.max_width }}px;{% endif %}">
+  </div>
+  <div class="sponsor-card-text">
+    <div class="sponsor-card-name">{{ sponsor.name }}</div>
+    {%- if sponsor.note -%}<div class="sponsor-card-note">{{ sponsor.note }}</div>{%- endif -%}
+  </div>
+{%- endcapture -%}
+{%- if sponsor.url -%}
+<a class="{{ card_class }}" href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer">{{ card_body }}</a>
+{%- else -%}
+<div class="{{ card_class }}">{{ card_body }}</div>
+{%- endif -%}

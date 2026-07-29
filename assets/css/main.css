@@ -1603,6 +1603,47 @@ select:focus-visible {
     color: rgb(127 29 29);
 }
 
+/* ==========================================================================
+   Sponsor logo tones
+   Used by the Our Sponsors page cards (.sponsor-card, sized in
+   kaleidoscope.css); defined against the logo class rather than per-surface
+   so other sponsor-logo surfaces can share them.
+
+   Logos arrive from a dozen sources in every possible value and background,
+   so each needs its own neutralizing treatment before the shared hover can
+   bloom it back to full colour:
+     -dk   dark or mid-value marks on transparency — flatten to black
+     -mu   opaque-background rasters (JPEG/white plate) — multiply it away
+     -inv  white marks on transparency — invert to read on a light ground
+   ========================================================================== */
+.sponsor-logo-dk {
+    filter: brightness(0) opacity(55%);
+}
+
+.sponsor-logo-mu {
+    mix-blend-mode: multiply;
+    filter: grayscale(100%) opacity(70%);
+}
+
+.sponsor-logo-inv {
+    filter: invert(100%) grayscale(100%) opacity(60%);
+}
+
+a.sponsor-card:hover .sponsor-logo-dk,
+a.sponsor-card:focus-visible .sponsor-logo-dk {
+    filter: none;
+}
+
+a.sponsor-card:hover .sponsor-logo-mu,
+a.sponsor-card:focus-visible .sponsor-logo-mu {
+    filter: grayscale(0%) opacity(100%);
+}
+
+a.sponsor-card:hover .sponsor-logo-inv,
+a.sponsor-card:focus-visible .sponsor-logo-inv {
+    filter: invert(100%) grayscale(0%) opacity(100%);
+}
+
 /* Footer */
 .footer {
     background: var(--black);
