@@ -1750,6 +1750,144 @@
   color: var(--k-white);
 }
 
+/* ---- 7b. Sponsor cards (Our Sponsors page) ----
+   Markup: _includes/facets/sponsor-card.html (data: _data/sponsors.yml).
+   A logo plate over the name; logos rest neutralized and bloom to full colour
+   on hover, echoing the speaker-portrait treatment. Size steps down by tier.
+   The logo-tone filters themselves live with the sponsor wall in main.css so
+   both surfaces share one definition. */
+.theme-kaleidoscope .sponsor-card {
+  display: grid;
+  place-items: center;
+  border-radius: var(--k-radius-lg);
+  border: 1px solid var(--k-sand);
+  background: var(--k-white);
+  box-shadow: var(--k-shadow-sm);
+  text-decoration: none;
+  transition:
+    box-shadow var(--k-duration-base) ease,
+    border-color var(--k-duration-base) ease,
+    transform var(--k-duration-base) ease;
+}
+
+.theme-kaleidoscope a.sponsor-card:hover,
+.theme-kaleidoscope a.sponsor-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--k-shadow-hover);
+  border-color: var(--k-amber);
+}
+
+/* On parchment bands the cards take the flatter fill */
+.theme-kaleidoscope .sponsor-card-alt {
+  background: var(--k-parchment);
+  border-color: var(--k-parchment-dark);
+  box-shadow: none;
+}
+
+.theme-kaleidoscope .sponsor-card-plate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.theme-kaleidoscope .sponsor-card-plate img {
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: filter var(--k-duration-base) ease;
+}
+
+.theme-kaleidoscope .sponsor-card-name {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--k-wing-black);
+  text-align: center;
+}
+
+.theme-kaleidoscope .sponsor-card-note {
+  margin-top: var(--space-4);
+  color: var(--k-stone);
+  font-weight: 300;
+  text-align: center;
+  max-width: 44ch;
+}
+
+/* Tier sizes: plate height, padding, and type scale together */
+.theme-kaleidoscope .sponsor-card-xl {
+  padding: var(--space-64) var(--space-48);
+  gap: var(--space-32);
+}
+
+.theme-kaleidoscope .sponsor-card-xl .sponsor-card-plate { height: 230px; }
+.theme-kaleidoscope .sponsor-card-xl .sponsor-card-name { font-size: var(--k-text-2xl); }
+.theme-kaleidoscope .sponsor-card-xl .sponsor-card-note { font-size: var(--k-text-md); }
+
+.theme-kaleidoscope .sponsor-card-lg {
+  padding: var(--space-48) var(--space-40);
+  gap: var(--space-24);
+}
+
+.theme-kaleidoscope .sponsor-card-lg .sponsor-card-plate { height: 136px; }
+.theme-kaleidoscope .sponsor-card-lg .sponsor-card-name { font-size: var(--k-text-xl); }
+.theme-kaleidoscope .sponsor-card-lg .sponsor-card-note { font-size: var(--k-text-base); }
+
+.theme-kaleidoscope .sponsor-card-md {
+  padding: var(--space-32) var(--space-24);
+  gap: var(--space-20);
+}
+
+.theme-kaleidoscope .sponsor-card-md .sponsor-card-plate { height: 100px; }
+.theme-kaleidoscope .sponsor-card-md .sponsor-card-name { font-size: var(--k-text-md); }
+.theme-kaleidoscope .sponsor-card-md .sponsor-card-note { font-size: var(--k-text-sm); }
+
+.theme-kaleidoscope .sponsor-card-sm {
+  padding: var(--space-24) var(--space-20);
+  gap: var(--space-16);
+}
+
+.theme-kaleidoscope .sponsor-card-sm .sponsor-card-plate { height: 72px; }
+.theme-kaleidoscope .sponsor-card-sm .sponsor-card-name { font-size: var(--k-text-sm); }
+.theme-kaleidoscope .sponsor-card-sm .sponsor-card-note { font-size: var(--k-text-sm); }
+
+.theme-kaleidoscope .sponsor-grid {
+  display: grid;
+  gap: var(--space-20);
+}
+
+.theme-kaleidoscope .sponsor-grid-community {
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+}
+
+.theme-kaleidoscope .sponsor-grid-corporate {
+  grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+}
+
+/* Supporting copy under a band heading */
+.theme-kaleidoscope .fk-band-lede {
+  margin: var(--space-16) 0 0;
+  max-width: 56ch;
+  color: var(--k-stone);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+@media (width <= 640px) {
+  .theme-kaleidoscope .sponsor-card-xl {
+    padding: var(--space-40) var(--space-24);
+  }
+
+  .theme-kaleidoscope .sponsor-card-xl .sponsor-card-plate { height: 150px; }
+
+  .theme-kaleidoscope .sponsor-card-xl .sponsor-card-plate img {
+    max-height: 150px;
+  }
+
+  .theme-kaleidoscope .sponsor-card-lg .sponsor-card-plate img {
+    max-height: 100px;
+  }
+}
+
 /* ---- 8. FAQ (native <details>/<summary>) ---- */
 .theme-kaleidoscope .fk-faq-group { margin-bottom: var(--space-40); }
 
