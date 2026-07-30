@@ -1615,9 +1615,19 @@ select:focus-visible {
      -dk   dark or mid-value marks on transparency — flatten to black
      -mu   opaque-background rasters (JPEG/white plate) — multiply it away
      -inv  white marks on transparency — invert to read on a light ground
+     -as-is  no treatment at all — for brands whose standards forbid
+             recolouring the mark. It already reads as a soft neutral in its
+             own palette, so it sits in the family without being touched.
    ========================================================================== */
 .sponsor-logo-dk {
     filter: brightness(0) opacity(55%);
+}
+
+/* Deliberately empty of filters: the mark renders at full brand colour in
+   every state. Declared so the tone is a real, documented option rather than
+   an unstyled fall-through. */
+.sponsor-logo-as-is {
+    filter: none;
 }
 
 .sponsor-logo-mu {

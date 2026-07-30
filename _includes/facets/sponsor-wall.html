@@ -31,8 +31,13 @@ Params:
       {%- if pass == 2 %}{% assign is_clone = true %}{% endif -%}
       <div class="sponsor-wall-strip{% if is_clone %} sponsor-wall-clone{% endif %}"{% if is_clone %} aria-hidden="true"{% endif %}>
         {%- for sponsor in site.data.sponsors -%}
-        {%- assign logo_url = sponsor.logo -%}
-        {%- if logo_url contains "/assets/" %}{% assign logo_url = sponsor.logo | relative_url %}{% endif -%}
+        {%- comment -%}
+          wall_logo lets a sponsor supply a wider lockup for the marquee, where
+          the strip is short and a tall stacked mark would set its type too
+          small to read. Falls back to the one logo when unset.
+        {%- endcomment -%}
+        {%- assign logo_url = sponsor.wall_logo | default: sponsor.logo -%}
+        {%- if logo_url contains "/assets/" %}{% assign logo_url = logo_url | relative_url %}{% endif -%}
         {%- capture logo_img -%}
         <img src="{{ logo_url }}" alt="{% unless is_clone %}{{ sponsor.name }}{% endunless %}" class="sponsor-logo-{{ sponsor.tone | default: 'dk' }}" loading="lazy" style="height: {{ sponsor.wall_height | default: 40 }}px;">
         {%- endcapture -%}
