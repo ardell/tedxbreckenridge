@@ -78,12 +78,18 @@
   url: https://www.arapahoebasin.com/
   # Their mark is white on transparency, so it must stay inverted or it
   # vanishes against the card. Vector, so it stays crisp at any size.
-  logo: /assets/images/sponsors/arapahoe-basin.svg
+  #
+  # The full lockup (mark over the "ARAPAHOE BASIN / COLORADO" wordmark) from
+  # their site footer. It stacks rather than sitting side by side, so about a
+  # third of the height goes to type: it needs a taller strip than the bare
+  # mark did to set the wordmark legibly, and a wider max_width than the
+  # near-square mark to avoid cropping the lettering.
+  logo: /assets/images/sponsors/arapahoe-basin-full.svg
   note: Summit County
   tone: inv
   height: 92
-  wall_height: 54
-  max_width: 140
+  wall_height: 62
+  max_width: 180
   tier: community
 
 - name: MARIX
