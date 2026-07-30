@@ -25,7 +25,7 @@ faqs:
       Yes! Our events are family-friendly and welcome attendees of all ages. We believe that inspiring ideas can resonate with people at any stage of life. Parents should use their judgment about whether the content and format will engage their children—talks typically last 10-18 minutes each and cover a wide range of topics.
   - q: What's the dress code?
     a: >-
-      Mountain Casual—wear whatever makes you comfortable! This is a relaxed, welcoming environment where you'll see everything from hiking boots to business casual. We want you to focus on the ideas, not your outfit. That said, many attendees enjoy dressing up a bit for the occasion since it's a special evening out.
+      Mountain Casual—wear whatever makes you comfortable! This is a relaxed, welcoming environment where you'll see everything from hiking boots to business casual. We want you to focus on the ideas, not your outfit. That said, many attendees enjoy dressing up a bit for the occasion since it's a special day out.
   - q: Can I volunteer for the event?
     a: >-
       Absolutely! TEDxBreckenridge is run entirely by passionate local volunteers, and we'd love to have you join our team. Whether you want to help on event day or contribute your skills year-round to our planning committee, there's a place for you. Visit our [volunteer page](/volunteer/) to learn more about opportunities and fill out the volunteer interest form.

@@ -4,7 +4,7 @@ title: TEDxBreckenridge 2026
 email: info@tedxbreckenridge.com
 description: >-
   TEDxBreckenridge 2026 - Ideas worth spreading in the heart of the Rockies.
-  Join us for an evening of inspiring talks, local voices, and meaningful connections.
+  Join us for an afternoon of inspiring talks, local voices, and meaningful connections.
 
 baseurl: "" # subpath of your site, e.g. /2026
 url: "https://www.tedxbreckenridge.com" # base hostname & protocol
@@ -14,7 +14,7 @@ event:
   year: 2026
   date: "October 3, 2026"
   date_short: "October 3, 2026"
-  time: "TBA"
+  time: "3:00 - 6:00 PM"
   venue: "Riverwalk Center, Breckenridge, Colorado"
   venue_short: "Riverwalk Center"
   format: "In-person"
