@@ -39,6 +39,14 @@ speakers:
       - Professor Wouter Van De Pontseele leads the Quantum Technologies at the Sensitivity Frontier group at the Colorado School of Mines, which develops superconducting sensors and cryogenic instrumentation to search for rare particle interactions.
       - A key project is the CURIE low-background facility, where the group is creating an ultra-quiet environment for sensitive experiments — supported by collaborations with industry partners such as Maybell Quantum and national labs such as NIST.
       - Before settling in Colorado, Wouter performed research at the intersection of particle physics, data science, and quantum sensing at the University of Oxford, Harvard University, and MIT.
+  - name: Maisie Bryant
+    theme: Unmasking the shadows of social anxiety
+    role: Student speaker, Summit Middle School
+    image: /assets/images/speakers/maisie-bryant.jpg
+    bio:
+      - Maisie Bryant is a 13-year-old from Summit County who won the TEDx contest at Summit Middle School — and who gets very nervous speaking in front of large groups. She is taking the red dot anyway.
+      - Social anxiety affects roughly one in eight people, and Maisie knows it from the inside. She talks about what it feels like to circle the edge of the ice rink instead of practicing in front of others, why avoidance costs you opportunities you never see, and the strategies that actually help — borrowing confidence until it becomes real, leaning on people who don't judge you, and facing the situations you would rather skip.
+      - She is a competitive figure skater who performs in ice shows, and she has the backing of her friends and family. Her goal is simple&#58; to spread awareness, and to make the next person who feels watched feel a little less alone.
   - name: Anna DeBattiste
     theme: The heart of a volunteer
     role: Volunteer, Summit County Rescue Group & Colorado Search and Rescue Association
@@ -71,14 +79,6 @@ speakers:
       - Kurt Kionka is the Project Director for the Colorado Department of Transportation (CDOT), where he leads the massive I-70 Floyd Hill to Veterans Memorial Tunnels Project — transforming a congested, weather-battered eight-mile stretch of the I-70 Mountain Corridor and modernizing how Coloradans travel.
       - With over 23 years of multi-disciplinary experience at CDOT, Kurt's journey began in 2003 as a student intern doing public outreach for the I-70 corridor in Denver. Since then he has steered numerous complex infrastructure challenges, most notably leading the high-stakes US 36 Emergency Rebuild in 2019.
       - A proud Colorado native, Kurt earned his B.S. in Civil Engineering from Colorado State University. When he isn't managing multi-million dollar highway projects, he is exploring his home state with his wife and two children — skiing, visiting state parks, and enjoying the Denver Zoo. Fun fact&#58; in 2001 he won the Showcase Showdown on The Price is Right.
-  - name: Maisie Bryant
-    theme: Unmasking the shadows of social anxiety
-    role: Student speaker, Summit Middle School
-    image: /assets/images/speakers/maisie-bryant.jpg
-    bio:
-      - Maisie Bryant is a 13-year-old from Summit County who won the TEDx contest at Summit Middle School — and who gets very nervous speaking in front of large groups. She is taking the red dot anyway.
-      - Social anxiety affects roughly one in eight people, and Maisie knows it from the inside. She talks about what it feels like to circle the edge of the ice rink instead of practicing in front of others, why avoidance costs you opportunities you never see, and the strategies that actually help — borrowing confidence until it becomes real, leaning on people who don't judge you, and facing the situations you would rather skip.
-      - She is a competitive figure skater who performs in ice shows, and she has the backing of her friends and family. Her goal is simple&#58; to spread awareness, and to make the next person who feels watched feel a little less alone.
 ---
 
 {% for speaker in page.speakers %}
