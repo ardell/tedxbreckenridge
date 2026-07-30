@@ -1805,8 +1805,11 @@
   text-align: center;
 }
 
+/* The 44ch measure keeps longer notes readable, but it has to be centred in
+   the card or the centred text inside it reads as offset to the left. */
 .theme-kaleidoscope .sponsor-card-note {
   margin-top: var(--space-4);
+  margin-inline: auto;
   color: var(--k-stone);
   font-weight: 300;
   text-align: center;
