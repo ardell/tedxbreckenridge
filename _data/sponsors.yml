@@ -8,14 +8,21 @@
 #   name  — organization name; used as logo alt text and the card title
 #   url   — organization website. Optional; a sponsor without one renders as a
 #           plain (non-linked) logo plate.
-#   logo  — logo image. A site-relative path under /assets/ is served locally;
-#           an absolute http(s) URL is pulled from the sponsor's own site.
+#   logo  — logo image, as a site-relative path under /assets/. Keep these in
+#           the repo rather than hotlinking a sponsor's own CDN: remote copies
+#           get renamed or removed without warning, and they leak our visitors'
+#           IPs to a third party.
+#   wall_logo — optional wider lockup used only in the pre-footer marquee,
+#           where a tall stacked mark would set its type too small to read.
+#           Defaults to logo.
 #   note  — short descriptor shown under the name on the Sponsors page only
 #   tone  — how to neutralize the logo's native value so the wall reads as one
 #           family before hover blooms it back to full colour:
-#             dk  — dark or mid-value marks on transparency; flattened to black
-#             mu  — logos baked onto an opaque (usually white) plate; multiplied
-#             inv — white marks on transparency; inverted to read on light
+#             dk    — dark or mid-value marks on transparency; flattened to black
+#             mu    — logos baked onto an opaque (usually white) plate; multiplied
+#             inv   — white marks on transparency; inverted to read on light
+#             as-is — left untouched, for brands whose standards forbid
+#                     recolouring the mark
 #   height      — rendered logo height in px on the Sponsors page card
 #   wall_height — rendered logo height in px in the pre-footer marquee
 #   max_width   — optional cap in px for logos that are very wide for their height
@@ -23,20 +30,26 @@
 #
 # Order within a tier is the display order. Keep tiers grouped together.
 
-- name: Breckenridge Grand Vacations
-  url: https://breckenridgegrandvacations.com/
-  # The site-header lockup is only 280x90 and pixelates when scaled to the
-  # premier size; this corporate mark is 450x253, so it stays sharp.
-  logo: https://s33623.pcdn.co/wp-content/uploads/2025/01/bgv-corp-logo-1.png
-  note: A Breckenridge family of resorts — bringing families together and sharing smiles since 1984.
-  tone: dk
-  height: 210
-  wall_height: 62
+- name: Imperial Hotel & Private Residences™
+  url: https://imperialbreckenridge.com/
+  # Their brand standards forbid altered or recoloured versions of the mark, so
+  # both files render as-is in PMS 2363 rather than taking a neutralizing tone.
+  #
+  # Their primary (vertical) lockup on the card, from the supplied IMP-Logo-T.ai.
+  # The guide reserves the horizontal secondary lockup for exactly our marquee
+  # case — "when vertical space is limited" — because the stacked version sets
+  # "& PRIVATE RESIDENCES" too small to read in a 34px strip.
+  logo: /assets/images/sponsors/imperial-hotel-private-residences.svg
+  wall_logo: /assets/images/sponsors/imperial-hotel-private-residences-horizontal.svg
+  note: Mountain luxury on the private side of Peak 8 — where Breckenridge's legacy and landscape meet.
+  tone: as-is
+  height: 150
+  wall_height: 34
   tier: premier
 
 - name: The Summit Foundation
   url: https://summitfoundation.org/
-  logo: https://summitfoundation.org/images/Logo-Teal.png
+  logo: /assets/images/sponsors/summit-foundation.png
   note: Summit County's community foundation — the Soul of the Summit since 1984.
   tone: dk
   height: 104
@@ -45,7 +58,7 @@
 
 - name: Mountain Comfort Furnishings
   url: https://www.mountaincomfort.com/
-  logo: https://images.squarespace-cdn.com/content/v1/5f888e804774046bb6ae8b1c/542737cb-f0e8-4336-bdd2-d15a0ce7f24f/MountainComfort+copy.png?format=500w
+  logo: /assets/images/sponsors/mountain-comfort-furnishings.png
   note: Frisco
   tone: mu
   height: 64
@@ -54,7 +67,7 @@
 
 - name: Rockridge Building Company
   url: https://www.rockridgebuilding.com/
-  logo: https://images.squarespace-cdn.com/content/v1/563ce8f5e4b066d4b5a5a983/2b4815f3-a207-4e8b-b1c7-13506e710195/ROCKRIDGE-Logo-Black.png?format=750w
+  logo: /assets/images/sponsors/rockridge-building-company.png
   note: Breckenridge
   tone: dk
   height: 38
@@ -65,7 +78,7 @@
   url: https://www.arapahoebasin.com/
   # Their mark is white on transparency, so it must stay inverted or it
   # vanishes against the card. Vector, so it stays crisp at any size.
-  logo: https://www.arapahoebasin.com/img/abasinlogo.svg
+  logo: /assets/images/sponsors/arapahoe-basin.svg
   note: Summit County
   tone: inv
   height: 92
@@ -75,7 +88,7 @@
 
 - name: MARIX
   url: https://www.marixdesigns.com/
-  logo: https://images.squarespace-cdn.com/content/v1/5f888e804774046bb6ae8b1c/1629746714986-T0N64605OQ7Y42KGLT62/Marix+Geo-black_web.png?format=500w
+  logo: /assets/images/sponsors/marix.png
   note: Landscape, lighting & design
   tone: mu
   height: 70
@@ -103,7 +116,7 @@
 
 - name: Breck Create
   url: https://breckcreate.org/
-  logo: https://images.squarespace-cdn.com/content/v1/5f888e804774046bb6ae8b1c/89aebfdc-7584-46fa-a46e-6f6071741eba/Breck_Create_Logo_Black-700x700.png?format=500w
+  logo: /assets/images/sponsors/breck-create.png
   note: Breckenridge
   tone: dk
   height: 94
@@ -112,7 +125,7 @@
 
 - name: Epic PRINT Pros
   url: https://epicprintpros.com/
-  logo: https://epicprintpros.com/wp-content/uploads/2023/07/Website-Logo-on-White-800x200.png
+  logo: /assets/images/sponsors/epic-print-pros.png
   note: Frisco
   tone: mu
   height: 50
@@ -121,7 +134,7 @@
 
 - name: Aspen Alley Creative
   url: https://www.aspenalleycreative.com/
-  logo: https://images.squarespace-cdn.com/content/v1/688c333a9954af17af01e15c/3eab9e0f-73a4-4898-b176-456f293fb8b1/AAC_Tertiary+Logo_Dust.png?format=750w
+  logo: /assets/images/sponsors/aspen-alley-creative.png
   tone: dk
   height: 48
   wall_height: 34
@@ -130,15 +143,18 @@
 
 - name: Blue Iguana Productions
   url: https://blueiguanaproductions.com/
-  logo: https://images.squarespace-cdn.com/content/v1/5f888e804774046bb6ae8b1c/651b595d-3062-4b3f-8dd5-51eea10e7a86/_BlueIguanaLong.jpg?format=500w
-  tone: mu
+  # Their source art is a JPEG on an opaque white plate; the local copy has that
+  # background keyed out, so it takes dk like any other mark on transparency
+  # instead of needing mu to multiply the plate away.
+  logo: /assets/images/sponsors/blue-iguana-productions.png
+  tone: dk
   height: 38
   wall_height: 28
   tier: corporate
 
 - name: Andrew Dengate Art
   # No public website on file — renders as a non-linked plate until we have one.
-  logo: https://images.squarespace-cdn.com/content/v1/5f888e804774046bb6ae8b1c/3f5996bb-d07e-45e8-a96b-4dff910b48d4/ADA+LOGO.png?format=500w
+  logo: /assets/images/sponsors/andrew-dengate-art.png
   tone: dk
   height: 68
   wall_height: 46
@@ -146,7 +162,7 @@
 
 - name: Jenn Kaye
   url: https://www.jennkaye.com/
-  logo: https://images.squarespace-cdn.com/content/v1/5f888e804774046bb6ae8b1c/daacea12-5bce-4a14-9aac-077aa3f40d3d/JennKaye_Logo-02.png?format=500w
+  logo: /assets/images/sponsors/jenn-kaye.png
   tone: dk
   height: 42
   wall_height: 30
