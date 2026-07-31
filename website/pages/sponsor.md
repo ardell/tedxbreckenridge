@@ -34,8 +34,6 @@ rows:
     cells: [true, false, false, false, false]
   - label: "TEDxBreckenridge website spotlight: 1 year"
     cells: [true, true, false, false, false]
-  - label: "Salon sponsorship: 12 months"
-    cells: [true, true, true, true, true]
   - label: Featured collab post on social media / website
     cells: [true, true, false, false, false]
   - label: Newsletter spotlight + footer (2,500 contacts)
@@ -51,6 +49,8 @@ rows:
   - label: Logo on digital event program
     cells: [true, true, true, true, true]
   - label: Logo on TEDxBreckenridge website
+    cells: [true, true, true, true, true]
+  - label: "Salon sponsorship: 12 months"
     cells: [true, true, true, true, true]
   - label: 501(c)(3) contribution, tax-deductible
     cells: [true, true, true, true, true]
