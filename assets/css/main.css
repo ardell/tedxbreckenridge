@@ -1615,6 +1615,10 @@ select:focus-visible {
      -dk   dark or mid-value marks on transparency — flatten to black
      -mu   opaque-background rasters (JPEG/white plate) — multiply it away
      -inv  white marks on transparency — invert to read on a light ground
+     -rev  reversed-out lockups: content knocked out of a filled colour plate.
+           These carry their own background, so flattening (-dk) would fill the
+           plate solid and swallow the mark, and inverting (-inv) would recolour
+           it. Desaturate instead, keeping the light/dark relationship intact.
      -as-is  no treatment at all — for brands whose standards forbid
              recolouring the mark. It already reads as a soft neutral in its
              own palette, so it sits in the family without being touched.
@@ -1639,6 +1643,12 @@ select:focus-visible {
     filter: invert(100%) grayscale(100%) opacity(60%);
 }
 
+/* Slightly lifted opacity next to the transparent tones: a solid plate reads
+   heavier than loose marks at the same value, so it needs less to sit level. */
+.sponsor-logo-rev {
+    filter: grayscale(100%) opacity(80%);
+}
+
 a.sponsor-card:hover .sponsor-logo-dk,
 a.sponsor-card:focus-visible .sponsor-logo-dk {
     filter: none;
@@ -1652,6 +1662,11 @@ a.sponsor-card:focus-visible .sponsor-logo-mu {
 a.sponsor-card:hover .sponsor-logo-inv,
 a.sponsor-card:focus-visible .sponsor-logo-inv {
     filter: invert(100%) grayscale(0%) opacity(100%);
+}
+
+a.sponsor-card:hover .sponsor-logo-rev,
+a.sponsor-card:focus-visible .sponsor-logo-rev {
+    filter: grayscale(0%) opacity(100%);
 }
 
 /* ==========================================================================
@@ -1767,6 +1782,11 @@ a.sponsor-card:focus-visible .sponsor-logo-inv {
 .sponsor-wall-logo:hover .sponsor-logo-inv,
 .sponsor-wall-logo:focus-visible .sponsor-logo-inv {
     filter: invert(100%) grayscale(0%) opacity(100%);
+}
+
+.sponsor-wall-logo:hover .sponsor-logo-rev,
+.sponsor-wall-logo:focus-visible .sponsor-logo-rev {
+    filter: grayscale(0%) opacity(100%);
 }
 
 /* The marquee logos also lift slightly on hover; the cards lift as a whole. */
