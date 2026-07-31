@@ -21,6 +21,8 @@
 #             dk    — dark or mid-value marks on transparency; flattened to black
 #             mu    — logos baked onto an opaque (usually white) plate; multiplied
 #             inv   — white marks on transparency; inverted to read on light
+#             rev   — lockups reversed out of a filled colour plate; desaturated
+#                     rather than flattened, so the knocked-out mark survives
 #             as-is — left untouched, for brands whose standards forbid
 #                     recolouring the mark
 #   height      — rendered logo height in px on the Sponsors page card
@@ -76,20 +78,28 @@
 
 - name: Arapahoe Basin
   url: https://www.arapahoebasin.com/
-  # Their mark is white on transparency, so it must stay inverted or it
-  # vanishes against the card. Vector, so it stays crisp at any size.
+  # Their horizontal lockup: the mark in a navy plate beside the
+  # "ARAPAHOE BASIN / COLORADO" wordmark reversed out of a red one. Built as a
+  # vector from two sources — the mark is their own artwork (the official
+  # abasinlogo.svg), and the lettering is traced from the marketing lockup,
+  # since neither their site nor any distributor publishes a horizontal vector.
+  # Proportions, colours (PMS-ish navy #002F65 / red #B43538) and the optical
+  # placement of the mark and type were measured off that reference.
   #
-  # The full lockup (mark over the "ARAPAHOE BASIN / COLORADO" wordmark) from
-  # their site footer. It stacks rather than sitting side by side, so about a
-  # third of the height goes to type: it needs a taller strip than the bare
-  # mark did to set the wordmark legibly, and a wider max_width than the
-  # near-square mark to avoid cropping the lettering.
-  logo: /assets/images/sponsors/arapahoe-basin-full.svg
+  # Both halves knock their content out of a filled plate, so the artwork
+  # carries the full navy/red/white rather than sitting on transparency. That
+  # needs the `rev` tone: `dk` would flatten the plates to one black rectangle
+  # and swallow the mark, and `inv` would recolour them.
+  #
+  # At 3.19:1 the lockup is wide rather than tall, so it wants a shorter strip
+  # than the stacked mark did — 44px here is ~140px wide, in family with the
+  # other wall logos — and a max_width that lets it run to its natural width.
+  logo: /assets/images/sponsors/arapahoe-basin-horizontal.svg
   note: Summit County
-  tone: inv
-  height: 92
-  wall_height: 62
-  max_width: 180
+  tone: rev
+  height: 64
+  wall_height: 44
+  max_width: 220
   tier: community
 
 - name: MARIX
