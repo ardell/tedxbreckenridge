@@ -26,8 +26,6 @@ tiers:
 rows:
   - label: Logo in front of every 2026 talk (~1.3 million video views)
     cells: [true, false, false, false, false]
-  - label: Company name on Main Street banner
-    cells: [true, false, false, false, false]
   - label: Special acknowledgement from stage
     cells: [true, false, false, false, false]
   - label: Press mentions / newspaper quotes (press dependent)
