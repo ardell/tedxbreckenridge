@@ -112,6 +112,25 @@
   max_width: 190
   tier: community
 
+- name: Home Sweet Home Landscaping
+  url: https://www.homesweethomelandscaping.com/
+  # Converted from the supplied HSH_Logo-Vector.eps (Illustrator vector art).
+  # The green roundel knocks its mountain, trees and hillside out of a gradient
+  # fill, so it needs `rev` for the same reason Arapahoe Basin does: `dk` would
+  # flatten the disc to one solid black circle and swallow the mark entirely.
+  #
+  # At 4.49:1 this is the widest lockup in the roster, so it wants a shorter
+  # strip than the squarer marks: 48px here is ~215px wide, in family with the
+  # other community cards rather than towering over them. No max_width — the
+  # height alone already keeps it in range, and a cap would only squeeze it
+  # below that height.
+  logo: /assets/images/sponsors/home-sweet-home-landscaping.svg
+  note: Elevating your outdoor living
+  tone: rev
+  height: 48
+  wall_height: 38
+  tier: community
+
 - name: Keystone Science School
   url: https://keystonescienceschool.org/
   logo: /assets/images/sponsors/keystone-science-school.png
