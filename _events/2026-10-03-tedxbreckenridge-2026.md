@@ -39,6 +39,19 @@ TEDxBreckenridge 2026 brings together curious minds, local voices, and transform
 - **Meaningful Connections**: Network with fellow curious minds during breaks and after the event
 - **Beautiful Venue**: The iconic Riverwalk Center in the heart of Breckenridge
 
+<h2 id="alpenglow-dinner">Alpenglow Dinner</h2>
+
+New this year: the talks end at 6, but the conversation doesn't have to. Join us for the Alpenglow Dinner at Bar Down, at the base of Peak 7, from 6:30–9 PM immediately following the talks. Carry the ideas from the stage into the evening over a shared meal presented by The Imperial Hotel & Private Residences.
+
+- **A seat at the table** with our 2026 speakers, the TEDxBreckenridge team, and fellow attendees
+- **A shared meal** — welcome cocktail, passed appetizers, and a full buffet (seasonal salad, pork and vegetarian entrées, seasonal risotto, and dessert); cash bar open all night
+- **A loosely-guided conversation** carrying the ideas from the stage into the evening
+- **Time to meet the speakers** and chat with them directly
+
+The Alpenglow Dinner is a $65 add-on to your event ticket, and seating is limited — add it when you grab your ticket.
+
+<a href="https://tedxbreckenridge.ticketsauce.com/e/tedxbreckenridge-kaleidoscope/tickets?utm_source=affiliate&utm_name=Website-event-page-alpenglow-dinner&utm_campaign=Website-event-page-alpenglow-dinner&utm_id=6a8ee9f743204c5f9f5179430a1e606a" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Add the Alpenglow Dinner</a>
+
 ## Stay Updated
 
 Want to be the first to know as we announce this year's theme and speaker lineup? Join our mailing list.
