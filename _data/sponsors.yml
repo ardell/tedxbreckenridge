@@ -167,6 +167,33 @@
   wall_height: 34
   tier: community
 
+- name: Ridge Street Kitchen
+  url: https://ridgestreetkitchen.com/
+  # Their supplied mark is red "Ridge St." script over white-filled, black-
+  # outlined "KITCHEN". dk would flatten every opaque pixel to black — filling
+  # the red script and the white letter-centres solid and merging the whole
+  # thing into a blob — so it takes mu instead: grayscale desaturates the red to
+  # mid-grey while the black outlines and white centres keep the letters legible,
+  # and hover blooms it back to the full-colour mark.
+  logo: /assets/images/sponsors/ridge-street-kitchen.png
+  note: Breckenridge
+  tone: mu
+  height: 56
+  wall_height: 40
+  tier: community
+
+- name: La Française
+  # Links to the bistrot site (the bakery's own domain no longer resolves); the
+  # two are one family business. The "La Française / French Bakery" wordmark is
+  # black on transparency, so it takes dk like the other transparent marks.
+  url: https://www.lafrancaisebistrot.com/
+  logo: /assets/images/sponsors/la-francaise.png
+  note: Breckenridge — bakery & bistrot
+  tone: dk
+  height: 48
+  wall_height: 34
+  tier: community
+
 - name: Aspen Alley Creative
   url: https://www.aspenalleycreative.com/
   logo: /assets/images/sponsors/aspen-alley-creative.png
