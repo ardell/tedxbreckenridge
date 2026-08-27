@@ -1822,7 +1822,7 @@
   gap: var(--space-32);
 }
 
-.theme-kaleidoscope .sponsor-card-xl .sponsor-card-plate { height: 230px; }
+.theme-kaleidoscope .sponsor-card-xl .sponsor-card-plate { height: 120px; }
 .theme-kaleidoscope .sponsor-card-xl .sponsor-card-name { font-size: var(--k-text-2xl); }
 .theme-kaleidoscope .sponsor-card-xl .sponsor-card-note { font-size: var(--k-text-md); }
 
@@ -1831,7 +1831,7 @@
   gap: var(--space-24);
 }
 
-.theme-kaleidoscope .sponsor-card-lg .sponsor-card-plate { height: 136px; }
+.theme-kaleidoscope .sponsor-card-lg .sponsor-card-plate { height: 80px; }
 .theme-kaleidoscope .sponsor-card-lg .sponsor-card-name { font-size: var(--k-text-xl); }
 .theme-kaleidoscope .sponsor-card-lg .sponsor-card-note { font-size: var(--k-text-base); }
 
@@ -1880,14 +1880,14 @@
     padding: var(--space-40) var(--space-24);
   }
 
-  .theme-kaleidoscope .sponsor-card-xl .sponsor-card-plate { height: 150px; }
+  .theme-kaleidoscope .sponsor-card-xl .sponsor-card-plate { height: 100px; }
 
   .theme-kaleidoscope .sponsor-card-xl .sponsor-card-plate img {
-    max-height: 150px;
+    max-height: 100px;
   }
 
   .theme-kaleidoscope .sponsor-card-lg .sponsor-card-plate img {
-    max-height: 100px;
+    max-height: 72px;
   }
 }
 
