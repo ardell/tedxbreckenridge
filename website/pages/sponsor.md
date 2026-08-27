@@ -13,7 +13,7 @@ eyebrow: Partnership
 tiers:
   - name: Premier
     price: $15k
-    note: 1 remaining
+    note: Sold out
     featured: true
   - name: Anchor
     price: $7.5k
