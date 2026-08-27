@@ -45,7 +45,9 @@
   wall_logo: /assets/images/sponsors/imperial-hotel-private-residences-horizontal.svg
   note: Mountain luxury on the private side of Peak 8 — where Breckenridge's legacy and landscape meet.
   tone: as-is
-  height: 150
+  # Capped so the card logo's rendered area stays within the header wordmark's
+  # (~13,800px²): at 89px this vertical lockup is ~146px wide, ~13,100px².
+  height: 89
   wall_height: 34
   tier: premier
 
@@ -54,7 +56,9 @@
   logo: /assets/images/sponsors/summit-foundation.png
   note: Summit County's community foundation — the Soul of the Summit since 1984.
   tone: dk
-  height: 104
+  # Capped so the card logo's rendered area stays within the header wordmark's
+  # (~13,800px²): at 55px this wide lockup is ~238px wide, ~13,100px².
+  height: 55
   wall_height: 42
   tier: anchor
 
