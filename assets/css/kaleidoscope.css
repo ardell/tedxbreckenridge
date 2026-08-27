@@ -12,7 +12,7 @@
    ============================================================ */
 
 /* Inter (body/UI) — Ambroise (wordmark art only) is @font-face'd below. */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
 
 /* The high-contrast Didone reserved EXCLUSIVELY for the "Kaleidoscope"
    wordmark. Never use for headings, body, or UI copy. */
@@ -592,6 +592,32 @@
   font-weight: 300;
   line-height: 1.6;
   margin-bottom: var(--space-24);
+}
+
+/* --- Dinner variant -------------------------------------------------
+   The Alpenglow Dinner reuses the save-the-date block but leads with a
+   longer intro and emphasizes a time phrase, not a short date. Tune the
+   ramp so the three copy blocks step down cleanly: lead settles into true
+   body copy, the time reads as a confident subhead, and the meta lifts off
+   hairline-thin. Scoped to .k-savedate-dinner so the main-event design is
+   untouched. */
+.k-savedate-dinner .k-savedate-lead {
+  font-size: var(--k-text-md);
+  font-weight: 200;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 92%);
+  max-width: 480px;
+  margin-bottom: var(--space-32);
+}
+
+.k-savedate-dinner .k-savedate-date {
+  font-size: var(--k-text-xl);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.k-savedate-dinner .k-savedate-meta {
+  font-weight: 400;
 }
 
 .k-savedate-photo {
