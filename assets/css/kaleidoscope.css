@@ -688,6 +688,28 @@
 .k-mt-48 { margin-top: var(--space-48); }
 
 /* ---------------------------------------------------------------
+   What is TEDx? (white, sits between parchment Featured Talks
+   and the dark Get Involved band)
+   --------------------------------------------------------------- */
+.k-whatis {
+  background: var(--k-white);
+}
+
+.k-whatis-body {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.k-whatis-body p {
+  color: var(--k-charcoal);
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0 0 var(--space-20);
+}
+
+.k-whatis-body p:last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------
    Get Involved (dark, slanted top)
    --------------------------------------------------------------- */
 .k-involved {
