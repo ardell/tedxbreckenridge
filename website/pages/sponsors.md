@@ -40,12 +40,14 @@ sponsor_wall: false
 <section class="fk-band fk-band-parchment">
   <div class="fk-band-inner">
     <div class="fk-band-head">
-      <div class="fk-band-eyebrow">Anchor Sponsor</div>
+      <div class="fk-band-eyebrow">Anchor Sponsors</div>
       <h2 class="fk-band-title">Anchoring the season</h2>
     </div>
-    {% for sponsor in anchor %}
-      {% include facets/sponsor-card.html sponsor=sponsor size="lg" alt=true %}
-    {% endfor %}
+    <div class="sponsor-grid sponsor-grid-anchor">
+      {% for sponsor in anchor %}
+        {% include facets/sponsor-card.html sponsor=sponsor size="lg" alt=true %}
+      {% endfor %}
+    </div>
   </div>
 </section>
 {% endif %}
