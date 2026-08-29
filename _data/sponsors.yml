@@ -62,6 +62,17 @@
   wall_height: 42
   tier: anchor
 
+- name: Summit Mountain Rentals
+  url: https://summitrentals.com/
+  logo: /assets/images/sponsors/summit-mountain-rentals-horizontal.svg
+  note: Vacation rentals across Breckenridge and Summit County — mountain stays made easy.
+  tone: dk
+  # Capped so the card logo's rendered area stays within the header wordmark's
+  # (~13,800px²): at 66px this 2.96:1 lockup is ~197px wide, ~13,000px².
+  height: 66
+  wall_height: 42
+  tier: anchor
+
 - name: Mountain Comfort Furnishings
   url: https://www.mountaincomfort.com/
   logo: /assets/images/sponsors/mountain-comfort-furnishings.png
