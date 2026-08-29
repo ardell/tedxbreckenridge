@@ -1906,6 +1906,13 @@
   gap: var(--space-20);
 }
 
+/* Anchor tier: an explicit two-up layout (few enough sponsors that auto-fit
+   would leave a lone card stranded full-width). Collapses to one column on
+   narrow screens via the shared rule below. */
+.theme-kaleidoscope .sponsor-grid-anchor {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .theme-kaleidoscope .sponsor-grid-community {
   grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
 }
@@ -1936,6 +1943,10 @@
 
   .theme-kaleidoscope .sponsor-card-lg .sponsor-card-plate img {
     max-height: 72px;
+  }
+
+  .theme-kaleidoscope .sponsor-grid-anchor {
+    grid-template-columns: 1fr;
   }
 }
 
