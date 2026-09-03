@@ -81,10 +81,18 @@ speakers:
       - A proud Colorado native, Kurt earned his B.S. in Civil Engineering from Colorado State University. When he isn't managing multi-million dollar highway projects, he is exploring his home state with his wife and two children — skiing, visiting state parks, and enjoying the Denver Zoo. Fun fact&#58; in 2001 he won the Showcase Showdown on The Price is Right.
 ---
 
+<nav class="fk-yearnav" aria-label="Jump to section">
+  <div class="fk-yearnav-inner">
+    <span class="fk-yearnav-label">Jump to</span>
+    <a href="#speakers">Speakers</a>
+    <a href="#emcee">Emcee</a>
+  </div>
+</nav>
+
 {% for speaker in page.speakers %}
 {% assign is_flip = forloop.index0 | modulo: 2 %}
 {% if is_flip == 0 %}{% assign band = 'parchment' %}{% else %}{% assign band = 'white' %}{% endif %}
-<section class="fk-band fk-band-{{ band }}">
+<section class="fk-band fk-band-{{ band }}"{% if forloop.first %} id="speakers"{% endif %}>
   <div class="fk-band-inner">
     <div class="fk-spk-row{% if is_flip == 1 %} fk-spk-flip{% endif %}">
       <div class="fk-spk-portrait-wrap">
@@ -117,7 +125,7 @@ speakers:
 
 {% assign emcee_band = page.speakers.size | modulo: 2 %}
 {% if emcee_band == 0 %}{% assign band = 'parchment' %}{% else %}{% assign band = 'white' %}{% endif %}
-<section class="fk-band fk-band-{{ band }}">
+<section class="fk-band fk-band-{{ band }}" id="emcee">
   <div class="fk-band-inner">
     <div class="fk-spk-row{% if emcee_band == 1 %} fk-spk-flip{% endif %}">
       <div class="fk-spk-portrait-wrap">
@@ -131,7 +139,7 @@ speakers:
         <div class="fk-spk-role">Comedian &amp; host</div>
         <div class="k-spectrum k-spectrum-pill fk-spk-rule" aria-hidden="true"></div>
         <div class="fk-prose" style="max-width: 62ch;">
-          <p>Born and raised under the Miami sun, Joe Buck brings the warmth, energy, and rhythm of his hometown into every interaction. After a few detours and travels, Joe planted roots in Colorado, where the mountains — and his loyal hiking pup — keep him grounded. When he's not on stage, Joe's heart is with the community, dedicating his time to local nonprofits and philanthropic work.</p>
+          <p>Born and raised under the Miami sun, Joe Buck brings the warmth, energy, and rhythm of his hometown into every interaction. After a few detours and travels, Joe planted roots in Colorado, where the mountains -- and his loyal hiking pup -- keep him grounded. When he's not on stage, Joe's heart is with the community, dedicating his time to local nonprofits and philanthropic work.</p>
           <p>With a mix of charm, relatability, and quick wit, Joe Buck takes audiences on a ride that feels less like a comedy show and more like catching up with a friend who always has the best stories.</p>
         </div>
       </div>
