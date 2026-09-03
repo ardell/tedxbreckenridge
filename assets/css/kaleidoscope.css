@@ -138,9 +138,6 @@
 
 @media (width <= 640px) {
   .theme-kaleidoscope #main-content { padding-top: 52px; }
-
-  /* Nav shrinks to 52px here; keep the sticky jump bar flush against it. */
-  .theme-kaleidoscope .fk-yearnav { top: 52px; }
 }
 
 /* In-page anchor target that clears the sticky nav on jump. */
@@ -2550,6 +2547,15 @@
 
   .theme-kaleidoscope .fk-grid-2,
   .theme-kaleidoscope .fk-grid-3 { grid-template-columns: 1fr; }
+}
+
+@media (width <= 640px) {
+  /* Nav shrinks to 52px here. This must come after the <= 1024px rule
+     above (both match at this width and have equal specificity) so the
+     tighter offset wins the cascade and the bar stays flush to the nav. */
+  .theme-kaleidoscope .fk-yearnav {
+    top: 52px;
+  }
 }
 
 @media (width <= 620px) {
