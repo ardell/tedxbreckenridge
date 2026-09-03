@@ -115,6 +115,30 @@ speakers:
 </section>
 {% endfor %}
 
+{% assign emcee_band = page.speakers.size | modulo: 2 %}
+{% if emcee_band == 0 %}{% assign band = 'parchment' %}{% else %}{% assign band = 'white' %}{% endif %}
+<section class="fk-band fk-band-{{ band }}">
+  <div class="fk-band-inner">
+    <div class="fk-spk-row{% if emcee_band == 1 %} fk-spk-flip{% endif %}">
+      <div class="fk-spk-portrait-wrap">
+        <div class="fk-spk-portrait">
+          <img src="{{ '/assets/images/speakers/joe-buck.jpg' | relative_url }}" alt="Joe Buck" loading="lazy">
+        </div>
+      </div>
+      <div class="fk-spk-body">
+        <div class="fk-spk-eyebrow">Your Emcee</div>
+        <h2 class="fk-spk-name">Joe Buck</h2>
+        <div class="fk-spk-role">Comedian &amp; host</div>
+        <div class="k-spectrum k-spectrum-pill fk-spk-rule" aria-hidden="true"></div>
+        <div class="fk-prose" style="max-width: 62ch;">
+          <p>Born and raised under the Miami sun, Joe Buck brings the warmth, energy, and rhythm of his hometown into every interaction. After a few detours and travels, Joe planted roots in Colorado, where the mountains — and his loyal hiking pup — keep him grounded. When he's not on stage, Joe's heart is with the community, dedicating his time to local nonprofits and philanthropic work.</p>
+          <p>With a mix of charm, relatability, and quick wit, Joe Buck takes audiences on a ride that feels less like a comedy show and more like catching up with a friend who always has the best stories.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="fk-band fk-band-sand">
   <div class="fk-band-inner">
     {% include facets/cta.html
