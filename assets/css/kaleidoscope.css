@@ -138,6 +138,9 @@
 
 @media (width <= 640px) {
   .theme-kaleidoscope #main-content { padding-top: 52px; }
+
+  /* Nav shrinks to 52px here; keep the sticky jump bar flush against it. */
+  .theme-kaleidoscope .fk-yearnav { top: 52px; }
 }
 
 /* In-page anchor target that clears the sticky nav on jump. */
@@ -2235,7 +2238,10 @@
    1400px box as the header and year sections so "Jump to" lines up. */
 .theme-kaleidoscope .fk-yearnav {
   position: sticky;
-  top: 74px;
+
+  /* Matches the fixed nav height (and the #main-content offset) so the bar
+     sits flush against it with no page content bleeding through the seam. */
+  top: 80px;
   z-index: 20;
   background: var(--k-wing-black);
 }
@@ -2511,6 +2517,13 @@
   .theme-kaleidoscope .fk-yearnav-inner {
     padding-left: var(--space-24);
     padding-right: var(--space-24);
+  }
+
+  /* The nav shrinks to 64px at this width, so pin the sticky bar to it
+     (matches the #main-content offset) — otherwise page content bleeds
+     through the gap above the bar. */
+  .theme-kaleidoscope .fk-yearnav {
+    top: 64px;
   }
 
   .theme-kaleidoscope .fk-band {
