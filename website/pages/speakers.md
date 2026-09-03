@@ -32,7 +32,7 @@ speakers:
       - With 27 years of experience teaching in public high schools, he has designed and led learning experiences ranging from wilderness expeditions on the Green and Upper Colorado Rivers to international adventures in Costa Rica, Nicaragua, Peru, and Ecuador.
       - At Summit High School, Oakley serves as a construction and welding educator and the unofficial chief volunteer wrangler, cat herder, and trades promoter — building bridges between students, community members, and industry partners. His passion is helping young people find confidence, purpose, and belonging through authentic experiences and meaningful relationships.
   - name: Wouter Van De Pontseele
-    theme: Listening for rare particles at the quantum frontier
+    theme: Building tomorrow's quantum technology alongside yesterday's mines
     role: Professor, Colorado School of Mines
     image: /assets/images/speakers/wouter-van-de-pontseele.jpg
     bio:
