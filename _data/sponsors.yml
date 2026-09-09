@@ -28,7 +28,7 @@
 #   height      — rendered logo height in px on the Sponsors page card
 #   wall_height — rendered logo height in px in the pre-footer marquee
 #   max_width   — optional cap in px for logos that are very wide for their height
-#   tier  — premier | anchor | community | corporate
+#   tier  — premier | anchor | supporting | community | corporate
 #
 # Order within a tier is the display order. Keep tiers grouped together.
 
@@ -80,7 +80,7 @@
   tone: mu
   height: 64
   wall_height: 44
-  tier: community
+  tier: supporting
 
 - name: Rockridge Building Company
   url: https://www.rockridgebuilding.com/

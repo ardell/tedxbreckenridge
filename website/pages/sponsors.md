@@ -15,10 +15,11 @@ sponsor_wall: false
   Every tier below reads from _data/sponsors.yml — the same roster the
   sponsor-wall pre-footer uses — so sponsors are only ever added in one place.
   Card size steps down by tier: xl for premier, lg for anchor, md for
-  community, sm for corporate.
+  supporting and community, sm for corporate.
 {% endcomment %}
 {% assign premier = site.data.sponsors | where: "tier", "premier" %}
 {% assign anchor = site.data.sponsors | where: "tier", "anchor" %}
+{% assign supporting = site.data.sponsors | where: "tier", "supporting" %}
 {% assign community = site.data.sponsors | where: "tier", "community" %}
 {% assign corporate = site.data.sponsors | where: "tier", "corporate" %}
 
@@ -52,8 +53,25 @@ sponsor_wall: false
 </section>
 {% endif %}
 
-{% if community.size > 0 %}
+{% if supporting.size > 0 %}
 <section class="fk-band fk-band-white">
+  <div class="fk-band-inner">
+    <div class="fk-band-head">
+      <div class="fk-band-eyebrow">Supporting Sponsors</div>
+      <h2 class="fk-band-title">Behind every Salon</h2>
+      <p class="fk-band-lede">Businesses whose support carries the season across Summit County, one gathering at a time.</p>
+    </div>
+    <div class="sponsor-grid sponsor-grid-supporting">
+      {% for sponsor in supporting %}
+        {% include facets/sponsor-card.html sponsor=sponsor size="md" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if community.size > 0 %}
+<section class="fk-band fk-band-parchment">
   <div class="fk-band-inner">
     <div class="fk-band-head">
       <div class="fk-band-eyebrow">Community Sponsors</div>
@@ -62,7 +80,7 @@ sponsor_wall: false
     </div>
     <div class="sponsor-grid sponsor-grid-community">
       {% for sponsor in community %}
-        {% include facets/sponsor-card.html sponsor=sponsor size="md" %}
+        {% include facets/sponsor-card.html sponsor=sponsor size="md" alt=true %}
       {% endfor %}
     </div>
   </div>
@@ -70,7 +88,7 @@ sponsor_wall: false
 {% endif %}
 
 {% if corporate.size > 0 %}
-<section class="fk-band fk-band-parchment">
+<section class="fk-band fk-band-white">
   <div class="fk-band-inner">
     <div class="fk-band-head">
       <div class="fk-band-eyebrow">Corporate Sponsors</div>
@@ -78,7 +96,7 @@ sponsor_wall: false
     </div>
     <div class="sponsor-grid sponsor-grid-corporate">
       {% for sponsor in corporate %}
-        {% include facets/sponsor-card.html sponsor=sponsor size="sm" alt=true %}
+        {% include facets/sponsor-card.html sponsor=sponsor size="sm" %}
       {% endfor %}
     </div>
   </div>
