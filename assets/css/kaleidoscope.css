@@ -1913,6 +1913,13 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+/* Supporting tier: auto-fit like community so a lone card centres at its own
+   width rather than stretching full-band. */
+.theme-kaleidoscope .sponsor-grid-supporting {
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  justify-content: center;
+}
+
 .theme-kaleidoscope .sponsor-grid-community {
   grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
 }
