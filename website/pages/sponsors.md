@@ -58,8 +58,8 @@ sponsor_wall: false
   <div class="fk-band-inner">
     <div class="fk-band-head">
       <div class="fk-band-eyebrow">Supporting Sponsors</div>
-      <h2 class="fk-band-title">Behind every Salon</h2>
-      <p class="fk-band-lede">Businesses whose support carries the season across Summit County, one gathering at a time.</p>
+      <h2 class="fk-band-title">Supporting the season</h2>
+      <p class="fk-band-lede">Businesses supporting TEDxBreckenridge across the 2026 season.</p>
     </div>
     <div class="sponsor-grid sponsor-grid-supporting">
       {% for sponsor in supporting %}
