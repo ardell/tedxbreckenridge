@@ -46,6 +46,15 @@ collections:
     output: true
     permalink: /events/:name/
 
+# Front-matter defaults
+defaults:
+  # Site-wide ticket-sales popup. Set to false here to disable it everywhere,
+  # or override per page with `ticket_popup: false` in front matter.
+  - scope:
+      path: ""
+    values:
+      ticket_popup: true
+
 # Exclude from processing
 exclude:
   - Gemfile

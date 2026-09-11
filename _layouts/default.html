@@ -264,6 +264,15 @@
   {% include facets/sponsor-wall.html %}
   {% endunless %}
 
+  {% comment %}
+    Site-wide ticket-sales popup. Appears on every page; a page can opt out with
+    `ticket_popup: false` in its front matter, and the whole feature can be
+    disabled site-wide by flipping the `ticket_popup` default in _config.yml.
+  {% endcomment %}
+  {% unless page.ticket_popup == false %}
+  {% include facets/ticket-popup.html %}
+  {% endunless %}
+
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="footer-content">
