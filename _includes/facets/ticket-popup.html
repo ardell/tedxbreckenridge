@@ -105,11 +105,12 @@ on every page); it does NOT depend on kaleidoscope.css, which some pages lack.
     text-transform: uppercase;
   }
   .ticket-popup__diamond {
-    color: var(--ted-red);
+    /* ted-red-dark clears WCAG AA (5.69:1) on cream; plain ted-red is 4.24:1. */
+    color: var(--ted-red-dark);
     font-size: 10px;
   }
   .ticket-popup__onsale {
-    color: var(--ted-red);
+    color: var(--ted-red-dark);
   }
   .ticket-popup__pill {
     background: var(--teal);
