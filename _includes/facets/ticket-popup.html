@@ -1,0 +1,257 @@
+{%- comment -%}
+Site-wide ticket-sales popup (Facets kit).
+
+A centered modal + dimmed backdrop that pushes ticket sales. Rendered once on
+every page from _layouts/default.html, guarded by an "unless page.ticket_popup
+== false" check so any page can opt out via front matter and the whole feature
+can be killed site-wide from _config.yml `defaults`.
+
+Self-contained: markup, styles, and behavior all live here. To remove the
+feature entirely, delete this file and its include line in default.html --
+nothing else references it, and no CSS/JS is left behind.
+
+Dismissal is remembered in localStorage for DISMISS_DAYS days (see the script),
+after which the popup returns -- urgency escalates as the event nears.
+
+Styled with main.css design tokens only (main.css is the one stylesheet loaded
+on every page); it does NOT depend on kaleidoscope.css, which some pages lack.
+{%- endcomment -%}
+<div class="ticket-popup" id="ticket-popup" hidden>
+  <div class="ticket-popup__backdrop" data-ticket-popup-dismiss></div>
+  <div class="ticket-popup__panel" role="dialog" aria-modal="true"
+       aria-labelledby="ticket-popup-title" aria-describedby="ticket-popup-desc" tabindex="-1">
+    <button type="button" class="ticket-popup__close" aria-label="Close" data-ticket-popup-dismiss>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <p class="ticket-popup__eyebrow">
+      <span class="ticket-popup__diamond" aria-hidden="true">&#9670;</span>
+      <span class="ticket-popup__onsale">Now on sale</span>
+      <span class="ticket-popup__pill">Selling fast</span>
+    </p>
+
+    <h2 class="ticket-popup__title" id="ticket-popup-title">You'll want to be in the room for this.</h2>
+
+    <hr class="ticket-popup__rule">
+
+    <p class="ticket-popup__when">Saturday, {{ site.event.date }} &middot; {{ site.event.time }}</p>
+    <p class="ticket-popup__where">{{ site.event.venue }}</p>
+    <p class="ticket-popup__desc" id="ticket-popup-desc">Three hours of ideas worth spreading, from voices right here in Summit County.</p>
+
+    <a class="ticket-popup__cta"
+       href="https://tedxbreckenridge.ticketsauce.com/e/tedxbreckenridge-kaleidoscope/tickets?utm_source=affiliate&amp;utm_name=website-popup-nag&amp;utm_campaign=website-popup-nag&amp;utm_id=6aa43f6c4f304c548453218a0a1e602b"
+       target="_blank" rel="noopener noreferrer" data-ticket-popup-cta>Get Tickets</a>
+  </div>
+</div>
+
+<style>
+  .ticket-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-20);
+  }
+  .ticket-popup__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(42, 33, 20, 0.72); /* warm dark scrim */
+    animation: ticket-popup-fade 200ms ease-out;
+  }
+  .ticket-popup__panel {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    max-height: calc(100vh - var(--space-40));
+    overflow-y: auto;
+    background: var(--cream);
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    padding: var(--space-40) var(--space-40) var(--space-32);
+    animation: ticket-popup-in 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .ticket-popup__close {
+    position: absolute;
+    top: var(--space-12);
+    right: var(--space-12);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--stone);
+    font-size: 28px;
+    line-height: 1;
+    border-radius: 50%;
+  }
+  .ticket-popup__close:hover,
+  .ticket-popup__close:focus-visible {
+    color: var(--charcoal);
+  }
+  .ticket-popup__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    margin: 0 0 var(--space-16);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .ticket-popup__diamond {
+    color: var(--ted-red);
+    font-size: 10px;
+  }
+  .ticket-popup__onsale {
+    color: var(--ted-red);
+  }
+  .ticket-popup__pill {
+    background: var(--teal);
+    color: var(--cream);
+    padding: 4px var(--space-8);
+    border-radius: 999px;
+    letter-spacing: 0.06em;
+  }
+  .ticket-popup__title {
+    margin: 0 0 var(--space-24);
+    color: var(--charcoal);
+    font-family: var(--font-primary);
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .ticket-popup__rule {
+    margin: 0 0 var(--space-24);
+    border: 0;
+    border-top: 1px solid var(--sand);
+  }
+  .ticket-popup__when {
+    margin: 0 0 var(--space-4);
+    color: var(--charcoal);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .ticket-popup__where {
+    margin: 0 0 var(--space-20);
+    color: var(--stone);
+    font-size: 16px;
+  }
+  .ticket-popup__desc {
+    margin: 0 0 var(--space-32);
+    color: var(--stone);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .ticket-popup__cta {
+    display: block;
+    width: 100%;
+    padding: var(--space-16) var(--space-24);
+    background: var(--ted-red);
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 150ms ease;
+  }
+  .ticket-popup__cta:hover,
+  .ticket-popup__cta:focus-visible {
+    background: var(--ted-red-dark);
+  }
+  @media (max-width: 480px) {
+    .ticket-popup__panel {
+      padding: var(--space-32) var(--space-24) var(--space-24);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ticket-popup__backdrop,
+    .ticket-popup__panel {
+      animation: none;
+    }
+  }
+  @keyframes ticket-popup-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes ticket-popup-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+</style>
+
+<script>
+  (function () {
+    var popup = document.getElementById('ticket-popup');
+    if (!popup) { return; }
+
+    var STORAGE_KEY = 'tedx-ticket-popup-dismissed-at';
+    var DISMISS_DAYS = 3;
+    var DISMISS_MS = DISMISS_DAYS * 24 * 60 * 60 * 1000;
+
+    var panel = popup.querySelector('.ticket-popup__panel');
+    var lastFocused = null;
+
+    function track(action) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', action, { event_category: 'ticket_popup' });
+      }
+    }
+
+    // Show unless dismissed within the last DISMISS_DAYS days. Storage may throw
+    // (private mode / disabled) -- fail open and just show the popup.
+    function shouldShow() {
+      try {
+        var dismissedAt = window.localStorage.getItem(STORAGE_KEY);
+        if (!dismissedAt) { return true; }
+        return (Date.now() - parseInt(dismissedAt, 10)) > DISMISS_MS;
+      } catch (e) {
+        return true;
+      }
+    }
+
+    function open() {
+      lastFocused = document.activeElement;
+      popup.hidden = false;
+      if (panel) { panel.focus(); }
+      document.addEventListener('keydown', onKeydown);
+      track('shown');
+    }
+
+    function dismiss() {
+      popup.hidden = true;
+      document.removeEventListener('keydown', onKeydown);
+      try { window.localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch (e) {}
+      if (lastFocused && typeof lastFocused.focus === 'function') { lastFocused.focus(); }
+      track('dismissed');
+    }
+
+    function onKeydown(e) {
+      if (e.key === 'Escape' || e.key === 'Esc') { dismiss(); }
+    }
+
+    // Dismiss controls: close button and backdrop (both carry the data attr).
+    var dismissers = popup.querySelectorAll('[data-ticket-popup-dismiss]');
+    for (var i = 0; i < dismissers.length; i++) {
+      dismissers[i].addEventListener('click', dismiss);
+    }
+
+    // CTA click: record the dismissal (they acted) and fire tracking. Let the
+    // link navigate normally (opens in a new tab).
+    var cta = popup.querySelector('[data-ticket-popup-cta]');
+    if (cta) {
+      cta.addEventListener('click', function () {
+        try { window.localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch (e) {}
+        track('cta_click');
+      });
+    }
+
+    if (shouldShow()) { open(); }
+  })();
+</script>
