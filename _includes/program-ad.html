@@ -1,0 +1,34 @@
+{%- comment -%}
+A sponsor ad slot for the digital program. Sized by tier (lead / anchor /
+supporting). Renders the supplied artwork, or a labeled placeholder box while
+we settle on sizes. Params: ad = { tier, sponsor, image, url, alt }
+{%- endcomment -%}
+{%- assign ad = include.ad -%}
+{%- assign alt = ad.alt | default: ad.sponsor -%}
+{%- comment -%}
+Target artwork resolution per tier — all ads are the same width; height steps
+down by tier. Hand these to sponsors once sizes are frozen. @2x-ready.
+{%- endcomment -%}
+{%- case ad.tier -%}
+  {%- when "lead" -%}{%- assign res = "1080 × 1080 px" -%}
+  {%- when "anchor" -%}{%- assign res = "1080 × 648 px" -%}
+  {%- when "supporting" -%}{%- assign res = "1080 × 389 px" -%}
+  {%- else -%}{%- assign res = "" -%}
+{%- endcase -%}
+{%- capture inner -%}
+  {%- if ad.image -%}
+    <img src="{{ ad.image | relative_url }}" alt="{{ alt }}" loading="lazy">
+  {%- else -%}
+    <div class="ep-ad__ph">
+      <span class="ep-ad__ph-tier">{{ ad.tier }} sponsor ad</span>
+      <span class="ep-ad__ph-name">{{ ad.sponsor }}</span>
+      {%- if res != "" -%}<span class="ep-ad__ph-res">{{ res }}</span>{%- endif -%}
+    </div>
+  {%- endif -%}
+  <span class="ep-ad__flag">Sponsor</span>
+{%- endcapture -%}
+{%- if ad.url -%}
+<a class="ep-ad ep-ad--{{ ad.tier }} reveal" href="{{ ad.url }}" target="_blank" rel="noopener noreferrer">{{ inner }}</a>
+{%- else -%}
+<div class="ep-ad ep-ad--{{ ad.tier }} reveal">{{ inner }}</div>
+{%- endif -%}

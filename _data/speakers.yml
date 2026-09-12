@@ -1,0 +1,151 @@
+# TEDxBreckenridge 2026 speakers — the single source of truth.
+#
+# Consumed by:
+#   website/pages/speakers.md   (the full, light-themed bio page)
+#   website/pages/program.md    (the dark "Emission" digital program)
+#
+# Fields:
+#   name    — full name, no honorific (put that in `title`)
+#   title   — honorific shown before the name (e.g. "Dr."); omit if none
+#   slug    — anchor id used by both pages (/speakers/#<slug>, in-program details)
+#   theme   — the talk title (provisional; will change before the event)
+#   role    — one-line role / affiliation
+#   image   — headshot, site-relative
+#   order   — position in the run of show (placeholder; rearranged later)
+#   half    — 1 = before intermission, 2 = after. Leon opens the second half.
+#   emcee   — true for the emcee (not a numbered run-of-show slot)
+#   socials — per-speaker links [{ type, url }]; omit if none verified
+#   bio     — array of paragraphs
+
+speakers:
+  - name: Travis Tallent
+    slug: travis-tallent
+    crop: "55% 18%"
+    order: 1
+    half: 1
+    theme: The hidden gems AI can't find
+    role: Founder, MountainTowns.com
+    image: /assets/images/speakers/travis-tallent.jpg
+    socials:
+      - { type: instagram, url: "https://www.instagram.com/tallentspeaks/" }
+      - { type: linkedin, url: "https://www.linkedin.com/in/travistallent/" }
+    bio:
+      - Travis Tallent has spent the last decade helping the world's biggest brands — including Aspen Snowmass, Microsoft, LEGO, adidas, and Capital One — win in the age of AI search.
+      - "Along the way he noticed something: the algorithms reshaping how the world finds everything left rural mountain communities behind."
+      - Now he's the founder of MountainTowns.com, a community and membership pass connecting explorers with the hidden-gem businesses AI can't find.
+
+  - name: Chris Ray
+    title: "Dr."
+    slug: chris-ray
+    crop: "center 15%"
+    order: 2
+    half: 1
+    theme: Reading climate in the rock rabbits
+    role: Research scientist, Institute for Bird Populations & INSTAAR, CU Boulder
+    image: /assets/images/speakers/chris-ray.jpg
+    bio:
+      - "Chris Ray is a research scientist with two institutes: the Institute for Bird Populations in California and the Institute of Arctic and Alpine Research at the University of Colorado Boulder. She studies trends in animal populations, focusing on the effects of climate change."
+      - Her 39-year study of the "rock rabbits" (American pikas) helps us understand how small mammals respond to climate and other forces shaping where they live and how they behave. She also studies the rocky habitats pikas use to endure some of the harshest weather on the planet.
+      - Like a pika, Chris lives in a stone house high in the Rockies — but the resemblance stops there, as she spends most days on the computer helping her students with their research and estimating population trends, with one eye on the wildlife outside her window.
+
+  - name: Maisie Bryant
+    slug: maisie-bryant
+    crop: "center 12%"
+    order: 3
+    half: 1
+    theme: Unmasking the shadows of social anxiety
+    role: Student speaker, Summit Middle School
+    image: /assets/images/speakers/maisie-bryant.jpg
+    bio:
+      - Maisie Bryant is a 13-year-old from Summit County who won the TEDx contest at Summit Middle School — and who gets very nervous speaking in front of large groups. She is taking the red dot anyway.
+      - Social anxiety affects roughly one in eight people, and Maisie knows it from the inside. She talks about what it feels like to circle the edge of the ice rink instead of practicing in front of others, why avoidance costs you opportunities you never see, and the strategies that actually help — borrowing confidence until it becomes real, leaning on people who don't judge you, and facing the situations you would rather skip.
+      - "She is a competitive figure skater who performs in ice shows, and she has the backing of her friends and family. Her goal is simple: to spread awareness, and to make the next person who feels watched feel a little less alone."
+
+  - name: Oakley Van Oss
+    slug: oakley-van-oss
+    order: 4
+    half: 1
+    theme: Confidence, purpose & belonging through real experience
+    role: Construction & welding educator, Summit High School
+    image: /assets/images/speakers/oakley-van-oss.jpg
+    bio:
+      - Oakley Van Oss is an educator, mentor, and advocate for creating opportunities where students can discover who they are and what they can become.
+      - With 27 years of experience teaching in public high schools, he has designed and led learning experiences ranging from wilderness expeditions on the Green and Upper Colorado Rivers to international adventures in Costa Rica, Nicaragua, Peru, and Ecuador.
+      - At Summit High School, Oakley serves as a construction and welding educator and the unofficial chief volunteer wrangler, cat herder, and trades promoter — building bridges between students, community members, and industry partners. His passion is helping young people find confidence, purpose, and belonging through authentic experiences and meaningful relationships.
+
+  - name: Wouter Van De Pontseele
+    title: "Dr."
+    slug: wouter-van-de-pontseele
+    crop: "center 8%"
+    order: 5
+    half: 1
+    theme: Building tomorrow's quantum technology alongside yesterday's mines
+    role: Professor, Colorado School of Mines
+    image: /assets/images/speakers/wouter-van-de-pontseele.jpg
+    socials:
+      - { type: linkedin, url: "https://www.linkedin.com/in/woutervdp" }
+    bio:
+      - Professor Wouter Van De Pontseele leads the Quantum Technologies at the Sensitivity Frontier group at the Colorado School of Mines, which develops superconducting sensors and cryogenic instrumentation to search for rare particle interactions.
+      - A key project is the CURIE low-background facility, where the group is creating an ultra-quiet environment for sensitive experiments — supported by collaborations with industry partners such as Maybell Quantum and national labs such as NIST.
+      - Before settling in Colorado, Wouter performed research at the intersection of particle physics, data science, and quantum sensing at the University of Oxford, Harvard University, and MIT.
+
+  - name: Leon Joseph Littlebird
+    slug: leon-joseph-littlebird
+    crop: "center 6%"
+    order: 6
+    half: 2
+    theme: The indigenous history of music
+    role: Composer, songwriter & performer
+    image: /assets/images/speakers/leon-littlebird.jpg
+    socials:
+      - { type: instagram, url: "https://www.instagram.com/leon.littlebird/" }
+    bio:
+      - Leon's passion for music and his ancestral histories inspired him at a very young age to research and study the origins of music.
+      - As a composer, songwriter, and consummate performer, he is well known for his Native American flute styles and for concerts with world-class musicians and symphony orchestras.
+      - His storytelling on "The Indigenous History of Music" has reached hundreds of audiences all over the country. He has also spent over a decade as a public speaker.
+
+  - name: Kurt Kionka
+    slug: kurt-kionka
+    crop: "center 12%"
+    order: 7
+    half: 2
+    theme: "Yes, if: the two words that move mountains"
+    role: Project Director, Colorado Department of Transportation
+    image: /assets/images/speakers/kurt-kionka.jpg
+    bio:
+      - Kurt Kionka is the Project Director for the Colorado Department of Transportation (CDOT), where he leads the massive I-70 Floyd Hill to Veterans Memorial Tunnels Project — transforming a congested, weather-battered eight-mile stretch of the I-70 Mountain Corridor and modernizing how Coloradans travel.
+      - With over 23 years of multi-disciplinary experience at CDOT, Kurt's journey began in 2003 as a student intern doing public outreach for the I-70 corridor in Denver. Since then he has steered numerous complex infrastructure challenges, most notably leading the high-stakes US 36 Emergency Rebuild in 2019.
+      - "A proud Colorado native, Kurt earned his B.S. in Civil Engineering from Colorado State University. When he isn't managing multi-million dollar highway projects, he is exploring his home state with his wife and two children — skiing, visiting state parks, and enjoying the Denver Zoo. Fun fact: in 2001 he won the Showcase Showdown on The Price is Right."
+
+  - name: Anna DeBattiste
+    slug: anna-debattiste
+    order: 8
+    half: 2
+    theme: The heart of a volunteer
+    role: Volunteer, Summit County Rescue Group & Colorado Search and Rescue Association
+    image: /assets/images/speakers/anna-debattiste.jpg
+    bio:
+      - Anna joined Summit County Rescue Group as a volunteer rescuer in 2002. At the time she was paying exorbitant amounts of money to participate in expedition-length adventure races, and she realized she could be cold, miserable, and exhausted for free — and for a purpose instead.
+      - Today she also volunteers for the Colorado Search and Rescue Association (CSAR), doing public communications and education, conference planning, fundraising, member resources, collaboration forums, and whatever else no one else wants to do.
+      - She is a small business owner but spends the bulk of her time on her volunteer work. She lives in Silverthorne, Colorado.
+
+  - name: Jess Smith
+    slug: jess-smith
+    crop: "60% 15%"
+    order: 9
+    half: 2
+    theme: Community is forged, not found
+    role: Owner, Ark Valley Signs & Sidewalk Monkey
+    image: /assets/images/speakers/jess-smith.jpg
+    bio:
+      - "Jess Smith is a fourth-generation Salidan and the owner of two businesses rooted in the town that raised her: Ark Valley Signs, a custom sign shop serving the region, and Sidewalk Monkey, a national e-commerce brand."
+      - Raised by a game warden and a gardener, Jess has a particular love of place — and of story. She was a high school intern at the local daily, The Mountain Mail, a communications agent for the Utah Department of Natural Resources, and graduated with a B.A. in Communications with honors from Westminster College in Salt Lake City.
+      - She continues to work at the intersection of craft, commerce, and community, running her businesses and her letterpress.
+
+emcee:
+  name: Joe Buck
+  role: Comedian & host
+  image: /assets/images/speakers/joe-buck.jpg
+  bio:
+    - Born and raised under the Miami sun, Joe Buck brings the warmth, energy, and rhythm of his hometown into every interaction. After a few detours and travels, Joe planted roots in Colorado, where the mountains -- and his loyal hiking pup -- keep him grounded. When he's not on stage, Joe's heart is with the community, dedicating his time to local nonprofits and philanthropic work.
+    - With a mix of charm, relatability, and quick wit, Joe Buck takes audiences on a ride that feels less like a comedy show and more like catching up with a friend who always has the best stories.
