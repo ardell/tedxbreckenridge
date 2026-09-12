@@ -78,109 +78,35 @@
      <i></i> ... exactly 19 <i> children ...
    </div>
    ============================================================ */
+/* The band renders in the stage deck's native 1920px coordinate system
+   (an inner .emission__stage) and is SCALED to fit the container. This is
+   what makes the web band pixel-identical to the slides at any width: line
+   widths, gaps, blur radii and the 6px ruling all keep their exact ratios.
+   JS sets --escale = containerWidth / 1920 and builds the stage. */
 .emission{
   position:relative;width:100%;height:76px;overflow:hidden;
   isolation:isolate;                 /* keeps mix-blend-mode off the page bg */
 }
-/* All emission bands span the full viewport width, edge to edge, even when
-   nested inside a padded shell. (.emission-program is overflow-x:hidden,
-   so the 100vw breakout never introduces a horizontal scrollbar.) */
+/* Full viewport width, edge to edge, even inside a padded shell. */
 .emission-program .emission{
-  width:100vw;position:relative;left:50%;right:50%;
-  margin-left:-50vw;margin-right:-50vw;
+  width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;
 }
-.emission::before{                   /* 1 · continuum */
-  content:"";position:absolute;inset:0;
-  background:var(--spectrum);opacity:var(--continuum,.13);
+.emission__stage{
+  position:absolute;top:50%;left:0;
+  width:1920px;height:300px;
+  transform-origin:left center;
+  transform:translateY(-50%) scale(var(--escale,1));
 }
-.emission::after{                    /* 2 · diffraction ruling */
-  content:"";position:absolute;inset:0;
-  /* Pitch scales with viewport so the ruling has ~the same number of
-     stripes across the spectrum at any width — a fixed 6px pitch looks
-     far coarser (denser) on a narrow phone than on desktop. --rule-w is
-     half the pitch (the dark bar width); default keeps the deck's 6px. */
-  background:repeating-linear-gradient(90deg,
-    transparent 0 var(--rule-w,3px),
-    rgba(5,5,5,.85) var(--rule-w,3px) calc(var(--rule-w,3px) * 2));
-}
-.emission > i{                       /* 3 · emission lines */
-  position:absolute;top:0;height:100%;
-  mix-blend-mode:screen;
-  /* No-JS fallback: the CSS keyframe drives each line on its own slow
-     clock. When JS is present it adds .js-emit to the band and takes
-     over opacity with the coupled pulse model (random positions,
-     widths, and adjacent-band overflow). */
-  animation:emit var(--dur) ease-in-out infinite;
-  animation-delay:var(--delay);
-}
-.emission.js-emit > i{animation:none}
-.emission__scrim{                    /* 4 · vertical scrim */
-  position:absolute;inset:0;background:var(--band-scrim);
-}
-.emission__ticks{                    /* 5 · tick scale (optional) */
-  position:absolute;left:0;bottom:0;width:100%;height:12px;
-}
-.emission__ticks i{position:absolute;bottom:0;width:1px;
-  background:rgba(255,255,255,.32)}
+.emission__stage .continuum{position:absolute;inset:0;background:var(--spectrum);opacity:.10}
+.emission__stage .ruling{position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 3px,rgba(5,5,5,.85) 3px 6px)}
+.emission__stage > i{position:absolute;top:0;height:300px;mix-blend-mode:screen}
 
 /* heights */
 .emission--hero{height:132px}
 .emission--strip{height:76px}
 @media (min-width:900px){.emission--hero{height:160px}}
 .emission--rule{height:2px}          /* divider: no glow needed */
-
-/* ---- the 19 lines. Copy verbatim. ---- */
-.emission > i:nth-child(1){left:5.0%;width:5px;background:#c84a1a;
-  box-shadow:0 0 calc(26px*var(--gs,1)) calc(13px*var(--gs,1)) #c84a1a;--dur:19s;--delay:-3s}
-.emission > i:nth-child(2){left:7.5%;width:2px;background:#d2551b;
-  box-shadow:0 0 calc(12px*var(--gs,1)) calc(6px*var(--gs,1)) #d2551b;--dur:24s;--delay:-7s}
-.emission > i:nth-child(3){left:12.0%;width:9px;background:#e87a1e;
-  box-shadow:0 0 calc(44px*var(--gs,1)) calc(22px*var(--gs,1)) #e87a1e;--dur:31s;--delay:-11s}
-.emission > i:nth-child(4){left:15.5%;width:3px;background:#e87a1e;
-  box-shadow:0 0 calc(16px*var(--gs,1)) calc(8px*var(--gs,1)) #e87a1e;--dur:17s;--delay:-15s}
-.emission > i:nth-child(5){left:20.0%;width:2px;background:#ef8f26;
-  box-shadow:0 0 calc(10px*var(--gs,1)) calc(5px*var(--gs,1)) #ef8f26;--dur:27s;--delay:-19s}
-.emission > i:nth-child(6){left:25.5%;width:11px;background:#f2a93b;
-  box-shadow:0 0 calc(52px*var(--gs,1)) calc(26px*var(--gs,1)) #f2a93b;--dur:22s;--delay:-23s}
-.emission > i:nth-child(7){left:30.0%;width:3px;background:#f2a93b;
-  box-shadow:0 0 calc(14px*var(--gs,1)) calc(7px*var(--gs,1)) #f2a93b;--dur:34s;--delay:-27s}
-.emission > i:nth-child(8){left:34.5%;width:2px;background:#f0bb4a;
-  box-shadow:0 0 calc(10px*var(--gs,1)) calc(5px*var(--gs,1)) #f0bb4a;--dur:15s;--delay:-31s}
-.emission > i:nth-child(9){left:40.0%;width:7px;background:#e8c55a;
-  box-shadow:0 0 calc(36px*var(--gs,1)) calc(18px*var(--gs,1)) #e8c55a;--dur:29s;--delay:-35s}
-.emission > i:nth-child(10){left:44.5%;width:2px;background:#e8c55a;
-  box-shadow:0 0 calc(12px*var(--gs,1)) calc(6px*var(--gs,1)) #e8c55a;--dur:21s;--delay:-39s}
-.emission > i:nth-child(11){left:51.0%;width:3px;background:#d9c766;
-  box-shadow:0 0 calc(14px*var(--gs,1)) calc(7px*var(--gs,1)) #d9c766;--dur:26s;--delay:-43s}
-.emission > i:nth-child(12){left:57.5%;width:2px;background:#bcc276;
-  box-shadow:0 0 calc(10px*var(--gs,1)) calc(5px*var(--gs,1)) #bcc276;--dur:18s;--delay:-47s}
-.emission > i:nth-child(13){left:63.0%;width:6px;background:#95bb8c;
-  box-shadow:0 0 calc(30px*var(--gs,1)) calc(15px*var(--gs,1)) #95bb8c;--dur:32s;--delay:-51s}
-.emission > i:nth-child(14){left:68.5%;width:2px;background:#6fb2a1;
-  box-shadow:0 0 calc(12px*var(--gs,1)) calc(6px*var(--gs,1)) #6fb2a1;--dur:23s;--delay:-55s}
-.emission > i:nth-child(15){left:75.0%;width:8px;background:#3f97a0;
-  box-shadow:0 0 calc(40px*var(--gs,1)) calc(20px*var(--gs,1)) #3f97a0;--dur:16s;--delay:-59s}
-.emission > i:nth-child(16){left:80.0%;width:3px;background:#1a7a6d;
-  box-shadow:0 0 calc(16px*var(--gs,1)) calc(8px*var(--gs,1)) #1a7a6d;--dur:28s;--delay:-63s}
-.emission > i:nth-child(17){left:86.5%;width:10px;background:#1a7a6d;
-  box-shadow:0 0 calc(48px*var(--gs,1)) calc(24px*var(--gs,1)) #1a7a6d;--dur:20s;--delay:-67s}
-.emission > i:nth-child(18){left:92.0%;width:2px;background:#165f57;
-  box-shadow:0 0 calc(12px*var(--gs,1)) calc(6px*var(--gs,1)) #165f57;--dur:25s;--delay:-71s}
-.emission > i:nth-child(19){left:96.5%;width:4px;background:#1a7a6d;
-  box-shadow:0 0 calc(20px*var(--gs,1)) calc(10px*var(--gs,1)) #1a7a6d;--dur:30s;--delay:-75s}
-
-/* ---- intensity profiles: which part of the spectrum burns ----
-   Same 19 lines in the same 19 places on every section.
-   Only --lo/--hi change. This is what ties the page together. */
-.emission--full > i{--lo:.32;--hi:.94}            /* hero, credits   */
-.emission--warm > i{--lo:.10;--hi:.30}            /* speakers        */
-.emission--warm > i:nth-child(-n+9){--lo:.34;--hi:.98}
-.emission--cool > i{--lo:.10;--hi:.30}            /* day-of info     */
-.emission--cool > i:nth-child(n+11){--lo:.34;--hi:.98}
-.emission--even > i{--lo:.42;--hi:.62}            /* sponsors        */
-.emission--dim  > i{--lo:.16;--hi:.40}            /* long-read       */
-
-@keyframes emit{0%,100%{opacity:var(--lo)}50%{opacity:var(--hi)}}
 
 /* ---- glow on a heading ---- */
 .glow-heading{
@@ -219,31 +145,16 @@
    disappears; the band stays lit at mid intensity.
    ============================================================ */
 @media (prefers-reduced-motion:reduce){
-  .emission > i{animation:none;opacity:.62}
-  .emission{opacity:1;transition:none}
+  .emission__stage > i{animation:none;opacity:.62}
   .glow-heading{animation:none;
     text-shadow:0 0 20px rgba(242,169,59,.34),0 0 70px rgba(232,122,30,.18)}
   .card--emission,.plate,.plate img,.jump,.btn{transition-duration:1ms}
   *,*::before,*::after{animation-iteration-count:1 !important}
 }
 
-/* ============================================================
-   Emission band — responsive density.
-   Absolute-pixel metrics make the band read much denser/brighter on
-   a narrow phone: the ruling has fewer, wider stripes so more of the
-   bright spectrum continuum shows through, and the fixed-px glow
-   blurs overlap more when the % positions are squeezed together.
-   Counter both at narrow widths so mobile matches desktop:
-     - finer ruling pitch (--rule-w) → more dark bars, less continuum
-     - dimmer continuum (--continuum) → same rest brightness as desktop
-   ============================================================ */
-/* --gs scales every glow line's box-shadow blur/spread. The glows are fixed
-   px, so on a narrow band each one covers a far bigger FRACTION of the width
-   and 19 of them wash the whole band bright. Scale --gs with width so a glow
-   covers ~the same fraction at any size (desktop band ≈1400px = 1.0). */
-.emission-program{ --rule-w:3px; --continuum:.13; --gs:1; }
-@media (max-width:900px){ .emission-program{ --rule-w:2.5px; --continuum:.10; --gs:.6; } }
-@media (max-width:560px){ .emission-program{ --rule-w:2px;  --continuum:.08; --gs:.34; } }
+/* The 1920px stage is scaled uniformly to any width (JS sets --escale), so the
+   band is pixel-identical to the slides at every size — mobile included. No
+   per-breakpoint density tweaks are needed; the scale handles it. */
 
 /* ============================================================
    PROGRAM PAGE — component layer for /program/

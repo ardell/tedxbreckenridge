@@ -16,135 +16,126 @@
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ----------------------------------------------------------
-     THE EMISSION ANIMATION — matches the stage deck exactly.
+     THE EMISSION BAND — pixel-identical to the stage deck.
      ----------------------------------------------------------
-     The band has three fixed layers (in emission.css): a faint
-     spectrum continuum, a 6px dark diffraction ruling over it (the
-     always-visible field of thin coloured lines), and 19 glowing
-     <i> lines at fixed positions/hues. We animate only each glow
-     line's INTENSITY: exactly like the deck's `kline` keyframe,
-     every line oscillates on its own slow clock between its --lo
-     and --hi (never near-black — lo ≈ 0.3), independently, so at
-     any instant some are bright and some dim. The one difference
-     from the pure-CSS deck is that JS drives it, which buys us a
-     single adjustable speed knob.
+     The deck draws the band in a native 1920×300 canvas: 19 glow
+     lines at exact px positions/widths, each with its own blur,
+     hue, --lo/--hi and slow oscillation clock, over a faint
+     spectrum continuum and a 6px dark ruling. We reproduce that
+     canvas verbatim in an .emission__stage and SCALE it to the
+     container (--escale = width / 1920). Uniform scaling keeps
+     every ratio — line widths, gaps, blur radii, ruling pitch —
+     exactly as the slides at any display width, so desktop and
+     mobile look the same and both match the deck.
 
-     Tuning: EMISSION.speed scales every line's period (higher =
-     faster). Override per band with `data-speed` on the element.
+     We animate each line's opacity between its --lo and --hi with
+     a raised cosine — the deck's `kline` keyframe — but via JS so
+     EMISSION.speed gives one adjustable speed knob.
   ============================================================ */
-  var EMISSION = { speed: 1.0 };
-  window.EMISSION = EMISSION; // expose for live tuning in the console
+  var EMISSION = { speed: 1.0, stageW: 1920 };
+  window.EMISSION = EMISSION;
 
-  // Per-profile [lo, hi] intensity envelope, matching the deck's profiles.
-  // Every glow line stays at least `lo` (so the band never reads empty) and
-  // pulses toward `hi`. `slice` biases which part of the spectrum burns
-  // brightest (warm = left half, cool = right half); lines outside it use
-  // the dim [dlo, dhi] range — same idea as emission.css's profile rules.
-  var PROFILES = {
-    full: { lo: 0.34, hi: 0.98 },
-    warm: { lo: 0.34, hi: 0.98, dlo: 0.1, dhi: 0.3, slice: [0, 9] },
-    cool: { lo: 0.34, hi: 0.98, dlo: 0.1, dhi: 0.3, slice: [10, 18] },
-    dim: { lo: 0.16, hi: 0.4 },
-    even: { lo: 0.42, hi: 0.62, frozen: true } // sponsors — no motion (TED rule)
-  };
+  // The 19 lines, VERBATIM from the stage deck (stage-deck.html), in the
+  // native 1920px coordinate system. [left, width, blur, spread, hue, lo, dur, delay]
+  var HI = 0.92; // deck uses --hi:0.92 for every line
+  var LINES = [
+    [96, 5, 26, 13, "#c84a1a", 0.30, 19, -3],
+    [144, 2, 12, 6, "#d2551b", 0.34, 24, -7],
+    [230, 9, 44, 22, "#e87a1e", 0.38, 31, -11],
+    [298, 3, 16, 8, "#e87a1e", 0.30, 17, -15],
+    [384, 2, 10, 5, "#ef8f26", 0.34, 27, -19],
+    [490, 11, 52, 26, "#f2a93b", 0.38, 22, -23],
+    [576, 3, 14, 7, "#f2a93b", 0.30, 34, -27],
+    [662, 2, 10, 5, "#f0bb4a", 0.34, 15, -31],
+    [768, 7, 36, 18, "#e8c55a", 0.38, 29, -35],
+    [854, 2, 12, 6, "#e8c55a", 0.30, 21, -39],
+    [979, 3, 14, 7, "#d9c766", 0.34, 26, -43],
+    [1104, 2, 10, 5, "#bcc276", 0.38, 18, -47],
+    [1210, 6, 30, 15, "#95bb8c", 0.30, 32, -51],
+    [1315, 2, 12, 6, "#6fb2a1", 0.34, 23, -55],
+    [1440, 8, 40, 20, "#3f97a0", 0.38, 16, -59],
+    [1536, 3, 16, 8, "#1a7a6d", 0.30, 28, -63],
+    [1661, 10, 48, 24, "#1a7a6d", 0.34, 20, -67],
+    [1766, 2, 12, 6, "#165f57", 0.38, 25, -71],
+    [1853, 4, 20, 10, "#1a7a6d", 0.30, 30, -75]
+  ];
 
-  function profileOf(el) {
-    var m = el.className.match(/emission--(full|warm|cool|dim|even)/);
-    return PROFILES[m ? m[1] : "dim"];
+  var isEven = function (el) { return /emission--even/.test(el.className); };
+
+  function buildStage(el) {
+    if (el.querySelector(".emission__stage")) return el.querySelector(".emission__stage");
+    var stage = document.createElement("div");
+    stage.className = "emission__stage";
+    var cont = document.createElement("div"); cont.className = "continuum";
+    var rule = document.createElement("div"); rule.className = "ruling";
+    stage.appendChild(cont);
+    stage.appendChild(rule);
+    for (var i = 0; i < LINES.length; i++) {
+      var L = LINES[i], gi = document.createElement("i");
+      gi.style.left = L[0] + "px";
+      gi.style.width = L[1] + "px";
+      gi.style.background = L[4];
+      gi.style.boxShadow = "0 0 " + L[2] + "px " + L[3] + "px " + L[4];
+      gi.style.opacity = L[5]; // start at lo
+      stage.appendChild(gi);
+    }
+    el.appendChild(stage);
+    return stage;
   }
 
-  function rand(a, b) {
-    return a + Math.random() * (b - a);
-  }
-
-  function initBand(el) {
-    // Build the 19 <i> lines if not already present.
-    if (!el.children.length) {
-      var frag = document.createDocumentFragment();
-      for (var n = 0; n < 19; n++) frag.appendChild(document.createElement("i"));
-      el.appendChild(frag);
-    }
-    var lineEls = el.querySelectorAll("i");
-    var profile = profileOf(el);
-    var speed = parseFloat(el.getAttribute("data-speed"));
-    var bandSpeed = isNaN(speed) ? 1 : speed;
-
-    // JS owns opacity — stop the CSS keyframe fallback.
-    el.classList.add("js-emit");
-
-    // Give each line its own [lo,hi], period and phase (independent clocks,
-    // like the deck's per-line animation-duration / -delay).
-    var oscs = [];
-    for (var i = 0; i < lineEls.length; i++) {
-      var lo = profile.lo,
-        hi = profile.hi;
-      if (profile.slice) {
-        var inSlice = i >= profile.slice[0] && i <= profile.slice[1];
-        if (!inSlice) {
-          lo = profile.dlo;
-          hi = profile.dhi;
-        }
-      }
-      oscs.push({
-        lo: lo,
-        hi: hi,
-        period: rand(15, 34), // seconds, like the deck's 15–34s durations
-        phase: rand(0, Math.PI * 2)
-      });
-      // frozen bands: set the mid value once and never animate
-      if (profile.frozen || reduce) {
-        lineEls[i].style.opacity = ((lo + hi) / 2).toFixed(3);
-      }
-    }
-
-    if (profile.frozen || reduce) return null;
-    return { lineEls: lineEls, oscs: oscs, bandSpeed: bandSpeed };
+  // Keep --escale in sync with the container width.
+  function sizeBand(el) {
+    el.style.setProperty("--escale", el.clientWidth / EMISSION.stageW);
   }
 
   var bands = [];
   root.querySelectorAll(".emission").forEach(function (el) {
-    var b = initBand(el);
-    if (b) bands.push(b);
+    var stage = buildStage(el);
+    sizeBand(el);
+    var lineEls = stage.querySelectorAll("i");
+    // Sponsors band is frozen (TED rule): hold mid intensity, no animation.
+    if (isEven(el) || reduce) {
+      for (var i = 0; i < lineEls.length; i++) {
+        lineEls[i].style.opacity = ((LINES[i][5] + HI) / 2).toFixed(3);
+      }
+      return;
+    }
+    var speed = parseFloat(el.getAttribute("data-speed"));
+    bands.push({ lineEls: lineEls, bandSpeed: isNaN(speed) ? 1 : speed });
   });
+
+  window.addEventListener("resize", function () {
+    root.querySelectorAll(".emission").forEach(sizeBand);
+  }, { passive: true });
 
   if (bands.length && !reduce) {
     var raf;
     var start = performance.now();
-
     var tick = function (now) {
-      var t = ((now - start) / 1000) * EMISSION.speed; // seconds, speed-scaled
+      var t = ((now - start) / 1000) * EMISSION.speed;
       for (var bi = 0; bi < bands.length; bi++) {
-        var band = bands[bi];
-        var bs = band.bandSpeed;
-        for (var li = 0; li < band.oscs.length; li++) {
-          var o = band.oscs[li];
-          // 0..1 raised cosine — identical shape to the deck's kline keyframe
-          var u = 0.5 - 0.5 * Math.cos((t * bs * 2 * Math.PI) / o.period + o.phase);
-          band.lineEls[li].style.opacity = (o.lo + (o.hi - o.lo) * u).toFixed(3);
+        var band = bands[bi], bs = band.bandSpeed;
+        for (var li = 0; li < band.lineEls.length; li++) {
+          var lo = LINES[li][5], dur = LINES[li][6], delay = LINES[li][7];
+          // raised cosine == the deck's kline keyframe (0/100%→lo, 50%→hi),
+          // with the line's own duration and (negative) delay for phase.
+          var u = 0.5 - 0.5 * Math.cos((2 * Math.PI * (t * bs - delay)) / dur);
+          band.lineEls[li].style.opacity = (lo + (HI - lo) * u).toFixed(3);
         }
       }
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
-
-    // Pause when the tab is hidden (saves battery); resume seamlessly.
     document.addEventListener("visibilitychange", function () {
-      if (document.hidden) {
-        cancelAnimationFrame(raf);
-      } else {
-        raf = requestAnimationFrame(tick);
-      }
+      if (document.hidden) cancelAnimationFrame(raf);
+      else raf = requestAnimationFrame(tick);
     });
   }
 
   /* ---------------------------------------------------------- */
-  /* 2 · Content is always visible — no scroll-triggered reveals.
-     People pull this up during the show; fading content in as they
-     scroll is distracting. The emission bands stay lit from the
-     start too (no per-strip warm-up). */
-  root.querySelectorAll(".emission").forEach(function (el) {
-    el.classList.add("is-in");
-  });
+  /* 2 · Content and bands are always visible — no scroll reveals.
+     People pull this up during the show; fading content in on
+     scroll is distracting. */
 
   /* ---------------------------------------------------------- */
   /* 2b · Animate the speaker/emcee bio accordions.
