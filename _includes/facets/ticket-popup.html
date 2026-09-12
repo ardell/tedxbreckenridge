@@ -54,6 +54,12 @@ on every page); it does NOT depend on kaleidoscope.css, which some pages lack.
     justify-content: center;
     padding: var(--space-20);
   }
+  /* The [hidden] attribute is how the popup opens and dismisses; main.css has no
+     global [hidden] rule, so the display:flex above would otherwise win and keep
+     a dismissed popup on screen. */
+  .ticket-popup[hidden] {
+    display: none;
+  }
   .ticket-popup__backdrop {
     position: absolute;
     inset: 0;
