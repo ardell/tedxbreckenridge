@@ -1,0 +1,515 @@
+/* ============================================================
+   TEDxBreckenridge 2026 · Kaleidoscope
+   Digital program — "Emission" design tokens
+   Lifted from stage concept 5b. Do not invent new values.
+   ============================================================ */
+:root{
+  /* ---- surfaces ---- */
+  --ink:#050505;             /* page background — NOT pure black */
+  --surface-01:#0d0d0d;      /* wells, sticky nav fill, CTA panel */
+  --surface-02:#1a1a1a;      /* cards, rows, sponsor logo plates */
+  --surface-03:#2a2a2a;      /* card hover, button pressed */
+  --hairline:#2e2e2e;        /* 1px dividers + card borders */
+  --hairline-hi:#4a4a4a;     /* hairline on hover */
+
+  /* ---- ink ---- */
+  --text:#ffffff;            /* headings, names, clock      20.1:1 */
+  --text-body:#cfcfcf;       /* paragraphs, bios            13.9:1 */
+  --text-secondary:#b2b2b2;  /* role lines, meta             9.6:1 */
+  --text-muted:#a8a8a8;      /* index numbers                8.6:1 */
+  --label:#b5b5b5;           /* small-caps captions          9.9:1 */
+
+  /* ---- accents ---- */
+  --ted-red:#e62b1e;         /* PRIMARY CTA ONLY — never text */
+  --ted-red-hover:#c4231a;
+  --ted-red-active:#a91d15;
+  --amber:#f2a93b;           /* kickers, focus ring, active  10.2:1 */
+  --gold:#e8c55a;            /* talk titles                  12.6:1 */
+  --teal:#1a7a6d;            /* borders only — 3.4:1, too low for text */
+  --teal-text:#6fb2a1;       /* link + secondary button text  6.1:1 */
+  --teal-text-hover:#8fd6c8;
+
+  /* ---- the emission band ---- */
+  --spectrum:linear-gradient(90deg,#c84a1a 3%,#d2551b 10%,#e87a1e 17%,#ef8f26 24%,#f2a93b 31%,#f0bb4a 38%,#e8c55a 45%,#d9c766 53%,#bcc276 60%,#95bb8c 67%,#6fb2a1 74%,#3f97a0 81%,#1a7a6d 88%,#165f57 95%);
+  --band-rule:repeating-linear-gradient(90deg,transparent 0 3px,rgba(5,5,5,.85) 3px 6px);
+  --band-scrim:linear-gradient(180deg,rgba(5,5,5,.45),transparent 30%,transparent 70%,rgba(5,5,5,.45));
+  --warm-monarch:linear-gradient(135deg,#c84a1a,#e87a1e 50%,#f2a93b);
+
+  /* ---- type ---- */
+  --sans:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --wordmark:"Ambroise",Georgia,"Times New Roman",serif;
+
+  /* ---- spacing (4px base) ---- */
+  --space-4:4px;   --space-8:8px;   --space-12:12px; --space-16:16px;
+  --space-20:20px; --space-24:24px; --space-32:32px; --space-40:40px;
+  --space-48:48px; --space-64:64px; --space-80:80px; --space-100:100px;
+  --space-120:120px;
+
+  /* ---- layout ---- */
+  --gutter:20px;
+  --section-y:64px;
+  --measure:720px;           /* reading column */
+  --shell:1400px;            /* full-bleed content max */
+  --nav-h:56px;
+
+  /* ---- radii ---- */
+  --radius-sm:4px;   /* buttons, chips */
+  --radius-md:6px;   /* inputs */
+  --radius-lg:8px;   /* cards, logo plates */
+  --radius-xl:12px;  /* panels */
+  --radius-pill:999px;
+
+  /* ---- motion ---- */
+  --ease-out:cubic-bezier(.22,.61,.36,1);
+  --t-fast:160ms; --t-base:200ms; --t-slow:420ms;
+}
+
+@media (min-width:900px){
+  :root{--gutter:40px;--section-y:100px;--nav-h:64px}
+}
+
+/* ============================================================
+   The "Emission" band — the signature device.
+   Pure CSS. No images, no canvas, no filter:blur().
+
+   Markup:
+   <div class="emission emission--strip emission--warm" aria-hidden="true">
+     <i></i> ... exactly 19 <i> children ...
+   </div>
+   ============================================================ */
+.emission{
+  position:relative;width:100%;height:76px;overflow:hidden;
+  isolation:isolate;                 /* keeps mix-blend-mode off the page bg */
+}
+/* All emission bands span the full viewport width, edge to edge, even when
+   nested inside a padded shell. (.emission-program is overflow-x:hidden,
+   so the 100vw breakout never introduces a horizontal scrollbar.) */
+.emission-program .emission{
+  width:100vw;position:relative;left:50%;right:50%;
+  margin-left:-50vw;margin-right:-50vw;
+}
+.emission::before{                   /* 1 · continuum */
+  content:"";position:absolute;inset:0;
+  background:var(--spectrum);opacity:var(--continuum,.13);
+}
+.emission::after{                    /* 2 · diffraction ruling */
+  content:"";position:absolute;inset:0;
+  /* Pitch scales with viewport so the ruling has ~the same number of
+     stripes across the spectrum at any width — a fixed 6px pitch looks
+     far coarser (denser) on a narrow phone than on desktop. --rule-w is
+     half the pitch (the dark bar width); default keeps the deck's 6px. */
+  background:repeating-linear-gradient(90deg,
+    transparent 0 var(--rule-w,3px),
+    rgba(5,5,5,.85) var(--rule-w,3px) calc(var(--rule-w,3px) * 2));
+}
+.emission > i{                       /* 3 · emission lines */
+  position:absolute;top:0;height:100%;
+  mix-blend-mode:screen;
+  /* No-JS fallback: the CSS keyframe drives each line on its own slow
+     clock. When JS is present it adds .js-emit to the band and takes
+     over opacity with the coupled pulse model (random positions,
+     widths, and adjacent-band overflow). */
+  animation:emit var(--dur) ease-in-out infinite;
+  animation-delay:var(--delay);
+}
+.emission.js-emit > i{animation:none}
+.emission__scrim{                    /* 4 · vertical scrim */
+  position:absolute;inset:0;background:var(--band-scrim);
+}
+.emission__ticks{                    /* 5 · tick scale (optional) */
+  position:absolute;left:0;bottom:0;width:100%;height:12px;
+}
+.emission__ticks i{position:absolute;bottom:0;width:1px;
+  background:rgba(255,255,255,.32)}
+
+/* heights */
+.emission--hero{height:132px}
+.emission--strip{height:76px}
+@media (min-width:900px){.emission--hero{height:160px}}
+.emission--rule{height:2px}          /* divider: no glow needed */
+
+/* ---- the 19 lines. Copy verbatim. ---- */
+.emission > i:nth-child(1){left:5.0%;width:5px;background:#c84a1a;
+  box-shadow:0 0 calc(26px*var(--gs,1)) calc(13px*var(--gs,1)) #c84a1a;--dur:19s;--delay:-3s}
+.emission > i:nth-child(2){left:7.5%;width:2px;background:#d2551b;
+  box-shadow:0 0 calc(12px*var(--gs,1)) calc(6px*var(--gs,1)) #d2551b;--dur:24s;--delay:-7s}
+.emission > i:nth-child(3){left:12.0%;width:9px;background:#e87a1e;
+  box-shadow:0 0 calc(44px*var(--gs,1)) calc(22px*var(--gs,1)) #e87a1e;--dur:31s;--delay:-11s}
+.emission > i:nth-child(4){left:15.5%;width:3px;background:#e87a1e;
+  box-shadow:0 0 calc(16px*var(--gs,1)) calc(8px*var(--gs,1)) #e87a1e;--dur:17s;--delay:-15s}
+.emission > i:nth-child(5){left:20.0%;width:2px;background:#ef8f26;
+  box-shadow:0 0 calc(10px*var(--gs,1)) calc(5px*var(--gs,1)) #ef8f26;--dur:27s;--delay:-19s}
+.emission > i:nth-child(6){left:25.5%;width:11px;background:#f2a93b;
+  box-shadow:0 0 calc(52px*var(--gs,1)) calc(26px*var(--gs,1)) #f2a93b;--dur:22s;--delay:-23s}
+.emission > i:nth-child(7){left:30.0%;width:3px;background:#f2a93b;
+  box-shadow:0 0 calc(14px*var(--gs,1)) calc(7px*var(--gs,1)) #f2a93b;--dur:34s;--delay:-27s}
+.emission > i:nth-child(8){left:34.5%;width:2px;background:#f0bb4a;
+  box-shadow:0 0 calc(10px*var(--gs,1)) calc(5px*var(--gs,1)) #f0bb4a;--dur:15s;--delay:-31s}
+.emission > i:nth-child(9){left:40.0%;width:7px;background:#e8c55a;
+  box-shadow:0 0 calc(36px*var(--gs,1)) calc(18px*var(--gs,1)) #e8c55a;--dur:29s;--delay:-35s}
+.emission > i:nth-child(10){left:44.5%;width:2px;background:#e8c55a;
+  box-shadow:0 0 calc(12px*var(--gs,1)) calc(6px*var(--gs,1)) #e8c55a;--dur:21s;--delay:-39s}
+.emission > i:nth-child(11){left:51.0%;width:3px;background:#d9c766;
+  box-shadow:0 0 calc(14px*var(--gs,1)) calc(7px*var(--gs,1)) #d9c766;--dur:26s;--delay:-43s}
+.emission > i:nth-child(12){left:57.5%;width:2px;background:#bcc276;
+  box-shadow:0 0 calc(10px*var(--gs,1)) calc(5px*var(--gs,1)) #bcc276;--dur:18s;--delay:-47s}
+.emission > i:nth-child(13){left:63.0%;width:6px;background:#95bb8c;
+  box-shadow:0 0 calc(30px*var(--gs,1)) calc(15px*var(--gs,1)) #95bb8c;--dur:32s;--delay:-51s}
+.emission > i:nth-child(14){left:68.5%;width:2px;background:#6fb2a1;
+  box-shadow:0 0 calc(12px*var(--gs,1)) calc(6px*var(--gs,1)) #6fb2a1;--dur:23s;--delay:-55s}
+.emission > i:nth-child(15){left:75.0%;width:8px;background:#3f97a0;
+  box-shadow:0 0 calc(40px*var(--gs,1)) calc(20px*var(--gs,1)) #3f97a0;--dur:16s;--delay:-59s}
+.emission > i:nth-child(16){left:80.0%;width:3px;background:#1a7a6d;
+  box-shadow:0 0 calc(16px*var(--gs,1)) calc(8px*var(--gs,1)) #1a7a6d;--dur:28s;--delay:-63s}
+.emission > i:nth-child(17){left:86.5%;width:10px;background:#1a7a6d;
+  box-shadow:0 0 calc(48px*var(--gs,1)) calc(24px*var(--gs,1)) #1a7a6d;--dur:20s;--delay:-67s}
+.emission > i:nth-child(18){left:92.0%;width:2px;background:#165f57;
+  box-shadow:0 0 calc(12px*var(--gs,1)) calc(6px*var(--gs,1)) #165f57;--dur:25s;--delay:-71s}
+.emission > i:nth-child(19){left:96.5%;width:4px;background:#1a7a6d;
+  box-shadow:0 0 calc(20px*var(--gs,1)) calc(10px*var(--gs,1)) #1a7a6d;--dur:30s;--delay:-75s}
+
+/* ---- intensity profiles: which part of the spectrum burns ----
+   Same 19 lines in the same 19 places on every section.
+   Only --lo/--hi change. This is what ties the page together. */
+.emission--full > i{--lo:.32;--hi:.94}            /* hero, credits   */
+.emission--warm > i{--lo:.10;--hi:.30}            /* speakers        */
+.emission--warm > i:nth-child(-n+9){--lo:.34;--hi:.98}
+.emission--cool > i{--lo:.10;--hi:.30}            /* day-of info     */
+.emission--cool > i:nth-child(n+11){--lo:.34;--hi:.98}
+.emission--even > i{--lo:.42;--hi:.62}            /* sponsors        */
+.emission--dim  > i{--lo:.16;--hi:.40}            /* long-read       */
+
+@keyframes emit{0%,100%{opacity:var(--lo)}50%{opacity:var(--hi)}}
+
+/* ---- glow on a heading ---- */
+.glow-heading{
+  color:var(--text);
+  text-shadow:0 0 18px rgba(242,169,59,.38),0 0 64px rgba(232,122,30,.20);
+  animation:glowpulse 6s ease-in-out infinite;
+}
+@keyframes glowpulse{
+  0%,100%{text-shadow:0 0 18px rgba(242,169,59,.30),0 0 64px rgba(232,122,30,.14)}
+  50%    {text-shadow:0 0 24px rgba(242,169,59,.46),0 0 80px rgba(232,122,30,.26)}
+}
+
+/* ---- glow on a card edge ---- */
+.card--emission{
+  background:var(--surface-02);
+  border:1px solid var(--hairline);border-top:0;
+  border-radius:var(--radius-xl);overflow:hidden;
+  box-shadow:0 -1px 30px rgba(232,122,30,.14);
+  transition:border-color var(--t-base) ease-out,
+             box-shadow var(--t-base) ease-out;
+}
+.card--emission::before{content:"";display:block;height:2px;background:var(--spectrum)}
+.card--emission:hover,.card--emission:focus-within{
+  border-color:var(--hairline-hi);
+  box-shadow:0 -1px 30px rgba(232,122,30,.22),0 10px 34px rgba(0,0,0,.5);
+}
+
+/* ---- no scroll reveals ----
+   Content is always visible. People pull this program up during the
+   show; fading content in on scroll is distracting, so .reveal is a
+   no-op marker (kept only so the markup reads intentionally) and the
+   bands light immediately rather than warming up per section. */
+
+/* ============================================================
+   REDUCED MOTION — complete fallback. Nothing moves; nothing
+   disappears; the band stays lit at mid intensity.
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  .emission > i{animation:none;opacity:.62}
+  .emission{opacity:1;transition:none}
+  .glow-heading{animation:none;
+    text-shadow:0 0 20px rgba(242,169,59,.34),0 0 70px rgba(232,122,30,.18)}
+  .card--emission,.plate,.plate img,.jump,.btn{transition-duration:1ms}
+  *,*::before,*::after{animation-iteration-count:1 !important}
+}
+
+/* ============================================================
+   Emission band — responsive density.
+   Absolute-pixel metrics make the band read much denser/brighter on
+   a narrow phone: the ruling has fewer, wider stripes so more of the
+   bright spectrum continuum shows through, and the fixed-px glow
+   blurs overlap more when the % positions are squeezed together.
+   Counter both at narrow widths so mobile matches desktop:
+     - finer ruling pitch (--rule-w) → more dark bars, less continuum
+     - dimmer continuum (--continuum) → same rest brightness as desktop
+   ============================================================ */
+/* --gs scales every glow line's box-shadow blur/spread. The glows are fixed
+   px, so on a narrow band each one covers a far bigger FRACTION of the width
+   and 19 of them wash the whole band bright. Scale --gs with width so a glow
+   covers ~the same fraction at any size (desktop band ≈1400px = 1.0). */
+.emission-program{ --rule-w:3px; --continuum:.13; --gs:1; }
+@media (max-width:900px){ .emission-program{ --rule-w:2.5px; --continuum:.10; --gs:.6; } }
+@media (max-width:560px){ .emission-program{ --rule-w:2px;  --continuum:.08; --gs:.34; } }
+
+/* ============================================================
+   PROGRAM PAGE — component layer for /program/
+   Built on the tokens + emission band above. Scoped to
+   .emission-program so it never touches the rest of the site.
+   Values are from the Emission handoff README (high-fidelity).
+   ============================================================ */
+.emission-program{
+  background:var(--ink);
+  color:var(--text-body);
+  font-family:var(--sans);
+  font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.emission-program *,
+.emission-program *::before,
+.emission-program *::after{box-sizing:border-box}
+
+.emission-program img{max-width:100%;display:block}
+.emission-program a{color:var(--teal-text);text-decoration:none}
+.emission-program a:hover{color:var(--teal-text-hover)}
+
+/* focus ring — non-negotiable per handoff */
+.emission-program :focus-visible{
+  outline:3px solid rgba(242,169,59,.55);
+  outline-offset:3px;
+}
+
+/* shell + reading measure */
+.ep-shell{max-width:var(--shell);margin-inline:auto;padding-inline:var(--gutter)}
+.ep-measure{max-width:var(--measure)}
+
+/* section rhythm */
+.ep-section{padding-block:var(--section-y)}
+.ep-kicker{
+  font-family:var(--mono);font-weight:500;
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--amber);margin:0 0 var(--space-12);
+}
+.ep-heading{
+  font-family:var(--sans);font-weight:700;
+  font-size:28px;line-height:1.15;letter-spacing:-.02em;
+  color:var(--text);margin:0 0 var(--space-24);
+}
+@media (min-width:900px){
+  .ep-kicker{font-size:13px}
+  .ep-heading{font-size:44px}
+}
+
+/* ---- jump nav ---- */
+.ep-jump{
+  position:sticky;top:0;z-index:40;
+  height:var(--nav-h);display:flex;align-items:center;
+  background:rgba(13,13,13,.82);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  transition:background var(--t-base) ease-out;
+}
+.ep-jump::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--spectrum);opacity:0;transition:opacity var(--t-base) ease-out;
+}
+.ep-jump.is-stuck{background:rgba(13,13,13,.96)}
+.ep-jump.is-stuck::after{opacity:.5}
+.ep-jump-inner{
+  display:flex;gap:var(--space-8);align-items:center;
+  overflow-x:auto;scrollbar-width:none;
+  width:100%;max-width:var(--shell);margin-inline:auto;
+  padding-inline:var(--gutter);
+  -webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,#000 92%,transparent);
+}
+.ep-jump-inner::-webkit-scrollbar{display:none}
+.ep-chip{
+  flex:0 0 auto;font-family:var(--mono);font-size:12px;
+  letter-spacing:.04em;color:var(--text-secondary);
+  padding:8px 14px;border-radius:var(--radius-pill);
+  border:1px solid transparent;white-space:nowrap;
+  min-height:36px;display:inline-flex;align-items:center;
+  transition:color var(--t-fast) ease-out,background var(--t-fast) ease-out;
+}
+.ep-chip:hover{color:var(--text)}
+.ep-chip.is-active,
+.ep-chip.is-active:hover{background:var(--amber);color:var(--ink);font-weight:500}
+
+/* ---- buttons ---- */
+.ep-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:0 24px;border-radius:var(--radius-sm);
+  font-family:var(--sans);font-weight:600;font-size:16px;
+  border:1px solid transparent;cursor:pointer;
+  transition:background var(--t-base) ease-out,border-color var(--t-base) ease-out,color var(--t-base) ease-out;
+}
+.ep-btn--primary{background:var(--ted-red);color:#fff}
+.ep-btn--primary:hover{background:var(--ted-red-hover);color:#fff}
+.ep-btn--primary:active{background:var(--ted-red-active)}
+.ep-btn--secondary{background:transparent;border-color:var(--teal);color:var(--teal-text)}
+.ep-btn--secondary:hover{border-color:var(--teal-text);color:var(--teal-text-hover)}
+.ep-btn-row{display:flex;flex-direction:column;gap:var(--space-12)}
+.ep-btn-row .ep-btn{width:100%}
+@media (min-width:700px){
+  .ep-btn-row{flex-direction:row}
+  .ep-btn-row .ep-btn{width:auto}
+}
+
+/* ---- hero ---- */
+.ep-hero-lockup{padding-top:28px}
+.ep-hero-lockup img{width:200px;height:auto}
+.ep-hero-band{margin-block:var(--space-20) var(--space-24)}
+.ep-hero-title{
+  font-family:var(--wordmark);font-weight:700;
+  font-size:clamp(44px,13vw,112px);line-height:.95;letter-spacing:-.012em;
+  color:var(--text);margin:0 0 var(--space-20);
+}
+.ep-hero-date{font-weight:500;font-size:17px;color:var(--text);margin:0}
+.ep-hero-venue{font-weight:400;font-size:15px;color:var(--text-secondary);margin:4px 0 var(--space-32)}
+@media (min-width:900px){
+  .ep-hero-lockup img{width:340px}
+}
+
+/* ---- run of show (accordion) ---- */
+.ros{list-style:none;margin:0;padding:0;max-width:var(--measure)}
+.ros__item{margin:0}
+
+/* each speaker is a <details>; the <summary> is the row */
+.ros__panel{border-top:1px solid var(--hairline)}
+.ros__panel > summary{list-style:none;cursor:pointer}
+.ros__panel > summary::-webkit-details-marker{display:none}
+.ros__row{
+  display:grid;grid-template-columns:38px 1fr 24px;gap:14px;align-items:start;
+  padding-block:18px;
+}
+.ros__i{
+  font-family:var(--mono);font-weight:400;font-size:14px;letter-spacing:.1em;
+  color:var(--text-muted);padding-top:4px;
+}
+.ros__main{display:block}
+.ros__name{display:block;font-weight:700;font-size:22px;line-height:1.2;letter-spacing:-.02em;color:var(--text)}
+.ros__talk{display:block;font-weight:400;font-size:18px;line-height:1.4;color:var(--gold);margin-top:2px}
+.ros__role{display:block;font-weight:400;font-size:14px;line-height:1.45;color:var(--text-secondary);margin-top:6px}
+
+/* +/- toggle glyph */
+.ros__toggle{position:relative;width:18px;height:18px;margin-top:8px;justify-self:end}
+.ros__toggle::before,.ros__toggle::after{
+  content:"";position:absolute;top:50%;left:50%;width:14px;height:2px;
+  background:var(--teal-text);transform:translate(-50%,-50%);border-radius:2px;
+  transition:transform var(--t-base) var(--ease-out),opacity var(--t-base) var(--ease-out);
+}
+.ros__toggle::after{transform:translate(-50%,-50%) rotate(90deg)}
+.ros__panel[open] .ros__toggle::after{opacity:0;transform:translate(-50%,-50%) rotate(0)}
+.ros__panel > summary:hover .ros__name{text-decoration:underline;text-decoration-color:var(--hairline-hi);text-underline-offset:4px}
+
+/* expanded bio — animated open/close via a grid-rows collapse.
+   The whole panel aligns to the SAME left edge as the name/talk/role
+   above it (past the number column), so name → talk → role → headshot →
+   bio form one clean vertical line. Mobile stacks the headshot above the
+   text; ≥700px floats it right. */
+.ros__bio{padding-left:52px;max-width:62ch}
+.ros__bio-inner{padding-bottom:var(--space-24);min-height:0}
+.ros__bio p{margin:0 0 var(--space-12);color:var(--text-body);font-size:15px;line-height:1.65}
+.ros__bio p:last-child{margin-bottom:0}
+/* When JS is managing the animation, the wrapper is a collapsing grid row. */
+.js-details .ros__bio{display:grid;grid-template-rows:0fr;overflow:hidden;
+  transition:grid-template-rows var(--t-slow) var(--ease-out)}
+.js-details[open] .ros__bio{grid-template-rows:1fr}
+.js-details.is-collapsed .ros__bio{grid-template-rows:0fr}
+.ros__headshot{
+  width:120px;height:120px;object-fit:cover;border-radius:var(--radius-lg);
+  display:block;margin:0 0 var(--space-16);  /* mobile: stacked above text */
+  /* stylized for the Emission theme: warm duotone + a lit edge */
+  filter:grayscale(1) contrast(1.05) sepia(.35) saturate(1.15) hue-rotate(-12deg) brightness(.95);
+  box-shadow:0 -1px 24px rgba(232,122,30,.16);
+  border:1px solid var(--hairline);
+}
+@media (min-width:700px){
+  .ros__headshot{float:right;margin:0 0 var(--space-12) var(--space-24)}
+}
+.ros__social{display:flex;gap:4px;margin-top:var(--space-8);clear:both}
+.ros__social a{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;margin:-13px 0 -13px -13px;color:var(--teal-text);
+}
+
+/* emcee panel */
+.ros__emcee{
+  margin:0 0 var(--space-16);
+  background:var(--surface-02);border:1px solid var(--hairline);
+  border-radius:var(--radius-lg);max-width:var(--measure);border-top:1px solid var(--hairline);
+}
+.ros__emcee > summary{display:block;padding:var(--space-16) var(--space-20);position:relative}
+.ros__emcee .ros__toggle{position:absolute;top:var(--space-20);right:var(--space-20);margin:0}
+.ros__emcee-label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin:0 0 6px}
+.ros__emcee-name{display:block;font-weight:700;font-size:20px;color:var(--text)}
+.ros__emcee-role{display:block;font-size:14px;color:var(--text-secondary);margin-top:4px}
+.ros__emcee .ros__bio{padding:0 var(--space-20) var(--space-20)}
+
+@media (min-width:900px){
+  .ros__row{grid-template-columns:56px 1fr 24px;padding-block:28px}
+  .ros__i{font-size:15px}
+  .ros__name{font-size:30px}
+  .ros__talk{font-size:24px}
+  .ros__bio{padding-left:70px}
+  .ros__headshot{width:150px;height:150px}
+}
+/* intermission marker */
+.ros__break{display:flex;align-items:center;gap:14px;padding-block:22px}
+.ros__break .rule{flex:1;height:2px;background:var(--spectrum);opacity:.7;border-radius:2px}
+.ros__break .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+/* the spectrum rule already divides here — don't stack the panel hairline on it */
+.ros__break + .ros__item .ros__panel{border-top:0}
+
+/* ---- sponsors ---- */
+.ep-tier{margin-bottom:var(--space-40)}
+.ep-tier__label{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin:0 0 var(--space-16)}
+.ep-plates{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-12)}
+@media (min-width:700px){.ep-plates{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1100px){.ep-plates{grid-template-columns:repeat(4,1fr)}}
+.plate{
+  background:var(--surface-02);border:1px solid var(--hairline);
+  border-radius:var(--radius-lg);height:76px;display:grid;place-items:center;
+  padding:12px;transition:border-color var(--t-fast) ease-out;
+}
+.plate:hover,.plate:focus-within{border-color:var(--hairline-hi)}
+.plate img{max-height:44px;max-width:88%;object-fit:contain;opacity:.86;filter:brightness(0) invert(1);transition:opacity var(--t-fast) ease-out}
+.plate:hover img,.plate:focus-within img{opacity:1}
+.ep-tier--premier .plate{height:88px}
+/* knockout exceptions */
+.plate img.is-white{filter:none}
+.plate img.is-opaque-plate{filter:grayscale(1) brightness(1.45) contrast(1.05)}
+
+/* ---- sponsor ads ----
+   All ads are the SAME WIDTH (one stacked column — reads well on mobile);
+   the tiers differ by HEIGHT via aspect-ratio. At a fixed width the height
+   ratios come out lead : anchor : supporting ≈ 1 : 0.6 : 0.36, i.e. each
+   tier is ~3/5 the height of the one above it. */
+.ep-ads{display:flex;flex-direction:column;gap:var(--space-16);max-width:var(--measure);margin-inline:auto}
+.ep-ad{display:block;width:100%;background:var(--surface-02);border:1px solid var(--hairline);border-radius:var(--radius-lg);overflow:hidden;position:relative}
+.ep-ad img{width:100%;height:100%;object-fit:cover}
+.ep-ad__ph{display:grid;place-content:center;gap:8px;text-align:center;color:var(--text-muted);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:24px;height:100%}
+.ep-ad__ph-tier{color:var(--text-secondary)}
+.ep-ad__ph-name{color:var(--text-muted);text-transform:none;letter-spacing:.02em;font-size:13px}
+.ep-ad__ph-res{color:var(--amber);letter-spacing:.08em;font-size:11px}
+.ep-ad__flag{position:absolute;top:10px;right:10px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.ep-ad--lead{aspect-ratio:1/1}          /* tallest */
+.ep-ad--anchor{aspect-ratio:5/3}        /* ~0.60× lead height */
+.ep-ad--supporting{aspect-ratio:25/9}   /* ~0.60× anchor height */
+
+/* ---- day-of info ---- */
+.ep-info{max-width:var(--measure)}
+.ep-info__row{display:flex;justify-content:space-between;gap:var(--space-16);padding-block:15px;border-top:1px solid var(--hairline)}
+.ep-info__label{font-weight:400;font-size:16px;color:var(--text-body)}
+.ep-info__value{font-family:var(--mono);font-size:15px;letter-spacing:.06em;color:var(--text);text-align:right}
+.ep-block{max-width:var(--measure);margin-top:var(--space-32)}
+.ep-block h3{font-weight:700;font-size:20px;color:var(--text);margin:0 0 var(--space-12)}
+.ep-block p{margin:0 0 var(--space-12);color:var(--text-body)}
+.ep-block a.ep-maplink{display:inline-flex;align-items:center;gap:6px;min-height:44px}
+
+/* social CTA panel */
+.ep-social-cta{background:var(--surface-01);border-radius:var(--radius-xl);position:relative;overflow:hidden;text-align:center;padding:var(--space-40) var(--space-24);margin-top:var(--space-48);max-width:var(--measure);margin-inline:auto}
+.ep-social-cta::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--spectrum)}
+.ep-social-cta .tag{font-weight:700;font-size:24px;color:var(--text);margin:0}
+.ep-social-cta .handle{color:var(--teal-text);font-size:16px;margin:8px 0 0;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+
+/* ---- footer ---- */
+.ep-footer{position:relative;padding-block:var(--section-y);border-top:1px solid var(--hairline);overflow:hidden}
+.ep-footer__rosette{position:absolute;right:-40px;bottom:-40px;width:280px;opacity:.06;pointer-events:none}
+.ep-footer__lockup{width:130px;opacity:.85}
+.ep-footer__blurb{font-size:13px;line-height:1.6;color:var(--text-secondary);max-width:var(--measure);margin:var(--space-20) 0}
+.ep-footer__license{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--text-muted);margin-top:var(--space-16)}

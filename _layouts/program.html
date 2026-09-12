@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#050505">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+
+  {% seo %}
+
+  <!-- Fonts: Inter + IBM Plex Mono (Ambroise is self-hosted below) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    @font-face{
+      font-family:"Ambroise";font-weight:700;font-style:normal;font-display:swap;
+      src:url("{{ '/assets/fonts/ambroise-bold.woff2' | relative_url }}") format("woff2"),
+          url("{{ '/assets/fonts/ambroise-bold.woff' | relative_url }}") format("woff");
+    }
+    html,body{margin:0;background:#050505}
+  </style>
+
+  <link rel="stylesheet" href="{{ '/assets/css/emission.css' | relative_url }}">
+
+  {% if site.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+</head>
+<body class="emission-program">
+  <a href="#run-of-show" class="ep-skip" style="position:absolute;left:-9999px">Skip to the program</a>
+  {{ content }}
+  <script src="{{ '/assets/js/emission.js' | relative_url }}" defer></script>
+</body>
+</html>

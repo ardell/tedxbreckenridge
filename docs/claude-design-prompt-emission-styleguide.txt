@@ -1,0 +1,28 @@
+I have an existing slide deck design in this canvas called Concept 5B -- Emission. I need to build a digital program (a responsive, mobile-first web page) that visually matches that concept, so I need you to produce a style guide artboard set that documents the Emission style precisely enough for a developer to reproduce it in hand-written HTML/CSS. Base everything on Concept 5B -- Emission; do not introduce a new look.
+
+Context for the target: it's a dark-by-default web page (dark background, minimizes eye strain in a theater), read mostly on phones. It's a TEDxBreckenridge event program -- theme "Kaleidoscope" -- with a run-of-show list, speaker rows, sponsor logos, and day-of info sections. TED brand red is part of the palette. It is NOT a slide deck; it's a long scrolling page, so I need the style expressed as reusable web components, not slide layouts.
+
+Please deliver a style guide with these artboards:
+
+1. Color palette -- every color as a hex value with a name and its role (page background, surface/card, primary text, secondary/muted text, TED red accent, any gradient stops). Include the exact dark-mode background and text colors. If Emission uses gradients or glows, give the full gradient definitions (colors, stops, angle).
+
+2. Typography -- font families (with weights actually used), and a type scale: for each role (page title / section heading / speaker name / talk title / body / eyebrow-kicker / small-caps label) give font, weight, size, line-height, letter-spacing, and case. Name any Google Fonts so I can load them; if a font isn't on Google Fonts, tell me and suggest the closest Google Fonts substitute.
+
+3. The "Emission" signature effect -- this concept has a glow/emission quality. Document exactly how it's constructed (colors, blur radius, spread, opacity, layering) so I can rebuild it with CSS box-shadow/filter/gradients. Show it on a heading and on a card edge.
+
+4. Spacing & layout tokens -- base spacing scale, section padding, max content width, border-radius values, border/hairline treatment, and how sections are separated (bands, dividers, etc.).
+
+5. Components, in web form:
+   - Section band with an eyebrow kicker + heading
+   - A run-of-show row (number, speaker name, talk title, small role line, optional social icons)
+   - A speaker card (portrait, name, talk title, short text)
+   - A sponsor tier row (a label + a row of logo plates on a dark ground)
+   - A CTA block (heading + button; show primary and secondary button states)
+   - A sticky jump-nav bar
+   - Buttons: default, hover, and focus states
+
+6. Animations -- I specifically want the subtle animated components included. For each animated element, document: what animates, the trigger (on load, on scroll into view, on hover), duration, easing, and any delay/stagger. Please keep them subtle and give a prefers-reduced-motion fallback for each. If the emission/glow pulses or shimmers, specify the keyframes.
+
+Image assets: where the style depends on a raster or vector asset (background texture, grain, glow sprite, kaleidoscope motif, gradient mesh, icons), please provide each as an exportable asset in the artboards and list them with intended usage and recommended export (SVG preferred; PNG @2x for raster). I'll re-embed these in the HTML/CSS. Note anything that should be pure CSS rather than an image.
+
+Deliver this as artboards on the canvas (so I can export PNG/PDF and pull assets), covering light-on-dark since the program is dark by default. Keep it faithful to Concept 5B -- Emission throughout.
