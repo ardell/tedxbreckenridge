@@ -254,7 +254,7 @@ info_rows:
   <img class="ep-footer__rosette" src="{{ '/assets/images/kaleidoscope/kaleidoscope-mark.svg' | relative_url }}" alt="" aria-hidden="true">
   <div class="ep-shell">
     <img class="ep-footer__lockup" src="{{ '/assets/images/logos/tedx-breckenridge-logo-white.svg' | relative_url }}" alt="TEDxBreckenridge" width="130">
-    <p class="ep-footer__blurb">TEDxBreckenridge is a 501(c)3 nonprofit, run entirely by local volunteers, bringing ideas worth spreading to Summit County. <a href="/donate/">Donate</a> · <a href="/speakers/">Speakers</a> · <a href="/team/">Team</a></p>
+    <p class="ep-footer__blurb">TEDxBreckenridge is a 501(c)3 nonprofit, run entirely by local volunteers, bringing ideas worth spreading to Summit County. <a href="/donate-local-nonprofit-in-breckenridge/">Donate</a> · <a href="/speakers/">Speakers</a> · <a href="/team/">Team</a></p>
     <p class="ep-footer__license">OPERATED UNDER LICENSE FROM TED</p>
   </div>
 </footer>
