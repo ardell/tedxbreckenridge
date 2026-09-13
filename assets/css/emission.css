@@ -113,9 +113,9 @@
   background:linear-gradient(180deg,#050505 0,rgba(5,5,5,0) 30%,rgba(5,5,5,0) 70%,#050505 100%)}
 
 /* heights */
-.emission--hero{height:132px}
+.emission--hero{height:172px}
 .emission--strip{height:76px}
-@media (min-width:900px){.emission--hero{height:160px}}
+@media (min-width:900px){.emission--hero{height:200px}}
 .emission--rule{height:2px}          /* divider: no glow needed */
 
 /* ---- glow on a heading ---- */
@@ -271,9 +271,9 @@
 }
 
 /* ---- hero ---- */
-.ep-hero-lockup{padding-top:28px}
-.ep-hero-lockup img{width:200px;height:auto}
-.ep-hero-band{margin-block:var(--space-20) var(--space-24)}
+.ep-hero-lockup{padding-top:20px}
+.ep-hero-lockup img{width:260px;height:auto}
+.ep-hero-band{margin-block:var(--space-12) var(--space-16)}
 .ep-hero-title{
   font-family:var(--wordmark);font-weight:700;
   font-size:clamp(44px,13vw,112px);line-height:.95;letter-spacing:-.012em;
