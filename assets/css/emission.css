@@ -113,9 +113,9 @@
   background:linear-gradient(180deg,#050505 0,rgba(5,5,5,0) 30%,rgba(5,5,5,0) 70%,#050505 100%)}
 
 /* heights */
-.emission--hero{height:172px}
+.emission--hero{height:310px}
 .emission--strip{height:76px}
-@media (min-width:900px){.emission--hero{height:200px}}
+@media (min-width:900px){.emission--hero{height:360px}}
 .emission--rule{height:2px}          /* divider: no glow needed */
 
 /* ---- glow on a heading ---- */
