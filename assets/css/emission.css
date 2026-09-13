@@ -105,7 +105,12 @@
 .emission__stage .continuum{position:absolute;inset:0;background:var(--spectrum);opacity:.10}
 .emission__stage .ruling{position:absolute;inset:0;
   background:repeating-linear-gradient(90deg,transparent 0 3px,rgba(5,5,5,.85) 3px 6px)}
-.emission__stage > i{position:absolute;top:0;height:300px;mix-blend-mode:screen}
+/* No mix-blend-mode: a screen-blended child paints in its own compositing
+   layer that ESCAPES the band's clip-path/overflow, so the glow leaked past
+   the top/bottom edges (worst on mobile). On the dark ground the box-shadow
+   glow already reads as additive, so dropping the blend keeps the look and
+   lets the clip actually hold. */
+.emission__stage > i{position:absolute;top:0;height:300px}
 /* Vertical scrim (deck layer 4): darkens the top and bottom edges of the
    VISIBLE band so the glow is cut off cleanly at the boundary instead of
    bleeding into the black above/below. Lives on .emission (not the scaled
