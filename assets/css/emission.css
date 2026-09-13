@@ -91,10 +91,14 @@
   width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;
 }
 .emission__stage{
-  position:absolute;top:50%;left:0;
-  width:1920px;height:300px;overflow:hidden;  /* clips the 300px glow lines to the stage */
-  transform-origin:left center;
-  transform:translateY(-50%) scale(var(--escale,1));
+  position:absolute;top:0;left:0;
+  width:1920px;height:100%;overflow:hidden;  /* clips the glow lines to the band */
+  transform-origin:left top;
+  /* Scale ONLY horizontally by --escale: the 1920px line positions/widths
+     shrink to the container while the glow columns keep filling the band's
+     full height. (Uniform scale made the stage short and left big dark gaps
+     above/below on narrow screens.) */
+  transform:scaleX(var(--escale,1));
 }
 .emission__stage .continuum{position:absolute;inset:0;background:var(--spectrum);opacity:.10}
 .emission__stage .ruling{position:absolute;inset:0;
@@ -104,7 +108,7 @@
    the top/bottom edges (worst on mobile). On the dark ground the box-shadow
    glow already reads as additive, so dropping the blend keeps the look and
    lets the clip actually hold. */
-.emission__stage > i{position:absolute;top:0;height:300px}
+.emission__stage > i{position:absolute;top:0;height:100%}
 /* Vertical scrim (deck layer 4): darkens the top and bottom edges of the
    VISIBLE band so the glow is cut off cleanly at the boundary instead of
    bleeding into the black above/below. Lives on .emission (not the scaled
