@@ -119,7 +119,7 @@
 /* heights */
 .emission--hero{height:248px}
 .emission--strip{height:76px}
-@media (min-width:900px){.emission--hero{height:360px}}
+@media (min-width:900px){.emission--hero{height:288px}}
 .emission--rule{height:2px}          /* divider: no glow needed */
 
 /* ---- glow on a heading ---- */
