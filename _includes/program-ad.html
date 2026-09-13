@@ -19,13 +19,13 @@ down by tier. Hand these to sponsors once sizes are frozen. @2x-ready.
   {%- if ad.image -%}
     <img src="{{ ad.image | relative_url }}" alt="{{ alt }}" loading="lazy">
   {%- else -%}
-    <div class="ep-ad__ph">
-      <span class="ep-ad__ph-tier">{{ ad.tier }} sponsor ad</span>
-      <span class="ep-ad__ph-name">{{ ad.sponsor }}</span>
-      {%- if res != "" -%}<span class="ep-ad__ph-res">{{ res }}</span>{%- endif -%}
+    <div class="ep-ad-ph">
+      <span class="ep-ad-ph-tier">{{ ad.tier }} sponsor ad</span>
+      <span class="ep-ad-ph-name">{{ ad.sponsor }}</span>
+      {%- if res != "" -%}<span class="ep-ad-ph-res">{{ res }}</span>{%- endif -%}
     </div>
   {%- endif -%}
-  <span class="ep-ad__flag">Sponsor</span>
+  <span class="ep-ad-flag">Sponsor</span>
 {%- endcapture -%}
 {%- if ad.url -%}
 <a class="ep-ad ep-ad--{{ ad.tier }} reveal" href="{{ ad.url }}" target="_blank" rel="noopener noreferrer">{{ inner }}</a>

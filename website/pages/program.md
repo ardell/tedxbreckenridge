@@ -64,16 +64,16 @@ info_rows:
 
     {% assign emcee = site.data.speakers.emcee %}
     {% if emcee %}
-    <details class="ros__emcee ros__panel">
+    <details class="ros-emcee ros-panel">
       <summary>
-        <span class="ros__emcee-label">Your emcee</span>
-        <span class="ros__emcee-name">{{ emcee.name }}</span>
-        <span class="ros__emcee-role">{{ emcee.role }}</span>
-        <span class="ros__toggle" aria-hidden="true"></span>
+        <span class="ros-emcee-label">Your emcee</span>
+        <span class="ros-emcee-name">{{ emcee.name }}</span>
+        <span class="ros-emcee-role">{{ emcee.role }}</span>
+        <span class="ros-toggle" aria-hidden="true"></span>
       </summary>
-      <div class="ros__bio">
-        <div class="ros__bio-inner">
-          {% if emcee.image %}<img class="ros__headshot" src="{{ emcee.image | relative_url }}" alt="{{ emcee.name }}" loading="lazy">{% endif %}
+      <div class="ros-bio">
+        <div class="ros-bio-inner">
+          {% if emcee.image %}<img class="ros-headshot" src="{{ emcee.image | relative_url }}" alt="{{ emcee.name }}" loading="lazy">{% endif %}
           {% for para in emcee.bio %}<p>{{ para }}</p>{% endfor %}
         </div>
       </div>
@@ -85,30 +85,30 @@ info_rows:
     <ol class="ros">
       {% for t in talks %}
         {% if t.half == 2 and shown_break == false %}
-          <li class="ros__break" aria-label="Intermission">
+          <li class="ros-break" aria-label="Intermission">
             <span class="rule" aria-hidden="true"></span>
             <span class="lbl">Intermission</span>
             <span class="rule" aria-hidden="true"></span>
           </li>
           {% assign shown_break = true %}
         {% endif %}
-      <li class="ros__item">
-        <details class="ros__panel" id="{{ t.slug }}">
-          <summary class="ros__row">
-            <span class="ros__i">{{ t.order | prepend: '0' | slice: -2, 2 }}</span>
-            <span class="ros__main">
-              <span class="ros__name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</span>
-              <span class="ros__talk">{{ t.theme }}</span>
-              <span class="ros__role">{{ t.role }}</span>
+      <li class="ros-item">
+        <details class="ros-panel" id="{{ t.slug }}">
+          <summary class="ros-row">
+            <span class="ros-i">{{ t.order | prepend: '0' | slice: -2, 2 }}</span>
+            <span class="ros-main">
+              <span class="ros-name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</span>
+              <span class="ros-talk">{{ t.theme }}</span>
+              <span class="ros-role">{{ t.role }}</span>
             </span>
-            <span class="ros__toggle" aria-hidden="true"></span>
+            <span class="ros-toggle" aria-hidden="true"></span>
           </summary>
-          <div class="ros__bio">
-            <div class="ros__bio-inner">
-              <img class="ros__headshot" src="{{ t.image | relative_url }}" alt="{{ t.name }}" loading="lazy"{% if t.crop %} style="object-position:{{ t.crop }}"{% endif %}>
+          <div class="ros-bio">
+            <div class="ros-bio-inner">
+              <img class="ros-headshot" src="{{ t.image | relative_url }}" alt="{{ t.name }}" loading="lazy"{% if t.crop %} style="object-position:{{ t.crop }}"{% endif %}>
               {% for para in t.bio %}<p>{{ para }}</p>{% endfor %}
               {% if t.socials %}
-              <div class="ros__social">
+              <div class="ros-social">
                 {% for s in t.socials %}
                 <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ t.name }} on {{ s.type }}">
                   {% include facets/social-icon.html type=s.type px=18 %}
@@ -156,7 +156,7 @@ info_rows:
       {% assign tier_sponsors = site.data.sponsors | where: "tier", tier %}
       {% if tier_sponsors.size > 0 %}
       <div class="ep-tier ep-tier--{{ tier }} reveal">
-        <p class="ep-tier__label">{{ tier_labels[forloop.index0] }}</p>
+        <p class="ep-tier-label">{{ tier_labels[forloop.index0] }}</p>
         <div class="ep-plates">
           {% for s in tier_sponsors %}
           {% assign logo = s.wall_logo | default: s.logo %}
@@ -213,9 +213,9 @@ info_rows:
 
     <div class="ep-info reveal">
       {% for row in page.info_rows %}
-      <div class="ep-info__row">
-        <span class="ep-info__label">{{ row.label }}</span>
-        <span class="ep-info__value">{{ row.value }}</span>
+      <div class="ep-info-row">
+        <span class="ep-info-label">{{ row.label }}</span>
+        <span class="ep-info-value">{{ row.value }}</span>
       </div>
       {% endfor %}
     </div>
@@ -251,10 +251,10 @@ info_rows:
 
 <!-- ============ Footer ============ -->
 <footer class="ep-footer">
-  <img class="ep-footer__rosette" src="{{ '/assets/images/kaleidoscope/kaleidoscope-mark.svg' | relative_url }}" alt="" aria-hidden="true">
+  <img class="ep-footer-rosette" src="{{ '/assets/images/kaleidoscope/kaleidoscope-mark.svg' | relative_url }}" alt="" aria-hidden="true">
   <div class="ep-shell">
-    <img class="ep-footer__lockup" src="{{ '/assets/images/logos/tedx-breckenridge-logo-white.svg' | relative_url }}" alt="TEDxBreckenridge" width="130">
-    <p class="ep-footer__blurb">TEDxBreckenridge is a 501(c)3 nonprofit, run entirely by local volunteers, bringing ideas worth spreading to Summit County. <a href="/donate-local-nonprofit-in-breckenridge/">Donate</a> · <a href="/speakers/">Speakers</a> · <a href="/team/">Team</a></p>
-    <p class="ep-footer__license">OPERATED UNDER LICENSE FROM TED</p>
+    <img class="ep-footer-lockup" src="{{ '/assets/images/logos/tedx-breckenridge-logo-white.svg' | relative_url }}" alt="TEDxBreckenridge" width="130">
+    <p class="ep-footer-blurb">TEDxBreckenridge is a 501(c)3 nonprofit, run entirely by local volunteers, bringing ideas worth spreading to Summit County. <a href="/donate-local-nonprofit-in-breckenridge/">Donate</a> · <a href="/speakers/">Speakers</a> · <a href="/team/">Team</a></p>
+    <p class="ep-footer-license">OPERATED UNDER LICENSE FROM TED</p>
   </div>
 </footer>
