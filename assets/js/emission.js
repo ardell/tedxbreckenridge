@@ -22,7 +22,7 @@
      lines at exact px positions/widths, each with its own blur,
      hue, --lo/--hi and slow oscillation clock, over a faint
      spectrum continuum and a 6px dark ruling. We reproduce that
-     canvas verbatim in an .emission__stage and SCALE it to the
+     canvas verbatim in an .emission-stage and SCALE it to the
      container (--escale = width / 1920). Uniform scaling keeps
      every ratio — line widths, gaps, blur radii, ruling pitch —
      exactly as the slides at any display width, so desktop and
@@ -63,9 +63,9 @@
   var isEven = function (el) { return /emission--even/.test(el.className); };
 
   function buildStage(el) {
-    if (el.querySelector(".emission__stage")) return el.querySelector(".emission__stage");
+    if (el.querySelector(".emission-stage")) return el.querySelector(".emission-stage");
     var stage = document.createElement("div");
-    stage.className = "emission__stage";
+    stage.className = "emission-stage";
     var cont = document.createElement("div"); cont.className = "continuum";
     var rule = document.createElement("div"); rule.className = "ruling";
     stage.appendChild(cont);
@@ -155,10 +155,10 @@
      row grow; on close, shrink the row first, then remove [open]
      after the transition so the content stays visible while it eases. */
   if (!reduce) {
-    root.querySelectorAll("details.ros__panel").forEach(function (d) {
+    root.querySelectorAll("details.ros-panel").forEach(function (d) {
       d.classList.add("js-details");
       var summary = d.querySelector("summary");
-      var bio = d.querySelector(".ros__bio");
+      var bio = d.querySelector(".ros-bio");
       if (!summary || !bio) return;
 
       summary.addEventListener("click", function (e) {
