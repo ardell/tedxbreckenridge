@@ -101,6 +101,12 @@
 .emission__stage .ruling{position:absolute;inset:0;
   background:repeating-linear-gradient(90deg,transparent 0 3px,rgba(5,5,5,.85) 3px 6px)}
 .emission__stage > i{position:absolute;top:0;height:300px;mix-blend-mode:screen}
+/* Vertical scrim (deck layer 4): darkens the top and bottom edges of the
+   VISIBLE band so the glow is cut off cleanly at the boundary instead of
+   bleeding into the black above/below. Lives on .emission (not the scaled
+   stage) so it always tracks the visible strip height, and sits on top. */
+.emission::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,#050505 0,rgba(5,5,5,0) 30%,rgba(5,5,5,0) 70%,#050505 100%)}
 
 /* heights */
 .emission--hero{height:132px}
