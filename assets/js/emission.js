@@ -83,15 +83,26 @@
     return stage;
   }
 
-  // Keep --escale in sync with the container width.
+  // Keep --escale = bandWidth / 1920 in sync with the container width.
+  // A width of 0 (band not laid out yet) would collapse the stage, so only
+  // set it once we have a real width; a ResizeObserver keeps it correct as
+  // fonts load / the viewport changes (this is why the hero, which lays out
+  // late above the fold, needs the observer rather than a one-shot measure).
   function sizeBand(el) {
-    el.style.setProperty("--escale", el.clientWidth / EMISSION.stageW);
+    var w = el.clientWidth;
+    if (w > 0) el.style.setProperty("--escale", w / EMISSION.stageW);
   }
+  var ro = "ResizeObserver" in window
+    ? new ResizeObserver(function (entries) {
+        entries.forEach(function (e) { sizeBand(e.target); });
+      })
+    : null;
 
   var bands = [];
   root.querySelectorAll(".emission").forEach(function (el) {
     var stage = buildStage(el);
     sizeBand(el);
+    if (ro) ro.observe(el);
     var lineEls = stage.querySelectorAll("i");
     // Sponsors band is frozen (TED rule): hold mid intensity, no animation.
     if (isEven(el) || reduce) {
