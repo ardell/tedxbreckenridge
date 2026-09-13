@@ -84,7 +84,12 @@
    widths, gaps, blur radii and the 6px ruling all keep their exact ratios.
    JS sets --escale = containerWidth / 1920 and builds the stage. */
 .emission{
-  position:relative;width:100%;height:76px;overflow:hidden;
+  position:relative;width:100%;height:76px;
+  overflow:hidden;
+  /* clip-path forces a hard rectangular clip that box-shadows / blend layers
+     cannot escape — overflow:hidden alone can leak a glow past the edge when
+     a descendant composites its own layer (mix-blend-mode + transform). */
+  clip-path:inset(0);
   isolation:isolate;                 /* keeps mix-blend-mode off the page bg */
 }
 /* Full viewport width, edge to edge, even inside a padded shell. */
