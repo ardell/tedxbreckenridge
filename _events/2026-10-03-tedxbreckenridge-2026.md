@@ -14,8 +14,8 @@ venue_state: "CO"
 venue_zip: "80424"
 
 # Pricing
-price: 65
-price_display: "$65 early bird (until July 1)"
+price: 55
+price_display: "$55"
 availability: "InStock"
 
 # Meta
@@ -30,7 +30,7 @@ map_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.869!2
 
 Mark your calendar for an inspiring afternoon of ideas worth spreading.
 
-TEDxBreckenridge 2026 brings together curious minds, local voices, and transformative ideas at the beautiful Riverwalk Center in Breckenridge. Tickets are on sale now — grab the early bird price of $65 through July 1. [Meet the 2026 speakers](/speakers/) sharing ideas worth spreading this year.
+TEDxBreckenridge 2026 brings together curious minds, local voices, and transformative ideas at the beautiful Riverwalk Center in Breckenridge. Tickets are on sale now -- grab yours for $55. [Meet the 2026 speakers](/speakers/) sharing ideas worth spreading this year.
 
 ## What to Expect
 
@@ -48,7 +48,7 @@ New this year: the talks end at 6, but the conversation doesn't have to. Join us
 - **A loosely-guided conversation** carrying the ideas from the stage into the evening
 - **Time to meet the speakers** and chat with them directly
 
-The Alpenglow Dinner is a $65 add-on to your event ticket, and seating is limited — add it when you grab your ticket.
+The Alpenglow Dinner is a $55 add-on to your event ticket, and seating is limited — add it when you grab your ticket.
 
 <a href="https://tedxbreckenridge.ticketsauce.com/e/tedxbreckenridge-kaleidoscope/tickets?utm_source=affiliate&utm_name=Website-event-page-alpenglow-dinner&utm_campaign=Website-event-page-alpenglow-dinner&utm_id=6a8ee9f743204c5f9f5179430a1e606a" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Add the Alpenglow Dinner</a>
 
