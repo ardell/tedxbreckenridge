@@ -101,7 +101,7 @@ info_rows:
 
 <!-- ============ Imperial (lead) ad ============ -->
 {% if lead_ad %}
-<section class="ep-section">
+<section class="ep-section ep-section--ad">
   <div class="ep-shell">
     <div class="ep-ads">
       {% include program-ad.html ad=lead_ad %}
@@ -117,20 +117,19 @@ info_rows:
   <div class="ep-shell">
     <p class="ep-kicker reveal">Your host for the afternoon</p>
     <h2 class="ep-heading reveal">The emcee</h2>
-    <details class="ros-emcee ros-panel reveal">
-      <summary>
+    <div class="ros-emcee ros-emcee--static reveal">
+      <div class="ros-emcee-head">
         <span class="ros-emcee-label">Your emcee</span>
         <span class="ros-emcee-name">{{ emcee.name }}</span>
         <span class="ros-emcee-role">{{ emcee.role }}</span>
-        <span class="ros-toggle" aria-hidden="true"></span>
-      </summary>
+      </div>
       <div class="ros-bio">
         <div class="ros-bio-inner">
           {% if emcee.image %}<img class="ros-headshot" src="{{ emcee.image | relative_url }}" alt="{{ emcee.name }}" loading="lazy">{% endif %}
           {% for para in emcee.bio %}<p>{{ para }}</p>{% endfor %}
         </div>
       </div>
-    </details>
+    </div>
   </div>
 </section>
 {% endif %}
@@ -196,7 +195,7 @@ info_rows:
 
 <!-- ============ Anchor ad (between segments) ============ -->
 {% if anchor_ad_1 %}
-<section class="ep-section">
+<section class="ep-section ep-section--ad">
   <div class="ep-shell">
     <div class="ep-ads">
       {% include program-ad.html ad=anchor_ad_1 %}
@@ -223,7 +222,7 @@ info_rows:
 
 <!-- ============ Anchor ad (after the talks) ============ -->
 {% if anchor_ad_2 %}
-<section class="ep-section">
+<section class="ep-section ep-section--ad">
   <div class="ep-shell">
     <div class="ep-ads">
       {% include program-ad.html ad=anchor_ad_2 %}
@@ -288,7 +287,7 @@ info_rows:
 
 <!-- ============ Supporting ad (near the close) ============ -->
 {% if supporting_ad %}
-<section class="ep-section">
+<section class="ep-section ep-section--ad">
   <div class="ep-shell">
     <div class="ep-ads">
       {% include program-ad.html ad=supporting_ad %}

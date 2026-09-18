@@ -381,6 +381,15 @@ Values are from the Emission handoff README (high-fidelity).
   padding-block:var(--section-y)
 }
 
+/* Ad sections sit between content sections that each carry a full
+   `--section-y` of padding-block. Keep the ad's own padding minimal AND pull
+   it up/down with negative margin so it doesn't float in a large void
+   created by the neighbours' stacked padding. */
+.ep-section--ad{
+  padding-block:0;
+  margin-block:calc(var(--section-y) * -0.5)
+}
+
 .ep-kicker{
   font-family:var(--mono);
   font-weight:500;
@@ -513,27 +522,30 @@ Values are from the Emission handoff README (high-fidelity).
 
 }
 
-.ep-btn--primary{
+/* Scoped under .emission-program so these beat the generic
+   `.emission-program a { color:var(--teal-text) }` link rule when a button
+   is an <a>. */
+.emission-program .ep-btn--primary{
   background:var(--ted-red);
   color:#fff
 }
 
-.ep-btn--primary:hover{
+.emission-program .ep-btn--primary:hover{
   background:var(--ted-red-hover);
   color:#fff
 }
 
-.ep-btn--primary:active{
+.emission-program .ep-btn--primary:active{
   background:var(--ted-red-active)
 }
 
-.ep-btn--secondary{
+.emission-program .ep-btn--secondary{
   background:transparent;
   border-color:var(--teal);
   color:var(--teal-text)
 }
 
-.ep-btn--secondary:hover{
+.emission-program .ep-btn--secondary:hover{
   border-color:var(--teal-text);
   color:var(--teal-text-hover)
 }
@@ -815,10 +827,16 @@ text; ≥700px floats it right. */
 
 }
 
-.ros-emcee > summary{
+.ros-emcee > summary,
+.ros-emcee-head{
   display:block;
   padding:var(--space-16) var(--space-20);
   position:relative
+}
+
+/* Static (non-collapsible) emcee card: the bio is always shown. */
+.ros-emcee--static .ros-emcee-head{
+  padding-bottom:0
 }
 
 .ros-emcee .ros-toggle{
@@ -843,6 +861,33 @@ text; ≥700px floats it right. */
   font-weight:700;
   font-size:20px;
   color:var(--text)
+}
+
+.ros-emcee-talk{
+  display:block;
+  font-weight:400;
+  font-size:18px;
+  line-height:1.4;
+  color:var(--gold);
+  margin-top:4px
+}
+
+/* Speaker cards lead with the TALK TITLE as the headline: larger than the
+   speaker's name, which drops to a secondary line. (The emcee card, which has
+   no talk, keeps its name as the headline and is untouched.) */
+.ros-emcee--talk .ros-emcee-talk{
+  font-weight:700;
+  font-size:24px;
+  line-height:1.25;
+  color:var(--text);
+  margin-top:2px
+}
+
+.ros-emcee--talk .ros-emcee-name{
+  font-weight:500;
+  font-size:16px;
+  color:var(--gold);
+  margin-top:6px
 }
 
 .ros-emcee-role{
@@ -1001,7 +1046,7 @@ tier is ~3/5 the height of the one above it. */
   flex-direction:column;
   gap:var(--space-16);
   max-width:var(--measure);
-  margin-inline:auto
+  margin-inline:0
 }
 
 .ep-ad{
