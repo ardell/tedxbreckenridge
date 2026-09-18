@@ -1,20 +1,18 @@
 {%- comment -%}
-A single run-of-show speaker row for the digital program. Extracted so both
-talk segments (before / after the intermission) render identically.
+A single run-of-show speaker card for the digital program. Rendered fully
+expanded (like the emcee card): header + always-visible bio, no toggle.
+Extracted so both talk segments (before / after the intermission) match.
 Param: t = one entry from _data/speakers.yml `speakers`.
 {%- endcomment -%}
 {%- assign t = include.t -%}
 <li class="ros-item">
-  <details class="ros-panel" id="{{ t.slug }}">
-    <summary class="ros-row">
-      <span class="ros-i">{{ t.order | prepend: '0' | slice: -2, 2 }}</span>
-      <span class="ros-main">
-        <span class="ros-name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</span>
-        <span class="ros-talk">{{ t.theme }}</span>
-        <span class="ros-role">{{ t.role }}</span>
-      </span>
-      <span class="ros-toggle" aria-hidden="true"></span>
-    </summary>
+  <div class="ros-emcee ros-emcee--static ros-emcee--talk reveal" id="{{ t.slug }}">
+    <div class="ros-emcee-head">
+      <span class="ros-emcee-label">Talk {{ t.order | prepend: '0' | slice: -2, 2 }}</span>
+      {% if t.theme %}<span class="ros-emcee-talk">{{ t.theme }}</span>{% endif %}
+      <span class="ros-emcee-name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</span>
+      <span class="ros-emcee-role">{{ t.role }}</span>
+    </div>
     <div class="ros-bio">
       <div class="ros-bio-inner">
         <img class="ros-headshot" src="{{ t.image | relative_url }}" alt="{{ t.name }}" loading="lazy"{% if t.crop %} style="object-position:{{ t.crop }}"{% endif %}>
@@ -30,5 +28,5 @@ Param: t = one entry from _data/speakers.yml `speakers`.
         {% endif %}
       </div>
     </div>
-  </details>
+  </div>
 </li>
