@@ -1,0 +1,34 @@
+{%- comment -%}
+A single run-of-show speaker row for the digital program. Extracted so both
+talk segments (before / after the intermission) render identically.
+Param: t = one entry from _data/speakers.yml `speakers`.
+{%- endcomment -%}
+{%- assign t = include.t -%}
+<li class="ros-item">
+  <details class="ros-panel" id="{{ t.slug }}">
+    <summary class="ros-row">
+      <span class="ros-i">{{ t.order | prepend: '0' | slice: -2, 2 }}</span>
+      <span class="ros-main">
+        <span class="ros-name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</span>
+        <span class="ros-talk">{{ t.theme }}</span>
+        <span class="ros-role">{{ t.role }}</span>
+      </span>
+      <span class="ros-toggle" aria-hidden="true"></span>
+    </summary>
+    <div class="ros-bio">
+      <div class="ros-bio-inner">
+        <img class="ros-headshot" src="{{ t.image | relative_url }}" alt="{{ t.name }}" loading="lazy"{% if t.crop %} style="object-position:{{ t.crop }}"{% endif %}>
+        {% for para in t.bio %}<p>{{ para }}</p>{% endfor %}
+        {% if t.socials %}
+        <div class="ros-social">
+          {% for s in t.socials %}
+          <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ t.name }} on {{ s.type }}">
+            {% include facets/social-icon.html type=s.type px=18 %}
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </details>
+</li>
