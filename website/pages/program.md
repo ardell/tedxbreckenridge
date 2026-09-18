@@ -44,10 +44,11 @@ info_rows:
 <!-- ============ Jump nav ============ -->
 <nav class="ep-jump" aria-label="Program sections">
   <div class="ep-jump-inner">
-    <a class="ep-chip" href="#run-of-show">Run of show</a>
+    <a class="ep-chip" href="#mission">About</a>
     <a class="ep-chip" href="#sponsors">Sponsors</a>
-    <a class="ep-chip" href="#good-to-know">Good to know</a>
-    <a class="ep-chip" href="#dinner">Dinner</a>
+    <a class="ep-chip" href="#run-of-show">Run of Show</a>
+    <a class="ep-chip" href="#good-to-know">Good to Know</a>
+    <a class="ep-chip" href="#donate">Donate</a>
   </div>
 </nav>
 
