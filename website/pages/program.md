@@ -7,9 +7,13 @@ ticket_popup: false
 sponsor_wall: false
 
 # Run of show + speaker bios come from _data/speakers.yml (shared with the
-# /speakers/ page). Order is a placeholder; Leon opens the second half.
+# /speakers/ page). Nine speakers split across the intermission: five before
+# (half 1), four after (half 2). Leon opens the second half.
 
 # ---- Sponsor ad slots (placeholders; sizes TBD) ----
+# Placed by hand through the program (not looped) so each lands in a specific
+# spot: Imperial before the show, the anchors around the two talk segments,
+# and the supporting slot near the close.
 sponsor_ads:
   - tier: lead
     sponsor: Imperial Hotel &amp; Private Residences
@@ -31,14 +35,19 @@ info_rows:
 ---
 
 {%- assign ev = site.event -%}
+{%- assign lead_ad = page.sponsor_ads | where: "tier", "lead" | first -%}
+{%- assign anchor_ads = page.sponsor_ads | where: "tier", "anchor" -%}
+{%- assign anchor_ad_1 = anchor_ads[0] -%}
+{%- assign anchor_ad_2 = anchor_ads[1] -%}
+{%- assign supporting_ad = page.sponsor_ads | where: "tier", "supporting" | first -%}
 
 <!-- ============ Jump nav ============ -->
 <nav class="ep-jump" aria-label="Program sections">
   <div class="ep-jump-inner">
     <a class="ep-chip" href="#run-of-show">Run of show</a>
     <a class="ep-chip" href="#sponsors">Sponsors</a>
-    <a class="ep-chip" href="#getting-there">Getting there</a>
-    <a class="ep-chip" href="#day-of">Day-of info</a>
+    <a class="ep-chip" href="#good-to-know">Good to know</a>
+    <a class="ep-chip" href="#dinner">Dinner</a>
   </div>
 </nav>
 
@@ -54,17 +63,61 @@ info_rows:
   <p class="ep-hero-venue">{{ ev.venue }}</p>
 </header>
 
-<!-- ============ Run of show ============ -->
-<section id="run-of-show" class="ep-section">
+<!-- ============ Mission & values ============ -->
+<section id="mission" class="ep-section">
   <div class="emission emission--strip emission--warm" aria-hidden="true"></div>
   <div class="ep-shell" style="padding-top:var(--space-40)">
-    <p class="ep-kicker">The lineup</p>
-    <h2 class="ep-heading">Run of show</h2>
-    <p class="ep-measure" style="color:var(--text-body);margin:0 0 var(--space-24)">Nine speakers, in the order they'll take the stage. Tap any name to read their bio.</p>
+    <p class="ep-kicker reveal">Why we're here</p>
+    <h2 class="ep-heading reveal">Our mission</h2>
+    <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">TEDxBreckenridge is a 501(c)(3) nonprofit, run entirely by local volunteers. We create a platform for innovative ideas and meaningful conversations that inspire positive change in Summit County and beyond — amplifying local voices and bringing diverse perspectives together to strengthen our community and add to the global conversation.</p>
 
-    {% assign emcee = site.data.speakers.emcee %}
-    {% if emcee %}
-    <details class="ros-emcee ros-panel">
+    <div class="ep-block reveal">
+      <h3>What we value</h3>
+      <ul class="ep-measure" style="color:var(--text-body);padding-left:1.1em;margin:0">
+        <li><strong>Innovation</strong> — celebrating bold ideas that challenge conventional wisdom and open new possibilities.</li>
+        <li><strong>Community</strong> — building connections across diverse perspectives, backgrounds, and experiences.</li>
+        <li><strong>Authenticity</strong> — honoring genuine voices and making space for honest, vulnerable storytelling.</li>
+        <li><strong>Sustainability</strong> — stewarding our mountain home so it thrives for generations to come.</li>
+      </ul>
+    </div>
+
+    <div class="ep-social-cta ep-social-cta--row reveal">
+      <p class="tag">Follow along</p>
+      <a class="handle" href="https://instagram.com/{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="TEDxBreckenridge on Instagram (opens in new window)">
+        {% include facets/social-icon.html type="instagram" px=20 %}Instagram
+      </a>
+      <a class="handle" href="https://youtube.com/{{ site.social.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="TEDxBreckenridge on YouTube (opens in new window)">
+        {% include facets/social-icon.html type="youtube" px=20 %}YouTube
+      </a>
+      <a class="handle" href="https://facebook.com/{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer" aria-label="TEDxBreckenridge on Facebook (opens in new window)">
+        {% include facets/social-icon.html type="facebook" px=20 %}Facebook
+      </a>
+      <a class="handle" href="https://www.flickr.com/photos/tedxbreckenridge/" target="_blank" rel="noopener noreferrer" aria-label="TEDxBreckenridge on Flickr (opens in new window)">
+        {% include facets/social-icon.html type="flickr" px=20 %}Flickr
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Imperial (lead) ad ============ -->
+{% if lead_ad %}
+<section class="ep-section">
+  <div class="ep-shell">
+    <div class="ep-ads">
+      {% include program-ad.html ad=lead_ad %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ============ Emcee ============ -->
+{% assign emcee = site.data.speakers.emcee %}
+{% if emcee %}
+<section id="emcee" class="ep-section">
+  <div class="ep-shell">
+    <p class="ep-kicker reveal">Your host for the afternoon</p>
+    <h2 class="ep-heading reveal">The emcee</h2>
+    <details class="ros-emcee ros-panel reveal">
       <summary>
         <span class="ros-emcee-label">Your emcee</span>
         <span class="ros-emcee-name">{{ emcee.name }}</span>
@@ -78,77 +131,16 @@ info_rows:
         </div>
       </div>
     </details>
-    {% endif %}
-
-    {% assign talks = site.data.speakers.speakers | sort: "order" %}
-    {% assign shown_break = false %}
-    <ol class="ros">
-      {% for t in talks %}
-        {% if t.half == 2 and shown_break == false %}
-          <li class="ros-break" aria-label="Intermission">
-            <span class="rule" aria-hidden="true"></span>
-            <span class="lbl">Intermission</span>
-            <span class="rule" aria-hidden="true"></span>
-          </li>
-          {% assign shown_break = true %}
-        {% endif %}
-      <li class="ros-item">
-        <details class="ros-panel" id="{{ t.slug }}">
-          <summary class="ros-row">
-            <span class="ros-i">{{ t.order | prepend: '0' | slice: -2, 2 }}</span>
-            <span class="ros-main">
-              <span class="ros-name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</span>
-              <span class="ros-talk">{{ t.theme }}</span>
-              <span class="ros-role">{{ t.role }}</span>
-            </span>
-            <span class="ros-toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="ros-bio">
-            <div class="ros-bio-inner">
-              <img class="ros-headshot" src="{{ t.image | relative_url }}" alt="{{ t.name }}" loading="lazy"{% if t.crop %} style="object-position:{{ t.crop }}"{% endif %}>
-              {% for para in t.bio %}<p>{{ para }}</p>{% endfor %}
-              {% if t.socials %}
-              <div class="ros-social">
-                {% for s in t.socials %}
-                <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ t.name }} on {{ s.type }}">
-                  {% include facets/social-icon.html type=s.type px=18 %}
-                </a>
-                {% endfor %}
-              </div>
-              {% endif %}
-            </div>
-          </div>
-        </details>
-      </li>
-      {% endfor %}
-    </ol>
   </div>
 </section>
-
-<!-- ============ Sponsor ads ============ -->
-<section class="ep-section">
-  <div class="ep-shell">
-    <p class="ep-kicker reveal">With thanks to</p>
-    <h2 class="ep-heading reveal">Our sponsors</h2>
-
-    {% assign lead_ads = page.sponsor_ads | where: "tier", "lead" %}
-    {% assign anchor_ads = page.sponsor_ads | where: "tier", "anchor" %}
-    {% assign supporting_ads = page.sponsor_ads | where: "tier", "supporting" %}
-
-    <div class="ep-ads">
-      {% for ad in lead_ads %}{% include program-ad.html ad=ad %}{% endfor %}
-      {% for ad in anchor_ads %}{% include program-ad.html ad=ad %}{% endfor %}
-      {% for ad in supporting_ads %}{% include program-ad.html ad=ad %}{% endfor %}
-    </div>
-  </div>
-</section>
+{% endif %}
 
 <!-- ============ Sponsor wall ============ -->
 <section id="sponsors" class="ep-section">
   <div class="emission emission--strip emission--even" aria-hidden="true"></div>
   <div class="ep-shell" style="padding-top:var(--space-40)">
-    <p class="ep-kicker reveal">The full roster</p>
-    <h2 class="ep-heading reveal">Thank you to everyone who makes this possible</h2>
+    <p class="ep-kicker reveal">With thanks to</p>
+    <h2 class="ep-heading reveal">The sponsors who make today possible</h2>
 
     {% assign tiers = "premier,anchor,supporting,community,corporate" | split: "," %}
     {% assign tier_labels = "Premier,Anchor,Supporting,Community,Creative" | split: "," %}
@@ -181,33 +173,69 @@ info_rows:
   </div>
 </section>
 
-<!-- ============ Getting there ============ -->
-<section id="getting-there" class="ep-section">
-  <div class="emission emission--strip emission--cool" aria-hidden="true"></div>
+<!-- ============ Run of show ============ -->
+{% assign talks = site.data.speakers.speakers | sort: "order" %}
+{% assign segment1 = talks | where: "half", 1 %}
+{% assign segment2 = talks | where: "half", 2 %}
+
+<section id="run-of-show" class="ep-section">
+  <div class="emission emission--strip emission--warm" aria-hidden="true"></div>
   <div class="ep-shell" style="padding-top:var(--space-40)">
-    <p class="ep-kicker reveal">Wayfinding</p>
-    <h2 class="ep-heading reveal">Getting there &amp; parking</h2>
+    <p class="ep-kicker">The lineup</p>
+    <h2 class="ep-heading">Run of show</h2>
+    <p class="ep-measure" style="color:var(--text-body);margin:0 0 var(--space-24)">Nine speakers, in the order they'll take the stage, split across the intermission. Tap any name to read their bio.</p>
 
-    <div class="ep-block reveal">
-      <h3>Main event — Riverwalk Center</h3>
-      <p>150 W Adams Ave, Breckenridge, CO 80424.<br>
-      Park at the <strong>South Gondola Parking Structure</strong>, 80 North Park Ave — a short walk to the venue.</p>
-      <p><a class="ep-maplink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Riverwalk+Center+150+W+Adams+Ave+Breckenridge+CO+80424" target="_blank" rel="noopener noreferrer">Directions to the Riverwalk Center →</a></p>
-    </div>
-
-    <div class="ep-block reveal">
-      <h3>Alpenglow Dinner — Bar Down Tavern</h3>
-      <p>1979 Ski Hill Rd (Grand Lodge on Peak 7), Breckenridge, CO 80424.<br>
-      Park at the <strong>Breck Park Stables Garage</strong>, 1700 Ski Hill Rd.</p>
-      <p><a class="ep-maplink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bar+Down+Tavern+1979+Ski+Hill+Rd+Breckenridge+CO+80424" target="_blank" rel="noopener noreferrer">Directions to Bar Down →</a></p>
-      <p style="color:var(--text-secondary);font-size:15px">If you're joining us for the Alpenglow Dinner, the conversation continues at Bar Down from 6:30–9 PM, presented by The Imperial Hotel &amp; Private Residences. (Dinner is ticketed in advance.)</p>
-    </div>
+    <!-- Segment 1 — before intermission -->
+    <ol class="ros">
+      {% for t in segment1 %}
+      {% include program-run-of-show-item.html t=t %}
+      {% endfor %}
+    </ol>
   </div>
 </section>
 
-<!-- ============ Day-of info ============ -->
-<section id="day-of" class="ep-section">
+<!-- ============ Anchor ad (between segments) ============ -->
+{% if anchor_ad_1 %}
+<section class="ep-section">
   <div class="ep-shell">
+    <div class="ep-ads">
+      {% include program-ad.html ad=anchor_ad_1 %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ============ Run of show — segment 2 ============ -->
+<section class="ep-section">
+  <div class="ep-shell">
+    <div class="ros-break" role="separator" aria-label="Intermission" style="margin-bottom:var(--space-24)">
+      <span class="rule" aria-hidden="true"></span>
+      <span class="lbl">After the intermission</span>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <ol class="ros">
+      {% for t in segment2 %}
+      {% include program-run-of-show-item.html t=t %}
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- ============ Anchor ad (after the talks) ============ -->
+{% if anchor_ad_2 %}
+<section class="ep-section">
+  <div class="ep-shell">
+    <div class="ep-ads">
+      {% include program-ad.html ad=anchor_ad_2 %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ============ Good to know ============ -->
+<section id="good-to-know" class="ep-section">
+  <div class="emission emission--strip emission--cool" aria-hidden="true"></div>
+  <div class="ep-shell" style="padding-top:var(--space-40)">
     <p class="ep-kicker reveal">On the day</p>
     <h2 class="ep-heading reveal">Good to know</h2>
 
@@ -239,12 +267,59 @@ info_rows:
       <h3>Accessibility</h3>
       <p>The Riverwalk Center is wheelchair accessible with accessible restrooms on site. For seating accommodations or assistive listening, find a volunteer in a TEDxBreckenridge shirt or email <a href="mailto:info@tedxbreckenridge.com">info@tedxbreckenridge.com</a> ahead of time.</p>
     </div>
+  </div>
+</section>
 
-    <div class="ep-social-cta reveal">
-      <p class="tag">#TEDxBreckenridge</p>
-      <a class="handle" href="https://www.instagram.com/tedxbreckenridge/" target="_blank" rel="noopener noreferrer">
-        {% include facets/social-icon.html type="instagram" px=20 %}@tedxbreckenridge
-      </a>
+<!-- ============ Alpenglow Dinner ============ -->
+<section id="dinner" class="ep-section">
+  <div class="ep-shell">
+    <p class="ep-kicker reveal">For dinner guests</p>
+    <h2 class="ep-heading reveal">The Alpenglow Dinner</h2>
+    <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">If you're joining us for the Alpenglow Dinner, the conversation continues at Bar Down from 6:30–9 PM, presented by The Imperial Hotel &amp; Private Residences. (Dinner is ticketed in advance.) Here's where to go and where to park.</p>
+
+    <div class="ep-block reveal">
+      <h3>Bar Down Tavern</h3>
+      <p>1979 Ski Hill Rd (Grand Lodge on Peak 7), Breckenridge, CO 80424.<br>
+      Park at the <strong>Breck Park Stables Garage</strong>, 1700 Ski Hill Rd — a short walk to the lodge.</p>
+      <p><a class="ep-maplink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bar+Down+Tavern+1979+Ski+Hill+Rd+Breckenridge+CO+80424" target="_blank" rel="noopener noreferrer">Directions to Bar Down →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Supporting ad (near the close) ============ -->
+{% if supporting_ad %}
+<section class="ep-section">
+  <div class="ep-shell">
+    <div class="ep-ads">
+      {% include program-ad.html ad=supporting_ad %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ============ Donate ============ -->
+<section id="donate" class="ep-section">
+  <div class="emission emission--strip emission--even" aria-hidden="true"></div>
+  <div class="ep-shell" style="padding-top:var(--space-40)">
+    <p class="ep-kicker reveal">Keep ideas worth spreading going</p>
+    <h2 class="ep-heading reveal">Support TEDxBreckenridge</h2>
+    <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">Every talk on today's stage is produced by volunteers and funded by our community. If today moved you, a donation helps us bring the next round of local voices to the Riverwalk Center stage.</p>
+    <div class="ep-btn-row reveal">
+      <a class="ep-btn ep-btn--primary" href="https://givebutter.com/tedxbreckenridge?utm_source=website&utm_campaign=tedxbreckenridge.com-program-donate&utm_medium=cta" target="_blank" rel="noopener noreferrer">Donate now</a>
+      <a class="ep-btn ep-btn--secondary" href="/donate-local-nonprofit-in-breckenridge/">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ About the team ============ -->
+<section id="team" class="ep-section">
+  <div class="ep-shell">
+    <p class="ep-kicker reveal">The people behind today</p>
+    <h2 class="ep-heading reveal">Made by volunteers</h2>
+    <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">TEDxBreckenridge is organized entirely by local volunteers who work year-round to curate speakers, plan events, and build community in Summit County. From speaker coaches and stage managers to designers and day-of production, dozens of people made today happen.</p>
+    <div class="ep-btn-row reveal">
+      <a class="ep-btn ep-btn--secondary" href="/team/">Meet the team</a>
+      <a class="ep-btn ep-btn--secondary" href="/volunteer/">Volunteer with us</a>
     </div>
   </div>
 </section>

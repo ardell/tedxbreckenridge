@@ -1169,6 +1169,11 @@ tier is ~3/5 the height of the one above it. */
   min-height:44px
 }
 
+/* Multi-link variant: several social handles wrapping in a centered row. */
+.ep-social-cta--row .handle{
+  margin-inline:var(--space-12)
+}
+
 /* ---- footer ---- */
 .ep-footer{
   position:relative;
