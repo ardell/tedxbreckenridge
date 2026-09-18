@@ -524,19 +524,20 @@ Values are from the Emission handoff README (high-fidelity).
 
 /* Scoped under .emission-program so these beat the generic
    `.emission-program a { color:var(--teal-text) }` link rule when a button
-   is an <a>. */
+   is an <a>. Uses the warm amber accent (as the active jump-nav chip does)
+   with dark ink text: white on TED red is only 4.44:1, just under AA. */
 .emission-program .ep-btn--primary{
-  background:var(--ted-red);
-  color:#fff
+  background:var(--amber);
+  color:var(--ink)
 }
 
 .emission-program .ep-btn--primary:hover{
-  background:var(--ted-red-hover);
-  color:#fff
+  background:var(--gold);
+  color:var(--ink)
 }
 
 .emission-program .ep-btn--primary:active{
-  background:var(--ted-red-active)
+  background:var(--gold)
 }
 
 .emission-program .ep-btn--secondary{
