@@ -104,15 +104,16 @@ Lifted from stage concept 5b. Do not invent new values.
   --gutter:20px;
   --section-y:64px;
 
-  /* One reading measure for all body copy. 62ch (~600px at 17px) keeps line
-     length in the comfortable range; 720px ran to ~88 characters. Local
-     max-width overrides now track this single token. */
-  --measure:62ch;
+  /* One reading measure for all body copy. 68ch keeps line length in the
+     comfortable range. Local max-width overrides track this single token. */
+  --measure:68ch;
 
-  /* reading column */
-  --shell:1400px;
-
-  /* full-bleed content max */
+  /* Content column: a little wider than the reading measure so the centred
+     column has slight breathing room and the "Kaleidoscope" hero title fits on
+     one line. Body copy still caps at --measure; this only sets the container.
+     The jump nav, hero, all content sections and the footer share this column;
+     only the full-bleed emission strips break out of it. */
+  --content:80ch;
   --nav-h:56px;
 
   /* ---- radii ---- */
@@ -391,9 +392,14 @@ Values are from the Emission handoff README (high-fidelity).
 
 }
 
-/* shell + reading measure */
+/* shell + reading measure
+   Everything — jump nav, hero, content sections, footer — shares one centred
+   column at --content (a little wider than the reading measure so the column
+   isn't pinned hard left and the "Kaleidoscope" hero title fits on one line).
+   Only the full-bleed emission strips break out of it. Body copy still caps at
+   the narrower --measure inside this column. */
 .ep-shell{
-  max-width:var(--shell);
+  max-width:var(--content);
   margin-inline:auto;
   padding-inline:var(--gutter)
 }
@@ -488,11 +494,6 @@ Values are from the Emission handoff README (high-fidelity).
   color:var(--text)
 }
 
-/* The intermission label sits in a flex column with its own gap. */
-.ros-break .eyebrow{
-  margin:0
-}
-
 .ep-heading{
   font-family:var(--sans);
   font-weight:700;
@@ -554,7 +555,7 @@ Values are from the Emission handoff README (high-fidelity).
   overflow-x:auto;
   scrollbar-width:none;
   width:100%;
-  max-width:var(--shell);
+  max-width:var(--content);
   margin-inline:auto;
   padding-inline:var(--gutter);
   mask-image:linear-gradient(90deg,#000 92%,transparent);
@@ -1232,22 +1233,31 @@ text; ≥700px floats it right. */
    two gradient rules (spectrum warm → cool) with the label beneath. */
 .ros-break{
   display:flex;
-  flex-direction:column;
+  flex-wrap:wrap;
   align-items:center;
+  justify-content:center;
   gap:12px;
   padding-block:var(--space-40)
 }
 
 .ros-break .facet{
   display:block;
+  flex:0 0 auto;
   width:20px;
   height:20px
 }
 
+/* The two rules flank the facet on one row, each growing to fill its side. */
 .ros-break .rule{
-  width:100%;
-  max-width:var(--measure);
+  flex:1 1 0;
   height:1px
+}
+
+/* Label drops to its own centred line beneath the rule + facet row. */
+.ros-break .eyebrow{
+  flex-basis:100%;
+  margin:0;
+  text-align:center
 }
 
 .ros-break .rule--in{
@@ -1267,45 +1277,13 @@ text; ≥700px floats it right. */
 .ep-plates{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:var(--space-12)
+  gap:var(--space-12);
+  max-width:var(--measure)
 }
 
 @media (width >=700px){
   .ep-plates{
     grid-template-columns:repeat(3,1fr)
-  }
-
-}
-
-/* Desktop: let the GRID components use the wide shell (they were all capped
-   at the reading measure, leaving the 1400px shell unused and the program
-   pinned to the left with dead space beside it). Prose stays at the measure. */
-@media (width >=1100px){
-  .ep-plates{
-    grid-template-columns:repeat(6,minmax(0,1fr));
-    max-width:none
-  }
-
-  .ep-tier--premier .ep-plates{
-    grid-template-columns:repeat(2,minmax(0,1fr))
-  }
-
-  .ep-info{
-    display:grid;
-    max-width:none;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    column-gap:var(--space-64)
-  }
-
-  .ros{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:var(--space-24);
-    max-width:none
-  }
-
-  .ep-ads{
-    max-width:none
   }
 
 }
@@ -1520,11 +1498,10 @@ tier is ~3/5 the height of the one above it. */
   border-radius:var(--radius-xl);
   position:relative;
   overflow:hidden;
-  text-align:center;
   padding:var(--space-40) var(--space-24);
   margin-top:var(--space-48);
   max-width:var(--measure);
-  margin-inline:auto
+  margin-inline:0
 }
 
 .ep-social-cta::before{
@@ -1556,9 +1533,21 @@ tier is ~3/5 the height of the one above it. */
   min-height:44px
 }
 
-/* Multi-link variant: several social handles wrapping in a centered row. */
+/* Left-aligned wrapping row of social handles (matches the page's reading
+   column; no longer block-centred). */
+.ep-social-cta--row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:var(--space-8) var(--space-24)
+}
+
+.ep-social-cta--row .tag{
+  flex-basis:100%
+}
+
 .ep-social-cta--row .handle{
-  margin-inline:var(--space-12)
+  margin:0
 }
 
 /* ---- footer ---- */

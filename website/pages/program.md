@@ -176,11 +176,15 @@ info_rows:
     <h2 class="ep-heading reveal">Run of show</h2>
     <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">Nine speakers, in the order they'll take the stage, split across the intermission. Tap any name to read their bio.</p>
 
-    <!-- Segment 1 — before intermission -->
+    <!-- Segment 1 — before intermission.
+         Card edge colour = the talk's slice of the run-of-show spectrum,
+         computed from `order` (1–9) so rearranging talks keeps the colours in
+         gradient order. Divisor is 9 talks − 1 = 8. -->
     <ol class="ros">
       {% for t in segment1 %}
       {% assign label = t.order | prepend: '0' | slice: -2, 2 | prepend: 'Talk ' %}
-      {% include program-run-of-show-item.html t=t label=label %}
+      {% assign pct = t.order | minus: 1 | times: 100 | divided_by: 8 %}
+      {% include program-run-of-show-item.html t=t label=label pct=pct %}
       {% endfor %}
     </ol>
 
@@ -200,11 +204,12 @@ info_rows:
       <span class="eyebrow">Intermission · 20 minutes</span>
     </div>
 
-    <!-- Segment 2 — after intermission -->
+    <!-- Segment 2 — after intermission (same order-driven edge colour) -->
     <ol class="ros">
       {% for t in segment2 %}
       {% assign label = t.order | prepend: '0' | slice: -2, 2 | prepend: 'Talk ' %}
-      {% include program-run-of-show-item.html t=t label=label %}
+      {% assign pct = t.order | minus: 1 | times: 100 | divided_by: 8 %}
+      {% include program-run-of-show-item.html t=t label=label pct=pct %}
       {% endfor %}
     </ol>
   </div>
