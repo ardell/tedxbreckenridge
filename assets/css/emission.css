@@ -72,6 +72,19 @@ Lifted from stage concept 5b. Do not invent new values.
   --mono:"IBM Plex Mono",ui-monospace,"SF Mono",menlo,monospace;
   --wordmark:"Ambroise",georgia,"Times New Roman",serif;
 
+  /* ---- line-height (4px baseline grid) ----
+     Every text element's line box is a multiple of 4px so stacked blocks
+     share one vertical rhythm. Pick the smallest step that fits the size:
+     16 for 10-13px labels, 20 for 14-15px, 24 for 16-18px body,
+     28 for 20-28px headings/talk titles. Display (hero) stays tight below. */
+  --lh-16:16px;
+  --lh-20:20px;
+  --lh-24:24px;
+  --lh-28:28px;
+  --lh-32:32px;
+  --lh-36:36px;
+  --lh-48:48px;
+
   /* ---- spacing (4px base) ---- */
   --space-4:4px;
   --space-8:8px;
@@ -332,7 +345,7 @@ Values are from the Emission handoff README (high-fidelity).
   color:var(--text-body);
   font-family:var(--sans);
   font-size:16px;
-  line-height:1.6;
+  line-height:var(--lh-24);
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 
@@ -402,6 +415,7 @@ Values are from the Emission handoff README (high-fidelity).
   font-family:var(--mono);
   font-weight:500;
   font-size:12px;
+  line-height:var(--lh-20);
   letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--amber);
@@ -413,7 +427,7 @@ Values are from the Emission handoff README (high-fidelity).
   font-family:var(--sans);
   font-weight:700;
   font-size:28px;
-  line-height:1.15;
+  line-height:var(--lh-32);
   letter-spacing:-.02em;
   color:var(--text);
   margin:0 0 var(--space-24);
@@ -426,7 +440,8 @@ Values are from the Emission handoff README (high-fidelity).
   }
 
   .ep-heading{
-    font-size:44px
+    font-size:44px;
+    line-height:var(--lh-48)
   }
 
 }
@@ -488,6 +503,7 @@ Values are from the Emission handoff README (high-fidelity).
   flex:0 0 auto;
   font-family:var(--mono);
   font-size:12px;
+  line-height:var(--lh-20);
   letter-spacing:.04em;
   color:var(--text-secondary);
   padding:8px 14px;
@@ -524,6 +540,7 @@ Values are from the Emission handoff README (high-fidelity).
   font-family:var(--sans);
   font-weight:600;
   font-size:16px;
+  line-height:var(--lh-24);
   border:1px solid transparent;
   cursor:pointer;
   transition:background var(--t-base) ease-out,border-color var(--t-base) ease-out,color var(--t-base) ease-out;
@@ -608,6 +625,7 @@ Values are from the Emission handoff README (high-fidelity).
 .ep-hero-date{
   font-weight:500;
   font-size:17px;
+  line-height:var(--lh-24);
   color:var(--text);
   margin:0
 }
@@ -615,6 +633,7 @@ Values are from the Emission handoff README (high-fidelity).
 .ep-hero-venue{
   font-weight:400;
   font-size:15px;
+  line-height:var(--lh-20);
   color:var(--text-secondary);
   margin:4px 0 var(--space-32)
 }
@@ -665,6 +684,7 @@ Values are from the Emission handoff README (high-fidelity).
   font-family:var(--mono);
   font-weight:400;
   font-size:14px;
+  line-height:var(--lh-20);
   letter-spacing:.1em;
   color:var(--text-muted);
   padding-top:4px;
@@ -679,7 +699,7 @@ Values are from the Emission handoff README (high-fidelity).
   display:block;
   font-weight:700;
   font-size:22px;
-  line-height:1.2;
+  line-height:var(--lh-28);
   letter-spacing:-.02em;
   color:var(--text)
 }
@@ -688,7 +708,7 @@ Values are from the Emission handoff README (high-fidelity).
   display:block;
   font-weight:400;
   font-size:18px;
-  line-height:1.4;
+  line-height:var(--lh-24);
   color:var(--gold);
   margin-top:2px
 }
@@ -697,7 +717,7 @@ Values are from the Emission handoff README (high-fidelity).
   display:block;
   font-weight:400;
   font-size:14px;
-  line-height:1.45;
+  line-height:var(--lh-20);
   color:var(--text-secondary);
   margin-top:6px
 }
@@ -759,7 +779,7 @@ text; ≥700px floats it right. */
   margin:0 0 var(--space-12);
   color:var(--text-body);
   font-size:15px;
-  line-height:1.65
+  line-height:var(--lh-24)
 }
 
 .ros-bio p:last-child{
@@ -859,16 +879,18 @@ text; ≥700px floats it right. */
   display:block;
   font-family:var(--mono);
   font-size:11px;
+  line-height:var(--lh-16);
   letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--amber);
-  margin:0 0 6px
+  margin:0 0 var(--space-8)
 }
 
 .ros-emcee-name{
   display:block;
   font-weight:700;
   font-size:20px;
+  line-height:var(--lh-28);
   color:var(--text)
 }
 
@@ -876,9 +898,9 @@ text; ≥700px floats it right. */
   display:block;
   font-weight:400;
   font-size:18px;
-  line-height:1.4;
+  line-height:var(--lh-24);
   color:var(--gold);
-  margin-top:4px
+  margin-top:var(--space-4)
 }
 
 /* Speaker cards lead with the TALK TITLE as the headline: larger than the
@@ -887,23 +909,25 @@ text; ≥700px floats it right. */
 .ros-emcee--talk .ros-emcee-talk{
   font-weight:700;
   font-size:24px;
-  line-height:1.25;
+  line-height:var(--lh-28);
   color:var(--text);
-  margin-top:2px
+  margin-top:var(--space-4)
 }
 
 .ros-emcee--talk .ros-emcee-name{
   font-weight:500;
   font-size:16px;
+  line-height:var(--lh-24);
   color:var(--gold);
-  margin-top:6px
+  margin-top:var(--space-8)
 }
 
 .ros-emcee-role{
   display:block;
   font-size:14px;
+  line-height:var(--lh-20);
   color:var(--text-secondary);
-  margin-top:4px
+  margin-top:var(--space-4)
 }
 
 .ros-emcee .ros-bio{
@@ -921,11 +945,13 @@ text; ≥700px floats it right. */
   }
 
   .ros-name{
-    font-size:30px
+    font-size:30px;
+    line-height:var(--lh-36)
   }
 
   .ros-talk{
-    font-size:24px
+    font-size:24px;
+    line-height:var(--lh-28)
   }
 
   .ros-bio{
@@ -958,6 +984,7 @@ text; ≥700px floats it right. */
 .ros-break .lbl{
   font-family:var(--mono);
   font-size:11px;
+  line-height:var(--lh-16);
   letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--amber)
@@ -977,6 +1004,7 @@ text; ≥700px floats it right. */
   font-family:var(--mono);
   font-weight:500;
   font-size:11px;
+  line-height:var(--lh-16);
   letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--amber);
@@ -1082,6 +1110,7 @@ tier is ~3/5 the height of the one above it. */
   color:var(--text-muted);
   font-family:var(--mono);
   font-size:12px;
+  line-height:var(--lh-20);
   letter-spacing:.1em;
   text-transform:uppercase;
   padding:24px;
@@ -1141,19 +1170,21 @@ tier is ~3/5 the height of the one above it. */
   display:flex;
   justify-content:space-between;
   gap:var(--space-16);
-  padding-block:15px;
+  padding-block:var(--space-16);
   border-top:1px solid var(--hairline)
 }
 
 .ep-info-label{
   font-weight:400;
   font-size:16px;
+  line-height:var(--lh-24);
   color:var(--text-body)
 }
 
 .ep-info-value{
   font-family:var(--mono);
   font-size:15px;
+  line-height:var(--lh-24);
   letter-spacing:.06em;
   color:var(--text);
   text-align:right
@@ -1167,6 +1198,7 @@ tier is ~3/5 the height of the one above it. */
 .ep-block h3{
   font-weight:700;
   font-size:20px;
+  line-height:var(--lh-28);
   color:var(--text);
   margin:0 0 var(--space-12)
 }
@@ -1209,6 +1241,7 @@ tier is ~3/5 the height of the one above it. */
 .ep-social-cta .tag{
   font-weight:700;
   font-size:24px;
+  line-height:var(--lh-28);
   color:var(--text);
   margin:0
 }
@@ -1216,6 +1249,7 @@ tier is ~3/5 the height of the one above it. */
 .ep-social-cta .handle{
   color:var(--teal-text);
   font-size:16px;
+  line-height:var(--lh-24);
   margin:8px 0 0;
   display:inline-flex;
   align-items:center;
@@ -1252,7 +1286,7 @@ tier is ~3/5 the height of the one above it. */
 
 .ep-footer-blurb{
   font-size:13px;
-  line-height:1.6;
+  line-height:var(--lh-20);
   color:var(--text-secondary);
   max-width:var(--measure);
   margin:var(--space-20) 0
@@ -1261,6 +1295,7 @@ tier is ~3/5 the height of the one above it. */
 .ep-footer-license{
   font-family:var(--mono);
   font-size:11px;
+  line-height:var(--lh-16);
   letter-spacing:.06em;
   color:var(--text-muted);
   margin-top:var(--space-16)
