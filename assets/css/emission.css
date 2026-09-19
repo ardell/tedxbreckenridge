@@ -338,6 +338,14 @@ Values are from the Emission handoff README (high-fidelity).
 
 }
 
+/* The full-bleed emission bands use `width:100vw`, which counts the vertical
+   scrollbar the content width does not — leaving a few px of horizontal
+   scroll on mobile. `overflow-x:hidden` on the body alone doesn't catch it
+   (the overflow escapes to the root), so clip it at the root too. */
+:root:has(> body.emission-program){
+  overflow-x:clip
+}
+
 .emission-program *,
 .emission-program *::before,
 .emission-program *::after{
