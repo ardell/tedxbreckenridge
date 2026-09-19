@@ -118,19 +118,9 @@ info_rows:
   <div class="ep-shell">
     <p class="ep-kicker reveal">Your host for the afternoon</p>
     <h2 class="ep-heading reveal">The emcee</h2>
-    <div class="ros-emcee ros-emcee--static reveal">
-      <div class="ros-emcee-head">
-        <span class="ros-emcee-label">Your emcee</span>
-        <span class="ros-emcee-name">{{ emcee.name }}</span>
-        <span class="ros-emcee-role">{{ emcee.role }}</span>
-      </div>
-      <div class="ros-bio">
-        <div class="ros-bio-inner">
-          {% if emcee.image %}<img class="ros-headshot" src="{{ emcee.image | relative_url }}" alt="{{ emcee.name }}" loading="lazy">{% endif %}
-          {% for para in emcee.bio %}<p>{{ para }}</p>{% endfor %}
-        </div>
-      </div>
-    </div>
+    <ol class="ros">
+      {% include program-run-of-show-item.html t=emcee variant="emcee" %}
+    </ol>
   </div>
 </section>
 {% endif %}
@@ -188,7 +178,8 @@ info_rows:
     <!-- Segment 1 — before intermission -->
     <ol class="ros">
       {% for t in segment1 %}
-      {% include program-run-of-show-item.html t=t %}
+      {% assign label = t.order | prepend: '0' | slice: -2, 2 | prepend: 'Talk ' %}
+      {% include program-run-of-show-item.html t=t label=label %}
       {% endfor %}
     </ol>
   </div>
@@ -215,7 +206,8 @@ info_rows:
     </div>
     <ol class="ros">
       {% for t in segment2 %}
-      {% include program-run-of-show-item.html t=t %}
+      {% assign label = t.order | prepend: '0' | slice: -2, 2 | prepend: 'Talk ' %}
+      {% include program-run-of-show-item.html t=t label=label %}
       {% endfor %}
     </ol>
   </div>

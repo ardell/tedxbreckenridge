@@ -1,24 +1,30 @@
 {%- comment -%}
 A single run-of-show speaker card for the digital program, rendered fully
-expanded (no toggle). One CSS grid drives the layout; the placement differs
-by breakpoint (see .spk-card in emission.css):
-  - desktop: kicker/title + name/role share the top-left column, photo top-right,
-             bio spans full width below.
-  - mobile:  kicker/title top-left, photo top-right, then name/role above the
-             bio in the lower section.
-Extracted so both talk segments (before / after the intermission) match.
-Param: t = one entry from _data/speakers.yml `speakers`.
+expanded (no toggle). Layout differs by breakpoint (see .spk-card in
+emission.css):
+  - desktop: kicker/title + name/role flow together in the top-left column,
+             photo top-right; bio spans full width below.
+  - mobile:  kicker/title top-left with the photo top-right, then name/role
+             above the bio in the lower section.
+On desktop .spk-info is the left column; on mobile it becomes display:contents
+so head and meta place independently around the photo.
+Shared by both talk segments and the emcee card.
+Param: t = one speaker entry (or the emcee) from _data/speakers.yml.
 {%- endcomment -%}
 {%- assign t = include.t -%}
 <li class="ros-item">
-  <article class="spk-card reveal" id="{{ t.slug }}">
-    <p class="spk-kicker">Talk {{ t.order | prepend: '0' | slice: -2, 2 }}</p>
-    {% if t.theme %}<h3 class="spk-title">{{ t.theme }}</h3>{% endif %}
-    <img class="spk-photo" src="{{ t.image | relative_url }}" alt="{{ t.name }}" loading="lazy"{% if t.crop %} style="object-position:{{ t.crop }}"{% endif %}>
-    <div class="spk-meta">
-      <p class="spk-name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</p>
-      <p class="spk-role">{{ t.role }}</p>
+  <article class="spk-card{% if include.variant %} spk-card--{{ include.variant }}{% endif %} reveal" id="{{ t.slug }}">
+    <div class="spk-info">
+      <div class="spk-head">
+        {% if include.label %}<p class="spk-kicker">{{ include.label }}</p>{% endif %}
+        {% if t.theme %}<h3 class="spk-title">{{ t.theme }}</h3>{% endif %}
+      </div>
+      <div class="spk-meta">
+        <p class="spk-name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</p>
+        <p class="spk-role">{{ t.role }}</p>
+      </div>
     </div>
+    <img class="spk-photo" src="{{ t.image | relative_url }}" alt="{{ t.name }}" loading="lazy"{% if t.crop %} style="object-position:{{ t.crop }}"{% endif %}>
     <div class="spk-bio">
       {% for para in t.bio %}<p>{{ para }}</p>{% endfor %}
       {% if t.socials %}
