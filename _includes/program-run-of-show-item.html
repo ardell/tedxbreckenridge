@@ -1,32 +1,35 @@
 {%- comment -%}
-A single run-of-show speaker card for the digital program. Rendered fully
-expanded (like the emcee card): header + always-visible bio, no toggle.
+A single run-of-show speaker card for the digital program, rendered fully
+expanded (no toggle). One CSS grid drives the layout; the placement differs
+by breakpoint (see .spk-card in emission.css):
+  - desktop: kicker/title + name/role share the top-left column, photo top-right,
+             bio spans full width below.
+  - mobile:  kicker/title top-left, photo top-right, then name/role above the
+             bio in the lower section.
 Extracted so both talk segments (before / after the intermission) match.
 Param: t = one entry from _data/speakers.yml `speakers`.
 {%- endcomment -%}
 {%- assign t = include.t -%}
 <li class="ros-item">
-  <div class="ros-emcee ros-emcee--static ros-emcee--talk reveal" id="{{ t.slug }}">
-    <div class="ros-emcee-head">
-      <span class="ros-emcee-label">Talk {{ t.order | prepend: '0' | slice: -2, 2 }}</span>
-      {% if t.theme %}<span class="ros-emcee-talk">{{ t.theme }}</span>{% endif %}
-      <span class="ros-emcee-name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</span>
-      <span class="ros-emcee-role">{{ t.role }}</span>
+  <article class="spk-card reveal" id="{{ t.slug }}">
+    <p class="spk-kicker">Talk {{ t.order | prepend: '0' | slice: -2, 2 }}</p>
+    {% if t.theme %}<h3 class="spk-title">{{ t.theme }}</h3>{% endif %}
+    <img class="spk-photo" src="{{ t.image | relative_url }}" alt="{{ t.name }}" loading="lazy"{% if t.crop %} style="object-position:{{ t.crop }}"{% endif %}>
+    <div class="spk-meta">
+      <p class="spk-name">{% if t.title %}{{ t.title }} {% endif %}{{ t.name }}</p>
+      <p class="spk-role">{{ t.role }}</p>
     </div>
-    <div class="ros-bio">
-      <div class="ros-bio-inner">
-        <img class="ros-headshot" src="{{ t.image | relative_url }}" alt="{{ t.name }}" loading="lazy"{% if t.crop %} style="object-position:{{ t.crop }}"{% endif %}>
-        {% for para in t.bio %}<p>{{ para }}</p>{% endfor %}
-        {% if t.socials %}
-        <div class="ros-social">
-          {% for s in t.socials %}
-          <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ t.name }} on {{ s.type }}">
-            {% include facets/social-icon.html type=s.type px=18 %}
-          </a>
-          {% endfor %}
-        </div>
-        {% endif %}
+    <div class="spk-bio">
+      {% for para in t.bio %}<p>{{ para }}</p>{% endfor %}
+      {% if t.socials %}
+      <div class="spk-social">
+        {% for s in t.socials %}
+        <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ t.name }} on {{ s.type }}">
+          {% include facets/social-icon.html type=s.type px=20 %}
+        </a>
+        {% endfor %}
       </div>
+      {% endif %}
     </div>
-  </div>
+  </article>
 </li>

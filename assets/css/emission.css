@@ -347,14 +347,15 @@ Values are from the Emission handoff README (high-fidelity).
   font-size:16px;
   line-height:var(--lh-24);
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
 
 }
 
 /* The full-bleed emission bands use `width:100vw`, which counts the vertical
    scrollbar the content width does not — leaving a few px of horizontal
-   scroll on mobile. `overflow-x:hidden` on the body alone doesn't catch it
-   (the overflow escapes to the root), so clip it at the root too. */
+   scroll on mobile. Clip it at the root with `overflow-x:clip` (not on the
+   body: `overflow-x:hidden` there forces the body's overflow-y to `auto`,
+   making the body the scroll container and breaking the sticky jump nav).
+   `clip` on the root does not establish a scroll container, so sticky works. */
 :root:has(> body.emission-program){
   overflow-x:clip
 }
@@ -903,25 +904,6 @@ text; ≥700px floats it right. */
   margin-top:var(--space-4)
 }
 
-/* Speaker cards lead with the TALK TITLE as the headline: larger than the
-   speaker's name, which drops to a secondary line. (The emcee card, which has
-   no talk, keeps its name as the headline and is untouched.) */
-.ros-emcee--talk .ros-emcee-talk{
-  font-weight:700;
-  font-size:24px;
-  line-height:var(--lh-28);
-  color:var(--text);
-  margin-top:var(--space-4)
-}
-
-.ros-emcee--talk .ros-emcee-name{
-  font-weight:500;
-  font-size:16px;
-  line-height:var(--lh-24);
-  color:var(--gold);
-  margin-top:var(--space-8)
-}
-
 .ros-emcee-role{
   display:block;
   font-size:14px;
@@ -963,6 +945,158 @@ text; ≥700px floats it right. */
     height:150px
   }
 
+}
+
+/* ============================================================
+   Speaker card (run of show). One grid; placement differs by
+   breakpoint. Mobile: kicker/title + photo across the top, then
+   name/role above the bio. Desktop: name/role join the top-left
+   column beside the photo; bio spans full width beneath.
+   ============================================================ */
+.spk-card{
+  margin:0 0 var(--space-16);
+  padding:var(--space-24) var(--space-20);
+  background:var(--surface-02);
+  border:1px solid var(--hairline);
+  border-radius:var(--radius-lg);
+  max-width:var(--measure);
+  display:grid;
+  grid-template-columns:1fr 130px;
+  gap:0 var(--space-20);
+  grid-template-areas:
+    "kicker photo"
+    "title  photo"
+    "meta   meta"
+    "bio    bio";
+  align-items:start;
+}
+
+.spk-kicker{
+  grid-area:kicker;
+  margin:0 0 var(--space-8);
+  font-family:var(--mono);
+  font-weight:500;
+  font-size:12px;
+  line-height:var(--lh-20);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--amber);
+}
+
+.spk-title{
+  grid-area:title;
+  margin:0;
+  font-family:var(--sans);
+  font-weight:700;
+  font-size:24px;
+  line-height:var(--lh-28);
+  letter-spacing:-.01em;
+  color:var(--text);
+}
+
+.spk-photo{
+  grid-area:photo;
+  width:130px;
+  aspect-ratio:3 / 4;
+  object-fit:cover;
+
+  /* Framing comes from each speaker's `crop` (object-position), the same
+     values the /speakers/ page uses at this 3/4 ratio; default to slightly
+     above centre so the top of the head isn't clipped. */
+  object-position:center 30%;
+  border-radius:var(--radius-lg);
+  border:1px solid var(--hairline);
+  box-shadow:0 -1px 24px rgb(232 122 30 / 16%);
+
+  /* stylized to match the Emission theme: warm duotone + a lit edge */
+  filter:grayscale(1) contrast(1.05) sepia(.35) saturate(1.15) hue-rotate(-12deg) brightness(.95);
+}
+
+.spk-meta{
+  grid-area:meta;
+  margin-top:var(--space-24);
+}
+
+.spk-name{
+  margin:0;
+  font-weight:700;
+  font-size:24px;
+  line-height:var(--lh-28);
+  letter-spacing:-.01em;
+  color:var(--gold);
+}
+
+.spk-role{
+  margin:var(--space-4) 0 0;
+  font-size:15px;
+  line-height:var(--lh-24);
+  color:var(--text-secondary);
+}
+
+.spk-bio{
+  grid-area:bio;
+  margin-top:var(--space-24);
+  max-width:62ch;
+}
+
+.spk-bio p{
+  margin:0 0 var(--space-16);
+  color:var(--text-body);
+  font-size:16px;
+  line-height:var(--lh-24);
+}
+
+.spk-bio p:last-child{
+  margin-bottom:0;
+}
+
+.spk-social{
+  display:flex;
+  gap:4px;
+  margin-top:var(--space-24);
+}
+
+.spk-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  margin:-12px 0 -12px -12px;
+  color:var(--teal-text);
+}
+
+@media (width >=700px){
+  .spk-card{
+    padding:var(--space-32);
+    grid-template-columns:1fr minmax(240px,40%);
+    column-gap:var(--space-40);
+    grid-template-areas:
+      "kicker photo"
+      "title  photo"
+      "meta   photo"
+      "bio    bio";
+  }
+
+  .spk-title{
+    font-size:32px;
+    line-height:var(--lh-36);
+    margin-bottom:var(--space-4);
+  }
+
+  .spk-photo{
+    width:100%;
+    aspect-ratio:3 / 4;
+  }
+
+  .spk-name{
+    font-size:26px;
+    line-height:var(--lh-32);
+  }
+
+  .spk-bio{
+    margin-top:var(--space-40);
+  }
 }
 
 /* intermission marker */
