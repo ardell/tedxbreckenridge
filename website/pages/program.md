@@ -65,10 +65,10 @@ info_rows:
 </header>
 
 <!-- ============ Mission & values ============ -->
-<section id="mission" class="ep-section">
+<section id="mission" class="ep-section ep-section--banded ep-section--textured">
   <div class="emission emission--strip emission--warm" aria-hidden="true"></div>
-  <div class="ep-shell" style="padding-top:var(--space-40)">
-    <p class="ep-kicker reveal">Why we're here</p>
+  <div class="ep-shell">
+    <p class="eyebrow reveal">Why we're here</p>
     <h2 class="ep-heading reveal">Our mission</h2>
     <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">TEDxBreckenridge is a 501(c)(3) nonprofit, run entirely by local volunteers. We create a platform for innovative ideas and meaningful conversations that inspire positive change in Summit County and beyond — amplifying local voices and bringing diverse perspectives together to strengthen our community and add to the global conversation.</p>
 
@@ -114,9 +114,10 @@ info_rows:
 <!-- ============ Emcee ============ -->
 {% assign emcee = site.data.speakers.emcee %}
 {% if emcee %}
-<section id="emcee" class="ep-section">
+<section id="emcee" class="ep-section ep-section--banded">
+  <div class="emission emission--strip emission--dim" aria-hidden="true"></div>
   <div class="ep-shell">
-    <p class="ep-kicker reveal">Your host for the afternoon</p>
+    <p class="eyebrow reveal">Your host for the afternoon</p>
     <h2 class="ep-heading reveal">The emcee</h2>
     <ol class="ros">
       {% include program-run-of-show-item.html t=emcee variant="emcee" %}
@@ -126,10 +127,10 @@ info_rows:
 {% endif %}
 
 <!-- ============ Sponsor wall ============ -->
-<section id="sponsors" class="ep-section">
+<section id="sponsors" class="ep-section ep-section--banded">
   <div class="emission emission--strip emission--even" aria-hidden="true"></div>
-  <div class="ep-shell" style="padding-top:var(--space-40)">
-    <p class="ep-kicker reveal">With thanks to</p>
+  <div class="ep-shell">
+    <p class="eyebrow reveal">With thanks to</p>
     <h2 class="ep-heading reveal">The sponsors who make today possible</h2>
 
     {% assign tiers = "premier,anchor,supporting,community,corporate" | split: "," %}
@@ -138,7 +139,7 @@ info_rows:
       {% assign tier_sponsors = site.data.sponsors | where: "tier", tier %}
       {% if tier_sponsors.size > 0 %}
       <div class="ep-tier ep-tier--{{ tier }} reveal">
-        <p class="ep-tier-label">{{ tier_labels[forloop.index0] }}</p>
+        <p class="eyebrow">{{ tier_labels[forloop.index0] }}</p>
         <div class="ep-plates">
           {% for s in tier_sponsors %}
           {% assign logo = s.wall_logo | default: s.logo %}
@@ -168,12 +169,12 @@ info_rows:
 {% assign segment1 = talks | where: "half", 1 %}
 {% assign segment2 = talks | where: "half", 2 %}
 
-<section id="run-of-show" class="ep-section">
+<section id="run-of-show" class="ep-section ep-section--banded">
   <div class="emission emission--strip emission--warm" aria-hidden="true"></div>
-  <div class="ep-shell" style="padding-top:var(--space-40)">
-    <p class="ep-kicker">The lineup</p>
-    <h2 class="ep-heading">Run of show</h2>
-    <p class="ep-measure" style="color:var(--text-body);margin:0 0 var(--space-24)">Nine speakers, in the order they'll take the stage, split across the intermission. Tap any name to read their bio.</p>
+  <div class="ep-shell">
+    <p class="eyebrow reveal">The lineup</p>
+    <h2 class="ep-heading reveal">Run of show</h2>
+    <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">Nine speakers, in the order they'll take the stage, split across the intermission. Tap any name to read their bio.</p>
 
     <!-- Segment 1 — before intermission -->
     <ol class="ros">
@@ -182,28 +183,24 @@ info_rows:
       {% include program-run-of-show-item.html t=t label=label %}
       {% endfor %}
     </ol>
-  </div>
-</section>
 
-<!-- ============ Anchor ad (between segments) ============ -->
-{% if anchor_ad_1 %}
-<section class="ep-section ep-section--ad">
-  <div class="ep-shell">
-    <div class="ep-ads">
+    <!-- Anchor ad between the two segments -->
+    {% if anchor_ad_1 %}
+    <div class="ep-ads ep-ads--inline reveal">
       {% include program-ad.html ad=anchor_ad_1 %}
     </div>
-  </div>
-</section>
-{% endif %}
+    {% endif %}
 
-<!-- ============ Run of show — segment 2 ============ -->
-<section class="ep-section">
-  <div class="ep-shell">
-    <div class="ros-break" role="separator" aria-label="Intermission" style="margin-bottom:var(--space-24)">
-      <span class="rule" aria-hidden="true"></span>
-      <span class="lbl">After the intermission</span>
-      <span class="rule" aria-hidden="true"></span>
+    <!-- Intermission landmark -->
+    <div class="ros-break reveal" role="separator" aria-label="Intermission">
+      <span class="rule rule--in" aria-hidden="true"></span>
+      <img class="facet" src="{{ '/assets/images/kaleidoscope/kaleidoscope-facet.svg' | relative_url }}"
+           alt="" aria-hidden="true" width="20" height="20">
+      <span class="rule rule--out" aria-hidden="true"></span>
+      <span class="eyebrow">Intermission · 20 minutes</span>
     </div>
+
+    <!-- Segment 2 — after intermission -->
     <ol class="ros">
       {% for t in segment2 %}
       {% assign label = t.order | prepend: '0' | slice: -2, 2 | prepend: 'Talk ' %}
@@ -225,10 +222,10 @@ info_rows:
 {% endif %}
 
 <!-- ============ Good to know ============ -->
-<section id="good-to-know" class="ep-section">
+<section id="good-to-know" class="ep-section ep-section--banded">
   <div class="emission emission--strip emission--cool" aria-hidden="true"></div>
-  <div class="ep-shell" style="padding-top:var(--space-40)">
-    <p class="ep-kicker reveal">On the day</p>
+  <div class="ep-shell">
+    <p class="eyebrow reveal">On the day</p>
     <h2 class="ep-heading reveal">Good to know</h2>
 
     <div class="ep-info reveal">
@@ -263,9 +260,10 @@ info_rows:
 </section>
 
 <!-- ============ Alpenglow Dinner ============ -->
-<section id="dinner" class="ep-section">
+<section id="dinner" class="ep-section ep-section--banded">
+  <div class="emission emission--strip emission--warm" aria-hidden="true"></div>
   <div class="ep-shell">
-    <p class="ep-kicker reveal">For dinner guests</p>
+    <p class="eyebrow reveal">For dinner guests</p>
     <h2 class="ep-heading reveal">The Alpenglow Dinner</h2>
     <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">If you're joining us for the Alpenglow Dinner, the conversation continues at Bar Down from 6:30–9 PM, presented by The Imperial Hotel &amp; Private Residences. (Dinner is ticketed in advance.) Here's where to go and where to park.</p>
 
@@ -290,10 +288,10 @@ info_rows:
 {% endif %}
 
 <!-- ============ Donate ============ -->
-<section id="donate" class="ep-section">
+<section id="donate" class="ep-section ep-section--banded ep-section--textured">
   <div class="emission emission--strip emission--even" aria-hidden="true"></div>
-  <div class="ep-shell" style="padding-top:var(--space-40)">
-    <p class="ep-kicker reveal">Keep ideas worth spreading going</p>
+  <div class="ep-shell">
+    <p class="eyebrow reveal">Keep ideas worth spreading going</p>
     <h2 class="ep-heading reveal">Support TEDxBreckenridge</h2>
     <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">Every talk on today's stage is produced by volunteers and funded by our community. If today moved you, a donation helps us bring the next round of local voices to the Riverwalk Center stage.</p>
     <div class="ep-btn-row reveal">
@@ -304,9 +302,10 @@ info_rows:
 </section>
 
 <!-- ============ About the team ============ -->
-<section id="team" class="ep-section">
+<section id="team" class="ep-section ep-section--banded">
+  <div class="emission emission--strip emission--dim" aria-hidden="true"></div>
   <div class="ep-shell">
-    <p class="ep-kicker reveal">The people behind today</p>
+    <p class="eyebrow reveal">The people behind today</p>
     <h2 class="ep-heading reveal">Made by volunteers</h2>
     <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">TEDxBreckenridge is organized entirely by local volunteers who work year-round to curate speakers, plan events, and build community in Summit County. From speaker coaches and stage managers to designers and day-of production, dozens of people made today happen.</p>
     <div class="ep-btn-row reveal">
@@ -322,6 +321,6 @@ info_rows:
   <div class="ep-shell">
     <img class="ep-footer-lockup" src="{{ '/assets/images/logos/tedx-breckenridge-logo-white.svg' | relative_url }}" alt="TEDxBreckenridge" width="130">
     <p class="ep-footer-blurb">TEDxBreckenridge is a 501(c)3 nonprofit, run entirely by local volunteers, bringing ideas worth spreading to Summit County. <a href="/donate-local-nonprofit-in-breckenridge/">Donate</a> · <a href="/speakers/">Speakers</a> · <a href="/team/">Team</a></p>
-    <p class="ep-footer-license">OPERATED UNDER LICENSE FROM TED</p>
+    <p class="ep-footer-license label-micro">OPERATED UNDER LICENSE FROM TED</p>
   </div>
 </footer>
