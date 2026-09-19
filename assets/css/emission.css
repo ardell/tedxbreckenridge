@@ -1230,32 +1230,30 @@ text; ≥700px floats it right. */
 }
 
 /* intermission marker — the page's one landmark: a centred facet flanked by
-   two gradient rules (spectrum warm → cool) with the label beneath. */
+   two gradient rules (spectrum warm → cool), with the label on its own row
+   beneath. A 3-column grid (rule · facet · rule) guarantees the two-row
+   layout in every browser — flex-wrap left the label inline on iOS Safari. */
 .ros-break{
-  display:flex;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
   align-items:center;
-  justify-content:center;
   gap:12px;
   padding-block:var(--space-40)
 }
 
 .ros-break .facet{
   display:block;
-  flex:0 0 auto;
   width:20px;
   height:20px
 }
 
-/* The two rules flank the facet on one row, each growing to fill its side. */
 .ros-break .rule{
-  flex:1 1 0;
   height:1px
 }
 
-/* Label drops to its own centred line beneath the rule + facet row. */
+/* Label spans all three columns on the second row, centred. */
 .ros-break .eyebrow{
-  flex-basis:100%;
+  grid-column:1 / -1;
   margin:0;
   text-align:center
 }
