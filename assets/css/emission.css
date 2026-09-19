@@ -103,7 +103,11 @@ Lifted from stage concept 5b. Do not invent new values.
   /* ---- layout ---- */
   --gutter:20px;
   --section-y:64px;
-  --measure:720px;
+
+  /* One reading measure for all body copy. 62ch (~600px at 17px) keeps line
+     length in the comfortable range; 720px ran to ~88 characters. Local
+     max-width overrides now track this single token. */
+  --measure:62ch;
 
   /* reading column */
   --shell:1400px;
@@ -403,6 +407,39 @@ Values are from the Emission handoff README (high-fidelity).
   padding-block:var(--section-y)
 }
 
+/* Banded sections open with an emission strip; clear it with a consistent
+   top pad (was a hand-repeated inline style on each section's .ep-shell). */
+.ep-section--banded > .ep-shell{
+  padding-top:var(--space-40)
+}
+
+/* The Kaleidoscope rosette repeated at very low opacity as background
+   texture behind key sections (mission, donate). Texture, not decoration:
+   never over body copy, never above 6%, never rotated. */
+.ep-section--textured{
+  position:relative;
+  overflow:hidden
+}
+
+.ep-section--textured::after{
+  content:"";
+  position:absolute;
+  right:-56px;
+  top:-40px;
+  width:200px;
+  aspect-ratio:1;
+  pointer-events:none;
+  background:url("/assets/images/kaleidoscope/kaleidoscope-mark.svg") center/contain no-repeat;
+  opacity:.05
+}
+
+@media (width >=900px){
+  .ep-section--textured::after{
+    width:320px;
+    right:-90px
+  }
+}
+
 /* Ad sections sit between content sections that each carry a full
    `--section-y` of padding-block. Keep the ad's own padding minimal AND pull
    it up/down with negative margin so it doesn't float in a large void
@@ -412,7 +449,12 @@ Values are from the Emission handoff README (high-fidelity).
   margin-block:calc(var(--section-y) * -0.5)
 }
 
-.ep-kicker{
+/* ---- one mono label system (four roles) ----
+   Replaces the eight one-off mono labels the page had grown (ep-kicker,
+   spk-kicker, ep-tier-label, ros-break .lbl, ep-ad-flag, ep-ad-ph-tier,
+   ep-footer-license). Talk numbers and tier labels are deliberately promoted
+   to amber by using .eyebrow. */
+.eyebrow{
   font-family:var(--mono);
   font-weight:500;
   font-size:12px;
@@ -420,8 +462,35 @@ Values are from the Emission handoff README (high-fidelity).
   letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--amber);
-  margin:0 0 var(--space-12);
+  margin:0 0 var(--space-12)
+}
 
+.eyebrow--muted{
+  color:var(--label)
+}
+
+.label-micro{
+  font-family:var(--mono);
+  font-weight:400;
+  font-size:11px;
+  line-height:var(--lh-16);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#8f8f8f
+}
+
+.label-data{
+  font-family:var(--mono);
+  font-weight:400;
+  font-size:15px;
+  line-height:var(--lh-20);
+  letter-spacing:.06em;
+  color:var(--text)
+}
+
+/* The intermission label sits in a flex column with its own gap. */
+.ros-break .eyebrow{
+  margin:0
 }
 
 .ep-heading{
@@ -436,10 +505,6 @@ Values are from the Emission handoff README (high-fidelity).
 }
 
 @media (width >=900px){
-  .ep-kicker{
-    font-size:13px
-  }
-
   .ep-heading{
     font-size:44px;
     line-height:var(--lh-48)
@@ -503,9 +568,10 @@ Values are from the Emission handoff README (high-fidelity).
 .ep-chip{
   flex:0 0 auto;
   font-family:var(--mono);
+  font-weight:400;
   font-size:12px;
-  line-height:var(--lh-20);
-  letter-spacing:.04em;
+  line-height:1;
+  letter-spacing:.1em;
   color:var(--text-secondary);
   padding:8px 14px;
   border-radius:var(--radius-pill);
@@ -957,6 +1023,8 @@ text; ≥700px floats it right. */
    around the photo.
    ============================================================ */
 .spk-card{
+  position:relative;
+  overflow:hidden;
   margin:0 0 var(--space-16);
   padding:var(--space-24) var(--space-20);
   background:var(--surface-02);
@@ -973,6 +1041,20 @@ text; ≥700px floats it right. */
   align-items:start;
 }
 
+/* Each card's lit top edge is tinted to this talk's slice of the run-of-show
+   spectrum (--talk-pos, set per card in the include): talk 1 sienna → talk 9
+   teal, so the scroll reads as a colour progress bar. The emcee card has no
+   --talk-pos and falls back to the full spectrum. */
+.spk-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:2px;
+  background:var(--spectrum);
+  background-size:900% 100%;
+  background-position:var(--talk-pos,0) 0
+}
+
 /* Mobile: unwrap so head and meta are direct grid items. */
 .spk-info{
   display:contents;
@@ -980,17 +1062,6 @@ text; ≥700px floats it right. */
 
 .spk-head{
   grid-area:head;
-}
-
-.spk-kicker{
-  margin:0 0 var(--space-8);
-  font-family:var(--mono);
-  font-weight:500;
-  font-size:12px;
-  line-height:var(--lh-20);
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--amber);
 }
 
 .spk-title{
@@ -1045,7 +1116,7 @@ text; ≥700px floats it right. */
 .spk-bio{
   grid-area:bio;
   margin-top:var(--space-24);
-  max-width:62ch;
+  max-width:var(--measure);
 }
 
 .spk-bio p{
@@ -1154,37 +1225,37 @@ text; ≥700px floats it right. */
 .spk-card--emcee .spk-bio{
   order:4;
   margin-top:var(--space-24);
-  max-width:62ch;
+  max-width:var(--measure);
 }
 
-/* intermission marker */
+/* intermission marker — the page's one landmark: a centred facet flanked by
+   two gradient rules (spectrum warm → cool) with the label beneath. */
 .ros-break{
   display:flex;
+  flex-direction:column;
   align-items:center;
-  gap:14px;
-  padding-block:22px
+  gap:12px;
+  padding-block:var(--space-40)
+}
+
+.ros-break .facet{
+  display:block;
+  width:20px;
+  height:20px
 }
 
 .ros-break .rule{
-  flex:1;
-  height:2px;
-  background:var(--spectrum);
-  opacity:.7;
-  border-radius:2px
+  width:100%;
+  max-width:var(--measure);
+  height:1px
 }
 
-.ros-break .lbl{
-  font-family:var(--mono);
-  font-size:11px;
-  line-height:var(--lh-16);
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--amber)
+.ros-break .rule--in{
+  background:linear-gradient(90deg,transparent,#e87a1e)
 }
 
-/* the spectrum rule already divides here — don't stack the panel hairline on it */
-.ros-break + .ros-item .ros-panel{
-  border-top:0
+.ros-break .rule--out{
+  background:linear-gradient(90deg,#1a7a6d,transparent)
 }
 
 /* ---- sponsors ---- */
@@ -1192,16 +1263,6 @@ text; ≥700px floats it right. */
   margin-bottom:var(--space-40)
 }
 
-.ep-tier-label{
-  font-family:var(--mono);
-  font-weight:500;
-  font-size:11px;
-  line-height:var(--lh-16);
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--amber);
-  margin:0 0 var(--space-16)
-}
 
 .ep-plates{
   display:grid;
@@ -1216,14 +1277,42 @@ text; ≥700px floats it right. */
 
 }
 
+/* Desktop: let the GRID components use the wide shell (they were all capped
+   at the reading measure, leaving the 1400px shell unused and the program
+   pinned to the left with dead space beside it). Prose stays at the measure. */
 @media (width >=1100px){
   .ep-plates{
-    grid-template-columns:repeat(4,1fr)
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    max-width:none
+  }
+
+  .ep-tier--premier .ep-plates{
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+
+  .ep-info{
+    display:grid;
+    max-width:none;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:var(--space-64)
+  }
+
+  .ros{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:var(--space-24);
+    max-width:none
+  }
+
+  .ep-ads{
+    max-width:none
   }
 
 }
 
 .plate{
+  position:relative;
+  overflow:hidden;
   background:var(--surface-02);
   border:1px solid var(--hairline);
   border-radius:var(--radius-lg);
@@ -1235,8 +1324,24 @@ text; ≥700px floats it right. */
 
 }
 
-.plate:hover,.plate:focus-within{
+/* Reuse the card's lit-edge treatment at 1px so plates aren't the only inert,
+   focus-invisible thing on the page. */
+.plate::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:1px;
+  background:var(--spectrum);
+  opacity:0;
+  transition:opacity var(--t-fast) ease-out
+}
+
+.plate:hover,.plate:focus-within,.plate:focus-visible{
   border-color:var(--hairline-hi)
+}
+
+.plate:hover::before,.plate:focus-within::before,.plate:focus-visible::before{
+  opacity:.9
 }
 
 .plate img{
@@ -1248,7 +1353,7 @@ text; ≥700px floats it right. */
   transition:opacity var(--t-fast) ease-out
 }
 
-.plate:hover img,.plate:focus-within img{
+.plate:hover img,.plate:focus-within img,.plate:focus-visible img{
   opacity:1
 }
 
@@ -1276,6 +1381,12 @@ tier is ~3/5 the height of the one above it. */
   gap:var(--space-16);
   max-width:var(--measure);
   margin-inline:0
+}
+
+/* Ad placed inline within a content section (e.g. between the two run-of-show
+   segments) rather than in its own section; just needs vertical breathing room. */
+.ep-ads--inline{
+  margin-block:var(--space-32)
 }
 
 .ep-ad{
@@ -1326,15 +1437,11 @@ tier is ~3/5 the height of the one above it. */
   font-size:11px
 }
 
+/* Positioning only; the "Sponsor" flag's typography comes from .label-micro. */
 .ep-ad-flag{
   position:absolute;
   top:10px;
-  right:10px;
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--text-muted)
+  right:10px
 }
 
 .ep-ad--lead{
@@ -1484,11 +1591,7 @@ tier is ~3/5 the height of the one above it. */
   margin:var(--space-20) 0
 }
 
+/* Spacing only; typography from .label-micro. */
 .ep-footer-license{
-  font-family:var(--mono);
-  font-size:11px;
-  line-height:var(--lh-16);
-  letter-spacing:.06em;
-  color:var(--text-muted);
   margin-top:var(--space-16)
 }
