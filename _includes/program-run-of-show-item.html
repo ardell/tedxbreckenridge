@@ -13,10 +13,12 @@ Param: t = one speaker entry (or the emcee) from _data/speakers.yml.
 {%- endcomment -%}
 {%- assign t = include.t -%}
 {%- comment -%} Tint the card's lit edge to this talk's slice of the run-of-show
-spectrum (talk 1 sienna → talk 9 teal). Nine talks, so divide by 8. The emcee
-has no order, so it gets no --talk-pos (full spectrum, set in CSS). {%- endcomment -%}
+spectrum (first talk sienna → last talk teal). The caller passes `pct` (0–100),
+computed from the talk's position in the sorted list and the total count, so
+rearranging or adding/removing talks keeps the colours in gradient order.
+The emcee passes no `pct` and falls back to the full spectrum (set in CSS). {%- endcomment -%}
 <li class="ros-item">
-  <article class="spk-card{% if include.variant %} spk-card--{{ include.variant }}{% endif %} reveal" id="{{ t.slug }}"{% if t.order %} style="--talk-pos:{% assign pct = t.order | minus: 1 | times: 100 | divided_by: 8 %}{{ pct }}%"{% endif %}>
+  <article class="spk-card{% if include.variant %} spk-card--{{ include.variant }}{% endif %} reveal" id="{{ t.slug }}"{% if include.pct %} style="--talk-pos:{{ include.pct }}%"{% endif %}>
     <div class="spk-info">
       <div class="spk-head">
         {% if include.label %}<p class="eyebrow">{{ include.label }}</p>{% endif %}
