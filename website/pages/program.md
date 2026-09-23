@@ -190,8 +190,13 @@ info_rows:
 
     <!-- Session 1 header -->
     {% if session1 %}
+    {% assign s1_first = segment1 | first %}
+    {% assign s1_last = segment1 | last %}
     <div class="ros-session reveal">
-      <p class="eyebrow">Session one</p>
+      <div class="ros-session-eyebrows">
+        <p class="eyebrow">Session one</p>
+        <p class="ros-session-range">Talks {{ s1_first.order }}&#8211;{{ s1_last.order }}</p>
+      </div>
       <h3 class="ros-session-name">{{ session1.name }}</h3>
       <p class="ros-session-blurb">{{ session1.blurb }}</p>
     </div>
@@ -203,7 +208,7 @@ info_rows:
          gradient order. Divisor is 9 talks − 1 = 8. -->
     <ol class="ros">
       {% for t in segment1 %}
-      {% assign label = t.order | prepend: '0' | slice: -2, 2 | prepend: 'Talk ' %}
+      {% assign label = t.order | prepend: 'Talk ' %}
       {% assign pct = t.order | minus: 1 | times: 100 | divided_by: 8 %}
       {% include program-run-of-show-item.html t=t label=label pct=pct %}
       {% endfor %}
@@ -227,8 +232,13 @@ info_rows:
 
     <!-- Session 2 header -->
     {% if session2 %}
+    {% assign s2_first = segment2 | first %}
+    {% assign s2_last = segment2 | last %}
     <div class="ros-session reveal">
-      <p class="eyebrow">Session two</p>
+      <div class="ros-session-eyebrows">
+        <p class="eyebrow">Session two</p>
+        <p class="ros-session-range">Talks {{ s2_first.order }}&#8211;{{ s2_last.order }}</p>
+      </div>
       <h3 class="ros-session-name">{{ session2.name }}</h3>
       <p class="ros-session-blurb">{{ session2.blurb }}</p>
     </div>
@@ -237,7 +247,7 @@ info_rows:
     <!-- Segment 2 — after intermission (same order-driven edge colour) -->
     <ol class="ros">
       {% for t in segment2 %}
-      {% assign label = t.order | prepend: '0' | slice: -2, 2 | prepend: 'Talk ' %}
+      {% assign label = t.order | prepend: 'Talk ' %}
       {% assign pct = t.order | minus: 1 | times: 100 | divided_by: 8 %}
       {% include program-run-of-show-item.html t=t label=label pct=pct %}
       {% endfor %}
