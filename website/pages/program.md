@@ -158,25 +158,33 @@ info_rows:
             single-source field the sponsor wall and Sponsors page read from
             _data/sponsors.yml), rather than per-filename. -dk/-inv/-as-is are
             transparent-mark logos flattened or left to read light; -mu/-rev
-            carry their own opaque or filled background, so they sit on a light
-            chip in native colour instead of being flattened to a white blob.
+            carry their own opaque or filled background, so they are inverted to
+            read white on the plate instead of being flattened to a white blob.
 
             program_logo / program_tone let a sponsor supply a dark-ground
             variant just for this plate (e.g. Imperial's approved white reverse
             lockup), leaving the card and marquee on their own logo + tone.
+
+            The name prints under each plate so hard-to-read logos are still
+            legible; strip a trailing trademark symbol so it doesn't clutter the
+            small caption (the full name stays in the logo's alt text).
           {%- endcomment -%}
           {% assign logo = s.program_logo | default: s.wall_logo | default: s.logo %}
           {% assign tone = s.program_tone | default: s.tone | default: "dk" %}
           {% assign cls = "plate-logo-" | append: tone %}
-          {% if s.url %}
-          <a class="plate" href="{{ s.url }}" target="_blank" rel="noopener noreferrer">
-            <img src="{{ logo | relative_url }}" alt="{{ s.name }}" class="{{ cls }}" loading="lazy">
-          </a>
-          {% else %}
-          <div class="plate">
-            <img src="{{ logo | relative_url }}" alt="{{ s.name }}" class="{{ cls }}" loading="lazy">
-          </div>
-          {% endif %}
+          {% assign display_name = s.name | replace: "™", "" | replace: "®", "" | strip %}
+          <figure class="ep-plate-fig">
+            {% if s.url %}
+            <a class="plate" href="{{ s.url }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ logo | relative_url }}" alt="{{ s.name }}" class="{{ cls }}" loading="lazy">
+            </a>
+            {% else %}
+            <div class="plate">
+              <img src="{{ logo | relative_url }}" alt="{{ s.name }}" class="{{ cls }}" loading="lazy">
+            </div>
+            {% endif %}
+            <figcaption class="ep-plate-name">{{ display_name }}</figcaption>
+          </figure>
           {% endfor %}
         </div>
       </div>
