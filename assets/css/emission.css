@@ -1516,9 +1516,12 @@ text; ≥700px floats it right. */
      -inv  white marks on transparency — already read light, leave untouched
      -as-is brands whose standards forbid recolouring — leave untouched
      -mu / -rev  logos that carry their own opaque or filled-colour background:
-           flattening would swallow them into a white blob, so instead sit them
-           desaturated on a light chip, keeping them in the same muted grey
-           family as the silhouetted marks around them. */
+           flattening (-dk) would swallow them into a white blob. Invert instead
+           so the light background flips dark and merges into the plate while the
+           mark flips light — giving them the same white-on-dark weight as the
+           silhouetted marks around them, with no light chip breaking the wall.
+           (A mark reversed out of a solid filled plate can't become a light
+           outline this way, so a few of those read a little heavier.) */
 .plate img.plate-logo-dk{
   filter:brightness(0) invert(1)
 }
@@ -1530,10 +1533,7 @@ text; ≥700px floats it right. */
 
 .plate img.plate-logo-mu,
 .plate img.plate-logo-rev{
-  filter:grayscale(1) opacity(0.9);
-  background:#fff;
-  padding:6px 10px;
-  border-radius:var(--radius-sm)
+  filter:invert(1) grayscale(1)
 }
 
 /* ---- sponsor ads ----
