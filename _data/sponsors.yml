@@ -103,6 +103,10 @@
   logo: /assets/images/sponsors/high-country-automotive.png
   note: Summit County — auto repair
   tone: rev
+  # On the program's dark plate rev would invert this illustrated badge into a
+  # photo negative, so it desaturates only (program_tone: gray) — every shape and
+  # its own light/dark survives, just without colour.
+  program_tone: gray
   # At 2.05:1 this is a wide badge; 60px is ~123px wide, and max_width lets the
   # detailed lockup run out enough for the tagline to stay readable.
   height: 60
