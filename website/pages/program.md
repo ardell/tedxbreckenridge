@@ -21,21 +21,33 @@ sessions:
     name: View from the Summit
     blurb: "Reach the top and the view changes everything. In our closing session, speakers trace the long climb of tradition, service, and stubborn ambition -- the ancestral roots of music, the quiet heroism of volunteers, decades of listening to a changing climate, and the two words that move mountains. It's a wider perspective, earned one step at a time."
 
-# ---- Sponsor ad slots (placeholders; sizes TBD) ----
-# Placed by hand through the program (not looped) so each lands in a specific
-# spot: Imperial before the show, the anchors around the two talk segments,
-# and the supporting slot near the close.
+# ---- Sponsor ad slots ----
+# Five ads promised dedicated program space: one premier (Imperial), one anchor
+# (Summit Mountain Rentals), and three supporting. Placed by hand through the
+# program (not looped) so each lands in a specific spot: Imperial before the
+# show, the anchor between the two talk segments, and the three supporting slots
+# grouped near the close. Artwork is dropped in as sponsors supply it; slots
+# without an `image` render a labeled placeholder at the target resolution.
 sponsor_ads:
   - tier: lead
     sponsor: Imperial Hotel &amp; Private Residences
     url: "https://imperialbreckenridge.com/"
   - tier: anchor
-    sponsor: The Summit Foundation
-    url: "https://summitfoundation.org/"
-  - tier: anchor
     sponsor: Summit Mountain Rentals
+    url: "https://summitrentals.com/"
   - tier: supporting
     sponsor: Mountain Comfort Furnishings
+    url: "https://www.mountaincomfort.com/"
+  - tier: supporting
+    sponsor: High Country Automotive
+    url: "https://highcountryauto.net/"
+  - tier: supporting
+    sponsor: Summit Barre + Fitness
+    url: "https://www.summitbarreandfitness.com/"
+    # Sponsor-supplied logo (white lockup on black), padded out to the supporting
+    # slot's 1080×389 ratio so the black extends edge to edge and fills the slot.
+    image: /assets/images/program-ads/summit-barre-fitness-supporting.png
+    alt: Summit Barre &amp; Pilates
 
 # ---- Day-of info ----
 info_rows:
@@ -47,10 +59,8 @@ info_rows:
 
 {%- assign ev = site.event -%}
 {%- assign lead_ad = page.sponsor_ads | where: "tier", "lead" | first -%}
-{%- assign anchor_ads = page.sponsor_ads | where: "tier", "anchor" -%}
-{%- assign anchor_ad_1 = anchor_ads[0] -%}
-{%- assign anchor_ad_2 = anchor_ads[1] -%}
-{%- assign supporting_ad = page.sponsor_ads | where: "tier", "supporting" | first -%}
+{%- assign anchor_ad = page.sponsor_ads | where: "tier", "anchor" | first -%}
+{%- assign supporting_ads = page.sponsor_ads | where: "tier", "supporting" -%}
 
 <!-- ============ Jump nav ============ -->
 <nav class="ep-jump" aria-label="Program sections">
@@ -233,9 +243,9 @@ info_rows:
     </ol>
 
     <!-- Anchor ad between the two segments -->
-    {% if anchor_ad_1 %}
+    {% if anchor_ad %}
     <div class="ep-ads ep-ads--inline reveal">
-      {% include program-ad.html ad=anchor_ad_1 %}
+      {% include program-ad.html ad=anchor_ad %}
     </div>
     {% endif %}
 
@@ -272,17 +282,6 @@ info_rows:
     </ol>
   </div>
 </section>
-
-<!-- ============ Anchor ad (after the talks) ============ -->
-{% if anchor_ad_2 %}
-<section class="ep-section ep-section--ad">
-  <div class="ep-shell">
-    <div class="ep-ads">
-      {% include program-ad.html ad=anchor_ad_2 %}
-    </div>
-  </div>
-</section>
-{% endif %}
 
 <!-- ============ Good to know ============ -->
 <section id="good-to-know" class="ep-section ep-section--banded">
@@ -339,12 +338,14 @@ info_rows:
   </div>
 </section>
 
-<!-- ============ Supporting ad (near the close) ============ -->
-{% if supporting_ad %}
+<!-- ============ Supporting ads (near the close) ============ -->
+{% if supporting_ads.size > 0 %}
 <section class="ep-section ep-section--ad">
   <div class="ep-shell">
     <div class="ep-ads">
-      {% include program-ad.html ad=supporting_ad %}
+      {% for ad in supporting_ads %}
+      {% include program-ad.html ad=ad %}
+      {% endfor %}
     </div>
   </div>
 </section>
