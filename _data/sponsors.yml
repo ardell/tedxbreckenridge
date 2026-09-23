@@ -82,6 +82,36 @@
   wall_height: 44
   tier: supporting
 
+- name: High Country Automotive
+  url: https://highcountryauto.net/
+  # A full-colour illustrated badge (two rigs against snow-capped peaks over a
+  # wrench banner), not a flat wordmark. It can't be flattened to one value like
+  # the transparent marks — dk would swallow the whole illustration in a black
+  # silhouette — so it takes rev: grayscale desaturates the badge to sit level on
+  # the wall while every shape survives, and hover blooms it back to full colour.
+  # The white keyline halo keeps it legible on the cream plate at grayscale.
+  logo: /assets/images/sponsors/high-country-automotive.png
+  note: Summit County — auto repair
+  tone: rev
+  # At 2.05:1 this is a wide badge; 60px is ~123px wide, and max_width lets the
+  # detailed lockup run out enough for the tagline to stay readable.
+  height: 60
+  wall_height: 42
+  max_width: 200
+  tier: supporting
+
+- name: Summit Barre + Fitness
+  url: https://www.summitbarreandfitness.com/
+  # Their lockup is the "sbp" monogram over "Summit Barre & Pilates" in white on
+  # transparency, so it takes inv like EVO3's white mark: inverted to read on the
+  # light plate, restored to white on hover.
+  logo: /assets/images/sponsors/summit-barre-fitness.png
+  note: Frisco & Silverthorne
+  tone: inv
+  height: 58
+  wall_height: 40
+  tier: supporting
+
 - name: Rockridge Building Company
   url: https://www.rockridgebuilding.com/
   logo: /assets/images/sponsors/rockridge-building-company.png
@@ -209,6 +239,54 @@
   wall_height: 34
   tier: community
 
+- name: ¡Dis Burrito!
+  url: https://www.disburrito.com/
+  # Charcoal fox-and-wordmark on transparency, so it takes dk like the other
+  # transparent marks: flattened to a mid-value on the wall, full colour on hover.
+  logo: /assets/images/sponsors/dis-burritos.png
+  note: Breckenridge — fun, flavorful, foxy
+  tone: dk
+  height: 54
+  wall_height: 38
+  tier: community
+
+- name: Aimee Straw
+  url: https://www.aimeestraw.com/
+  # The "Aimee Straw / Cornerstone Real Estate" lockup is black marks baked onto
+  # a white plate, so it takes mu: multiply drops the plate and grayscale
+  # neutralizes the mark, and hover blooms it back.
+  logo: /assets/images/sponsors/aimee-straw-cornerstone.png
+  note: Cornerstone Real Estate — Rocky Mountains
+  tone: mu
+  height: 50
+  wall_height: 34
+  tier: community
+
+- name: House of Vibes
+  url: https://www.houseofvibescoffee.com/
+  # The "House of Vibes / Coffee + Curio" beetle crest is dark linework on a
+  # white plate, so it takes mu like the other plated marks rather than dk, which
+  # would fill the plate solid black.
+  logo: /assets/images/sponsors/house-of-vibes.png
+  note: Silverthorne — coffee & curio
+  tone: mu
+  height: 66
+  wall_height: 46
+  tier: community
+
+- name: Summit Cultures Kombucha
+  url: https://www.summitcultures.com/
+  # A round full-colour badge (psychedelic wordmark over a mountain lake) on a
+  # white plate. mu multiplies the plate away and grayscales the badge to sit
+  # level on the wall, then hover restores the colour — dk would flatten the
+  # whole illustration to a black disc.
+  logo: /assets/images/sponsors/summit-cultures-kombucha.png
+  note: Silverthorne — craft kombucha
+  tone: mu
+  height: 68
+  wall_height: 46
+  tier: community
+
 - name: Aspen Alley Creative
   url: https://www.aspenalleycreative.com/
   logo: /assets/images/sponsors/aspen-alley-creative.png
@@ -243,4 +321,31 @@
   tone: dk
   height: 42
   wall_height: 30
+  tier: corporate
+
+- name: Mile High Behavioral Healthcare
+  url: https://www.milehighbehavioralhealthcare.org/
+  # A stacked lockup: a filled colour crest (blue/teal mountains over a black
+  # house) above the black serif name. The crest knocks its shapes out of a
+  # filled plate, so it takes rev rather than dk, which would collapse the crest
+  # to a solid black square.
+  logo: /assets/images/sponsors/mile-high-behavioral.png
+  note: Frisco — behavioral healthcare
+  tone: rev
+  # At 0.74:1 this is a tall stacked mark, so it wants the extra height to keep
+  # the three-line wordmark legible.
+  height: 74
+  wall_height: 50
+  tier: corporate
+
+- name: Trailhead Comedy Festival
+  url: https://www.trailheadcomedyfest.com/
+  # A round rust-and-cream badge with the wordmark and a green mountain scene
+  # reversed out of the filled disc, so it takes rev for the same reason as
+  # Arapahoe Basin: dk would flatten the disc to a black circle and swallow it.
+  logo: /assets/images/sponsors/trailhead-comedy-fest.png
+  note: Summit County — autumn comedy festival
+  tone: rev
+  height: 60
+  wall_height: 42
   tier: corporate
