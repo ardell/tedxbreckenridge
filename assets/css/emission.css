@@ -1496,7 +1496,6 @@ text; ≥700px floats it right. */
   max-width:88%;
   object-fit:contain;
   opacity:.86;
-  filter:brightness(0) invert(1);
   transition:opacity var(--t-fast) ease-out
 }
 
@@ -1508,13 +1507,33 @@ text; ≥700px floats it right. */
   height:88px
 }
 
-/* knockout exceptions */
-.plate img.is-white{
+/* Logo tones on the dark plate — driven by each sponsor's `tone` in
+   _data/sponsors.yml (the same field the Sponsors page and sponsor wall read),
+   so a logo is neutralized once at the data layer rather than per-filename here.
+   The wall's tones are tuned for a light ground; these are their dark-ground
+   counterparts:
+     -dk   dark/mid marks on transparency — flatten to a white silhouette
+     -inv  white marks on transparency — already read light, leave untouched
+     -as-is brands whose standards forbid recolouring — leave untouched
+     -mu / -rev  logos that carry their own opaque or filled-colour background:
+           flattening would swallow them into a white blob, so instead sit them
+           desaturated on a light chip, keeping them in the same muted grey
+           family as the silhouetted marks around them. */
+.plate img.plate-logo-dk{
+  filter:brightness(0) invert(1)
+}
+
+.plate img.plate-logo-inv,
+.plate img.plate-logo-as-is{
   filter:none
 }
 
-.plate img.is-opaque-plate{
-  filter:grayscale(1) brightness(1.45) contrast(1.05)
+.plate img.plate-logo-mu,
+.plate img.plate-logo-rev{
+  filter:grayscale(1) opacity(0.9);
+  background:#fff;
+  padding:6px 10px;
+  border-radius:var(--radius-sm)
 }
 
 /* ---- sponsor ads ----

@@ -43,6 +43,16 @@
   # "& PRIVATE RESIDENCES" too small to read in a 34px strip.
   logo: /assets/images/sponsors/imperial-hotel-private-residences.svg
   wall_logo: /assets/images/sponsors/imperial-hotel-private-residences-horizontal.svg
+  # On the program's dark plate the primary PMS 2363 mark reads dim next to the
+  # other logos. Their brand guide (v1.1, p6) sanctions an all-white version
+  # "in case of darker backgrounds" — an approved variant, not a prohibited
+  # recolour — so the program uses that white vertical lockup, generated from
+  # the primary SVG's single flat fill. program_tone: inv leaves the already
+  # white marks untouched so they read at full strength (see program.md /
+  # emission.css). The card and marquee keep the full-colour mark on their
+  # light grounds.
+  program_logo: /assets/images/sponsors/imperial-hotel-private-residences-white.svg
+  program_tone: inv
   note: Mountain luxury on the private side of Peak 8 — where Breckenridge's legacy and landscape meet.
   tone: as-is
   # Capped so the card logo's rendered area stays within the header wordmark's

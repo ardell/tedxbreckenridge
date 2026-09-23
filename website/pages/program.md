@@ -153,11 +153,21 @@ info_rows:
         <p class="eyebrow">{{ tier_labels[forloop.index0] }}</p>
         <div class="ep-plates">
           {% for s in tier_sponsors %}
-          {% assign logo = s.wall_logo | default: s.logo %}
-          {% assign fname = logo | split: "/" | last %}
-          {% assign cls = "" %}
-          {% if fname == "evo3-workspace-logo-white.png" %}{% assign cls = "is-white" %}{% endif %}
-          {% if fname == "arapahoe-basin-horizontal.svg" %}{% assign cls = "is-opaque-plate" %}{% endif %}
+          {%- comment -%}
+            Neutralize each logo for the dark plate off its tone (the same
+            single-source field the sponsor wall and Sponsors page read from
+            _data/sponsors.yml), rather than per-filename. -dk/-inv/-as-is are
+            transparent-mark logos flattened or left to read light; -mu/-rev
+            carry their own opaque or filled background, so they sit on a light
+            chip in native colour instead of being flattened to a white blob.
+
+            program_logo / program_tone let a sponsor supply a dark-ground
+            variant just for this plate (e.g. Imperial's approved white reverse
+            lockup), leaving the card and marquee on their own logo + tone.
+          {%- endcomment -%}
+          {% assign logo = s.program_logo | default: s.wall_logo | default: s.logo %}
+          {% assign tone = s.program_tone | default: s.tone | default: "dk" %}
+          {% assign cls = "plate-logo-" | append: tone %}
           {% if s.url %}
           <a class="plate" href="{{ s.url }}" target="_blank" rel="noopener noreferrer">
             <img src="{{ logo | relative_url }}" alt="{{ s.name }}" class="{{ cls }}" loading="lazy">
