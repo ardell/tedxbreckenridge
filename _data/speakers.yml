@@ -38,8 +38,8 @@ speakers:
     title: "Dr."
     slug: chris-ray
     crop: "center 15%"
-    order: 2
-    half: 1
+    order: 8
+    half: 2
     theme: Reading climate in the rock rabbits
     role: Research scientist, Institute for Bird Populations & INSTAAR, CU Boulder
     image: /assets/images/speakers/chris-ray.jpg
@@ -51,7 +51,7 @@ speakers:
   - name: Maisie Bryant
     slug: maisie-bryant
     crop: "center 12%"
-    order: 3
+    order: 5
     half: 1
     theme: Unmasking the shadows of social anxiety
     role: Student speaker, Summit Middle School
@@ -77,7 +77,7 @@ speakers:
     title: "Dr."
     slug: wouter-van-de-pontseele
     crop: "center 8%"
-    order: 5
+    order: 2
     half: 1
     theme: Building tomorrow's quantum technology alongside yesterday's mines
     role: Professor, Colorado School of Mines
@@ -107,7 +107,7 @@ speakers:
   - name: Kurt Kionka
     slug: kurt-kionka
     crop: "center 12%"
-    order: 7
+    order: 9
     half: 2
     theme: "Yes, if: the two words that move mountains"
     role: Project Director, Colorado Department of Transportation
@@ -119,7 +119,7 @@ speakers:
 
   - name: Anna DeBattiste
     slug: anna-debattiste
-    order: 8
+    order: 7
     half: 2
     theme: The heart of a volunteer
     role: Volunteer, Summit County Rescue Group & Colorado Search and Rescue Association
@@ -132,8 +132,8 @@ speakers:
   - name: Jess Smith
     slug: jess-smith
     crop: "60% 15%"
-    order: 9
-    half: 2
+    order: 3
+    half: 1
     theme: Community is forged, not found
     role: Owner, Ark Valley Signs & Sidewalk Monkey
     image: /assets/images/speakers/jess-smith.jpg
