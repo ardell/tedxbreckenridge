@@ -260,7 +260,7 @@
   wall_height: 38
   tier: community
 
-- name: Aimee Straw
+- name: Aimee Straw Real Estate
   url: https://www.aimeestraw.com/
   # The "Aimee Straw / Cornerstone Real Estate" lockup is black marks baked onto
   # a white plate, so it takes mu: multiply drops the plate and grayscale
@@ -325,7 +325,7 @@
   wall_height: 46
   tier: corporate
 
-- name: Jenn Kaye
+- name: Jenn Kaye Speaker Coaching
   url: https://www.jennkaye.com/
   logo: /assets/images/sponsors/jenn-kaye.png
   tone: dk
