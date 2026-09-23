@@ -725,6 +725,14 @@ Values are from the Emission handoff README (high-fidelity).
   margin:0
 }
 
+/* An in-feed sponsor ad interleaved among the speaker cards. It carries the same
+   bottom spacing a card does so the rhythm of the list is unbroken; the ad's own
+   slot sizing/border come from .ep-ad. */
+.ros-item--ad{
+  margin:0 0 var(--space-16);
+  max-width:var(--measure)
+}
+
 /* each speaker is a <details>; the <summary> is the row */
 .ros-panel{
   border-top:1px solid var(--hairline)

@@ -26,7 +26,8 @@ sessions:
 # (Summit Mountain Rentals), and three supporting. Placed by hand through the
 # program (not looped) so each lands in a specific spot: Imperial before the
 # show, the anchor between the two talk segments, and the three supporting slots
-# grouped near the close. Artwork is dropped in as sponsors supply it; slots
+# interleaved among the talks inside the run of show (see that section for the
+# placement rationale). Artwork is dropped in as sponsors supply it; slots
 # without an `image` render a labeled placeholder at the target resolution.
 sponsor_ads:
   - tier: lead
@@ -210,6 +211,18 @@ info_rows:
 {% assign session1 = page.sessions | where: "half", 1 | first %}
 {% assign session2 = page.sessions | where: "half", 2 | first %}
 
+{%- comment -%}
+Supporting ads run INSIDE the run of show, not below it: attendees scroll the
+lineup all the way to the last speaker but rarely past it, so the run of show is
+the reachable, high-attention zone. Interleave one per gap (each separated by
+speaker cards so they never stack and read as one ad block) as in-feed units:
+after talk 2, after talk 7, and after the final talk. Order-keyed so rearranging
+the lineup keeps them roughly evenly spaced.
+{%- endcomment -%}
+{% assign supporting_ad_1 = supporting_ads[0] %}
+{% assign supporting_ad_2 = supporting_ads[1] %}
+{% assign supporting_ad_3 = supporting_ads[2] %}
+
 <section id="run-of-show" class="ep-section ep-section--banded">
   <div class="emission emission--strip emission--warm" aria-hidden="true"></div>
   <div class="ep-shell">
@@ -239,6 +252,9 @@ info_rows:
       {% assign label = t.order | prepend: 'Talk ' %}
       {% assign pct = t.order | minus: 1 | times: 100 | divided_by: 8 %}
       {% include program-run-of-show-item.html t=t label=label pct=pct %}
+      {% if t.order == 2 and supporting_ad_1 %}
+      <li class="ros-item ros-item--ad reveal">{% include program-ad.html ad=supporting_ad_1 %}</li>
+      {% endif %}
       {% endfor %}
     </ol>
 
@@ -278,6 +294,12 @@ info_rows:
       {% assign label = t.order | prepend: 'Talk ' %}
       {% assign pct = t.order | minus: 1 | times: 100 | divided_by: 8 %}
       {% include program-run-of-show-item.html t=t label=label pct=pct %}
+      {% if t.order == 7 and supporting_ad_2 %}
+      <li class="ros-item ros-item--ad reveal">{% include program-ad.html ad=supporting_ad_2 %}</li>
+      {% endif %}
+      {% if forloop.last and supporting_ad_3 %}
+      <li class="ros-item ros-item--ad reveal">{% include program-ad.html ad=supporting_ad_3 %}</li>
+      {% endif %}
       {% endfor %}
     </ol>
   </div>
@@ -337,19 +359,6 @@ info_rows:
     </div>
   </div>
 </section>
-
-<!-- ============ Supporting ads (near the close) ============ -->
-{% if supporting_ads.size > 0 %}
-<section class="ep-section ep-section--ad">
-  <div class="ep-shell">
-    <div class="ep-ads">
-      {% for ad in supporting_ads %}
-      {% include program-ad.html ad=ad %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
 
 <!-- ============ Donate ============ -->
 <section id="donate" class="ep-section ep-section--banded ep-section--textured">
