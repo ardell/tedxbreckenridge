@@ -1033,12 +1033,16 @@ text; ≥700px floats it right. */
   border-radius:var(--radius-lg);
   max-width:var(--measure);
   display:grid;
-  grid-template-columns:1fr 130px;
-  gap:0 var(--space-20);
+
+  /* Phone: text column + a fixed 104px photo column. The photo spans the head
+     and meta rows so eyebrow/title/name/role fill the space beside it — no dead
+     space. The bio drops full-width below. */
+  grid-template-columns:1fr 104px;
+  gap:0 var(--space-16);
   grid-template-areas:
-    "head photo"
-    "meta meta"
-    "bio  bio";
+    "head  photo"
+    "meta  photo"
+    "bio   bio";
   align-items:start;
 }
 
@@ -1065,27 +1069,43 @@ text; ≥700px floats it right. */
   grid-area:head;
 }
 
+/* Talk number ("TALK 1"): muted grey, not amber. Amber is reserved for the
+   section and session labels so the talk eyebrow doesn't compete with them.
+   The emcee kicker (its own section) keeps amber — restored below. */
+.spk-head .eyebrow{
+  color:var(--text-muted);
+}
+
+.spk-card--emcee .spk-head .eyebrow{
+  color:var(--amber);
+}
+
 .spk-title{
   margin:0;
   font-family:var(--sans);
   font-weight:700;
-  font-size:24px;
-  line-height:var(--lh-28);
-  letter-spacing:-.01em;
+  font-size:22px;
+  line-height:1.2;
+  letter-spacing:-.02em;
   color:var(--text);
 }
 
 .spk-photo{
   grid-area:photo;
-  width:130px;
-  aspect-ratio:3 / 4;
+  width:104px;
+  height:130px;
   object-fit:cover;
 
+  /* Drop the photo past the "TALK n" eyebrow so its top lines up with the talk
+     title, not the eyebrow. Offset = eyebrow line (20px) + its 12px bottom
+     margin = 32px; the eyebrow keeps this size at every breakpoint. */
+  margin-top:var(--space-32);
+
   /* Framing comes from each speaker's `crop` (object-position), the same
-     values the /speakers/ page uses at this 3/4 ratio; default to slightly
-     above centre so the top of the head isn't clipped. */
+     values the /speakers/ page uses; default to slightly above centre so the
+     top of the head isn't clipped. */
   object-position:center 30%;
-  border-radius:var(--radius-lg);
+  border-radius:var(--radius-md);
   border:1px solid var(--hairline);
   box-shadow:0 -1px 24px rgb(232 122 30 / 16%);
 
@@ -1093,30 +1113,33 @@ text; ≥700px floats it right. */
   filter:grayscale(1) contrast(1.05) sepia(.35) saturate(1.15) hue-rotate(-12deg) brightness(.95);
 }
 
+/* Small breath below the title, not a full block gap — the name/role belong to
+   the talk above them. */
 .spk-meta{
   grid-area:meta;
-  margin-top:var(--space-24);
+  padding-top:var(--space-8);
 }
 
 .spk-name{
   margin:0;
-  font-weight:700;
-  font-size:24px;
-  line-height:var(--lh-28);
+  font-weight:600;
+  font-size:18px;
+  line-height:1.25;
   letter-spacing:-.01em;
   color:var(--gold);
 }
 
 .spk-role{
   margin:var(--space-4) 0 0;
-  font-size:15px;
-  line-height:var(--lh-24);
+  font-size:14px;
+  line-height:var(--lh-20);
   color:var(--text-secondary);
 }
 
+/* Phone: full-width, a steady 20px below the head/photo grid. */
 .spk-bio{
   grid-area:bio;
-  margin-top:var(--space-24);
+  margin-top:var(--space-20);
   max-width:var(--measure);
 }
 
@@ -1124,7 +1147,7 @@ text; ≥700px floats it right. */
   margin:0 0 var(--space-16);
   color:var(--text-body);
   font-size:16px;
-  line-height:var(--lh-24);
+  line-height:1.6;
 }
 
 .spk-bio p:last-child{
@@ -1148,47 +1171,57 @@ text; ≥700px floats it right. */
 }
 
 @media (width >=700px){
-  /* Two columns, two rows: the info column (kicker/title/name/role flowing
-     top-down) beside the photo, then the bio spanning full width. Because
-     head+meta share one grid cell (.spk-info), a taller photo can't stretch
-     the gaps between the text lines. */
+  /* Desktop: a wide text column beside a fixed 220px photo column. The photo
+     sits top-right and spans all three left-column rows (head/meta/bio), so the
+     bio flows in the LEFT column under the name/role rather than below the
+     photo. .spk-info is unwrapped so head and meta place as independent rows. */
   .spk-card{
-    padding:var(--space-32);
-    grid-template-columns:1fr minmax(240px,40%);
-    column-gap:var(--space-40);
+    max-width:960px;
+    padding:36px var(--space-40) var(--space-40);
+    grid-template-columns:minmax(0,1fr) 220px;
+    column-gap:var(--space-48);
     grid-template-areas:
-      "info photo"
-      "bio  bio";
+      "head photo"
+      "meta photo"
+      "bio  photo";
   }
 
   .spk-info{
-    display:block;
-    grid-area:info;
+    display:contents;
   }
 
   .spk-meta{
-    margin-top:var(--space-24);
+    padding-top:var(--space-8);
   }
 
   .spk-title{
-    font-size:32px;
-    line-height:var(--lh-36);
-    margin-bottom:var(--space-4);
+    font-size:30px;
+    line-height:1.2;
+    letter-spacing:-.025em;
   }
 
   .spk-photo{
-    width:100%;
-    aspect-ratio:3 / 4;
+    width:220px;
+    height:275px;
     align-self:start;
   }
 
   .spk-name{
-    font-size:26px;
-    line-height:var(--lh-32);
+    font-size:22px;
+  }
+
+  .spk-role{
+    font-size:15px;
+    line-height:var(--lh-24);
   }
 
   .spk-bio{
-    margin-top:var(--space-40);
+    margin-top:var(--space-24);
+  }
+
+  .spk-bio p{
+    font-size:17px;
+    line-height:1.65;
   }
 }
 
@@ -1211,16 +1244,33 @@ text; ≥700px floats it right. */
   order:1;
 }
 
+/* Emcee keeps its own 150×200 (3:4) tile and 8px radius, independent of the
+   talk-card photo dimensions above. */
 .spk-card--emcee .spk-photo{
   order:2;
   width:150px;
-  aspect-ratio:3 / 4;
+  height:200px;
+  border-radius:var(--radius-lg);
   margin:var(--space-12) 0 var(--space-16);
 }
 
 .spk-card--emcee .spk-meta{
   order:3;
   margin-top:0;
+  padding-top:0;
+}
+
+/* Emcee keeps its established name/role/bio scale, independent of the talk-card
+   type changes above (this card is its own section, /program #emcee). */
+.spk-card--emcee .spk-name{
+  font-weight:700;
+  font-size:24px;
+  line-height:var(--lh-28);
+}
+
+.spk-card--emcee .spk-role{
+  font-size:15px;
+  line-height:var(--lh-24);
 }
 
 .spk-card--emcee .spk-bio{
@@ -1229,22 +1279,81 @@ text; ≥700px floats it right. */
   max-width:var(--measure);
 }
 
-/* Named session header that opens each run-of-show segment. */
-.ros-session{
-  max-width:var(--measure);
-  margin:0 0 var(--space-24)
+.spk-card--emcee .spk-bio p{
+  font-size:16px;
+  line-height:var(--lh-24);
 }
 
-.ros-session .eyebrow{
-  margin:0 0 var(--space-8)
+@media (width >=700px){
+  .spk-card--emcee .spk-name{
+    font-size:26px;
+    line-height:var(--lh-32);
+  }
+}
+
+/* Section heading ("Run of show") — promoted above the shared .ep-heading size
+   for this section only, so the run-of-show hierarchy reads heading > session >
+   talk. Scoped to #run-of-show; the shared class is untouched elsewhere. Its
+   bottom margin is zeroed here so the heading→session gap is owned entirely by
+   .ros-session's top margin (40px phone / 64px desktop). */
+#run-of-show .ep-heading{
+  font-size:36px;
+  line-height:1.05;
+  letter-spacing:-.03em;
+  margin-bottom:0;
+}
+
+/* Named session header that opens each run-of-show segment.
+   Hierarchy: title (28/40, #fff) outranks the talk title (22/30). The paragraph
+   sits a deliberate 32px (phone) / 48px (desktop) above the first talk card —
+   that gap is this block's bottom margin. Internal rhythm (eyebrow row → title
+   → paragraph) is a steady 12px / 16px. */
+.ros-session{
+  max-width:var(--measure);
+  margin:0 0 var(--space-32)
+}
+
+/* Only the first session block follows the section heading directly; give it
+   the 40px heading→session gap. The second block's top spacing is owned by the
+   intermission marker above it, so it is left alone. */
+.ep-heading + .ros-session{
+  margin-top:var(--space-40)
+}
+
+/* Eyebrow row: "SESSION ONE" (amber) left, "TALKS 1–5" (muted) right,
+   aligned on their shared baseline. */
+.ros-session-eyebrows{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:var(--space-16);
+  margin:0 0 var(--space-12)
+}
+
+.ros-session-eyebrows .eyebrow{
+  margin:0
+}
+
+/* Same mono treatment as the eyebrow, but muted grey rather than amber, so
+   amber stays reserved for the section and session labels. */
+.ros-session-range{
+  margin:0;
+  font-family:var(--mono);
+  font-weight:500;
+  font-size:12px;
+  line-height:var(--lh-20);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  white-space:nowrap
 }
 
 .ros-session-name{
   font-family:var(--sans);
   font-weight:700;
-  font-size:22px;
-  line-height:var(--lh-28);
-  letter-spacing:-.01em;
+  font-size:28px;
+  line-height:1.12;
+  letter-spacing:-.025em;
   color:var(--text);
   margin:0 0 var(--space-12)
 }
@@ -1252,15 +1361,42 @@ text; ≥700px floats it right. */
 .ros-session-blurb{
   font-family:var(--sans);
   font-size:16px;
-  line-height:var(--lh-24);
+  line-height:1.6;
   color:var(--text-body);
   margin:0
 }
 
 @media (width >=900px){
+  #run-of-show .ep-heading{
+    font-size:56px;
+    letter-spacing:-.035em
+  }
+
+  .ros-session{
+    margin-bottom:var(--space-48)
+  }
+
+  .ep-heading + .ros-session{
+    margin-top:var(--space-64)
+  }
+
+  .ros-session-eyebrows{
+    margin-bottom:var(--space-16)
+  }
+
+  .ros-session-range{
+    font-size:13px
+  }
+
   .ros-session-name{
-    font-size:26px;
-    line-height:var(--lh-32)
+    font-size:40px;
+    letter-spacing:-.03em
+  }
+
+  .ros-session-blurb{
+    font-size:17px;
+    line-height:1.65;
+    max-width:62ch
   }
 }
 
