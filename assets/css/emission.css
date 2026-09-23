@@ -1544,7 +1544,13 @@ text; ≥700px floats it right. */
            mark flips light — giving them the same white-on-dark weight as the
            silhouetted marks around them, with no light chip breaking the wall.
            (A mark reversed out of a solid filled plate can't become a light
-           outline this way, so a few of those read a little heavier.) */
+           outline this way, so a few of those read a little heavier.)
+     -gray  full-colour illustrated badges (multi-value art, not a flat mark):
+           they can't flatten to a silhouette without losing the illustration,
+           and inverting them reads as a photo negative. Desaturate only, keeping
+           their own light/dark relationships intact. Set per-plate via
+           program_tone since the light-ground wall neutralizes them differently.
+           */
 .plate img.plate-logo-dk{
   filter:brightness(0) invert(1)
 }
@@ -1557,6 +1563,10 @@ text; ≥700px floats it right. */
 .plate img.plate-logo-mu,
 .plate img.plate-logo-rev{
   filter:invert(1) grayscale(1)
+}
+
+.plate img.plate-logo-gray{
+  filter:grayscale(1)
 }
 
 /* ---- sponsor ads ----
