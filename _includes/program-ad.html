@@ -1,7 +1,8 @@
 {%- comment -%}
 A sponsor ad slot for the digital program. Sized by tier (lead / anchor /
-supporting). Renders the supplied artwork, or a labeled placeholder box while
-we settle on sizes. Params: ad = { tier, sponsor, image, url, alt }
+supporting; `lead` displays as "Premier"). Renders the supplied artwork, or a
+labeled placeholder box while we settle on sizes.
+Params: ad = { tier, sponsor, image, url, alt }
 {%- endcomment -%}
 {%- assign ad = include.ad -%}
 {%- assign alt = ad.alt | default: ad.sponsor -%}
@@ -9,18 +10,22 @@ we settle on sizes. Params: ad = { tier, sponsor, image, url, alt }
 Target artwork resolution per tier — all ads are the same width; height steps
 down by tier. Hand these to sponsors once sizes are frozen. @2x-ready.
 {%- endcomment -%}
+{%- comment -%}
+`lead` is the internal key for the top tier (matches the CSS class and the data);
+its human label is "Premier", the same word the sponsor wall uses.
+{%- endcomment -%}
 {%- case ad.tier -%}
-  {%- when "lead" -%}{%- assign res = "1080 × 1080 px" -%}
-  {%- when "anchor" -%}{%- assign res = "1080 × 648 px" -%}
-  {%- when "supporting" -%}{%- assign res = "1080 × 389 px" -%}
-  {%- else -%}{%- assign res = "" -%}
+  {%- when "lead" -%}{%- assign res = "1080 × 1080 px" -%}{%- assign tier_label = "premier" -%}
+  {%- when "anchor" -%}{%- assign res = "1080 × 648 px" -%}{%- assign tier_label = "anchor" -%}
+  {%- when "supporting" -%}{%- assign res = "1080 × 389 px" -%}{%- assign tier_label = "supporting" -%}
+  {%- else -%}{%- assign res = "" -%}{%- assign tier_label = ad.tier -%}
 {%- endcase -%}
 {%- capture inner -%}
   {%- if ad.image -%}
     <img src="{{ ad.image | relative_url }}" alt="{{ alt }}" loading="lazy">
   {%- else -%}
     <div class="ep-ad-ph">
-      <span class="ep-ad-ph-tier">{{ ad.tier }} sponsor ad</span>
+      <span class="ep-ad-ph-tier">{{ tier_label }} sponsor ad</span>
       <span class="ep-ad-ph-name">{{ ad.sponsor }}</span>
       {%- if res != "" -%}<span class="ep-ad-ph-res">{{ res }}</span>{%- endif -%}
     </div>
