@@ -10,6 +10,17 @@ sponsor_wall: false
 # /speakers/ page). Nine speakers split across the intermission: five before
 # (half 1), four after (half 2). Leon opens the second half.
 
+# ---- Sessions ----
+# The two named sessions, before and after intermission. `half` ties each one
+# to the matching speaker segment (half 1 / half 2 in speakers.yml).
+sessions:
+  - half: 1
+    name: Hidden in Plain Sight
+    blurb: "The most valuable things are often the ones we walk right past. In this opening session, our speakers turn their attention to what the algorithms overlook, what history buried, and what we hide even from ourselves -- from overlooked mountain towns and quantum breakthroughs rising beside old mines, to the community we build and the anxieties we mask. Come ready to look closer."
+  - half: 2
+    name: View from the Summit
+    blurb: "Reach the top and the view changes everything. In our closing session, speakers trace the long climb of tradition, service, and stubborn ambition -- the ancestral roots of music, the quiet heroism of volunteers, decades of listening to a changing climate, and the two words that move mountains. It's a wider perspective, earned one step at a time."
+
 # ---- Sponsor ad slots (placeholders; sizes TBD) ----
 # Placed by hand through the program (not looped) so each lands in a specific
 # spot: Imperial before the show, the anchors around the two talk segments,
@@ -168,13 +179,23 @@ info_rows:
 {% assign talks = site.data.speakers.speakers | sort: "order" %}
 {% assign segment1 = talks | where: "half", 1 %}
 {% assign segment2 = talks | where: "half", 2 %}
+{% assign session1 = page.sessions | where: "half", 1 | first %}
+{% assign session2 = page.sessions | where: "half", 2 | first %}
 
 <section id="run-of-show" class="ep-section ep-section--banded">
   <div class="emission emission--strip emission--warm" aria-hidden="true"></div>
   <div class="ep-shell">
     <p class="eyebrow reveal">The lineup</p>
     <h2 class="ep-heading reveal">Run of show</h2>
-    <p class="ep-measure reveal" style="color:var(--text-body);margin:0 0 var(--space-24)">Nine speakers, in the order they'll take the stage, split across the intermission. Tap any name to read their bio.</p>
+
+    <!-- Session 1 header -->
+    {% if session1 %}
+    <div class="ros-session reveal">
+      <p class="eyebrow">Session one</p>
+      <h3 class="ros-session-name">{{ session1.name }}</h3>
+      <p class="ros-session-blurb">{{ session1.blurb }}</p>
+    </div>
+    {% endif %}
 
     <!-- Segment 1 — before intermission.
          Card edge colour = the talk's slice of the run-of-show spectrum,
@@ -203,6 +224,15 @@ info_rows:
       <span class="rule rule--out" aria-hidden="true"></span>
       <span class="eyebrow">Intermission · 20 minutes</span>
     </div>
+
+    <!-- Session 2 header -->
+    {% if session2 %}
+    <div class="ros-session reveal">
+      <p class="eyebrow">Session two</p>
+      <h3 class="ros-session-name">{{ session2.name }}</h3>
+      <p class="ros-session-blurb">{{ session2.blurb }}</p>
+    </div>
+    {% endif %}
 
     <!-- Segment 2 — after intermission (same order-driven edge colour) -->
     <ol class="ros">
