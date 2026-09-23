@@ -156,6 +156,10 @@
   logo: /assets/images/sponsors/arapahoe-basin-horizontal.svg
   note: Summit County
   tone: rev
+  # On the program's dark plate rev would invert the filled navy/red plates into
+  # a photo negative, so it desaturates only (program_tone: gray) — the filled
+  # lockup keeps its own light/dark, just without colour.
+  program_tone: gray
   height: 64
   wall_height: 44
   max_width: 220
