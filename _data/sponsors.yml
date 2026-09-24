@@ -294,13 +294,19 @@
 
 - name: Summit Cultures Kombucha
   url: https://www.summitcultures.com/
-  # A round full-colour badge (psychedelic wordmark over a mountain lake) on a
-  # white plate. mu multiplies the plate away and grayscales the badge to sit
-  # level on the wall, then hover restores the colour — dk would flatten the
-  # whole illustration to a black disc.
-  logo: /assets/images/sponsors/summit-cultures-kombucha.png
+  # Their official round badge: a psychedelic "SUMMIT CULTURES" wordmark over a
+  # mountain-lake-and-UFO scene, on transparency (not a plate like the earlier
+  # copy). It's a full-colour illustration, not a flat mark, so it takes rev
+  # like High Country Automotive: grayscale desaturates the badge to sit level
+  # on the wall while every shape survives, and hover blooms it back to full
+  # colour. dk would flatten the whole illustration to a black disc.
+  logo: /assets/images/sponsors/summit-cultures.png
   note: Silverthorne — craft kombucha
-  tone: mu
+  tone: rev
+  # On the program's dark plate rev would invert this illustrated badge into a
+  # photo negative, so it desaturates only (program_tone: gray) — every shape
+  # and its own light/dark survives, just without colour.
+  program_tone: gray
   height: 68
   wall_height: 46
   tier: community
