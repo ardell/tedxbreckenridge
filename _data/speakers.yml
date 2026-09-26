@@ -23,16 +23,19 @@ speakers:
     crop: "55% 18%"
     order: 1
     half: 1
-    theme: The hidden gems AI can't find
+    theme: Mountain Towns AI Forgot
     role: Founder, MountainTowns.com
     image: /assets/images/speakers/travis-tallent.jpg
     socials:
       - { type: instagram, url: "https://www.instagram.com/tallentspeaks/" }
       - { type: linkedin, url: "https://www.linkedin.com/in/travistallent/" }
     bio:
-      - Travis Tallent has spent the last decade helping the world's biggest brands — including Aspen Snowmass, Microsoft, LEGO, adidas, and Capital One — win in the age of AI search.
-      - "Along the way he noticed something: the algorithms reshaping how the world finds everything left rural mountain communities behind."
-      - Now he's the founder of MountainTowns.com, a community and membership pass connecting explorers with the hidden-gem businesses AI can't find.
+      - Travis Tallent has spent almost 15 years helping the world's biggest brands, including Aspen Snowmass, Microsoft, LEGO, adidas, and Capital One, get found by the people looking for them. His work earned Semrush's 2025 #1 AI Visibility Award.
+      - Along the way he spotted a big opportunity. Mountain towns run on small, local economies, where every visitor helps fund the jobs that keep the whole town thriving. As AI changes how people discover everything, these communities deserve to be found too.
+      - "Today he builds for that future as:"
+      - "<strong>Founder &amp; CEO of DayNova</strong>, a marketing and AI transformation agency that helps businesses put human-first AI transformation to work."
+      - "<strong>Founder of MountainTowns.com</strong>, a community and membership pass that connects explorers with the hidden-gem local businesses of Colorado's mountain towns."
+      - "<strong>Founder of Out in AI</strong>, a global community of LGBTQ+ people and allies in every industry and role, working together to shape an AI future that includes everyone."
 
   - name: Chris Ray
     title: "Dr."
