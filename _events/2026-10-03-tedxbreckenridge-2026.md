@@ -48,9 +48,9 @@ New this year: the talks end at 6, but the conversation doesn't have to. Join us
 - **A loosely-guided conversation** carrying the ideas from the stage into the evening
 - **Time to meet the speakers** and chat with them directly
 
-The Alpenglow Dinner is a $55 add-on to your event ticket, and seating is limited — add it when you grab your ticket.
+The Alpenglow Dinner is a $55 add-on to your event ticket. Seating was limited, and the dinner is now **sold out** -- but main-event tickets are still available above.
 
-<a href="https://tedxbreckenridge.ticketsauce.com/e/tedxbreckenridge-kaleidoscope/tickets?utm_source=affiliate&utm_name=Website-event-page-alpenglow-dinner&utm_campaign=Website-event-page-alpenglow-dinner&utm_id=6a8ee9f743204c5f9f5179430a1e606a" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Add the Alpenglow Dinner</a>
+<span class="btn btn-primary is-soldout" aria-disabled="true">Alpenglow Dinner -- Sold Out</span>
 
 ## Stay Updated
 
