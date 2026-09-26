@@ -280,18 +280,6 @@
   wall_height: 34
   tier: community
 
-- name: House of Vibes
-  url: https://www.houseofvibescoffee.com/
-  # The "House of Vibes / Coffee + Curio" beetle crest is dark linework on a
-  # white plate, so it takes mu like the other plated marks rather than dk, which
-  # would fill the plate solid black.
-  logo: /assets/images/sponsors/house-of-vibes.png
-  note: Silverthorne — coffee & curio
-  tone: mu
-  height: 66
-  wall_height: 46
-  tier: community
-
 - name: Summit Cultures Kombucha
   url: https://www.summitcultures.com/
   # Their official round badge: a psychedelic "SUMMIT CULTURES" wordmark over a
