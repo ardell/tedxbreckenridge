@@ -258,6 +258,16 @@
   color: var(--k-wing-gold);
 }
 
+/* Sold-out state: a non-interactive button that keeps its shape but reads as
+   unavailable. Applied to a <span> (no href), so there is nothing to click. */
+.k-btn.is-soldout,
+.k-btn.is-soldout:hover {
+  background: #4a4a4a;
+  color: var(--k-white);
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
 .k-btn-group {
   display: flex;
   gap: var(--space-16);
