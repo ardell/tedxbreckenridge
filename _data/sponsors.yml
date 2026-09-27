@@ -263,10 +263,10 @@
   tier: community
 
 - name: La Française
-  # Links to the bistrot site (the bakery's own domain no longer resolves); the
-  # two are one family business. The "La Française / French Bakery" wordmark is
-  # black on transparency, so it takes dk like the other transparent marks.
-  url: https://www.lafrancaisebistrot.com/
+  # The bakery and bistrot are one family business; links to the bakery's own
+  # site. The "La Française / French Bakery" wordmark is black on transparency, so
+  # it takes dk like the other transparent marks.
+  url: https://www.lafrancaisebreck.com/
   logo: /assets/images/sponsors/la-francaise.png
   note: Breckenridge — bakery & bistrot
   tone: dk
