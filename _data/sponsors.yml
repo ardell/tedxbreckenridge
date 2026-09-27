@@ -124,11 +124,11 @@
   note: Breckenridge
   tone: inv
   program_tone: as-is
-  # At 4.27:1 this is a wide lockup; 58px is ~248px, and max_width keeps it from
-  # crowding the neighbouring supporting cards.
-  height: 58
+  # At 4.27:1 this is a wide lockup. No max_width: an inline max-width would beat
+  # the card's own max-width:100% and let the wordmark overflow the plate on the
+  # narrow supporting cards, so height caps it while the card scales it down to fit.
+  height: 52
   wall_height: 40
-  max_width: 240
   tier: supporting
 
 - name: Summit Barre + Fitness
