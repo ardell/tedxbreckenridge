@@ -22,10 +22,10 @@ sessions:
     blurb: "Reach the top and the view changes everything. In our closing session, speakers trace the long climb of tradition, service, and stubborn ambition -- the ancestral roots of music, the quiet heroism of volunteers, decades of listening to a changing climate, and the two words that move mountains. It's a wider perspective, earned one step at a time."
 
 # ---- Sponsor ad slots ----
-# Five ads promised dedicated program space: one premier (Imperial), one anchor
-# (Summit Mountain Rentals), and three supporting. Placed by hand through the
+# Six ads promised dedicated program space: one premier (Imperial), one anchor
+# (Summit Mountain Rentals), and four supporting. Placed by hand through the
 # program (not looped) so each lands in a specific spot: Imperial before the
-# show, the anchor between the two talk segments, and the three supporting slots
+# show, the anchor between the two talk segments, and the four supporting slots
 # interleaved among the talks inside the run of show (see that section for the
 # placement rationale). Artwork is dropped in as sponsors supply it; slots
 # without an `image` render a labeled placeholder at the target resolution.
@@ -49,6 +49,9 @@ sponsor_ads:
     # slot's 1080×389 ratio so the black extends edge to edge and fills the slot.
     image: /assets/images/program-ads/summit-barre-fitness-supporting.png
     alt: Summit Barre &amp; Pilates
+  - tier: supporting
+    sponsor: Gravity Haus
+    url: "https://gravityhaus.com/locations/gravity-haus-breck"
 
 # ---- Day-of info ----
 info_rows:
@@ -216,12 +219,13 @@ Supporting ads run INSIDE the run of show, not below it: attendees scroll the
 lineup all the way to the last speaker but rarely past it, so the run of show is
 the reachable, high-attention zone. Interleave one per gap (each separated by
 speaker cards so they never stack and read as one ad block) as in-feed units:
-after talk 2, after talk 7, and after the final talk. Order-keyed so rearranging
-the lineup keeps them roughly evenly spaced.
+after talk 2, after talk 4, after talk 7, and after the final talk. Order-keyed
+so rearranging the lineup keeps them roughly evenly spaced.
 {%- endcomment -%}
 {% assign supporting_ad_1 = supporting_ads[0] %}
 {% assign supporting_ad_2 = supporting_ads[1] %}
 {% assign supporting_ad_3 = supporting_ads[2] %}
+{% assign supporting_ad_4 = supporting_ads[3] %}
 
 <section id="run-of-show" class="ep-section ep-section--banded">
   <div class="emission emission--strip emission--warm" aria-hidden="true"></div>
@@ -254,6 +258,9 @@ the lineup keeps them roughly evenly spaced.
       {% include program-run-of-show-item.html t=t label=label pct=pct %}
       {% if t.order == 2 and supporting_ad_1 %}
       <li class="ros-item ros-item--ad reveal">{% include program-ad.html ad=supporting_ad_1 %}</li>
+      {% endif %}
+      {% if t.order == 4 and supporting_ad_4 %}
+      <li class="ros-item ros-item--ad reveal">{% include program-ad.html ad=supporting_ad_4 %}</li>
       {% endif %}
       {% endfor %}
     </ol>
