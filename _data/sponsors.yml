@@ -114,6 +114,23 @@
   max_width: 200
   tier: supporting
 
+- name: Gravity Haus
+  url: https://gravityhaus.com/locations/gravity-haus-breck
+  # Their horizontal lockup is the "gh" monogram over "gravity haus" in white on
+  # transparency, so it takes inv like Summit Barre's white mark: inverted to read
+  # on the light plate, restored to white on hover; the program dark plate wants
+  # the untreated white lockup, so program_tone: as-is.
+  logo: /assets/images/sponsors/gravity-haus.png
+  note: Breckenridge
+  tone: inv
+  program_tone: as-is
+  # At 4.27:1 this is a wide lockup; 58px is ~248px, and max_width keeps it from
+  # crowding the neighbouring supporting cards.
+  height: 58
+  wall_height: 40
+  max_width: 240
+  tier: supporting
+
 - name: Summit Barre + Fitness
   url: https://www.summitbarreandfitness.com/
   # Their lockup is the "sbp" monogram over "Summit Barre & Pilates" in white on
