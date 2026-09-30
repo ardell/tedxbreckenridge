@@ -7,6 +7,12 @@ Params: ad = { tier, sponsor, image, url, alt }
 {%- assign ad = include.ad -%}
 {%- assign alt = ad.alt | default: ad.sponsor -%}
 {%- comment -%}
+`tall` ads keep their own proportions (the slot grows to fit the art) instead of
+being cover-cropped to the tier's aspect ratio -- for full-bleed artwork a
+sponsor supplies at the wrong size/ratio.
+{%- endcomment -%}
+{%- if ad.tall -%}{%- assign tall_class = " ep-ad--tall" -%}{%- else -%}{%- assign tall_class = "" -%}{%- endif -%}
+{%- comment -%}
 Target artwork resolution per tier — all ads are the same width; height steps
 down by tier. Hand these to sponsors once sizes are frozen. @2x-ready.
 {%- endcomment -%}
@@ -33,7 +39,7 @@ its human label is "Premier", the same word the sponsor wall uses.
   <span class="ep-ad-flag label-micro">Sponsor</span>
 {%- endcapture -%}
 {%- if ad.url -%}
-<a class="ep-ad ep-ad--{{ ad.tier }} reveal" href="{{ ad.url }}" target="_blank" rel="noopener noreferrer">{{ inner }}</a>
+<a class="ep-ad ep-ad--{{ ad.tier }}{{ tall_class }} reveal" href="{{ ad.url }}" target="_blank" rel="noopener noreferrer">{{ inner }}</a>
 {%- else -%}
-<div class="ep-ad ep-ad--{{ ad.tier }} reveal">{{ inner }}</div>
+<div class="ep-ad ep-ad--{{ ad.tier }}{{ tall_class }} reveal">{{ inner }}</div>
 {%- endif -%}
