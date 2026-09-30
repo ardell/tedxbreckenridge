@@ -22,10 +22,10 @@ sessions:
     blurb: "Reach the top and the view changes everything. In our closing session, speakers trace the long climb of tradition, service, and stubborn ambition -- the ancestral roots of music, the quiet heroism of volunteers, decades of listening to a changing climate, and the two words that move mountains. It's a wider perspective, earned one step at a time."
 
 # ---- Sponsor ad slots ----
-# Seven ads promised dedicated program space: one premier (Imperial), one anchor
-# (Summit Mountain Rentals), and five supporting. Placed by hand through the
+# Six ads promised dedicated program space: one premier (Imperial), one anchor
+# (Summit Mountain Rentals), and four supporting. Placed by hand through the
 # program (not looped) so each lands in a specific spot: Imperial before the
-# show, the anchor between the two talk segments, and the five supporting slots
+# show, the anchor between the two talk segments, and the four supporting slots
 # interleaved among the talks inside the run of show (see that section for the
 # placement rationale). Artwork is dropped in as sponsors supply it; slots
 # without an `image` render a labeled placeholder at the target resolution.
@@ -33,9 +33,18 @@ sponsor_ads:
   - tier: lead
     sponsor: Imperial Hotel &amp; Private Residences
     url: "https://imperialbreckenridge.com/"
+    # Sponsor-supplied 1080x1080 ad -- a native fit for the 1/1 premier slot, so
+    # it fills edge to edge with no crop.
+    image: /assets/images/program-ads/imperial-lead.jpg
+    alt: "Imperial Hotel &amp; Private Residences -- exceptionally Breck, uniquely yours. Opening early 2028. ImperialBreckenridge.com"
   - tier: anchor
     sponsor: Summit Mountain Rentals
     url: "https://summitrentals.com/"
+    # Sponsor-supplied ad, ~1080x659 (close to the 5/3 anchor ratio). Flagged
+    # `tall` so it keeps its own proportions rather than being cropped to fit.
+    image: /assets/images/program-ads/summit-mountain-rentals-anchor.jpg
+    tall: true
+    alt: "Summit Mountain Rentals -- proud to help bring TEDx to Breckenridge, supporting ideas worth spreading. 970-671-6101. summitrentals.com"
   - tier: supporting
     sponsor: Mountain Comfort Furnishings
     url: "https://www.mountaincomfort.com/"
@@ -52,16 +61,14 @@ sponsor_ads:
   - tier: supporting
     sponsor: Summit Barre + Fitness
     url: "https://www.summitbarreandfitness.com/"
-    # Sponsor-supplied logo (white lockup on black), padded out to the supporting
-    # slot's 1080×389 ratio so the black extends edge to edge and fills the slot.
-    image: /assets/images/program-ads/summit-barre-fitness-supporting.png
-    alt: Summit Barre &amp; Pilates
+    # Sponsor-supplied ad (dark logo + text on white), ~1080x712. Flagged `tall`
+    # so it keeps its own proportions instead of being cropped to the 25/9 slot.
+    image: /assets/images/program-ads/summit-barre-fitness-supporting.jpg
+    tall: true
+    alt: "Summit Barre &amp; Pilates -- Frisco, Silverthorne, Edwards. 970-368-6293. summitbarreandfitness.com"
   - tier: supporting
     sponsor: Gravity Haus
     url: "https://gravityhaus.com/locations/gravity-haus-breck"
-  - tier: supporting
-    sponsor: La Française
-    url: "https://www.lafrancaisebreck.com/"
 
 # ---- Day-of info ----
 info_rows:
@@ -229,14 +236,13 @@ Supporting ads run INSIDE the run of show, not below it: attendees scroll the
 lineup all the way to the last speaker but rarely past it, so the run of show is
 the reachable, high-attention zone. Interleave one per gap (each separated by
 speaker cards so they never stack and read as one ad block) as in-feed units:
-after talk 2, after talk 4, after talk 6, after talk 7, and after the final talk.
-Order-keyed so rearranging the lineup keeps them roughly evenly spaced.
+after talk 2, after talk 4, after talk 7, and after the final talk. Order-keyed
+so rearranging the lineup keeps them roughly evenly spaced.
 {%- endcomment -%}
 {% assign supporting_ad_1 = supporting_ads[0] %}
 {% assign supporting_ad_2 = supporting_ads[1] %}
 {% assign supporting_ad_3 = supporting_ads[2] %}
 {% assign supporting_ad_4 = supporting_ads[3] %}
-{% assign supporting_ad_5 = supporting_ads[4] %}
 
 <section id="run-of-show" class="ep-section ep-section--banded">
   <div class="emission emission--strip emission--warm" aria-hidden="true"></div>
@@ -312,9 +318,6 @@ Order-keyed so rearranging the lineup keeps them roughly evenly spaced.
       {% assign label = t.order | prepend: 'Talk ' %}
       {% assign pct = t.order | minus: 1 | times: 100 | divided_by: 8 %}
       {% include program-run-of-show-item.html t=t label=label pct=pct %}
-      {% if t.order == 6 and supporting_ad_5 %}
-      <li class="ros-item ros-item--ad reveal">{% include program-ad.html ad=supporting_ad_5 %}</li>
-      {% endif %}
       {% if t.order == 7 and supporting_ad_2 %}
       <li class="ros-item ros-item--ad reveal">{% include program-ad.html ad=supporting_ad_2 %}</li>
       {% endif %}
