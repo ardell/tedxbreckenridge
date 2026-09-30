@@ -42,6 +42,13 @@ sponsor_ads:
   - tier: supporting
     sponsor: High Country Automotive
     url: "https://highcountryauto.net/"
+    # Sponsor-supplied full-bleed ad (photo + text), 1080×719 -- taller and a
+    # different ratio than the 25/9 supporting slot. Flagged `tall` so it renders
+    # at its own proportions (no crop) rather than being cover-cropped edge to
+    # edge, which would cut off most of the artwork.
+    image: /assets/images/program-ads/high-country-automotive-supporting.jpg
+    tall: true
+    alt: "High Country Automotive -- quality auto repair, honest service, built for the High Country. 150 13th St, Silverthorne, CO. 970-513-9148."
   - tier: supporting
     sponsor: Summit Barre + Fitness
     url: "https://www.summitbarreandfitness.com/"

@@ -1667,6 +1667,17 @@ tier is ~3/5 the height of the one above it. */
 
 /* ~0.60× anchor height */
 
+/* Full-bleed artwork supplied at a non-standard ratio: let the slot grow to the
+   image's own height instead of cover-cropping it to the tier aspect ratio. */
+.ep-ad--tall{
+  aspect-ratio:auto
+}
+
+.ep-ad--tall img{
+  height:auto;
+  display:block
+}
+
 /* ---- day-of info ---- */
 .ep-info{
   max-width:var(--measure)
