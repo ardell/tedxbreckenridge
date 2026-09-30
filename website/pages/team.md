@@ -57,6 +57,11 @@ description: Meet the local volunteers who organize TEDxBreckenridge. Our passio
       <strong>Jill Marek</strong>
       <p>Founder, License Holder</p>
     </div>
+    <div class="team-member">
+      <img src="{{ '/assets/images/team/thayer-hirsh.jpg' | relative_url }}" alt="Thayer Hirsh">
+      <strong>Thayer Hirsh</strong>
+      <p>Board Member, Core Team</p>
+    </div>
   </div>
 </div>
 
@@ -97,6 +102,11 @@ description: Meet the local volunteers who organize TEDxBreckenridge. Our passio
       <img src="{{ '/assets/images/team/aaron-williams.jpg' | relative_url }}" alt="Aaron Williams">
       <strong>Aaron Williams</strong>
       <p>Core Team</p>
+    </div>
+    <div class="team-member">
+      <img src="{{ '/assets/images/team/thayer-hirsh.jpg' | relative_url }}" alt="Thayer Hirsh">
+      <strong>Thayer Hirsh</strong>
+      <p>Core Team, Board Member</p>
     </div>
   </div>
 </div>
