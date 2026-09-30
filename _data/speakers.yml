@@ -43,7 +43,7 @@ speakers:
     crop: "center 15%"
     order: 8
     half: 2
-    theme: Reading climate in the rock rabbits
+    theme: Pikas, People and the Climate Change Challenge
     role: Research scientist, Institute for Bird Populations & INSTAAR, CU Boulder
     image: /assets/images/speakers/chris-ray.jpg
     bio:
@@ -56,7 +56,7 @@ speakers:
     crop: "center 12%"
     order: 5
     half: 1
-    theme: Unmasking the shadows of social anxiety
+    theme: Unmasking Social Anxiety
     role: Student speaker, Summit Middle School
     image: /assets/images/speakers/maisie-bryant.jpg
     bio:
@@ -68,7 +68,7 @@ speakers:
     slug: oakley-van-oss
     order: 4
     half: 1
-    theme: Confidence, purpose & belonging through real experience
+    theme: Building Something That Matters
     role: Construction & welding educator, Summit High School
     image: /assets/images/speakers/oakley-van-oss.jpg
     bio:
@@ -82,7 +82,7 @@ speakers:
     crop: "center 8%"
     order: 2
     half: 1
-    theme: Building tomorrow's quantum technology alongside yesterday's mines
+    theme: Building Tomorrow's Quantum Technology Alongside Yesterday's Mines
     role: Professor, Colorado School of Mines
     image: /assets/images/speakers/wouter-van-de-pontseele.jpg
     socials:
@@ -97,7 +97,7 @@ speakers:
     crop: "center 6%"
     order: 6
     half: 2
-    theme: The indigenous history of music
+    theme: Music, A Force of Nature
     role: Composer, songwriter & performer
     image: /assets/images/speakers/leon-littlebird.jpg
     socials:
@@ -112,7 +112,7 @@ speakers:
     crop: "center 12%"
     order: 9
     half: 2
-    theme: "Yes, if: the two words that move mountains"
+    theme: '"Yes, If..." The Two Words That Move Mountains'
     role: Project Director, Colorado Department of Transportation
     image: /assets/images/speakers/kurt-kionka.jpg
     bio:
@@ -124,7 +124,7 @@ speakers:
     slug: anna-debattiste
     order: 7
     half: 2
-    theme: The heart of a volunteer
+    theme: The Heart of a Volunteer
     role: Volunteer, Summit County Rescue Group & Colorado Search and Rescue Association
     image: /assets/images/speakers/anna-debattiste.jpg
     bio:
@@ -137,7 +137,7 @@ speakers:
     crop: "60% 15%"
     order: 3
     half: 1
-    theme: Community is forged, not found
+    theme: Communities Are Forged, not Found
     role: Owner, Ark Valley Signs & Sidewalk Monkey
     image: /assets/images/speakers/jess-smith.jpg
     bio:
