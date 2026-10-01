@@ -48,6 +48,12 @@ sponsor_ads:
   - tier: supporting
     sponsor: Mountain Comfort Furnishings
     url: "https://www.mountaincomfort.com/"
+    # Sponsor-supplied ad (two interiors + green chair), 1080x694 -- taller and a
+    # different ratio than the 25/9 supporting slot. Flagged `tall` so it renders
+    # at its own proportions (no crop) rather than being cropped to fit.
+    image: /assets/images/program-ads/mountain-comfort-supporting.jpg
+    tall: true
+    alt: "Mountain Comfort Furnishings &amp; Design -- furnishings, interior design, window coverings. Since 1986. 507 Summit Blvd, Frisco, CO. 970-668-3661. mountaincomfort.com"
   - tier: supporting
     sponsor: High Country Automotive
     url: "https://highcountryauto.net/"
