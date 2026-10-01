@@ -457,7 +457,7 @@ Values are from the Emission handoff README (high-fidelity).
 
 /* ---- one mono label system (four roles) ----
    Replaces the eight one-off mono labels the page had grown (ep-kicker,
-   spk-kicker, ep-tier-label, ros-break .lbl, ep-ad-flag, ep-ad-ph-tier,
+   spk-kicker, ep-tier-label, ros-break .lbl, ep-ad-ph-tier,
    ep-footer-license). Talk numbers and tier labels are deliberately promoted
    to amber by using .eyebrow. */
 .eyebrow{
@@ -1642,13 +1642,6 @@ tier is ~3/5 the height of the one above it. */
   color:var(--amber);
   letter-spacing:.08em;
   font-size:11px
-}
-
-/* Positioning only; the "Sponsor" flag's typography comes from .label-micro. */
-.ep-ad-flag{
-  position:absolute;
-  top:10px;
-  right:10px
 }
 
 .ep-ad--lead{
