@@ -75,6 +75,10 @@ sponsor_ads:
   - tier: supporting
     sponsor: Gravity Haus
     url: "https://gravityhaus.com/locations/gravity-haus-breck"
+    # Sponsor-supplied ad (line drawing + text on white), 1080x389 -- a native
+    # fit for the 25/9 supporting slot, so it fills edge to edge with no crop.
+    image: /assets/images/program-ads/gravity-haus-supporting.jpg
+    alt: "Gravity Haus Breckenridge -- we're here for it. Stay, play, eat &amp; aprés in Breckenridge. Explore more at gravityhaus.com"
 
 # ---- Day-of info ----
 info_rows:
