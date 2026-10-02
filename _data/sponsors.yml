@@ -316,6 +316,45 @@
   wall_height: 46
   tier: community
 
+- name: Blue River Watershed Group
+  url: https://www.blueriverwatershed.org/
+  # Their droplet badge — a snow-capped mountain over a green basin with the Blue
+  # River running through it, above a navy "BRWG" wordmark — is a full-colour
+  # illustration on transparency, not a flat mark, so it takes rev like Summit
+  # Cultures: grayscale desaturates the badge to sit level on the wall while
+  # every shape survives, and hover blooms it back. dk would flatten the whole
+  # droplet to a black blob.
+  logo: /assets/images/sponsors/blue-river-watershed-group.png
+  note: Summit County — protecting the Blue River watershed
+  tone: rev
+  # On the program's dark plate rev would invert the illustrated badge into a
+  # photo negative, so it desaturates only (program_tone: gray).
+  program_tone: gray
+  # Taller than it is wide (the wordmark stacks under the badge), so a shorter
+  # strip keeps its rendered area in family with the squarer community marks.
+  height: 60
+  wall_height: 42
+  tier: community
+
+- name: Piante Pizzeria
+  url: https://piantepizzeria.com/
+  # Their stacked lockup — an orange pizza slice drawn as a carrot inside a
+  # double green ring, over a green "PIANTE" wordmark — is a full-colour
+  # illustration on transparency, so it takes rev like Summit Cultures:
+  # grayscale levels it on the wall and hover blooms it back. dk would flatten
+  # the slice, rings and wordmark to a black blob.
+  logo: /assets/images/sponsors/piante-pizzeria.png
+  note: Breckenridge — plant-based wood-fired pizza
+  tone: rev
+  # On the program's dark plate rev would invert the lockup into a photo
+  # negative, so it desaturates only (program_tone: gray).
+  program_tone: gray
+  # Taller than it is wide (the wordmark stacks under the badge), so a shorter
+  # strip keeps its rendered area in family with the squarer community marks.
+  height: 60
+  wall_height: 42
+  tier: community
+
 - name: Aspen Alley Creative
   url: https://www.aspenalleycreative.com/
   logo: /assets/images/sponsors/aspen-alley-creative.png
