@@ -79,6 +79,18 @@ sponsor_ads:
     # fit for the 25/9 supporting slot, so it fills edge to edge with no crop.
     image: /assets/images/program-ads/gravity-haus-supporting.jpg
     alt: "Gravity Haus Breckenridge -- we're here for it. Stay, play, eat &amp; aprés in Breckenridge. Explore more at gravityhaus.com"
+  # A later addition beyond the original six: its own `feature` tier (a 1/1 slot,
+  # same square ratio as the premier lead ad) rendered in a dedicated full-width
+  # spot after the run of show, so it doesn't crowd the 25/9 supporting units
+  # interleaved among the talks. Selected by tier below, not by the lead/anchor/
+  # supporting lookups.
+  - tier: feature
+    sponsor: Aspen Alley Creative
+    url: "https://www.aspenalleycreative.com/"
+    # Sponsor-supplied 1080x1080 ad -- a native fit for the 1/1 feature slot, so
+    # it fills edge to edge with no crop.
+    image: /assets/images/program-ads/aspen-alley-creative-feature.jpg
+    alt: "Aspen Alley Creative -- we alchemize brand design, bold storytelling, and marketing strategy into real results. Ready to grow? Let's talk. aspenalleycreative.com"
 
 # ---- Day-of info ----
 info_rows:
@@ -92,6 +104,7 @@ info_rows:
 {%- assign lead_ad = page.sponsor_ads | where: "tier", "lead" | first -%}
 {%- assign anchor_ad = page.sponsor_ads | where: "tier", "anchor" | first -%}
 {%- assign supporting_ads = page.sponsor_ads | where: "tier", "supporting" -%}
+{%- assign feature_ad = page.sponsor_ads | where: "tier", "feature" | first -%}
 
 <!-- ============ Jump nav ============ -->
 <nav class="ep-jump" aria-label="Program sections">
@@ -338,6 +351,17 @@ so rearranging the lineup keeps them roughly evenly spaced.
     </ol>
   </div>
 </section>
+
+<!-- ============ Aspen Alley Creative (feature) ad ============ -->
+{% if feature_ad %}
+<section class="ep-section ep-section--ad">
+  <div class="ep-shell">
+    <div class="ep-ads">
+      {% include program-ad.html ad=feature_ad %}
+    </div>
+  </div>
+</section>
+{% endif %}
 
 <!-- ============ Good to know ============ -->
 <section id="good-to-know" class="ep-section ep-section--banded">

@@ -1648,6 +1648,11 @@ tier is ~3/5 the height of the one above it. */
   aspect-ratio:1/1
 }
 
+/* A later feature placement (Aspen Alley Creative); same 1/1 square as lead. */
+.ep-ad--feature{
+  aspect-ratio:1/1
+}
+
 /* tallest */
 .ep-ad--anchor{
   aspect-ratio:5/3
