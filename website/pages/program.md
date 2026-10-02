@@ -80,9 +80,8 @@ sponsor_ads:
     image: /assets/images/program-ads/gravity-haus-supporting.jpg
     alt: "Gravity Haus Breckenridge -- we're here for it. Stay, play, eat &amp; aprés in Breckenridge. Explore more at gravityhaus.com"
   # A later addition beyond the original six: its own `feature` tier (a 1/1 slot,
-  # same square ratio as the premier lead ad) rendered in a dedicated full-width
-  # spot after the run of show, so it doesn't crowd the 25/9 supporting units
-  # interleaved among the talks. Selected by tier below, not by the lead/anchor/
+  # same square ratio as the premier lead ad) interleaved in the run of show
+  # between talks 1 and 2. Selected by tier below, not by the lead/anchor/
   # supporting lookups.
   - tier: feature
     sponsor: Aspen Alley Creative
@@ -296,6 +295,9 @@ so rearranging the lineup keeps them roughly evenly spaced.
       {% assign label = t.order | prepend: 'Talk ' %}
       {% assign pct = t.order | minus: 1 | times: 100 | divided_by: 8 %}
       {% include program-run-of-show-item.html t=t label=label pct=pct %}
+      {% if t.order == 1 and feature_ad %}
+      <li class="ros-item ros-item--ad reveal">{% include program-ad.html ad=feature_ad %}</li>
+      {% endif %}
       {% if t.order == 2 and supporting_ad_1 %}
       <li class="ros-item ros-item--ad reveal">{% include program-ad.html ad=supporting_ad_1 %}</li>
       {% endif %}
@@ -351,17 +353,6 @@ so rearranging the lineup keeps them roughly evenly spaced.
     </ol>
   </div>
 </section>
-
-<!-- ============ Aspen Alley Creative (feature) ad ============ -->
-{% if feature_ad %}
-<section class="ep-section ep-section--ad">
-  <div class="ep-shell">
-    <div class="ep-ads">
-      {% include program-ad.html ad=feature_ad %}
-    </div>
-  </div>
-</section>
-{% endif %}
 
 <!-- ============ Good to know ============ -->
 <section id="good-to-know" class="ep-section ep-section--banded">
